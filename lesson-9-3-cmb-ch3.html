@@ -105,16 +105,16 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .tab-panel.active{display:block;}
 
 /* ═══════════ VIDEO WRAP ═══════════ */
-.video-wrap{border-radius:18px;overflow:hidden;border:2px solid #E2E8F4;box-shadow:0 4px 20px rgba(14,28,66,.08);background:#000;margin:0 0 22px;}
-.video-wrap-header{display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0A2A4A,#0E3A5C);border-bottom:2px solid rgba(200,150,42,.25);}
-.video-wrap-type{font-size:10px;color:#00897B;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:2px;}
-.video-wrap-title{font-size:16px;color:#fff;font-weight:800;line-height:1.2;}
-.video-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;}
-.video-ratio iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
-.video-placeholder{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#0E1C42,#1A2D5A);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;}
-.video-placeholder-icon{font-size:44px;margin-bottom:10px;opacity:.55;}
-.video-placeholder-text{font-size:14px;color:rgba(255,255,255,.55);font-weight:600;line-height:1.5;}
-.video-placeholder-id{font-size:11px;color:rgba(200,150,42,.5);font-family:monospace;margin-top:6px;letter-spacing:.5px;}
+
+
+
+
+
+
+
+
+
+
 
 /* ═══════════ ACTIVITY CARDS ═══════════ */
 .activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04);}
@@ -786,11 +786,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 <div class="tab-panel active" id="tab-warmup">
 
   <!-- Welcome Video -->
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">🎬</span><div><div class="video-wrap-type">Welcome &middot; Day 3 of 4</div><div class="video-wrap-title">Welcome to Lesson 9.3!</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🎬</div><div class="video-placeholder-text">Teacher welcome video coming soon</div><div class="video-placeholder-id"><!-- slot: 9-3-welcome --></div></div></div>
-  </div>
-
+  
   <!-- DOL -->
   <div class="activity bl-navy" style="margin-top:6px;">
     <div class="activity-head"><div class="activity-num" style="background:#00796B;">📝</div><div style="flex:1;"><div class="activity-title">Daily Oral Language</div><div class="activity-sub">Study the model &mdash; then fix the sentence below</div></div></div>
@@ -820,11 +816,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       </div>
 
       <!-- DOL Feedback Video -->
-      <div class="video-wrap" style="margin-top:14px;">
-        <div class="video-wrap-header"><span style="font-size:20px;">🎬</span><div><div class="video-wrap-type">Feedback &middot; Check Your Work</div><div class="video-wrap-title">DOL Walk-Through</div></div></div>
-        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🎬</div><div class="video-placeholder-text">Watch after you try the sentences</div><div class="video-placeholder-id"><!-- slot: 9-3-dol-feedback --></div></div></div>
-      </div>
-    </div>
+          </div>
   </div>
 
   <!-- No WGRD on Tab 1 (Day 3 — WGRD moves to Reading tab) -->
@@ -848,11 +840,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div><div style="flex:1;"><div class="activity-title">🌱 Morphology: Roots <em>naut / nav</em> and <em>port</em> in Action</div><div class="activity-sub">Use it &mdash; choose the right root word for each sentence</div></div></div>
     <div class="activity-body">
 
-      <div class="video-wrap" style="margin-bottom:14px;">
-        <div class="video-wrap-header"><span style="font-size:20px;">🌱</span><div><div class="video-wrap-type">Morphology &middot; Day 3</div><div class="video-wrap-title">Using Root Words in Context</div></div></div>
-        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🌱</div><div class="video-placeholder-text">Teacher reviews how to use root words to find the right word</div><div class="video-placeholder-id"><!-- slot: 9-3-morphology --></div></div></div>
-      </div>
-
+      
       <p>You&rsquo;ve learned the roots <strong>naut / nav</strong> (ship, sailor, guide) and <strong>port</strong> (carry). Now put them to work. Read each sentence below and click the word that best fits the blank. Think about which root it contains and what the sentence needs.</p>
 
       <div class="choice-game" id="morphUseGame">
@@ -910,11 +898,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <div class="activity-head"><div class="activity-num" style="background:#00796B;">2</div><div style="flex:1;"><div class="activity-title">🔎 Vocabulary: Words in the World</div><div class="activity-sub">Use it &mdash; match the right word to each sentence</div></div></div>
     <div class="activity-body">
 
-      <div class="video-wrap" style="margin-bottom:14px;">
-        <div class="video-wrap-header"><span style="font-size:20px;">🔎</span><div><div class="video-wrap-type">Vocabulary &middot; Day 3</div><div class="video-wrap-title">Using Vocabulary Words in Context</div></div></div>
-        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🔎</div><div class="video-placeholder-text">Teacher walks through how to use context clues to choose the right word</div><div class="video-placeholder-id"><!-- slot: 9-3-vocabulary --></div></div></div>
-      </div>
-
+      
       <p>Choose the word from our unit vocabulary that best completes each sentence. Think about what the sentence is describing &mdash; then find the word whose meaning fits exactly.</p>
 
       <div class="callout callout-info">
@@ -977,11 +961,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">3</div><div style="flex:1;"><div class="activity-title">✏️ Grammar: Picking the Active Voice</div><div class="activity-sub">Use it &mdash; recognize which sentence uses active voice</div></div></div>
     <div class="activity-body">
 
-      <div class="video-wrap" style="margin-bottom:14px;">
-        <div class="video-wrap-header"><span style="font-size:20px;">✏️</span><div><div class="video-wrap-type">Grammar &middot; Day 3</div><div class="video-wrap-title">Choosing Active Voice</div></div></div>
-        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">✏️</div><div class="video-placeholder-text">Teacher models how to spot active vs. passive voice</div><div class="video-placeholder-id"><!-- slot: 9-3-grammar --></div></div></div>
-      </div>
-
+      
       <div class="key-concept">
         <div class="key-concept-label">🔑 Quick Reminder</div>
         <p><strong>Active voice:</strong> The subject does the action. &ldquo;Nat solved the problem.&rdquo;<br>
@@ -1037,11 +1017,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <div class="activity-head"><div class="activity-num" style="background:#0E3A5C;">4</div><div style="flex:1;"><div class="activity-title">🔤 Spelling: Sort New Words &amp; Show What You Know</div><div class="activity-sub">Use it &mdash; sort eight new words, then write your own</div></div></div>
     <div class="activity-body">
 
-      <div class="video-wrap" style="margin-bottom:14px;">
-        <div class="video-wrap-header"><span style="font-size:20px;">🔤</span><div><div class="video-wrap-type">Spelling &middot; Day 3</div><div class="video-wrap-title">The AI and A&ndash;E Patterns: New Words</div></div></div>
-        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🔤</div><div class="video-placeholder-text">Teacher introduces Day 3 spelling words and the SWYK task</div><div class="video-placeholder-id"><!-- slot: 9-3-spelling --></div></div></div>
-      </div>
-
+      
       <div class="callout callout-tip">
         <span class="callout-icon">💡</span>
         <p>Remember the rule: both <strong>AI</strong> (two vowels side by side) and <strong>A&ndash;E</strong> (vowel &rarr; consonant &rarr; silent e) make the long /ā/ sound. Sort the new words below using that pattern.</p>
@@ -1107,11 +1083,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   </div>
 
   <!-- Reading Video -->
-  <div class="video-wrap" style="margin-bottom:18px;">
-    <div class="video-wrap-header"><span style="font-size:20px;">📖</span><div><div class="video-wrap-type">Reading &middot; Chapter Introduction</div><div class="video-wrap-title">Before You Read Chapter 3</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">📖</div><div class="video-placeholder-text">Teacher introduces Chapter 3 and what to watch for</div><div class="video-placeholder-id"><!-- slot: 9-3-reading --></div></div></div>
-  </div>
-
+  
   <!-- Story Journey Tracker -->
   <div class="tracker-card">
     <div class="tracker-header"><div class="tracker-header-icon">⛵</div><div><div class="tracker-header-label">Your Story Journey</div><div class="tracker-header-title">Nat&rsquo;s Path Through <em>Carry On, Mr. Bowditch</em></div></div></div>
@@ -1187,11 +1159,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 <div class="tab-panel" id="tab-assignment">
 
   <!-- Assignment intro video -->
-  <div class="video-wrap" style="margin-bottom:18px;">
-    <div class="video-wrap-header"><span style="font-size:20px;">📬</span><div><div class="video-wrap-type">Assignment &middot; Lesson 9.3</div><div class="video-wrap-title">What to Do Here</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">📬</div><div class="video-placeholder-text">Teacher walks through the assignment expectations</div><div class="video-placeholder-id"><!-- slot: 9-3-assignment --></div></div></div>
-  </div>
-
+  
   <p style="font-size:16px;color:#3A4A6B;line-height:1.7;margin-bottom:20px;">This is the part you submit. Answer each question in complete sentences, using evidence from Chapter 3. Scroll down to review, copy, or download your work when you&rsquo;re done.</p>
 
   <!-- Part A: 3 Comprehension Questions -->

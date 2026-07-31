@@ -102,16 +102,16 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .tab-panel.active{display:block;}
 
 /* ═══════════ VIDEO WRAP ═══════════ */
-.video-wrap{border-radius:18px;overflow:hidden;border:2px solid #E2E8F4;box-shadow:0 4px 20px rgba(14,28,66,.08);background:#000;margin:0 0 22px;}
-.video-wrap-header{display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0A2A4A,#0E3A5C);border-bottom:2px solid rgba(200,150,42,.25);}
-.video-wrap-type{font-size:10px;color:#00897B;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:2px;}
-.video-wrap-title{font-size:16px;color:#fff;font-weight:800;line-height:1.2;}
-.video-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;}
-.video-ratio iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
-.video-placeholder{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#0E1C42,#1A2D5A);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;}
-.video-placeholder-icon{font-size:44px;margin-bottom:10px;opacity:.55;}
-.video-placeholder-text{font-size:14px;color:rgba(255,255,255,.55);font-weight:600;line-height:1.5;}
-.video-placeholder-id{font-size:11px;color:rgba(200,150,42,.5);font-family:monospace;margin-top:6px;letter-spacing:.5px;}
+
+
+
+
+
+
+
+
+
+
 
 /* ═══════════ ACTIVITY CARDS ═══════════ */
 .activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04);}
@@ -619,17 +619,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">&#x1F4EC; Assignment<span class="tab-check">&#10003;</span></button>
 </div>
 <div class="tab-panel active" id="tab-warmup">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Welcome &middot; Day 3 of 4</div>
-      <div class="video-wrap-title">Welcome to Lesson 12.3!</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 12-3-welcome --></div>
-    </div></div>
-  </div>
-
+  
   <div class="activity bl-teal">
     <div class="activity-head"><div class="activity-num" style="background:#00796B;">&#x1F4DD;</div>
       <div style="flex:1;"><div class="activity-title">Daily Oral Language</div>
@@ -659,17 +649,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="activity-sub">Use &mdash; choose the right adjective</div></div>
     </div>
     <div class="activity-body">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Morphology &middot; Day 3</div>
-      <div class="video-wrap-title">Suffixes -al/-ous in Context</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 12-3-morphology --></div>
-    </div></div>
-  </div>
-      <div class="key-concept"><div class="key-concept-label">&#x1F4CC; Word bank</div>
+        <div class="key-concept"><div class="key-concept-label">&#x1F4CC; Word bank</div>
         <p><strong>nautical &middot; mathematical &middot; practical &middot; hazardous &middot; rigorous &middot; celestial</strong></p>
       </div>
       <div class="choice-game">
@@ -709,17 +689,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="activity-sub">Use &mdash; complete sentences with this week&rsquo;s words</div></div>
     </div>
     <div class="activity-body">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Vocabulary &middot; Day 3</div>
-      <div class="video-wrap-title">Using This Week's Words</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 12-3-vocabulary --></div>
-    </div></div>
-  </div>
-      <div class="fillin-game" id="fillinGame">
+        <div class="fillin-game" id="fillinGame">
         <div class="fillin-item">Nat&rsquo;s goal was to make navigation <input class="fillin-input" data-answer="practical" maxlength="10" placeholder="______"> &mdash; useful for every sailor, not just the mathematically educated.</div>
         <div class="fillin-item">The tables in Moore&rsquo;s Navigator were <input class="fillin-input" data-answer="erroneous" maxlength="10" placeholder="______">, containing hundreds of calculation mistakes.</div>
         <div class="fillin-item">Taking <input class="fillin-input" data-answer="lunar" maxlength="6" placeholder="____"> observations &mdash; measuring the moon&rsquo;s angle from a known star &mdash; allowed navigators to find longitude at sea.</div>
@@ -735,17 +705,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="activity-sub">Use &mdash; rewrite vague sentences with specific phrases</div></div>
     </div>
     <div class="activity-body">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Grammar &middot; Day 3</div>
-      <div class="video-wrap-title">Using Prepositional Phrases in Expository Writing</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 12-3-grammar --></div>
-    </div></div>
-  </div>
-      <p>These expository sentences about Nat are technically correct but vague. Rewrite each one in your reading journal, adding at least one prepositional phrase to make it more specific and convincing.</p>
+        <p>These expository sentences about Nat are technically correct but vague. Rewrite each one in your reading journal, adding at least one prepositional phrase to make it more specific and convincing.</p>
       <div class="dol-fix-sentence" style="line-height:2.5;">
         <p><strong>1.</strong> &ldquo;Nat worked hard.&rdquo;</p>
         <p><strong>2.</strong> &ldquo;He found errors.&rdquo;</p>
@@ -766,17 +726,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="activity-sub">Show What You Know</div></div>
     </div>
     <div class="activity-body">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Spelling &middot; Day 3</div>
-      <div class="video-wrap-title">The -ous Family: Use It</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 12-3-spelling --></div>
-    </div></div>
-  </div>
-      <div class="swyk">
+        <div class="swyk">
         <div class="swyk-label">&#x1F524; Show What You Know &middot; Spelling</div>
         <div class="swyk-prompt">Choose four words from the list: <em>hazardous &middot; erroneous &middot; rigorous &middot; courageous &middot; ambitious &middot; mysterious &middot; glorious</em>. For each: (1) spell it correctly, (2) mark whether it uses -ous, -ious, or -eous, (3) write a sentence using it in the context of Nat&rsquo;s story.</div>
         <div class="textbox-prompt">Word: [correct spelling] &mdash; Pattern: -ous/-ious/-eous &mdash; Sentence about Nat or navigation.</div>
@@ -838,17 +788,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       </div></div>
     <div class="tracker-chapter-label">&#x1F4CD; You are here: <strong>Week 12 &mdash; Chapter 15 — “Sail Ho-o-o-o-o!”</strong></div>
   </div>
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Reading &middot; Chapter Introduction</div>
-      <div class="video-wrap-title">Before You Read Chapter 15</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 12-3-reading --></div>
-    </div></div>
-  </div>
-  <div class="activity bl-teal">
+    <div class="activity bl-teal">
     <div class="activity-head"><div class="activity-num" style="background:#00796B;">&#x1F4D5;</div>
       <div style="flex:1;"><div class="activity-title">Read: Chapter 15 &mdash; &ldquo;Sail Ho-o-o-o-o!&rdquo;</div>
       <div class="activity-sub">Back at sea &mdash; another voyage, another sail on the horizon</div></div>
@@ -894,17 +834,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   </div>
 </div>
 <div class="tab-panel" id="tab-assignment">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Assignment &middot; What to Submit</div>
-      <div class="video-wrap-title">Show What You Know — Chapter 15</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 12-3-assignment --></div>
-    </div></div>
-  </div>
-  <div class="callout callout-info" style="margin-bottom:20px;"><span class="callout-icon">&#x1F4EC;</span>
+    <div class="callout callout-info" style="margin-bottom:20px;"><span class="callout-icon">&#x1F4EC;</span>
     <p>Answer in complete sentences with evidence from Chapter 15.</p></div>
   <div class="activity bl-teal">
     <div class="activity-head"><div class="activity-num" style="background:#00796B;">A</div>

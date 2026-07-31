@@ -102,16 +102,16 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .tab-panel.active{display:block;}
 
 /* ═══════════ VIDEO WRAP ═══════════ */
-.video-wrap{border-radius:18px;overflow:hidden;border:2px solid #E2E8F4;box-shadow:0 4px 20px rgba(14,28,66,.08);background:#000;margin:0 0 22px;}
-.video-wrap-header{display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0A2A4A,#0E3A5C);border-bottom:2px solid rgba(200,150,42,.25);}
-.video-wrap-type{font-size:10px;color:#00897B;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:2px;}
-.video-wrap-title{font-size:16px;color:#fff;font-weight:800;line-height:1.2;}
-.video-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;}
-.video-ratio iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
-.video-placeholder{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#0E1C42,#1A2D5A);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;}
-.video-placeholder-icon{font-size:44px;margin-bottom:10px;opacity:.55;}
-.video-placeholder-text{font-size:14px;color:rgba(255,255,255,.55);font-weight:600;line-height:1.5;}
-.video-placeholder-id{font-size:11px;color:rgba(200,150,42,.5);font-family:monospace;margin-top:6px;letter-spacing:.5px;}
+
+
+
+
+
+
+
+
+
+
 
 /* ═══════════ ACTIVITY CARDS ═══════════ */
 .activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04);}
@@ -620,17 +620,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">&#x1F4EC; Assignment<span class="tab-check">&#10003;</span></button>
 </div>
 <div class="tab-panel active" id="tab-warmup">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Welcome &middot; Day 2 of 4</div>
-      <div class="video-wrap-title">Welcome to Lesson 11.2!</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 11-2-welcome --></div>
-    </div></div>
-  </div>
-  <div class="activity bl-plum">
+    <div class="activity bl-plum">
     <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">&#x1F4DA;</div>
       <div style="flex:1;"><div class="activity-title">What Good Readers Do</div>
       <div class="activity-sub">Notice how an author handles a pivotal moment</div></div>
@@ -702,17 +692,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="activity-sub">Identify &mdash; see the roots in scientific vocabulary</div></div>
     </div>
     <div class="activity-body">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Morphology &middot; Day 2</div>
-      <div class="video-wrap-title">Roots geo/terr: Identify</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 11-2-morphology --></div>
-    </div></div>
-  </div>
-      <p>You know the roots. Today, identify them in new words &mdash; some you may not have seen before. Use the root meaning to decode the whole word.</p>
+        <p>You know the roots. Today, identify them in new words &mdash; some you may not have seen before. Use the root meaning to decode the whole word.</p>
       <div class="key-concept"><div class="key-concept-label">&#x1F4CC; New words to identify</div>
         <p><strong>geophysics</strong> &rarr; geo + physics &rarr; the physics of the <em>earth</em>: gravity, magnetism, seismic activity</p>
         <p><strong>subterranean</strong> &rarr; sub (below) + terr + anean &rarr; below the <em>earth&rsquo;s</em> surface</p>
@@ -742,17 +722,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="activity-sub">Identify &mdash; sort this week&rsquo;s words by domain</div></div>
     </div>
     <div class="activity-body">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Vocabulary &middot; Day 2</div>
-      <div class="video-wrap-title">Word Sort</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 11-2-vocabulary --></div>
-    </div></div>
-  </div>
-      <p>This week&rsquo;s words come from two worlds that Nat is connecting: the world of <strong>mathematics and science</strong> and the world of <strong>ships and navigation</strong>. Sort them.</p>
+        <p>This week&rsquo;s words come from two worlds that Nat is connecting: the world of <strong>mathematics and science</strong> and the world of <strong>ships and navigation</strong>. Sort them.</p>
       <div class="sort-bank" id="sortBank">
         <span class="sort-chip" data-group="sci" onclick="pickChip(this)">longitude</span>
         <span class="sort-chip" data-group="nav" onclick="pickChip(this)">supercargo</span>
@@ -780,17 +750,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="activity-sub">Spot the error &mdash; show what you know</div></div>
     </div>
     <div class="activity-body">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Grammar &middot; Day 2</div>
-      <div class="video-wrap-title">Identifying Agreement Errors</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 11-2-grammar --></div>
-    </div></div>
-  </div>
-      <p>Yesterday you defined the rule. Today, identify errors in sentences about Nat&rsquo;s world &mdash; then show what you know.</p>
+        <p>Yesterday you defined the rule. Today, identify errors in sentences about Nat&rsquo;s world &mdash; then show what you know.</p>
       <div class="spotter-game">
         <div class="spotter-sentence" id="sp1">
           <strong style="font-size:13px;color:#7A88A8;display:block;margin-bottom:6px;">&ldquo;The tables in Moore&rsquo;s Almanac was full of errors.&rdquo;</strong>
@@ -822,17 +782,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="activity-sub">Identify &mdash; mark the schwa syllable in each word</div></div>
     </div>
     <div class="activity-body">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Spelling &middot; Day 2</div>
-      <div class="video-wrap-title">Schwa: Identify</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 11-2-spelling --></div>
-    </div></div>
-  </div>
-      <p>Yesterday you discovered what the schwa is. Today, identify exactly <em>which syllable</em> contains the schwa in each academic word. Say the word aloud slowly &mdash; the schwa is the syllable that gets the least stress.</p>
+        <p>Yesterday you discovered what the schwa is. Today, identify exactly <em>which syllable</em> contains the schwa in each academic word. Say the word aloud slowly &mdash; the schwa is the syllable that gets the least stress.</p>
       <div class="key-concept"><div class="key-concept-label">&#x270F;&#xFE0F; Identify the schwa syllable in your journal</div>
         <p>Write each word, mark its syllables with dots, then circle the schwa syllable.</p>
         <p><strong>nav&middot;i&middot;ga&middot;tion</strong> &mdash; which syllable has the schwa? (nav-<em>i</em>-ga-tion &rarr; the &ldquo;i&rdquo;)</p>
@@ -896,17 +846,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       </div></div>
     <div class="tracker-chapter-label">&#x1F4CD; You are here: <strong>Week 11 &mdash; Chapter 10 — Freedom</strong></div>
   </div>
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Reading &middot; Chapter Introduction</div>
-      <div class="video-wrap-title">Before You Read Chapter 10</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 11-2-reading --></div>
-    </div></div>
-  </div>
-  <div class="activity bl-teal">
+    <div class="activity bl-teal">
     <div class="activity-head"><div class="activity-num" style="background:#00796B;">&#x1F4D5;</div>
       <div style="flex:1;"><div class="activity-title">Read: Chapter 10 &mdash; &ldquo;Freedom&rdquo;</div>
       <div class="activity-sub">Today is the chapter you&rsquo;ve been waiting for &mdash; nine years of reading</div></div>
@@ -945,17 +885,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 </div>
 <!-- TAB 4: ASSIGNMENT -->
 <div class="tab-panel" id="tab-assignment">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Assignment &middot; What to Submit</div>
-      <div class="video-wrap-title">Show What You Know — Chapter 10</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 11-2-assignment --></div>
-    </div></div>
-  </div>
-  <div class="callout callout-info" style="margin-bottom:20px;"><span class="callout-icon">&#x1F4EC;</span>
+    <div class="callout callout-info" style="margin-bottom:20px;"><span class="callout-icon">&#x1F4EC;</span>
     <p>Answer in complete sentences with evidence from Chapter 10.</p></div>
 
   <div class="activity bl-teal">

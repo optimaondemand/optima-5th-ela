@@ -101,16 +101,16 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .tab-panel.active{display:block;}
 
 /* ═══════════ VIDEO WRAP ═══════════ */
-.video-wrap{border-radius:18px;overflow:hidden;border:2px solid #E2E8F4;box-shadow:0 4px 20px rgba(14,28,66,.08);background:#000;margin:0 0 22px;}
-.video-wrap-header{display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);border-bottom:2px solid rgba(200,134,42,.25);}
-.video-wrap-type{font-size:10px;color:#C8962A;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:2px;}
-.video-wrap-title{font-size:16px;color:#fff;font-weight:800;line-height:1.2;}
-.video-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;}
-.video-ratio iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
-.video-placeholder{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#0E1C42,#1A2D5A);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;}
-.video-placeholder-icon{font-size:44px;margin-bottom:10px;opacity:.55;}
-.video-placeholder-text{font-size:14px;color:rgba(255,255,255,.55);font-weight:600;line-height:1.5;}
-.video-placeholder-id{font-size:11px;color:rgba(200,134,42,.5);font-family:monospace;margin-top:6px;letter-spacing:.5px;}
+
+
+
+
+
+
+
+
+
+
 
 /* ═══════════ ACTIVITY CARDS ═══════════ */
 .activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04);}
@@ -496,7 +496,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <button class="tab-btn" data-tab="words" onclick="switchTab('words')">🔤 Word Study<span class="tab-check">✓</span></button>
   <button class="tab-btn" data-tab="reading" onclick="switchTab('reading')">👥 Peer Review<span class="tab-check">✓</span></button>
   <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">📬 Submit<span class="tab-check">✓</span></button>
-</div><div class="tab-panel active" id="tab-warmup"><div class="video-wrap"><div class="video-wrap-header"><span style="font-size:18px;">🎬</span><div><div class="video-wrap-type">Welcome · Day 4 of 4</div><div class="video-wrap-title">Day 4 — Peer Review & Final Submission</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🎬</div><div class="video-placeholder-text">Coming soon</div><div class="video-placeholder-id"><!-- slot: 31-4-welcome --></div></div></div></div><div class="activity bl-sage">
+</div><div class="tab-panel active" id="tab-warmup"><div class="activity bl-sage">
   <div class="activity-head"><div class="activity-num" style="background:#52B788;">📝</div><div style="flex:1;"><div class="activity-title">Daily Oral Language</div><div class="activity-sub">Spiral grammar review — from across the year</div></div></div>
   <div class="activity-body">
     <p style="font-size:13px;color:#7A88A8;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">Sentence 1 &mdash; The Correct Model</p>
@@ -508,7 +508,6 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <div class="dol-answer" id="dolAns4"><p><strong>Corrected:</strong> Both novels demonstrate courage; however, the contexts are so different that they reveal entirely different things about what it means to be brave. On one hand, Kit must hide her compassion; on the other hand, Praiseworthy must display his competence in a world that will respect it.</p></div>
   </div>
 </div><div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">📓</div><div style="flex:1;"><div class="activity-title">Read &amp; Write &mdash; Your Reading Journal</div></div></div><div class="activity-body"><div class="socratic-box"><div class="socratic-label">🤔 Before You Begin</div><p class="socratic-q">Today you review your own essay (or a classmate&rsquo;s) as a careful reader. In your journal: What is the ONE thing a comparison essay absolutely must do to be an argument rather than a description? Write 2 sentences.</p></div></div></div><div class="tab-next-wrap"><p class="tab-transition-voice">Day 4 — review, revise, publish.</p><button class="tab-next-btn" onclick="markDone('warmup');switchTab('words')">Continue to 🔤 Word Study →</button></div></div><div class="tab-panel" id="tab-words"><div class="activity bl-gold"><div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">1</div><div style="flex:1;"><div class="activity-title">📚 Vocabulary: Year-Long Review — SWYK</div></div></div><div class="activity-body">
-<div class="video-wrap"><div class="video-wrap-header"><span style="font-size:18px;">📚</span><div><div class="video-wrap-type">Vocabulary · Week 31</div><div class="video-wrap-title">Year-Long Vocabulary Review — Choice Board</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">📚</div><div class="video-placeholder-text">Coming soon</div><div class="video-placeholder-id"><!-- slot: 31-4-vocabulary --></div></div></div></div>
 <div class="key-concept"><div class="key-concept-label">📌 Year&rsquo;s Vocabulary — By Unit</div>
   <p><strong>Historical fiction (WOBP, JT):</strong> defiance, covenant, rebellion, apprentice, tyranny, colonial, parliament, congregation</p>
   <p><strong>Navigation/science (CMB):</strong> celestial navigation, lunar observation, latitude, longitude, lunar tables, maritime</p>
@@ -520,9 +519,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 <div class="textbox-prompt">Five words from across the year — unit identified, definition, essay-connected sentence.</div>
 <textarea class="journal-box" id="journal-vocab" data-label="Vocabulary Year-Long Review SWYK: Five words across three units — definition + essay-connected sentence" placeholder="Word 1 (Unit: ___): Definition: ___  Sentence: ...&#10;&#10;Word 2 (Unit: ___): ...&#10;..." oninput="autoSave(this,'dot-vocab');"></textarea>
 <div class="journal-label">📓 <span class="saved-dot" id="dot-vocab"></span></div></div></div></div><div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">2</div><div style="flex:1;"><div class="activity-title">🔬 Morphology: Year-Long Review — Explain</div></div></div><div class="activity-body">
-<div class="video-wrap"><div class="video-wrap-header"><span style="font-size:18px;">🔬</span><div><div class="video-wrap-type">Morphology · Day 4</div><div class="video-wrap-title">Year-Long Review: Explain the Most Useful Root</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🔬</div><div class="video-placeholder-text">Coming soon</div><div class="video-placeholder-id"><!-- slot: 31-4-morphology --></div></div></div></div>
 <div class="callout callout-think"><span class="callout-icon">✏️</span><p>In your journal: Which root from the entire year do you think gives you the most useful vocabulary for academic writing? Explain in 3 sentences — name the root, give 3 example words, and explain why these words appear so often in essays and analysis.</p></div></div></div><div class="activity bl-sage"><div class="activity-head"><div class="activity-num" style="background:#52B788;">3</div><div style="flex:1;"><div class="activity-title">✏️ Grammar: Final Conventions Check</div></div></div><div class="activity-body">
-<div class="video-wrap"><div class="video-wrap-header"><span style="font-size:18px;">✏️</span><div><div class="video-wrap-type">Grammar · Day 4</div><div class="video-wrap-title">Final Conventions Check — Before Submission</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">✏️</div><div class="video-placeholder-text">Coming soon</div><div class="video-placeholder-id"><!-- slot: 31-4-grammar --></div></div></div></div>
 <div class="key-concept"><div class="key-concept-label">📌 Grammar Spiral Review — All Year</div>
   <p><strong>Sentence types:</strong> compound (FANBOYS) · complex (subordinating conjunctions) · compound-complex</p>
   <p><strong>Openers:</strong> participial phrase · adverb · prepositional phrase · dependent clause</p>
@@ -531,8 +528,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <p style="font-size:13px;color:#7A88A8;margin-top:6px;">In your final comparison project, use all of these tools deliberately — vary your sentence structure, choose the right transition, punctuate carefully.</p>
 </div>
 <div class="callout callout-think"><span class="callout-icon">✏️</span><p>In your journal: Run the full grammar conventions checklist on your essay. Count: How many compound sentences? How many complex sentences? How many transition words? How many different sentence openers? Write your count and note one thing you&rsquo;ll fix.</p></div></div></div><div class="tab-next-wrap"><p class="tab-transition-voice">All reviewed. Peer review and submit.</p><button class="tab-next-btn" onclick="markDone('words');switchTab('reading')">Continue to 👥 Peer Review →</button></div></div><div class="tab-panel" id="tab-reading">
-  <div class="video-wrap"><div class="video-wrap-header"><span style="font-size:18px;">🎬</span><div><div class="video-wrap-type">Peer Review · Day 4</div><div class="video-wrap-title">How to Give Useful Feedback</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🎬</div><div class="video-placeholder-text">Coming soon</div><div class="video-placeholder-id"><!-- slot: 31-4-reading --></div></div></div></div>
-  <div class="activity bl-teal">
+    <div class="activity bl-teal">
     <div class="activity-head"><div class="activity-num" style="background:#00796B;">👥</div><div style="flex:1;"><div class="activity-title">Peer Review: Read to Understand, Then Respond</div><div class="activity-sub">Specific feedback that helps — not just praise or nitpicking</div></div></div>
     <div class="activity-body">
       <div class="key-concept"><div class="key-concept-label">📌 The Three Questions of Good Peer Review</div>

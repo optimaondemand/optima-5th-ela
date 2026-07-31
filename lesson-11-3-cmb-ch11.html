@@ -102,16 +102,16 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .tab-panel.active{display:block;}
 
 /* ═══════════ VIDEO WRAP ═══════════ */
-.video-wrap{border-radius:18px;overflow:hidden;border:2px solid #E2E8F4;box-shadow:0 4px 20px rgba(14,28,66,.08);background:#000;margin:0 0 22px;}
-.video-wrap-header{display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0A2A4A,#0E3A5C);border-bottom:2px solid rgba(200,150,42,.25);}
-.video-wrap-type{font-size:10px;color:#00897B;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:2px;}
-.video-wrap-title{font-size:16px;color:#fff;font-weight:800;line-height:1.2;}
-.video-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;}
-.video-ratio iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
-.video-placeholder{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#0E1C42,#1A2D5A);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;}
-.video-placeholder-icon{font-size:44px;margin-bottom:10px;opacity:.55;}
-.video-placeholder-text{font-size:14px;color:rgba(255,255,255,.55);font-weight:600;line-height:1.5;}
-.video-placeholder-id{font-size:11px;color:rgba(200,150,42,.5);font-family:monospace;margin-top:6px;letter-spacing:.5px;}
+
+
+
+
+
+
+
+
+
+
 
 /* ═══════════ ACTIVITY CARDS ═══════════ */
 .activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04);}
@@ -622,17 +622,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">&#x1F4EC; Assignment<span class="tab-check">&#10003;</span></button>
 </div>
 <div class="tab-panel active" id="tab-warmup">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Welcome &middot; Day 3 of 4</div>
-      <div class="video-wrap-title">Welcome to Lesson 11.3!</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 11-3-welcome --></div>
-    </div></div>
-  </div>
-
+  
   <div class="activity bl-teal">
     <div class="activity-head"><div class="activity-num" style="background:#00796B;">&#x1F4DD;</div>
       <div style="flex:1;"><div class="activity-title">Daily Oral Language</div>
@@ -662,17 +652,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="activity-sub">Use &mdash; choose the right word from the root family</div></div>
     </div>
     <div class="activity-body">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Morphology &middot; Day 3</div>
-      <div class="video-wrap-title">Roots geo/terr in Context: Use It</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 11-3-morphology --></div>
-    </div></div>
-  </div>
-      <p>You&rsquo;ve defined and identified the roots. Now use them &mdash; choose the word that fits each sentence about navigation and Nat&rsquo;s world.</p>
+        <p>You&rsquo;ve defined and identified the roots. Now use them &mdash; choose the word that fits each sentence about navigation and Nat&rsquo;s world.</p>
       <div class="key-concept"><div class="key-concept-label">&#x1F4CC; Word bank</div>
         <p><strong>terrestrial &middot; geography &middot; terrain &middot; geology &middot; Mediterranean &middot; territory</strong></p>
       </div>
@@ -713,17 +693,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="activity-sub">Fill in the blank with this week&rsquo;s words</div></div>
     </div>
     <div class="activity-body">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Vocabulary &middot; Day 3</div>
-      <div class="video-wrap-title">Using This Week's Words</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 11-3-vocabulary --></div>
-    </div></div>
-  </div>
-      <div class="fillin-game" id="fillinGame">
+        <div class="fillin-game" id="fillinGame">
         <div class="fillin-item">To find his exact position, Nat took a careful <input class="fillin-input" data-answer="observation" maxlength="12" placeholder="______"> of the sun at noon.</div>
         <div class="fillin-item">The <input class="fillin-input" data-answer="supercargo" maxlength="10" placeholder="______"> of a merchant vessel managed all the cargo and commercial business of the voyage.</div>
         <div class="fillin-item">A navigator must know both latitude and <input class="fillin-input" data-answer="longitude" maxlength="10" placeholder="______"> to pinpoint a ship&rsquo;s location.</div>
@@ -739,17 +709,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="activity-sub">Use &mdash; rewrite the paragraph correctly in your journal</div></div>
     </div>
     <div class="activity-body">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Grammar &middot; Day 3</div>
-      <div class="video-wrap-title">Using Correct S-V Agreement</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 11-3-grammar --></div>
-    </div></div>
-  </div>
-      <p>This paragraph about Nat at sea has multiple subject-verb agreement errors. Identify the subject of each underlined verb, then rewrite the whole paragraph correctly in your reading journal.</p>
+        <p>This paragraph about Nat at sea has multiple subject-verb agreement errors. Identify the subject of each underlined verb, then rewrite the whole paragraph correctly in your reading journal.</p>
       <div class="dol-fix-sentence" style="line-height:2.0;">
         Nat, along with the sailors, spend his evenings calculating position. The measurements of the stars requires a precise instrument. His notebooks, filled with corrections, sits on the table. The captain, as well as the crew, trust Nat&rsquo;s mathematical skill completely.
       </div>
@@ -767,17 +727,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="activity-sub">Show What You Know &mdash; spell and use academic words</div></div>
     </div>
     <div class="activity-body">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Spelling &middot; Day 3</div>
-      <div class="video-wrap-title">Schwa: Use It</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 11-3-spelling --></div>
-    </div></div>
-  </div>
-      <div class="swyk">
+        <div class="swyk">
         <div class="swyk-label">&#x1F524; Show What You Know &middot; Spelling</div>
         <div class="swyk-prompt">Choose three words from the list: <em>navigation &middot; terrestrial &middot; calculation &middot; observation &middot; territory</em>. For each word: (1) write it correctly, (2) mark its syllable breaks with dots, (3) underline the schwa syllable, (4) write a sentence using the word correctly in the context of navigation or Nat&rsquo;s world.</div>
         <div class="textbox-prompt">Word 1: [word] with dots · Schwa in syllable: ___ · Sentence. Repeat for words 2 and 3.</div>
@@ -852,17 +802,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       </div></div>
     <div class="tracker-chapter-label">&#x1F4CD; You are here: <strong>Week 11 &mdash; Chapter 11 — What Next?</strong></div>
   </div>
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Reading &middot; Chapter Introduction</div>
-      <div class="video-wrap-title">Before You Read Chapter 11</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 11-3-reading --></div>
-    </div></div>
-  </div>
-  <div class="activity bl-teal">
+    <div class="activity bl-teal">
     <div class="activity-head"><div class="activity-num" style="background:#00796B;">&#x1F4D5;</div>
       <div style="flex:1;"><div class="activity-title">Read: Chapter 11 &mdash; &ldquo;What Next?&rdquo;</div>
       <div class="activity-sub">Chapter 11 puts Nat at sea for the first time &mdash; not in a story, not imagin</div></div>
@@ -901,17 +841,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 </div>
 <!-- TAB 4: ASSIGNMENT -->
 <div class="tab-panel" id="tab-assignment">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Assignment &middot; What to Submit</div>
-      <div class="video-wrap-title">Show What You Know — Chapter 11</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 11-3-assignment --></div>
-    </div></div>
-  </div>
-  <div class="callout callout-info" style="margin-bottom:20px;"><span class="callout-icon">&#x1F4EC;</span>
+    <div class="callout callout-info" style="margin-bottom:20px;"><span class="callout-icon">&#x1F4EC;</span>
     <p>Answer in complete sentences with evidence from Chapter 11.</p></div>
 
   <div class="activity bl-teal">

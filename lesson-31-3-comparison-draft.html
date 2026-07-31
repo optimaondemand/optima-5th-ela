@@ -101,16 +101,16 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .tab-panel.active{display:block;}
 
 /* ═══════════ VIDEO WRAP ═══════════ */
-.video-wrap{border-radius:18px;overflow:hidden;border:2px solid #E2E8F4;box-shadow:0 4px 20px rgba(14,28,66,.08);background:#000;margin:0 0 22px;}
-.video-wrap-header{display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);border-bottom:2px solid rgba(200,134,42,.25);}
-.video-wrap-type{font-size:10px;color:#C8962A;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:2px;}
-.video-wrap-title{font-size:16px;color:#fff;font-weight:800;line-height:1.2;}
-.video-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;}
-.video-ratio iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
-.video-placeholder{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#0E1C42,#1A2D5A);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;}
-.video-placeholder-icon{font-size:44px;margin-bottom:10px;opacity:.55;}
-.video-placeholder-text{font-size:14px;color:rgba(255,255,255,.55);font-weight:600;line-height:1.5;}
-.video-placeholder-id{font-size:11px;color:rgba(200,134,42,.5);font-family:monospace;margin-top:6px;letter-spacing:.5px;}
+
+
+
+
+
+
+
+
+
+
 
 /* ═══════════ ACTIVITY CARDS ═══════════ */
 .activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04);}
@@ -495,7 +495,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <button class="tab-btn" data-tab="words" onclick="switchTab('words')">🔤 Word Study<span class="tab-check">✓</span></button>
   <button class="tab-btn" data-tab="reading" onclick="switchTab('reading')">📝 Draft<span class="tab-check">✓</span></button>
   <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">📬 Assignment<span class="tab-check">✓</span></button>
-</div><div class="tab-panel active" id="tab-warmup"><div class="video-wrap"><div class="video-wrap-header"><span style="font-size:18px;">🎬</span><div><div class="video-wrap-type">Welcome · Day 3 of 4</div><div class="video-wrap-title">Day 3 — Full Draft</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🎬</div><div class="video-placeholder-text">Coming soon</div><div class="video-placeholder-id"><!-- slot: 31-3-welcome --></div></div></div></div><div class="activity bl-sage">
+</div><div class="tab-panel active" id="tab-warmup"><div class="activity bl-sage">
   <div class="activity-head"><div class="activity-num" style="background:#52B788;">📝</div><div style="flex:1;"><div class="activity-title">Daily Oral Language</div><div class="activity-sub">Spiral grammar review — from across the year</div></div></div>
   <div class="activity-body">
     <p style="font-size:13px;color:#7A88A8;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">Sentence 1 &mdash; The Correct Model</p>
@@ -507,7 +507,6 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <div class="dol-answer" id="dolAns3"><p><strong>Corrected:</strong> The most significant difference between the two novels is not the definition of courage itself but the context in which it must be exercised. Both authors suggest, however, that courage at its core is a choice made under pressure — one in which the character could have chosen safety.</p></div>
   </div>
 </div><div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">📓</div><div style="flex:1;"><div class="activity-title">Read &amp; Write &mdash; Your Reading Journal</div></div></div><div class="activity-body"><div class="socratic-box"><div class="socratic-label">🤔 Before You Begin</div><p class="socratic-q">Today you write the comparison paragraph — the one that explains WHY the difference between your two novels matters. In your journal: What is the most interesting difference between the two novels&rsquo; treatment of your theme? Write 2 sentences.</p></div></div></div><div class="tab-next-wrap"><p class="tab-transition-voice">Spelling SWYK, then your full draft.</p><button class="tab-next-btn" onclick="markDone('warmup');switchTab('words')">Continue to 🔤 Word Study →</button></div></div><div class="tab-panel" id="tab-words"><div class="activity bl-teal"><div class="activity-head"><div class="activity-num" style="background:#00796B;">1</div><div style="flex:1;"><div class="activity-title">🔠 Spelling: Cumulative Review — SWYK</div></div></div><div class="activity-body">
-<div class="video-wrap"><div class="video-wrap-header"><span style="font-size:18px;">🔠</span><div><div class="video-wrap-type">Spelling · Day 3</div><div class="video-wrap-title">Cumulative Review: Edit Both Passages</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🔠</div><div class="video-placeholder-text">Coming soon</div><div class="video-placeholder-id"><!-- slot: 31-3-spelling --></div></div></div></div>
 <div class="key-concept"><div class="key-concept-label">📌 Cumulative Spelling — All Units</div>
   <p><strong>From this year&rsquo;s units:</strong> fortitude · tenacious · ludicrous · extraction · notoriety · consequently · nevertheless · validity · furthermore · persistence · descriptive · exuberance · however · therefore · creativity · prosperous · defiance · colonial · rebellion · maritime · navigation · celestial · latitude · longitude</p>
   <p style="font-size:13px;color:#7A88A8;margin-top:6px;">These are the words that appear in your comparison project. Spell them correctly in your final draft — they show the vocabulary of a 5th-grade scholar.</p>
@@ -521,12 +520,9 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 <div class="textbox-prompt">Corrected versions with each correction marked in [brackets].</div>
 <textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK: Edit two passages — all misspellings corrected in brackets" placeholder="Passage 1 corrected:&#10;Kit Tyler demonstrated remarkable persistence [persistance] and fortitude [fortitued]...&#10;&#10;Passage 2 corrected:&#10;..." oninput="autoSave(this,'dot-spelling');"></textarea>
 <div class="journal-label">📓 <span class="saved-dot" id="dot-spelling"></span></div></div></div></div><div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">2</div><div style="flex:1;"><div class="activity-title">🔬 Morphology: Year-Long Review — Use</div></div></div><div class="activity-body">
-<div class="video-wrap"><div class="video-wrap-header"><span style="font-size:18px;">🔬</span><div><div class="video-wrap-type">Morphology · Day 3</div><div class="video-wrap-title">Year-Long Review: Use in Your Essay</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🔬</div><div class="video-placeholder-text">Coming soon</div><div class="video-placeholder-id"><!-- slot: 31-3-morphology --></div></div></div></div>
 <div class="callout callout-think"><span class="callout-icon">✏️</span><p>In your journal: Look at your draft from Day 2. Find one place where you can use a word containing a unit root to be more precise. Write the original sentence and the revised sentence with the root word underlined.</p></div></div></div><div class="activity bl-sage"><div class="activity-head"><div class="activity-num" style="background:#52B788;">3</div><div style="flex:1;"><div class="activity-title">✏️ Grammar: Sentence Variety Check in Your Draft</div></div></div><div class="activity-body">
-<div class="video-wrap"><div class="video-wrap-header"><span style="font-size:18px;">✏️</span><div><div class="video-wrap-type">Grammar · Day 3</div><div class="video-wrap-title">Sentence Variety Check — Apply to Your Draft</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">✏️</div><div class="video-placeholder-text">Coming soon</div><div class="video-placeholder-id"><!-- slot: 31-3-grammar --></div></div></div></div>
 <div class="callout callout-think"><span class="callout-icon">✏️</span><p>In your journal: Read the first body paragraph of your draft aloud. Does every sentence begin the same way? Find and revise one sentence to begin with a participial phrase or a subordinating conjunction. Write both versions.</p></div></div></div><div class="tab-next-wrap"><p class="tab-transition-voice">Spelling sharp. Complete your draft.</p><button class="tab-next-btn" onclick="markDone('words');switchTab('reading')">Continue to 📝 Draft →</button></div></div><div class="tab-panel" id="tab-reading">
-  <div class="video-wrap"><div class="video-wrap-header"><span style="font-size:18px;">🎬</span><div><div class="video-wrap-type">Project Workshop · Day 3</div><div class="video-wrap-title">Building the Comparison Paragraph</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🎬</div><div class="video-placeholder-text">Coming soon</div><div class="video-placeholder-id"><!-- slot: 31-3-reading --></div></div></div></div>
-  <div class="activity bl-teal">
+    <div class="activity bl-teal">
     <div class="activity-head"><div class="activity-num" style="background:#00796B;">📝</div><div style="flex:1;"><div class="activity-title">Writing Workshop: The Comparison Paragraph</div><div class="activity-sub">The paragraph that makes your essay a real argument</div></div></div>
     <div class="activity-body">
       <div class="key-concept"><div class="key-concept-label">📌 How to Write the Comparison Paragraph</div>

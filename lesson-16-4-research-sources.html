@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Optima Academy Online — Lesson 16.4: The Writer's Bridge — Comparing Sources &amp; Looking Ahead</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E1C42;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.page-wrap{max-width:920px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(14,28,66,.08);}
+
+/* ═══════════ PROGRESS BAR ═══════════ */
+.progress-wrap{position:sticky;top:0;z-index:200;background:#0E1C42;padding:8px 20px 10px;display:flex;align-items:center;gap:14px;}
+.progress-label{font-size:12px;color:#F9A825;font-weight:800;text-transform:uppercase;letter-spacing:.8px;white-space:nowrap;}
+.progress-track{flex:1;height:10px;background:rgba(255,255,255,.1);border-radius:10px;overflow:hidden;}
+.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,#F9A825,#00897B);border-radius:10px;transition:width .4s ease;}
+.progress-pct{font-size:13px;color:#F9A825;font-weight:800;min-width:36px;text-align:right;}
+
+/* ═══════════ HEADER ═══════════ */
+.header{background:linear-gradient(135deg,#0E1C42 0%,#1A2D5A 60%,#243868 100%);border-bottom:6px solid #B8863B;padding:20px 28px 18px;position:relative;overflow:hidden;}
+.header::after{content:'';position:absolute;bottom:6px;left:0;right:0;height:3px;background:linear-gradient(90deg,#8B3A2E,#B8863B,#8B3A2E);}
+.header-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.header-logo{width:52px;height:52px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.15);}
+.header-logo img{width:48px;height:38px;}
+.header-org{font-size:22px;color:#fff;font-weight:800;line-height:1.15;}
+.header-sub{font-size:11px;color:#B8863B;letter-spacing:.5px;}
+.header-title{font-family:Georgia,serif;font-size:28px;color:#fff;font-weight:700;line-height:1.2;margin-bottom:10px;}
+.header-title em{color:#F9A825;font-style:italic;}
+.header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(184,134,59,.2);border:1.5px solid rgba(184,134,59,.4);border-radius:28px;padding:6px 16px;}
+.header-badge-icon{font-size:22px;}
+.header-badge-text{font-size:18px;color:#fff;font-weight:800;}
+
+/* ═══════════ HERO BANNER ═══════════ */
+.hero-visual{background:linear-gradient(180deg,#070a12 0%,#0e1829 60%,#1a2540 100%);padding:0;position:relative;overflow:hidden;border-bottom:3px solid #00695C;}
+.hero-visual svg{display:block;width:100%;height:auto;}
+
+/* ═══════════ INFO STRIP ═══════════ */
+.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E2E8F4;}
+.info-cell{flex:1;min-width:150px;padding:12px 16px;border-right:1px solid #E2E8F4;display:flex;align-items:center;gap:10px;}
+.info-cell:last-child{border-right:none;}
+.info-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.info-label{font-size:10px;color:#7A88A8;text-transform:uppercase;letter-spacing:.5px;font-weight:700;}
+.info-value{font-size:16px;color:#0E1C42;font-weight:800;line-height:1.2;}
+.info-detail{font-size:11px;color:#3A4A6B;line-height:1.3;}
+
+/* ═══════════ QUOTE STRIP ═══════════ */
+.quote-strip{background:linear-gradient(135deg,#FFF8F0 0%,#FFF3DC 100%);border-bottom:2px solid #F5E6C8;padding:14px 28px;text-align:center;}
+.quote-strip-text{font-family:Georgia,serif;font-size:16px;font-style:italic;color:#5A4A3A;line-height:1.6;}
+.quote-strip-attr{font-size:11px;color:#7A88A8;font-weight:700;margin-top:4px;text-transform:uppercase;letter-spacing:.5px;}
+
+/* ═══════════ INTRO COLLAPSIBLE ═══════════ */
+.intro-section{transition:max-height .35s ease,padding .35s ease,opacity .25s ease;overflow:hidden;}
+.intro-section.collapsed .intro-content{display:none;}
+.intro-collapsed-bar{display:none;align-items:center;gap:12px;padding:10px 28px;background:#FFF8F0;border-bottom:2px solid #F5E6C8;cursor:pointer;transition:background .15s;}
+.intro-collapsed-bar:hover{background:#FFF3DC;}
+.intro-section.collapsed .intro-collapsed-bar{display:flex;}
+.intro-collapsed-icon{font-size:18px;}
+.intro-collapsed-text{font-size:14px;color:#5A4A3A;font-weight:700;flex:1;}
+.intro-collapsed-toggle{font-size:12px;color:#00695C;font-weight:800;text-transform:uppercase;letter-spacing:.5px;}
+
+/* ═══════════ INTRO 2-COL ═══════════ */
+.intro-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 28px 4px;}
+.intro-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04);}
+.intro-card-head{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:2px solid;}
+.intro-card-head-icon{width:40px;height:40px;border-radius:50%;color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.intro-card-head-label{font-size:10px;color:#7A88A8;text-transform:uppercase;letter-spacing:.8px;font-weight:700;}
+.intro-card-head-title{font-size:18px;color:#0E1C42;font-weight:800;line-height:1.2;}
+.intro-card-body{padding:14px 18px;}
+.intro-card-body p{font-size:15px;color:#3A4A6B;line-height:1.65;margin-bottom:8px;}
+.intro-card-body p:last-child{margin-bottom:0;}
+.obj-line{display:flex;align-items:flex-start;gap:8px;font-size:15px;color:#0E1C42;line-height:1.55;margin-bottom:8px;}
+.obj-line:last-child{margin-bottom:0;}
+.obj-icon{flex-shrink:0;font-size:17px;}
+.theme-question .intro-card-head{background:#FFF3DC;border-color:#F5E6C8;}
+.theme-question .intro-card-head-icon{background:#F9A825;}
+.theme-objectives .intro-card-head{background:#E0F2F1;border-color:#B2DFDB;}
+.theme-objectives .intro-card-head-icon{background:#00695C;}
+
+/* ═══════════ TODAY'S PATH ═══════════ */
+.todays-path{display:flex;align-items:center;justify-content:center;gap:6px;padding:12px 28px;flex-wrap:wrap;}
+.path-pill{display:inline-flex;align-items:center;gap:5px;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:700;color:#fff;white-space:nowrap;}
+.path-pill.p-warmup{background:#52B788;}
+.path-pill.p-words{background:#F9A825;color:#0E1C42;}
+.path-pill.p-reading{background:#00796B;}
+.path-pill.p-assign{background:#7B5EA7;}
+.path-arrow{font-size:16px;color:#B0B8CC;}
+
+/* ═══════════ NEED STRIP ═══════════ */
+.need-strip{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:12px 28px 18px;}
+.need-strip-label{font-size:13px;color:#3A4A6B;font-weight:700;white-space:nowrap;}
+.need-chip{display:inline-flex;align-items:center;gap:5px;background:#E0F2F1;border:1.5px solid #B2DFDB;border-radius:20px;padding:5px 12px;font-size:13px;color:#0E1C42;font-weight:700;}
+
+/* ═══════════ TAB BAR ═══════════ */
+.tab-bar{position:sticky;top:38px;z-index:100;background:#fff;border-bottom:3px solid #E2E8F4;display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;box-shadow:0 -4px 0 0 #0E1C42;}
+.tab-bar::-webkit-scrollbar{display:none;}
+.tab-btn{flex:1;min-width:130px;padding:12px 8px 11px;background:transparent;border:none;border-bottom:4px solid transparent;font-family:system-ui,sans-serif;font-size:13px;font-weight:700;color:#7A88A8;cursor:pointer;transition:all .2s;white-space:nowrap;line-height:1.3;text-align:center;}
+.tab-btn:hover{color:#0E1C42;background:#E0F2F1;}
+.tab-btn.active{color:#0E1C42;border-bottom-color:#00695C;background:#fff;}
+.tab-btn .tab-check{display:none;font-size:12px;color:#34B76F;margin-left:4px;font-weight:800;}
+.tab-btn.visited .tab-check{display:inline;}
+.tab-panel{display:none;padding:24px 28px 36px;}
+.tab-panel.active{display:block;}
+
+/* ═══════════ VIDEO WRAP ═══════════ */
+
+
+
+
+
+
+
+
+
+
+
+/* ═══════════ ACTIVITY CARDS ═══════════ */
+.activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04);}
+.activity.bl-sage{border-left:6px solid #52B788;}
+.activity.bl-gold{border-left:6px solid #F9A825;}
+.activity.bl-teal{border-left:6px solid #00796B;}
+.activity.bl-plum{border-left:6px solid #7B5EA7;}
+.activity.bl-navy{border-left:6px solid #0E1C42;}
+.activity-head{display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E2E8F4;}
+.activity-num{width:38px;height:38px;border-radius:14px;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.activity-title{font-size:19px;color:#0E1C42;font-weight:800;line-height:1.2;}
+.activity-sub{font-size:12px;color:#7A88A8;}
+.activity-body{padding:18px 22px;}
+.activity-body p{font-size:17px;color:#3A4A6B;line-height:1.75;margin-bottom:12px;}
+.activity-body p:last-child{margin-bottom:0;}
+
+/* ═══════════ CALLOUTS ═══════════ */
+.callout{border-radius:14px;padding:16px 18px;display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;}
+.callout:last-child{margin-bottom:0;}
+.callout-icon{font-size:28px;flex-shrink:0;margin-top:2px;}
+.callout p{font-size:16px;color:#0E1C42;line-height:1.65;margin:0;}
+.callout-info{background:#E0F2F1;border:2px solid #B2DFDB;}
+.callout-think{background:#FFF3DC;border:2px solid #F5E6C8;}
+.callout-tip{background:#E8F5E9;border:2px solid #C8E6C9;}
+.callout-vocab{background:#F3E5F5;border:2px solid #E1BEE7;}
+.callout-submit{background:#FCE4EC;border:2px solid #F8BBD0;}
+.callout-bridge{background:linear-gradient(135deg,#FFF8F0 0%,#FFF3DC 100%);border:2px solid #B8863B;}
+
+/* ═══════════ SOCRATIC BOX ═══════════ */
+.socratic-box{background:linear-gradient(135deg,#F3E5F5 0%,#EDE7F6 100%);border:2px solid #D1C4E9;border-radius:14px;padding:16px 18px;margin-bottom:14px;}
+.socratic-box:last-child{margin-bottom:0;}
+.socratic-label{font-size:12px;color:#7B5EA7;text-transform:uppercase;letter-spacing:.5px;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+.socratic-q{font-size:16px;color:#0E1C42;line-height:1.7;font-style:italic;margin-bottom:8px;}
+.socratic-q:last-child{margin-bottom:0;}
+.socratic-q strong{font-style:normal;color:#0E1C42;}
+
+/* ═══════════ DOL COMPONENTS ═══════════ */
+.dol-model-sentence{background:#fff;border:1.5px solid #E2E8F4;border-left:4px solid #00695C;border-radius:10px;padding:14px 18px;font-family:Georgia,serif;font-size:17px;color:#0E1C42;line-height:1.7;margin-bottom:8px;cursor:default;}
+.dol-highlight-word{padding:2px 4px;border-radius:4px;cursor:pointer;transition:background .2s,color .2s;}
+.dol-highlight-word:hover{background:#E0F2F1;}
+.dol-highlight-word.tapped{background:#C8E6C9;color:#1B5E20;}
+.dol-explanation{font-size:14px;color:#00695C;font-style:italic;padding:6px 12px;min-height:28px;margin-bottom:10px;}
+.dol-fix-sentence{background:#FFF8E1;border:1.5px solid #FFE082;border-left:4px solid #F9A825;border-radius:10px;padding:14px 18px;font-family:Georgia,serif;font-size:17px;color:#0E1C42;line-height:1.7;margin-bottom:10px;}
+.dol-check-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;background:linear-gradient(135deg,#7B5EA7,#9575CD);color:#fff;border:none;border-radius:20px;font-family:system-ui,sans-serif;font-size:14px;font-weight:700;cursor:pointer;margin-top:10px;transition:transform .15s;}
+.dol-check-btn:hover{transform:translateY(-2px);}
+.dol-answer{display:none;margin-top:10px;padding:12px 16px;background:#E8F5E9;border:2px solid #C8E6C9;border-left:4px solid #4CAF50;border-radius:10px;font-size:15px;color:#0E1C42;line-height:1.65;}
+.dol-answer.show{display:block;}
+
+/* ═══════════ POETRY ═══════════ */
+.poem-box{background:linear-gradient(135deg,#FFF8F0 0%,#FFF3DC 100%);border:2px solid #F5E6C8;border-radius:14px;padding:18px 22px;margin-bottom:14px;}
+.poem-title{font-family:Georgia,serif;font-size:18px;color:#0E1C42;font-weight:700;margin-bottom:4px;}
+.poem-author{font-size:13px;color:#7A88A8;font-style:italic;margin-bottom:12px;}
+.poem-text{font-family:Georgia,serif;font-size:16px;color:#3A4A6B;line-height:1.8;font-style:italic;white-space:pre-line;}
+
+/* ═══════════ KEY CONCEPT ═══════════ */
+.key-concept{background:#FFF3DC;border:2px solid #F5E6C8;border-radius:14px;padding:16px 18px;margin-bottom:14px;}
+.key-concept:last-child{margin-bottom:0;}
+.key-concept-label{font-size:12px;color:#F9A825;text-transform:uppercase;letter-spacing:.5px;font-weight:800;margin-bottom:8px;}
+.key-concept p{font-size:15px;color:#0E1C42;line-height:1.7;margin-bottom:6px;}
+
+/* ═══════════ PASSAGE BOX (research text) ═══════════ */
+.passage-box{background:linear-gradient(170deg,#FFFDF8 0%,#FFF8F0 100%);border:2px solid #F0E4CC;border-radius:14px;padding:20px 24px;margin-bottom:16px;}
+.passage-label{font-size:12px;color:#B8863B;text-transform:uppercase;letter-spacing:.8px;font-weight:800;margin-bottom:10px;}
+.passage-text{font-family:Georgia,serif;font-size:16px;color:#3A2E1C;line-height:1.85;}
+.passage-text p{margin-bottom:12px;}
+.passage-text p:last-child{margin-bottom:0;}
+
+/* ═══════════ VOCABULARY FLIP CARDS ═══════════ */
+.vocab-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
+.flip-card{perspective:800px;height:175px;cursor:pointer;}
+.flip-card-inner{position:relative;width:100%;height:100%;transition:transform .5s ease;transform-style:preserve-3d;}
+.flip-card.flipped .flip-card-inner{transform:rotateY(180deg);}
+.flip-card-front,.flip-card-back{position:absolute;top:0;left:0;width:100%;height:100%;border-radius:16px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px 16px;text-align:center;border:2px solid #E2E8F4;box-shadow:0 2px 10px rgba(14,28,66,.06);}
+.flip-card-front{background:#fff;border-top:5px solid #00695C;}
+.flip-card-front .fc-emoji{font-size:28px;margin-bottom:6px;}
+.flip-card-front .fc-word{font-family:Georgia,serif;font-size:17px;font-weight:700;color:#0E1C42;margin-bottom:4px;}
+.flip-card-front .fc-tap{font-size:11px;color:#7A88A8;font-weight:600;letter-spacing:.3px;}
+.flip-card-back{background:linear-gradient(145deg,#0E1C42,#1A2D5A);border-color:#0E1C42;transform:rotateY(180deg);}
+.flip-card-back .fc-def{font-size:13.5px;color:#fff;line-height:1.5;font-weight:600;}
+.flip-card-back .fc-word-back{font-size:10px;color:#00897B;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:6px;}
+.fc-color-1 .flip-card-front{border-top-color:#00695C;}
+.fc-color-2 .flip-card-front{border-top-color:#F9A825;}
+.fc-color-3 .flip-card-front{border-top-color:#7B5EA7;}
+.fc-color-4 .flip-card-front{border-top-color:#52B788;}
+.fc-color-5 .flip-card-front{border-top-color:#E57373;}
+.fc-color-6 .flip-card-front{border-top-color:#B8863B;}
+
+/* ═══════════ RWM ═══════════ */
+.rwm-box{background:#fff;border:2px solid #E2E8F4;border-radius:14px;overflow:hidden;margin-bottom:14px;}
+.rwm-header{background:linear-gradient(135deg,#0E1C42,#1A2D5A);color:#fff;padding:12px 18px;font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;}
+.rwm-sentence{background:linear-gradient(135deg,#FFF8F0 0%,#FFF3DC 100%);border-bottom:2px solid #F5E6C8;padding:16px 20px;font-family:Georgia,serif;font-size:17px;color:#0E1C42;line-height:1.7;font-style:italic;}
+.rwm-step{padding:14px 20px;border-bottom:1.5px solid #E2E8F4;}
+.rwm-step:last-child{border-bottom:none;}
+.rwm-step-label{display:flex;align-items:center;gap:8px;font-size:14px;color:#00695C;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
+.rwm-step-text{font-size:15px;color:#3A4A6B;line-height:1.6;}
+.rwm-frame{background:#FAFBFF;border:1.5px dashed #F9A825;border-radius:8px;padding:10px 14px;margin-top:8px;font-family:Georgia,serif;font-size:15px;color:#B8863B;font-style:italic;}
+
+/* ═══════════ STORY JOURNEY TRACKER ═══════════ */
+.tracker-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04);margin-bottom:22px;}
+.tracker-header{display:flex;align-items:center;gap:10px;padding:12px 20px;background:linear-gradient(135deg,#004D40 0%,#00695C 100%);border-bottom:2px solid #00796B;}
+.tracker-header-icon{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);color:#fff;font-size:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.tracker-header-label{font-size:10px;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.8px;font-weight:700;}
+.tracker-header-title{font-size:17px;color:#fff;font-weight:800;line-height:1.2;}
+.scene-wrap{width:100%;position:relative;height:210px;overflow:hidden;border-bottom:3px solid #4A3B24;background:linear-gradient(180deg,#2C2416 0%,#3A2E1C 35%,#3A4560 65%,#1A2540 100%);user-select:none;}
+.cloud{position:absolute;background:rgba(255,255,255,.12);border-radius:50%;filter:blur(2px);}
+.hills-far{position:absolute;bottom:60px;left:0;right:0;height:80px;opacity:.3;}
+.path-svg{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;}
+.tree,.house,.flower,.landmark{position:absolute;pointer-events:none;z-index:1;filter:drop-shadow(0 2px 2px rgba(0,0,0,.15));}
+.flower{filter:none;font-size:12px;z-index:2;}
+.node{position:absolute;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;z-index:5;border:3px solid #f5f0e6;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.18),inset 0 -2px 0 rgba(0,0,0,.05);}
+.node.done{background:#B8863B;border-color:#F9A825;box-shadow:0 0 0 2px #B8863B,0 2px 8px rgba(184,134,59,.45);color:#fff;}
+.node.active{background:#F9A825;border-color:#FFF3DC;box-shadow:0 0 0 3px #F9A825,0 0 14px rgba(249,168,37,.5);transform:scale(1.15);color:#0E1C42;}
+.node.upcoming{opacity:.55;}
+.char-token{position:absolute;font-size:26px;z-index:20;pointer-events:none;filter:drop-shadow(0 3px 5px rgba(0,0,0,.3));animation:hop 2s ease-in-out infinite;}
+@keyframes hop{0%,100%{transform:translateY(0) rotate(-3deg);}50%{transform:translateY(-5px) rotate(3deg);}}
+.title-plaque{position:absolute;top:8px;left:50%;transform:translateX(-50%);background:rgba(253,248,240,.92);border:2px solid #c4a882;border-radius:8px;padding:3px 18px 4px;z-index:15;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.1);white-space:nowrap;}
+.title-plaque h1{font-family:Georgia,serif;font-size:14px;font-weight:700;color:#4A3B24;line-height:1.2;}
+.title-plaque h1 em{color:#B8863B;font-style:italic;}
+.tracker-chapter-label{text-align:center;padding:10px 16px;font-size:13px;color:#7A88A8;font-weight:600;background:#FAFBFF;border-top:1px solid #E2E8F4;}
+.tracker-chapter-label strong{color:#B8863B;}
+
+/* ═══════════ OPEN BOOK CARD ═══════════ */
+.open-book-wrap{position:relative;margin-bottom:22px;padding:10px 6px 6px;}
+.open-book-cover{position:absolute;top:0;left:2px;right:2px;bottom:0;background:linear-gradient(145deg,#2C2416,#4A3B24,#6B5636);border-radius:6px 20px 20px 6px;box-shadow:0 4px 20px rgba(74,59,36,.25);}
+.open-book-spine{position:absolute;top:0;left:50%;transform:translateX(-50%);width:22px;height:100%;background:linear-gradient(90deg,#1C1710,#2C2416,#1C1710);border-radius:4px;z-index:1;box-shadow:inset 0 0 6px rgba(0,0,0,.2);}
+.open-book-pages-3{position:absolute;top:3px;left:14px;right:14px;bottom:3px;background:#E8E0D4;border-radius:3px 12px 12px 3px;z-index:2;}
+.open-book-pages-2{position:absolute;top:5px;left:16px;right:16px;bottom:4px;background:#F0E8DC;border-radius:3px 10px 10px 3px;z-index:3;}
+.open-book-pages-1{position:absolute;top:7px;left:18px;right:18px;bottom:5px;background:#F5EEE4;border-radius:3px 8px 8px 3px;z-index:4;}
+.open-book{position:relative;background:linear-gradient(170deg,#FFFDF8 0%,#FFF8F0 40%,#FFFDF8 100%);border:none;border-radius:3px 6px 6px 3px;padding:0;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;min-height:160px;z-index:5;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+.open-book::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:24px;height:100%;background:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.04) 20%,rgba(0,0,0,.07) 40%,rgba(90,70,50,.10) 50%,rgba(0,0,0,.07) 60%,rgba(0,0,0,.04) 80%,transparent 100%);z-index:6;pointer-events:none;}
+.open-book::after{content:'';position:absolute;top:8px;bottom:8px;right:0;width:4px;background:repeating-linear-gradient(180deg,transparent 0px,transparent 3px,rgba(200,185,165,.3) 3px,rgba(200,185,165,.3) 4px);border-radius:0 4px 4px 0;z-index:6;pointer-events:none;}
+.open-book-left{display:flex;align-items:center;justify-content:center;padding:24px;opacity:.3;position:relative;}
+.open-book-left::before{content:'';position:absolute;top:8px;bottom:8px;left:0;width:4px;background:repeating-linear-gradient(180deg,transparent 0px,transparent 3px,rgba(200,185,165,.3) 3px,rgba(200,185,165,.3) 4px);border-radius:4px 0 0 4px;}
+.open-book-left-deco{font-size:48px;filter:grayscale(30%);}
+.open-book-right{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 28px 24px 20px;}
+.open-book-title{font-family:Georgia,serif;font-size:22px;font-weight:700;color:#0E1C42;margin-bottom:4px;}
+.open-book-title em{color:#00695C;}
+.open-book-chapter{font-family:Georgia,serif;font-size:16px;color:#5A4A3A;font-style:italic;margin-bottom:14px;}
+.open-book-prompt{font-size:14px;color:#7A88A8;font-weight:600;}
+
+/* ═══════════ READING LINKS ═══════════ */
+.reading-links{background:#E0F2F1;border:2px solid #B2DFDB;border-radius:14px;padding:16px 18px;margin-bottom:16px;}
+.reading-links-title{font-size:14px;color:#00695C;font-weight:800;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px;}
+.reading-link{display:flex;align-items:center;gap:10px;padding:10px 14px;background:#fff;border:1.5px solid #B2DFDB;border-radius:10px;margin-bottom:8px;font-size:15px;color:#0E1C42;font-weight:600;text-decoration:none;transition:background .15s,border-color .15s;}
+.reading-link:last-child{margin-bottom:0;}
+.reading-link:hover{background:#E0F2F1;border-color:#00695C;}
+.reading-link-icon{font-size:20px;}
+
+/* ═══════════ PAUSE & THINK ═══════════ */
+.pause-columns{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:14px 0;}
+.pause-col{display:flex;flex-direction:column;gap:10px;}
+@media(max-width:620px){.pause-columns{grid-template-columns:1fr;}}
+
+/* ═══════════ ASSIGNMENT QUESTIONS ═══════════ */
+.q-block{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:14px 18px;margin-bottom:12px;}
+.q-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#00695C;color:#fff;font-weight:800;font-size:14px;margin-right:8px;vertical-align:middle;}
+.q-text{font-size:16px;color:#0E1C42;line-height:1.65;margin-bottom:4px;}
+
+/* ═══════════ TEXTBOX PROMPT ═══════════ */
+.textbox-prompt{background:linear-gradient(135deg,#00695C,#00796B);color:#fff;font-size:14px;font-weight:700;padding:10px 16px;border-radius:10px 10px 0 0;margin-top:10px;line-height:1.5;}
+
+/* ═══════════ JOURNAL TEXTBOX ═══════════ */
+.journal-box{width:100%;min-height:70px;padding:12px 14px;border:2px solid #E2E8F4;border-radius:0 0 12px 12px;font-family:system-ui,sans-serif;font-size:15px;color:#0E1C42;line-height:1.6;resize:vertical;background:#FAFBFF;transition:border-color .2s,box-shadow .2s;}
+.journal-box:focus{outline:none;border-color:#00695C;box-shadow:0 0 0 3px rgba(0,105,92,.15);background:#fff;}
+.journal-box::placeholder{color:#B0B8CC;font-style:italic;}
+.journal-box.standalone{border-radius:12px;margin-top:10px;}
+.journal-box.big{min-height:220px;}
+.journal-label{font-size:12px;color:#7A88A8;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-top:12px;display:flex;align-items:center;gap:6px;}
+.journal-label .saved-dot{width:8px;height:8px;border-radius:50%;background:#B0B8CC;transition:background .3s;}
+.journal-label .saved-dot.saved{background:#34B76F;}
+
+/* ═══════════ SHOW WHAT YOU KNOW ═══════════ */
+.swyk{background:linear-gradient(135deg,#FFF8F0 0%,#FFF3DC 100%);border:2px solid #F5E6C8;border-left:6px solid #F9A825;border-radius:14px;padding:16px 18px;margin-top:16px;}
+.swyk-label{font-size:12px;color:#B8863B;text-transform:uppercase;letter-spacing:.8px;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+.swyk-prompt{font-size:15px;color:#0E1C42;line-height:1.6;margin-bottom:8px;}
+
+/* ═══════════ CHOICE BOARD ═══════════ */
+.choice-board{display:flex;flex-direction:column;gap:10px;margin:14px 0;}
+.choice-item{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#fff;border:2px solid #E2E8F4;border-radius:12px;cursor:pointer;transition:background .15s,border-color .2s;}
+.choice-item:hover{background:#F3E5F5;border-color:#D1C4E9;}
+.choice-item.chosen{background:#F3E5F5;border-color:#7B5EA7;box-shadow:0 0 0 3px rgba(123,94,167,.15);}
+.choice-num{width:26px;height:26px;border-radius:50%;background:#7B5EA7;color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.choice-text{font-size:15px;color:#0E1C42;line-height:1.55;}
+
+/* ═══════════ FILL-IN-BLANK GAME ═══════════ */
+.fillin-game{margin:14px 0;}
+.fillin-item{display:flex;align-items:center;gap:8px;padding:10px 14px;background:#fff;border:2px solid #E2E8F4;border-radius:12px;margin-bottom:10px;font-size:16px;color:#0E1C42;flex-wrap:wrap;}
+.fillin-input{display:inline-block;width:150px;padding:4px 10px;border:2px dashed #7B5EA7;border-radius:8px;font-family:Georgia,serif;font-size:15px;font-weight:700;color:#7B5EA7;text-align:center;background:#FAFBFF;outline:none;transition:border-color .2s,background .2s;}
+.fillin-input:focus{border-color:#00695C;background:#fff;}
+.fillin-input.correct{border-color:#4CAF50;background:#E8F5E9;color:#1B5E20;border-style:solid;}
+.fillin-input.wrong{border-color:#E57373;background:#FFEBEE;animation:shake .4s ease;}
+.fillin-check-btn{display:block;margin:14px auto 0;padding:10px 24px;background:linear-gradient(135deg,#7B5EA7,#9575CD);color:#fff;border:none;border-radius:24px;font-family:system-ui,sans-serif;font-size:15px;font-weight:800;cursor:pointer;transition:transform .2s;}
+.fillin-check-btn:hover{transform:translateY(-2px);}
+.fillin-feedback{text-align:center;padding:10px;font-size:15px;font-weight:700;color:#4CAF50;display:none;}
+.fillin-feedback.show{display:block;}
+
+/* ═══════════ VOCAB MATCH GAME ═══════════ */
+.match-game{margin:14px 0;}
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.match-item{padding:12px 14px;background:#fff;border:2px solid #E2E8F4;border-radius:12px;font-size:14px;color:#0E1C42;font-weight:600;cursor:pointer;text-align:center;line-height:1.5;transition:background .15s,border-color .2s,transform .15s;user-select:none;}
+.match-item:hover{transform:translateY(-1px);border-color:#00695C;}
+.match-item.selected{background:#E0F2F1;border-color:#00695C;box-shadow:0 0 0 3px rgba(0,105,92,.2);}
+.match-item.matched{background:#E8F5E9;border-color:#4CAF50;pointer-events:none;opacity:.8;}
+.match-item.wrong-flash{background:#FFEBEE;border-color:#E57373;animation:shake .4s ease;}
+.match-item.is-word{font-weight:800;font-family:Georgia,serif;font-size:16px;}
+.match-feedback{text-align:center;padding:10px;font-size:15px;font-weight:700;color:#4CAF50;display:none;}
+.match-feedback.show{display:block;}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+
+/* ═══════════ ODD-ONE-OUT CHALLENGE ═══════════ */
+.challenge-round{margin-bottom:16px;}
+.challenge-round:last-child{margin-bottom:0;}
+.challenge-prompt{font-size:15px;color:#3A4A6B;margin-bottom:10px;line-height:1.6;}
+.challenge-words{display:flex;flex-wrap:wrap;gap:10px;}
+.challenge-word{padding:10px 18px;background:#fff;border:2px solid #E2E8F4;border-radius:20px;font-family:Georgia,serif;font-size:16px;font-weight:700;color:#0E1C42;cursor:pointer;transition:background .15s,border-color .2s,transform .15s;}
+.challenge-word:hover{transform:translateY(-2px);border-color:#0E1C42;}
+.challenge-word.right{background:#E8F5E9;border-color:#4CAF50;color:#1B5E20;}
+.challenge-word.miss{background:#FFEBEE;border-color:#E57373;animation:shake .4s ease;}
+.challenge-result{font-size:14px;font-weight:700;color:#00695C;margin-top:8px;display:none;}
+.challenge-result.show{display:block;}
+
+/* ═══════════ LOOKING AHEAD ═══════════ */
+.looking-ahead{background:linear-gradient(135deg,#4A3B24 0%,#6B5636 100%);border-radius:16px;padding:20px 24px;margin-bottom:16px;color:#fff;}
+.looking-ahead-label{font-size:12px;color:#F9A825;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:8px;}
+.looking-ahead p{font-size:16px;color:#fff;line-height:1.7;margin-bottom:0;}
+
+/* ═══════════ GATHERED ANSWERS ═══════════ */
+.gathered-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04);margin-top:22px;}
+.gathered-header{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);padding:16px 22px;border-bottom:2px solid rgba(0,137,123,.25);}
+.gathered-header-icon{font-size:28px;line-height:1;}
+.gathered-header-label{font-size:11px;color:#00897B;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.gathered-header-title{font-family:Georgia,serif;font-size:20px;color:#fff;font-weight:700;}
+.gathered-body{padding:18px 22px 20px;}
+.gathered-intro{font-size:15px;color:#3A4A6B;margin-bottom:14px;line-height:1.55;}
+.gathered-output{width:100%;min-height:300px;padding:16px 18px;border:2px solid #E2E8F4;border-radius:12px;font-family:system-ui,sans-serif;font-size:14px;color:#0E1C42;line-height:1.65;background:#FAFBFF;resize:vertical;white-space:pre-wrap;}
+.gathered-actions{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap;}
+.gathered-btn{flex:1;min-width:200px;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border:none;border-radius:14px;font-family:system-ui,sans-serif;font-size:15px;font-weight:800;cursor:pointer;transition:transform .2s,box-shadow .2s;}
+.gathered-btn:hover{transform:translateY(-2px);}
+.gathered-btn-copy{background:linear-gradient(135deg,#00695C,#00897B);color:#fff;box-shadow:0 4px 14px rgba(0,105,92,.25);}
+.gathered-btn-pdf{background:linear-gradient(135deg,#0E1C42,#1A2D5A);color:#fff;border:2px solid #00695C;box-shadow:0 4px 14px rgba(14,28,66,.25);}
+.gathered-copied{text-align:center;font-size:14px;font-weight:700;color:#4CAF50;margin-top:8px;display:none;}
+.gathered-copied.show{display:block;}
+
+/* ═══════════ TURN-IN CHECKLIST ═══════════ */
+.turn-in-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04);margin-top:18px;}
+.turn-in-header{display:flex;align-items:center;gap:14px;background:#E0F2F1;padding:18px 22px;border-bottom:2px solid #B2DFDB;}
+.turn-in-header-icon{font-size:36px;line-height:1;flex-shrink:0;}
+.turn-in-header-label{font-size:11px;color:#00695C;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;}
+.turn-in-header-title{font-family:Georgia,serif;font-size:22px;color:#0E1C42;font-weight:700;line-height:1.15;}
+.turn-in-body{padding:18px 22px 20px;}
+.turn-in-intro{font-size:15px;color:#3A4A6B;margin-bottom:16px;line-height:1.55;}
+.turn-in-checklist{display:flex;flex-direction:column;gap:10px;}
+.turn-in-item{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:12px;cursor:pointer;transition:background .2s,border-color .2s;}
+.turn-in-item:hover{background:#E0F2F1;border-color:#B2DFDB;}
+.turn-in-item.checked{background:#E8F5E9;border-color:#C8E6C9;}
+.turn-in-item .turn-in-check{width:26px;height:26px;border-radius:8px;border:2px solid #B2DFDB;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;line-height:1;transition:background .2s,border-color .2s;}
+.turn-in-item.checked .turn-in-check{background:#4CAF50;border-color:#4CAF50;color:#fff;}
+.turn-in-item-text{font-size:15px;color:#0E1C42;font-weight:600;line-height:1.55;flex:1;}
+.turn-in-item.checked .turn-in-item-text{color:#3A4A6B;}
+
+/* ═══════════ TAB TRANSITION ═══════════ */
+.tab-next-wrap{text-align:center;padding:24px 0 8px;}
+.tab-transition-voice{font-family:Georgia,serif;font-size:15px;font-style:italic;color:#5A4A3A;margin-bottom:12px;line-height:1.6;}
+.tab-next-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;background:linear-gradient(135deg,#00695C,#00897B);color:#fff;border:none;border-radius:28px;font-family:system-ui,sans-serif;font-size:16px;font-weight:800;cursor:pointer;box-shadow:0 4px 16px rgba(0,105,92,.3);transition:transform .2s,box-shadow .2s;}
+.tab-next-btn:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(0,105,92,.4);}
+
+/* ═══════════ BACK TO TOP ═══════════ */
+.back-to-top{position:fixed;bottom:28px;right:28px;height:44px;padding:0 18px 0 14px;border-radius:22px;background:linear-gradient(135deg,#00695C,#00897B);color:#fff;border:2px solid #F9A825;font-size:14px;font-weight:800;font-family:system-ui,sans-serif;cursor:pointer;box-shadow:0 4px 18px rgba(0,105,92,.35);display:flex;align-items:center;gap:6px;opacity:0;visibility:hidden;transform:translateY(20px);transition:opacity .3s,visibility .3s,transform .3s,box-shadow .2s;z-index:500;letter-spacing:.3px;}
+.back-to-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+.back-to-top:hover{box-shadow:0 6px 24px rgba(0,105,92,.5);transform:translateY(-3px);}
+
+/* ═══════════ DOWNLOAD BUTTON ═══════════ */
+.download-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px 24px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);color:#fff;border:2px solid #00695C;border-radius:16px;font-family:system-ui,sans-serif;font-size:17px;font-weight:800;cursor:pointer;margin-top:18px;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 16px rgba(14,28,66,.25);}
+.download-btn:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(14,28,66,.35);}
+.download-btn-sub{font-size:12px;color:rgba(255,255,255,.6);font-weight:600;text-align:center;margin-top:6px;}
+
+/* ═══════════ CONFETTI ═══════════ */
+#confettiCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:10000;}
+
+/* ═══════════ FOOTER ═══════════ */
+.footer{background:#0E1C42;border-top:4px solid #00695C;padding:18px 28px;text-align:center;}
+.footer-main{font-size:14px;color:#fff;margin-bottom:4px;}
+.footer-main span{color:#00897B;font-weight:700;}
+.footer-sub{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:2px;}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.3);}
+
+/* ═══════════ RESPONSIVE ═══════════ */
+@media(max-width:620px){
+  .intro-2col{grid-template-columns:1fr;}
+  .vocab-grid{grid-template-columns:1fr;}
+  .flip-card{height:165px;}
+  .header-title{font-size:22px;}
+  .tab-btn{min-width:100px;font-size:11px;padding:10px 6px 9px;}
+  .todays-path{gap:4px;}
+  .path-pill{font-size:11px;padding:5px 10px;}
+  .match-grid{grid-template-columns:1fr;}
+  .pause-columns{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<canvas id="confettiCanvas"></canvas>
+<button class="back-to-top" id="backToTop" type="button">&#9650; Back to Top</button>
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- ═══════════ PROGRESS BAR ═══════════ -->
+<div class="progress-wrap">
+  <span class="progress-label">Lesson Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">5th Grade ELA</div>
+    </div>
+  </div>
+  <div class="header-title"><em>The Writer's Bridge</em> &mdash; Comparing Sources &amp; Looking Ahead</div>
+  <div class="header-badge">
+    <span class="header-badge-icon">🪶</span>
+    <span class="header-badge-text">Lesson 16.4</span>
+  </div>
+</div>
+
+<!-- ═══════════ HERO BANNER SVG ═══════════ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="duskSky4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1006"/>
+      <stop offset="55%" stop-color="#2C2416"/>
+      <stop offset="100%" stop-color="#3A4560"/>
+    </linearGradient>
+    <radialGradient id="candleGlow4" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F9A825" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#F9A825" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="920" height="260" fill="url(#duskSky4)"/>
+  <circle cx="120" cy="35" r="1.3" fill="#fff" opacity="0.6"><animate attributeName="opacity" values="0.6;0.2;0.6" dur="3.5s" repeatCount="indefinite"/></circle>
+  <circle cx="700" cy="18" r="1" fill="#fff" opacity="0.5"><animate attributeName="opacity" values="0.5;0.2;0.5" dur="3s" repeatCount="indefinite"/></circle>
+  <circle cx="820" cy="45" r="1.3" fill="#fff" opacity="0.6"/>
+  <!-- an original document (scroll with seal) beside a modern book, and a bridge silhouette hinting ahead -->
+  <g transform="translate(260,130)">
+    <rect x="0" y="0" width="120" height="70" rx="4" fill="#F0E4C8" opacity="0.94"/>
+    <circle cx="20" cy="55" r="10" fill="#8B3A2E" opacity="0.75"/>
+    <path d="M10,14 Q40,8 70,16 T110,12" stroke="#8B3A2E" stroke-width="1.5" fill="none" opacity="0.5"/>
+    <path d="M10,28 Q40,22 70,30 T110,26" stroke="#8B3A2E" stroke-width="1.5" fill="none" opacity="0.4"/>
+    <path d="M10,42 Q40,36 70,44 T110,40" stroke="#8B3A2E" stroke-width="1.5" fill="none" opacity="0.4"/>
+  </g>
+  <g transform="translate(430,120)">
+    <rect x="0" y="0" width="70" height="82" rx="4" fill="#3A2E1C"/>
+    <rect x="6" y="6" width="58" height="70" rx="2" fill="#F0E4C8" opacity="0.92"/>
+    <path d="M14,20 L58,20 M14,32 L58,32 M14,44 L58,44 M14,56 L48,56" stroke="#B8863B" stroke-width="1.5" opacity="0.5"/>
+  </g>
+  <!-- candle between the two sources -->
+  <g transform="translate(400,150)">
+    <rect x="0" y="8" width="10" height="32" rx="2" fill="#F5EEE4"/>
+    <ellipse cx="5" cy="8" rx="5" ry="2.5" fill="#F9A825" opacity="0.9"/>
+    <path d="M5,0 Q2,-6 5,-11 Q8,-6 5,0 Z" fill="#F9A825">
+      <animate attributeName="d" values="M5,0 Q2,-6 5,-11 Q8,-6 5,0 Z;M5,0 Q3,-8 5,-13 Q7,-8 5,0 Z;M5,0 Q2,-6 5,-11 Q8,-6 5,0 Z" dur="1.6s" repeatCount="indefinite"/>
+    </path>
+    <circle cx="5" cy="-4" r="26" fill="url(#candleGlow4)"/>
+  </g>
+  <!-- distant bridge silhouette, foreshadowing what's ahead -->
+  <g opacity="0.35" transform="translate(600,150)">
+    <path d="M0,50 Q60,0 120,50" stroke="#B8863B" stroke-width="4" fill="none"/>
+    <rect x="0" y="50" width="120" height="6" fill="#B8863B"/>
+    <rect x="10" y="20" width="3" height="34" fill="#B8863B"/>
+    <rect x="107" y="20" width="3" height="34" fill="#B8863B"/>
+  </g>
+  <!-- gentle desk line -->
+  <rect x="220" y="205" width="480" height="14" rx="4" fill="#3A2E1C"/>
+</svg>
+</div>
+
+<!-- ═══════════ INFO STRIP ═══════════ -->
+<div class="info-strip">
+  <div class="info-cell">
+    <div class="info-icon" style="background:#FFF3DC;">📚</div>
+    <div><div class="info-label">Unit</div><div class="info-value">The Writer's Bridge</div><div class="info-detail">Comparing Sources</div></div>
+  </div>
+  <div class="info-cell">
+    <div class="info-icon" style="background:#E0F2F1;">📅</div>
+    <div><div class="info-label">Week</div><div class="info-value">Week 16</div><div class="info-detail">Lesson 16.4 of 4</div></div>
+  </div>
+  <div class="info-cell">
+    <div class="info-icon" style="background:#E8F5E9;">🗺️</div>
+    <div><div class="info-label">Reading</div><div class="info-value">Primary &amp; Secondary Sources</div><div class="info-detail">Comparing Two Kinds of Evidence</div></div>
+  </div>
+  <div class="info-cell">
+    <div class="info-icon" style="background:#F3E5F5;">🔤</div>
+    <div><div class="info-label">Focus</div><div class="info-value">Sentence Variety, Explained</div><div class="info-detail">+ Historical Vocabulary Challenge</div></div>
+  </div>
+</div>
+
+<!-- ═══════════ QUOTE STRIP ═══════════ -->
+<div class="quote-strip">
+  <div class="quote-strip-text">&ldquo;The Choctaw Nation of Oklahoma describes the Treaty of Dancing Rabbit Creek as a moment that forever changed our Chahta people's story.&rdquo;</div>
+  <div class="quote-strip-attr">&mdash; The Choctaw Nation of Oklahoma, remembering this history today</div>
+</div>
+
+<!-- ═══════════ INTRO (collapsible) ═══════════ -->
+<div class="intro-section" id="introSection">
+  <div class="intro-collapsed-bar" onclick="expandIntro()">
+    <span class="intro-collapsed-icon">🎯</span>
+    <span class="intro-collapsed-text">Today's Wonder &amp; Objectives</span>
+    <span class="intro-collapsed-toggle">&#9660; Expand</span>
+  </div>
+  <div class="intro-content">
+    <div class="intro-2col">
+      <div class="intro-card theme-question">
+        <div class="intro-card-head"><div class="intro-card-head-icon">&#x2753;</div><div><div class="intro-card-head-label">Big Question</div><div class="intro-card-head-title">Today's Wonder</div></div></div>
+        <div class="intro-card-body"><p>How can comparing a primary source and a secondary source deepen our understanding of history? Today we compare an original historical document with a historian's description of it &mdash; and look ahead to where our writing journey goes next.</p></div>
+      </div>
+      <div class="intro-card theme-objectives">
+        <div class="intro-card-head"><div class="intro-card-head-icon">🎯</div><div><div class="intro-card-head-label">Today's Objectives</div><div class="intro-card-head-title">By the end of this lesson&hellip;</div></div></div>
+        <div class="intro-card-body">
+          <div class="obj-line"><span class="obj-icon">📖</span><span><strong>Reading:</strong> I will <em>compare and contrast</em> a primary source and a secondary source using a real historical example.</span></div>
+          <div class="obj-line"><span class="obj-icon">✏️</span><span><strong>Grammar:</strong> I will <em>explain</em> why writers vary sentence length and sentence openings in explanatory writing.</span></div>
+          <div class="obj-line"><span class="obj-icon">🔤</span><span><strong>Spelling:</strong> I will <em>use</em> the prefix re- pattern to solve a historical vocabulary challenge.</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="todays-path">
+      <span class="path-pill p-warmup">🌅 Warm up with DOL &amp; poetry</span>
+      <span class="path-arrow">&rarr;</span>
+      <span class="path-pill p-words">🔤 Practice &amp; choose your vocabulary challenge</span>
+      <span class="path-arrow">&rarr;</span>
+      <span class="path-pill p-reading">🗺️ Compare two kinds of sources</span>
+      <span class="path-arrow">&rarr;</span>
+      <span class="path-pill p-assign">📬 Reflect &amp; submit</span>
+    </div>
+    <div class="need-strip">
+      <span class="need-strip-label">You'll need:</span>
+      <span class="need-chip">📓 Reading Journal</span>
+      <span class="need-chip">✏️ Pencil</span>
+      <span class="need-chip">📕 Your Novel</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ TAB BAR ═══════════ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🌅 Warm-Up<span class="tab-check">&#10003;</span></button>
+  <button class="tab-btn" data-tab="words" onclick="switchTab('words')">🔤 Word Study<span class="tab-check">&#10003;</span></button>
+  <button class="tab-btn" data-tab="reading" onclick="switchTab('reading')">🗺️ Research<span class="tab-check">&#10003;</span></button>
+  <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">📬 Assignment<span class="tab-check">&#10003;</span></button>
+</div>
+
+
+<!-- ════════════════════════════════════════════ -->
+<!-- TAB 1: WARM-UP                              -->
+<!-- ════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-warmup">
+
+  
+  <div class="activity bl-teal">
+    <div class="activity-head"><div class="activity-num" style="background:#00796B;">✏️</div><div style="flex:1;"><div class="activity-title">Daily Oral Language</div><div class="activity-sub">Study the model, then fix the sentence</div></div></div>
+    <div class="activity-body">
+
+      <p style="font-size:14px;color:#7A88A8;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">Sentence 1 &mdash; The Correct Model</p>
+      <p style="font-size:14px;color:#3A4A6B;margin-bottom:10px;">Tap words you notice are correct. Watch for capitals and end punctuation.</p>
+      <div class="dol-model-sentence" id="dolModel">
+        The <span class="dol-highlight-word" onclick="dolWordClick(this,'This is the official name of a real historical document, so every important word starts with a capital letter.')">Treaty of Dancing Rabbit Creek</span> is a primary source because it was written in 1830, the same year the event happened<span class="dol-highlight-word" onclick="dolWordClick(this,'Every sentence ends with a punctuation mark — here, a period, because this sentence is a statement.')">.</span>
+      </div>
+      <div class="dol-explanation" id="dolExplanation"></div>
+
+      <p style="font-size:14px;color:#7A88A8;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;margin-top:16px;">Sentence 2 &mdash; Fix It</p>
+      <p style="font-size:14px;color:#3A4A6B;margin-bottom:10px;">This sentence has mistakes. Rewrite it correctly in your notebook, using the model as a guide.</p>
+      <div class="dol-fix-sentence">
+        a modern historian's book about the treaty of dancing rabbit creek is a secondary source
+      </div>
+      <button class="dol-check-btn" onclick="document.getElementById('dolAns').classList.toggle('show')">🔍 Check My Work</button>
+      <div class="dol-answer" id="dolAns">
+        <p style="margin-bottom:8px;"><strong>Corrected:</strong></p>
+        <p>A modern historian's book about the Treaty of Dancing Rabbit Creek is a secondary source.</p>
+        <p style="font-size:13px;color:#7A88A8;margin-top:8px;font-style:italic;">Compare with the model: both sentences need a capital letter for the official name of the treaty, and both need a period at the end.</p>
+      </div>
+
+          </div>
+  </div>
+
+  <div class="activity bl-gold">
+    <div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">📜</div><div style="flex:1;"><div class="activity-title">Poetry Corner</div><div class="activity-sub">A closer look at home and journeys</div></div></div>
+    <div class="activity-body">
+      <div class="poem-box">
+        <div class="poem-title">The Road Behind, the Road Ahead</div>
+        <div class="poem-author">A reflection, written for this lesson</div>
+        <div class="poem-text">The house you knew grows small and still,
+a single point beyond the hill.
+The road ahead is long and new,
+but part of home still travels too&mdash;
+
+in words remembered, songs half-sung,
+in stories carried, old and young.
+No mile can walk that feeling away:
+what shaped you stays, however far you stray.</div>
+      </div>
+      <div class="socratic-box">
+        <div class="socratic-label">🧠 Think Deeper</div>
+        <p class="socratic-q">How does the poet's word choice &mdash; "a single point beyond the hill," "no mile can walk that feeling away" &mdash; create the feeling that home travels with you, even on a long journey?</p>
+        <p class="socratic-q">What does this poem have in common with the research you've done this week about people who had to leave their homeland?</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <p class="tab-transition-voice">Now that your mind is warmed up, let's practice this week's words and skills one more time before we close the week.</p>
+    <button class="tab-next-btn" onclick="switchTab('words')">Continue to 🔤 Word Study &rarr;</button>
+  </div>
+</div><!-- /tab-warmup -->
+
+
+<!-- ════════════════════════════════════════════ -->
+<!-- TAB 2: WORD STUDY                           -->
+<!-- ════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-words">
+
+  <!-- ═══ MORPHOLOGY ═══ -->
+  <div class="activity bl-plum">
+    <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div><div style="flex:1;"><div class="activity-title">🌱 Morphology: migr / mov / mot</div><div class="activity-sub">Explain: why these roots matter</div></div></div>
+    <div class="activity-body">
+            <p>All week you've used the roots <strong>migr</strong>, <strong>mov</strong>, and <strong>mot</strong> &mdash; all meaning "to move" &mdash; to understand words like <strong>removal</strong>, <strong>migrate</strong>, <strong>motion</strong>, and <strong>movement</strong>. Learning a root like this doesn't just help with one word. It gives you a tool you can use for the rest of your life: any time you meet an unfamiliar word with <strong>migr</strong>, <strong>mov</strong>, or <strong>mot</strong> inside it, you already have a clue about what it means.</p>
+      <div class="key-concept">
+        <div class="key-concept-label">📌 Why This Matters</div>
+        <p>Historians and writers use words built from these roots constantly &mdash; <strong>immigrant</strong>, <strong>emotion</strong>, <strong>removal</strong>, <strong>promote</strong>. Knowing the root "to move" helps you figure out new words in any subject, not just history.</p>
+      </div>
+      <p>One more round of practice before the week closes &mdash; match each word to its meaning.</p>
+      <div class="callout callout-info"><span class="callout-icon">🧩</span><p><strong>Practice: Quick Match!</strong> Tap a word, then tap its meaning.</p></div>
+      <div class="match-game" id="vocabMatch">
+        <div class="match-grid" id="matchGrid">
+          <div class="match-item is-word" data-match="A" onclick="matchClick(this)">migrate</div>
+          <div class="match-item" data-match="C" onclick="matchClick(this)">the act or process of moving</div>
+          <div class="match-item is-word" data-match="B" onclick="matchClick(this)">remove</div>
+          <div class="match-item" data-match="A" onclick="matchClick(this)">to move to live in a new place</div>
+          <div class="match-item is-word" data-match="C" onclick="matchClick(this)">motion</div>
+          <div class="match-item" data-match="D" onclick="matchClick(this)">the act of moving from place to place</div>
+          <div class="match-item is-word" data-match="D" onclick="matchClick(this)">movement</div>
+          <div class="match-item" data-match="B" onclick="matchClick(this)">to move something away or take it out</div>
+        </div>
+        <div class="match-feedback" id="matchFeedback">🌱 All matched!</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ VOCABULARY (SWYK today) ═══ -->
+  <div class="activity bl-teal">
+    <div class="activity-head"><div class="activity-num" style="background:#00796B;">2</div><div style="flex:1;"><div class="activity-title">🔤 Vocabulary: Choice Board</div><div class="activity-sub">Choose one activity using this week's words</div></div></div>
+    <div class="activity-body">
+            <p>This week's words were: <strong>nation, territory, removal, homeland, treaty, ancestral</strong>. Choose <strong>ONE</strong> activity below to show what you know about these words.</p>
+
+      <div class="choice-board" id="choiceBoard">
+        <div class="choice-item" onclick="chooseVocab(this)"><div class="choice-num">1</div><div class="choice-text">✍️ Use one of the words correctly in 2 original sentences.</div></div>
+        <div class="choice-item" onclick="chooseVocab(this)"><div class="choice-num">2</div><div class="choice-text">📖 Find an example of one of the words (or a related word) in your reading this week.</div></div>
+        <div class="choice-item" onclick="chooseVocab(this)"><div class="choice-num">3</div><div class="choice-text">🔤 Connect one of the words to a root, prefix, or suffix &mdash; explain the connection.</div></div>
+        <div class="choice-item" onclick="chooseVocab(this)"><div class="choice-num">4</div><div class="choice-text">🔄 Sort this week's vocabulary words by meaning, part of speech, or category &mdash; explain your groups.</div></div>
+        <div class="choice-item" onclick="chooseVocab(this)"><div class="choice-num">5</div><div class="choice-text">💬 Explain one of the words as if you're teaching it to a younger student.</div></div>
+        <div class="choice-item" onclick="chooseVocab(this)"><div class="choice-num">6</div><div class="choice-text">📝 Use two of this week's vocabulary words in a written response about something from this week's research.</div></div>
+      </div>
+
+      <div class="swyk">
+        <div class="swyk-label">🪶 Show What You Know &middot; Vocabulary Choice Board</div>
+        <div class="swyk-prompt">Tap the option above that you chose, then write your response below.</div>
+        <div class="textbox-prompt">Name which option you chose (1&ndash;6), then complete it.</div>
+        <textarea class="journal-box" id="journal-vocab" data-label="Vocabulary Choice Board SWYK"
+          placeholder="I chose option ___. My response: ..."
+          oninput="autoSave(this,'dot-vocab');gatherAnswers();"></textarea>
+        <div class="journal-label">📓 <span class="saved-dot" id="dot-vocab"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ GRAMMAR ═══ -->
+  <div class="activity bl-gold">
+    <div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">3</div><div style="flex:1;"><div class="activity-title">✏️ Grammar: Sentence Variety</div><div class="activity-sub">Explain: why writers vary their sentences</div></div></div>
+    <div class="activity-body">
+            <p>This week you learned to notice, spot, and write with sentence variety &mdash; mixing short and long sentences and varying how sentences begin. But <em>why</em> do writers bother with this?</p>
+      <div class="key-concept">
+        <div class="key-concept-label">👉 Compare these two sentences</div>
+        <p>"Both of these ideas are part of the historical record." <strong>Short. Direct. Makes the reader pause on an important idea.</strong></p>
+        <p style="font-size:14px;color:#3A4A6B;margin-top:6px;">"President Andrew Jackson supported the Indian Removal Act of 1830, a law that allowed the government to make treaties exchanging Native homelands in the Southeast for land west of the Mississippi River." <strong>Long. Packed with detail. Explains a complicated idea fully.</strong></p>
+      </div>
+      <div class="callout callout-think">
+        <span class="callout-icon">🧠</span>
+        <p><strong>Talk about it:</strong> If a writer used only short sentences, the writing might feel choppy. If a writer used only long sentences, a reader might get lost. Varying sentence length lets a writer slow the reader down for an important idea, then speed back up to explain more.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SPELLING ═══ -->
+  <div class="activity bl-navy">
+    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div style="flex:1;"><div class="activity-title">🔠 Spelling: The Prefix re-</div><div class="activity-sub">Challenge: solve the word riddles</div></div></div>
+    <div class="activity-body">
+            <p>Remember: the prefix <strong>re-</strong> means "back" or "again." Use what you know to solve these riddles.</p>
+
+      <div class="callout callout-info"><span class="callout-icon">🧩</span><p><strong>Challenge:</strong> Type the word each riddle describes.</p></div>
+      <div class="fillin-game" id="fillinGame">
+        <div class="fillin-item">I mean "to force people to move away from a place," and I start with re-. What word am I? <input class="fillin-input" data-answer="removal" maxlength="14" placeholder="type the word"></div>
+        <div class="fillin-item">I mean "to move to a new place and settle there," and I start with re-. What word am I? <input class="fillin-input" data-answer="relocate" maxlength="14" placeholder="type the word"></div>
+        <div class="fillin-item">I mean "a piece of land set aside for a group of people," and I start with re-. What word am I? <input class="fillin-input" data-answer="reservation" maxlength="16" placeholder="type the word"></div>
+        <button class="fillin-check-btn" onclick="checkFillIn()">Check My Answers</button>
+        <div class="fillin-feedback" id="fillinFeedback">🔠 All correct!</div>
+      </div>
+
+      <p style="margin-top:16px;">Now try an odd-one-out challenge with this week's vocabulary.</p>
+      <div class="challenge-round">
+        <div class="challenge-prompt"><strong>Round 1:</strong> Three of these words have the prefix re-, meaning "back" or "again." One does not. Tap the word that does NOT belong.</div>
+        <div class="challenge-words" id="challengeRound1">
+          <span class="challenge-word" onclick="challengeClick(this,'challengeResult1',false)">reservation</span>
+          <span class="challenge-word" onclick="challengeClick(this,'challengeResult1',false)">removal</span>
+          <span class="challenge-word" onclick="challengeClick(this,'challengeResult1',true)">territory</span>
+          <span class="challenge-word" onclick="challengeClick(this,'challengeResult1',false)">relocate</span>
+        </div>
+        <div class="challenge-result" id="challengeResult1"></div>
+      </div>
+      <div class="challenge-round">
+        <div class="challenge-prompt"><strong>Round 2:</strong> Three of these words describe LAND. One describes a WRITTEN AGREEMENT. Tap the word that does NOT belong.</div>
+        <div class="challenge-words" id="challengeRound2">
+          <span class="challenge-word" onclick="challengeClick(this,'challengeResult2',false)">homeland</span>
+          <span class="challenge-word" onclick="challengeClick(this,'challengeResult2',false)">territory</span>
+          <span class="challenge-word" onclick="challengeClick(this,'challengeResult2',true)">treaty</span>
+          <span class="challenge-word" onclick="challengeClick(this,'challengeResult2',false)">ancestral</span>
+        </div>
+        <div class="challenge-result" id="challengeResult2"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <p class="tab-transition-voice">Your words and skills are sharp. Time to open the source table one last time this week.</p>
+    <button class="tab-next-btn" onclick="switchTab('reading')">Continue to 🗺️ Research &rarr;</button>
+  </div>
+</div><!-- /tab-words -->
+
+
+<!-- ════════════════════════════════════════════ -->
+<!-- TAB 3: RESEARCH                             -->
+<!-- ════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-reading">
+
+  <div class="tracker-card">
+    <div class="tracker-header"><div class="tracker-header-icon">🗺️</div><div><div class="tracker-header-label">Your Path</div><div class="tracker-header-title">Across <em>The Writer's Bridge</em></div></div></div>
+    <div class="scene-wrap" id="scene">
+      <div class="title-plaque"><h1><em>The Writer's Bridge</em></h1></div>
+      <div class="cloud" style="width:80px;height:24px;top:14px;left:8%"></div>
+      <div class="cloud" style="width:50px;height:16px;top:24px;left:60%"></div>
+      <svg class="path-svg" viewBox="0 0 1400 210" preserveAspectRatio="none">
+        <path d="M -20,165 C 60,160 80,130 150,125 C 220,120 240,155 320,148 C 400,140 420,105 510,108 C 600,112 620,150 710,142 C 800,134 830,100 920,105 C 1010,110 1030,148 1110,140 C 1190,132 1220,110 1300,115 C 1340,117 1400,130 1430,135" fill="none" stroke="#B8863B" stroke-width="14" stroke-linecap="round" opacity="0.4"/>
+        <path d="M -20,165 C 60,160 80,130 150,125 C 220,120 240,155 320,148 C 400,140 420,105 510,108 C 600,112 620,150 710,142 C 800,134 830,100 920,105 C 1010,110 1030,148 1110,140 C 1190,132 1220,110 1300,115 C 1340,117 1400,130 1430,135" fill="none" stroke="#F0E4C8" stroke-width="7" stroke-linecap="round" stroke-dasharray="4 8" opacity="0.5"/>
+      </svg>
+      <div class="char-token" id="charToken">🪶</div>
+    </div>
+    <div class="tracker-chapter-label">📍 You are here: <strong>Research &mdash; Comparing Sources</strong></div>
+  </div>
+
+  
+  <div class="activity bl-plum">
+    <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">📚</div><div style="flex:1;"><div class="activity-title">What Good Readers Do</div><div class="activity-sub">Reflect across the whole week</div></div></div>
+    <div class="activity-body">
+      <p>Good readers reflect on everything they've read over time, not just one day at a time. This week you read about the Choctaw homeland, compared two perspectives on a treaty, and built a claim about why perspective matters.</p>
+      <p>Before you answer today's questions, think back across the whole week. Ask yourself:</p>
+      <div class="socratic-box">
+        <div class="socratic-label">🧠 Reflect</div>
+        <p class="socratic-q">What do I understand now about this history that I didn't understand on Monday?</p>
+        <p class="socratic-q">How has comparing different kinds of sources changed the way I think about studying history?</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity bl-teal">
+    <div class="activity-head"><div class="activity-num" style="background:#00796B;">📜</div><div style="flex:1;"><div class="activity-title">Open the Source Table</div><div class="activity-sub">Compare a primary source and a secondary source</div></div></div>
+    <div class="activity-body">
+      <p>Before you read, remember: your job today is to notice what makes each kind of source different, and what each one can tell a historian.</p>
+
+      <div class="open-book-wrap">
+        <div class="open-book-cover"></div>
+        <div class="open-book-spine"></div>
+        <div class="open-book-pages-3"></div>
+        <div class="open-book-pages-2"></div>
+        <div class="open-book-pages-1"></div>
+        <div class="open-book">
+          <div class="open-book-left">
+            <div class="open-book-left-deco">🪶</div>
+          </div>
+          <div class="open-book-right">
+            <div class="open-book-title"><em>The Writer's Bridge</em></div>
+            <div style="height:10px;"></div>
+            <div class="open-book-chapter" style="font-size:14px;color:#7A88A8;font-style:normal;font-family:system-ui,sans-serif;font-weight:700;">Research Passage: Primary &amp; Secondary Sources</div>
+            <div class="open-book-prompt" style="margin-top:8px;">Read the passage below.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="passage-box">
+        <div class="passage-label">📜 Research Passage</div>
+        <div class="passage-text">
+          <p>Historians divide evidence into two categories. A <strong>primary source</strong> is a firsthand piece of evidence created at the actual time of an event &mdash; an original document, a letter, a photograph, or a treaty. A <strong>secondary source</strong> is something created later that describes, explains, or interprets an event &mdash; like a history book, an article, or a historian's summary.</p>
+          <p>The actual treaty document signed at Dancing Rabbit Creek on September 27, 1830, is a primary source. It contains the treaty's real terms, dates, and signatures from that exact moment in history &mdash; nothing added, nothing explained, just the original record.</p>
+          <p>Here is an example of a secondary source, written by a historian today: "Historians describe the Treaty of Dancing Rabbit Creek, signed in 1830, as the first removal treaty carried out under the Indian Removal Act. It explains, in modern language, how the treaty affected thousands of Choctaw families in the years that followed."</p>
+          <p>Both sources are valuable, but in different ways. The primary source shows you the exact original record, unchanged. The secondary source helps explain what that record meant and connects it to the bigger picture of history. Historians almost always use both kinds of sources together.</p>
+        </div>
+      </div>
+
+      <div class="pause-columns">
+        <div class="pause-col">
+          <div class="socratic-box" style="margin-bottom:0;">
+            <div class="socratic-label">⏸️ Pause and Think</div>
+            <p class="socratic-q">Which paragraph above is the primary source, and which is the secondary source? How can you tell?</p>
+          </div>
+        </div>
+        <div class="pause-col">
+          <div class="socratic-box" style="margin-bottom:0;">
+            <div class="socratic-label">⏸️ Pause and Think</div>
+            <p class="socratic-q">What does the secondary source add that the primary source alone doesn't give you?</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="looking-ahead">
+        <div class="looking-ahead-label">🌉 Looking Ahead</div>
+        <p>Next week, you'll begin building your own historical fiction story. And soon, you'll meet a new narrator who will help you see this history from the inside.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <p class="tab-transition-voice">You've compared two kinds of sources and reflected on the whole week. Now let's put your understanding to work.</p>
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 📬 Assignment &rarr;</button>
+  </div>
+</div><!-- /tab-reading -->
+
+
+<!-- ════════════════════════════════════════════ -->
+<!-- TAB 4: ASSIGNMENT                           -->
+<!-- ════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  
+  <div class="callout callout-info" style="margin-bottom:20px;">
+    <span class="callout-icon">📬</span>
+    <p>This is the part you submit. Answer the questions below, then scroll down to review and copy your work.</p>
+  </div>
+
+  <div class="activity bl-teal">
+    <div class="activity-head"><div class="activity-num" style="background:#00796B;">A</div><div style="flex:1;"><div class="activity-title">Part A: Research Thinking</div><div class="activity-sub">Answer in complete sentences. Use evidence from the passage.</div></div></div>
+    <div class="activity-body">
+
+      <div class="q-block"><div class="q-text"><span class="q-num">1</span>In your own words, explain the difference between a primary source and a secondary source. Use today's treaty example to support your answer.</div></div>
+      <div class="textbox-prompt">Define both terms and connect each one to the treaty example.</div>
+      <textarea class="journal-box" id="journal-q1" data-label="Q1: Primary vs. secondary sources"
+        placeholder="A primary source is... A secondary source is..."
+        oninput="autoSave(this,'dot-q1');gatherAnswers();"></textarea>
+
+      <div class="q-block" style="margin-top:16px;"><div class="q-text"><span class="q-num">2</span>How has your understanding of this time period changed from Monday to today?</div></div>
+      <div class="textbox-prompt">Think back across the whole week's reading before you answer.</div>
+      <textarea class="journal-box" id="journal-q2" data-label="Q2: How my understanding changed this week"
+        placeholder="On Monday, I understood... Now I understand..."
+        oninput="autoSave(this,'dot-q2');gatherAnswers();"></textarea>
+
+      <div class="q-block" style="margin-top:16px;"><div class="q-text"><span class="q-num">3</span>Why is it useful for a historian &mdash; or a student like you &mdash; to look at both a primary source and a secondary source when studying the same event?</div></div>
+      <div class="textbox-prompt">Explain your thinking in 2&ndash;3 sentences.</div>
+      <textarea class="journal-box" id="journal-q3" data-label="Q3: Why use both kinds of sources"
+        placeholder="It is useful to look at both because..."
+        oninput="autoSave(this,'dot-q3');gatherAnswers();"></textarea>
+
+    </div>
+  </div>
+
+  <div class="activity bl-gold">
+    <div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">B</div><div style="flex:1;"><div class="activity-title">Part B: Word Study Connection</div><div class="activity-sub">Your Show What You Know answer from the Word Study tab</div></div></div>
+    <div class="activity-body">
+      <p>Your Vocabulary Choice Board response is already saved from the Word Study tab. It will appear in your gathered answers below.</p>
+    </div>
+  </div>
+
+  <div class="activity bl-sage">
+    <div class="activity-head"><div class="activity-num" style="background:#52B788;">C</div><div style="flex:1;"><div class="activity-title">Part C: Writing Connection</div><div class="activity-sub">Today's writing product</div></div></div>
+    <div class="activity-body">
+      <p>Compare, in 2&ndash;3 sentences, what a primary source and a secondary source can each tell a historian.</p>
+      <div class="textbox-prompt">Name something a primary source can tell a historian, and something a secondary source can tell a historian.</div>
+      <textarea class="journal-box" style="min-height:220px" id="journal-writing" data-label="Writing Connection: Primary vs. secondary sources"
+        placeholder="A primary source can tell a historian... A secondary source can tell a historian..."
+        oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
+    </div>
+  </div>
+
+  <div class="gathered-card">
+    <div class="gathered-header">
+      <div class="gathered-header-icon">📋</div>
+      <div>
+        <div class="gathered-header-label">All Your Work</div>
+        <div class="gathered-header-title">Review, Copy, or Download</div>
+      </div>
+    </div>
+    <div class="gathered-body">
+      <p class="gathered-intro">Everything you typed across the lesson is gathered below. Review your answers, then copy to paste into Canvas or download as a PDF.</p>
+      <textarea class="gathered-output" id="gatheredOutput" readonly></textarea>
+      <div class="gathered-actions">
+        <button class="gathered-btn gathered-btn-copy" onclick="copyToClipboard()">📋 Copy to Clipboard</button>
+        <button class="gathered-btn gathered-btn-pdf" onclick="downloadPDF()">📄 Download as PDF</button>
+      </div>
+      <div class="gathered-copied" id="gatheredCopied">Copied to clipboard!</div>
+    </div>
+  </div>
+
+  <button class="download-btn" onclick="downloadPDF()">
+    <span class="download-btn-icon">📥</span>
+    Download All My Work
+  </button>
+  <div class="download-btn-sub">Opens a print-ready page with all your answers and game results</div>
+
+  <div class="turn-in-card">
+    <div class="turn-in-header"><div class="turn-in-header-icon">📬</div><div><div class="turn-in-header-label">Ready to Submit?</div><div class="turn-in-header-title">Before You Turn In</div></div></div>
+    <div class="turn-in-body">
+      <p class="turn-in-intro">Check off each item as you finish.</p>
+      <div class="turn-in-checklist" id="checklist">
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered all 3 research questions with evidence from the passage.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed the Vocabulary Choice Board Show What You Know response.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my Writing Connection response.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I copied my work to Canvas <strong>or</strong> downloaded the PDF.</div></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /tab-assignment -->
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <div class="footer-main"><span>Optima Academy Online</span> &middot; 5th Grade ELA &middot; Week 16 &middot; Lesson 16.4</div>
+  <div class="footer-sub"><em>The Writer's Bridge</em> &mdash; Comparing Sources &amp; Looking Ahead</div>
+  <div class="footer-copy">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div><!-- /page-wrap -->
+
+<script>
+/* ───── TAB SWITCHING ───── */
+function switchTab(tabId){
+  document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+  document.getElementById('tab-'+tabId).classList.add('active');
+  var btn=document.querySelector('.tab-btn[data-tab="'+tabId+'"]');
+  btn.classList.add('active');
+  btn.classList.add('visited');
+  updateProgress();
+  var intro=document.getElementById('introSection');
+  if(tabId==='warmup'){intro.classList.remove('collapsed');}
+  else{intro.classList.add('collapsed');}
+  if(tabId==='assignment'){gatherAnswers();}
+  try{document.getElementById('pageTop').scrollIntoView({behavior:'smooth',block:'start'});}catch(e){}
+  try{window.scrollTo({top:0,behavior:'smooth'});}catch(e){}
+  document.documentElement.scrollTop=0;
+  document.body.scrollTop=0;
+}
+
+function expandIntro(){
+  document.getElementById('introSection').classList.remove('collapsed');
+}
+
+/* ───── PROGRESS BAR ───── */
+function updateProgress(){
+  var total=document.querySelectorAll('.tab-btn').length;
+  var visited=document.querySelectorAll('.tab-btn.visited').length;
+  var pct=Math.round((visited/total)*100);
+  document.getElementById('progressFill').style.width=pct+'%';
+  document.getElementById('progressPct').textContent=pct+'%';
+}
+document.querySelector('.tab-btn.active').classList.add('visited');
+updateProgress();
+(function(){
+  var pw=document.querySelector('.progress-wrap');
+  var tb=document.querySelector('.tab-bar');
+  if(pw&&tb){tb.style.top=pw.offsetHeight+'px';}
+})();
+
+/* ───── AUTO-SAVE ───── */
+function autoSave(el,dotId){
+  var dot=document.getElementById(dotId);
+  if(dot&&el.value.trim().length>0){dot.classList.add('saved');}
+  else if(dot){dot.classList.remove('saved');}
+}
+
+/* ───── VOCABULARY CHOICE BOARD ───── */
+function chooseVocab(item){
+  document.querySelectorAll('#choiceBoard .choice-item').forEach(function(c){c.classList.remove('chosen');});
+  item.classList.add('chosen');
+}
+
+/* ───── GATHER ALL ANSWERS ───── */
+function gatherAnswers(){
+  var output='';
+  output+='LESSON 16.4 — THE WRITER'+String.fromCharCode(39)+'S BRIDGE, COMPARING SOURCES & LOOKING AHEAD\n';
+  output+='════════════════════════════════════════\n\n';
+  output+='🔤 WORD STUDY — SHOW WHAT YOU KNOW\n';
+  output+='────────────────────────────────\n';
+  var swykIds=['journal-vocab'];
+  swykIds.forEach(function(id){
+    var el=document.getElementById(id);
+    if(el){
+      output+='\n'+(el.getAttribute('data-label')||id)+'\n';
+      output+=(el.value.trim()||'(no answer)')+'\n';
+    }
+  });
+  output+='\n';
+  output+='📬 RESEARCH THINKING\n';
+  output+='────────────────────────────────\n';
+  ['journal-q1','journal-q2','journal-q3'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(!el)return;
+    output+='\n'+(el.getAttribute('data-label')||id)+'\n';
+    output+=(el.value.trim()||'(no answer)')+'\n';
+  });
+  output+='\n';
+  output+='🪶 WRITING CONNECTION\n';
+  output+='────────────────────────────────\n';
+  var wc=document.getElementById('journal-writing');
+  if(wc){
+    output+='\n'+(wc.getAttribute('data-label')||'Writing Connection')+'\n';
+    output+=(wc.value.trim()||'(no answer)')+'\n';
+  }
+  output+='\n';
+  output+='🎮 PRACTICE ACTIVITY STATUS\n';
+  output+='────────────────────────────────\n';
+  output+=(window._vocabMatchDone?'✅':'⬜')+' Morphology Vocab Match\n';
+  output+=(window._fillinDone?'✅':'⬜')+' Spelling Riddle Challenge\n';
+  output+=(window._challenge1Done?'✅':'⬜')+' Odd-One-Out Round 1\n';
+  output+=(window._challenge2Done?'✅':'⬜')+' Odd-One-Out Round 2\n';
+  var gathered=document.getElementById('gatheredOutput');
+  if(gathered)gathered.value=output;
+}
+
+/* ───── COPY TO CLIPBOARD ───── */
+function copyToClipboard(){
+  gatherAnswers();
+  var gathered=document.getElementById('gatheredOutput');
+  if(!gathered)return;
+  gathered.select();
+  gathered.setSelectionRange(0,99999);
+  try{
+    navigator.clipboard.writeText(gathered.value).then(function(){showCopied();}).catch(function(){document.execCommand('copy');showCopied();});
+  }catch(e){document.execCommand('copy');showCopied();}
+}
+function showCopied(){
+  var msg=document.getElementById('gatheredCopied');
+  msg.classList.add('show');
+  setTimeout(function(){msg.classList.remove('show');},2500);
+}
+
+/* ───── DOWNLOAD AS PDF ───── */
+function downloadPDF(){
+  gatherAnswers();
+  var text=document.getElementById('gatheredOutput').value;
+  var html='<!DOCTYPE html><html><head><meta charset="UTF-8">';
+  html+='<title>Lesson 16.4 — My Work</title>';
+  html+='<style>';
+  html+='body{font-family:Georgia,serif;max-width:700px;margin:40px auto;padding:0 20px;color:#1a1a2e;line-height:1.7;}';
+  html+='h1{font-size:22px;border-bottom:3px solid #00695C;padding-bottom:8px;margin-bottom:6px;}';
+  html+='h2{font-size:14px;color:#7A88A8;margin-bottom:24px;}';
+  html+='pre{white-space:pre-wrap;font-family:Georgia,serif;font-size:14px;line-height:1.7;}';
+  html+='@media print{body{margin:20px;}}';
+  html+='</style></head><body>';
+  html+='<h1>📓 My Work — Lesson 16.4</h1>';
+  html+='<h2>The Writer'+String.fromCharCode(39)+'s Bridge — Comparing Sources &amp; Looking Ahead</h2>';
+  html+='<pre>'+text.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</pre>';
+  html+='</body></html>';
+  var win=window.open('','_blank');
+  if(win){win.document.write(html);win.document.close();setTimeout(function(){win.print();},400);}
+}
+
+/* ───── TURN-IN CHECKLIST ───── */
+function toggleCheck(item){
+  item.classList.toggle('checked');
+  var check=item.querySelector('.turn-in-check');
+  check.textContent=item.classList.contains('checked')?'✓':'';
+  var container=item.closest('.turn-in-checklist');
+  if(!container)return;
+  var all=container.querySelectorAll('.turn-in-item');
+  var checked=container.querySelectorAll('.turn-in-item.checked');
+  if(all.length===checked.length&&all.length>0){fireConfetti();}
+}
+
+/* ───── CONFETTI ───── */
+function fireConfetti(){
+  var canvas=document.getElementById('confettiCanvas');
+  var ctx=canvas.getContext('2d');
+  canvas.width=window.innerWidth;
+  canvas.height=window.innerHeight;
+  var colors=['#00695C','#B8863B','#52B788','#7B5EA7','#00897B','#FFF3DC'];
+  var particles=[];
+  for(var i=0;i<120;i++){
+    particles.push({x:Math.random()*canvas.width,y:-20-Math.random()*100,vx:(Math.random()-0.5)*6,vy:Math.random()*4+3,size:Math.random()*8+4,color:colors[Math.floor(Math.random()*colors.length)],rot:Math.random()*Math.PI*2,vrot:(Math.random()-0.5)*0.2});
+  }
+  var frame=0;
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.vy+=0.1;p.rot+=p.vrot;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.fillStyle=p.color;ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size);ctx.restore();});
+    frame++;
+    if(frame<180)requestAnimationFrame(animate);
+    else ctx.clearRect(0,0,canvas.width,canvas.height);
+  }
+  animate();
+}
+
+/* ───── BACK TO TOP (iframe-aware) ───── */
+(function(){
+  var btn=document.getElementById('backToTop');
+  if(!btn)return;
+  var inIframe=(function(){try{return window.self!==window.top;}catch(e){return true;}})();
+  btn.addEventListener('click',function(){
+    try{window.scrollTo({top:0,behavior:'smooth'});}catch(e){}
+    document.documentElement.scrollTop=0;
+    document.body.scrollTop=0;
+    var top=document.getElementById('pageTop');
+    if(top&&top.scrollIntoView){try{top.scrollIntoView({behavior:'smooth',block:'start'});}catch(e){}}
+    try{if(window.frameElement&&window.frameElement.scrollIntoView){window.frameElement.scrollIntoView({behavior:'smooth',block:'start'});}}catch(e){}
+    if(inIframe){try{window.parent.postMessage({type:'optima-lesson:scroll-to-top'},'*');}catch(e){}}
+  });
+  if(inIframe){setTimeout(function(){btn.classList.add('show');},1500);}
+  else{window.addEventListener('scroll',function(){btn.classList.toggle('show',window.pageYOffset>400);});}
+})();
+
+/* ───── DOL CLICKABLE WORD HANDLER ───── */
+function dolWordClick(el,explanation){
+  el.classList.toggle('tapped');
+  var explBox=document.getElementById('dolExplanation');
+  if(el.classList.contains('tapped')){explBox.textContent=explanation;}
+  else{explBox.textContent='';}
+}
+
+/* ───── VOCAB MATCH GAME (Morphology) ───── */
+window._vocabMatchDone=false;
+var matchFirst=null;var matchCount=0;var matchTotal=4;
+function matchClick(item){
+  if(item.classList.contains('matched'))return;
+  if(!matchFirst){matchFirst=item;item.classList.add('selected');return;}
+  if(matchFirst===item){matchFirst.classList.remove('selected');matchFirst=null;return;}
+  var key1=matchFirst.getAttribute('data-match');
+  var key2=item.getAttribute('data-match');
+  if(key1===key2&&matchFirst.classList.contains('is-word')!==item.classList.contains('is-word')){
+    matchFirst.classList.remove('selected');matchFirst.classList.add('matched');item.classList.add('matched');matchCount++;matchFirst=null;
+    if(matchCount>=matchTotal){document.getElementById('matchFeedback').classList.add('show');window._vocabMatchDone=true;}
+  }else{
+    item.classList.add('wrong-flash');matchFirst.classList.add('wrong-flash');
+    var a=matchFirst;var b=item;
+    setTimeout(function(){a.classList.remove('wrong-flash','selected');b.classList.remove('wrong-flash');},500);
+    matchFirst=null;
+  }
+}
+
+/* ───── SPELLING RIDDLE CHALLENGE ───── */
+window._fillinDone=false;
+function checkFillIn(){
+  var inputs=document.querySelectorAll('#fillinGame .fillin-input');
+  var allCorrect=true;
+  inputs.forEach(function(inp){
+    var answer=(inp.getAttribute('data-answer')||'').toLowerCase();
+    var val=inp.value.trim().toLowerCase();
+    if(val===answer){inp.classList.remove('wrong');inp.classList.add('correct');inp.disabled=true;}
+    else{inp.classList.remove('correct');inp.classList.add('wrong');allCorrect=false;setTimeout(function(){inp.classList.remove('wrong');},600);}
+  });
+  if(allCorrect){document.getElementById('fillinFeedback').classList.add('show');window._fillinDone=true;}
+}
+
+/* ───── ODD-ONE-OUT CHALLENGE ───── */
+window._challenge1Done=false;
+window._challenge2Done=false;
+function challengeClick(el,resultId,isCorrect){
+  var group=el.parentElement;
+  group.querySelectorAll('.challenge-word').forEach(function(w){w.style.pointerEvents='none';});
+  var result=document.getElementById(resultId);
+  if(isCorrect){
+    el.classList.add('right');
+    result.textContent='🎉 Yes! That word is the odd one out.';
+  }else{
+    el.classList.add('miss');
+    result.textContent='Not quite — look again at what the other three words have in common.';
+    group.querySelectorAll('.challenge-word').forEach(function(w){w.style.pointerEvents='auto';});
+  }
+  result.classList.add('show');
+  if(isCorrect){
+    if(resultId==='challengeResult1')window._challenge1Done=true;
+    if(resultId==='challengeResult2')window._challenge2Done=true;
+  }
+}
+
+/* ───── STORY JOURNEY TRACKER ───── */
+var TRACKER_TOTAL=12;
+var TRACKER_PROGRESS=8;
+var trackerIcons=["🖋️","📖","📜","🕯️","🗺️","📜","✒️","🌉","🌉","🛤️","🛤️","🛤️"];
+var trackerPos=[
+  {x:5,y:140},{x:13,y:120},{x:21,y:135},{x:29,y:145},
+  {x:37,y:125},{x:45,y:108},{x:53,y:130},{x:61,y:115},
+  {x:69,y:125},{x:77,y:135},{x:87,y:128},{x:95,y:118}
+];
+(function renderTracker(){
+  var scene=document.getElementById('scene');
+  if(!scene)return;
+  for(var i=0;i<TRACKER_TOTAL;i++){
+    var n=document.createElement('div');
+    var done=i<TRACKER_PROGRESS;
+    var active=i===TRACKER_PROGRESS-1;
+    n.className='node'+(done&&!active?' done':'')+(active?' active':'')+(!done&&!active?' upcoming':'');
+    n.style.left='calc('+trackerPos[i].x+'% - 15px)';
+    n.style.top=trackerPos[i].y+'px';
+    n.innerHTML=done?(active?trackerIcons[i]:'✦'):trackerIcons[i];
+    scene.appendChild(n);
+  }
+  var token=document.getElementById('charToken');
+  var idx=Math.max(0,TRACKER_PROGRESS-1);
+  if(token){
+    token.style.left='calc('+trackerPos[idx].x+'% - 14px)';
+    token.style.top=(trackerPos[idx].y-36)+'px';
+  }
+})();
+</script>
+
+</body>
+</html>

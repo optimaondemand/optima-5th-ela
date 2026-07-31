@@ -102,16 +102,16 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .tab-panel.active{display:block;}
 
 /* ═══════════ VIDEO WRAP ═══════════ */
-.video-wrap{border-radius:18px;overflow:hidden;border:2px solid #E2E8F4;box-shadow:0 4px 20px rgba(14,28,66,.08);background:#000;margin:0 0 22px;}
-.video-wrap-header{display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0A2A4A,#0E3A5C);border-bottom:2px solid rgba(200,150,42,.25);}
-.video-wrap-type{font-size:10px;color:#00897B;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:2px;}
-.video-wrap-title{font-size:16px;color:#fff;font-weight:800;line-height:1.2;}
-.video-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;}
-.video-ratio iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
-.video-placeholder{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#0E1C42,#1A2D5A);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;}
-.video-placeholder-icon{font-size:44px;margin-bottom:10px;opacity:.55;}
-.video-placeholder-text{font-size:14px;color:rgba(255,255,255,.55);font-weight:600;line-height:1.5;}
-.video-placeholder-id{font-size:11px;color:rgba(200,150,42,.5);font-family:monospace;margin-top:6px;letter-spacing:.5px;}
+
+
+
+
+
+
+
+
+
+
 
 /* ═══════════ ACTIVITY CARDS ═══════════ */
 .activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04);}
@@ -623,17 +623,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">&#x1F4EC; Assignment<span class="tab-check">&#10003;</span></button>
 </div>
 <div class="tab-panel active" id="tab-warmup">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Welcome &middot; Day 2 of 4</div>
-      <div class="video-wrap-title">Welcome to Lesson 12.2!</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 12-2-welcome --></div>
-    </div></div>
-  </div>
-  <div class="activity bl-plum">
+    <div class="activity bl-plum">
     <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">&#x1F4DA;</div>
       <div style="flex:1;"><div class="activity-title">What Good Readers Do</div>
       <div class="activity-sub">Notice how setting shapes the meaning of an event</div></div>
@@ -705,17 +695,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="activity-sub">Identify &mdash; spot the suffix; decode the word</div></div>
     </div>
     <div class="activity-body">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Morphology &middot; Day 2</div>
-      <div class="video-wrap-title">Suffixes -al/-ous: Identify</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 12-2-morphology --></div>
-    </div></div>
-  </div>
-      <p>Today you identify the suffix (-al or -ous) in new words &mdash; some you may not have seen before. Use the suffix to decode the meaning.</p>
+        <p>Today you identify the suffix (-al or -ous) in new words &mdash; some you may not have seen before. Use the suffix to decode the meaning.</p>
       <div class="match-game">
         <div class="match-grid">
           <div class="match-item is-word" data-match="A" onclick="matchClick(this)">celestial</div>
@@ -737,17 +717,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="activity-sub">Identify &mdash; spot the suffix in this week&rsquo;s words</div></div>
     </div>
     <div class="activity-body">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Vocabulary &middot; Day 2</div>
-      <div class="video-wrap-title">Identifying Suffixes in Vocabulary</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 12-2-vocabulary --></div>
-    </div></div>
-  </div>
-      <p>Sort this week&rsquo;s vocabulary words by their suffix. Remember: all six are adjectives. Use the suffix to help you group them.</p>
+        <p>Sort this week&rsquo;s vocabulary words by their suffix. Remember: all six are adjectives. Use the suffix to help you group them.</p>
       <div class="sort-bank" id="sortBank">
         <span class="sort-chip" data-group="al" onclick="pickChip(this)">lunar</span>
         <span class="sort-chip" data-group="ous" onclick="pickChip(this)">erroneous</span>
@@ -775,17 +745,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="activity-sub">Show What You Know &mdash; prepositional phrases</div></div>
     </div>
     <div class="activity-body">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Grammar &middot; Day 2</div>
-      <div class="video-wrap-title">Identifying Prepositional Phrases</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 12-2-grammar --></div>
-    </div></div>
-  </div>
-      <p>First identify the prepositional phrases in these sentences, then show what you know.</p>
+        <p>First identify the prepositional phrases in these sentences, then show what you know.</p>
       <div class="spotter-game">
         <div class="spotter-sentence" id="sp1">
           <strong style="font-size:13px;color:#7A88A8;display:block;margin-bottom:6px;">&ldquo;Nat worked on his corrections throughout the night.&rdquo; &mdash; How many prepositional phrases?</strong>
@@ -817,17 +777,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="activity-sub">Identify &mdash; -ous, -ious, or -eous?</div></div>
     </div>
     <div class="activity-body">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Spelling &middot; Day 2</div>
-      <div class="video-wrap-title">The -ous Family: Identify</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 12-2-spelling --></div>
-    </div></div>
-  </div>
-      <p>Yesterday you discovered the three spellings. Today, identify the correct one for each word. Think about the base word and the pattern.</p>
+        <p>Yesterday you discovered the three spellings. Today, identify the correct one for each word. Think about the base word and the pattern.</p>
       <div class="spotter-game">
         <div class="spotter-sentence" id="sp3">
           <strong style="font-size:13px;color:#7A88A8;display:block;margin-bottom:6px;">The word <strong>courag_ous</strong>: which ending is correct?</strong>
@@ -896,17 +846,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       </div></div>
     <div class="tracker-chapter-label">&#x1F4CD; You are here: <strong>Week 12 &mdash; Chapter 14 — Nineteen Guns</strong></div>
   </div>
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Reading &middot; Chapter Introduction</div>
-      <div class="video-wrap-title">Before You Read Chapter 14</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 12-2-reading --></div>
-    </div></div>
-  </div>
-  <div class="activity bl-teal">
+    <div class="activity bl-teal">
     <div class="activity-head"><div class="activity-num" style="background:#00796B;">&#x1F4D5;</div>
       <div style="flex:1;"><div class="activity-title">Read: Chapter 14 &mdash; &ldquo;Nineteen Guns&rdquo;</div>
       <div class="activity-sub">The Henry returns; the setting shifts from sea to shore</div></div>
@@ -941,17 +881,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   </div>
 </div>
 <div class="tab-panel" id="tab-assignment">
-  <div class="video-wrap">
-    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div>
-      <div class="video-wrap-type">Assignment &middot; What to Submit</div>
-      <div class="video-wrap-title">Show What You Know — Chapter 14</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder">
-      <div class="video-placeholder-icon">&#x1F3AC;</div>
-      <div class="video-placeholder-text">Coming soon</div>
-      <div class="video-placeholder-id"><!-- slot: 12-2-assignment --></div>
-    </div></div>
-  </div>
-  <div class="callout callout-info" style="margin-bottom:20px;"><span class="callout-icon">&#x1F4EC;</span>
+    <div class="callout callout-info" style="margin-bottom:20px;"><span class="callout-icon">&#x1F4EC;</span>
     <p>Answer in complete sentences with evidence from Chapter 14.</p></div>
   <div class="activity bl-teal">
     <div class="activity-head"><div class="activity-num" style="background:#00796B;">A</div>

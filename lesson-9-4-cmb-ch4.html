@@ -105,16 +105,16 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .tab-panel.active{display:block;}
 
 /* ═══════════ VIDEO WRAP ═══════════ */
-.video-wrap{border-radius:18px;overflow:hidden;border:2px solid #E2E8F4;box-shadow:0 4px 20px rgba(14,28,66,.08);background:#000;margin:0 0 22px;}
-.video-wrap-header{display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0A2A4A,#0E3A5C);border-bottom:2px solid rgba(200,150,42,.25);}
-.video-wrap-type{font-size:10px;color:#00897B;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:2px;}
-.video-wrap-title{font-size:16px;color:#fff;font-weight:800;line-height:1.2;}
-.video-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;}
-.video-ratio iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
-.video-placeholder{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#0E1C42,#1A2D5A);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;}
-.video-placeholder-icon{font-size:44px;margin-bottom:10px;opacity:.55;}
-.video-placeholder-text{font-size:14px;color:rgba(255,255,255,.55);font-weight:600;line-height:1.5;}
-.video-placeholder-id{font-size:11px;color:rgba(200,150,42,.5);font-family:monospace;margin-top:6px;letter-spacing:.5px;}
+
+
+
+
+
+
+
+
+
+
 
 /* ═══════════ ACTIVITY CARDS ═══════════ */
 .activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04);}
@@ -762,21 +762,13 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 <div class="tab-panel active" id="tab-warmup">
 
   <!-- Welcome video -->
-  <div class="video-wrap" style="margin-bottom:20px;">
-    <div class="video-wrap-header"><span style="font-size:20px;">🎬</span><div><div class="video-wrap-type">Welcome &middot; Lesson 9.4</div><div class="video-wrap-title">The Week Closer — What to Expect Today</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🎬</div><div class="video-placeholder-text">Teacher welcomes you and previews the week closer</div><div class="video-placeholder-id"><!-- slot: 9-4-welcome --></div></div></div>
-  </div>
-
+  
   <!-- DOL -->
   <div class="activity bl-navy">
     <div class="activity-head"><div class="activity-num" style="background:#0E3A5C;">✏️</div><div style="flex:1;"><div class="activity-title">Daily Oral Language</div><div class="activity-sub">Study the model — then fix the broken sentence</div></div></div>
     <div class="activity-body">
 
-      <div class="video-wrap" style="margin-bottom:14px;">
-        <div class="video-wrap-header"><span style="font-size:20px;">✏️</span><div><div class="video-wrap-type">DOL Feedback &middot; Day 4</div><div class="video-wrap-title">Proper Names — Where Do Capitals Go?</div></div></div>
-        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">✏️</div><div class="video-placeholder-text">Teacher walks through today's sentences and explains the conventions</div><div class="video-placeholder-id"><!-- slot: 9-4-dol-feedback --></div></div></div>
-      </div>
-
+      
       <p><strong>Step 1 — The Correct Model.</strong> Tap each highlighted word to see why it&rsquo;s written the way it is.</p>
       <div class="dol-sentence">
         At twelve years old, <span class="dol-highlight-word" onclick="dolWordClick(this,'Nathaniel is a person\'s given name — a proper noun — so it always starts with a capital letter.')">Nathaniel</span> signed the indenture that would bind him to <span class="dol-highlight-word" onclick="dolWordClick(this,'Ropes and Hodges is the name of a business — a proper noun. Both words in the name are capitalized.')">Ropes</span> and <span class="dol-highlight-word" onclick="dolWordClick(this,'Hodges is the second part of the business name, Ropes and Hodges. As a proper noun, it also gets a capital.')">Hodges</span> for nine years.
@@ -849,11 +841,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div><div style="flex:1;"><div class="activity-title">🌱 Morphology: Root Detective — Explain the Connection</div><div class="activity-sub">Day 4: Explain — which root built this word?</div></div></div>
     <div class="activity-body">
 
-      <div class="video-wrap" style="margin-bottom:14px;">
-        <div class="video-wrap-header"><span style="font-size:20px;">🌱</span><div><div class="video-wrap-type">Morphology &middot; Week Closer</div><div class="video-wrap-title">The Roots That Travel Everywhere</div></div></div>
-        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🌱</div><div class="video-placeholder-text">Teacher reviews the three roots and their reach across the language</div><div class="video-placeholder-id"><!-- slot: 9-4-morphology --></div></div></div>
-      </div>
-
+      
       <div class="key-concept">
         <div class="key-concept-label">🔑 The Roots at a Glance</div>
         <p><strong>naut-</strong> (Greek) — sailor, sea &nbsp;|&nbsp; <strong>nav-</strong> (Latin) — ship, guide &nbsp;|&nbsp; <strong>-port-</strong> (Latin) — carry</p>
@@ -912,11 +900,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <div class="activity-head"><div class="activity-num" style="background:#00796B;">2</div><div style="flex:1;"><div class="activity-title">📖 Vocabulary: Show What You Know — Your Choice</div><div class="activity-sub">Day 4: Choose one way to demonstrate the words</div></div></div>
     <div class="activity-body">
 
-      <div class="video-wrap" style="margin-bottom:14px;">
-        <div class="video-wrap-header"><span style="font-size:20px;">📖</span><div><div class="video-wrap-type">Vocabulary &middot; Day 4</div><div class="video-wrap-title">The Word Vault — Choosing Your Path</div></div></div>
-        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">📖</div><div class="video-placeholder-text">Teacher explains the choice board and how to pick the task that fits you best</div><div class="video-placeholder-id"><!-- slot: 9-4-vocabulary --></div></div></div>
-      </div>
-
+      
       <p>This week&rsquo;s words describe the world Nat moves through: <strong>privateer, chandlery, wharf, cooperage, expectation, indenture</strong>. Pick <em>one</em> of the six tasks below and write your response in the journal space. This is your Word Study Show What You Know for the week.</p>
 
       <div class="vocab-choice-grid" id="vocabChoiceGrid">
@@ -976,11 +960,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">3</div><div style="flex:1;"><div class="activity-title">✏️ Grammar: Which Sentence Wins?</div><div class="activity-sub">Day 4: Explain — choose the stronger version and say why</div></div></div>
     <div class="activity-body">
 
-      <div class="video-wrap" style="margin-bottom:14px;">
-        <div class="video-wrap-header"><span style="font-size:20px;">✏️</span><div><div class="video-wrap-type">Grammar &middot; Day 4</div><div class="video-wrap-title">Why Writers Choose Active Voice</div></div></div>
-        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">✏️</div><div class="video-placeholder-text">Teacher explains why active voice makes writing feel clear and direct</div><div class="video-placeholder-id"><!-- slot: 9-4-grammar --></div></div></div>
-      </div>
-
+      
       <div class="key-concept">
         <div class="key-concept-label">🔑 Why It Matters</div>
         <p>Active voice puts the doer first. It&rsquo;s faster, clearer, and more powerful — the reader sees who&rsquo;s doing what, immediately. Passive voice makes readers work harder. Good writers use active voice most of the time, and save passive for when the doer doesn&rsquo;t matter or isn&rsquo;t known.</p>
@@ -1026,11 +1006,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <div class="activity-head"><div class="activity-num" style="background:#0E3A5C;">4</div><div style="flex:1;"><div class="activity-title">🔤 Spelling: Odd One Out</div><div class="activity-sub">Day 4: Challenge — spot the word that breaks the pattern</div></div></div>
     <div class="activity-body">
 
-      <div class="video-wrap" style="margin-bottom:14px;">
-        <div class="video-wrap-header"><span style="font-size:20px;">🔤</span><div><div class="video-wrap-type">Spelling &middot; Day 4</div><div class="video-wrap-title">AI and A&ndash;E: Finding the Mismatch</div></div></div>
-        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🔤</div><div class="video-placeholder-text">Teacher introduces the Odd One Out challenge and reviews both patterns</div><div class="video-placeholder-id"><!-- slot: 9-4-spelling --></div></div></div>
-      </div>
-
+      
       <div class="callout callout-tip">
         <span class="callout-icon">💡</span>
         <p>Each group below has three words. Two of them share the same vowel team pattern (either AI or A&ndash;E). One of them doesn&rsquo;t. Click the <strong>odd one out</strong> — the word that doesn&rsquo;t match the other two.</p>
@@ -1101,11 +1077,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   </div>
 
   <!-- Reading video -->
-  <div class="video-wrap" style="margin-bottom:18px;">
-    <div class="video-wrap-header"><span style="font-size:20px;">📖</span><div><div class="video-wrap-type">Reading &middot; Chapter Introduction</div><div class="video-wrap-title">Before You Read Chapter 4</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">📖</div><div class="video-placeholder-text">Teacher introduces Chapter 4 and what to watch for as the week closes</div><div class="video-placeholder-id"><!-- slot: 9-4-reading --></div></div></div>
-  </div>
-
+  
   <!-- Story Journey Tracker -->
   <div class="tracker-card">
     <div class="tracker-header"><div class="tracker-header-icon">⛵</div><div><div class="tracker-header-label">Your Story Journey</div><div class="tracker-header-title">Nat&rsquo;s Path Through <em>Carry On, Mr. Bowditch</em></div></div></div>
@@ -1187,11 +1159,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 <div class="tab-panel" id="tab-assignment">
 
   <!-- Assignment intro video -->
-  <div class="video-wrap" style="margin-bottom:18px;">
-    <div class="video-wrap-header"><span style="font-size:20px;">📬</span><div><div class="video-wrap-type">Assignment &middot; Lesson 9.4</div><div class="video-wrap-title">What to Do Here</div></div></div>
-    <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">📬</div><div class="video-placeholder-text">Teacher explains the week-closer assignment and the special Question 3</div><div class="video-placeholder-id"><!-- slot: 9-4-assignment --></div></div></div>
-  </div>
-
+  
   <p style="font-size:16px;color:#3A4A6B;line-height:1.7;margin-bottom:20px;">This is the part you submit. Answer in complete sentences. Question 3 asks you to look back across all four chapters — so take your time and use evidence from more than one place in the reading.</p>
 
   <!-- Part A: 3 Comprehension Questions -->
