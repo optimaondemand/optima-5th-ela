@@ -15,6 +15,22 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .header-title em{color:#F9A825;font-style:italic;}
 .header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,134,42,.20);border:1.5px solid rgba(212,168,67,.45);border-radius:28px;padding:6px 16px;}
 .header-badge-icon{font-size:20px;}.header-badge-text{font-size:17px;color:#fff;font-weight:800;}
+
+/* ======= STANDARDS TOGGLE BAR ======= */
+.standards-toggle-bar{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,#1a2a3a,#1e3448);padding:10px 28px;cursor:pointer;user-select:none;border-bottom:1px solid rgba(85,200,232,.12);}
+.standards-toggle-bar:hover{background:linear-gradient(135deg,#1e3044,#23394d);}
+.standards-toggle-label{font-size:12px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:1px;font-weight:700;display:flex;align-items:center;gap:8px;}
+.standards-toggle-arrow{font-size:10px;color:rgba(255,255,255,.35);transition:transform .25s ease;}
+.standards-toggle-bar.open .standards-toggle-arrow{transform:rotate(180deg);}
+.standards-panel{max-height:0;overflow:hidden;transition:max-height .3s ease;background:#14212e;border-bottom:1px solid rgba(85,200,232,.08);}
+.standards-panel.open{max-height:200px;}
+.standards-panel-inner{display:flex;gap:32px;padding:14px 28px 16px;flex-wrap:wrap;}
+.standards-group{display:flex;flex-direction:column;gap:6px;}
+.standards-group-label{font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.8px;font-weight:700;}
+.standards-codes{font-size:12px;color:rgba(255,255,255,.65);line-height:1.7;font-weight:500;}
+.standards-codes .fl-code{color:#80CBC4;}
+.standards-codes .tx-code{color:#FFD54F;}
+.footer-standards{font-size:10px;color:rgba(255,255,255,.3);margin-top:6px;letter-spacing:.3px;}
 .content{padding:28px;}
 .intro{background:linear-gradient(135deg,#FFF8F0,#FFF3DC);border:2px solid #F5E6C8;border-radius:18px;padding:22px 24px;margin-bottom:20px;}
 .intro p{font-size:17px;color:#5A4A3A;line-height:1.75;margin:0;}
@@ -83,6 +99,24 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <div class="header-title"><em>By the Great Horn Spoon!</em></div>
   <div class="header-badge"><span class="header-badge-icon">📋</span><span class="header-badge-text">Week 28 &middot; Check-In</span></div>
 </div>
+
+<div class="standards-toggle-bar" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+  <span class="standards-toggle-label">Standards Alignment</span>
+  <span class="standards-toggle-arrow">&#x25BC;</span>
+</div>
+<div class="standards-panel">
+  <div class="standards-panel-inner">
+    <div class="standards-group">
+      <div class="standards-group-label">Florida B.E.S.T.</div>
+      <div class="standards-codes"><span class="fl-code">ELA.5.R.3.1</span> &middot; <span class="fl-code">ELA.5.C.1.2</span> &middot; <span class="fl-code">ELA.5.V.1.2</span> &middot; <span class="fl-code">ELA.5.V.1.3</span> &middot; <span class="fl-code">ELA.5.C.1.5</span></div>
+    </div>
+    <div class="standards-group">
+      <div class="standards-group-label">Texas TEKS</div>
+      <div class="standards-codes"><span class="tx-code">5.10.D</span> &middot; <span class="tx-code">5.12.A</span> &middot; <span class="tx-code">5.3.C</span> &middot; <span class="tx-code">5.3.B</span> &middot; <span class="tx-code">5.11</span></div>
+    </div>
+  </div>
+</div>
+
 <div class="content">
   <div class="intro"><p>Show what you learned in Week 28 — chapters 10–12, morphology, grammar, spelling, and literary response. Take your time!</p></div>
   <div class="total-bar"><div class="total-label">Total Points</div><div class="total-value">14 points</div></div>

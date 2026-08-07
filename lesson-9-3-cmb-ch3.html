@@ -33,6 +33,22 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .header-badge-icon{font-size:22px;}
 .header-badge-text{font-size:18px;color:#fff;font-weight:800;}
 
+/* ======= STANDARDS TOGGLE BAR ======= */
+.standards-toggle-bar{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,#1a2a3a,#1e3448);padding:10px 28px;cursor:pointer;user-select:none;border-bottom:1px solid rgba(85,200,232,.12);}
+.standards-toggle-bar:hover{background:linear-gradient(135deg,#1e3044,#23394d);}
+.standards-toggle-label{font-size:12px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:1px;font-weight:700;display:flex;align-items:center;gap:8px;}
+.standards-toggle-arrow{font-size:10px;color:rgba(255,255,255,.35);transition:transform .25s ease;}
+.standards-toggle-bar.open .standards-toggle-arrow{transform:rotate(180deg);}
+.standards-panel{max-height:0;overflow:hidden;transition:max-height .3s ease;background:#14212e;border-bottom:1px solid rgba(85,200,232,.08);}
+.standards-panel.open{max-height:200px;}
+.standards-panel-inner{display:flex;gap:32px;padding:14px 28px 16px;flex-wrap:wrap;}
+.standards-group{display:flex;flex-direction:column;gap:6px;}
+.standards-group-label{font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.8px;font-weight:700;}
+.standards-codes{font-size:12px;color:rgba(255,255,255,.65);line-height:1.7;font-weight:500;}
+.standards-codes .fl-code{color:#80CBC4;}
+.standards-codes .tx-code{color:#FFD54F;}
+.footer-standards{font-size:10px;color:rgba(255,255,255,.3);margin-top:6px;letter-spacing:.3px;}
+
 /* ═══════════ HERO BANNER ═══════════ */
 .hero-visual{background:linear-gradient(180deg,#020A18 0%,#061428 60%,#0D2240 100%);padding:0;position:relative;overflow:hidden;border-bottom:3px solid #C8962A;}
 .hero-visual svg{display:block;width:100%;height:auto;}
@@ -696,6 +712,24 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <text x="240" y="138" fill="#8AAAC0" font-family="Georgia,serif" font-size="12" font-style="italic">He was saying good-by to a lot of things.</text>
 </svg>
 </div><!-- /hero-visual -->
+
+
+<div class="standards-toggle-bar" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+  <span class="standards-toggle-label">Standards Alignment</span>
+  <span class="standards-toggle-arrow">&#x25BC;</span>
+</div>
+<div class="standards-panel">
+  <div class="standards-panel-inner">
+    <div class="standards-group">
+      <div class="standards-group-label">Florida B.E.S.T.</div>
+      <div class="standards-codes"><span class="fl-code">ELA.5.R.1.1</span> &middot; <span class="fl-code">ELA.5.C.1.4</span> &middot; <span class="fl-code">ELA.5.C.4.1</span> &middot; <span class="fl-code">ELA.5.F.1.3</span> &middot; <span class="fl-code">ELA.5.V.1.1</span></div>
+    </div>
+    <div class="standards-group">
+      <div class="standards-group-label">Texas TEKS</div>
+      <div class="standards-codes"><span class="tx-code">5.8.B</span> &middot; <span class="tx-code">5.8.C</span> &middot; <span class="tx-code">5.8.D</span> &middot; <span class="tx-code">5.12.B</span> &middot; <span class="tx-code">5.1.C</span> &middot; <span class="tx-code">5.2</span> &middot; <span class="tx-code">5.3</span></div>
+    </div>
+  </div>
+</div>
 
 <!-- ═══════════ INFO STRIP ═══════════ -->
 <div class="info-strip">

@@ -17,6 +17,22 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .header-badge-icon{font-size:22px;}
 .header-badge-text{font-size:18px;color:#fff;font-weight:800;}
 
+/* ======= STANDARDS TOGGLE BAR ======= */
+.standards-toggle-bar{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,#1a2a3a,#1e3448);padding:10px 28px;cursor:pointer;user-select:none;border-bottom:1px solid rgba(85,200,232,.12);}
+.standards-toggle-bar:hover{background:linear-gradient(135deg,#1e3044,#23394d);}
+.standards-toggle-label{font-size:12px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:1px;font-weight:700;display:flex;align-items:center;gap:8px;}
+.standards-toggle-arrow{font-size:10px;color:rgba(255,255,255,.35);transition:transform .25s ease;}
+.standards-toggle-bar.open .standards-toggle-arrow{transform:rotate(180deg);}
+.standards-panel{max-height:0;overflow:hidden;transition:max-height .3s ease;background:#14212e;border-bottom:1px solid rgba(85,200,232,.08);}
+.standards-panel.open{max-height:200px;}
+.standards-panel-inner{display:flex;gap:32px;padding:14px 28px 16px;flex-wrap:wrap;}
+.standards-group{display:flex;flex-direction:column;gap:6px;}
+.standards-group-label{font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.8px;font-weight:700;}
+.standards-codes{font-size:12px;color:rgba(255,255,255,.65);line-height:1.7;font-weight:500;}
+.standards-codes .fl-code{color:#80CBC4;}
+.standards-codes .tx-code{color:#FFD54F;}
+.footer-standards{font-size:10px;color:rgba(255,255,255,.3);margin-top:6px;letter-spacing:.3px;}
+
 /* ═══════════ CONTENT ═══════════ */
 .content{padding:28px;}
 
@@ -98,6 +114,24 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 </style></head><body>
 <div class="page-wrap">
 <div class="header"><div class="header-brand"><div class="header-logo"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy"></div><div><div class="header-org">Optima Academy Online</div><div class="header-sub">An Education Experience Company</div></div></div><div class="header-title"><em>Carry On, Mr. Bowditch</em></div><div class="header-badge"><span class="header-badge-icon">&#x1F52D;</span><span class="header-badge-text">Week 14 &middot; Final Check-In</span></div></div>
+
+<div class="standards-toggle-bar" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+  <span class="standards-toggle-label">Standards Alignment</span>
+  <span class="standards-toggle-arrow">&#x25BC;</span>
+</div>
+<div class="standards-panel">
+  <div class="standards-panel-inner">
+    <div class="standards-group">
+      <div class="standards-group-label">Florida B.E.S.T.</div>
+      <div class="standards-codes"><span class="fl-code">ELA.5.R.1.2</span> &middot; <span class="fl-code">ELA.5.C.1.4</span> &middot; <span class="fl-code">ELA.5.C.2.1</span> &middot; <span class="fl-code">ELA.5.C.4.1</span> &middot; <span class="fl-code">ELA.5.C.5.1</span></div>
+    </div>
+    <div class="standards-group">
+      <div class="standards-group-label">Texas TEKS</div>
+      <div class="standards-codes"><span class="tx-code">5.8.A</span> &middot; <span class="tx-code">5.12.B</span> &middot; <span class="tx-code">5.13</span> &middot; <span class="tx-code">5.1.C</span> &middot; <span class="tx-code">5.9.F</span></div>
+    </div>
+  </div>
+</div>
+
 <div class="content">
   <div class="intro"><p>This is the final check-in for <em>Carry On, Mr. Bowditch</em>, covering Chapters 21&ndash;24 and the whole book. Show everything you know. 15 points total.</p></div>
   <div class="total-bar"><div class="total-label">Total Points &mdash; Final Unit Check-In</div><div class="total-value">15 pts</div></div>
