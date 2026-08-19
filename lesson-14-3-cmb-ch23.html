@@ -803,7 +803,6 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <div class="activity bl-teal"><div class="activity-head"><div class="activity-num" style="background:#00796B;">&#x1F4D5;</div><div style="flex:1;"><div class="activity-title">Read: Chapter 23 &mdash; &ldquo;Captain Bowditch Commanding&rdquo;</div><div class="activity-sub">The transformation is complete</div></div></div>
     <div class="activity-body">
       <p>Chapter 23 is the outward completion of Nat&rsquo;s arc. The boy who could not even own a book in the chandlery years is now in command of a ship. But notice: the deeper completion is not the rank. It&rsquo;s the moment when the crew fully trusts the mathematics. That trust is what Nat has been working toward since Chapter 6. As you read, ask: how does Captain Bowditch <em>command</em> in a way that reflects everything the book has been building?</p>
-      <div class="reading-links"><div class="reading-links-title">&#x1F4DA; Read or Listen</div><a href="#" class="reading-link"><span class="reading-link-icon">&#x1F4D6;</span><span>Read Chapter 23 in your novel</span></a></div>
       <div class="pause-columns">
         <div style="display:flex;flex-direction:column;"><div class="socratic-box" style="margin-bottom:0;"><div class="socratic-label">&#x23F8;&#xFE0F; Pause: The Transformation</div><p class="socratic-q">How does Nat&rsquo;s style of command in Chapter 23 reflect his character? What does he do &mdash; or refuse to do &mdash; that distinguishes him from other captains? Connect to at least one earlier chapter.</p></div>
           <textarea class="journal-box standalone" id="journal-pt1" placeholder="As captain, Nat... This reflects his character because... In Chapter ___, we saw the same quality when..." oninput="autoSave(this,'dot-pt1');" style="margin-top:10px;min-height:70px;"></textarea><div class="journal-label">&#x1F4D3; <span class="saved-dot" id="dot-pt1"></span></div></div>
@@ -873,7 +872,50 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 function expandIntro(){document.getElementById('introSection').classList.remove('collapsed');}
 function updateProgress(){var t=document.querySelectorAll('.tab-btn').length;var v=document.querySelectorAll('.tab-btn.visited').length;var p=Math.round((v/t)*100);document.getElementById('progressFill').style.width=p+'%';document.getElementById('progressPct').textContent=p+'%';}
 (function(){var a=document.querySelector('.tab-btn.active');if(a)a.classList.add('visited');updateProgress();})();
-function autoSave(el,d){var dot=document.getElementById(d);if(dot)dot.classList.toggle('saved',el.value.trim().length>0);}
+/* ───── AUTO-SAVE ───── */
+/* Unique key derived from the page title so each lesson's data stays separate */
+var _lessonKey = (document.title || 'ela-lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+
+function autoSave(el,dotId){
+  var dot=document.getElementById(dotId);
+  if(dot&&el.value.trim().length>0){dot.classList.add('saved');}
+  else if(dot){dot.classList.remove('saved');}
+  /* Actually persist to localStorage */
+  try{ localStorage.setItem(_lessonKey+'-'+el.id, el.value); }catch(e){}
+}
+
+/* Restore every saved textarea on page load */
+function restoreJournals(){
+  document.querySelectorAll('textarea.journal-box').forEach(function(t){
+    if(!t.id) return;
+    try{
+      var v = localStorage.getItem(_lessonKey+'-'+t.id);
+      if(v){ t.value = v; }
+    }catch(e){}
+    /* Re-trigger the saved dot if there's content */
+    var dotId = t.getAttribute('oninput');
+    if(dotId){
+      var m = dotId.match(/'(dot-[^']+)'/);
+      if(m){
+        var dot = document.getElementById(m[1]);
+        if(dot && t.value.trim().length>0){ dot.classList.add('saved'); }
+      }
+    }
+  });
+}
+restoreJournals();
+
+/* Warn before leaving if student has typed anything */
+window.addEventListener('beforeunload', function(e){
+  var hasWork = false;
+  document.querySelectorAll('textarea.journal-box').forEach(function(t){
+    if(t.value && t.value.trim().length > 0){ hasWork = true; }
+  });
+  if(hasWork){
+    e.preventDefault();
+    e.returnValue = '';
+  }
+});
 function dolWordClick(el,msg){el.classList.toggle('tapped');document.getElementById('dolExplanation').textContent=el.classList.contains('tapped')?msg:'';}
 var _fDone=false;function checkFillIn(){var ok=true;document.querySelectorAll('.fillin-input').forEach(inp=>{if(inp.value.trim().toLowerCase()===inp.getAttribute('data-answer').toLowerCase()){inp.classList.add('correct');inp.classList.remove('wrong');inp.disabled=true;}else{inp.classList.add('wrong');inp.classList.remove('correct');ok=false;setTimeout(()=>inp.classList.remove('wrong'),600);}});if(ok){var fb=document.getElementById('fillinFeedback');if(fb)fb.classList.add('show');_fDone=true;}}
 var _mF=null,_mC=0,_mT=4,_mD=false;function matchClick(item){if(item.classList.contains('matched'))return;if(!_mF){_mF=item;item.classList.add('selected');return;}if(_mF===item){_mF.classList.remove('selected');_mF=null;return;}var k1=_mF.getAttribute('data-match'),k2=item.getAttribute('data-match');if(k1===k2&&_mF.classList.contains('is-word')!==item.classList.contains('is-word')){_mF.classList.remove('selected');_mF.classList.add('matched');item.classList.add('matched');_mC++;_mF=null;if(_mC>=_mT){var fb=document.getElementById('matchFeedback');if(fb)fb.classList.add('show');_mD=true;}}else{item.classList.add('wrong-flash');_mF.classList.add('wrong-flash');var a=_mF,b=item;setTimeout(()=>{a.classList.remove('wrong-flash','selected');b.classList.remove('wrong-flash');},500);_mF=null;}}

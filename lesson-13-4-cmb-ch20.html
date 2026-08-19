@@ -822,7 +822,6 @@ he had need have much cunning, to seem to know that he doth not.
 <div class="tracker-card"><div class="tracker-header"><div class="tracker-header-icon">&#x1F5FA;&#xFE0F;</div><div><div class="tracker-header-label">Your Unit Journey</div><div class="tracker-header-title">Six Weeks with <em>Carry On, Mr. Bowditch</em></div></div></div><div class="umap-row"><div class="umap-stop umap-done"><div class="umap-circle">⛵</div><div class="umap-label">Week 9</div><div class="umap-sub">Chs. 1–4</div></div><div class="umap-connector"></div><div class="umap-stop umap-done"><div class="umap-circle">🌊</div><div class="umap-label">Week 10</div><div class="umap-sub">Chs. 5–8</div></div><div class="umap-connector"></div><div class="umap-stop umap-done"><div class="umap-circle">⚓</div><div class="umap-label">Week 11</div><div class="umap-sub">Chs. 9–12</div></div><div class="umap-connector"></div><div class="umap-stop umap-done"><div class="umap-circle">🌙</div><div class="umap-label">Week 12</div><div class="umap-sub">Chs. 13–16</div></div><div class="umap-connector"></div><div class="umap-stop umap-active"><div class="umap-circle">🧭</div><div class="umap-label">Week 13</div><div class="umap-sub">Chs. 17–20</div></div><div class="umap-connector"></div><div class="umap-stop umap-future"><div class="umap-circle">🔭</div><div class="umap-label">Week 14</div><div class="umap-sub">Chs. 21–24</div></div></div><div class="tracker-chapter-label">&#x1F4CD; You are here: <strong>Week 13 &mdash; Chapter 20 — Book Sailing</strong></div></div>
 <div class="activity bl-teal"><div class="activity-head"><div class="activity-num" style="background:#00796B;">&#x1F4D5;</div><div style="flex:1;"><div class="activity-title">Read: Chapter 20 &mdash; &ldquo;Book Sailing&rdquo;</div><div class="activity-sub">Nat begins the work that will define his legacy</div></div></div><div class="activity-body">
 <p>Chapter 20 is the beginning of the end &mdash; in the best possible sense. Nat begins systematically writing down the navigation principles he has spent his life perfecting. &ldquo;Book sailing&rdquo; is his phrase for what he&rsquo;s doing: navigating by the principles in the book, which will eventually become the <em>American Practical Navigator</em>. Look for the figurative language that makes this act of writing feel as significant as the act of sailing.</p>
-<div class="reading-links"><div class="reading-links-title">&#x1F4DA; Read or Listen</div><a href="#" class="reading-link"><span class="reading-link-icon">&#x1F4D6;</span><span>Read Chapter 20 in your novel</span></a></div>
 <div class="pause-columns">
 <div style="display:flex;flex-direction:column;"><div class="socratic-box" style="margin-bottom:0;"><div class="socratic-label">&#x23F8;&#xFE0F; Pause: &ldquo;Book Sailing&rdquo; as Metaphor</div><p class="socratic-q">Explain the metaphor in the title &ldquo;Book Sailing.&rdquo; What two things does it connect? What does this metaphor reveal about Nat&rsquo;s view of the relationship between knowledge and action?</p></div><textarea class="journal-box standalone" id="journal-pt1" placeholder="The metaphor connects... It reveals that Nat believes knowledge and action are related because..." oninput="autoSave(this,'dot-pt1');" style="margin-top:10px;min-height:70px;"></textarea><div class="journal-label">&#x1F4D3; <span class="saved-dot" id="dot-pt1"></span></div></div>
 <div style="display:flex;flex-direction:column;"><div class="socratic-box" style="margin-bottom:0;"><div class="socratic-label">&#x23F8;&#xFE0F; Reflective Pause &mdash; Chs. 17&ndash;20</div><p class="socratic-q">The arc: Lunars and Moonlight &rarr; The Astrea to the Rescue &rarr; Strange Sailing Orders &rarr; Book Sailing. What single theme connects all four chapters? Use figurative language in your answer if you can.</p></div><textarea class="journal-box standalone" id="journal-pt2" placeholder="The theme connecting all four chapters is... Like [figurative language], Nat... This arc shows that..." oninput="autoSave(this,'dot-pt2');" style="margin-top:10px;min-height:70px;"></textarea><div class="journal-label">&#x1F4D3; <span class="saved-dot" id="dot-pt2"></span></div></div>
@@ -895,7 +894,50 @@ function switchTab(id){document.querySelectorAll('.tab-panel').forEach(p=>p.clas
 function expandIntro(){document.getElementById('introSection').classList.remove('collapsed');}
 function updateProgress(){var t=document.querySelectorAll('.tab-btn').length;var v=document.querySelectorAll('.tab-btn.visited').length;var p=Math.round((v/t)*100);document.getElementById('progressFill').style.width=p+'%';document.getElementById('progressPct').textContent=p+'%';}
 (function(){var a=document.querySelector('.tab-btn.active');if(a)a.classList.add('visited');updateProgress();})();
-function autoSave(el,dotId){var d=document.getElementById(dotId);if(d)d.classList.toggle('saved',el.value.trim().length>0);}
+/* ───── AUTO-SAVE ───── */
+/* Unique key derived from the page title so each lesson's data stays separate */
+var _lessonKey = (document.title || 'ela-lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+
+function autoSave(el,dotId){
+  var dot=document.getElementById(dotId);
+  if(dot&&el.value.trim().length>0){dot.classList.add('saved');}
+  else if(dot){dot.classList.remove('saved');}
+  /* Actually persist to localStorage */
+  try{ localStorage.setItem(_lessonKey+'-'+el.id, el.value); }catch(e){}
+}
+
+/* Restore every saved textarea on page load */
+function restoreJournals(){
+  document.querySelectorAll('textarea.journal-box').forEach(function(t){
+    if(!t.id) return;
+    try{
+      var v = localStorage.getItem(_lessonKey+'-'+t.id);
+      if(v){ t.value = v; }
+    }catch(e){}
+    /* Re-trigger the saved dot if there's content */
+    var dotId = t.getAttribute('oninput');
+    if(dotId){
+      var m = dotId.match(/'(dot-[^']+)'/);
+      if(m){
+        var dot = document.getElementById(m[1]);
+        if(dot && t.value.trim().length>0){ dot.classList.add('saved'); }
+      }
+    }
+  });
+}
+restoreJournals();
+
+/* Warn before leaving if student has typed anything */
+window.addEventListener('beforeunload', function(e){
+  var hasWork = false;
+  document.querySelectorAll('textarea.journal-box').forEach(function(t){
+    if(t.value && t.value.trim().length > 0){ hasWork = true; }
+  });
+  if(hasWork){
+    e.preventDefault();
+    e.returnValue = '';
+  }
+});
 function dolWordClick(el,msg){el.classList.toggle('tapped');document.getElementById('dolExplanation').textContent=el.classList.contains('tapped')?msg:'';}
 var _fDone=false;
 function checkFillIn(){var ok=true;document.querySelectorAll('.fillin-input').forEach(inp=>{if(inp.value.trim().toLowerCase()===inp.getAttribute('data-answer').toLowerCase()){inp.classList.add('correct');inp.classList.remove('wrong');inp.disabled=true;}else{inp.classList.add('wrong');inp.classList.remove('correct');ok=false;setTimeout(()=>inp.classList.remove('wrong'),600);}});if(ok){var fb=document.getElementById('fillinFeedback');if(fb)fb.classList.add('show');_fDone=true;}}

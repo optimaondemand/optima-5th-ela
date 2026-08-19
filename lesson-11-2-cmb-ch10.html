@@ -1091,9 +1091,6 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <div class="activity-body">
       <p>Today is the chapter you&rsquo;ve been waiting for &mdash; nine years of reading, studying, and waiting, and now Nat Bowditch is free. Watch carefully how Latham handles this moment. Does she write it with fanfare, or does she let the action speak for itself?</p>
       <div class="reading-links">
-        <div class="reading-links-title">&#x1F4DA; Read or Listen</div>
-        <a href="#" class="reading-link"><span class="reading-link-icon">&#x1F4D6;</span><span>Read Chapter 10 in your novel</span></a>
-        <a href="#" class="reading-link"><span class="reading-link-icon">&#x1F3A7;</span><span>Listen to Chapter 10 (audio link coming soon)</span></a>
       </div>
       <div class="pause-columns">
         <div style="display:flex;flex-direction:column;">
@@ -1262,7 +1259,50 @@ function updateProgress(){
 }
 (function(){var a=document.querySelector('.tab-btn.active');if(a)a.classList.add('visited');updateProgress();})();
 /* ── autosave ── */
-function autoSave(el,dotId){var d=document.getElementById(dotId);if(d)d.classList.toggle('saved',el.value.trim().length>0);}
+/* ───── AUTO-SAVE ───── */
+/* Unique key derived from the page title so each lesson's data stays separate */
+var _lessonKey = (document.title || 'ela-lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+
+function autoSave(el,dotId){
+  var dot=document.getElementById(dotId);
+  if(dot&&el.value.trim().length>0){dot.classList.add('saved');}
+  else if(dot){dot.classList.remove('saved');}
+  /* Actually persist to localStorage */
+  try{ localStorage.setItem(_lessonKey+'-'+el.id, el.value); }catch(e){}
+}
+
+/* Restore every saved textarea on page load */
+function restoreJournals(){
+  document.querySelectorAll('textarea.journal-box').forEach(function(t){
+    if(!t.id) return;
+    try{
+      var v = localStorage.getItem(_lessonKey+'-'+t.id);
+      if(v){ t.value = v; }
+    }catch(e){}
+    /* Re-trigger the saved dot if there's content */
+    var dotId = t.getAttribute('oninput');
+    if(dotId){
+      var m = dotId.match(/'(dot-[^']+)'/);
+      if(m){
+        var dot = document.getElementById(m[1]);
+        if(dot && t.value.trim().length>0){ dot.classList.add('saved'); }
+      }
+    }
+  });
+}
+restoreJournals();
+
+/* Warn before leaving if student has typed anything */
+window.addEventListener('beforeunload', function(e){
+  var hasWork = false;
+  document.querySelectorAll('textarea.journal-box').forEach(function(t){
+    if(t.value && t.value.trim().length > 0){ hasWork = true; }
+  });
+  if(hasWork){
+    e.preventDefault();
+    e.returnValue = '';
+  }
+});
 /* ── DOL ── */
 function dolWordClick(el,msg){el.classList.toggle('tapped');document.getElementById('dolExplanation').textContent=el.classList.contains('tapped')?msg:'';}
 /* ── fill-in ── */

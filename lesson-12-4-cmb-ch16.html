@@ -1054,8 +1054,6 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <div class="activity-body">
       <p>Chapter 16 is the week&rsquo;s culminating idea. Nat has discovered errors (Ch. 13), returned to a new social setting (Ch. 14), sailed through a moment of danger (Ch. 15), and now he arrives at his thesis: that the most difficult navigation &mdash; lunar-distance calculation for finding longitude &mdash; is &ldquo;a simple matter of mathematics.&rdquo; Not easy. But learnable. By anyone. This is the seed of what will become the <em>American Practical Navigator</em>.</p>
       <div class="reading-links">
-        <div class="reading-links-title">&#x1F4DA; Read or Listen</div>
-        <a href="#" class="reading-link"><span class="reading-link-icon">&#x1F4D6;</span><span>Read Chapter 16 in your novel</span></a>
       </div>
       <div class="pause-columns">
         <div style="display:flex;flex-direction:column;">
@@ -1221,7 +1219,50 @@ function updateProgress(){
   document.getElementById('progressPct').textContent=p+'%';
 }
 (function(){var a=document.querySelector('.tab-btn.active');if(a)a.classList.add('visited');updateProgress();})();
-function autoSave(el,dotId){var d=document.getElementById(dotId);if(d)d.classList.toggle('saved',el.value.trim().length>0);}
+/* ───── AUTO-SAVE ───── */
+/* Unique key derived from the page title so each lesson's data stays separate */
+var _lessonKey = (document.title || 'ela-lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+
+function autoSave(el,dotId){
+  var dot=document.getElementById(dotId);
+  if(dot&&el.value.trim().length>0){dot.classList.add('saved');}
+  else if(dot){dot.classList.remove('saved');}
+  /* Actually persist to localStorage */
+  try{ localStorage.setItem(_lessonKey+'-'+el.id, el.value); }catch(e){}
+}
+
+/* Restore every saved textarea on page load */
+function restoreJournals(){
+  document.querySelectorAll('textarea.journal-box').forEach(function(t){
+    if(!t.id) return;
+    try{
+      var v = localStorage.getItem(_lessonKey+'-'+t.id);
+      if(v){ t.value = v; }
+    }catch(e){}
+    /* Re-trigger the saved dot if there's content */
+    var dotId = t.getAttribute('oninput');
+    if(dotId){
+      var m = dotId.match(/'(dot-[^']+)'/);
+      if(m){
+        var dot = document.getElementById(m[1]);
+        if(dot && t.value.trim().length>0){ dot.classList.add('saved'); }
+      }
+    }
+  });
+}
+restoreJournals();
+
+/* Warn before leaving if student has typed anything */
+window.addEventListener('beforeunload', function(e){
+  var hasWork = false;
+  document.querySelectorAll('textarea.journal-box').forEach(function(t){
+    if(t.value && t.value.trim().length > 0){ hasWork = true; }
+  });
+  if(hasWork){
+    e.preventDefault();
+    e.returnValue = '';
+  }
+});
 function dolWordClick(el,msg){el.classList.toggle('tapped');document.getElementById('dolExplanation').textContent=el.classList.contains('tapped')?msg:'';}
 var _fDone=false;
 function checkFillIn(){
