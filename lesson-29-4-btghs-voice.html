@@ -892,7 +892,7 @@ window.addEventListener('beforeunload', function(e){
     e.preventDefault();
     e.returnValue = '';
   }
-});catch(e){}var dot=document.getElementById(dotId);if(dot)dot.classList.add('saved');gatherAnswers();updateProgress();}
+});
 function gatherAnswers(){var tas=document.querySelectorAll('textarea[data-label]');var out='';tas.forEach(function(t){if(t.id==='gatheredOutput')return;out+=(t.getAttribute('data-label')||t.id)+'\n'+(t.value.trim()||'(no answer)')+'\n\n';});var go=document.getElementById('gatheredOutput');if(go)go.value=out;}
 function updateProgress(){var boxes=document.querySelectorAll('textarea[data-label]');var filled=0;boxes.forEach(function(b){if(b.id!=='gatheredOutput'&&b.value.trim().length>0)filled++;});var total=boxes.length>1?boxes.length-1:1;var pct=Math.round((filled/total)*100);var fill=document.getElementById('progressFill');var pctEl=document.getElementById('progressPct');if(fill)fill.style.width=pct+'%';if(pctEl)pctEl.textContent=pct+'%';}
 function copyToClipboard(){var ta=document.getElementById('gatheredOutput');ta.select();ta.setSelectionRange(0,99999);document.execCommand('copy');var msg=document.getElementById('gatheredCopied');if(msg){msg.classList.add('show');setTimeout(function(){msg.classList.remove('show');},2500);}}
