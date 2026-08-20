@@ -1278,9 +1278,6 @@ window.addEventListener('beforeunload', function(e){
     e.returnValue = '';
   }
 });
-  else if(dot){dot.classList.remove('saved');}
-}
-
 /* ───── CHOICE BOARD SELECTION ───── */
 function selectChoice(el){
   document.querySelectorAll('#vocabChoiceBoard .choice-option').forEach(function(o){o.classList.remove('selected');});

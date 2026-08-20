@@ -615,14 +615,12 @@ function compileEssay() {
     if (!ta) return;
     var text = ta.value.trim();
     if (!text) return;
-    if (s.label) parts.push(s.label + '
-' + '─'.repeat(s.label.length));
+    if (s.label) parts.push(s.label + '\n' + '─'.repeat(s.label.length));
     parts.push(text);
     parts.push('');
   });
   var out = document.getElementById('compiledEssay');
-  out.value = parts.join('
-');
+  out.value = parts.join('\n');
 }
 
 function copyEssay() {

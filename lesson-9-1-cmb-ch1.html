@@ -1619,9 +1619,6 @@ window.addEventListener('beforeunload', function(e){
     e.returnValue = '';
   }
 });
-  else if(dot){dot.classList.remove('saved');}
-}
-
 /* ───── GATHER ALL ANSWERS ───── */
 function gatherAnswers(){var o='LESSON 9.1 \u2014 CARRY ON, MR. BOWDITCH\n';o+='\u2550'.repeat(44)+'\n\n';var sw=document.getElementById('journal-morph');if(sw){o+='WORD STUDY SWYK (Morphology SWYK)\n'+'\u2500'.repeat(36)+'\n\n'+sw.getAttribute('data-label')+'\n'+(sw.value.trim()||'(no answer)')+'\n\n';}o+='CHAPTER THINKING\n'+'\u2500'.repeat(36)+'\n';['journal-q1','journal-q2','journal-q3'].forEach(function(id){var el=document.getElementById(id);if(!el)return;o+='\n'+el.getAttribute('data-label')+'\n'+(el.value.trim()||'(no answer)')+'\n';});o+='\nWRITING CONNECTION\n'+'\u2500'.repeat(36)+'\n';var w=document.getElementById('journal-writing');if(w){o+='\n'+w.getAttribute('data-label')+'\n'+(w.value.trim()||'(no answer)')+'\n';}var g=document.getElementById('gatheredOutput');if(g)g.value=o;}
 

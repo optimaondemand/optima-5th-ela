@@ -1028,9 +1028,6 @@ window.addEventListener('beforeunload', function(e){
     e.returnValue = '';
   }
 });
-  var dot=document.getElementById(dotId);if(dot)dot.classList.add('saved');
-  gatherAnswers();updateProgress();
-}
 function gatherAnswers(){
   var tas=document.querySelectorAll('textarea[data-label]');
   var out='';
