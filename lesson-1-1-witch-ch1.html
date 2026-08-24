@@ -881,13 +881,13 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <p style="font-size:14px;color:#7A88A8;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;margin-top:16px;">Sentence 2 &mdash; Fix It</p>
       <p style="font-size:14px;color:#3A4A6B;margin-bottom:10px;">This sentence has mistakes. Rewrite it correctly in your notebook, using the model as a guide.</p>
       <div class="dol-fix-sentence">
-        kit could barely see the wooden houses and the piles of fresh cut wood
+        after a long voyage from barbados kit tyler stood on the deck watching the shore
       </div>
       <button class="dol-check-btn" onclick="document.getElementById('dolAns').classList.toggle('show')">&#x1F50D; Check My Work</button>
       <div class="dol-answer" id="dolAns">
         <p style="margin-bottom:8px;"><strong>Corrected:</strong></p>
-        <p>Kit could barely see the wooden houses and the piles of fresh-cut wood.</p>
-        <p style="font-size:13px;color:#7A88A8;margin-top:8px;font-style:italic;">Compare with the model: both sentences need a capital letter at the start and a period at the end. "Kit" is a name, so it always gets a capital K.</p>
+        <p>After a long voyage from Barbados, Kit Tyler stood on the deck, watching the shore.</p>
+        <p style="font-size:13px;color:#7A88A8;margin-top:8px;font-style:italic;">Compare with the model: both sentences need a capital letter at the start and a period at the end. Proper nouns like &ldquo;Barbados&rdquo; and &ldquo;Kit Tyler&rdquo; are always capitalized. A comma follows the introductory phrase &ldquo;After a long voyage from Barbados.&rdquo;</p>
       </div>
 
       <!-- DOL Feedback Video -->
@@ -950,7 +950,33 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <div class="activity bl-teal">
     <div class="activity-head"><div class="activity-num" style="background:#00796B;">2</div><div style="flex:1;"><div class="activity-title">&#x1F524; Vocabulary</div><div class="activity-sub">Decode &amp; Discover &mdash; nautical words from Chapter 1</div></div></div>
     <div class="activity-body">
-      
+
+      <details class="vocab-bank" style="margin-bottom:16px;background:#F4F0FA;border:2px solid #D6C8F0;border-radius:10px;padding:0;">
+      <summary style="padding:12px 16px;cursor:pointer;font-weight:700;font-size:15px;color:#8B6FC0;list-style:none;display:flex;align-items:center;gap:8px;">
+      <span style="transition:transform .2s;">&#x25B6;</span> &#x1F4D6; Word Bank — Tap to see this week's vocabulary definitions
+      </summary>
+      <div style="padding:4px 16px 14px;font-size:14px;color:#3A4A6B;line-height:1.7;">
+      <p style="margin:4px 0;"><strong>forecastle</strong> — the forward part of a ship's upper deck</p>
+      <p style="margin:4px 0;"><strong>pinnaces</strong> — small, light boats used near shore</p>
+      <p style="margin:4px 0;"><strong>capstan</strong> — a rotating drum on a ship used to wind heavy ropes</p>
+      <p style="margin:4px 0;"><strong>hawser</strong> — a thick rope or cable for tying a ship to a dock</p>
+      <p style="margin:4px 0;"><strong>fortification</strong> — a strong wall built to defend a place</p>
+      <p style="margin:4px 0;"><strong>rigging</strong> — the ropes and chains that support a ship's sails</p>
+      <p style="margin:4px 0;"><strong>wharf</strong> — a dock or landing place for ships</p>
+      <p style="margin:4px 0;"><strong>bulkhead</strong> — a partition wall inside a ship</p>
+      <p style="margin:4px 0;"><strong>settlement</strong> — a small community in a new area</p>
+      <p style="margin:4px 0;"><strong>meadow</strong> — a field of grass, often used for farming</p>
+      <p style="margin:4px 0;"><strong>clapboards</strong> — thin overlapping boards used to cover houses</p>
+      <p style="margin:4px 0;"><strong>threshold</strong> — the entrance or doorway of a building</p>
+      <p style="margin:4px 0;"><strong>pewter</strong> — a gray metal used to make plates and cups</p>
+      <p style="margin:4px 0;"><strong>paduasoy</strong> — a fine, rich silk fabric</p>
+      <p style="margin:4px 0;"><strong>carding</strong> — combing raw wool to prepare it for spinning</p>
+      <p style="margin:4px 0;"><strong>indigo</strong> — a deep blue dye made from plants</p>
+      <p style="margin:4px 0;"><strong>calico</strong> — a plain cotton cloth, often printed with patterns</p>
+      <p style="margin:4px 0;"><strong>homespun</strong> — rough cloth made at home on a hand loom</p>
+      </div>
+      </details>
+
       <!-- Day 1 Decode & Discover: 3-step model -->
       <p>Chapter 1 is full of nautical words &mdash; words connected to ships and sailing. When you hit an unfamiliar word, use this three-step strategy:</p>
 
@@ -1009,23 +1035,23 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="spotter-game" id="spotterGame">
         <div class="spotter-sentence" id="spot1">
           <strong style="font-size:13px;color:#7A88A8;display:block;margin-bottom:6px;">&ldquo;Nat Eaton climbed down from the rigging and stood beside Kit on the deck.&rdquo;</strong>
-          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true">Complete sentence</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">Fragment</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">Run-on</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true" data-explain-yes="It has a subject (Nat Eaton), a predicate (climbed down and stood), and expresses a complete thought." data-explain-no="">Complete sentence</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false" data-explain-no="This has both a subject (Nat Eaton) and a verb (climbed, stood), so it is not a fragment. The correct answer is Complete sentence.">Fragment</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false" data-explain-no="Although there are two actions, they share one subject and are joined correctly by 'and' — that is a compound predicate, not a run-on. The correct answer is Complete sentence.">Run-on</span>
           <div class="spotter-result" id="spot1-result"></div>
         </div>
         <div class="spotter-sentence" id="spot2">
           <strong style="font-size:13px;color:#7A88A8;display:block;margin-bottom:6px;">&ldquo;The cold gray water of the harbor.&rdquo;</strong>
-          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">Complete sentence</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="true">Fragment</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">Run-on</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false" data-explain-no="There is no verb here — nothing tells us what the water does. A sentence needs both a subject and a predicate. The correct answer is Fragment.">Complete sentence</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="true" data-explain-yes="There is no verb. 'The cold gray water of the harbor' is just a noun phrase — it does not tell us what the water does, so it is not a complete thought." data-explain-no="">Fragment</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false" data-explain-no="This cannot be a run-on because it does not even have one complete thought — there is no verb at all. The correct answer is Fragment.">Run-on</span>
           <div class="spotter-result" id="spot2-result"></div>
         </div>
         <div class="spotter-sentence" id="spot3">
           <strong style="font-size:13px;color:#7A88A8;display:block;margin-bottom:6px;">&ldquo;Kit dove into the water the passengers stared in shock.&rdquo;</strong>
-          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">Complete sentence</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">Fragment</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true">Run-on</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false" data-explain-no="This is actually two complete thoughts ('Kit dove into the water' AND 'the passengers stared in shock') jammed together with no punctuation. The correct answer is Run-on.">Complete sentence</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false" data-explain-no="Both parts have subjects and verbs — the problem is they are joined without proper punctuation or a conjunction. The correct answer is Run-on.">Fragment</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true" data-explain-yes="Two complete sentences are fused together with no punctuation. Fix it with a period: 'Kit dove into the water. The passengers stared in shock.' or with a comma and conjunction: '...water, and the passengers stared in shock.'" data-explain-no="">Run-on</span>
           <div class="spotter-result" id="spot3-result"></div>
         </div>
       </div>
@@ -1576,7 +1602,8 @@ function spotterPick(word,sentenceId){
   var isCorrect=word.getAttribute('data-correct')==='true';
   if(isCorrect){
     word.classList.add('correct-reveal');
-    result.textContent='✅ Correct! '+word.textContent+' is the right answer.';
+    var explainYes=word.getAttribute('data-explain-yes')||'';
+    result.textContent='✅ Correct! '+(explainYes||word.textContent+' is the right answer.');
     result.className='spotter-result show win';
     sentence.setAttribute('data-done','true');
     var allDone=true;
@@ -1584,9 +1611,10 @@ function spotterPick(word,sentenceId){
     if(allDone)window._spotterDone=true;
   }else{
     word.classList.add('wrong-reveal');
-    result.textContent='🤔 Not quite — try again!';
+    var explainNo=word.getAttribute('data-explain-no')||'';
+    result.textContent='❌ Not quite. '+(explainNo||'Try again!');
     result.className='spotter-result show miss';
-    setTimeout(function(){word.classList.remove('wrong-reveal');result.classList.remove('show');},1500);
+    setTimeout(function(){word.classList.remove('wrong-reveal');result.classList.remove('show');},4000);
   }
 }
 

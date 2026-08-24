@@ -956,15 +956,15 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 
       <!-- Fix-It Sentence -->
       <p style="font-size:14px;color:#7A88A8;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;margin-top:16px;">Sentence 2 &mdash; Fix It</p>
-      <p style="font-size:14px;color:#3A4A6B;margin-bottom:10px;">This sentence has verb tense errors and a capitalization mistake. Rewrite it correctly in your notebook.</p>
+      <p style="font-size:14px;color:#3A4A6B;margin-bottom:10px;">This sentence has dialogue punctuation errors, a spelling mistake, and a capitalization error. Rewrite it correctly in your notebook.</p>
       <div class="dol-fix-sentence">
-        nat sit in the stocks yesterday and is grinning at the crowd with defiant humor
+        the constable shouted come out of that house at once and kit herd the crowd behind him
       </div>
       <button class="dol-check-btn" onclick="document.getElementById('dolAns1').classList.toggle('show')">&#x1F50D; Check My Work</button>
       <div class="dol-answer" id="dolAns1">
         <p style="margin-bottom:8px;"><strong>Corrected:</strong></p>
-        <p>Nat sat in the stocks yesterday and grinned at the crowd with defiant humor.</p>
-        <p style="font-size:13px;color:#7A88A8;margin-top:8px;font-style:italic;">Capitalize &ldquo;Nat&rdquo; (proper noun). Change &ldquo;sit&rdquo; to &ldquo;sat&rdquo; (past tense &mdash; &ldquo;yesterday&rdquo; tells us it already happened). Change &ldquo;is grinning&rdquo; to &ldquo;grinned&rdquo; (keep the tense consistent &mdash; both verbs should be past tense). Add a period.</p>
+        <p>The constable shouted, &ldquo;Come out of that house at once!&rdquo; and Kit heard the crowd behind him.</p>
+        <p style="font-size:13px;color:#7A88A8;margin-top:8px;font-style:italic;">Capitalize &ldquo;The&rdquo; (start of sentence). Add a comma after &ldquo;shouted&rdquo; and put quotation marks around his exact words. End the quote with an exclamation mark inside the closing quotation mark. Change &ldquo;herd&rdquo; to &ldquo;heard&rdquo; (spelling &mdash; &ldquo;herd&rdquo; means a group of animals; &ldquo;heard&rdquo; is past tense of &ldquo;hear&rdquo;).</p>
       </div>
 
       <!-- DOL Feedback Video -->
@@ -1017,31 +1017,52 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 
   <!-- ═══ VOCABULARY ═══ -->
   <div class="activity bl-teal">
-    <div class="activity-head"><div class="activity-num" style="background:#00796B;">2</div><div style="flex:1;"><div class="activity-title">&#x1F524; Vocabulary: Use It</div><div class="activity-sub">Cloze sentences &mdash; choose the right word</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#00796B;">2</div><div style="flex:1;"><div class="activity-title">&#x1F524; Vocabulary: Fill in the Blank</div><div class="activity-sub">Use vocabulary words in context</div></div></div>
     <div class="activity-body">
-      
-      <p>You have studied this week&rsquo;s vocabulary words. Now use them in context. Tap a word from the bank, then tap the sentence where it belongs.</p>
 
-      <div class="callout callout-info"><span class="callout-icon">&#x1F3AF;</span><p><strong>Practice:</strong> Tap a word, then tap the blank where it fits best.</p></div>
+      <details class="vocab-bank" style="margin-bottom:16px;background:#F4F0FA;border:2px solid #D6C8F0;border-radius:10px;padding:0;">
+      <summary style="padding:12px 16px;cursor:pointer;font-weight:700;font-size:15px;color:#8B6FC0;list-style:none;display:flex;align-items:center;gap:8px;">
+      <span style="transition:transform .2s;">&#x25B6;</span> &#x1F4D6; Word Bank &mdash; Tap to see this week&rsquo;s vocabulary definitions
+      </summary>
+      <div style="padding:4px 16px 14px;font-size:14px;color:#3A4A6B;line-height:1.7;">
+      <p style="margin:4px 0;"><strong>reverence</strong> &mdash; deep respect and awe</p>
+      <p style="margin:4px 0;"><strong>mockery</strong> &mdash; scornful ridicule or contempt</p>
+      <p style="margin:4px 0;"><strong>indifferent</strong> &mdash; showing no interest or concern</p>
+      <p style="margin:4px 0;"><strong>reluctance</strong> &mdash; unwillingness or hesitation</p>
+      <p style="margin:4px 0;"><strong>bewildering</strong> &mdash; extremely confusing</p>
+      <p style="margin:4px 0;"><strong>chagrined</strong> &mdash; embarrassed and annoyed by failure</p>
+      <p style="margin:4px 0;"><strong>insubordination</strong> &mdash; refusal to obey authority</p>
+      <p style="margin:4px 0;"><strong>cavalier</strong> &mdash; showing a careless or dismissive attitude</p>
+      <p style="margin:4px 0;"><strong>somber</strong> &mdash; serious, dark, and gloomy</p>
+      <p style="margin:4px 0;"><strong>impelled</strong> &mdash; driven or pushed by a strong inner force</p>
+      <p style="margin:4px 0;"><strong>banished</strong> &mdash; sent away as punishment</p>
+      <p style="margin:4px 0;"><strong>culprits</strong> &mdash; people guilty of a crime or wrongdoing</p>
+      <p style="margin:4px 0;"><strong>retribution</strong> &mdash; punishment for wrongdoing</p>
+      <p style="margin:4px 0;"><strong>premonition</strong> &mdash; a feeling that something bad will happen</p>
+      <p style="margin:4px 0;"><strong>repentance</strong> &mdash; feeling sorry for wrongdoing and wanting to change</p>
+      </div>
+      </details>
 
-      <!-- Cloze Match Game -->
-      <div class="match-game" id="vocabMatch">
-        <div class="match-grid" id="matchGrid">
-          <div class="match-item is-word" data-match="A" onclick="matchClick(this)">banished</div>
-          <div class="match-item" data-match="C" onclick="matchClick(this)">The townspeople demanded ___ for Nat&rsquo;s prank &mdash; they wanted him punished.</div>
-          <div class="match-item is-word" data-match="B" onclick="matchClick(this)">culprits</div>
-          <div class="match-item" data-match="A" onclick="matchClick(this)">Nat was ___ from Wethersfield and forbidden to return.</div>
-          <div class="match-item is-word" data-match="C" onclick="matchClick(this)">retribution</div>
-          <div class="match-item" data-match="D" onclick="matchClick(this)">Kit had a ___ that the secret lessons with Prudence would be discovered.</div>
-          <div class="match-item is-word" data-match="D" onclick="matchClick(this)">premonition</div>
-          <div class="match-item" data-match="E" onclick="matchClick(this)">Hannah spoke of ___ &mdash; the idea that wrongdoers should feel sorry and change.</div>
-          <div class="match-item is-word" data-match="E" onclick="matchClick(this)">repentance</div>
-          <div class="match-item" data-match="B" onclick="matchClick(this)">The magistrate asked who the ___ were, and Nat stepped forward.</div>
-        </div>
-        <div class="match-feedback" id="matchFeedback">&#x2728; All words placed correctly!</div>
+      <p>You have studied this week&rsquo;s vocabulary words. Now use them in context. Type the correct vocabulary word in each blank.</p>
+
+      <div class="callout callout-info"><span class="callout-icon">&#x1F3AF;</span><p><strong>Practice:</strong> Type the correct vocabulary word in each blank. Use the Word Bank above if you need help.</p></div>
+
+      <!-- Fill-in-the-Blank Game -->
+      <div class="fillin-game" id="vocabFillinGame">
+        <div class="fillin-item">Nat was <input class="fillin-input" data-answer="banished" maxlength="12" placeholder="______"> from Wethersfield and forbidden to return.</div>
+        <div class="fillin-item">The magistrate demanded to know who the <input class="fillin-input" data-answer="culprits" maxlength="12" placeholder="______"> were behind the pumpkin prank.</div>
+        <div class="fillin-item">The townspeople wanted <input class="fillin-input" data-answer="retribution" maxlength="14" placeholder="______"> &mdash; they wanted the pranksters punished severely.</div>
+        <div class="fillin-item">Kit had a dark <input class="fillin-input" data-answer="premonition" maxlength="14" placeholder="______"> that her secret visits to Hannah would be discovered.</div>
+        <div class="fillin-item">Hannah spoke gently of <input class="fillin-input" data-answer="repentance" maxlength="14" placeholder="______">, saying that admitting wrongdoing was the first step toward healing.</div>
+        <button class="fillin-check-btn" onclick="checkVocabFillIn()">Check My Words</button>
+        <div class="fillin-feedback" id="vocabFillinFeedback">&#x1F331; All correct!</div>
       </div>
 
-      <div class="callout callout-think" style="margin-top:14px;"><span class="callout-icon">&#x270D;&#xFE0F;</span><p><strong>Your turn:</strong> Choose <em>banished</em> or <em>premonition</em> and write an original sentence about something from Chapter 16. Write it in your reading journal.</p></div>
+      <div style="margin-top:18px;padding-top:14px;border-top:2px dashed #D6C8F0;">
+        <div class="callout callout-info"><span class="callout-icon">&#x270F;&#xFE0F;</span><p><strong>Your Turn:</strong> Choose one vocabulary word and write your own sentence using it correctly.</p></div>
+        <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-yourturn"></span></div>
+        <textarea class="journal-box" id="journal-vocab-yourturn" data-label="Vocabulary: Your Turn" placeholder="I chose the word ___ because..." oninput="autoSave(this,'dot-vocab-yourturn');gatherAnswers();" style="min-height:50px;"></textarea>
+      </div>
     </div>
   </div>
 
@@ -1065,18 +1086,21 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
           <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">Kit visited Nat in the stocks and <em>tries</em> not to cry.</span>
           <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true">Kit visited Nat in the stocks and <em>tried</em> not to cry.</span>
           <div class="spotter-result" id="spot1-result"></div>
+          <div class="spotter-explanation" id="spot1-explain" style="display:none;margin-top:6px;padding:10px 14px;background:#E8F5E9;border:1.5px solid #C8E6C9;border-radius:10px;font-size:14px;color:#1B5E20;line-height:1.6;">&#x1F4A1; <strong>&ldquo;Visited&rdquo;</strong> is past tense, so the second verb must also be past tense: <strong>&ldquo;tried&rdquo;</strong> (not &ldquo;tries,&rdquo; which is present). Both verbs describe actions that already happened.</div>
         </div>
         <div class="spotter-sentence" id="spot2">
           <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which version keeps the tense consistent?</span>
           <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="true">Hannah <em>looked</em> at Kit and <em>asked</em> about William.</span>
           <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">Hannah <em>looked</em> at Kit and <em>asks</em> about William.</span>
           <div class="spotter-result" id="spot2-result"></div>
+          <div class="spotter-explanation" id="spot2-explain" style="display:none;margin-top:6px;padding:10px 14px;background:#E8F5E9;border:1.5px solid #C8E6C9;border-radius:10px;font-size:14px;color:#1B5E20;line-height:1.6;">&#x1F4A1; <strong>&ldquo;Looked&rdquo;</strong> is past tense, so the matching verb is <strong>&ldquo;asked&rdquo;</strong> (past), not &ldquo;asks&rdquo; (present). When two actions happen together in the past, both verbs stay in the same tense.</div>
         </div>
         <div class="spotter-sentence" id="spot3">
           <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which version keeps the tense consistent?</span>
           <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">John <em>enlisted</em> in the militia and <em>is breaking</em> with Dr. Bulkeley.</span>
           <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true">John <em>enlisted</em> in the militia and <em>broke</em> with Dr. Bulkeley.</span>
           <div class="spotter-result" id="spot3-result"></div>
+          <div class="spotter-explanation" id="spot3-explain" style="display:none;margin-top:6px;padding:10px 14px;background:#E8F5E9;border:1.5px solid #C8E6C9;border-radius:10px;font-size:14px;color:#1B5E20;line-height:1.6;">&#x1F4A1; <strong>&ldquo;Enlisted&rdquo;</strong> is simple past, so the second verb should be <strong>&ldquo;broke&rdquo;</strong> (simple past), not &ldquo;is breaking&rdquo; (present progressive). Mixing past and present progressive creates a confusing tense shift.</div>
         </div>
       </div>
 
@@ -1086,7 +1110,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 
   <!-- ═══ SPELLING ═══ -->
   <div class="activity bl-navy">
-    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div style="flex:1;"><div class="activity-title">&#x1F520; Spelling: Accent &amp; Syllable Stress</div><div class="activity-sub">Apply &mdash; Identify stressed syllables and spell correctly</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div style="flex:1;"><div class="activity-title">&#x1F520; Spelling: Suffix -ion / -tion / -sion</div><div class="activity-sub">Word Building &mdash; Build nouns from base verbs</div></div></div>
     <div class="activity-body">
 <div class="callout callout-gold" style="margin-bottom:14px;background:#FFF8E8;border:2px solid #F5E6C8;border-left:5px solid #C7922C;border-radius:10px;padding:14px 18px;"><span class="callout-icon">📖</span><p style="font-size:15px;color:#0E1C42;line-height:1.6;"><strong>The Rule:</strong> The suffixes <strong>-ion, -tion,</strong> and <strong>-sion</strong> turn verbs into nouns meaning "the act or result of." Compare: <em>create</em> → <em>creation</em>, <em>discuss</em> → <em>discussion</em>, <em>decide</em> → <em>decision</em>. The base word often changes spelling: drop a silent <em>e</em> (<em>create → creation</em>), change a <em>d</em> to <em>s</em> (<em>decide → decision</em>), or double a consonant (<em>admit → admission</em>).</p></div>
             <p>Every multi-syllable word has one syllable that gets more emphasis &mdash; the <strong>stressed</strong> syllable. Knowing which syllable is stressed helps you spell tricky words, because the unstressed syllables often have unclear vowel sounds.</p>
@@ -1098,22 +1122,51 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         <p>The stressed syllable is louder and clearer. Unstressed syllables are quieter &mdash; their vowels can sound mushy.</p>
       </div>
 
-      <!-- Word Sort Game — sorting by stressed syllable position -->
-      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F3AE;</span><p><strong>Practice:</strong> Sort these words by which syllable carries the stress. Say each word aloud &mdash; clap on the loud syllable. Then tap the word and tap the column.</p></div>
-      <div class="sort-game" id="spellSort">
-        <div class="sort-bank" id="sortBank">
-          <span class="sort-chip" data-group="A" onclick="pickSortChip(this)">punishment</span>
-          <span class="sort-chip" data-group="B" onclick="pickSortChip(this)">repentance</span>
-          <span class="sort-chip" data-group="A" onclick="pickSortChip(this)">banishment</span>
-          <span class="sort-chip" data-group="B" onclick="pickSortChip(this)">defiant</span>
-          <span class="sort-chip" data-group="A" onclick="pickSortChip(this)">consequence</span>
-          <span class="sort-chip" data-group="B" onclick="pickSortChip(this)">conviction</span>
+      <!-- Word Building — build -ion/-tion/-sion nouns from base verbs -->
+      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F3AE;</span><p><strong>Word Building:</strong> Each base verb below becomes a noun with <strong>-ion, -tion,</strong> or <strong>-sion</strong>. Tap each card to reveal the noun form. Then try to spell it before you peek!</p></div>
+      <div class="spotter-game" id="wordBuildGame" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div class="spotter-sentence" style="cursor:pointer;text-align:center;padding:16px 12px;" onclick="revealWordBuild(this)" data-revealed="false">
+          <div style="font-size:13px;color:#7A88A8;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;">Base Verb</div>
+          <div style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#0E1C42;">instruct</div>
+          <div class="wb-arrow" style="font-size:20px;color:#B0B8CC;margin:6px 0;">&#x2193;</div>
+          <div class="wb-answer" style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#00695C;opacity:0;transition:opacity .3s;min-height:26px;">instruction</div>
+          <div style="font-size:11px;color:#7A88A8;margin-top:4px;">Tap to reveal</div>
         </div>
-        <div class="sort-columns">
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#F9A825,#FBC02D);">Stress on 1st Syllable</div><div class="sort-col-drop" data-col="A" onclick="dropSortChip(this,'A')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#7B5EA7,#9575CD);">Stress on 2nd Syllable</div><div class="sort-col-drop" data-col="B" onclick="dropSortChip(this,'B')"></div></div>
+        <div class="spotter-sentence" style="cursor:pointer;text-align:center;padding:16px 12px;" onclick="revealWordBuild(this)" data-revealed="false">
+          <div style="font-size:13px;color:#7A88A8;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;">Base Verb</div>
+          <div style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#0E1C42;">confuse</div>
+          <div class="wb-arrow" style="font-size:20px;color:#B0B8CC;margin:6px 0;">&#x2193;</div>
+          <div class="wb-answer" style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#00695C;opacity:0;transition:opacity .3s;min-height:26px;">confusion</div>
+          <div style="font-size:11px;color:#7A88A8;margin-top:4px;">Tap to reveal</div>
         </div>
-        <div class="sort-score" id="sortScore"></div>
+        <div class="spotter-sentence" style="cursor:pointer;text-align:center;padding:16px 12px;" onclick="revealWordBuild(this)" data-revealed="false">
+          <div style="font-size:13px;color:#7A88A8;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;">Base Verb</div>
+          <div style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#0E1C42;">describe</div>
+          <div class="wb-arrow" style="font-size:20px;color:#B0B8CC;margin:6px 0;">&#x2193;</div>
+          <div class="wb-answer" style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#00695C;opacity:0;transition:opacity .3s;min-height:26px;">description</div>
+          <div style="font-size:11px;color:#7A88A8;margin-top:4px;">Tap to reveal</div>
+        </div>
+        <div class="spotter-sentence" style="cursor:pointer;text-align:center;padding:16px 12px;" onclick="revealWordBuild(this)" data-revealed="false">
+          <div style="font-size:13px;color:#7A88A8;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;">Base Verb</div>
+          <div style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#0E1C42;">decide</div>
+          <div class="wb-arrow" style="font-size:20px;color:#B0B8CC;margin:6px 0;">&#x2193;</div>
+          <div class="wb-answer" style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#00695C;opacity:0;transition:opacity .3s;min-height:26px;">decision</div>
+          <div style="font-size:11px;color:#7A88A8;margin-top:4px;">Tap to reveal</div>
+        </div>
+        <div class="spotter-sentence" style="cursor:pointer;text-align:center;padding:16px 12px;" onclick="revealWordBuild(this)" data-revealed="false">
+          <div style="font-size:13px;color:#7A88A8;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;">Base Verb</div>
+          <div style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#0E1C42;">prescribe</div>
+          <div class="wb-arrow" style="font-size:20px;color:#B0B8CC;margin:6px 0;">&#x2193;</div>
+          <div class="wb-answer" style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#00695C;opacity:0;transition:opacity .3s;min-height:26px;">prescription</div>
+          <div style="font-size:11px;color:#7A88A8;margin-top:4px;">Tap to reveal</div>
+        </div>
+        <div class="spotter-sentence" style="cursor:pointer;text-align:center;padding:16px 12px;" onclick="revealWordBuild(this)" data-revealed="false">
+          <div style="font-size:13px;color:#7A88A8;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;">Base Verb</div>
+          <div style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#0E1C42;">express</div>
+          <div class="wb-arrow" style="font-size:20px;color:#B0B8CC;margin:6px 0;">&#x2193;</div>
+          <div class="wb-answer" style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#00695C;opacity:0;transition:opacity .3s;min-height:26px;">expression</div>
+          <div style="font-size:11px;color:#7A88A8;margin-top:4px;">Tap to reveal</div>
+        </div>
       </div>
 
       <!-- SWYK — Day 3 = Spelling rotation -->
@@ -1312,17 +1365,91 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     </div>
   </div>
 
-  <!-- Part B: Word Study Connection -->
+  <!-- Part B: Writer's Workshop -->
+  <div class="activity bl-gold" id="writers-workshop" style="margin-top:18px;">
+    <div class="activity-head" style="background:linear-gradient(135deg,#FFF8F0,#FFF3DC);border-bottom:2px solid #F5E6C8;">
+      <div class="activity-num" style="background:#C8962A;border-radius:10px;font-size:16px;">&#x270D;&#xFE0F;</div>
+      <div style="flex:1;">
+        <div class="activity-title">Writer&rsquo;s Workshop &middot; Week 4 &middot; REVISE</div>
+        <div class="activity-sub">Strengthen your paragraph with the Revision Checklist</div>
+      </div>
+    </div>
+    <div class="activity-body">
+      <!-- Progress tracker badges -->
+      <div style="display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin-bottom:12px;">
+        <span style="background:#E8F1E8;color:#2D7A5A;padding:4px 10px;border-radius:6px;font-size:11px;font-weight:700;">&#x2713; Plan</span>
+        <span style="background:#E8F1E8;color:#2D7A5A;padding:4px 10px;border-radius:6px;font-size:11px;font-weight:700;">&#x2713; Draft</span>
+        <span style="background:#C8962A;color:#fff;padding:4px 10px;border-radius:6px;font-size:11px;font-weight:700;">&#x2605; Revise</span>
+        <span style="background:#EEF4FF;color:#7A88A8;padding:4px 10px;border-radius:6px;font-size:11px;">&#x25CB; Edit &amp; Submit</span>
+      </div>
+      <!-- Today's focus callout -->
+      <div class="callout callout-info" style="margin:0 0 14px;padding:10px 14px;">
+        <span class="callout-icon">&#x1F3AF;</span>
+        <p style="font-size:14px;"><strong>Today&rsquo;s focus:</strong> Revise your perspective paragraph using the checklist below. Strong revision means checking that every part of your paragraph is doing its job &mdash; and making it stronger where it isn&rsquo;t.</p>
+      </div>
+      <!-- Watch How — Meet Alex -->
+      <div class="key-concept" style="background:#FFFEF7;border-color:#F5E6C8;margin-bottom:14px;">
+        <div class="key-concept-label" style="color:#C8962A;">&#x1F440; Watch How &mdash; Meet Alex, our example writer</div>
+        <p style="font-size:14px;margin-bottom:10px;">Alex reads the draft and uses the checklist to find what needs strengthening:</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <div style="background:#fff;border:1px solid #F5E6C8;border-radius:6px;padding:10px;">
+            <div style="font-size:11px;color:#C7627E;font-weight:700;letter-spacing:.5px;margin-bottom:4px;">BEFORE (draft)</div>
+            <div style="font-style:italic;font-size:13px;color:#3A4A6B;">In Chapter 14, the author develops Kit&rsquo;s perspective by showing a quiet moment that changes how Kit sees her uncle. When Kit watches Matthew hold a handful of soil &ldquo;with a curious reverence,&rdquo; she begins to understand that the land means something deeper to him. This reveals that Kit is starting to see Connecticut through her uncle&rsquo;s eyes.</div>
+          </div>
+          <div style="background:#fff;border:1px solid #D4ECC8;border-radius:6px;padding:10px;">
+            <div style="font-size:11px;color:#4A7C2E;font-weight:700;letter-spacing:.5px;margin-bottom:4px;">AFTER (revised)</div>
+            <div style="font-style:italic;font-size:13px;color:#3A4A6B;">In Chapter 14, the author develops Kit&rsquo;s perspective by showing a quiet moment that shifts how she sees her new home. When Kit watches Matthew hold a handful of Connecticut soil &ldquo;with a curious reverence,&rdquo; she realizes the land means freedom to him &mdash; something she has never considered. Until this moment, Kit has seen Connecticut only as a cold, unwelcoming place. This scene reveals that Kit is beginning to understand the Puritan world on its own terms, not just through the lens of her Barbados upbringing.</div>
+          </div>
+        </div>
+        <p style="margin-top:10px;font-size:13px;color:#3A4A6B;"><strong>What changed:</strong> Alex added a second layer of analysis (&ldquo;something she has never considered&rdquo;), included a contrast (&ldquo;Until this moment&hellip;&rdquo;), and connected the evidence to the bigger picture of Kit&rsquo;s perspective shift.</p>
+      </div>
+      <!-- Today's Tool -->
+      <div class="key-concept" style="background:#EEF4FF;border-color:#C8D8F0;margin-bottom:14px;">
+        <div class="key-concept-label" style="color:#0E3A5C;">&#x1F4CB; Today&rsquo;s Tool: Revision Checklist</div>
+        <p style="font-size:14px;margin-bottom:10px;">Read your draft, then check each item. If something is missing, revise before submitting.</p>
+        <div style="font-size:14px;color:#0E1C42;line-height:2.2;">
+          <label style="display:flex;align-items:flex-start;gap:8px;cursor:pointer;"><input type="checkbox" style="margin-top:5px;accent-color:#C8962A;"> My topic sentence names whose perspective the author is developing.</label>
+          <label style="display:flex;align-items:flex-start;gap:8px;cursor:pointer;"><input type="checkbox" style="margin-top:5px;accent-color:#C8962A;"> I included at least one direct quote or specific detail from the text.</label>
+          <label style="display:flex;align-items:flex-start;gap:8px;cursor:pointer;"><input type="checkbox" style="margin-top:5px;accent-color:#C8962A;"> I introduced my evidence with a signal phrase (not just dropped the quote in).</label>
+          <label style="display:flex;align-items:flex-start;gap:8px;cursor:pointer;"><input type="checkbox" style="margin-top:5px;accent-color:#C8962A;"> I explained what the evidence reveals about the character&rsquo;s perspective.</label>
+          <label style="display:flex;align-items:flex-start;gap:8px;cursor:pointer;"><input type="checkbox" style="margin-top:5px;accent-color:#C8962A;"> My analysis connects to the bigger picture (how this perspective matters to the story).</label>
+          <label style="display:flex;align-items:flex-start;gap:8px;cursor:pointer;"><input type="checkbox" style="margin-top:5px;accent-color:#C8962A;"> I read my paragraph aloud and it sounds like one clear, connected thought.</label>
+        </div>
+      </div>
+      <!-- Sentence Frames -->
+      <div class="key-concept" style="background:#F0E8FF;border-color:#D8CCF0;margin-bottom:14px;">
+        <div class="key-concept-label" style="color:#6B4FB0;">&#x1FAB6; Revision Sentence Starters</div>
+        <ul style="margin:0 0 0 18px;font-size:14px;line-height:1.8;">
+          <li>To add deeper analysis: &ldquo;This is significant because&hellip;&rdquo;</li>
+          <li>To add contrast: &ldquo;Until this moment, [character] had always&hellip;&rdquo;</li>
+          <li>To connect to the bigger picture: &ldquo;This shift in perspective matters because&hellip;&rdquo;</li>
+          <li>To strengthen a quote introduction: &ldquo;The narrator reveals this when [character]&hellip;&rdquo;</li>
+        </ul>
+      </div>
+      <!-- Now you try -->
+      <div class="callout callout-info" style="background:#E8F5E8;border-color:#A8D8A8;margin:0 0 10px;padding:10px 14px;">
+        <span class="callout-icon">&#x270F;&#xFE0F;</span>
+        <p style="font-size:14px;"><strong>Now you try.</strong> Copy your draft from yesterday, then revise it using the checklist. Make at least two improvements.</p>
+      </div>
+      <div class="textbox-prompt">Revise your perspective paragraph below. Use the checklist to strengthen your analysis, evidence, and connections.</div>
+      <textarea class="journal-box" id="journal-workshop" data-label="Writer's Workshop: Revise &mdash; Perspective Paragraph (Week 4)"
+        placeholder="Paste your draft here, then revise using the checklist..."
+        oninput="autoSave(this,'dot-workshop');gatherAnswers();" style="min-height:140px;"></textarea>
+      <div class="journal-label">&#x1F4D3; <span class="saved-dot" id="dot-workshop"></span></div>
+    </div>
+  </div>
+
+  <!-- Part C: Word Study Connection -->
   <div class="activity bl-gold">
-    <div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">B</div><div style="flex:1;"><div class="activity-title">Part B: Word Study Connection</div><div class="activity-sub">Your Show What You Know answer from the Word Study tab</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">C</div><div style="flex:1;"><div class="activity-title">Part C: Word Study Connection</div><div class="activity-sub">Your Show What You Know answer from the Word Study tab</div></div></div>
     <div class="activity-body">
       <p>Your spelling response is already saved from the Word Study tab. It will appear in your gathered answers below.</p>
     </div>
   </div>
 
-  <!-- Part C: Writing Connection -->
+  <!-- Part D: Writing Connection -->
   <div class="activity bl-sage">
-    <div class="activity-head"><div class="activity-num" style="background:#52B788;">C</div><div style="flex:1;"><div class="activity-title">Part C: Writing Connection</div><div class="activity-sub">Implied theme &mdash; sacrifice and belief</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#52B788;">D</div><div style="flex:1;"><div class="activity-title">Part D: Writing Connection</div><div class="activity-sub">Implied theme &mdash; sacrifice and belief</div></div></div>
     <div class="activity-body">
       <p>Hannah tells Kit that escaping without love isn&rsquo;t really escaping. Write 2&ndash;3 sentences explaining how <strong>two characters</strong> in this chapter demonstrate what they&rsquo;re willing to sacrifice for what they believe in. Use specific details from Chapter 16.</p>
       <div class="textbox-prompt">Name two characters. For each, explain what they sacrifice and what belief drives them.</div>
@@ -1366,6 +1493,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <p class="turn-in-intro">Check off each item as you finish.</p>
       <div class="turn-in-checklist" id="checklist">
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered all 3 comprehension questions with evidence from the text.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I revised my perspective paragraph using the Writer&rsquo;s Workshop Revision Checklist.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed the Spelling Show What You Know response.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed the morphology fill-in-the-blank practice.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my Writing Connection response.</div></div>
@@ -1496,6 +1624,14 @@ function gatherAnswers(){
     output+=(el.value.trim()||'(no answer)')+'\n';
   });
   output+='\n';
+  output+='✏️ WRITER\'S WORKSHOP — REVISED PERSPECTIVE PARAGRAPH\n';
+  output+='────────────────────────────────\n';
+  var ws=document.getElementById('journal-workshop');
+  if(ws){
+    output+='\n'+(ws.getAttribute('data-label')||'Writer\'s Workshop')+'\n';
+    output+=(ws.value.trim()||'(no answer)')+'\n';
+  }
+  output+='\n';
   output+='🪶 WRITING CONNECTION\n';
   output+='────────────────────────────────\n';
   var wc=document.getElementById('journal-writing');
@@ -1512,15 +1648,23 @@ function gatherAnswers(){
     output+='\n'+(el.getAttribute('data-label')||id)+'\n';
     output+=(el.value.trim()||'(no answer)')+'\n';
   });
+  var vyt=document.getElementById('journal-vocab-yourturn');
+  if(vyt&&vyt.value.trim()){
+    output+='\n';
+    output+='📝 VOCABULARY — YOUR TURN\n';
+    output+='────────────────────────────────\n';
+    output+='\n'+(vyt.getAttribute('data-label')||'Vocabulary: Your Turn')+'\n';
+    output+=vyt.value.trim()+'\n';
+  }
   output+='\n';
   output+='🎮 PRACTICE ACTIVITY STATUS\n';
   output+='────────────────────────────────\n';
   output+=(window._fillinDone?'✅':'⬜')+' Morphology Practice\n';
-  output+=(window._vocabMatchDone?'✅':'⬜')+' Vocabulary Match\n';
-  var spotDone=0;var spotTotal=document.querySelectorAll('.spotter-sentence').length;
-  document.querySelectorAll('.spotter-sentence').forEach(function(s){if(s.getAttribute('data-done')==='true')spotDone++;});
+  output+=(window._vocabFillinDone?'✅':'⬜')+' Vocabulary Fill-in-the-Blank\n';
+  var spotDone=0;var spotTotal=document.querySelectorAll('#spotterGame > .spotter-sentence').length;
+  document.querySelectorAll('#spotterGame > .spotter-sentence').forEach(function(s){if(s.getAttribute('data-done')==='true')spotDone++;});
   output+=(spotDone>=spotTotal&&spotTotal>0?'✅':'⬜')+' Grammar Spotter\n';
-  output+=(window._sortDone?'✅':'⬜')+' Spelling Word Sort\n';
+  output+=(window._wordBuildDone?'✅':'⬜')+' Spelling Word Building\n';
   var gathered=document.getElementById('gatheredOutput');
   if(gathered)gathered.value=output;
 }
@@ -1637,24 +1781,18 @@ function checkFillIn(){
   if(allCorrect){document.getElementById('fillinFeedback').classList.add('show');window._fillinDone=true;}
 }
 
-/* ───── VOCAB MATCH GAME ───── */
-window._vocabMatchDone=false;
-var matchFirst=null;var matchCount=0;var matchTotal=5;
-function matchClick(item){
-  if(item.classList.contains('matched'))return;
-  if(!matchFirst){matchFirst=item;item.classList.add('selected');return;}
-  if(matchFirst===item){matchFirst.classList.remove('selected');matchFirst=null;return;}
-  var key1=matchFirst.getAttribute('data-match');
-  var key2=item.getAttribute('data-match');
-  if(key1===key2&&matchFirst.classList.contains('is-word')!==item.classList.contains('is-word')){
-    matchFirst.classList.remove('selected');matchFirst.classList.add('matched');item.classList.add('matched');matchCount++;matchFirst=null;
-    if(matchCount>=matchTotal){document.getElementById('matchFeedback').classList.add('show');window._vocabMatchDone=true;}
-  }else{
-    item.classList.add('wrong-flash');matchFirst.classList.add('wrong-flash');
-    var a=matchFirst;var b=item;
-    setTimeout(function(){a.classList.remove('wrong-flash','selected');b.classList.remove('wrong-flash');},500);
-    matchFirst=null;
-  }
+/* ───── VOCAB FILL-IN-THE-BLANK GAME ───── */
+window._vocabFillinDone=false;
+function checkVocabFillIn(){
+  var inputs=document.querySelectorAll('#vocabFillinGame .fillin-input');
+  var allCorrect=true;
+  inputs.forEach(function(inp){
+    var answer=(inp.getAttribute('data-answer')||'').toLowerCase();
+    var val=inp.value.trim().toLowerCase();
+    if(val===answer){inp.classList.remove('wrong');inp.classList.add('correct');inp.disabled=true;}
+    else{inp.classList.remove('correct');inp.classList.add('wrong');allCorrect=false;setTimeout(function(){inp.classList.remove('wrong');},600);}
+  });
+  if(allCorrect){document.getElementById('vocabFillinFeedback').classList.add('show');window._vocabFillinDone=true;}
 }
 
 /* ───── GRAMMAR SPOTTER GAME ───── */
@@ -1669,8 +1807,10 @@ function spotterPick(word,sentenceId){
     result.textContent='✅ Correct!';
     result.className='spotter-result show win';
     sentence.setAttribute('data-done','true');
+    var explainEl=document.getElementById(sentenceId+'-explain');
+    if(explainEl)explainEl.style.display='block';
     var allDone=true;
-    document.querySelectorAll('.spotter-sentence').forEach(function(s){if(s.getAttribute('data-done')!=='true')allDone=false;});
+    document.querySelectorAll('#spotterGame > .spotter-sentence').forEach(function(s){if(s.getAttribute('data-done')!=='true')allDone=false;});
     if(allDone)window._spotterDone=true;
   }else{
     word.classList.add('wrong-reveal');
@@ -1678,6 +1818,21 @@ function spotterPick(word,sentenceId){
     result.className='spotter-result show miss';
     setTimeout(function(){word.classList.remove('wrong-reveal');result.classList.remove('show');},1500);
   }
+}
+
+/* ───── WORD BUILD REVEAL ───── */
+window._wordBuildDone=false;
+var _wordBuildTotal=6;var _wordBuildRevealed=0;
+function revealWordBuild(card){
+  if(card.getAttribute('data-revealed')==='true')return;
+  card.setAttribute('data-revealed','true');
+  var ans=card.querySelector('.wb-answer');
+  if(ans)ans.style.opacity='1';
+  var hint=card.querySelector('div:last-child');
+  if(hint&&hint.textContent==='Tap to reveal')hint.textContent='';
+  card.style.background='#E8F5E9';card.style.borderColor='#C8E6C9';
+  _wordBuildRevealed++;
+  if(_wordBuildRevealed>=_wordBuildTotal)window._wordBuildDone=true;
 }
 
 /* ───── WORD SORT GAME ───── */

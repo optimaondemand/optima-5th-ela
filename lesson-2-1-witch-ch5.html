@@ -946,7 +946,26 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <div class="activity bl-teal">
     <div class="activity-head"><div class="activity-num" style="background:#00796B;">2</div><div style="flex:1;"><div class="activity-title">&#x1F524; Vocabulary</div><div class="activity-sub">Decode &amp; Discover &mdash; words from Chapter 5</div></div></div>
     <div class="activity-body">
-      
+
+<details class="vocab-bank" style="margin-bottom:16px;background:#F4F0FA;border:2px solid #D6C8F0;border-radius:10px;padding:0;">
+<summary style="padding:12px 16px;cursor:pointer;font-weight:700;font-size:15px;color:#8B6FC0;list-style:none;display:flex;align-items:center;gap:8px;">
+<span style="transition:transform .2s;">&#x25B6;</span> &#x1F4D6; Word Bank — Tap to see this week's vocabulary definitions
+</summary>
+<div style="padding:4px 16px 14px;font-size:14px;color:#3A4A6B;line-height:1.7;">
+<p style="margin:4px 0;"><strong>affront</strong> — an insult or offense, especially a public one</p>
+<p style="margin:4px 0;"><strong>conspicuous</strong> — standing out in a way that attracts attention</p>
+<p style="margin:4px 0;"><strong>condescension</strong> — an attitude of superiority; looking down on others</p>
+<p style="margin:4px 0;"><strong>demurely</strong> — in a quiet, modest, reserved way</p>
+<p style="margin:4px 0;"><strong>auspiciously</strong> — in a way that suggests good things ahead</p>
+<p style="margin:4px 0;"><strong>allegiance</strong> — loyalty or devotion to a ruler or cause</p>
+<p style="margin:4px 0;"><strong>selectman</strong> — an elected town official</p>
+<p style="margin:4px 0;"><strong>hypocrite</strong> — someone who pretends to believe something they do not</p>
+<p style="margin:4px 0;"><strong>inexorably</strong> — in a way that cannot be stopped or changed</p>
+<p style="margin:4px 0;"><strong>eloquent</strong> — fluent, expressive, and persuasive in speaking</p>
+<p style="margin:4px 0;"><strong>frippery</strong> — showy or unnecessary finery; fancy decorations</p>
+</div>
+</details>
+
       <!-- Day 1 Decode & Discover: 3-step model -->
       <p>Chapter 5 introduces several words that reveal how the Puritans judge Kit. When you hit an unfamiliar word, use the three-step strategy: context, word parts, then confirm.</p>
 
@@ -1004,25 +1023,25 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <!-- Grammar Spotter Game -->
       <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F3AF;</span><p><strong>Practice: Grammar Spotter!</strong> Read each sentence from the chapter. Tap to identify whether it has a compound subject or a compound predicate.</p></div>
       <div class="spotter-game" id="spotterGame">
-        <div class="spotter-sentence" id="spot1">
+        <div class="spotter-sentence" id="spot1" data-explain-correct="Two subjects — 'Kit' and 'Judith' — share the same verb 'walked.' That makes it a compound subject." data-explain-wrong="There is only one verb ('walked'), so this is not a compound predicate. Look at who is doing the walking — two people share one action.">
           <strong style="font-size:13px;color:#7A88A8;display:block;margin-bottom:6px;">&ldquo;Kit and Judith walked along the path to the Meeting House.&rdquo;</strong>
           <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true">Compound subject</span>
           <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">Compound predicate</span>
           <div class="spotter-result" id="spot1-result"></div>
         </div>
-        <div class="spotter-sentence" id="spot2">
+        <div class="spotter-sentence" id="spot2" data-explain-correct="One subject — 'Kit' — performs two actions: 'tilted' and 'set.' Two verbs sharing one subject make a compound predicate." data-explain-wrong="There is only one subject ('Kit'), not two. Look at the verbs — Kit does two things: 'tilted' and 'set.'">
           <strong style="font-size:13px;color:#7A88A8;display:block;margin-bottom:6px;">&ldquo;Kit tilted her chin and set herself to endure.&rdquo;</strong>
           <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">Compound subject</span>
           <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="true">Compound predicate</span>
           <div class="spotter-result" id="spot2-result"></div>
         </div>
-        <div class="spotter-sentence" id="spot3">
+        <div class="spotter-sentence" id="spot3" data-explain-correct="Two subjects — 'Reverend Bulkeley' and 'Goodwife Cruff' — share the same verb 'greeted.' That is a compound subject." data-explain-wrong="There is only one verb ('greeted'). Look at who did the greeting — two people share one action, so the compound part is the subject.">
           <strong style="font-size:13px;color:#7A88A8;display:block;margin-bottom:6px;">&ldquo;Reverend Bulkeley and Goodwife Cruff greeted Kit after the service.&rdquo;</strong>
           <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true">Compound subject</span>
           <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">Compound predicate</span>
           <div class="spotter-result" id="spot3-result"></div>
         </div>
-        <div class="spotter-sentence" id="spot4">
+        <div class="spotter-sentence" id="spot4" data-explain-correct="One subject — 'William Ashby' — performs two actions: 'stopped' and 'stared.' Two verbs sharing one subject make a compound predicate." data-explain-wrong="There is only one subject ('William Ashby'). Look at what he did — he both 'stopped' and 'stared,' which means the predicate is compound.">
           <strong style="font-size:13px;color:#7A88A8;display:block;margin-bottom:6px;">&ldquo;William Ashby stopped and stared at Kit in amazement.&rdquo;</strong>
           <span class="spotter-word" onclick="spotterPick(this,'spot4')" data-correct="false">Compound subject</span>
           <span class="spotter-word" onclick="spotterPick(this,'spot4')" data-correct="true">Compound predicate</span>
@@ -1585,7 +1604,8 @@ function spotterPick(word,sentenceId){
   var isCorrect=word.getAttribute('data-correct')==='true';
   if(isCorrect){
     word.classList.add('correct-reveal');
-    result.textContent='✅ Correct! '+word.textContent+' is the right answer.';
+    var explainCorrect=sentence.getAttribute('data-explain-correct')||'';
+    result.textContent='✅ Correct! '+explainCorrect;
     result.className='spotter-result show win';
     sentence.setAttribute('data-done','true');
     var allDone=true;
@@ -1593,9 +1613,10 @@ function spotterPick(word,sentenceId){
     if(allDone)window._spotterDone=true;
   }else{
     word.classList.add('wrong-reveal');
-    result.textContent='🤔 Not quite — try again!';
+    var explainWrong=sentence.getAttribute('data-explain-wrong')||'Try again!';
+    result.textContent='❌ Not quite. '+explainWrong;
     result.className='spotter-result show miss';
-    setTimeout(function(){word.classList.remove('wrong-reveal');result.classList.remove('show');},1500);
+    setTimeout(function(){word.classList.remove('wrong-reveal');result.classList.remove('show');},3000);
   }
 }
 

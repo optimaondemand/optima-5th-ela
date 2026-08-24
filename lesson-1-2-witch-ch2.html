@@ -819,7 +819,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         <div class="intro-card-body">
           <div class="obj-line"><span class="obj-icon">&#x1F4D6;</span><span><strong>Reading:</strong> I will make connections with Chapter 2 and answer comprehension questions.</span></div>
           <div class="obj-line"><span class="obj-icon">&#x270F;&#xFE0F;</span><span><strong>Grammar:</strong> I will <em>identify</em> complete sentences, fragments, and run-ons.</span></div>
-          <div class="obj-line"><span class="obj-icon">&#x1F524;</span><span><strong>Spelling:</strong> I will <em>sort</em> words by syllable type.</span></div>
+          <div class="obj-line"><span class="obj-icon">&#x1F524;</span><span><strong>Spelling:</strong> I will <em>identify</em> syllable types in words from the novel.</span></div>
         </div>
       </div>
     </div>
@@ -895,13 +895,13 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <p style="font-size:14px;color:#7A88A8;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;margin-top:16px;">Sentence 2 &mdash; Fix It</p>
       <p style="font-size:14px;color:#3A4A6B;margin-bottom:10px;">This sentence has mistakes. Rewrite it correctly in your notebook, using the model as a guide.</p>
       <div class="dol-fix-sentence">
-        late that afternoon a strong wind came blowing across the harbor
+        during their conversation john holbrook admitted he hoped to study with Reverend Bulkeley
       </div>
       <button class="dol-check-btn" onclick="document.getElementById('dolAns').classList.toggle('show')">&#x1F50D; Check My Work</button>
       <div class="dol-answer" id="dolAns">
         <p style="margin-bottom:8px;"><strong>Corrected:</strong></p>
-        <p>Late that afternoon, a strong wind came blowing across the harbor.</p>
-        <p style="font-size:13px;color:#7A88A8;margin-top:8px;font-style:italic;">Compare with the model: both sentences start with a capital letter, use a comma after the introductory time phrase, and end with a period.</p>
+        <p>During their conversation, John Holbrook admitted he hoped to study with Reverend Bulkeley.</p>
+        <p style="font-size:13px;color:#7A88A8;margin-top:8px;font-style:italic;">Compare with the model: both sentences start with a capital letter, use a comma after the introductory phrase, capitalize proper nouns (John Holbrook, Reverend Bulkeley), and end with a period.</p>
       </div>
 
       <!-- DOL Feedback Video -->
@@ -973,27 +973,80 @@ And all I ask is a tall ship and a star to steer her by</div>
   <div class="activity bl-teal">
     <div class="activity-head"><div class="activity-num" style="background:#00796B;">2</div><div style="flex:1;"><div class="activity-title">&#x1F524; Vocabulary</div><div class="activity-sub">Nautical and land words from Chapter 2</div></div></div>
     <div class="activity-body">
-      
-      <!-- Day 2: Quick Sort -->
-      <p>You learned these words yesterday. Today, sort them by category: Does the word belong to the world of ships and sailing, or the world of land and settlements?</p>
 
-      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F3AF;</span><p><strong>Practice: Quick Sort!</strong> Tap a word, then tap the column where it belongs.</p></div>
-      <div class="sort-game" id="vocabSort">
-        <div class="sort-bank" id="vocabSortBank">
-          <span class="sort-chip" data-group="A" onclick="pickVocabChip(this)">capstan</span>
-          <span class="sort-chip" data-group="B" onclick="pickVocabChip(this)">meadow</span>
-          <span class="sort-chip" data-group="A" onclick="pickVocabChip(this)">rigging</span>
-          <span class="sort-chip" data-group="B" onclick="pickVocabChip(this)">settlement</span>
-          <span class="sort-chip" data-group="A" onclick="pickVocabChip(this)">hawser</span>
-          <span class="sort-chip" data-group="B" onclick="pickVocabChip(this)">wharf</span>
-          <span class="sort-chip" data-group="A" onclick="pickVocabChip(this)">bulkhead</span>
-          <span class="sort-chip" data-group="B" onclick="pickVocabChip(this)">plantation</span>
+      <!-- Word Bank -->
+      <details class="vocab-bank" style="margin-bottom:16px;background:#F4F0FA;border:2px solid #D6C8F0;border-radius:10px;padding:0;">
+      <summary style="padding:12px 16px;cursor:pointer;font-weight:700;font-size:15px;color:#8B6FC0;list-style:none;display:flex;align-items:center;gap:8px;">
+      <span style="transition:transform .2s;">&#x25B6;</span> &#x1F4D6; Word Bank — Tap to see this week's vocabulary definitions
+      </summary>
+      <div style="padding:4px 16px 14px;font-size:14px;color:#3A4A6B;line-height:1.7;">
+      <p style="margin:4px 0;"><strong>forecastle</strong> — the forward part of a ship's upper deck</p>
+      <p style="margin:4px 0;"><strong>pinnaces</strong> — small, light boats used near shore</p>
+      <p style="margin:4px 0;"><strong>capstan</strong> — a rotating drum on a ship used to wind heavy ropes</p>
+      <p style="margin:4px 0;"><strong>hawser</strong> — a thick rope or cable for tying a ship to a dock</p>
+      <p style="margin:4px 0;"><strong>fortification</strong> — a strong wall built to defend a place</p>
+      <p style="margin:4px 0;"><strong>rigging</strong> — the ropes and chains that support a ship's sails</p>
+      <p style="margin:4px 0;"><strong>wharf</strong> — a dock or landing place for ships</p>
+      <p style="margin:4px 0;"><strong>bulkhead</strong> — a partition wall inside a ship</p>
+      <p style="margin:4px 0;"><strong>settlement</strong> — a small community in a new area</p>
+      <p style="margin:4px 0;"><strong>meadow</strong> — a field of grass, often used for farming</p>
+      <p style="margin:4px 0;"><strong>clapboards</strong> — thin overlapping boards used to cover houses</p>
+      <p style="margin:4px 0;"><strong>threshold</strong> — the entrance or doorway of a building</p>
+      <p style="margin:4px 0;"><strong>pewter</strong> — a gray metal used to make plates and cups</p>
+      <p style="margin:4px 0;"><strong>paduasoy</strong> — a fine, rich silk fabric</p>
+      <p style="margin:4px 0;"><strong>carding</strong> — combing raw wool to prepare it for spinning</p>
+      <p style="margin:4px 0;"><strong>indigo</strong> — a deep blue dye made from plants</p>
+      <p style="margin:4px 0;"><strong>calico</strong> — a plain cotton cloth, often printed with patterns</p>
+      <p style="margin:4px 0;"><strong>homespun</strong> — rough cloth made at home on a hand loom</p>
+      </div>
+      </details>
+
+      <!-- Day 2: Context Detective -->
+      <p style="font-size:14px;color:#7A88A8;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">&#x1F50D; Context Detective</p>
+      <p>Read each sentence from Chapter 2. Use the clues around the bolded word to figure out its meaning.</p>
+
+      <div class="context-sentence" style="background:#F9FAFE;border-left:4px solid #55C8E8;padding:12px 16px;margin:10px 0;border-radius:0 8px 8px 0;">
+      <p style="font-size:15px;color:#0E1C42;line-height:1.6;">&ldquo;The men bent their backs over the <strong>capstan</strong>, winding the heavy rope that pulled the ship inch by inch through the still water.&rdquo;</p>
+      <p style="font-size:13px;color:#7A88A8;margin-top:4px;">&#x1F4A1; What context clues help you figure out what <em>capstan</em> means?</p>
+      </div>
+
+      <div class="context-sentence" style="background:#F9FAFE;border-left:4px solid #55C8E8;padding:12px 16px;margin:10px 0;border-radius:0 8px 8px 0;">
+      <p style="font-size:15px;color:#0E1C42;line-height:1.6;">&ldquo;Kit stared at the brown <strong>meadows</strong> along the shore, so different from the lush green fields of Barbados.&rdquo;</p>
+      <p style="font-size:13px;color:#7A88A8;margin-top:4px;">&#x1F4A1; What context clues help you figure out what <em>meadow</em> means?</p>
+      </div>
+
+      <div class="context-sentence" style="background:#F9FAFE;border-left:4px solid #55C8E8;padding:12px 16px;margin:10px 0;border-radius:0 8px 8px 0;">
+      <p style="font-size:15px;color:#0E1C42;line-height:1.6;">&ldquo;Nat climbed high into the <strong>rigging</strong>, checking the ropes and sails for any sign of wind.&rdquo;</p>
+      <p style="font-size:13px;color:#7A88A8;margin-top:4px;">&#x1F4A1; What context clues help you figure out what <em>rigging</em> means?</p>
+      </div>
+
+      <div class="context-sentence" style="background:#F9FAFE;border-left:4px solid #55C8E8;padding:12px 16px;margin:10px 0;border-radius:0 8px 8px 0;">
+      <p style="font-size:15px;color:#0E1C42;line-height:1.6;">&ldquo;John Holbrook told Kit he was traveling to the <strong>settlement</strong> of Wethersfield, where a small community of families had built homes along the river.&rdquo;</p>
+      <p style="font-size:13px;color:#7A88A8;margin-top:4px;">&#x1F4A1; What context clues help you figure out what <em>settlement</em> means?</p>
+      </div>
+
+      <!-- Scrambled Match Game -->
+      <div class="callout callout-info" style="margin-top:16px;"><span class="callout-icon">&#x1F3AF;</span><p><strong>Now match each word to its meaning!</strong> Tap a word, then tap its definition.</p></div>
+      <div class="match-game" id="vocabMatch">
+        <div class="match-grid" id="vocabMatchGrid">
+          <div class="match-item is-word" data-match="A" onclick="vocabMatchClick(this)">capstan</div>
+          <div class="match-item" data-match="E" onclick="vocabMatchClick(this)">a thick rope for tying a ship to a dock</div>
+          <div class="match-item is-word" data-match="B" onclick="vocabMatchClick(this)">meadow</div>
+          <div class="match-item" data-match="F" onclick="vocabMatchClick(this)">a dock or landing place for ships</div>
+          <div class="match-item is-word" data-match="C" onclick="vocabMatchClick(this)">rigging</div>
+          <div class="match-item" data-match="G" onclick="vocabMatchClick(this)">a partition wall inside a ship</div>
+          <div class="match-item is-word" data-match="D" onclick="vocabMatchClick(this)">settlement</div>
+          <div class="match-item" data-match="A" onclick="vocabMatchClick(this)">a rotating drum used to wind heavy ropes</div>
+          <div class="match-item is-word" data-match="E" onclick="vocabMatchClick(this)">hawser</div>
+          <div class="match-item" data-match="B" onclick="vocabMatchClick(this)">a field of grass, often used for farming</div>
+          <div class="match-item is-word" data-match="F" onclick="vocabMatchClick(this)">wharf</div>
+          <div class="match-item" data-match="C" onclick="vocabMatchClick(this)">the ropes and chains that support sails</div>
+          <div class="match-item is-word" data-match="G" onclick="vocabMatchClick(this)">bulkhead</div>
+          <div class="match-item" data-match="D" onclick="vocabMatchClick(this)">a small community in a new area</div>
+          <div class="match-item is-word" data-match="H" onclick="vocabMatchClick(this)">plantation</div>
+          <div class="match-item" data-match="H" onclick="vocabMatchClick(this)">a large farm where crops are grown</div>
         </div>
-        <div class="sort-columns">
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#3B5998,#5A7BC0);">&#x2693; Nautical Terms</div><div class="sort-col-drop" data-col="A" onclick="dropVocabChip(this,'A')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#C7922C,#D4A843);">&#x1F3E1; Land Terms</div><div class="sort-col-drop" data-col="B" onclick="dropVocabChip(this,'B')"></div></div>
-        </div>
-        <div class="sort-score" id="vocabSortScore"></div>
+        <div class="match-feedback" id="vocabMatchFeedback">&#x1F50D; All matched! You cracked the code, Context Detective!</div>
       </div>
     </div>
   </div>
@@ -1013,7 +1066,7 @@ And all I ask is a tall ship and a star to steer her by</div>
       <div class="spotter-game" id="spotterGame">
         <div class="spotter-sentence" id="spot1">
           <p style="font-size:15px;color:#3A4A6B;margin-bottom:8px;font-style:italic;">&ldquo;Kit watched the sailors from the deck.&rdquo;</p>
-          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true">Complete</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true" data-explain-yes="It has a subject (Kit), a verb (watched), and expresses a complete thought." data-explain-no-frag="This is not a fragment. It has a subject (Kit) and a verb (watched), so it is a complete sentence." data-explain-no-run="This is not a run-on. There is only one complete thought here, properly punctuated. It is a complete sentence.">Complete</span>
           <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">Fragment</span>
           <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">Run-On</span>
           <div class="spotter-result" id="spot1-result"></div>
@@ -1021,7 +1074,7 @@ And all I ask is a tall ship and a star to steer her by</div>
         <div class="spotter-sentence" id="spot2">
           <p style="font-size:15px;color:#3A4A6B;margin-bottom:8px;font-style:italic;">&ldquo;The long hot days on the river.&rdquo;</p>
           <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">Complete</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="true">Fragment</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="true" data-explain-yes="There is no verb — it describes 'the days' but never tells us what happened. It is a fragment." data-explain-no-comp="This is not complete. There is no verb telling what the days did. The correct answer is Fragment." data-explain-no-run="This is not a run-on. There aren't two sentences jammed together — there isn't even one complete sentence. The correct answer is Fragment.">Fragment</span>
           <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">Run-On</span>
           <div class="spotter-result" id="spot2-result"></div>
         </div>
@@ -1029,12 +1082,12 @@ And all I ask is a tall ship and a star to steer her by</div>
           <p style="font-size:15px;color:#3A4A6B;margin-bottom:8px;font-style:italic;">&ldquo;Kit was frustrated she wanted to get to Wethersfield.&rdquo;</p>
           <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">Complete</span>
           <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">Fragment</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true">Run-On</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true" data-explain-yes="Two complete thoughts are jammed together without punctuation: 'Kit was frustrated' AND 'she wanted to get to Wethersfield.'" data-explain-no-comp="This is not just one complete sentence. There are two ideas ('Kit was frustrated' and 'she wanted to get to Wethersfield') pushed together without a comma, period, or conjunction. The correct answer is Run-On." data-explain-no-frag="This is not a fragment — it actually has too much, not too little! Two complete thoughts are fused without proper punctuation. The correct answer is Run-On.">Run-On</span>
           <div class="spotter-result" id="spot3-result"></div>
         </div>
         <div class="spotter-sentence" id="spot4">
           <p style="font-size:15px;color:#3A4A6B;margin-bottom:8px;font-style:italic;">&ldquo;John sat reading his book hour after hour.&rdquo;</p>
-          <span class="spotter-word" onclick="spotterPick(this,'spot4')" data-correct="true">Complete</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot4')" data-correct="true" data-explain-yes="It has a subject (John), a verb (sat reading), and expresses a complete thought." data-explain-no-frag="This is not a fragment. It has a subject (John) and a verb (sat reading). It is a complete sentence." data-explain-no-run="This is not a run-on. There is only one subject doing one action. It is a complete sentence.">Complete</span>
           <span class="spotter-word" onclick="spotterPick(this,'spot4')" data-correct="false">Fragment</span>
           <span class="spotter-word" onclick="spotterPick(this,'spot4')" data-correct="false">Run-On</span>
           <div class="spotter-result" id="spot4-result"></div>
@@ -1042,7 +1095,7 @@ And all I ask is a tall ship and a star to steer her by</div>
         <div class="spotter-sentence" id="spot5">
           <p style="font-size:15px;color:#3A4A6B;margin-bottom:8px;font-style:italic;">&ldquo;Across the wide brown water.&rdquo;</p>
           <span class="spotter-word" onclick="spotterPick(this,'spot5')" data-correct="false">Complete</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot5')" data-correct="true">Fragment</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot5')" data-correct="true" data-explain-yes="This is a prepositional phrase with no subject and no verb. It does not express a complete thought." data-explain-no-comp="This is not complete. There is no subject and no verb — just a prepositional phrase. The correct answer is Fragment." data-explain-no-run="This is not a run-on. There aren't two sentences here — there isn't even one complete sentence. The correct answer is Fragment.">Fragment</span>
           <span class="spotter-word" onclick="spotterPick(this,'spot5')" data-correct="false">Run-On</span>
           <div class="spotter-result" id="spot5-result"></div>
         </div>
@@ -1064,32 +1117,55 @@ And all I ask is a tall ship and a star to steer her by</div>
 
   <!-- ═══ SPELLING ═══ -->
   <div class="activity bl-navy">
-    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div style="flex:1;"><div class="activity-title">&#x1F520; Spelling: Syllable Types</div><div class="activity-sub">Sort words by syllable type</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div style="flex:1;"><div class="activity-title">&#x1F520; Spelling: Syllable Types</div><div class="activity-sub">Identify syllable types in novel words</div></div></div>
     <div class="activity-body">
       
       <div class="callout callout-gold" style="margin-bottom:14px;background:#FFF8E8;border:2px solid #F5E6C8;border-left:5px solid #C7922C;border-radius:10px;padding:14px 18px;"><span class="callout-icon">&#x1F4D6;</span><p style="font-size:15px;color:#0E1C42;line-height:1.6;"><strong>The Rule:</strong> Every syllable has one vowel sound. The six syllable types &mdash; closed, open, VCe, vowel team, r-controlled, and consonant-le &mdash; tell you whether the vowel is long or short. Knowing the type helps you decode unfamiliar words.</p></div>
-      <p>Yesterday you discovered the six syllable types. Today, sort these words from the novel into two groups: words that contain a <strong>closed syllable</strong> (short vowel, ends in a consonant) and words that contain an <strong>r-controlled syllable</strong> (vowel + r).</p>
+      <p>Yesterday you discovered the six syllable types. Today, look at each word from the novel and identify what syllable type it contains. Think about it, then tap to check!</p>
       <div class="key-concept">
         <div class="key-concept-label">&#x1F4CC; Quick Reminder</div>
-        <p><strong>Closed</strong> = short vowel, closed by a consonant (cap, stan). <strong>R-controlled</strong> = the vowel pairs with r and changes sound (riv-er, har-bor).</p>
+        <p><strong>Closed</strong> = short vowel, closed by a consonant (cap, stan). <strong>Open</strong> = ends in a long vowel (me, go). <strong>VCe</strong> = silent e makes the vowel long (name). <strong>R-controlled</strong> = vowel + r changes sound (riv-er). <strong>Vowel team</strong> = two vowels together (boat). <strong>Consonant-le</strong> = consonant + le at the end (can-dle).</p>
       </div>
 
-      <!-- Word Sort Game -->
-      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F3AE;</span><p><strong>Practice: Quick Sort!</strong> Tap a word, then tap the column where it belongs.</p></div>
-      <div class="sort-game" id="spellSort">
-        <div class="sort-bank" id="sortBank">
-          <span class="sort-chip" data-group="A" onclick="pickSortChip(this)">cap-stan</span>
-          <span class="sort-chip" data-group="B" onclick="pickSortChip(this)">riv-er</span>
-          <span class="sort-chip" data-group="A" onclick="pickSortChip(this)">can-dle</span>
-          <span class="sort-chip" data-group="B" onclick="pickSortChip(this)">har-bor</span>
-          <span class="sort-chip" data-group="A" onclick="pickSortChip(this)">bulk-head</span>
-          <span class="sort-chip" data-group="B" onclick="pickSortChip(this)">mur-mur</span>
+      <!-- Syllable Type Identifier Game -->
+      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F3AE;</span><p><strong>Practice: Syllable Type Identifier!</strong> Read each word, think about the syllable type, then tap to reveal the answer.</p></div>
+      <div class="spotter-game" id="syllableGame">
+        <div class="spotter-sentence" id="syll1">
+          <p style="font-size:18px;font-weight:700;color:#0E1C42;margin-bottom:4px;">capstan</p>
+          <p style="font-size:14px;color:#7A88A8;">cap &middot; stan &mdash; What syllable type is &ldquo;cap&rdquo;?</p>
+          <span class="spotter-word" onclick="this.parentElement.querySelector('.spotter-result').textContent='&#x2705; Closed syllable — short a, closed by consonant p';this.parentElement.querySelector('.spotter-result').className='spotter-result show win';syllCheck();" style="cursor:pointer">Tap to check</span>
+          <div class="spotter-result" id="syll1-result"></div>
         </div>
-        <div class="sort-columns">
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#F9A825,#FBC02D);">Closed Syllable</div><div class="sort-col-drop" data-col="A" onclick="dropSortChip(this,'A')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#7B5EA7,#9575CD);">R-Controlled Syllable</div><div class="sort-col-drop" data-col="B" onclick="dropSortChip(this,'B')"></div></div>
+        <div class="spotter-sentence" id="syll2">
+          <p style="font-size:18px;font-weight:700;color:#0E1C42;margin-bottom:4px;">river</p>
+          <p style="font-size:14px;color:#7A88A8;">riv &middot; er &mdash; What syllable type is &ldquo;er&rdquo;?</p>
+          <span class="spotter-word" onclick="this.parentElement.querySelector('.spotter-result').textContent='&#x2705; R-controlled syllable — the vowel e pairs with r to change its sound';this.parentElement.querySelector('.spotter-result').className='spotter-result show win';syllCheck();" style="cursor:pointer">Tap to check</span>
+          <div class="spotter-result" id="syll2-result"></div>
         </div>
-        <div class="sort-score" id="sortScore"></div>
+        <div class="spotter-sentence" id="syll3">
+          <p style="font-size:18px;font-weight:700;color:#0E1C42;margin-bottom:4px;">candle</p>
+          <p style="font-size:14px;color:#7A88A8;">can &middot; dle &mdash; What syllable type is &ldquo;dle&rdquo;?</p>
+          <span class="spotter-word" onclick="this.parentElement.querySelector('.spotter-result').textContent='&#x2705; Consonant-le syllable — the consonant d + le form the final syllable';this.parentElement.querySelector('.spotter-result').className='spotter-result show win';syllCheck();" style="cursor:pointer">Tap to check</span>
+          <div class="spotter-result" id="syll3-result"></div>
+        </div>
+        <div class="spotter-sentence" id="syll4">
+          <p style="font-size:18px;font-weight:700;color:#0E1C42;margin-bottom:4px;">harbor</p>
+          <p style="font-size:14px;color:#7A88A8;">har &middot; bor &mdash; What syllable type is &ldquo;har&rdquo;?</p>
+          <span class="spotter-word" onclick="this.parentElement.querySelector('.spotter-result').textContent='&#x2705; R-controlled syllable — the vowel a pairs with r to change its sound';this.parentElement.querySelector('.spotter-result').className='spotter-result show win';syllCheck();" style="cursor:pointer">Tap to check</span>
+          <div class="spotter-result" id="syll4-result"></div>
+        </div>
+        <div class="spotter-sentence" id="syll5">
+          <p style="font-size:18px;font-weight:700;color:#0E1C42;margin-bottom:4px;">bulkhead</p>
+          <p style="font-size:14px;color:#7A88A8;">bulk &middot; head &mdash; What syllable type is &ldquo;bulk&rdquo;?</p>
+          <span class="spotter-word" onclick="this.parentElement.querySelector('.spotter-result').textContent='&#x2705; Closed syllable — short u, closed by consonants lk';this.parentElement.querySelector('.spotter-result').className='spotter-result show win';syllCheck();" style="cursor:pointer">Tap to check</span>
+          <div class="spotter-result" id="syll5-result"></div>
+        </div>
+        <div class="spotter-sentence" id="syll6">
+          <p style="font-size:18px;font-weight:700;color:#0E1C42;margin-bottom:4px;">murmur</p>
+          <p style="font-size:14px;color:#7A88A8;">mur &middot; mur &mdash; What syllable type is &ldquo;mur&rdquo;?</p>
+          <span class="spotter-word" onclick="this.parentElement.querySelector('.spotter-result').textContent='&#x2705; R-controlled syllable — the vowel u pairs with r to change its sound';this.parentElement.querySelector('.spotter-result').className='spotter-result show win';syllCheck();" style="cursor:pointer">Tap to check</span>
+          <div class="spotter-result" id="syll6-result"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -1452,11 +1528,11 @@ function gatherAnswers(){
   output+='🎮 PRACTICE ACTIVITY STATUS\n';
   output+='────────────────────────────────\n';
   output+=(window._rootMatchDone?'✅':'⬜')+' Morphology Root Match\n';
-  output+=(window._vocabSortDone?'✅':'⬜')+' Vocabulary Sort\n';
-  var spotDone=0;var spotTotal=document.querySelectorAll('.spotter-sentence').length;
-  document.querySelectorAll('.spotter-sentence').forEach(function(s){if(s.getAttribute('data-done')==='true')spotDone++;});
+  output+=(window._vocabMatchDone?'✅':'⬜')+' Vocabulary Context Detective\n';
+  var spotDone=0;var spotTotal=document.querySelectorAll('#spotterGame .spotter-sentence').length;
+  document.querySelectorAll('#spotterGame .spotter-sentence').forEach(function(s){if(s.getAttribute('data-done')==='true')spotDone++;});
   output+=(spotDone>=spotTotal&&spotTotal>0?'✅':'⬜')+' Grammar Spotter\n';
-  output+=(window._sortDone?'✅':'⬜')+' Spelling Word Sort\n';
+  output+=(window._syllDone?'✅':'⬜')+' Spelling Syllable Identifier\n';
   var gathered=document.getElementById('gatheredOutput');
   if(gathered)gathered.value=output;
 }
@@ -1579,33 +1655,23 @@ function rootMatchClick(item){
   }
 }
 
-/* ───── VOCAB SORT GAME ───── */
-window._vocabSortDone=false;
-var vocabSelected=null;var vocabPlaced=0;var vocabTotal=8;
-function pickVocabChip(chip){
-  if(chip.classList.contains('placed'))return;
-  if(vocabSelected)vocabSelected.style.outline='';
-  vocabSelected=chip;
-  chip.style.outline='3px solid #00695C';
-  chip.style.outlineOffset='2px';
-}
-function dropVocabChip(colDrop,colName){
-  if(!vocabSelected)return;
-  var correctGroup=vocabSelected.getAttribute('data-group');
-  var clone=vocabSelected.cloneNode(true);
-  clone.style.outline='';clone.onclick=null;clone.style.cursor='default';
-  if(correctGroup===colName){
-    clone.classList.add('correct');vocabSelected.classList.add('placed');colDrop.appendChild(clone);vocabPlaced++;
+/* ───── VOCAB MATCH GAME (Context Detective) ───── */
+window._vocabMatchDone=false;
+var vocabMatchFirst=null;var vocabMatchCount=0;var vocabMatchTotal=8;
+function vocabMatchClick(item){
+  if(item.classList.contains('matched'))return;
+  if(!vocabMatchFirst){vocabMatchFirst=item;item.classList.add('selected');return;}
+  if(vocabMatchFirst===item){vocabMatchFirst.classList.remove('selected');vocabMatchFirst=null;return;}
+  var key1=vocabMatchFirst.getAttribute('data-match');
+  var key2=item.getAttribute('data-match');
+  if(key1===key2&&vocabMatchFirst.classList.contains('is-word')!==item.classList.contains('is-word')){
+    vocabMatchFirst.classList.remove('selected');vocabMatchFirst.classList.add('matched');item.classList.add('matched');vocabMatchCount++;vocabMatchFirst=null;
+    if(vocabMatchCount>=vocabMatchTotal){var fb=document.getElementById('vocabMatchFeedback');if(fb)fb.classList.add('show');window._vocabMatchDone=true;}
   }else{
-    clone.classList.add('wrong');colDrop.appendChild(clone);
-    setTimeout(function(){colDrop.removeChild(clone);},600);
-  }
-  vocabSelected.style.outline='';vocabSelected=null;
-  if(vocabPlaced>=vocabTotal){
-    var sc=document.getElementById('vocabSortScore');
-    sc.textContent='🎉 All sorted correctly!';
-    sc.classList.add('show');
-    window._vocabSortDone=true;
+    item.classList.add('wrong-flash');vocabMatchFirst.classList.add('wrong-flash');
+    var a=vocabMatchFirst;var b=item;
+    setTimeout(function(){a.classList.remove('wrong-flash','selected');b.classList.remove('wrong-flash');},500);
+    vocabMatchFirst=null;
   }
 }
 
@@ -1618,48 +1684,32 @@ function spotterPick(word,sentenceId){
   var isCorrect=word.getAttribute('data-correct')==='true';
   if(isCorrect){
     word.classList.add('correct-reveal');
-    result.textContent='✅ Correct! "'+word.textContent.trim()+'" is right.';
+    var explain=word.getAttribute('data-explain-yes')||'';
+    result.textContent='✅ Correct! '+explain;
     result.className='spotter-result show win';
     sentence.setAttribute('data-done','true');
     var allDone=true;
-    document.querySelectorAll('.spotter-sentence').forEach(function(s){if(s.getAttribute('data-done')!=='true')allDone=false;});
+    document.querySelectorAll('#spotterGame .spotter-sentence').forEach(function(s){if(s.getAttribute('data-done')!=='true')allDone=false;});
     if(allDone)window._spotterDone=true;
   }else{
     word.classList.add('wrong-reveal');
-    result.textContent='🤔 Not quite — try again!';
+    /* Find the correct answer's explanation for this wrong choice */
+    var correctBtn=sentence.querySelector('.spotter-word[data-correct="true"]');
+    var wrongLabel=word.textContent.trim().toLowerCase();
+    var explainKey='data-explain-no-'+wrongLabel.replace(/[^a-z]/g,'').substring(0,4);
+    var explain=correctBtn?correctBtn.getAttribute(explainKey)||'':'';
+    result.textContent='❌ Not quite. '+explain;
     result.className='spotter-result show miss';
-    setTimeout(function(){word.classList.remove('wrong-reveal');result.classList.remove('show');},1500);
+    setTimeout(function(){word.classList.remove('wrong-reveal');result.classList.remove('show');},3000);
   }
 }
 
-/* ───── WORD SORT GAME (Spelling) ───── */
-window._sortDone=false;
-var sortSelected=null;var sortPlaced=0;var sortTotal=6;
-function pickSortChip(chip){
-  if(chip.classList.contains('placed'))return;
-  if(sortSelected)sortSelected.style.outline='';
-  sortSelected=chip;
-  chip.style.outline='3px solid #00695C';
-  chip.style.outlineOffset='2px';
-}
-function dropSortChip(colDrop,colName){
-  if(!sortSelected)return;
-  var correctGroup=sortSelected.getAttribute('data-group');
-  var clone=sortSelected.cloneNode(true);
-  clone.style.outline='';clone.onclick=null;clone.style.cursor='default';
-  if(correctGroup===colName){
-    clone.classList.add('correct');sortSelected.classList.add('placed');colDrop.appendChild(clone);sortPlaced++;
-  }else{
-    clone.classList.add('wrong');colDrop.appendChild(clone);
-    setTimeout(function(){colDrop.removeChild(clone);},600);
-  }
-  sortSelected.style.outline='';sortSelected=null;
-  if(sortPlaced>=sortTotal){
-    var sc=document.getElementById('sortScore');
-    sc.textContent='🎉 All sorted correctly!';
-    sc.classList.add('show');
-    window._sortDone=true;
-  }
+/* ───── SYLLABLE TYPE IDENTIFIER (Spelling) ───── */
+window._syllDone=false;
+function syllCheck(){
+  var total=document.querySelectorAll('#syllableGame .spotter-sentence').length;
+  var done=document.querySelectorAll('#syllableGame .spotter-result.show').length;
+  if(done>=total&&total>0)window._syllDone=true;
 }
 
 /* ───── STORY JOURNEY TRACKER ───── */

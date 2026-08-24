@@ -953,7 +953,27 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <div class="activity bl-teal">
     <div class="activity-head"><div class="activity-num" style="background:#00796B;">2</div><div style="flex:1;"><div class="activity-title">&#x1F524; Vocabulary</div><div class="activity-sub">Decode &amp; Discover &mdash; words from Chapter 9</div></div></div>
     <div class="activity-body">
-      
+
+<details class="vocab-bank" style="margin-bottom:16px;background:#F4F0FA;border:2px solid #D6C8F0;border-radius:10px;padding:0;">
+<summary style="padding:12px 16px;cursor:pointer;font-weight:700;font-size:15px;color:#8B6FC0;list-style:none;display:flex;align-items:center;gap:8px;">
+<span style="transition:transform .2s;">&#x25B6;</span> &#x1F4D6; Word Bank — Tap to see this week's vocabulary definitions
+</summary>
+<div style="padding:4px 16px 14px;font-size:14px;color:#3A4A6B;line-height:1.7;">
+<p style="margin:4px 0;"><strong>primer</strong> — a basic reading textbook for young children</p>
+<p style="margin:4px 0;"><strong>improvise</strong> — to create or perform something without planning</p>
+<p style="margin:4px 0;"><strong>parable</strong> — a short story that teaches a moral or spiritual lesson</p>
+<p style="margin:4px 0;"><strong>contagious</strong> — able to spread from one person to another</p>
+<p style="margin:4px 0;"><strong>indulgence</strong> — the act of giving in to a pleasure or desire</p>
+<p style="margin:4px 0;"><strong>banished</strong> — sent away as punishment</p>
+<p style="margin:4px 0;"><strong>settle</strong> — a long wooden bench with a high back</p>
+<p style="margin:4px 0;"><strong>perceive</strong> — to notice or understand</p>
+<p style="margin:4px 0;"><strong>kinship</strong> — a feeling of closeness or connection</p>
+<p style="margin:4px 0;"><strong>refuge</strong> — a safe place from danger or trouble</p>
+<p style="margin:4px 0;"><strong>Quaker</strong> — a member of the Society of Friends (a religious group)</p>
+<p style="margin:4px 0;"><strong>hornbook</strong> — a flat board with a handle used for teaching children to read</p>
+</div>
+</details>
+
       <!-- Day 1 Decode & Discover: 3-step model -->
       <p>Chapter 9 introduces words connected to Kit&rsquo;s first experience teaching. When you hit an unfamiliar word, use the three-step strategy: context, word parts, then confirm.</p>
 
@@ -1601,12 +1621,12 @@ function spotterPick(word,sentenceId){
   if(isCorrect){
     word.classList.add('correct-reveal');
     var explanations={
-      'spot1':'The period should be a comma: "idea," Kit said. When a said-tag follows, use a comma inside the closing quote.',
-      'spot2':'This is reported speech (no quotation marks), but it should be direct dialogue: "Acting is sinful in Connecticut," Mr. Kimberley said.',
-      'spot3':'A comma is missing before the closing quote: "down," said Mercy. Always put a comma before the closing quotation mark when a said-tag follows.',
-      'spot4':'"Kit said," should start a new sentence or use a period: "loved acting." Kit said, "They were..." — this is two separate quotes that need separate punctuation.'
+      'spot1':'✅ Correct! The period inside the quote should be a comma: "idea," Kit said. When a said-tag follows, a comma keeps the tense and flow consistent — the sentence continues into the attribution, so the punctuation must match that structure.',
+      'spot2':'✅ Correct! This is reported speech, but it should be direct dialogue with quotation marks: "Acting is sinful in Connecticut," Mr. Kimberley said. Using direct quotes keeps the reader in the same past-tense moment, maintaining verb tense consistency throughout the scene.',
+      'spot3':'✅ Correct! A comma is missing before the closing quote: "down," said Mercy. The comma signals that the sentence continues with the said-tag, keeping the past tense ("said") consistent with the rest of the passage.',
+      'spot4':'✅ Correct! "Kit said," creates a comma splice joining two independent quotes. It should be: "loved acting." Kit said, "They were..." Splitting them into two properly punctuated sentences keeps the past tense ("loved," "said," "were") consistent and clear.'
     };
-    result.textContent='✅ Correct! '+( explanations[sentenceId] || 'Good eye!');
+    result.textContent=explanations[sentenceId] || '✅ Correct! Good eye!';
     result.className='spotter-result show win';
     sentence.setAttribute('data-done','true');
     var allDone=true;
@@ -1614,9 +1634,15 @@ function spotterPick(word,sentenceId){
     if(allDone)window._spotterDone=true;
   }else{
     word.classList.add('wrong-reveal');
-    result.textContent='🤔 Not quite — look for the punctuation error!';
+    var wrongExplanations={
+      'spot1':'❌ Not quite. That part uses consistent past tense correctly. Look for the punctuation mark that breaks the flow between the quote and the said-tag.',
+      'spot2':'❌ Not quite. Those words maintain consistent past tense. Look at how this sentence reports speech — is it formatted the way direct dialogue should be?',
+      'spot3':'❌ Not quite. Those words keep the tense consistent. Look for missing punctuation right before the closing quotation mark.',
+      'spot4':'❌ Not quite. Those words stay in consistent past tense. Look at the attribution in the middle — does its punctuation correctly separate two independent quotes?'
+    };
+    result.textContent=wrongExplanations[sentenceId] || '❌ Not quite. Look for the punctuation error!';
     result.className='spotter-result show miss';
-    setTimeout(function(){word.classList.remove('wrong-reveal');result.classList.remove('show');},1500);
+    setTimeout(function(){word.classList.remove('wrong-reveal');result.classList.remove('show');},2000);
   }
 }
 

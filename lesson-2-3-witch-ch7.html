@@ -893,13 +893,13 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <p style="font-size:14px;color:#7A88A8;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;margin-top:16px;">Sentence 2 &mdash; Fix It</p>
       <p style="font-size:14px;color:#3A4A6B;margin-bottom:10px;">These sentences have mistakes. Rewrite them correctly in your notebook, using the model as a guide.</p>
       <div class="dol-fix-sentence">
-        william ashby visited the wood family every saturday evening and kit learned to nit
+        judith and mercy sat by the fire and talked about john holbrooks visit
       </div>
       <button class="dol-check-btn" onclick="document.getElementById('dolAns1').classList.toggle('show')">&#x1F50D; Check My Work</button>
       <div class="dol-answer" id="dolAns1">
         <p style="margin-bottom:8px;"><strong>Corrected:</strong></p>
-        <p>William Ashby visited the Wood family every Saturday evening, and Kit learned to knit.</p>
-        <p style="font-size:13px;color:#7A88A8;margin-top:8px;font-style:italic;">Compare with the model: capitalize names (William, Ashby, Wood, Kit) and the day of the week (Saturday). &ldquo;Knit&rdquo; not &ldquo;nit.&rdquo; Add a comma before &ldquo;and&rdquo; when joining two complete actions, plus a period at the end.</p>
+        <p>Judith and Mercy sat by the fire, and talked about John Holbrook&rsquo;s visit.</p>
+        <p style="font-size:13px;color:#7A88A8;margin-top:8px;font-style:italic;">Capitalize proper nouns (Judith, Mercy, John Holbrook). Add an apostrophe to show possession: &ldquo;Holbrook&rsquo;s visit.&rdquo; Add a comma before &ldquo;and&rdquo; when joining two complete actions, plus a period at the end.</p>
       </div>
 
       <div class="dol-fix-sentence" style="margin-top:14px;">
@@ -961,26 +961,49 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 
   <!-- ═══ VOCABULARY ═══ -->
   <div class="activity bl-teal">
-    <div class="activity-head"><div class="activity-num" style="background:#00796B;">2</div><div style="flex:1;"><div class="activity-title">&#x1F524; Vocabulary: Use It</div><div class="activity-sub">This week's words in context</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#00796B;">2</div><div style="flex:1;"><div class="activity-title">&#x1F524; Vocabulary: Use It</div><div class="activity-sub">Fill in the Blank</div></div></div>
     <div class="activity-body">
-      
+
+<details class="vocab-bank" style="margin-bottom:16px;background:#F4F0FA;border:2px solid #D6C8F0;border-radius:10px;padding:0;">
+<summary style="padding:12px 16px;cursor:pointer;font-weight:700;font-size:15px;color:#8B6FC0;list-style:none;display:flex;align-items:center;gap:8px;">
+<span style="transition:transform .2s;">&#x25B6;</span> &#x1F4D6; Word Bank — Tap to see this week's vocabulary definitions
+</summary>
+<div style="padding:4px 16px 14px;font-size:14px;color:#3A4A6B;line-height:1.7;">
+<p style="margin:4px 0;"><strong>affront</strong> — an insult or offense, especially a public one</p>
+<p style="margin:4px 0;"><strong>conspicuous</strong> — standing out in a way that attracts attention</p>
+<p style="margin:4px 0;"><strong>condescension</strong> — an attitude of superiority; looking down on others</p>
+<p style="margin:4px 0;"><strong>demurely</strong> — in a quiet, modest, reserved way</p>
+<p style="margin:4px 0;"><strong>auspiciously</strong> — in a way that suggests good things ahead</p>
+<p style="margin:4px 0;"><strong>allegiance</strong> — loyalty or devotion to a ruler or cause</p>
+<p style="margin:4px 0;"><strong>selectman</strong> — an elected town official</p>
+<p style="margin:4px 0;"><strong>hypocrite</strong> — someone who pretends to believe something they do not</p>
+<p style="margin:4px 0;"><strong>inexorably</strong> — in a way that cannot be stopped or changed</p>
+<p style="margin:4px 0;"><strong>eloquent</strong> — fluent, expressive, and persuasive in speaking</p>
+<p style="margin:4px 0;"><strong>frippery</strong> — showy or unnecessary finery; fancy decorations</p>
+</div>
+</details>
+
       <p>You have studied this week&rsquo;s vocabulary words. Now use them. Read each sentence and fill in the word that fits best.</p>
 
-      <div class="callout callout-info"><span class="callout-icon">&#x1F3AF;</span><p><strong>Practice:</strong> Tap a word from the bank, then tap the blank where it belongs.</p></div>
+      <div class="callout callout-info"><span class="callout-icon">&#x1F3AF;</span><p><strong>Practice:</strong> Type the correct vocabulary word into each blank, then check your answers.</p></div>
 
-      <!-- Cloze Match Game -->
-      <div class="match-game" id="vocabMatch">
-        <div class="match-grid" id="matchGrid">
-          <div class="match-item is-word" data-match="A" onclick="matchClick(this)">allegiance</div>
-          <div class="match-item" data-match="C" onclick="matchClick(this)">Kit sat ___ with her hands folded, eyes lowered.</div>
-          <div class="match-item is-word" data-match="B" onclick="matchClick(this)">conspicuous</div>
-          <div class="match-item" data-match="A" onclick="matchClick(this)">Matthew argued that ___ to the King meant giving up their rights.</div>
-          <div class="match-item is-word" data-match="C" onclick="matchClick(this)">demurely</div>
-          <div class="match-item" data-match="D" onclick="matchClick(this)">Judith dismissed Kit&rsquo;s fine dresses as useless ___.</div>
-          <div class="match-item is-word" data-match="D" onclick="matchClick(this)">frippery</div>
-          <div class="match-item" data-match="B" onclick="matchClick(this)">Kit&rsquo;s silk gowns made her ___ in a town of plain wool.</div>
-        </div>
-        <div class="match-feedback" id="matchFeedback">&#x2728; All words placed correctly!</div>
+      <!-- Fill-in-the-Blank Game -->
+      <div class="fillin-game" id="vocabFillinGame">
+        <div class="fillin-item">Kit sat ___ <input class="fillin-input" data-answer="demurely" maxlength="12" placeholder="______"> with her hands folded, trying not to attract attention.</div>
+        <div class="fillin-item">Matthew argued that <input class="fillin-input" data-answer="allegiance" maxlength="12" placeholder="______"> to the King meant giving up their rights as Englishmen.</div>
+        <div class="fillin-item">Kit&rsquo;s silk gowns made her <input class="fillin-input" data-answer="conspicuous" maxlength="14" placeholder="______"> in a town where everyone wore plain wool.</div>
+        <div class="fillin-item">Judith dismissed Kit&rsquo;s fine dresses as useless <input class="fillin-input" data-answer="frippery" maxlength="12" placeholder="______"> that had no place in Connecticut.</div>
+        <div class="fillin-item">The meeting moved <input class="fillin-input" data-answer="inexorably" maxlength="14" placeholder="______"> toward a vote, and nothing could slow it down.</div>
+        <button class="fillin-check-btn" onclick="checkVocabFillIn()">Check My Words</button>
+        <div class="fillin-feedback" id="vocabFillinFeedback">&#x1F331; All correct! You know this week&rsquo;s words well.</div>
+      </div>
+
+      <div style="margin-top:18px;padding-top:14px;border-top:2px dashed #D6C8F0;">
+        <div class="callout callout-info"><span class="callout-icon">&#x270F;&#xFE0F;</span><p><strong>Your Turn:</strong> Choose one vocabulary word from this week and write your own sentence using it correctly.</p></div>
+        <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-yourturn"></span></div>
+        <textarea class="journal-box" id="journal-vocab-yourturn" data-label="Vocabulary: Your Turn"
+          placeholder="I chose the word ___ because..."
+          oninput="autoSave(this,'dot-vocab-yourturn');gatherAnswers();" style="min-height:50px;"></textarea>
       </div>
     </div>
   </div>
@@ -1002,20 +1025,20 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="spotter-game" id="spotterGame">
         <div class="spotter-sentence" id="spot1">
           <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">&ldquo;Kit popped corn. John popped corn.&rdquo;</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true">Kit and John popped corn.</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">Kit popped corn and John.</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true" data-explain="Both sentences share the same predicate (popped corn), so we combine the subjects with 'and' to make a compound subject: Kit and John.">Kit and John popped corn.</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false" data-explain="This makes it sound like Kit popped both corn and John. We need a compound subject (Kit and John), not a list in the predicate.">Kit popped corn and John.</span>
           <div class="spotter-result" id="spot1-result"></div>
         </div>
         <div class="spotter-sentence" id="spot2">
           <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">&ldquo;Matthew questioned William. Matthew challenged William.&rdquo;</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">Matthew questioned and William challenged.</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="true">Matthew questioned and challenged William.</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false" data-explain="This drops the object 'William' from the first action and scrambles the meaning. The subject is the same (Matthew), so we combine the predicates.">Matthew questioned and William challenged.</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="true" data-explain="Both sentences share the same subject (Matthew), so we combine the predicates with 'and': questioned and challenged William. This is a compound predicate.">Matthew questioned and challenged William.</span>
           <div class="spotter-result" id="spot2-result"></div>
         </div>
         <div class="spotter-sentence" id="spot3">
           <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">&ldquo;Kit knitted quietly. Kit watched William.&rdquo;</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true">Kit knitted quietly and watched William.</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">Kit and William knitted quietly.</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true" data-explain="Both sentences share the same subject (Kit), so we combine the predicates with 'and': knitted quietly and watched William. This is a compound predicate.">Kit knitted quietly and watched William.</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false" data-explain="This changes the meaning &mdash; it says both Kit and William knitted, but only Kit knitted. The original sentences share the subject Kit, so we need a compound predicate.">Kit and William knitted quietly.</span>
           <div class="spotter-result" id="spot3-result"></div>
         </div>
       </div>
@@ -1026,33 +1049,62 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 
   <!-- ═══ SPELLING ═══ -->
   <div class="activity bl-navy">
-    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div style="flex:1;"><div class="activity-title">&#x1F520; Spelling: Suffix Spelling Changes</div><div class="activity-sub">Apply &mdash; drop e, double consonant, y to i</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div style="flex:1;"><div class="activity-title">&#x1F520; Spelling: Schwa &amp; Unstressed Syllables</div><div class="activity-sub">Schwa &mdash; Unstressed Syllable Practice</div></div></div>
     <div class="activity-body">
 <div class="callout callout-gold" style="margin-bottom:14px;background:#FFF8E8;border:2px solid #F5E6C8;border-left:5px solid #C7922C;border-radius:10px;padding:14px 18px;"><span class="callout-icon">📖</span><p style="font-size:15px;color:#0E1C42;line-height:1.6;"><strong>The Rule:</strong> A <strong>schwa</strong> is an unstressed vowel that sounds like a quick "uh" — it can be spelled with any vowel letter. Compare: the <em>a</em> in <em>about</em> (schwa) vs. the <em>a</em> in <em>apple</em> (short a). Schwa appears in unstressed syllables, so say the word aloud and listen for which syllable gets less emphasis.</p></div>
-            <p>When you add a suffix that starts with a vowel, the spelling of the base word sometimes changes. Today, apply those rules to build new words.</p>
+            <p>A <strong>schwa</strong> is the quick &ldquo;uh&rdquo; sound in an unstressed syllable. It can be spelled with any vowel letter, which makes these words tricky. Today, practice identifying and spelling the schwa syllable in words from Chapter 7.</p>
       <div class="key-concept">
         <div class="key-concept-label">&#x1F4CC; Quick Reminder</div>
-        <p><strong>Drop the e:</strong> admire + -ation = admiration (drop the silent e before a vowel suffix)</p>
-        <p><strong>Double the consonant:</strong> submit + -ion = submission (double the final consonant in a short-vowel word)</p>
-        <p><strong>Y to i:</strong> envy + -ous = envious (change y to i before adding the suffix)</p>
+        <p><strong>Schwa sounds like &ldquo;uh&rdquo;</strong> and hides in unstressed syllables: the <em>a</em> in &ldquo;about,&rdquo; the <em>i</em> in &ldquo;family,&rdquo; the <em>o</em> in &ldquo;lesson.&rdquo;</p>
+        <p><strong>Strategy:</strong> Say the word aloud. The syllable you barely stress is where the schwa lives.</p>
       </div>
 
-      <!-- Word Sort Game — sorting by rule -->
-      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F3AE;</span><p><strong>Practice:</strong> Sort these words by which rule was applied. Tap a word, then tap the column.</p></div>
-      <div class="sort-game" id="spellSort">
-        <div class="sort-bank" id="sortBank">
-          <span class="sort-chip" data-group="A" onclick="pickSortChip(this)">admiration</span>
-          <span class="sort-chip" data-group="B" onclick="pickSortChip(this)">submission</span>
-          <span class="sort-chip" data-group="A" onclick="pickSortChip(this)">reckoning</span>
-          <span class="sort-chip" data-group="B" onclick="pickSortChip(this)">knitting</span>
-          <span class="sort-chip" data-group="A" onclick="pickSortChip(this)">conversation</span>
-          <span class="sort-chip" data-group="B" onclick="pickSortChip(this)">rebellion</span>
+      <!-- Schwa Spotter Game -->
+      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F3AE;</span><p><strong>Practice &mdash; Schwa Spotter:</strong> For each word, decide which syllable has the schwa sound. Tap &ldquo;Show&rdquo; to check!</p></div>
+      <div id="schwaSpotter" style="margin:14px 0;">
+        <div class="schwa-item" style="background:#fff;border:2px solid #E2E8F4;border-radius:12px;padding:14px 18px;margin-bottom:10px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+            <span style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#0E1C42;">Wil &middot; liam</span>
+            <button class="dol-check-btn" style="margin:0;font-size:13px;padding:6px 14px;" onclick="this.nextElementSibling.style.display='block';this.disabled=true;this.textContent='Revealed';window._schwaRevealed=(window._schwaRevealed||0)+1;if(window._schwaRevealed>=6){document.getElementById('schwaScore').classList.add('show');window._schwaDone=true;}">Show</button>
+            <div style="display:none;width:100%;margin-top:8px;padding:8px 12px;background:#E8F5E9;border-radius:8px;font-size:14px;color:#1B5E20;">&#x2705; The schwa is in <strong>&ldquo;liam&rdquo;</strong> &mdash; the <em>ia</em> sounds like &ldquo;yum&rdquo; (unstressed).</div>
+          </div>
         </div>
-        <div class="sort-columns">
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#F9A825,#FBC02D);">Drop the e</div><div class="sort-col-drop" data-col="A" onclick="dropSortChip(this,'A')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#7B5EA7,#9575CD);">Double the consonant</div><div class="sort-col-drop" data-col="B" onclick="dropSortChip(this,'B')"></div></div>
+        <div class="schwa-item" style="background:#fff;border:2px solid #E2E8F4;border-radius:12px;padding:14px 18px;margin-bottom:10px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+            <span style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#0E1C42;">vis &middot; it &middot; ed</span>
+            <button class="dol-check-btn" style="margin:0;font-size:13px;padding:6px 14px;" onclick="this.nextElementSibling.style.display='block';this.disabled=true;this.textContent='Revealed';window._schwaRevealed=(window._schwaRevealed||0)+1;if(window._schwaRevealed>=6){document.getElementById('schwaScore').classList.add('show');window._schwaDone=true;}">Show</button>
+            <div style="display:none;width:100%;margin-top:8px;padding:8px 12px;background:#E8F5E9;border-radius:8px;font-size:14px;color:#1B5E20;">&#x2705; The schwa is in <strong>&ldquo;it&rdquo;</strong> &mdash; the <em>i</em> is barely pronounced (sounds like &ldquo;uh-ted&rdquo;).</div>
+          </div>
         </div>
-        <div class="sort-score" id="sortScore"></div>
+        <div class="schwa-item" style="background:#fff;border:2px solid #E2E8F4;border-radius:12px;padding:14px 18px;margin-bottom:10px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+            <span style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#0E1C42;">fam &middot; i &middot; ly</span>
+            <button class="dol-check-btn" style="margin:0;font-size:13px;padding:6px 14px;" onclick="this.nextElementSibling.style.display='block';this.disabled=true;this.textContent='Revealed';window._schwaRevealed=(window._schwaRevealed||0)+1;if(window._schwaRevealed>=6){document.getElementById('schwaScore').classList.add('show');window._schwaDone=true;}">Show</button>
+            <div style="display:none;width:100%;margin-top:8px;padding:8px 12px;background:#E8F5E9;border-radius:8px;font-size:14px;color:#1B5E20;">&#x2705; The schwa is in <strong>&ldquo;i&rdquo;</strong> &mdash; the middle syllable is unstressed (sounds like &ldquo;fam-uh-lee&rdquo;).</div>
+          </div>
+        </div>
+        <div class="schwa-item" style="background:#fff;border:2px solid #E2E8F4;border-radius:12px;padding:14px 18px;margin-bottom:10px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+            <span style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#0E1C42;">eve &middot; ning</span>
+            <button class="dol-check-btn" style="margin:0;font-size:13px;padding:6px 14px;" onclick="this.nextElementSibling.style.display='block';this.disabled=true;this.textContent='Revealed';window._schwaRevealed=(window._schwaRevealed||0)+1;if(window._schwaRevealed>=6){document.getElementById('schwaScore').classList.add('show');window._schwaDone=true;}">Show</button>
+            <div style="display:none;width:100%;margin-top:8px;padding:8px 12px;background:#E8F5E9;border-radius:8px;font-size:14px;color:#1B5E20;">&#x2705; The schwa is in <strong>&ldquo;ning&rdquo;</strong> &mdash; the <em>i</em> in &ldquo;-ning&rdquo; is unstressed (sounds like &ldquo;eve-nuhng&rdquo;).</div>
+          </div>
+        </div>
+        <div class="schwa-item" style="background:#fff;border:2px solid #E2E8F4;border-radius:12px;padding:14px 18px;margin-bottom:10px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+            <span style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#0E1C42;">knit &middot; ting</span>
+            <button class="dol-check-btn" style="margin:0;font-size:13px;padding:6px 14px;" onclick="this.nextElementSibling.style.display='block';this.disabled=true;this.textContent='Revealed';window._schwaRevealed=(window._schwaRevealed||0)+1;if(window._schwaRevealed>=6){document.getElementById('schwaScore').classList.add('show');window._schwaDone=true;}">Show</button>
+            <div style="display:none;width:100%;margin-top:8px;padding:8px 12px;background:#E8F5E9;border-radius:8px;font-size:14px;color:#1B5E20;">&#x2705; The schwa is in <strong>&ldquo;ting&rdquo;</strong> &mdash; the <em>i</em> in &ldquo;-ting&rdquo; is lightly stressed (sounds like &ldquo;nit-uhng&rdquo;).</div>
+          </div>
+        </div>
+        <div class="schwa-item" style="background:#fff;border:2px solid #E2E8F4;border-radius:12px;padding:14px 18px;margin-bottom:10px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+            <span style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#0E1C42;">prom &middot; ise</span>
+            <button class="dol-check-btn" style="margin:0;font-size:13px;padding:6px 14px;" onclick="this.nextElementSibling.style.display='block';this.disabled=true;this.textContent='Revealed';window._schwaRevealed=(window._schwaRevealed||0)+1;if(window._schwaRevealed>=6){document.getElementById('schwaScore').classList.add('show');window._schwaDone=true;}">Show</button>
+            <div style="display:none;width:100%;margin-top:8px;padding:8px 12px;background:#E8F5E9;border-radius:8px;font-size:14px;color:#1B5E20;">&#x2705; The schwa is in <strong>&ldquo;ise&rdquo;</strong> &mdash; the <em>i</em> is unstressed (sounds like &ldquo;prom-uhs&rdquo;).</div>
+          </div>
+        </div>
+        <div class="sort-score" id="schwaScore">&#x1F389; All schwas revealed! You found every unstressed syllable.</div>
       </div>
 
       <!-- SWYK — Day 3 = Spelling rotation -->
@@ -1307,6 +1359,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered all 3 comprehension questions with evidence from the text.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed the Spelling Show What You Know response.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed the morphology fill-in-the-blank practice.</div></div>
+
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my Writing Connection response.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I copied my work to Canvas <strong>or</strong> downloaded the PDF.</div></div>
       </div>
@@ -1452,14 +1505,22 @@ function gatherAnswers(){
     output+=(el.value.trim()||'(no answer)')+'\n';
   });
   output+='\n';
+  output+='📖 VOCABULARY: YOUR TURN\n';
+  output+='────────────────────────────────\n';
+  var vyt=document.getElementById('journal-vocab-yourturn');
+  if(vyt){
+    output+='\n'+(vyt.getAttribute('data-label')||'Vocabulary: Your Turn')+'\n';
+    output+=(vyt.value.trim()||'(no answer)')+'\n';
+  }
+  output+='\n';
   output+='🎮 PRACTICE ACTIVITY STATUS\n';
   output+='────────────────────────────────\n';
   output+=(window._fillinDone?'✅':'⬜')+' Morphology Practice\n';
-  output+=(window._vocabMatchDone?'✅':'⬜')+' Vocabulary Match\n';
+  output+=(window._vocabFillinDone?'✅':'⬜')+' Vocabulary Fill-in-the-Blank\n';
   var spotDone=0;var spotTotal=document.querySelectorAll('.spotter-sentence').length;
   document.querySelectorAll('.spotter-sentence').forEach(function(s){if(s.getAttribute('data-done')==='true')spotDone++;});
   output+=(spotDone>=spotTotal&&spotTotal>0?'✅':'⬜')+' Grammar Spotter\n';
-  output+=(window._sortDone?'✅':'⬜')+' Spelling Word Sort\n';
+  output+=(window._schwaDone?'✅':'⬜')+' Schwa Spotter\n';
   var gathered=document.getElementById('gatheredOutput');
   if(gathered)gathered.value=output;
 }
@@ -1576,7 +1637,21 @@ function checkFillIn(){
   if(allCorrect){document.getElementById('fillinFeedback').classList.add('show');window._fillinDone=true;}
 }
 
-/* ───── VOCAB MATCH GAME ───── */
+/* ───── VOCAB FILL-IN-THE-BLANK GAME ───── */
+window._vocabFillinDone=false;
+function checkVocabFillIn(){
+  var items=document.querySelectorAll('#vocabFillinGame .fillin-input');var correct=0;
+  items.forEach(function(inp){
+    var ans=inp.getAttribute('data-answer').toLowerCase().trim();
+    var val=inp.value.toLowerCase().trim();
+    if(val===ans){inp.classList.remove('wrong');inp.classList.add('correct');inp.disabled=true;correct++;}
+    else{inp.classList.remove('correct');inp.classList.add('wrong');setTimeout(function(){inp.classList.remove('wrong');},600);}
+  });
+  var fb=document.getElementById('vocabFillinFeedback');
+  if(correct===items.length){fb.classList.add('show');window._vocabFillinDone=true;}
+}
+
+/* ───── VOCAB MATCH GAME (legacy) ───── */
 window._vocabMatchDone=false;
 var matchFirst=null;var matchCount=0;var matchTotal=4;
 function matchClick(item){
@@ -1603,9 +1678,10 @@ function spotterPick(word,sentenceId){
   if(sentence.getAttribute('data-done')==='true')return;
   var result=document.getElementById(sentenceId+'-result');
   var isCorrect=word.getAttribute('data-correct')==='true';
+  var explain=word.getAttribute('data-explain')||'';
   if(isCorrect){
     word.classList.add('correct-reveal');
-    result.textContent='✅ Correct!';
+    result.innerHTML='✅ Correct! '+explain;
     result.className='spotter-result show win';
     sentence.setAttribute('data-done','true');
     var allDone=true;
@@ -1613,13 +1689,17 @@ function spotterPick(word,sentenceId){
     if(allDone)window._spotterDone=true;
   }else{
     word.classList.add('wrong-reveal');
-    result.textContent='🤔 Not quite — try again!';
+    result.innerHTML='❌ Not quite. '+explain;
     result.className='spotter-result show miss';
-    setTimeout(function(){word.classList.remove('wrong-reveal');result.classList.remove('show');},1500);
+    setTimeout(function(){word.classList.remove('wrong-reveal');result.classList.remove('show');},3000);
   }
 }
 
-/* ───── WORD SORT GAME ───── */
+/* ───── SCHWA SPOTTER ───── */
+window._schwaDone=false;
+window._schwaRevealed=0;
+
+/* ───── WORD SORT GAME (legacy) ───── */
 window._sortDone=false;
 var sortSelected=null;var sortPlaced=0;var sortTotal=6;
 function pickSortChip(chip){

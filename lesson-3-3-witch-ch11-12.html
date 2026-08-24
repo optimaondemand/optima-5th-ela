@@ -956,29 +956,49 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 
   <!-- ═══ VOCABULARY ═══ -->
   <div class="activity bl-teal">
-    <div class="activity-head"><div class="activity-num" style="background:#00796B;">2</div><div style="flex:1;"><div class="activity-title">&#x1F524; Vocabulary: Use It</div><div class="activity-sub">This week's words in context</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#00796B;">2</div><div style="flex:1;"><div class="activity-title">&#x1F524; Vocabulary: Fill in the Blank</div><div class="activity-sub">Use this week's words in context</div></div></div>
     <div class="activity-body">
-      
+
+      <details class="vocab-bank" style="margin-bottom:16px;background:#F4F0FA;border:2px solid #D6C8F0;border-radius:10px;padding:0;">
+      <summary style="padding:12px 16px;cursor:pointer;font-weight:700;font-size:15px;color:#8B6FC0;list-style:none;display:flex;align-items:center;gap:8px;">
+      <span style="transition:transform .2s;">&#x25B6;</span> &#x1F4D6; Word Bank &mdash; Tap to see this week&rsquo;s vocabulary definitions
+      </summary>
+      <div style="padding:4px 16px 14px;font-size:14px;color:#3A4A6B;line-height:1.7;">
+      <p style="margin:4px 0;"><strong>primer</strong> &mdash; a basic reading textbook for young children</p>
+      <p style="margin:4px 0;"><strong>improvise</strong> &mdash; to create or perform something without planning</p>
+      <p style="margin:4px 0;"><strong>parable</strong> &mdash; a short story that teaches a moral or spiritual lesson</p>
+      <p style="margin:4px 0;"><strong>contagious</strong> &mdash; able to spread from one person to another</p>
+      <p style="margin:4px 0;"><strong>indulgence</strong> &mdash; the act of giving in to a pleasure or desire</p>
+      <p style="margin:4px 0;"><strong>banished</strong> &mdash; sent away as punishment</p>
+      <p style="margin:4px 0;"><strong>settle</strong> &mdash; a long wooden bench with a high back</p>
+      <p style="margin:4px 0;"><strong>perceive</strong> &mdash; to notice or understand</p>
+      <p style="margin:4px 0;"><strong>kinship</strong> &mdash; a feeling of closeness or connection</p>
+      <p style="margin:4px 0;"><strong>refuge</strong> &mdash; a safe place from danger or trouble</p>
+      <p style="margin:4px 0;"><strong>Quaker</strong> &mdash; a member of the Society of Friends (a religious group)</p>
+      <p style="margin:4px 0;"><strong>hornbook</strong> &mdash; a flat board with a handle used for teaching children to read</p>
+      </div>
+      </details>
+
       <p>You have studied this week&rsquo;s vocabulary words. Now use them. Read each sentence and fill in the word that fits best.</p>
 
-      <div class="callout callout-info"><span class="callout-icon">&#x1F3AF;</span><p><strong>Practice:</strong> Tap a word from the bank, then tap the blank where it belongs.</p></div>
+      <div class="callout callout-info"><span class="callout-icon">&#x1F3AF;</span><p><strong>Practice:</strong> Read each sentence and type the vocabulary word that fits in the blank.</p></div>
 
-      <!-- Cloze Match Game -->
-      <div class="match-game" id="vocabMatch">
-        <div class="match-grid" id="matchGrid">
-          <div class="match-item is-word" data-match="A" onclick="matchClick(this)">hornbook</div>
-          <div class="match-item" data-match="C" onclick="matchClick(this)">Kit had to ___ a lesson plan when the real supplies were missing.</div>
-          <div class="match-item is-word" data-match="B" onclick="matchClick(this)">refuge</div>
-          <div class="match-item" data-match="A" onclick="matchClick(this)">Prudence traced the letters on the ___ that Hannah kept by the fireplace.</div>
-          <div class="match-item is-word" data-match="C" onclick="matchClick(this)">improvise</div>
-          <div class="match-item" data-match="D" onclick="matchClick(this)">Kit felt a surprising ___ with Prudence, as though they understood each other without words.</div>
-          <div class="match-item is-word" data-match="D" onclick="matchClick(this)">kinship</div>
-          <div class="match-item" data-match="B" onclick="matchClick(this)">Hannah&rsquo;s cottage was a ___ &mdash; a safe place away from the suspicion of the town.</div>
-        </div>
-        <div class="match-feedback" id="matchFeedback">&#x2728; All words placed correctly!</div>
+      <!-- Fill-in-the-Blank Game -->
+      <div class="fillin-game" id="vocabFillinGame">
+        <div class="fillin-item">Prudence traced the letters on the <input class="fillin-input" data-answer="hornbook" maxlength="12" placeholder="______"> that Hannah kept by the fireplace.</div>
+        <div class="fillin-item">Hannah&rsquo;s cottage was a <input class="fillin-input" data-answer="refuge" maxlength="10" placeholder="______"> &mdash; a safe place away from the suspicion of the town.</div>
+        <div class="fillin-item">Kit had to <input class="fillin-input" data-answer="improvise" maxlength="12" placeholder="______"> a lesson plan when the real supplies were missing.</div>
+        <div class="fillin-item">Kit felt a surprising <input class="fillin-input" data-answer="kinship" maxlength="10" placeholder="______"> with Prudence, as though they understood each other without words.</div>
+        <div class="fillin-item">Kit began to <input class="fillin-input" data-answer="perceive" maxlength="12" placeholder="______"> that the townspeople&rsquo;s fear of Hannah was rooted in ignorance.</div>
+        <button class="fillin-check-btn" onclick="checkVocabFillIn()">Check My Words</button>
+        <div class="fillin-feedback" id="vocabFillinFeedback">&#x1F331; All correct!</div>
       </div>
 
-      <div class="callout callout-think" style="margin-top:14px;"><span class="callout-icon">&#x270D;&#xFE0F;</span><p><strong>Your turn:</strong> Choose one of this week&rsquo;s words &mdash; <em>contagious, banished, perceive,</em> or <em>primer</em> &mdash; and write an original sentence about something from Chapters 11&ndash;12. Write it in your reading journal.</p></div>
+      <div style="margin-top:18px;padding-top:14px;border-top:2px dashed #D6C8F0;">
+        <div class="callout callout-info"><span class="callout-icon">&#x270F;&#xFE0F;</span><p><strong>Your Turn:</strong> Choose one vocabulary word and write your own sentence using it correctly.</p></div>
+        <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-yourturn"></span></div>
+        <textarea class="journal-box" id="journal-vocab-yourturn" data-label="Vocabulary: Your Turn" placeholder="I chose the word ___ because..." oninput="autoSave(this,'dot-vocab-yourturn');gatherAnswers();" style="min-height:50px;"></textarea>
+      </div>
     </div>
   </div>
 
@@ -1000,20 +1020,20 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="spotter-game" id="spotterGame">
         <div class="spotter-sentence" id="spot1">
           <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which version is punctuated correctly?</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">Prudence whispered &ldquo;I want to learn to read.&rdquo;</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true">Prudence whispered, &ldquo;I want to learn to read.&rdquo;</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false" data-explain="Missing comma before the quotation. When a dialogue tag (like &lsquo;whispered&rsquo;) introduces spoken words, place a comma after the tag and before the opening quotation mark.">Prudence whispered &ldquo;I want to learn to read.&rdquo;</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true" data-explain="Correct! A comma after &lsquo;whispered&rsquo; separates the dialogue tag from the spoken words. The verb tense stays consistent &mdash; &lsquo;whispered&rsquo; is past tense, matching the rest of the narrative.">Prudence whispered, &ldquo;I want to learn to read.&rdquo;</span>
           <div class="spotter-result" id="spot1-result"></div>
         </div>
         <div class="spotter-sentence" id="spot2">
           <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which version is punctuated correctly?</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="true">&ldquo;You&rsquo;re getting tamed by Connecticut,&rdquo; Nat teased.</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">&ldquo;You&rsquo;re getting tamed by Connecticut&rdquo; Nat teased.</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="true" data-explain="Correct! A comma goes inside the closing quotation mark when a dialogue tag (&lsquo;Nat teased&rsquo;) follows the spoken words. Both &lsquo;teased&rsquo; and the dialogue stay in past tense &mdash; verb tense consistency.">&ldquo;You&rsquo;re getting tamed by Connecticut,&rdquo; Nat teased.</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false" data-explain="Missing comma before the closing quotation mark. When a dialogue tag follows, a comma must come before the closing quotation mark to connect the spoken words to the tag.">&ldquo;You&rsquo;re getting tamed by Connecticut&rdquo; Nat teased.</span>
           <div class="spotter-result" id="spot2-result"></div>
         </div>
         <div class="spotter-sentence" id="spot3">
           <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which version is punctuated correctly?</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">&ldquo;Where did you learn that?&rdquo; Asked Kit.</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true">&ldquo;Where did you learn that?&rdquo; asked Kit.</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false" data-explain="&lsquo;Asked&rsquo; should be lowercase. The dialogue tag is part of the same sentence as the question, so it does not start with a capital letter &mdash; even though the question mark ends the spoken words.">&ldquo;Where did you learn that?&rdquo; Asked Kit.</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true" data-explain="Correct! Even though the spoken sentence ends with a question mark, the dialogue tag &lsquo;asked Kit&rsquo; is still part of the same sentence, so &lsquo;asked&rsquo; stays lowercase. The tense remains consistently past (&lsquo;asked&rsquo;).">&ldquo;Where did you learn that?&rdquo; asked Kit.</span>
           <div class="spotter-result" id="spot3-result"></div>
         </div>
       </div>
@@ -1024,7 +1044,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 
   <!-- ═══ SPELLING ═══ -->
   <div class="activity bl-navy">
-    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div style="flex:1;"><div class="activity-title">&#x1F520; Spelling: Schwa &amp; Reduced Vowels</div><div class="activity-sub">Apply &mdash; Identify and spell the schwa sound</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div style="flex:1;"><div class="activity-title">&#x1F520; Spelling: Word Building &mdash; Suffix -ive</div><div class="activity-sub">Build adjectives from base words</div></div></div>
     <div class="activity-body">
 <div class="callout callout-gold" style="margin-bottom:14px;background:#FFF8E8;border:2px solid #F5E6C8;border-left:5px solid #C7922C;border-radius:10px;padding:14px 18px;"><span class="callout-icon">📖</span><p style="font-size:15px;color:#0E1C42;line-height:1.6;"><strong>The Rule:</strong> The suffix <strong>-ive</strong> turns a verb or root into an adjective meaning "having the quality of." Compare: <em>act</em> → <em>active</em> (having the quality of acting), <em>create</em> → <em>creative</em>. Sometimes the base word changes spelling when you add <em>-ive</em>: drop a silent <em>e</em> (<em>create → creative</em>) or change a letter (<em>permit → permissive</em>).</p></div>
             <p>The schwa sound is the lazy &ldquo;uh&rdquo; in an unstressed syllable. It can be spelled with any vowel &mdash; that&rsquo;s what makes it tricky. Today, find the schwa and spell the words correctly.</p>
@@ -1035,22 +1055,40 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         <p><strong>comf<em>o</em>rt</strong> &mdash; the schwa is the &ldquo;o&rdquo; (sounds like &ldquo;cumf-urt&rdquo;)</p>
       </div>
 
-      <!-- Word Sort Game — sorting by schwa vowel -->
-      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F3AE;</span><p><strong>Practice:</strong> Sort these words by which vowel makes the schwa sound. Tap a word, then tap the column.</p></div>
-      <div class="sort-game" id="spellSort">
-        <div class="sort-bank" id="sortBank">
-          <span class="sort-chip" data-group="A" onclick="pickSortChip(this)">separate</span>
-          <span class="sort-chip" data-group="B" onclick="pickSortChip(this)">different</span>
-          <span class="sort-chip" data-group="A" onclick="pickSortChip(this)">calendar</span>
-          <span class="sort-chip" data-group="B" onclick="pickSortChip(this)">excellent</span>
-          <span class="sort-chip" data-group="A" onclick="pickSortChip(this)">grammar</span>
-          <span class="sort-chip" data-group="B" onclick="pickSortChip(this)">medicine</span>
+      <!-- Word Building — Suffix -ive -->
+      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F3AE;</span><p><strong>Practice:</strong> Look at each base word and think about what it becomes when you add <strong>-ive</strong>. Then tap &ldquo;Reveal&rdquo; to check!</p></div>
+      <div class="spotter-game" id="wordBuildGame" style="margin:14px 0;">
+        <div class="spotter-sentence" id="wb1" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+          <span style="font-family:Georgia,serif;font-size:16px;"><strong>attract</strong> &rarr; ?</span>
+          <span class="spotter-word" onclick="revealWordBuild(this)" data-revealed="false" style="padding:6px 16px;background:#E0F2F1;border:2px solid #B2DFDB;border-radius:20px;font-weight:700;cursor:pointer;">Tap to Reveal</span>
+          <div class="spotter-result" id="wb1-result" style="width:100%;"></div>
         </div>
-        <div class="sort-columns">
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#F9A825,#FBC02D);">Schwa spelled with A</div><div class="sort-col-drop" data-col="A" onclick="dropSortChip(this,'A')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#7B5EA7,#9575CD);">Schwa spelled with E or I</div><div class="sort-col-drop" data-col="B" onclick="dropSortChip(this,'B')"></div></div>
+        <div class="spotter-sentence" id="wb2" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+          <span style="font-family:Georgia,serif;font-size:16px;"><strong>create</strong> &rarr; ?</span>
+          <span class="spotter-word" onclick="revealWordBuild(this)" data-revealed="false" style="padding:6px 16px;background:#E0F2F1;border:2px solid #B2DFDB;border-radius:20px;font-weight:700;cursor:pointer;">Tap to Reveal</span>
+          <div class="spotter-result" id="wb2-result" style="width:100%;"></div>
         </div>
-        <div class="sort-score" id="sortScore"></div>
+        <div class="spotter-sentence" id="wb3" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+          <span style="font-family:Georgia,serif;font-size:16px;"><strong>instruct</strong> &rarr; ?</span>
+          <span class="spotter-word" onclick="revealWordBuild(this)" data-revealed="false" style="padding:6px 16px;background:#E0F2F1;border:2px solid #B2DFDB;border-radius:20px;font-weight:700;cursor:pointer;">Tap to Reveal</span>
+          <div class="spotter-result" id="wb3-result" style="width:100%;"></div>
+        </div>
+        <div class="spotter-sentence" id="wb4" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+          <span style="font-family:Georgia,serif;font-size:16px;"><strong>percept</strong> &rarr; ?</span>
+          <span class="spotter-word" onclick="revealWordBuild(this)" data-revealed="false" style="padding:6px 16px;background:#E0F2F1;border:2px solid #B2DFDB;border-radius:20px;font-weight:700;cursor:pointer;">Tap to Reveal</span>
+          <div class="spotter-result" id="wb4-result" style="width:100%;"></div>
+        </div>
+        <div class="spotter-sentence" id="wb5" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+          <span style="font-family:Georgia,serif;font-size:16px;"><strong>destruct</strong> &rarr; ?</span>
+          <span class="spotter-word" onclick="revealWordBuild(this)" data-revealed="false" style="padding:6px 16px;background:#E0F2F1;border:2px solid #B2DFDB;border-radius:20px;font-weight:700;cursor:pointer;">Tap to Reveal</span>
+          <div class="spotter-result" id="wb5-result" style="width:100%;"></div>
+        </div>
+        <div class="spotter-sentence" id="wb6" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+          <span style="font-family:Georgia,serif;font-size:16px;"><strong>protect</strong> &rarr; ?</span>
+          <span class="spotter-word" onclick="revealWordBuild(this)" data-revealed="false" style="padding:6px 16px;background:#E0F2F1;border:2px solid #B2DFDB;border-radius:20px;font-weight:700;cursor:pointer;">Tap to Reveal</span>
+          <div class="spotter-result" id="wb6-result" style="width:100%;"></div>
+        </div>
+        <div class="sort-score" id="wordBuildScore"></div>
       </div>
 
       <!-- SWYK — Day 3 = Spelling rotation -->
@@ -1433,6 +1471,14 @@ function gatherAnswers(){
     output+=(el.value.trim()||'(no answer)')+'\n';
   });
   output+='\n';
+  output+='🔤 VOCABULARY — YOUR TURN\n';
+  output+='────────────────────────────────\n';
+  var vyt=document.getElementById('journal-vocab-yourturn');
+  if(vyt){
+    output+='\n'+(vyt.getAttribute('data-label')||'Vocabulary: Your Turn')+'\n';
+    output+=(vyt.value.trim()||'(no answer)')+'\n';
+  }
+  output+='\n';
   output+='🪶 WRITING CONNECTION\n';
   output+='────────────────────────────────\n';
   var wc=document.getElementById('journal-writing');
@@ -1453,11 +1499,11 @@ function gatherAnswers(){
   output+='🎮 PRACTICE ACTIVITY STATUS\n';
   output+='────────────────────────────────\n';
   output+=(window._fillinDone?'✅':'⬜')+' Morphology Practice\n';
-  output+=(window._vocabMatchDone?'✅':'⬜')+' Vocabulary Match\n';
+  output+=(window._vocabFillinDone?'✅':'⬜')+' Vocabulary Fill-in-the-Blank\n';
   var spotDone=0;var spotTotal=document.querySelectorAll('.spotter-sentence').length;
   document.querySelectorAll('.spotter-sentence').forEach(function(s){if(s.getAttribute('data-done')==='true')spotDone++;});
   output+=(spotDone>=spotTotal&&spotTotal>0?'✅':'⬜')+' Grammar Spotter\n';
-  output+=(window._sortDone?'✅':'⬜')+' Spelling Word Sort\n';
+  output+=(window._wordBuildDone?'✅':'⬜')+' Spelling Word Building\n';
   var gathered=document.getElementById('gatheredOutput');
   if(gathered)gathered.value=output;
 }
@@ -1574,24 +1620,18 @@ function checkFillIn(){
   if(allCorrect){document.getElementById('fillinFeedback').classList.add('show');window._fillinDone=true;}
 }
 
-/* ───── VOCAB MATCH GAME ───── */
-window._vocabMatchDone=false;
-var matchFirst=null;var matchCount=0;var matchTotal=4;
-function matchClick(item){
-  if(item.classList.contains('matched'))return;
-  if(!matchFirst){matchFirst=item;item.classList.add('selected');return;}
-  if(matchFirst===item){matchFirst.classList.remove('selected');matchFirst=null;return;}
-  var key1=matchFirst.getAttribute('data-match');
-  var key2=item.getAttribute('data-match');
-  if(key1===key2&&matchFirst.classList.contains('is-word')!==item.classList.contains('is-word')){
-    matchFirst.classList.remove('selected');matchFirst.classList.add('matched');item.classList.add('matched');matchCount++;matchFirst=null;
-    if(matchCount>=matchTotal){document.getElementById('matchFeedback').classList.add('show');window._vocabMatchDone=true;}
-  }else{
-    item.classList.add('wrong-flash');matchFirst.classList.add('wrong-flash');
-    var a=matchFirst;var b=item;
-    setTimeout(function(){a.classList.remove('wrong-flash','selected');b.classList.remove('wrong-flash');},500);
-    matchFirst=null;
-  }
+/* ───── VOCAB FILL-IN-THE-BLANK GAME ───── */
+window._vocabFillinDone=false;
+function checkVocabFillIn(){
+  var inputs=document.querySelectorAll('#vocabFillinGame .fillin-input');
+  var allCorrect=true;
+  inputs.forEach(function(inp){
+    var answer=(inp.getAttribute('data-answer')||'').toLowerCase();
+    var val=inp.value.trim().toLowerCase();
+    if(val===answer){inp.classList.remove('wrong');inp.classList.add('correct');inp.disabled=true;}
+    else{inp.classList.remove('correct');inp.classList.add('wrong');allCorrect=false;setTimeout(function(){inp.classList.remove('wrong');},600);}
+  });
+  if(allCorrect){document.getElementById('vocabFillinFeedback').classList.add('show');window._vocabFillinDone=true;}
 }
 
 /* ───── GRAMMAR SPOTTER GAME ───── */
@@ -1601,49 +1641,54 @@ function spotterPick(word,sentenceId){
   if(sentence.getAttribute('data-done')==='true')return;
   var result=document.getElementById(sentenceId+'-result');
   var isCorrect=word.getAttribute('data-correct')==='true';
+  var explain=word.getAttribute('data-explain')||'';
   if(isCorrect){
     word.classList.add('correct-reveal');
-    result.textContent='✅ Correct!';
+    result.innerHTML='✅ Correct!'+(explain?' <span style="display:block;margin-top:4px;font-size:13px;font-weight:500;color:#3A4A6B;">'+explain+'</span>':'');
     result.className='spotter-result show win';
     sentence.setAttribute('data-done','true');
     var allDone=true;
-    document.querySelectorAll('.spotter-sentence').forEach(function(s){if(s.getAttribute('data-done')!=='true')allDone=false;});
+    document.querySelectorAll('#spotterGame .spotter-sentence').forEach(function(s){if(s.getAttribute('data-done')!=='true')allDone=false;});
     if(allDone)window._spotterDone=true;
   }else{
     word.classList.add('wrong-reveal');
-    result.textContent='🤔 Not quite — try again!';
+    result.innerHTML='🤔 Not quite — try again!'+(explain?' <span style="display:block;margin-top:4px;font-size:13px;font-weight:500;color:#5A4A3A;">'+explain+'</span>':'');
     result.className='spotter-result show miss';
-    setTimeout(function(){word.classList.remove('wrong-reveal');result.classList.remove('show');},1500);
+    setTimeout(function(){word.classList.remove('wrong-reveal');result.classList.remove('show');},3000);
   }
 }
 
-/* ───── WORD SORT GAME ───── */
-window._sortDone=false;
-var sortSelected=null;var sortPlaced=0;var sortTotal=6;
-function pickSortChip(chip){
-  if(chip.classList.contains('placed'))return;
-  if(sortSelected)sortSelected.style.outline='';
-  sortSelected=chip;
-  chip.style.outline='3px solid #00695C';
-  chip.style.outlineOffset='2px';
-}
-function dropSortChip(colDrop,colName){
-  if(!sortSelected)return;
-  var correctGroup=sortSelected.getAttribute('data-group');
-  var clone=sortSelected.cloneNode(true);
-  clone.style.outline='';clone.onclick=null;clone.style.cursor='default';
-  if(correctGroup===colName){
-    clone.classList.add('correct');sortSelected.classList.add('placed');colDrop.appendChild(clone);sortPlaced++;
-  }else{
-    clone.classList.add('wrong');colDrop.appendChild(clone);
-    setTimeout(function(){colDrop.removeChild(clone);},600);
+/* ───── WORD BUILDING GAME ───── */
+window._wordBuildDone=false;
+var wordBuildData=[
+  {word:'attractive',meaning:'able to attract'},
+  {word:'creative',meaning:'having the quality of creating'},
+  {word:'instructive',meaning:'tending to instruct or teach'},
+  {word:'perceptive',meaning:'able to perceive or notice'},
+  {word:'destructive',meaning:'tending to destroy'},
+  {word:'protective',meaning:'tending to protect'}
+];
+var wordBuildRevealed=0;
+function revealWordBuild(el){
+  if(el.getAttribute('data-revealed')==='true')return;
+  el.setAttribute('data-revealed','true');
+  var idx=wordBuildRevealed;
+  var d=wordBuildData[idx];
+  el.textContent=d.word;
+  el.style.background='#E8F5E9';
+  el.style.borderColor='#4CAF50';
+  el.style.color='#1B5E20';
+  el.style.cursor='default';
+  var resultEl=el.parentElement.querySelector('.spotter-result');
+  if(resultEl){
+    resultEl.innerHTML='<span style="color:#1B5E20;font-weight:700;">'+d.word+'</span> — '+d.meaning;
+    resultEl.className='spotter-result show win';
   }
-  sortSelected.style.outline='';sortSelected=null;
-  if(sortPlaced>=sortTotal){
-    var sc=document.getElementById('sortScore');
-    sc.textContent='🎉 All sorted correctly!';
-    sc.classList.add('show');
-    window._sortDone=true;
+  wordBuildRevealed++;
+  if(wordBuildRevealed>=wordBuildData.length){
+    var sc=document.getElementById('wordBuildScore');
+    if(sc){sc.textContent='🎉 All words built! You are a word architect.';sc.classList.add('show');}
+    window._wordBuildDone=true;
   }
 }
 
