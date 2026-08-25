@@ -661,6 +661,370 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 
     window.addEventListener("pagehide", function () { window.speechSynthesis.cancel(); });
 })();
+
+/* ───── INTERACTIVE SAVE/RESTORE ───── */
+(function(){
+  var k = typeof _lessonKey !== 'undefined' ? _lessonKey : (document.title||'lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+
+  /* — Fill-in inputs — */
+  document.querySelectorAll('.fillin-input').forEach(function(inp){
+    if(!inp.id) return;
+    try{
+      var v = localStorage.getItem(k+'-'+inp.id);
+      if(v){
+        inp.value = v;
+        var a = (inp.getAttribute('data-answer')||'').toLowerCase();
+        if(v.trim().toLowerCase() === a){
+          inp.classList.add('correct'); inp.disabled = true;
+        }
+      }
+    }catch(e){}
+    inp.addEventListener('input', function(){
+      try{ localStorage.setItem(k+'-'+this.id, this.value); }catch(e){}
+    });
+  });
+  /* restore fillin feedback if all correct */
+  var allFillins = document.querySelectorAll('.fillin-input');
+  if(allFillins.length > 0){
+    var allDone = true;
+    allFillins.forEach(function(inp){ if(!inp.disabled) allDone = false; });
+    if(allDone){
+      var fb = document.getElementById('fillinFeedback');
+      if(fb) fb.classList.add('show');
+      if(typeof window._fillinDone !== 'undefined') window._fillinDone = true;
+    }
+  }
+
+  /* — Sort game — */
+  var sortBank = document.getElementById('sortBank');
+  if(sortBank){
+    try{
+      var saved = JSON.parse(localStorage.getItem(k+'-sortState') || 'null');
+      if(saved && saved.length > 0){
+        saved.forEach(function(s){
+          var col = document.querySelector('.sort-col-drop[data-col="'+s.col+'"]');
+          if(!col) return;
+          var chips = sortBank.querySelectorAll('.sort-chip');
+          chips.forEach(function(chip){
+            if(chip.classList.contains('placed')) return;
+            if(chip.textContent.trim() === s.text && chip.getAttribute('data-group') === s.col){
+              var cl = chip.cloneNode(true);
+              cl.classList.add('correct');
+              cl.style.outline = ''; cl.onclick = null; cl.style.cursor = 'default';
+              col.appendChild(cl);
+              chip.classList.add('placed');
+              if(typeof sortPlaced !== 'undefined') sortPlaced++;
+            }
+          });
+        });
+        if(typeof sortPlaced !== 'undefined' && typeof sortTotal !== 'undefined' && sortPlaced >= sortTotal){
+          var sc = document.getElementById('sortScore');
+          if(sc){ sc.textContent = '\u{1F389} All sorted correctly!'; sc.classList.add('show'); }
+        }
+      }
+    }catch(e){}
+    /* hook into dropSortChip to save state */
+    var origDrop = window.dropSortChip;
+    if(origDrop){
+      window.dropSortChip = function(col, colName){
+        origDrop(col, colName);
+        try{
+          var placed = [];
+          document.querySelectorAll('.sort-col-drop .sort-chip.correct').forEach(function(c){
+            placed.push({text: c.textContent.trim(), col: c.closest('.sort-col-drop').getAttribute('data-col')});
+          });
+          localStorage.setItem(k+'-sortState', JSON.stringify(placed));
+        }catch(e){}
+      };
+    }
+  }
+
+  /* — Match game — */
+  var matchGrid = document.getElementById('matchGrid');
+  if(matchGrid){
+    try{
+      var saved = JSON.parse(localStorage.getItem(k+'-matchState') || 'null');
+      if(saved && saved.length > 0){
+        var items = matchGrid.querySelectorAll('.match-item');
+        saved.forEach(function(mkey){
+          items.forEach(function(it){
+            if(it.getAttribute('data-match') === mkey){
+              it.classList.add('matched');
+            }
+          });
+        });
+        if(typeof matchCount !== 'undefined'){
+          matchCount = saved.length;
+          var total = typeof matchTotal !== 'undefined' ? matchTotal : 4;
+          if(matchCount >= total){
+            var fb = document.getElementById('matchFeedback');
+            if(fb) fb.classList.add('show');
+            if(typeof window._vocabMatchDone !== 'undefined') window._vocabMatchDone = true;
+          }
+        }
+      }
+    }catch(e){}
+    /* hook into matchClick to save state */
+    var origMatch = window.matchClick;
+    if(origMatch){
+      window.matchClick = function(item){
+        origMatch(item);
+        try{
+          var matched = [];
+          var seen = {};
+          matchGrid.querySelectorAll('.match-item.matched').forEach(function(it){
+            var mk = it.getAttribute('data-match');
+            if(!seen[mk]){ matched.push(mk); seen[mk] = true; }
+          });
+          localStorage.setItem(k+'-matchState', JSON.stringify(matched));
+        }catch(e){}
+      };
+    }
+  }
+})();
+
+
+/* ───── EXTRA INTERACTIVE SAVE/RESTORE (spotter, root-match, comma, choice) ───── */
+(function(){
+  var k = typeof _lessonKey !== 'undefined' ? _lessonKey : (document.title||'lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+
+  /* — Spotter game — restore clicked results */
+  var spotterGame = document.getElementById('grammarGame');
+  if(spotterGame){
+    try{
+      var saved = JSON.parse(localStorage.getItem(k+'-spotterState') || 'null');
+      if(saved){
+        var sentences = spotterGame.querySelectorAll('.spotter-sentence');
+        sentences.forEach(function(s){
+          var sid = s.id;
+          if(saved[sid]){
+            var res = s.querySelector('.spotter-result');
+            if(res){ res.textContent = saved[sid]; res.classList.add('show','win'); }
+          }
+        });
+      }
+    }catch(e){}
+    /* hook: wrap inline onclick to also save */
+    spotterGame.querySelectorAll('.spotter-word').forEach(function(w){
+      w.addEventListener('click', function(){
+        setTimeout(function(){
+          try{
+            var state = {};
+            spotterGame.querySelectorAll('.spotter-sentence').forEach(function(s){
+              var res = s.querySelector('.spotter-result');
+              if(res && res.classList.contains('show')){ state[s.id] = res.textContent; }
+            });
+            localStorage.setItem(k+'-spotterState', JSON.stringify(state));
+          }catch(e){}
+        }, 50);
+      });
+    });
+  }
+
+  /* — Root-match game — same as vocab match but separate vars */
+  var rootGrid = document.querySelector('.root-match-grid');
+  if(rootGrid){
+    try{
+      var saved = JSON.parse(localStorage.getItem(k+'-rootMatchState') || 'null');
+      if(saved && saved.length > 0){
+        var items = rootGrid.querySelectorAll('.root-match-item');
+        saved.forEach(function(mkey){
+          items.forEach(function(it){
+            if(it.getAttribute('data-match') === mkey){ it.classList.add('matched'); }
+          });
+        });
+        if(typeof rootMatchCount !== 'undefined'){
+          rootMatchCount = saved.length;
+          if(rootMatchCount >= 4){
+            var fb = document.getElementById('rootMatchFeedback');
+            if(fb) fb.classList.add('show');
+          }
+        }
+      }
+    }catch(e){}
+    var origRootMatch = window.rootMatchClick;
+    if(origRootMatch){
+      window.rootMatchClick = function(item){
+        origRootMatch(item);
+        try{
+          var matched = [], seen = {};
+          rootGrid.querySelectorAll('.root-match-item.matched').forEach(function(it){
+            var mk = it.getAttribute('data-match');
+            if(!seen[mk]){ matched.push(mk); seen[mk] = true; }
+          });
+          localStorage.setItem(k+'-rootMatchState', JSON.stringify(matched));
+        }catch(e){}
+      };
+    }
+  }
+
+  /* — Comma game — restore inserted commas */
+  var commaGame = document.getElementById('commaGame');
+  if(commaGame){
+    try{
+      var saved = JSON.parse(localStorage.getItem(k+'-commaState') || 'null');
+      if(saved && saved.length > 0){
+        var slots = commaGame.querySelectorAll('.comma-slot');
+        var idx = 0;
+        slots.forEach(function(slot){
+          if(saved.indexOf(idx) !== -1 && slot.getAttribute('data-correct') === 'true'){
+            slot.textContent = ',';
+            slot.classList.add('inserted');
+            if(typeof commaInserted !== 'undefined') commaInserted++;
+            var sentence = slot.closest('.comma-sentence-wrap');
+            if(sentence){
+              var allSlots = sentence.querySelectorAll('.comma-slot');
+              var allDone = true;
+              allSlots.forEach(function(s){ if(s.getAttribute('data-correct')==='true' && !s.classList.contains('inserted')) allDone=false; });
+              if(allDone){
+                var result = sentence.querySelector('.comma-result');
+                if(result){ result.textContent = '\u2705 Correct!'; result.className = 'comma-result show win'; }
+              }
+            }
+          }
+          idx++;
+        });
+        if(typeof commaInserted !== 'undefined' && commaInserted >= 10){
+          var fb = document.getElementById('commaFeedback');
+          if(fb) fb.classList.add('show');
+        }
+      }
+    }catch(e){}
+    var origComma = window.commaToggle;
+    if(origComma){
+      window.commaToggle = function(slot, sentenceId){
+        origComma(slot, sentenceId);
+        try{
+          var state = [];
+          var idx = 0;
+          commaGame.querySelectorAll('.comma-slot').forEach(function(s){
+            if(s.classList.contains('inserted')) state.push(idx);
+            idx++;
+          });
+          localStorage.setItem(k+'-commaState', JSON.stringify(state));
+        }catch(e){}
+      };
+    }
+  }
+
+  /* — Choice game — restore correct answers */
+  var choiceItems = document.querySelectorAll('.choice-item');
+  if(choiceItems.length > 0){
+    try{
+      var saved = JSON.parse(localStorage.getItem(k+'-choiceState') || 'null');
+      if(saved && saved.length > 0){
+        choiceItems.forEach(function(ci, idx){
+          if(saved.indexOf(idx) !== -1){
+            ci.setAttribute('data-done','true');
+            var btns = ci.querySelectorAll('.choice-btn');
+            btns.forEach(function(b){
+              if(b.getAttribute('onclick') && b.getAttribute('onclick').indexOf('true') !== -1){
+                b.classList.add('correct');
+              }
+            });
+            var msg = ci.querySelector('.choice-score');
+            if(msg){ msg.textContent = 'Correct!'; msg.classList.add('show'); }
+            if(typeof _choiceCorrect !== 'undefined') _choiceCorrect++;
+          }
+        });
+      }
+    }catch(e){}
+    var origChoice = window.choiceBtn;
+    if(origChoice){
+      window.choiceBtn = function(btn, correct){
+        origChoice(btn, correct);
+        try{
+          var state = [];
+          document.querySelectorAll('.choice-item').forEach(function(ci, idx){
+            if(ci.getAttribute('data-done') === 'true') state.push(idx);
+          });
+          localStorage.setItem(k+'-choiceState', JSON.stringify(state));
+        }catch(e){}
+      };
+    }
+  }
+})();
+
+
+/* ───── UNIVERSAL MATCH-GAME SAVE/RESTORE ───── */
+(function(){
+  var k = typeof _lessonKey !== 'undefined' ? _lessonKey : (document.title||'lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+
+  /* Find ALL match-game containers (any element with class match-game or root-match-game etc) */
+  var games = document.querySelectorAll('[class*="match-game"], [class*="choice-game"]');
+  games.forEach(function(game){
+    var gid = game.id || game.className.replace(/\s+/g,'-');
+    var storeKey = k + '-mg-' + gid;
+    var grid = game.querySelector('[class*="grid"]') || game;
+
+    /* Restore */
+    try{
+      var saved = JSON.parse(localStorage.getItem(storeKey) || 'null');
+      if(saved && saved.matches && saved.matches.length > 0){
+        var items = grid.querySelectorAll('[data-match]');
+        saved.matches.forEach(function(mkey){
+          items.forEach(function(it){
+            if(it.getAttribute('data-match') === mkey) it.classList.add('matched');
+          });
+        });
+        /* try to restore counters and feedback */
+        var fb = game.querySelector('[class*="feedback"], [class*="Feedback"]');
+        if(fb && saved.done) fb.classList.add('show');
+      }
+    }catch(e){}
+
+    /* Save on any matched class change via MutationObserver */
+    var obs = new MutationObserver(function(){
+      try{
+        var matched = [], seen = {};
+        grid.querySelectorAll('[data-match].matched').forEach(function(it){
+          var mk = it.getAttribute('data-match');
+          if(!seen[mk]){ matched.push(mk); seen[mk] = true; }
+        });
+        var fb = game.querySelector('[class*="feedback"], [class*="Feedback"]');
+        var done = fb ? fb.classList.contains('show') : false;
+        localStorage.setItem(storeKey, JSON.stringify({matches: matched, done: done}));
+      }catch(e){}
+    });
+    grid.querySelectorAll('[data-match]').forEach(function(it){
+      obs.observe(it, {attributes: true, attributeFilter: ['class']});
+    });
+    /* also observe feedback element */
+    var fb = game.querySelector('[class*="feedback"], [class*="Feedback"]');
+    if(fb) obs.observe(fb, {attributes: true, attributeFilter: ['class']});
+  });
+
+  /* — Universal spotter save (any spotter-game, not just grammarGame) — */
+  document.querySelectorAll('.spotter-game, [class*="spotter-game"]').forEach(function(sg){
+    var sgid = sg.id || 'spotter';
+    var sgKey = k + '-sp-' + sgid;
+    try{
+      var saved = JSON.parse(localStorage.getItem(sgKey) || 'null');
+      if(saved){
+        sg.querySelectorAll('.spotter-sentence, [class*="spotter-sentence"]').forEach(function(s){
+          var sid = s.id;
+          if(saved[sid]){
+            var res = s.querySelector('[class*="spotter-result"]');
+            if(res){ res.textContent = saved[sid]; res.classList.add('show','win'); }
+          }
+        });
+      }
+    }catch(e){}
+    sg.addEventListener('click', function(){
+      setTimeout(function(){
+        try{
+          var state = {};
+          sg.querySelectorAll('.spotter-sentence, [class*="spotter-sentence"]').forEach(function(s){
+            var res = s.querySelector('[class*="spotter-result"]');
+            if(res && res.classList.contains('show')) state[s.id] = res.textContent;
+          });
+          localStorage.setItem(sgKey, JSON.stringify(state));
+        }catch(e){}
+      }, 100);
+    });
+  });
+})();
+
 </script>
 </div>
 <!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
