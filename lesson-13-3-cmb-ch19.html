@@ -4,7 +4,8 @@
 <title>Optima Academy Online</title><style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E1C42;line-height:1.6;-webkit-font-smoothing:antialiased;}
-.page-wrap{max-width:920px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(14,28,66,.08);}
+.page-wrap{max-width:920px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(14,28,66,.08);  padding: 0 18px;
+}
 
 /* ═══════════ PROGRESS BAR ═══════════ */
 .progress-wrap{position:sticky;top:0;z-index:200;background:#0E1C42;padding:8px 20px 10px;display:flex;align-items:center;gap:14px;}
@@ -114,17 +115,33 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .tab-panel{display:none;padding:24px 28px 36px;}
 .tab-panel.active{display:block;}
 
-/* ═══════════ VIDEO WRAP ═══════════ */
-
-
-
-
-
-
-
-
-
-
+/* ═══ VIDEO PLACEHOLDER ═══ */
+.video-placeholder-wrap {
+  border-radius: 14px; overflow: hidden; margin: 0 0 18px;
+  border: 2px dashed rgba(0,137,123,0.4);
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+}
+.video-placeholder-inner {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 28px 20px;
+}
+.video-placeholder-inner .vp-icon { font-size: 34px; margin-bottom: 6px; }
+.video-placeholder-inner .vp-label {
+  font-size: 10px; color: #F9A825; text-transform: uppercase;
+  letter-spacing: 2px; font-weight: 800; margin-bottom: 4px;
+}
+.video-placeholder-inner .vp-title {
+  font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px;
+}
+.video-placeholder-inner .vp-slot {
+  font-family: monospace; font-size: 11px; color: #00897B;
+  background: rgba(0,137,123,0.15); padding: 3px 10px; border-radius: 4px;
+}
+.video-placeholder-inner .vp-notes {
+  font-size: 12px; color: rgba(255,255,255,0.8); font-style: italic;
+  margin-top: 10px; text-align: left; padding: 10px 12px;
+  background: rgba(0,0,0,0.25); border-radius: 6px; border-left: 3px solid #00897B;
+}
 
 /* ═══════════ ACTIVITY CARDS ═══════════ */
 .activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04);}
@@ -781,6 +798,21 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 
 <div class="info-strip"><div class="info-cell"><div class="info-icon" style="background:#EEF4FF;">&#x1F4C5;</div><div><div class="info-label">Week &amp; Day</div><div class="info-value">Week 13 &middot; Day 3</div></div></div><div class="info-cell"><div class="info-icon" style="background:#FFF8E1;">&#x1F4D6;</div><div><div class="info-label">Reading</div><div class="info-value">Chapter 19</div></div></div><div class="info-cell"><div class="info-icon" style="background:#EDE7F6;">&#x1F9ED;</div><div><div class="info-label">Morphology</div><div class="info-value">Use prefixes</div></div></div><div class="info-cell"><div class="info-icon" style="background:#FFF3DC;">&#x1F524;</div><div><div class="info-label">Spelling SWYK</div><div class="info-value">Assimilated</div></div></div></div>
 <div class="quote-strip"><div class="quote-strip-text">&ldquo;He would follow the orders. But he would keep his own calculations, too.&rdquo;</div><div class="quote-strip-attr">Chapter 19 &bull; <em>Carry On, Mr. Bowditch</em></div></div><div class="intro-section" id="introSection"><div class="intro-collapsed-bar" onclick="expandIntro()"><span class="intro-collapsed-icon">&#x1F9ED;</span><span class="intro-collapsed-text">Lesson 13.7 Overview &mdash; tap to expand</span><span class="intro-collapsed-toggle">Show &#x25be;</span></div><div class="intro-content"><div class="intro-2col"><div class="intro-card theme-question"><div class="intro-card-head"><div class="intro-card-head-icon">&#x1F9ED;</div><div><div class="intro-card-head-label">Chapter 19</div><div class="intro-card-head-title">What do you do when your orders and your knowledge conflict?</div></div></div><div class="intro-card-body"><p>Today you read Chapter 19 and continue revising your expository piece. Keep asking: <em>How does figurative language contribute to meaning?</em></p></div></div><div class="intro-card theme-objectives"><div class="intro-card-head"><div class="intro-card-head-icon">&#x1F3AF;</div><div><div class="intro-card-head-label">Today&rsquo;s Arc &mdash; Use</div><div class="intro-card-head-title">Chapter 19: Strange Sailing Orders</div></div></div><div class="intro-card-body"><div class="obj-line"><span class="obj-icon">&#x1F9ED;</span><span><strong>Morphology:</strong> Use trans-/inter-/sub- words in context.</span></div><div class="obj-line"><span class="obj-icon">&#x1F524;</span><span><strong>Spelling SWYK:</strong> Show what you know about assimilated prefixes.</span></div><div class="obj-line"><span class="obj-icon">&#x270F;&#xFE0F;</span><span><strong>Grammar:</strong> Use relative clauses to expand and clarify expository sentences.</span></div><div class="obj-line"><span class="obj-icon">&#x1F4D6;</span><span><strong>Reading:</strong> Chapter 19 &mdash; Strange Sailing Orders</span></div></div></div></div><div class="todays-path"><span class="path-pill p-warmup">&#x1F305; Warm-Up</span><span class="path-arrow">&rarr;</span><span class="path-pill p-words">&#x1F524; Word Study</span><span class="path-arrow">&rarr;</span><span class="path-pill p-reading">&#x1F4D6; Read Ch. 19</span><span class="path-arrow">&rarr;</span><span class="path-pill p-assign">&#x1F4EC; Assignment</span></div><div class="need-strip"><span class="need-strip-label">You&rsquo;ll need:</span><span class="need-chip">&#x1F4D3; Reading Journal</span><span class="need-chip">&#x270F;&#xFE0F; Pencil</span><span class="need-chip">&#x1F4D5; Your Novel</span></div></div></div><div class="tab-bar" id="tabBar"><button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">&#x1F305; Warm-Up<span class="tab-check">&#10003;</span></button><button class="tab-btn" data-tab="words" onclick="switchTab('words')">&#x1F524; Word Study<span class="tab-check">&#10003;</span></button><button class="tab-btn" data-tab="reading" onclick="switchTab('reading')">&#x1F4D6; Reading<span class="tab-check">&#10003;</span></button><button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">&#x1F4EC; Assignment<span class="tab-check">&#10003;</span></button></div><div class="tab-panel active" id="tab-warmup">
+
+<!-- ═══ INTRODUCTION VIDEO ═══ -->
+<div class="video-placeholder-wrap">
+<!-- slot: g5ela-13-3 -->
+<div class="video-placeholder-inner">
+  <span class="vp-icon">&#x1F3AC;</span>
+  <div class="vp-label">Introduction Video</div>
+  <div class="vp-title">Optima Academy Online</div>
+  <div class="vp-slot">g5ela-13-3</div>
+  <div class="vp-notes">
+    <strong>Teacher recording notes:</strong> Welcome to today&#x27;s lesson: Optima Academy Online. In your warm-up, you&#x27;ll focus on Daily Oral Language — Study the model — fix the sentence. As you read, pay close attention to the characters&#x27; actions and motivations. Think about how events connect to the bigger ideas in the story. Use your journal to capture your thoughts and any questions that come up.
+  </div>
+</div>
+</div>
+
 <div class="activity bl-teal"><div class="activity-head"><div class="activity-num" style="background:#00796B;">&#x1F4DD;</div><div style="flex:1;"><div class="activity-title">Daily Oral Language</div><div class="activity-sub">Study the model &mdash; fix the sentence</div></div></div><div class="activity-body"><p style="font-size:14px;color:#7A88A8;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">Sentence 1 &mdash; The Correct Model</p><p style="font-size:14px;color:#3A4A6B;margin-bottom:10px;">Tap highlighted words to see what makes them correct.</p><div class="dol-model-sentence" id="dolModel">The sailing orders, <span class="dol-highlight-word" onclick="dolWordClick(this,'Non-restrictive relative clause — adds info about the orders. Comma + which.')">which contradicted everything Nat knew about the safest route</span>, forced him to <span class="dol-highlight-word" onclick="dolWordClick(this,'trans- = across. Translate: carry meaning across a barrier.')">translate</span> his private disagreement into a professional decision.</div><div class="dol-explanation" id="dolExplanation"></div><p style="font-size:14px;color:#7A88A8;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-top:16px;margin-bottom:8px;">Sentence 2 &mdash; Fix It</p><p style="font-size:14px;color:#3A4A6B;margin-bottom:10px;">Find every mistake and write the corrected sentence in your reading journal.</p><div class="dol-fix-sentence">the strange orders which nat received required him to sub mit to a course that intersected with the most hazardous waters on the chart</div><button class="dol-check-btn" onclick="document.getElementById('dolAns').classList.toggle('show')">&#x1F50D; Check My Work</button><div class="dol-answer" id="dolAns"><p><strong>Corrected:</strong> The strange orders, which Nat received, required him to <em>submit</em> to a course that intersected with the most hazardous waters on the chart.</p><p style='font-size:13px;color:#7A88A8;margin-top:8px;'>Fixes: capitalize &ldquo;The&rdquo;; commas around non-restrictive &ldquo;which Nat received&rdquo;; <em>submit</em> is one word (sub- + mit); period at end.</p></div></div></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Let&rsquo;s use everything you know. Head to Word Study.</p><button class="tab-next-btn" onclick="switchTab('words')">Continue to &#x1F524; Word Study &rarr;</button></div>
 </div><div class="tab-panel" id="tab-words">
@@ -960,7 +992,8 @@ function fireConfetti(){var cv=document.getElementById('confettiCanvas');if(!cv)
 function copyToClipboard(){gatherAnswers();var t=document.getElementById('gatheredOutput').value;if(navigator.clipboard){navigator.clipboard.writeText(t).then(showCopied).catch(()=>fbCopy(t));}else fbCopy(t);}
 function fbCopy(t){var ta=document.createElement('textarea');ta.value=t;ta.style.cssText='position:fixed;opacity:0;';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showCopied();}
 function showCopied(){var m=document.getElementById('gatheredCopied');if(m){m.classList.add('show');setTimeout(()=>m.classList.remove('show'),2500);}}
-function downloadPDF(){gatherAnswers();var t=document.getElementById('gatheredOutput').value;var win=window.open('','_blank');if(win){win.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;padding:0 20px;line-height:1.7;}pre{white-space:pre-wrap;font-size:14px;}@media print{body{margin:20px;}}</style></head><body><pre>'+t.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</pre></body></html>');win.document.close();setTimeout(()=>win.print(),400);}}
+function downloadPDF(){gatherAnswers();var t=document.getElementById('gatheredOutput').value;var win=window.open('','_blank');if(win){win.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;padding:0 20px;line-height:1.7;}pre{white-space:pre-wrap;font-size:14px;}@media print{body{margin:20px;}}</style></head><body><pre>'+t.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</pre>
+</body></html>');win.document.close();setTimeout(()=>win.print(),400);}}
 (function(){var btn=document.getElementById('backToTop');if(!btn)return;var inF=(()=>{try{return window.self!==window.top;}catch(e){return true;}})();btn.addEventListener('click',()=>{document.documentElement.scrollTop=0;document.body.scrollTop=0;try{window.scrollTo({top:0,behavior:'smooth'});}catch(e){}if(inF)try{window.parent.postMessage({type:'optima-lesson:scroll-to-top'},'*');}catch(e){}});if(inF)setTimeout(()=>btn.classList.add('show'),1500);else window.addEventListener('scroll',()=>btn.classList.toggle('show',window.scrollY>400));})();
 (function(){function load(){if(!window.VIDEO_MANIFEST)return;document.querySelectorAll('.video-placeholder').forEach(ph=>{var slot=null;ph.childNodes.forEach(n=>{if(n.nodeType===1&&n.className==='video-placeholder-id')n.childNodes.forEach(c=>{if(c.nodeType===8&&/slot:/.test(c.nodeValue))slot=c.nodeValue.replace(/.*slot:\s*/,'').trim();});});if(!slot)return;var entry=window.VIDEO_MANIFEST[slot];if(!entry)return;var wrap=ph.parentElement;if(!wrap)return;wrap.innerHTML=entry.startsWith('<')?entry:'<iframe src="'+entry+'" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen></iframe>';});}var s=document.createElement('script');s.src='https://raw.githubusercontent.com/optimaondemand/optima-assets/main/videos.js';s.async=true;s.onload=load;s.onerror=()=>{};document.head.appendChild(s);})();
 function gatherAnswers(){var o='LESSON 13.3 \u2014 CARRY ON, MR. BOWDITCH\n'+'\u2550'.repeat(44)+'\n\n';var sw=document.getElementById('journal-spelling');if(sw){o+='WORD STUDY SWYK (Spelling SWYK)\n'+'\u2500'.repeat(36)+'\n\n'+sw.getAttribute('data-label')+'\n'+(sw.value.trim()||'(no answer)')+'\n\n';}o+='CHAPTER THINKING\n'+'\u2500'.repeat(36)+'\n';['journal-q1','journal-q2','journal-q3'].forEach(id=>{var el=document.getElementById(id);if(!el)return;o+='\n'+el.getAttribute('data-label')+'\n'+(el.value.trim()||'(no answer)')+'\n';});o+='\nWRITING CONNECTION\n'+'\u2500'.repeat(36)+'\n';var w=document.getElementById('journal-writing');if(w){o+='\n'+w.getAttribute('data-label')+'\n'+(w.value.trim()||'(no answer)')+'\n';}var g=document.getElementById('gatheredOutput');if(g)g.value=o;}
@@ -1452,5 +1485,32 @@ function gatherAnswers(){var o='LESSON 13.3 \u2014 CARRY ON, MR. BOWDITCH\n'+'\u
   };
 })();
 
+</script>
+<!-- Video Manifest Loader -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('https://raw.githubusercontent.com/bbirchum1/optima-5th-ela/main/video-manifest.json?v=' + Date.now())
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var manifest = data.videos || data;
+      document.querySelectorAll('.video-placeholder-wrap').forEach(function(wrap) {
+        var m = wrap.innerHTML.match(/<!--\s*slot:\s*([\w-]+)\s*-->/);
+        if (!m) return;
+        var entry = manifest[m[1]];
+        if (!entry || entry.status !== 'ready' || !entry.embed) return;
+        var temp = document.createElement('div');
+        temp.innerHTML = entry.embed;
+        var iframe = temp.querySelector('iframe');
+        if (!iframe) return;
+        iframe.removeAttribute('width');
+        iframe.removeAttribute('height');
+        iframe.style.cssText = 'display:block;width:100%;aspect-ratio:16/9;border:none;';
+        wrap.innerHTML = '';
+        wrap.style.cssText = 'border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
+        wrap.appendChild(iframe);
+      });
+    })
+    .catch(function(err) { console.warn('Video manifest load failed:', err); });
+});
 </script>
 </body></html>

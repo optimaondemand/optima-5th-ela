@@ -1,7 +1,8 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Optima Academy Online</title><style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E1C42;line-height:1.6;-webkit-font-smoothing:antialiased;}
-.page-wrap{max-width:920px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(14,28,66,.08);}
+.page-wrap{max-width:920px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(14,28,66,.08);  padding: 0 18px;
+}
 
 /* ═══════════ PROGRESS BAR ═══════════ */
 .progress-wrap{position:sticky;top:0;z-index:200;background:#0E1C42;padding:8px 20px 10px;display:flex;align-items:center;gap:14px;}
@@ -111,17 +112,33 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .tab-panel{display:none;padding:24px 28px 36px;}
 .tab-panel.active{display:block;}
 
-/* ═══════════ VIDEO WRAP ═══════════ */
-
-
-
-
-
-
-
-
-
-
+/* ═══ VIDEO PLACEHOLDER ═══ */
+.video-placeholder-wrap {
+  border-radius: 14px; overflow: hidden; margin: 0 0 18px;
+  border: 2px dashed rgba(0,137,123,0.4);
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+}
+.video-placeholder-inner {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 28px 20px;
+}
+.video-placeholder-inner .vp-icon { font-size: 34px; margin-bottom: 6px; }
+.video-placeholder-inner .vp-label {
+  font-size: 10px; color: #F9A825; text-transform: uppercase;
+  letter-spacing: 2px; font-weight: 800; margin-bottom: 4px;
+}
+.video-placeholder-inner .vp-title {
+  font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px;
+}
+.video-placeholder-inner .vp-slot {
+  font-family: monospace; font-size: 11px; color: #00897B;
+  background: rgba(0,137,123,0.15); padding: 3px 10px; border-radius: 4px;
+}
+.video-placeholder-inner .vp-notes {
+  font-size: 12px; color: rgba(255,255,255,0.8); font-style: italic;
+  margin-top: 10px; text-align: left; padding: 10px 12px;
+  background: rgba(0,0,0,0.25); border-radius: 6px; border-left: 3px solid #00897B;
+}
 
 /* ═══════════ ACTIVITY CARDS ═══════════ */
 .activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04);}
@@ -757,6 +774,21 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 </div>
 
 <div class="info-strip"><div class="info-cell"><div class="info-icon" style="background:#EEF4FF;">&#x1F4C5;</div><div><div class="info-label">Week &amp; Day</div><div class="info-value">Week 14 &middot; Day 1</div><div class="info-detail">Publish arc &middot; Unit finale begins</div></div></div><div class="info-cell"><div class="info-icon" style="background:#FFF8E1;">&#x1F4D6;</div><div><div class="info-label">Reading</div><div class="info-value">Chapter 21</div><div class="info-detail">Sealing Is Safer</div></div></div><div class="info-cell"><div class="info-icon" style="background:#EDE7F6;">&#x1F9ED;</div><div><div class="info-label">Morphology</div><div class="info-value">Word Families</div><div class="info-detail">navigate &middot; inform</div></div></div><div class="info-cell"><div class="info-icon" style="background:#FFF3DC;">&#x1F4DC;</div><div><div class="info-label">Writer&rsquo;s Workshop</div><div class="info-value">★ Publish</div><div class="info-detail">Draft conclusion</div></div></div></div><div class="quote-strip"><div class="quote-strip-text">&ldquo;He had always known the difference between what was safe and what was worth doing.&rdquo;</div><div class="quote-strip-attr">Chapter 21 &bull; <em>Carry On, Mr. Bowditch</em></div></div><div class="intro-section" id="introSection"><div class="intro-collapsed-bar" onclick="expandIntro()"><span class="intro-collapsed-icon">&#x1F52D;</span><span class="intro-collapsed-text">Lesson 14.1 Overview</span><span class="intro-collapsed-toggle">Show &#x25be;</span></div><div class="intro-content"><div class="intro-2col"><div class="intro-card theme-question"><div class="intro-card-head"><div class="intro-card-head-icon">&#x1F52D;</div><div><div class="intro-card-head-label">Chapter 21</div><div class="intro-card-head-title">What does it mean to choose the harder path when the easier one is right there?</div></div></div><div class="intro-card-body"><p>Today you read Chapter 21. Ask: <em>How does theme develop across the whole book?</em></p></div></div><div class="intro-card theme-objectives"><div class="intro-card-head"><div class="intro-card-head-icon">&#x1F3AF;</div><div><div class="intro-card-head-label">Today&rsquo;s Arc &mdash; Publish</div><div class="intro-card-head-title">Chapter 21: Sealing Is Safer</div></div></div><div class="intro-card-body"><div class="obj-line"><span class="obj-icon">&#x1F9ED;</span><span><strong>Morphology SWYK:</strong> Word families &mdash; navigate/navigation/navigator; inform/information/informative.</span></div><div class="obj-line"><span class="obj-icon">&#x270F;&#xFE0F;</span><span><strong>Grammar:</strong> Title formatting (italics, quotation marks) and MLA citations.</span></div><div class="obj-line"><span class="obj-icon">&#x1F524;</span><span><strong>Spelling:</strong> Cumulative four-pattern review.</span></div><div class="obj-line"><span class="obj-icon">&#x1F4D6;</span><span><strong>Reading:</strong> Chapter 21 &mdash; Sealing Is Safer</span></div></div></div></div><div class="todays-path"><span class="path-pill p-warmup">&#x1F305; Warm-Up</span><span class="path-arrow">&rarr;</span><span class="path-pill p-words">&#x1F524; Word Study</span><span class="path-arrow">&rarr;</span><span class="path-pill p-reading">&#x1F4D6; Read Ch. 21</span><span class="path-arrow">&rarr;</span><span class="path-pill p-assign">&#x1F4EC; Assignment</span></div><div class="need-strip"><span class="need-strip-label">You'll need:</span><span class="need-chip">&#x1F4D3; Reading Journal</span><span class="need-chip">&#x270F;&#xFE0F; Pencil</span><span class="need-chip">&#x1F4D5; Your Novel</span></div></div></div><div class="tab-bar" id="tabBar"><button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">&#x1F305; Warm-Up<span class="tab-check">&#10003;</span></button><button class="tab-btn" data-tab="words" onclick="switchTab('words')">&#x1F524; Word Study<span class="tab-check">&#10003;</span></button><button class="tab-btn" data-tab="reading" onclick="switchTab('reading')">&#x1F4D6; Reading<span class="tab-check">&#10003;</span></button><button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">&#x1F4EC; Assignment<span class="tab-check">&#10003;</span></button></div><div class="tab-panel active" id="tab-warmup">
+
+<!-- ═══ INTRODUCTION VIDEO ═══ -->
+<div class="video-placeholder-wrap">
+<!-- slot: g5ela-14-1 -->
+<div class="video-placeholder-inner">
+  <span class="vp-icon">&#x1F3AC;</span>
+  <div class="vp-label">Introduction Video</div>
+  <div class="vp-title">Optima Academy Online</div>
+  <div class="vp-slot">g5ela-14-1</div>
+  <div class="vp-notes">
+    <strong>Teacher recording notes:</strong> Welcome to today&#x27;s lesson: Optima Academy Online. In your warm-up, you&#x27;ll focus on What Good Readers Do — Synthesize biography and expository writing. As you read, pay close attention to the characters&#x27; actions and motivations. Think about how events connect to the bigger ideas in the story. Use your journal to capture your thoughts and any questions that come up.
+  </div>
+</div>
+</div>
+
   <div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">&#x1F4DA;</div><div style="flex:1;"><div class="activity-title">What Good Readers Do</div><div class="activity-sub">Synthesize biography and expository writing</div></div></div>
     <div class="activity-body"><p>This is the final week. Chapters 21&ndash;24 bring the whole arc of Nat&rsquo;s life to its resolution. Good readers don&rsquo;t just finish &mdash; they synthesize. They ask: what does the whole story mean? How does the theme develop from Chapter 1 all the way to the end? And how does what you&rsquo;ve read about Nat&rsquo;s life connect to the expository essay you&rsquo;ve been writing about him?</p>
     <div class="socratic-box"><div class="socratic-label">&#x1F9E0; As you move through the final chapters, ask</div>
@@ -967,7 +999,8 @@ function fireConfetti(){var cv=document.getElementById('confettiCanvas');if(!cv)
 function copyToClipboard(){gatherAnswers();var t=document.getElementById('gatheredOutput').value;if(navigator.clipboard){navigator.clipboard.writeText(t).then(showCopied).catch(function(){fbC(t);});}else fbC(t);}
 function fbC(t){var ta=document.createElement('textarea');ta.value=t;ta.style.cssText='position:fixed;opacity:0;';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showCopied();}
 function showCopied(){var m=document.getElementById('gatheredCopied');if(m){m.classList.add('show');setTimeout(function(){m.classList.remove('show');},2500);}}
-function downloadPDF(){gatherAnswers();var t=document.getElementById('gatheredOutput').value;var win=window.open('','_blank');if(win){win.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;padding:0 20px;line-height:1.7;}pre{white-space:pre-wrap;font-size:14px;}@media print{body{margin:20px;}}</style></head><body><pre>'+t.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</pre></body></html>');win.document.close();setTimeout(function(){win.print();},400);}}
+function downloadPDF(){gatherAnswers();var t=document.getElementById('gatheredOutput').value;var win=window.open('','_blank');if(win){win.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;padding:0 20px;line-height:1.7;}pre{white-space:pre-wrap;font-size:14px;}@media print{body{margin:20px;}}</style></head><body><pre>'+t.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</pre>
+</body></html>');win.document.close();setTimeout(function(){win.print();},400);}}
 (function(){var btn=document.getElementById('backToTop');if(!btn)return;btn.addEventListener('click',function(){document.documentElement.scrollTop=0;document.body.scrollTop=0;});window.addEventListener('scroll',function(){btn.classList.toggle('show',window.scrollY>400);});})();function gatherAnswers(){var o='LESSON 14.1 \u2014 CARRY ON, MR. BOWDITCH\n';o+='\u2550'.repeat(44)+'\n\n';var sw=document.getElementById('journal-morph');if(sw){o+='WORD STUDY SWYK (Morphology SWYK)\n'+'\u2500'.repeat(36)+'\n\n';o+=sw.getAttribute('data-label')+'\n'+(sw.value.trim()||'(no answer)')+'\n\n';}o+='CHAPTER THINKING\n'+'\u2500'.repeat(36)+'\n';['journal-q1','journal-q2','journal-q3'].forEach(function(id){var el=document.getElementById(id);if(!el)return;o+='\n'+el.getAttribute('data-label')+'\n'+(el.value.trim()||'(no answer)')+'\n';});o+='\nWRITING CONNECTION\n'+'\u2500'.repeat(36)+'\n';var w=document.getElementById('journal-writing');if(w){o+='\n'+w.getAttribute('data-label')+'\n'+(w.value.trim()||'(no answer)')+'\n';}var g=document.getElementById('gatheredOutput');if(g)g.value=o;}
 /* ───── INTERACTIVE SAVE/RESTORE ───── */
 (function(){
@@ -1457,4 +1490,31 @@ function downloadPDF(){gatherAnswers();var t=document.getElementById('gatheredOu
   };
 })();
 
-</script></body></html>
+</script><!-- Video Manifest Loader -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('https://raw.githubusercontent.com/bbirchum1/optima-5th-ela/main/video-manifest.json?v=' + Date.now())
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var manifest = data.videos || data;
+      document.querySelectorAll('.video-placeholder-wrap').forEach(function(wrap) {
+        var m = wrap.innerHTML.match(/<!--\s*slot:\s*([\w-]+)\s*-->/);
+        if (!m) return;
+        var entry = manifest[m[1]];
+        if (!entry || entry.status !== 'ready' || !entry.embed) return;
+        var temp = document.createElement('div');
+        temp.innerHTML = entry.embed;
+        var iframe = temp.querySelector('iframe');
+        if (!iframe) return;
+        iframe.removeAttribute('width');
+        iframe.removeAttribute('height');
+        iframe.style.cssText = 'display:block;width:100%;aspect-ratio:16/9;border:none;';
+        wrap.innerHTML = '';
+        wrap.style.cssText = 'border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
+        wrap.appendChild(iframe);
+      });
+    })
+    .catch(function(err) { console.warn('Video manifest load failed:', err); });
+});
+</script>
+</body></html>

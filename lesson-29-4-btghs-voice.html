@@ -6,7 +6,8 @@
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E1C42;line-height:1.6;-webkit-font-smoothing:antialiased;}
-.page-wrap{max-width:920px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(14,28,66,.08);}
+.page-wrap{max-width:920px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(14,28,66,.08);  padding: 0 18px;
+}
 
 /* ═══════════ PROGRESS BAR ═══════════ */
 .progress-wrap{position:sticky;top:0;z-index:200;background:#0E1C42;padding:8px 20px 10px;display:flex;align-items:center;gap:14px;}
@@ -116,17 +117,33 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .tab-panel{display:none;padding:24px 28px 36px;}
 .tab-panel.active{display:block;}
 
-/* ═══════════ VIDEO WRAP ═══════════ */
-
-
-
-
-
-
-
-
-
-
+/* ═══ VIDEO PLACEHOLDER ═══ */
+.video-placeholder-wrap {
+  border-radius: 14px; overflow: hidden; margin: 0 0 18px;
+  border: 2px dashed rgba(0,137,123,0.4);
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+}
+.video-placeholder-inner {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 28px 20px;
+}
+.video-placeholder-inner .vp-icon { font-size: 34px; margin-bottom: 6px; }
+.video-placeholder-inner .vp-label {
+  font-size: 10px; color: #F9A825; text-transform: uppercase;
+  letter-spacing: 2px; font-weight: 800; margin-bottom: 4px;
+}
+.video-placeholder-inner .vp-title {
+  font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px;
+}
+.video-placeholder-inner .vp-slot {
+  font-family: monospace; font-size: 11px; color: #00897B;
+  background: rgba(0,137,123,0.15); padding: 3px 10px; border-radius: 4px;
+}
+.video-placeholder-inner .vp-notes {
+  font-size: 12px; color: rgba(255,255,255,0.8); font-style: italic;
+  margin-top: 10px; text-align: left; padding: 10px 12px;
+  background: rgba(0,0,0,0.25); border-radius: 6px; border-left: 3px solid #00897B;
+}
 
 /* ═══════════ ACTIVITY CARDS ═══════════ */
 .activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04);}
@@ -735,7 +752,22 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <button class="tab-btn" data-tab="words" onclick="switchTab('words')">🔤 Word Study<span class="tab-check">✓</span></button>
   <button class="tab-btn" data-tab="reading" onclick="switchTab('reading')">🎭 Voice &amp; Tone<span class="tab-check">✓</span></button>
   <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">📬 Assignment<span class="tab-check">✓</span></button>
-</div><div class="tab-panel active" id="tab-warmup"><div class="activity bl-sage">
+</div><div class="tab-panel active" id="tab-warmup">
+
+<!-- ═══ INTRODUCTION VIDEO ═══ -->
+<div class="video-placeholder-wrap">
+<!-- slot: g5ela-29-4 -->
+<div class="video-placeholder-inner">
+  <span class="vp-icon">&#x1F3AC;</span>
+  <div class="vp-label">Introduction Video</div>
+  <div class="vp-title">Week 29 Day 4: Voice &amp; Tone</div>
+  <div class="vp-slot">g5ela-29-4</div>
+  <div class="vp-notes">
+    <strong>Teacher recording notes:</strong> Welcome to today&#x27;s lesson: Week 29 Day 4: Voice &amp; Tone. In your warm-up, you&#x27;ll focus on Daily Oral Language — Sentence variety &amp; style. As you read, pay close attention to the characters&#x27; actions and motivations. Think about how events connect to the bigger ideas in the story. Use your journal to capture your thoughts and any questions that come up.
+  </div>
+</div>
+</div>
+<div class="activity bl-sage">
   <div class="activity-head"><div class="activity-num" style="background:#52B788;">📝</div><div style="flex:1;"><div class="activity-title">Daily Oral Language</div><div class="activity-sub">Sentence variety &amp; style</div></div></div>
   <div class="activity-body">
     <p style="font-size:13px;color:#7A88A8;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">Sentence 1 &mdash; The Correct Model</p>
@@ -1391,6 +1423,34 @@ window.addEventListener('load',function(){document.querySelectorAll('textarea[da
   };
 })();
 
+</script>
+
+<!-- Video Manifest Loader -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('https://raw.githubusercontent.com/bbirchum1/optima-5th-ela/main/video-manifest.json?v=' + Date.now())
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var manifest = data.videos || data;
+      document.querySelectorAll('.video-placeholder-wrap').forEach(function(wrap) {
+        var m = wrap.innerHTML.match(/<!--\s*slot:\s*([\w-]+)\s*-->/);
+        if (!m) return;
+        var entry = manifest[m[1]];
+        if (!entry || entry.status !== 'ready' || !entry.embed) return;
+        var temp = document.createElement('div');
+        temp.innerHTML = entry.embed;
+        var iframe = temp.querySelector('iframe');
+        if (!iframe) return;
+        iframe.removeAttribute('width');
+        iframe.removeAttribute('height');
+        iframe.style.cssText = 'display:block;width:100%;aspect-ratio:16/9;border:none;';
+        wrap.innerHTML = '';
+        wrap.style.cssText = 'border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
+        wrap.appendChild(iframe);
+      });
+    })
+    .catch(function(err) { console.warn('Video manifest load failed:', err); });
+});
 </script>
 </body>
 </html>
