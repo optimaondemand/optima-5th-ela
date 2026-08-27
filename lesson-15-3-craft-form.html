@@ -1395,7 +1395,7 @@ function downloadPDF(){
   html+='<h1>📓 My Work — Lesson 15.3</h1>';
   html+='<h2>The Writer\'s Bridge — Mentor Text: Johnny Tremain, Ch. V</h2>';
   html+='<pre>'+text.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</pre>';
-  html+=' + '</body></html>';
+  html+='</body></html>';
   var win=window.open('','_blank');
   if(win){win.document.write(html);win.document.close();setTimeout(function(){win.print();},400);}
 }
