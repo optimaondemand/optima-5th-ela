@@ -1103,7 +1103,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 
   <!-- Activity 1: Morphology — Explain arc -->
   <div class="activity bl-plum">
-    <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div><div style="flex:1;"><div class="activity-title">🌱 Morphology: Root Detective — Explain the Connection</div><div class="activity-sub">Day 4: Explain — which root built this word?</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div><div style="flex:1;"><div class="activity-title">🌱 Morphology: Root Detective — Explain the Connection</div><div class="activity-sub">Explain &mdash; which root built this word?</div></div></div>
     <div class="activity-body">
 
       
@@ -1157,12 +1157,22 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         ✅ You can read a word&rsquo;s DNA now. These three roots will keep showing up — in this book and far beyond it.
       </div>
 
+      <div class="swyk" style="margin-top:14px;">
+        <div class="swyk-label">&#x1F331; Show What You Know &middot; Morphology</div>
+        <div class="swyk-prompt">Pick <strong>two</strong> words from the game above. For each word, explain: (1) which root is inside it (<em>naut-</em>, <em>nav-</em>, or <em>-port-</em>), (2) what that root means, and (3) how the root gives the whole word its meaning. Then name one <strong>new</strong> word you know that contains one of these roots &mdash; explain the connection.</div>
+        <div class="textbox-prompt">Explain two words from the game and name one new word with the same roots.</div>
+        <textarea class="journal-box" id="journal-morph" data-label="Morphology SWYK: Explain naut/nav/port roots"
+          placeholder="Word 1: ___ contains the root ___, which means... This root gives the word its meaning because...&#10;Word 2: ___ contains the root ___, which means...&#10;A new word I know is ___ &mdash; it contains the root ___ because..."
+          oninput="autoSave(this,'dot-morph');gatherAnswers();"></textarea>
+        <div class="journal-label">&#x1F4D3; <span class="saved-dot" id="dot-morph"></span></div>
+      </div>
+
     </div>
   </div>
 
   <!-- Activity 2: Vocabulary — Choice Board (SWYK graded) -->
   <div class="activity bl-teal">
-    <div class="activity-head"><div class="activity-num" style="background:#00796B;">2</div><div style="flex:1;"><div class="activity-title">📖 Vocabulary: Show What You Know — Your Choice</div><div class="activity-sub">Day 4: Choose one way to demonstrate the words</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#00796B;">2</div><div style="flex:1;"><div class="activity-title">📖 Vocabulary: Show What You Know — Your Choice</div><div class="activity-sub">Choose &mdash; one way to demonstrate the words</div></div></div>
     <div class="activity-body">
 
       
@@ -1222,7 +1232,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 
   <!-- Activity 3: Grammar — Explain arc (Which Sentence Wins?) -->
   <div class="activity bl-gold">
-    <div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">3</div><div style="flex:1;"><div class="activity-title">✏️ Grammar: Which Sentence Wins?</div><div class="activity-sub">Day 4: Explain — choose the stronger version and say why</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">3</div><div style="flex:1;"><div class="activity-title">✏️ Grammar: Which Sentence Wins?</div><div class="activity-sub">Explain &mdash; choose the stronger version and say why</div></div></div>
     <div class="activity-body">
 
       
@@ -1268,7 +1278,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 
   <!-- Activity 4: Spelling — Challenge arc (Odd One Out) -->
   <div class="activity bl-navy">
-    <div class="activity-head"><div class="activity-num" style="background:#0E3A5C;">4</div><div style="flex:1;"><div class="activity-title">🔤 Spelling: Odd One Out</div><div class="activity-sub">Day 4: Challenge — spot the word that breaks the pattern</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#0E3A5C;">4</div><div style="flex:1;"><div class="activity-title">🔤 Spelling: Odd One Out</div><div class="activity-sub">Challenge &mdash; spot the word that breaks the pattern</div></div></div>
     <div class="activity-body">
 
       
@@ -1545,6 +1555,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="turn-in-checklist" id="checklist">
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered Questions 1 and 2 with evidence from Chapter 4.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered Question 3 using evidence from at least two different chapters this week.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed the Morphology Root Detective game and wrote my Explain response.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed the Vocabulary Show What You Know choice board in Word Study.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my Writing Connection identifying my research focus and guiding question.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I copied my work to Canvas <strong>or</strong> downloaded the PDF.</div></div>

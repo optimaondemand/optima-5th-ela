@@ -966,7 +966,7 @@ And never a child awake but you.</div>
 
   <!-- ═══ MORPHOLOGY ═══ -->
   <div class="activity bl-plum">
-    <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div><div style="flex:1;"><div class="activity-title">&#x1F331; Morphology: Suffixes -able / -ible</div><div class="activity-sub">Making adjectives that mean &ldquo;capable of&rdquo;</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div><div style="flex:1;"><div class="activity-title">&#x1F331; Morphology: Suffixes -able / -ible</div><div class="activity-sub">Explain &mdash; making adjectives that mean "capable of"</div></div></div>
     <div class="activity-body">
             <p>This week you learned that the suffixes <strong>-able</strong> and <strong>-ible</strong> turn verbs into adjectives meaning &ldquo;capable of&rdquo; or &ldquo;worthy of.&rdquo;</p>
       <div class="key-concept">
@@ -996,9 +996,14 @@ And never a child awake but you.</div>
         <div class="root-match-feedback" id="rootMatchFeedback">&#x1F331; All matched!</div>
       </div>
 
-      <div class="callout callout-think" style="margin-top:14px;">
-        <span class="callout-icon">&#x1F4A1;</span>
-        <p><strong>Challenge:</strong> Think about -able and -ible words you use every day. Mercy&rsquo;s illness is barely <em>bearable</em> for the family. Kit&rsquo;s quick recovery is <em>remarkable</em>. How many -able/-ible words can you spot in your own conversations or reading?</p>
+      <div class="swyk" style="margin-top:14px;">
+        <div class="swyk-label">&#x1F331; Show What You Know &middot; Morphology</div>
+        <div class="swyk-prompt">Explain the suffixes <strong>-able</strong> and <strong>-ible</strong> as if you were teaching a classmate who has never seen them. Include: (1) what these suffixes do to a base word, (2) two examples from this week with their meanings, and (3) one new -able or -ible word of your own &mdash; show the base word and explain how the suffix changes it.</div>
+        <div class="textbox-prompt">Teach -able/-ible to a classmate. Give the rule, two examples, and one new word.</div>
+        <textarea class="journal-box" id="journal-morph" data-label="Morphology SWYK: Explain -able/-ible"
+          placeholder="The suffixes -able and -ible mean... For example, the word ___ comes from the base word ___ and means... A new word I found is..."
+          oninput="autoSave(this,&apos;dot-morph&apos;);gatherAnswers();"></textarea>
+        <div class="journal-label">&#x1F4D3; <span class="saved-dot" id="dot-morph"></span></div>
       </div>
     </div>
   </div>
@@ -1463,7 +1468,7 @@ And never a child awake but you.</div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered all 3 comprehension questions with evidence from the text.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I submitted my final perspective paragraph using the Writer&rsquo;s Workshop Final Edit Checklist.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote a sentence for each vocabulary word in Use the Word.</div></div>
-        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed the Morphology Match practice.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed the Morphology Match and wrote my Explain response.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my Writing Connection response.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I copied my work to Canvas <strong>or</strong> downloaded the PDF.</div></div>
       </div>
@@ -1602,7 +1607,7 @@ function gatherAnswers(){
   output+='\n';
   output+='🎮 PRACTICE ACTIVITY STATUS\n';
   output+='────────────────────────────────\n';
-  output+=(window._rootMatchDone?'✅':'⬜')+' Morphology Match\n';
+  output+=(window._rootMatchDone?'✅':'⬜')+' Morphology Match + Explain\n';
   output+=(window._vocabMatchDone?'✅':'⬜')+' Vocabulary Match\n';
   var spotDone=0;var spotTotal=document.querySelectorAll('.spotter-sentence').length;
   document.querySelectorAll('.spotter-sentence').forEach(function(s){if(s.getAttribute('data-done')==='true')spotDone++;});

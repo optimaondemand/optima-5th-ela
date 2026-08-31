@@ -956,7 +956,7 @@ That kept so many warm &mdash;</div>
 
   <!-- ═══ MORPHOLOGY ═══ -->
   <div class="activity bl-plum">
-    <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div><div style="flex:1;"><div class="activity-title">&#x1F331; Morphology: Suffixes -ity / -ty</div><div class="activity-sub">Turning adjectives into nouns of quality or state</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div><div style="flex:1;"><div class="activity-title">&#x1F331; Morphology: Suffixes -ity / -ty</div><div class="activity-sub">Explain &mdash; turning adjectives into nouns of quality or state</div></div></div>
     <div class="activity-body">
             <p>This week you learned that the suffixes <strong>-ity</strong> and <strong>-ty</strong> turn adjectives into nouns that name a quality or state.</p>
       <div class="key-concept">
@@ -986,9 +986,14 @@ That kept so many warm &mdash;</div>
         <div class="root-match-feedback" id="rootMatchFeedback">&#x1F331; All matched! You know your -ity/-ty suffixes!</div>
       </div>
 
-      <div class="callout callout-think" style="margin-top:14px;">
-        <span class="callout-icon">&#x1F4A1;</span>
-        <p><strong>Challenge:</strong> Think about -ity and -ty words you use every day. Kit found <em>vitality</em> in her new home. Nat showed <em>loyalty</em> by naming his ketch after her. How many -ity/-ty words can you spot in your own conversations or reading?</p>
+      <div class="swyk" style="margin-top:14px;">
+        <div class="swyk-label">&#x1F331; Show What You Know &middot; Morphology</div>
+        <div class="swyk-prompt">Explain the suffixes <strong>-ity</strong> and <strong>-ty</strong> as if you were teaching a classmate. Include: (1) what these suffixes do to an adjective, (2) two examples from this week &mdash; show the adjective and the noun it becomes, and (3) one connection to <em>The Witch of Blackbird Pond</em> &mdash; pick an -ity/-ty word from this week and explain how it captures something about a character or scene in Chapter 21.</div>
+        <div class="textbox-prompt">Teach -ity/-ty to a classmate. Give the rule, two examples, and connect one to the novel.</div>
+        <textarea class="journal-box" id="journal-morph" data-label="Morphology SWYK: Explain -ity/-ty"
+          placeholder="The suffixes -ity and -ty turn adjectives into... For example, ___ (adjective) becomes ___ (noun), which means... In Chapter 21, the word ___ fits because..."
+          oninput="autoSave(this,&apos;dot-morph&apos;);gatherAnswers();"></textarea>
+        <div class="journal-label">&#x1F4D3; <span class="saved-dot" id="dot-morph"></span></div>
       </div>
     </div>
   </div>
@@ -1304,7 +1309,7 @@ That kept so many warm &mdash;</div>
       <div class="turn-in-checklist" id="checklist">
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered all 3 comprehension questions with evidence from the text.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed the Vocabulary Choice Board response.</div></div>
-        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed the Morphology Match practice.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed the Morphology Match and wrote my Explain response.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my Writing Connection response.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I copied my work to Canvas <strong>or</strong> downloaded the PDF.</div></div>
       </div>
@@ -1443,7 +1448,7 @@ function gatherAnswers(){
   output+='\n';
   output+='🎮 PRACTICE ACTIVITY STATUS\n';
   output+='────────────────────────────────\n';
-  output+=(window._rootMatchDone?'✅':'⬜')+' Morphology Match\n';
+  output+=(window._rootMatchDone?'✅':'⬜')+' Morphology Match + Explain\n';
   output+=(window._vocabMatchDone?'✅':'⬜')+' Vocabulary Match\n';
   var spotDone=0;var spotTotal=document.querySelectorAll('.spotter-sentence').length;
   document.querySelectorAll('.spotter-sentence').forEach(function(s){if(s.getAttribute('data-done')==='true')spotDone++;});
