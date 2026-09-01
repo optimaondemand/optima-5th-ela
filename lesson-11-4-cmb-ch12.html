@@ -854,7 +854,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         </div>
         <div class="intro-card-body"><div class="obj-line"><span class="obj-icon">&#x1F331;</span><span><strong>Morphology:</strong> Explain geo/terr roots &mdash; Odd One Out + teaching exercise.</span></div>
 <div class="obj-line"><span class="obj-icon">&#x1F524;</span><span><strong>Vocab SWYK:</strong> Choice board &mdash; show what you know your way.</span></div>
-<div class="obj-line"><span class="obj-icon">&#x270F;&#xFE0F;</span><span><strong>Grammar:</strong> Explain S-V agreement &mdash; teach the rule to someone else.</span></div>
+<div class="obj-line"><span class="obj-icon">&#x270F;&#xFE0F;</span><span><strong>Grammar:</strong> I will <em>explain the importance of</em> commas in changing what a clause means.</span></div>
 <div class="obj-line"><span class="obj-icon">&#x1F4D6;</span><span><strong>Reading:</strong> Chapter 12 + week reflective question spanning Chs. 9&ndash;12</span></div></div>
       </div>
     </div>
@@ -948,31 +948,42 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 <div class="tab-panel" id="tab-words">
   <div class="activity bl-plum">
     <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div>
-      <div style="flex:1;"><div class="activity-title">&#x1F331; Morphology: Explain geo and terr</div>
-      <div class="activity-sub">Explain &mdash; teach these roots to someone else</div></div>
+      <div style="flex:1;"><div class="activity-title">&#x1F331; Morphology: Roots <em>meter/metr</em> + <em>scope/spect</em></div>
+      <div class="activity-sub">Explain &mdash; the instruments of a science</div></div>
     </div>
     <div class="activity-body">
         <div class="callout callout-tip"><span class="callout-icon">&#x1F914;</span><p>Odd One Out &mdash; three words share a root. One does not. Click the word that does <em>not</em> belong.</p></div>
-      <div class="root-det-group" id="odd1">
-        <div class="root-det-word">Root family: <em>geo</em> (earth)</div>
+            <div class="root-det-group" id="odd1">
+        <div class="root-det-word">Root family: <em>meter</em> &mdash; measure</div>
         <div class="root-det-row">
-          <button class="root-det-btn" onclick="oddOne(this,'odd1',false)">geology</button>
-          <button class="root-det-btn" onclick="oddOne(this,'odd1',false)">geometry</button>
-          <button class="root-det-btn" onclick="oddOne(this,'odd1',true)">terrain</button>
-          <button class="root-det-btn" onclick="oddOne(this,'odd1',false)">geography</button>
+          <button class="root-det-btn" onclick="oddOne(this,'odd1',false)">thermometer</button>
+          <button class="root-det-btn" onclick="oddOne(this,'odd1',false)">barometer</button>
+          <button class="root-det-btn" onclick="oddOne(this,'odd1',true)">telescope</button>
+          <button class="root-det-btn" onclick="oddOne(this,'odd1',false)">perimeter</button>
         </div>
-        <div class="root-det-msg" id="odd1-msg">Correct! <em>Terrain</em> uses <em>terr</em> (land), not <em>geo</em> (earth).</div>
+        <div class="root-det-msg" id="odd1-msg">Correct! <em>Telescope</em> uses <em>scope</em> (look), not <em>meter</em> (measure).</div>
       </div>
       <div class="root-det-group" id="odd2">
-        <div class="root-det-word">Root family: <em>terr</em> (land)</div>
+        <div class="root-det-word">Root family: <em>scope / spect</em> &mdash; look</div>
         <div class="root-det-row">
-          <button class="root-det-btn" onclick="oddOne(this,'odd2',false)">terrain</button>
-          <button class="root-det-btn" onclick="oddOne(this,'odd2',false)">terrestrial</button>
-          <button class="root-det-btn" onclick="oddOne(this,'odd2',true)">geocentric</button>
-          <button class="root-det-btn" onclick="oddOne(this,'odd2',false)">subterranean</button>
+          <button class="root-det-btn" onclick="oddOne(this,'odd2',false)">microscope</button>
+          <button class="root-det-btn" onclick="oddOne(this,'odd2',false)">inspect</button>
+          <button class="root-det-btn" onclick="oddOne(this,'odd2',false)">spectator</button>
+          <button class="root-det-btn" onclick="oddOne(this,'odd2',true)">diameter</button>
         </div>
-        <div class="root-det-msg" id="odd2-msg">Correct! <em>Geocentric</em> uses <em>geo</em> (earth as the center), not <em>terr</em> (land).</div>
+        <div class="root-det-msg" id="odd2-msg">Correct! <em>Diameter</em> uses <em>meter</em> &mdash; it is a measurement across a circle.</div>
       </div>
+      <div class="root-det-group" id="odd3">
+        <div class="root-det-word">Which one gives you a number rather than a view?</div>
+        <div class="root-det-row">
+          <button class="root-det-btn" onclick="oddOne(this,'odd3',false)">periscope</button>
+          <button class="root-det-btn" onclick="oddOne(this,'odd3',true)">chronometer</button>
+          <button class="root-det-btn" onclick="oddOne(this,'odd3',false)">perspective</button>
+          <button class="root-det-btn" onclick="oddOne(this,'odd3',false)">spectacle</button>
+        </div>
+        <div class="root-det-msg" id="odd3-msg">Correct! A <em>chronometer</em> measures. The others are all about looking.</div>
+      </div>
+
     </div>
   </div>
   <div class="activity bl-teal">
@@ -1002,11 +1013,11 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   </div>
   <div class="activity bl-gold">
     <div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">3</div>
-      <div style="flex:1;"><div class="activity-title">&#x270F;&#xFE0F; Grammar: Explain Subject-Verb Agreement</div>
-      <div class="activity-sub">Explain &mdash; teach the rule</div></div>
+      <div style="flex:1;"><div class="activity-title">&#x270F;&#xFE0F; Grammar: Relative Pronouns &amp; Clauses</div>
+      <div class="activity-sub">Explain the importance</div></div>
     </div>
     <div class="activity-body">
-        <p>You can now explain subject-verb agreement with intervening phrases to someone who&rsquo;s confused. Think about what trips people up &mdash; and how to help them see the solution.</p>
+        <p>Last day. Now <strong>explain</strong> what the commas are really deciding. <em>The men who could not read learned anyway</em> means only some of the men. <em>The men, who could not read, learned anyway</em> means all of them could not read. Two commas, two different crews.</p>
       <div class="socratic-box"><div class="socratic-label">&#x270F;&#xFE0F; Write in Your Reading Journal</div>
         <p class="socratic-q">A classmate says: &ldquo;I always get confused when there are extra words between the subject and the verb. How do I know which noun is really the subject?&rdquo; Write a 3&ndash;4 sentence explanation with a clear example from this week&rsquo;s novel sentences.</p>
       </div>
@@ -1015,11 +1026,11 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   </div>
   <div class="activity bl-navy">
     <div class="activity-head"><div class="activity-num" style="background:#0E3A5C;">4</div>
-      <div style="flex:1;"><div class="activity-title">&#x1F524; Spelling: Explain the Schwa</div>
-      <div class="activity-sub">Explain &mdash; why is the schwa tricky?</div></div>
+      <div style="flex:1;"><div class="activity-title">&#x1F520; Spelling: Dividing Long Words by Their Parts</div>
+      <div class="activity-sub">Explain &mdash; why parts beat syllables</div></div>
     </div>
     <div class="activity-body">
-        <div class="callout callout-tip"><span class="callout-icon">&#x1F4A1;</span><p>A classmate says: &ldquo;Why can&rsquo;t I just sound out every vowel?&rdquo; In your reading journal, explain why the schwa makes this impossible &mdash; and give two examples of schwa words where the letter and the sound don&rsquo;t match.</p></div>
+        <div class="callout callout-tip"><span class="callout-icon">&#x1F4A1;</span><p>A classmate says: &ldquo;Why bother splitting a word up? I just sound it out.&rdquo; In your reading journal, explain why cutting at the meaning-seams beats sounding out &mdash; and give two long words from this unit where knowing the parts told you both the meaning and the spelling.</p></div>
     </div>
   </div>
   <div class="tab-next-wrap">

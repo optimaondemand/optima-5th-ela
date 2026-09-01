@@ -952,42 +952,46 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <!-- MORPHOLOGY — Use -->
   <div class="activity bl-plum">
     <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div>
-      <div style="flex:1;"><div class="activity-title">&#x1F331; Morphology: Use graph/gram/meter in Context</div>
-      <div class="activity-sub">Use &mdash; choose the right word from the root family</div></div>
+      <div style="flex:1;"><div class="activity-title">&#x1F331; Morphology: Roots <em>graph</em> / <em>gram</em> / <em>scribe</em></div>
+      <div class="activity-sub">Use &mdash; put the roots to work</div></div>
     </div>
     <div class="activity-body">
-        <p>You know the roots and can identify them in new words. Today, use that knowledge to choose the correct word for each blank. Read the whole sentence first &mdash; the context will tell you which word fits.</p>
+        <p>Now <strong>use</strong> them. Chapter 7 has Nat checking the most trusted navigation guide of his age and finding thousands of errors in it. Every word below is about writing something down &mdash; and getting it right.</p>
       <div class="key-concept">
-        <div class="key-concept-label">&#x1F4CC; Word bank for today</div>
-        <p><strong>biography &middot; chronometer &middot; geography &middot; barometer &middot; diagram &middot; telegram</strong></p>
+        <div class="key-concept-label">&#x1F4CC; Three Roots, One Idea</div>
+        <p><strong>graph</strong> = write or draw &nbsp;&rarr;&nbsp; autograph, paragraph, biography</p>
+        <p><strong>gram</strong> = the thing written or drawn &nbsp;&rarr;&nbsp; diagram, telegram, grammar</p>
+        <p><strong>scribe / script</strong> = write &nbsp;&rarr;&nbsp; manuscript, transcribe, inscribe</p>
+        <p>You met <em>script/scribe</em> back in the Witch unit. Here it is again, standing beside two Greek cousins that do the same work.</p>
+        <p><strong>The pattern:</strong> <em>graph</em> and <em>scribe</em> are usually the act of writing; <em>gram</em> is usually the thing you end up with.</p>
       </div>
       <div class="choice-game">
-        <div class="choice-item">
-          <div class="choice-prompt">A sailor who had a precise <span class="choice-blank">___</span> on his ship could determine his longitude.</div>
+        <div class="choice-item" id="ci1">
+          <div class="choice-prompt" style="font-style:italic;color:#7A88A8;">Nat found thousands of errors in the guide sailors trusted with their lives.</div>
+          <p style="font-size:14px;color:#3A4A6B;margin:6px 0 10px;">Which word names <em>the drawing that explains</em>?</p>
           <div class="choice-row">
-            <button class="choice-btn" onclick="choiceBtn(this,true)">chronometer</button>
-            <button class="choice-btn" onclick="choiceBtn(this,false)">biography</button>
-            <button class="choice-btn" onclick="choiceBtn(this,false)">telegram</button>
+            <button class="choice-btn" onclick="choiceBtn(this,'ci1',true)">diagram</button>
+            <button class="choice-btn" onclick="choiceBtn(this,'ci1',false)">transcribe</button>
           </div>
-          <div class="choice-score">Correct! Chrono (time) + meter (measure) = instrument that measures time precisely.</div>
+          <div class="choice-score" id="ci1-msg"></div>
         </div>
-        <div class="choice-item">
-          <div class="choice-prompt">Nat drew a <span class="choice-blank">___</span> showing the relationship between the stars and a ship&rsquo;s position.</div>
+        <div class="choice-item" id="ci2">
+          <div class="choice-prompt" style="font-style:italic;color:#7A88A8;">He copied the corrected tables out by hand.</div>
+          <p style="font-size:14px;color:#3A4A6B;margin:6px 0 10px;">Which word names <em>the act of writing it across into a new form</em>?</p>
           <div class="choice-row">
-            <button class="choice-btn" onclick="choiceBtn(this,false)">barometer</button>
-            <button class="choice-btn" onclick="choiceBtn(this,true)">diagram</button>
-            <button class="choice-btn" onclick="choiceBtn(this,false)">geography</button>
+            <button class="choice-btn" onclick="choiceBtn(this,'ci2',false)">telegram</button>
+            <button class="choice-btn" onclick="choiceBtn(this,'ci2',true)">transcribe</button>
           </div>
-          <div class="choice-score">Correct! Dia (across) + gram (drawn/written) = explanatory drawing.</div>
+          <div class="choice-score" id="ci2-msg"></div>
         </div>
-        <div class="choice-item">
-          <div class="choice-prompt">Jean Lee Latham wrote a <span class="choice-blank">___</span> of Nathaniel Bowditch for young readers.</div>
+        <div class="choice-item" id="ci3">
+          <div class="choice-prompt" style="font-style:italic;color:#7A88A8;">Latham wrote the story of Nat&rsquo;s whole life.</div>
+          <p style="font-size:14px;color:#3A4A6B;margin:6px 0 10px;">Which word names <em>the writing of a life</em>?</p>
           <div class="choice-row">
-            <button class="choice-btn" onclick="choiceBtn(this,false)">telegram</button>
-            <button class="choice-btn" onclick="choiceBtn(this,false)">chronometer</button>
-            <button class="choice-btn" onclick="choiceBtn(this,true)">biography</button>
+            <button class="choice-btn" onclick="choiceBtn(this,'ci3',true)">biography</button>
+            <button class="choice-btn" onclick="choiceBtn(this,'ci3',false)">grammar</button>
           </div>
-          <div class="choice-score">Correct! Bio (life) + graph (write) = written account of a life.</div>
+          <div class="choice-score" id="ci3-msg"></div>
         </div>
       </div>
     </div>
@@ -1035,17 +1039,17 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <!-- SPELLING SWYK — Day 3 -->
   <div class="activity bl-navy">
     <div class="activity-head"><div class="activity-num" style="background:#0E3A5C;">4</div>
-      <div style="flex:1;"><div class="activity-title">&#x1F524; Spelling: Use Syllable Knowledge</div>
-      <div class="activity-sub">Show What You Know &mdash; spell and use technical words correctly</div></div>
+      <div style="flex:1;"><div class="activity-title">&#x1F520; Spelling: <em>-er</em> and <em>-or</em> &mdash; Naming the Doer</div>
+      <div class="activity-sub">Apply &mdash; build the job name</div></div>
     </div>
     <div class="activity-body">
-        <p>You know how to divide these technical words into syllables. Now use that knowledge to spell them correctly and use them in sentences.</p>
+        <p>Now <strong>apply</strong> it. Chapter 7 is Nat doing the work of half a dozen trades at once. Build the word that names each doer, and check the verb underneath before you choose the ending.</p>
       <div class="swyk">
         <div class="swyk-label">&#x1F524; Show What You Know &middot; Spelling</div>
-        <div class="swyk-prompt">Choose two words from the list below. For each one: (1) write the word with syllable dots, (2) write the VCV or VCCV pattern label, (3) write a sentence using the word correctly. Words: <em>almanac &middot; celestial &middot; logarithm &middot; latitude &middot; apprentice</em></div>
-        <div class="textbox-prompt">Word 1: [word] with dots · Pattern: VCV or VCCV · Sentence using it. Word 2: same steps.</div>
-        <textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK: Syllable division and sentences"
-          placeholder="Word 1: al·ma·nac  Pattern: VCCV  Sentence: A sailor used the almanac to find his position at sea.&#10;Word 2: ..."
+        <div class="swyk-prompt">Build the doer-name from each verb and say which ending it takes and why: <strong>navigate</strong>, <strong>print</strong>, <strong>calculate</strong>, <strong>keep</strong>.</div>
+        <div class="textbox-prompt">Write each finished word, name the ending, and give the reason &mdash; plain English verb, or a Latin verb ending in <em>-ate</em>?</div>
+        <textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK: -er and -or Agent Nouns"
+          placeholder="navigate &rarr; navigator. It takes -or because the verb ends in -ate..."
           oninput="autoSave(this,'dot-spelling');gatherAnswers();"></textarea>
         <div class="journal-label">&#x1F4D3; <span class="saved-dot" id="dot-spelling"></span></div>
       </div>

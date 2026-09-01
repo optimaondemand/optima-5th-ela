@@ -851,7 +851,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         </div>
         <div class="intro-card-body"><div class="obj-line"><span class="obj-icon">&#x1F331;</span><span><strong>Morphology:</strong> Use geo/terr roots in original sentences about navigation.</span></div>
 <div class="obj-line"><span class="obj-icon">&#x1F524;</span><span><strong>Spelling SWYK:</strong> Spell schwa words correctly and use them accurately.</span></div>
-<div class="obj-line"><span class="obj-icon">&#x270F;&#xFE0F;</span><span><strong>Grammar:</strong> Use correct subject-verb agreement in a revised passage.</span></div>
+<div class="obj-line"><span class="obj-icon">&#x270F;&#xFE0F;</span><span><strong>Grammar:</strong> I will <em>write using</em> relative clauses punctuated correctly.</span></div>
 <div class="obj-line"><span class="obj-icon">&#x1F4D6;</span><span><strong>Reading:</strong> Chapter 11 &mdash; What Next?</span></div></div>
       </div>
     </div>
@@ -917,41 +917,45 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 <div class="tab-panel" id="tab-words">
   <div class="activity bl-plum">
     <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div>
-      <div style="flex:1;"><div class="activity-title">&#x1F331; Morphology: Use geo and terr in Context</div>
-      <div class="activity-sub">Use &mdash; choose the right word from the root family</div></div>
+      <div style="flex:1;"><div class="activity-title">&#x1F331; Morphology: Roots <em>meter/metr</em> + <em>scope/spect</em></div>
+      <div class="activity-sub">Use &mdash; put the roots to work</div></div>
     </div>
     <div class="activity-body">
-        <p>You&rsquo;ve defined and identified the roots. Now use them &mdash; choose the word that fits each sentence about navigation and Nat&rsquo;s world.</p>
-      <div class="key-concept"><div class="key-concept-label">&#x1F4CC; Word bank</div>
-        <p><strong>terrestrial &middot; geography &middot; terrain &middot; geology &middot; Mediterranean &middot; territory</strong></p>
+        <p>Now <strong>use</strong> them. Chapter 11 puts Nat at sea for the first time &mdash; not reading about navigation, but doing it, with instruments in his hands. Choose the word that fits.</p>
+      <div class="key-concept">
+        <div class="key-concept-label">&#x1F4CC; Two Roots</div>
+        <p><strong>meter / metr</strong> = <strong>measure</strong> &nbsp;&rarr;&nbsp; thermometer, barometer, chronometer, perimeter, diameter</p>
+        <p><strong>scope</strong> = <strong>look, watch</strong> &nbsp;&rarr;&nbsp; telescope, microscope, periscope</p>
+        <p><strong>spect</strong> = <strong>look</strong> &nbsp;&rarr;&nbsp; inspect, spectator, perspective &mdash; you met this one in the Witch unit</p>
+        <p><strong>The test:</strong> if the word gives you a <em>number</em>, suspect <em>meter</em>. If it gives you a <em>view</em>, suspect <em>scope</em> or <em>spect</em>.</p>
       </div>
       <div class="choice-game">
-        <div class="choice-item">
-          <div class="choice-prompt">A <span class="choice-blank">___</span> globe shows the continents and oceans of the earth.</div>
+        <div class="choice-item" id="ci1">
+          <div class="choice-prompt" style="font-style:italic;color:#7A88A8;">The captain handed Nat the instrument that measures time.</div>
+          <p style="font-size:14px;color:#3A4A6B;margin:6px 0 10px;">Which word fits?</p>
           <div class="choice-row">
-            <button class="choice-btn" onclick="choiceBtn(this,true)">terrestrial</button>
-            <button class="choice-btn" onclick="choiceBtn(this,false)">Mediterranean</button>
-            <button class="choice-btn" onclick="choiceBtn(this,false)">geological</button>
+            <button class="choice-btn" onclick="choiceBtn(this,'ci1',true)">chronometer</button>
+            <button class="choice-btn" onclick="choiceBtn(this,'ci1',false)">telescope</button>
           </div>
-          <div class="choice-score">Correct! Terrestrial (terr = land/earth) describes something relating to the earth.</div>
+          <div class="choice-score" id="ci1-msg"></div>
         </div>
-        <div class="choice-item">
-          <div class="choice-prompt">A navigator who knows the <span class="choice-blank">___</span> of a coastline &mdash; its hills, harbors, and shoals &mdash; can sail it more safely.</div>
+        <div class="choice-item" id="ci2">
+          <div class="choice-prompt" style="font-style:italic;color:#7A88A8;">Nat needed to bring the distant horizon into view.</div>
+          <p style="font-size:14px;color:#3A4A6B;margin:6px 0 10px;">Which word fits?</p>
           <div class="choice-row">
-            <button class="choice-btn" onclick="choiceBtn(this,false)">geology</button>
-            <button class="choice-btn" onclick="choiceBtn(this,true)">terrain</button>
-            <button class="choice-btn" onclick="choiceBtn(this,false)">territory</button>
+            <button class="choice-btn" onclick="choiceBtn(this,'ci2',false)">barometer</button>
+            <button class="choice-btn" onclick="choiceBtn(this,'ci2',true)">telescope</button>
           </div>
-          <div class="choice-score">Correct! Terrain (terr = land) refers to the physical features of an area.</div>
+          <div class="choice-score" id="ci2-msg"></div>
         </div>
-        <div class="choice-item">
-          <div class="choice-prompt">Nat&rsquo;s study of <span class="choice-blank">___</span> &mdash; the earth&rsquo;s shapes and sizes &mdash; gave him tools for calculating position and distance.</div>
+        <div class="choice-item" id="ci3">
+          <div class="choice-prompt" style="font-style:italic;color:#7A88A8;">Before trusting a single figure, Nat looked into it closely.</div>
+          <p style="font-size:14px;color:#3A4A6B;margin:6px 0 10px;">Which word fits?</p>
           <div class="choice-row">
-            <button class="choice-btn" onclick="choiceBtn(this,false)">geology</button>
-            <button class="choice-btn" onclick="choiceBtn(this,false)">terrain</button>
-            <button class="choice-btn" onclick="choiceBtn(this,true)">geometry</button>
+            <button class="choice-btn" onclick="choiceBtn(this,'ci3',true)">inspected</button>
+            <button class="choice-btn" onclick="choiceBtn(this,'ci3',false)">measured</button>
           </div>
-          <div class="choice-score">Correct! Geometry (geo + meter = measuring the earth) gave Nat key navigation tools.</div>
+          <div class="choice-score" id="ci3-msg"></div>
         </div>
       </div>
     </div>
@@ -974,11 +978,11 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   </div>
   <div class="activity bl-gold">
     <div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">3</div>
-      <div style="flex:1;"><div class="activity-title">&#x270F;&#xFE0F; Grammar: Revise for Correct Agreement</div>
-      <div class="activity-sub">Use &mdash; rewrite the paragraph correctly in your journal</div></div>
+      <div style="flex:1;"><div class="activity-title">&#x270F;&#xFE0F; Grammar: Relative Pronouns &amp; Clauses</div>
+      <div class="activity-sub">Use &mdash; build the clause yourself</div></div>
     </div>
     <div class="activity-body">
-        <p>This paragraph about Nat at sea has multiple subject-verb agreement errors. Identify the subject of each underlined verb, then rewrite the whole paragraph correctly in your reading journal.</p>
+        <p>Now <strong>use</strong> them. Chapter 11 has Nat teaching the whole crew to take a lunar &mdash; sailors who had never done arithmetic in their lives. Choose the sentence whose relative clause is built and punctuated correctly.</p>
       <div class="dol-fix-sentence" style="line-height:2.0;">
         Nat, along with the sailors, spend his evenings calculating position. The measurements of the stars requires a precise instrument. His notebooks, filled with corrections, sits on the table. The captain, as well as the crew, trust Nat&rsquo;s mathematical skill completely.
       </div>
@@ -992,16 +996,16 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   </div>
   <div class="activity bl-navy">
     <div class="activity-head"><div class="activity-num" style="background:#0E3A5C;">4</div>
-      <div style="flex:1;"><div class="activity-title">&#x1F524; Spelling SWYK: Use Schwa Words Correctly</div>
-      <div class="activity-sub">Show What You Know &mdash; spell and use academic words</div></div>
+      <div style="flex:1;"><div class="activity-title">&#x1F520; Spelling: Dividing Long Words by Their Parts</div>
+      <div class="activity-sub">Apply &mdash; divide and decode</div></div>
     </div>
     <div class="activity-body">
         <div class="swyk">
         <div class="swyk-label">&#x1F524; Show What You Know &middot; Spelling</div>
-        <div class="swyk-prompt">Choose three words from the list: <em>navigation &middot; terrestrial &middot; calculation &middot; observation &middot; territory</em>. For each word: (1) write it correctly, (2) mark its syllable breaks with dots, (3) underline the schwa syllable, (4) write a sentence using the word correctly in the context of navigation or Nat&rsquo;s world.</div>
-        <div class="textbox-prompt">Word 1: [word] with dots · Schwa in syllable: ___ · Sentence. Repeat for words 2 and 3.</div>
-        <textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK: Schwa in academic words"
-          placeholder="Word 1: nav·i·ga·tion  Schwa in: 'i'  Sentence: Nat mastered navigation long before he ever went to sea.&#10;Word 2: ..."
+        <div class="swyk-prompt">Divide each word at its meaning-seams and give the meaning of every part: <strong>chronometer</strong>, <strong>telescope</strong>, <strong>manuscript</strong>.</div>
+        <div class="textbox-prompt">Write each word split into its parts with slashes, then translate every part.</div>
+        <textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK: Dividing Long Words by Greek and Latin Parts"
+          placeholder="chron / o / meter = time + (connector) + measure, so it means..."
           oninput="autoSave(this,'dot-spelling');gatherAnswers();"></textarea>
         <div class="journal-label">&#x1F4D3; <span class="saved-dot" id="dot-spelling"></span></div>
       </div>

@@ -852,7 +852,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         </div>
         <div class="intro-card-body"><div class="obj-line"><span class="obj-icon">&#x1F331;</span><span><strong>Morphology:</strong> Identify -al and -ous suffixes in scientific and maritime vocabulary.</span></div>
 <div class="obj-line"><span class="obj-icon">&#x270F;&#xFE0F;</span><span><strong>Grammar SWYK:</strong> Identify prepositional phrases; add them to improve expository sentences.</span></div>
-<div class="obj-line"><span class="obj-icon">&#x1F524;</span><span><strong>Spelling:</strong> Identify the correct -ous/-ious/-eous spelling in new words.</span></div>
+<div class="obj-line"><span class="obj-icon">&#x1F524;</span><span><strong>Spelling:</strong> I will <em>identify</em> which ending a noun takes.</span></div>
 <div class="obj-line"><span class="obj-icon">&#x1F4D6;</span><span><strong>Reading:</strong> Chapter 14 &mdash; Nineteen Guns</span></div></div>
       </div>
     </div>
@@ -960,23 +960,23 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 <div class="tab-panel" id="tab-words">
   <div class="activity bl-plum">
     <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div>
-      <div style="flex:1;"><div class="activity-title">&#x1F331; Morphology: Identify -al and -ous in New Words</div>
-      <div class="activity-sub">Identify &mdash; spot the suffix; decode the word</div></div>
+      <div style="flex:1;"><div class="activity-title">&#x1F331; Morphology: Roots <em>fract/frag</em> + <em>rupt</em></div>
+      <div class="activity-sub">Identify &mdash; which break is it?</div></div>
     </div>
     <div class="activity-body">
-        <p>Today you identify the suffix (-al or -ous) in new words &mdash; some you may not have seen before. Use the suffix to decode the meaning.</p>
+        <p>Yesterday you met both roots. Today, <strong>identify</strong> which one a word is built on. They mean the same thing, so the only way to tell is to look for the letters themselves.</p>
       <div class="match-game">
         <div class="match-grid">
-          <div class="match-item is-word" data-match="A" onclick="matchClick(this)">celestial</div>
-          <div class="match-item" data-match="C" onclick="matchClick(this)">full of glory; magnificent; wonderful</div>
-          <div class="match-item is-word" data-match="B" onclick="matchClick(this)">rigorous</div>
-          <div class="match-item" data-match="D" onclick="matchClick(this)">relating to the stars, sky, or heaven above</div>
-          <div class="match-item is-word" data-match="C" onclick="matchClick(this)">glorious</div>
-          <div class="match-item" data-match="B" onclick="matchClick(this)">full of rigor; extremely thorough and demanding</div>
-          <div class="match-item is-word" data-match="D" onclick="matchClick(this)">nautical</div>
-          <div class="match-item" data-match="A" onclick="matchClick(this)">relating to sailors, ships, and navigation</div>
+          <div class="match-item is-word" data-match="A" onclick="rootMatchClick(this)">fracture</div>
+          <div class="match-item" data-match="B" onclick="rootMatchClick(this)">a broken-off piece</div>
+          <div class="match-item is-word" data-match="B" onclick="rootMatchClick(this)">fragment</div>
+          <div class="match-item" data-match="C" onclick="rootMatchClick(this)">to break into someone&rsquo;s turn</div>
+          <div class="match-item is-word" data-match="C" onclick="rootMatchClick(this)">interrupt</div>
+          <div class="match-item" data-match="D" onclick="rootMatchClick(this)">broken off short, sudden</div>
+          <div class="match-item is-word" data-match="D" onclick="rootMatchClick(this)">abrupt</div>
+          <div class="match-item" data-match="A" onclick="rootMatchClick(this)">a break in something solid</div>
         </div>
-        <div class="match-feedback" id="matchFeedback">&#x2728; All matched!</div>
+        <div class="match-feedback" id="matchFeedback">&#x2728; All matched! You can spot a break in either language.</div>
       </div>
     </div>
   </div>
@@ -1010,31 +1010,40 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   </div>
   <div class="activity bl-gold">
     <div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">3</div>
-      <div style="flex:1;"><div class="activity-title">&#x270F;&#xFE0F; Grammar SWYK: Identify and Add Phrases</div>
-      <div class="activity-sub">Show What You Know &mdash; prepositional phrases</div></div>
+      <div style="flex:1;"><div class="activity-title">&#x270F;&#xFE0F; Grammar: Commas with Introductory Phrases</div>
+      <div class="activity-sub">Identify &mdash; where does the main sentence start?</div></div>
     </div>
     <div class="activity-body">
-        <p>First identify the prepositional phrases in these sentences, then show what you know.</p>
+        <p>Yesterday you learned what the comma marks. Today, <strong>identify</strong> where it belongs. Find the subject and verb of the main sentence, then put the comma immediately before them.</p>
       <div class="spotter-game">
-        <div class="spotter-sentence" id="sp1">
-          <strong style="font-size:13px;color:#7A88A8;display:block;margin-bottom:6px;">&ldquo;Nat worked on his corrections throughout the night.&rdquo; &mdash; How many prepositional phrases?</strong>
-          <span class="spotter-word" onclick="spotterPick(this,'sp1')" data-correct="false">One: &ldquo;on his corrections&rdquo;</span>
-          <span class="spotter-word" onclick="spotterPick(this,'sp1')" data-correct="true">Two: &ldquo;on his corrections&rdquo; AND &ldquo;throughout the night&rdquo;</span>
-          <div class="spotter-result" id="sp1-r"></div>
+        <div class="spotter-sentence" id="spot1">
+          <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Where does the main sentence begin?</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true" data-explain="Correct! The main sentence starts at &lsquo;Nat&rsquo; &mdash; so the comma goes right before it.">Working by candlelight in the ship&rsquo;s cabin, Nat checked every figure twice.</span>
+          <span style="display:block;height:6px;"></span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false" data-explain="The comma is missing at the seam between the runway and the sentence.">Working by candlelight in the ship&rsquo;s cabin Nat checked every figure twice.</span>
+          <div class="spotter-result" id="spot1-result"></div>
         </div>
-        <div class="spotter-sentence" id="sp2">
-          <strong style="font-size:13px;color:#7A88A8;display:block;margin-bottom:6px;">&ldquo;In Salem, Nat began his systematic work on the navigation tables.&rdquo; What does &ldquo;In Salem&rdquo; add?</strong>
-          <span class="spotter-word" onclick="spotterPick(this,'sp2')" data-correct="true">It tells <em>where</em> the action happened (setting)</span>
-          <span class="spotter-word" onclick="spotterPick(this,'sp2')" data-correct="false">It tells <em>when</em> the action happened (time)</span>
-          <div class="spotter-result" id="sp2-r"></div>
+        <div class="spotter-sentence" id="spot2">
+          <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Where does the main sentence begin?</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false" data-explain="This is a longer opener than it looks. A comma after <em>1802</em> helps the reader.">In the winter of 1802 he finished the last of the tables.</span>
+          <span style="display:block;height:6px;"></span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="true" data-explain="Correct! The comma marks the end of the introductory phrase.">In the winter of 1802, he finished the last of the tables.</span>
+          <div class="spotter-result" id="spot2-result"></div>
+        </div>
+        <div class="spotter-sentence" id="spot3">
+          <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Where does the main sentence begin?</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true" data-explain="Correct! The dependent clause ends at &lsquo;years,&rsquo; and the comma marks it.">Although the work took years, he never considered abandoning it.</span>
+          <span style="display:block;height:6px;"></span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false" data-explain="The dependent clause needs a comma before the main clause.">Although the work took years he never considered abandoning it.</span>
+          <div class="spotter-result" id="spot3-result"></div>
         </div>
       </div>
       <div class="swyk">
         <div class="swyk-label">&#x270F;&#xFE0F; Show What You Know &middot; Grammar</div>
-        <div class="swyk-prompt">Take this bare expository sentence about Nat and expand it by adding at least two prepositional phrases. Then identify each phrase and what question it answers (where? when? how? with what?).</div>
-        <div class="textbox-prompt"><strong>Base sentence:</strong> &ldquo;Nat worked on his corrections.&rdquo;<br>Add phrases that tell: <em>where</em> he worked, <em>when</em> he worked, and/or <em>with what tools or methods</em> he worked.</div>
-        <textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK: Prepositional phrases for clarity"
-          placeholder="Expanded: Nat worked on his corrections [where?] ___ [when?] ___ [how?] ___.&#10;Phrases I added: 1. '___' (tells ___) 2. '___' (tells ___)"
+        <div class="swyk-prompt">Add the missing commas and explain each one: <em>(1) After three years at sea Nat came home. (2) Because the tables were wrong ships were lost. (3) However the printer was not to blame.</em></div>
+        <div class="textbox-prompt">Write all three corrected sentences, then name where the main sentence begins in each.</div>
+        <textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK: Commas with Introductory Phrases"
+          placeholder="After three years at sea, Nat came home. The main sentence begins at..."
           oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea>
         <div class="journal-label">&#x1F4D3; <span class="saved-dot" id="dot-grammar"></span></div>
       </div>
@@ -1042,23 +1051,32 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   </div>
   <div class="activity bl-navy">
     <div class="activity-head"><div class="activity-num" style="background:#0E3A5C;">4</div>
-      <div style="flex:1;"><div class="activity-title">&#x1F524; Spelling: Identify the Correct -ous Spelling</div>
-      <div class="activity-sub">Identify &mdash; -ous, -ious, or -eous?</div></div>
+      <div style="flex:1;"><div class="activity-title">&#x1F520; Spelling: Suffixes <em>-al</em> and <em>-ic</em></div>
+      <div class="activity-sub">Identify &mdash; which ending fits?</div></div>
     </div>
     <div class="activity-body">
-        <p>Yesterday you discovered the three spellings. Today, identify the correct one for each word. Think about the base word and the pattern.</p>
+        <p>Yesterday you met both endings. Today, <strong>identify</strong> which one a noun takes. There is no rule that covers every case, but there are strong habits: nouns ending in <em>-y</em> or <em>-ce</em> usually take <em>-ic</em>; most others reach for <em>-al</em>.</p>
       <div class="spotter-game">
-        <div class="spotter-sentence" id="sp3">
-          <strong style="font-size:13px;color:#7A88A8;display:block;margin-bottom:6px;">The word <strong>courag_ous</strong>: which ending is correct?</strong>
-          <span class="spotter-word" onclick="spotterPick(this,'sp3')" data-correct="false">-ous &rarr; couragous (drops the <em>e</em>)</span>
-          <span class="spotter-word" onclick="spotterPick(this,'sp3')" data-correct="true">-eous &rarr; courageous (keep <em>e</em> to preserve soft /j/ in <em>g</em>)</span>
-          <div class="spotter-result" id="sp3-r"></div>
+        <div class="spotter-sentence" id="spot1">
+          <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which spelling is correct?</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true" data-explain="Correct! <em>Practical</em> takes <em>-ical</em> &mdash; both endings stacked.">Nat&rsquo;s corrections were <strong>practical</strong>, not theoretical.</span>
+          <span style="display:block;height:6px;"></span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false" data-explain="No such word. This base takes <em>-ical</em>.">Nat&rsquo;s corrections were <strong>practicic</strong>, not theoretical.</span>
+          <div class="spotter-result" id="spot1-result"></div>
         </div>
-        <div class="spotter-sentence" id="sp4">
-          <strong style="font-size:13px;color:#7A88A8;display:block;margin-bottom:6px;">The word <strong>ambit_ous</strong>: which ending?</strong>
-          <span class="spotter-word" onclick="spotterPick(this,'sp4')" data-correct="false">-ous &rarr; ambitous</span>
-          <span class="spotter-word" onclick="spotterPick(this,'sp4')" data-correct="true">-ious &rarr; ambitious (base ends in a soft sound, uses -ious)</span>
-          <div class="spotter-result" id="sp4-r"></div>
+        <div class="spotter-sentence" id="spot2">
+          <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which spelling is correct?</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false" data-explain="The final <em>-ce</em> drops before <em>-ific</em>: <em>scientific</em>.">His method was strictly <strong>scienceic</strong>.</span>
+          <span style="display:block;height:6px;"></span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="true" data-explain="Correct! <em>Science</em> loses its ending and takes <em>-ific</em>.">His method was strictly <strong>scientific</strong>.</span>
+          <div class="spotter-result" id="spot2-result"></div>
+        </div>
+        <div class="spotter-sentence" id="spot3">
+          <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which spelling is correct?</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true" data-explain="Correct! <em>Coast</em> takes a plain <em>-al</em>.">The voyage followed the <strong>coastal</strong> route.</span>
+          <span style="display:block;height:6px;"></span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false" data-explain="This base takes <em>-al</em>, not <em>-ic</em>.">The voyage followed the <strong>coastic</strong> route.</span>
+          <div class="spotter-result" id="spot3-result"></div>
         </div>
       </div>
       <div class="callout callout-think"><span class="callout-icon">&#x1F914;</span><p>In your reading journal, write the correct spelling of each word and note which pattern it uses: <strong>myster___</strong> &middot; <strong>gorge___</strong> &middot; <strong>har mon___</strong> &middot; <strong>enorm___</strong></p></div>

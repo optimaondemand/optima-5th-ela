@@ -848,7 +848,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         </div>
         <div class="intro-card-body"><div class="obj-line"><span class="obj-icon">&#x1F331;</span><span><strong>Morphology:</strong> Use -al and -ous words in original sentences about navigation.</span></div>
 <div class="obj-line"><span class="obj-icon">&#x1F524;</span><span><strong>Spelling SWYK:</strong> Spell -ous/-ious/-eous words correctly and use them accurately.</span></div>
-<div class="obj-line"><span class="obj-icon">&#x270F;&#xFE0F;</span><span><strong>Grammar:</strong> Use prepositional phrases to revise vague expository sentences.</span></div>
+<div class="obj-line"><span class="obj-icon">&#x270F;&#xFE0F;</span><span><strong>Grammar:</strong> I will <em>write using</em> commas after introductory phrases.</span></div>
 <div class="obj-line"><span class="obj-icon">&#x1F4D6;</span><span><strong>Reading:</strong> Chapter 15 &mdash; &ldquo;Sail Ho-o-o-o-o!&rdquo;</span></div></div>
       </div>
     </div>
@@ -914,40 +914,45 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 <div class="tab-panel" id="tab-words">
   <div class="activity bl-plum">
     <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div>
-      <div style="flex:1;"><div class="activity-title">&#x1F331; Morphology: Use -al and -ous in Context</div>
-      <div class="activity-sub">Use &mdash; choose the right adjective</div></div>
+      <div style="flex:1;"><div class="activity-title">&#x1F331; Morphology: Roots <em>fract/frag</em> + <em>rupt</em></div>
+      <div class="activity-sub">Use &mdash; put the roots to work</div></div>
     </div>
     <div class="activity-body">
-        <div class="key-concept"><div class="key-concept-label">&#x1F4CC; Word bank</div>
-        <p><strong>nautical &middot; mathematical &middot; practical &middot; hazardous &middot; rigorous &middot; celestial</strong></p>
+        <div class="key-concept">
+        <div class="key-concept-label">&#x1F4CC; Two Roots, One Meaning</div>
+        <p><strong>fract / frag</strong> = <strong>break</strong> &nbsp;&rarr;&nbsp; fracture, fraction, fragment, fragile, infraction</p>
+        <p><strong>rupt</strong> = <strong>break</strong> &nbsp;&rarr;&nbsp; rupture, erupt, interrupt, disrupt, abrupt</p>
+        <p>A <strong>fraction</strong> is a broken-off piece of a whole number. A <strong>fragment</strong> is a broken-off piece of anything.</p>
+        <p><strong>Fragile</strong> means <em>breakable</em> &mdash; and a sentence fragment is a broken piece of a sentence.</p>
+        <p><strong>Watch for:</strong> both roots take the prefixes you already know. <em>Inter-</em> + <em>rupt</em> = break between. <em>In-</em> + <em>fract</em> = a breaking of the rules.</p>
       </div>
       <div class="choice-game">
-        <div class="choice-item">
-          <div class="choice-prompt">A <span class="choice-blank">___</span> mile is longer than a land mile; it&rsquo;s based on one minute of arc of the earth&rsquo;s circumference.</div>
+        <div class="choice-item" id="ci1">
+          <div class="choice-prompt" style="font-style:italic;color:#7A88A8;">A rope parts suddenly under strain.</div>
+          <p style="font-size:14px;color:#3A4A6B;margin:6px 0 10px;">Which word names that kind of break?</p>
           <div class="choice-row">
-            <button class="choice-btn" onclick="choiceBtn(this,true)">nautical</button>
-            <button class="choice-btn" onclick="choiceBtn(this,false)">hazardous</button>
-            <button class="choice-btn" onclick="choiceBtn(this,false)">practical</button>
+            <button class="choice-btn" onclick="choiceBtn(this,'ci1',true)">rupture</button>
+            <button class="choice-btn" onclick="choiceBtn(this,'ci1',false)">fraction</button>
           </div>
-          <div class="choice-score">Correct! Nautical (-ical, relating to ships/sailors) is the precise term for this measurement.</div>
+          <div class="choice-score" id="ci1-msg"></div>
         </div>
-        <div class="choice-item">
-          <div class="choice-prompt">Observing <span class="choice-blank">___</span> bodies &mdash; the sun, moon, and stars &mdash; allowed navigators to determine their position at sea.</div>
+        <div class="choice-item" id="ci2">
+          <div class="choice-prompt" style="font-style:italic;color:#7A88A8;">A piece has broken off a whole.</div>
+          <p style="font-size:14px;color:#3A4A6B;margin:6px 0 10px;">Which word names it?</p>
           <div class="choice-row">
-            <button class="choice-btn" onclick="choiceBtn(this,true)">celestial</button>
-            <button class="choice-btn" onclick="choiceBtn(this,false)">mathematical</button>
-            <button class="choice-btn" onclick="choiceBtn(this,false)">nautical</button>
+            <button class="choice-btn" onclick="choiceBtn(this,'ci2',false)">interrupt</button>
+            <button class="choice-btn" onclick="choiceBtn(this,'ci2',true)">fragment</button>
           </div>
-          <div class="choice-score">Correct! Celestial (-al, relating to) refers to the sky and heavenly bodies.</div>
+          <div class="choice-score" id="ci2-msg"></div>
         </div>
-        <div class="choice-item">
-          <div class="choice-prompt">Nat&rsquo;s corrections were not just theoretical &mdash; they were <span class="choice-blank">___</span>, designed to be used by ordinary sailors who needed to work the calculations in real conditions.</div>
+        <div class="choice-item" id="ci3">
+          <div class="choice-prompt" style="font-style:italic;color:#7A88A8;">Something is easily broken.</div>
+          <p style="font-size:14px;color:#3A4A6B;margin:6px 0 10px;">Which word describes it?</p>
           <div class="choice-row">
-            <button class="choice-btn" onclick="choiceBtn(this,false)">hazardous</button>
-            <button class="choice-btn" onclick="choiceBtn(this,false)">rigorous</button>
-            <button class="choice-btn" onclick="choiceBtn(this,true)">practical</button>
+            <button class="choice-btn" onclick="choiceBtn(this,'ci3',true)">fragile</button>
+            <button class="choice-btn" onclick="choiceBtn(this,'ci3',false)">abrupt</button>
           </div>
-          <div class="choice-score">Correct! Practical (-al, relating to actual practice) is the key word here.</div>
+          <div class="choice-score" id="ci3-msg"></div>
         </div>
       </div>
     </div>
@@ -970,11 +975,11 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   </div>
   <div class="activity bl-gold">
     <div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">3</div>
-      <div style="flex:1;"><div class="activity-title">&#x270F;&#xFE0F; Grammar: Revise with Prepositional Phrases</div>
-      <div class="activity-sub">Use &mdash; rewrite vague sentences with specific phrases</div></div>
+      <div style="flex:1;"><div class="activity-title">&#x270F;&#xFE0F; Grammar: Commas with Introductory Phrases</div>
+      <div class="activity-sub">Use &mdash; place the comma yourself</div></div>
     </div>
     <div class="activity-body">
-        <p>These expository sentences about Nat are technically correct but vague. Rewrite each one in your reading journal, adding at least one prepositional phrase to make it more specific and convincing.</p>
+        <p>Now <strong>use</strong> it. Chapter 15 moves between sea and shore constantly, and Latham marks every shift with an introductory phrase. Choose the correctly punctuated version.</p>
       <div class="dol-fix-sentence" style="line-height:2.5;">
         <p><strong>1.</strong> &ldquo;Nat worked hard.&rdquo;</p>
         <p><strong>2.</strong> &ldquo;He found errors.&rdquo;</p>
@@ -991,16 +996,16 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   </div>
   <div class="activity bl-navy">
     <div class="activity-head"><div class="activity-num" style="background:#0E3A5C;">4</div>
-      <div style="flex:1;"><div class="activity-title">&#x1F524; Spelling SWYK: Use -ous Words Correctly</div>
-      <div class="activity-sub">Show What You Know</div></div>
+      <div style="flex:1;"><div class="activity-title">&#x1F520; Spelling: Suffixes <em>-al</em> and <em>-ic</em></div>
+      <div class="activity-sub">Apply &mdash; build the adjective</div></div>
     </div>
     <div class="activity-body">
         <div class="swyk">
         <div class="swyk-label">&#x1F524; Show What You Know &middot; Spelling</div>
-        <div class="swyk-prompt">Choose four words from the list: <em>hazardous &middot; erroneous &middot; rigorous &middot; courageous &middot; ambitious &middot; mysterious &middot; glorious</em>. For each: (1) spell it correctly, (2) mark whether it uses -ous, -ious, or -eous, (3) write a sentence using it in the context of Nat&rsquo;s story.</div>
-        <div class="textbox-prompt">Word: [correct spelling] &mdash; Pattern: -ous/-ious/-eous &mdash; Sentence about Nat or navigation.</div>
-        <textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK: -ous/-ious/-eous words"
-          placeholder="1. hazardous (-ous) — Navigating without accurate charts was hazardous.&#10;2. erroneous (-eous) — The erroneous tables had to be corrected.&#10;3. ...&#10;4. ..."
+        <div class="swyk-prompt">Build the adjective from each noun and name the ending: <strong>nautical</strong> from <em>nautics</em>, <strong>magnet</strong>, <strong>history</strong>, <strong>coast</strong>.</div>
+        <div class="textbox-prompt">Write each adjective, name the ending it takes, and say what happened to the base word.</div>
+        <textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK: Suffixes -al and -ic"
+          placeholder="magnet &rarr; magnetic. It takes -ic and nothing changed in the base..."
           oninput="autoSave(this,'dot-spelling');gatherAnswers();"></textarea>
         <div class="journal-label">&#x1F4D3; <span class="saved-dot" id="dot-spelling"></span></div>
       </div>

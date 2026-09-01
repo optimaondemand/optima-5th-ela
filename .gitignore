@@ -1,0 +1,8 @@
+# Editor / sync backup artifacts
+*.pcbak
+*.bak
+*~
+
+# OS noise
+Thumbs.db
+.DS_Store

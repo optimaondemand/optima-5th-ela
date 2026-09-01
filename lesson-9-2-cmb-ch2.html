@@ -1216,36 +1216,41 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 
   <!-- ═══ GRAMMAR ═══ -->
   <div class="activity bl-gold">
-    <div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">3</div><div style="flex:1;"><div class="activity-title">✏️ Grammar: Active and Passive Voice</div><div class="activity-sub">Identify &mdash; spot active and passive voice in the wild</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">3</div><div style="flex:1;"><div class="activity-title">&#x270F;&#xFE0F; Grammar: Appositives &amp; Descriptive Phrases</div><div class="activity-sub">Identify &mdash; find the appositive and its commas</div></div></div>
     <div class="activity-body">
       
-      <p>Yesterday you learned the difference between active voice (the subject <em>does</em> the action) and passive voice (the subject <em>receives</em> the action). Today, identify which is which in sentences from Nat&rsquo;s story.</p>
+      <p>Yesterday you learned what an appositive is. Today, <strong>identify</strong> the punctuation it needs. The commas are not optional: they are what tell the reader the phrase can be lifted out.</p>
 
       <div class="key-concept">
-        <div class="key-concept-label">📌 Quick reminder</div>
-        <p><strong>Active:</strong> Subject + action verb. &ldquo;Father led Nat to the docks.&rdquo; (Father does the leading.)</p>
-        <p><strong>Passive:</strong> was/were + past participle. &ldquo;Nat was led to the docks by Father.&rdquo; (Nat receives the action.) Look for <em>was</em> or <em>were</em> as your signal.</p>
+        <div class="key-concept-label">&#x1F449; The Rules</div>
+        <p>An <strong>appositive</strong> is a noun phrase that renames the noun right before it: <em>Nathaniel Bowditch, <strong>a boy of twelve</strong>, was already teaching himself Latin.</em></p>
+        <p><strong>Commas fence it off</strong> on both sides. Lift the appositive out and the sentence still stands: <em>Nathaniel Bowditch was already teaching himself Latin.</em></p>
+        <p>A <strong>descriptive phrase</strong> does similar work without renaming: <em>Salem, <strong>crowded with masts and rigging</strong>, smelled of tar and salt.</em></p>
+        <p>Why writers use them: an appositive packs a whole fact into one sentence instead of two. Biography and expository writing lean on them constantly.</p>
       </div>
 
       <!-- Voice Spotter Game -->
-      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">🎯</span><p><strong>Voice Spotter!</strong> Read each sentence. Tap Active or Passive to identify the voice.</p></div>
+      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">🎯</span><p><strong>Practice: Appositive Spotter!</strong> One version of each pair punctuates the appositive correctly. Tap it.</p></div>
       <div class="spotter-game" id="spotterGame">
         <div class="spotter-sentence" id="spot1">
-          <strong style="font-size:13px;color:#7A88A8;display:block;margin-bottom:6px;">&ldquo;The Pilgrim was anchored at the far end of the wharf.&rdquo;</strong>
-          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">Active</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true">Passive</span>
+          <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which version is punctuated correctly?</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false" data-explain="The appositive needs a comma on each side. Without them the sentence runs together and the reader cannot tell where the renaming ends.">Nat&rsquo;s father a cooper by trade could not keep the family out of debt.</span>
+          <span style="display:block;height:6px;"></span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true" data-explain="Correct! Commas on both sides fence off the appositive.">Nat&rsquo;s father, a cooper by trade, could not keep the family out of debt.</span>
           <div class="spotter-result" id="spot1-result"></div>
         </div>
         <div class="spotter-sentence" id="spot2">
-          <strong style="font-size:13px;color:#7A88A8;display:block;margin-bottom:6px;">&ldquo;Father led Nat through the busy crowd at the wharves.&rdquo;</strong>
-          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="true">Active</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">Passive</span>
+          <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which version is punctuated correctly?</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="true" data-explain="Correct! The descriptive phrase is fenced off, and the sentence still stands without it.">The Salem wharves, crowded with ships from every ocean, drew Nat back again and again.</span>
+          <span style="display:block;height:6px;"></span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false" data-explain="Only one comma. A fenced-off phrase needs both, or neither.">The Salem wharves crowded with ships from every ocean, drew Nat back again and again.</span>
           <div class="spotter-result" id="spot2-result"></div>
         </div>
         <div class="spotter-sentence" id="spot3">
-          <strong style="font-size:13px;color:#7A88A8;display:block;margin-bottom:6px;">&ldquo;Tom&rsquo;s share of earnings was offered to Nat for his shilling.&rdquo;</strong>
-          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">Active</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true">Passive</span>
+          <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which version is punctuated correctly?</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true" data-explain="Correct! An appositive at the end of a sentence takes one comma before it and the period does the rest.">He was indentured to Ropes and Hodges, a ship chandlery on the waterfront.</span>
+          <span style="display:block;height:6px;"></span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false" data-explain="The comma is in the wrong place &mdash; it cuts the appositive in half instead of setting it off.">He was indentured to Ropes and Hodges a ship chandlery, on the waterfront.</span>
           <div class="spotter-result" id="spot3-result"></div>
         </div>
       </div>
@@ -1253,13 +1258,10 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <!-- SWYK Grammar — Day 2 rotation -->
       <div class="swyk">
         <div class="swyk-label">✏️ Show What You Know &middot; Grammar</div>
-        <div class="swyk-prompt">Read the two sentences below. For each one, write &ldquo;Active&rdquo; or &ldquo;Passive&rdquo; and explain how you can tell. Then write your own active-voice sentence about something that happens in Chapter 2.</div>
-        <div class="textbox-prompt">
-          <strong>a.</strong> &ldquo;The masts of the Pilgrim were raised at the dock.&rdquo;<br>
-          <strong>b.</strong> &ldquo;Nat tucked the expectation paper into his pocket.&rdquo;
-        </div>
-        <textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK: Identifying Active and Passive Voice"
-          placeholder="Sentence a is ___ voice because... I can tell because the word &quot;___&quot; signals this. Sentence b is ___ voice because... My own active-voice sentence from Chapter 2: ..."
+        <div class="swyk-prompt">Add an appositive to each sentence, punctuated correctly: <em>(1) Nathaniel Bowditch taught himself Latin. (2) Salem sent ships to every ocean. (3) The almanac was full of errors.</em></div>
+        <div class="textbox-prompt">Write all three sentences with an appositive added. Check that each one has a comma on both sides.</div>
+        <textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK: Appositives and Descriptive Phrases"
+          placeholder="Nathaniel Bowditch, a boy of twelve, taught himself Latin."
           oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea>
         <div class="journal-label">📓 <span class="saved-dot" id="dot-grammar"></span></div>
       </div>
@@ -1268,29 +1270,28 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 
   <!-- ═══ SPELLING ═══ -->
   <div class="activity bl-navy">
-    <div class="activity-head"><div class="activity-num" style="background:#0E3A5C;">4</div><div style="flex:1;"><div class="activity-title">🔠 Spelling: Long /ā/ — Identify the Pattern in New Words</div><div class="activity-sub">Identify &mdash; ai or a_e? Put your pattern knowledge to work</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#0E3A5C;">4</div><div style="flex:1;"><div class="activity-title">&#x1F520; Spelling: Accent &amp; Schwa in Nautical Words</div><div class="activity-sub">Identify &mdash; hear the quiet syllable</div></div></div>
     <div class="activity-body">
       
-      <p>You know two spellings for the long /ā/ sound: <strong>ai</strong> (two vowels together, like <em>sail</em>) and <strong>a_e</strong> (vowel + consonant + silent e, like <em>brave</em>). Now identify the pattern in new words &mdash; all from Nat&rsquo;s world.</p>
+      <p>Yesterday you found where the accent falls. Today, <strong>identify</strong> what happens to the syllables that do not get it. Sort each word by which syllable carries the stress &mdash; then notice that every unstressed vowel has gone lazy.</p>
 
-      <div class="callout callout-tip"><span class="callout-icon">💡</span><p>Your clue: listen for where the long /ā/ sound sits in the word. If it&rsquo;s in the middle followed by more consonants, it&rsquo;s likely <strong>ai</strong>. If the long /ā/ leads to the end of the word with a silent <em>e</em> after a consonant, it&rsquo;s likely <strong>a_e</strong>.</p></div>
+      <div class="callout callout-tip"><span class="callout-icon">💡</span><p>Your clue: say the word twice, stressing a different syllable each time. One version sounds like English; the other does not.</p></div>
 
-      <div class="callout callout-info"><span class="callout-icon">🎮</span><p><strong>Pattern Sort!</strong> Tap a word to select it, then tap the column where its long /ā/ pattern belongs.</p></div>
+      <div class="callout callout-info"><span class="callout-icon">🎮</span><p><strong>Accent Sort!</strong> Tap a word to select it, then tap the column for the syllable that carries its accent.</p></div>
 
       <div class="sort-bank" id="sortBank">
-        <span class="sort-chip" data-group="A" onclick="pickSortChip(this)">train</span>
-        <span class="sort-chip" data-group="B" onclick="pickSortChip(this)">trade</span>
-        <span class="sort-chip" data-group="A" onclick="pickSortChip(this)">chain</span>
-        <span class="sort-chip" data-group="B" onclick="pickSortChip(this)">blade</span>
-        <span class="sort-chip" data-group="A" onclick="pickSortChip(this)">strain</span>
-        <span class="sort-chip" data-group="B" onclick="pickSortChip(this)">frame</span>
-        <span class="sort-chip" data-group="A" onclick="pickSortChip(this)">plain</span>
-        <span class="sort-chip" data-group="B" onclick="pickSortChip(this)">name</span>
-      </div>
+          <span class="sort-chip" data-group="A" onclick="pickSortChip(this)">anchor</span>
+          <span class="sort-chip" data-group="A" onclick="pickSortChip(this)">captain</span>
+          <span class="sort-chip" data-group="A" onclick="pickSortChip(this)">compass</span>
+          <span class="sort-chip" data-group="B" onclick="pickSortChip(this)">equator</span>
+          <span class="sort-chip" data-group="A" onclick="pickSortChip(this)">harbor</span>
+          <span class="sort-chip" data-group="B" onclick="pickSortChip(this)">horizon</span>
+          <span class="sort-chip" data-group="B" onclick="pickSortChip(this)">meridian</span>
+        </div>
       <div class="sort-columns">
-        <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#0E3A5C,#1A4A6C);">ai pattern<br><span style="font-weight:400;font-size:12px;">two vowels together</span></div><div class="sort-col-drop" data-col="A" onclick="dropSortChip(this,'A')"></div></div>
-        <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#C8962A,#D4A843);">a_e pattern<br><span style="font-weight:400;font-size:12px;">vowel + consonant + silent e</span></div><div class="sort-col-drop" data-col="B" onclick="dropSortChip(this,'B')"></div></div>
-      </div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#0E3A5C,#1A4A6C);">Accent on syllable 1</div><div class="sort-col-drop" data-col="A" onclick="dropSortChip(this,'A')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#C8962A,#D4A843);">Accent on syllable 2</div><div class="sort-col-drop" data-col="B" onclick="dropSortChip(this,'B')"></div></div>
+        </div>
       <div class="sort-score" id="sortScore"></div>
 
       <!-- No spelling SWYK on Day 2 -->
