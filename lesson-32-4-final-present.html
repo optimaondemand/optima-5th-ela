@@ -474,6 +474,13 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .umap-connector{flex:1;height:3px;min-width:14px;margin-bottom:20px;background:linear-gradient(90deg,#E2E8F4,#C8862A,#E2E8F4);}
 .tracker-chapter-label{text-align:center;padding:10px 16px;font-size:13px;color:#7A88A8;font-weight:600;background:#FAFBFF;border-top:1px solid #E2E8F4;}
 .tracker-chapter-label strong{color:#C8862A;}
+
+/* poetry-corner:auto - poem block */
+.poetry-block{background:linear-gradient(135deg,#F0F5FF 0%,#E8F0FA 100%);border:2px solid #C8D8F0;border-left:5px solid #0E3A5C;border-radius:12px;padding:20px 24px;margin:14px 0;}
+.poetry-label{font-size:11px;color:#0E3A5C;font-weight:800;text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px;}
+.poetry-title{font-family:Georgia,serif;font-size:14px;font-weight:700;color:#0E1C42;margin-bottom:2px;}
+.poetry-author{font-size:12px;color:#7A88A8;margin-bottom:14px;}
+.poetry-lines{font-family:Georgia,serif;font-size:16px;color:#1A3A5C;line-height:2.1;}
 </style>
 </head>
 <body>
@@ -800,7 +807,34 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <button class="dol-check-btn" onclick="document.getElementById('dolAns4').classList.toggle('show')">🔍 See the Answer</button>
     <div class="dol-answer" id="dolAns4"><p><strong>Corrected:</strong> This year I read books about colonial girls, revolutionary apprentices, self-taught navigators, and gold rush stowaways. In every one of them, I found something I didn&rsquo;t expect &mdash; a version of courage or independence or survival that didn&rsquo;t look like those words had always looked before.</p></div>
   </div>
-</div><div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">📓</div><div style="flex:1;"><div class="activity-title">Read &amp; Write &mdash; Your Reading Journal</div></div></div><div class="activity-body"><div class="socratic-box"><div class="socratic-label">🤔 Reflect Before You Begin</div><p class="socratic-q">Today is your last day. In your journal: Write the one sentence about this year that you want your future self to read — the thing you most want to remember about who you were as a reader in 5th grade.</p></div></div></div><div class="tab-next-wrap"><p class="tab-transition-voice">Final word study, then the year-end synthesis.</p><button class="tab-next-btn" onclick="markDone('warmup');switchTab('words')">Continue to 🔤 Word Study →</button></div></div><div class="tab-panel" id="tab-words"><div class="activity bl-gold"><div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">1</div><div style="flex:1;"><div class="activity-title">📚 Vocabulary: Year-Long Final Review — SWYK</div></div></div><div class="activity-body">
+</div><div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">📓</div><div style="flex:1;"><div class="activity-title">Read &amp; Write &mdash; Your Reading Journal</div></div></div><div class="activity-body"><div class="socratic-box"><div class="socratic-label">🤔 Reflect Before You Begin</div><p class="socratic-q">Today is your last day. In your journal: Write the one sentence about this year that you want your future self to read — the thing you most want to remember about who you were as a reader in 5th grade.</p></div></div></div><!-- poetry-corner:auto -->
+  <div class="activity bl-navy">
+    <div class="activity-head"><div class="activity-num" style="background:#0E3A5C;">📜</div>
+      <div style="flex:1;"><div class="activity-title">Poetry Corner</div>
+      <div class="activity-sub">Choose a poem from the year and perform it</div></div>
+    </div>
+    <div class="activity-body">
+      <p>You have studied poems all year alongside five novels. For your final Poetry Corner, you choose.</p>
+      <div class="poetry-block">
+        <div class="poetry-label">📜 Poetry Corner</div>
+        <div class="poetry-title">&ldquo;Wind and Silver&rdquo;</div>
+        <div class="poetry-author">Amy Lowell, <em>What&rsquo;s O&rsquo;Clock</em>, 1925 &mdash; public domain</div>
+        <div class="poetry-lines">
+          Greatly shining,<br>
+          The Autumn moon floats in the thin sky;<br>
+          And the fish-ponds shake their backs and flash their dragon scales<br>
+          As she passes over them.<br>
+        </div>
+      </div>
+      <div class="callout callout-tip"><span class="callout-icon">💡</span><p>Pick any poem from this year &mdash; Stevenson&rsquo;s train, Sandburg&rsquo;s fog or buffaloes, Hopkins, Hughes, Frost, Tennyson, Pound, Lowell. Prepare it properly: know its form, its figurative language, and its tone before you read a word aloud.</p></div>
+      <div class="socratic-box"><div class="socratic-label">🤔 Think — Write in Your Journal</div>
+        <p class="socratic-q">Perform your chosen poem, then write your portfolio note: <strong>name the poem&rsquo;s form and its main figurative move, and explain the one choice you made with your voice to reflect them.</strong></p>
+      </div>
+      <p style="font-size:13px;color:#7A88A8;font-style:italic;margin-top:10px;">Write your response in your reading journal.</p>
+    </div>
+  </div>
+<!-- /poetry-corner:auto -->
+<div class="tab-next-wrap"><p class="tab-transition-voice">Final word study, then the year-end synthesis.</p><button class="tab-next-btn" onclick="markDone('warmup');switchTab('words')">Continue to 🔤 Word Study →</button></div></div><div class="tab-panel" id="tab-words"><div class="activity bl-gold"><div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">1</div><div style="flex:1;"><div class="activity-title">📚 Vocabulary: Year-Long Final Review — SWYK</div></div></div><div class="activity-body">
 <div class="key-concept"><div class="key-concept-label">📌 Year-Long Vocabulary — Final Review</div>
   <p><strong>From the historical novels (Wks 1–14):</strong> defiance, conviction, tyranny, rebellion, apprentice, covenant, celestial, latitude, maritime, perseverance</p>
   <p style="margin-top:6px;"><strong>From the adventure novels (Wks 25–31):</strong> fortitude, valor, tenacious, ludicrous, notoriety, exuberance, reprieve, spirited, reunion, prospector, benefactor, counsel</p>

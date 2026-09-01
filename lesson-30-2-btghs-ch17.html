@@ -474,6 +474,13 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .umap-connector{flex:1;height:3px;min-width:14px;margin-bottom:20px;background:linear-gradient(90deg,#E2E8F4,#C8862A,#E2E8F4);}
 .tracker-chapter-label{text-align:center;padding:10px 16px;font-size:13px;color:#7A88A8;font-weight:600;background:#FAFBFF;border-top:1px solid #E2E8F4;}
 .tracker-chapter-label strong{color:#C8862A;}
+
+/* poetry-corner:auto - poem block */
+.poetry-block{background:linear-gradient(135deg,#F0F5FF 0%,#E8F0FA 100%);border:2px solid #C8D8F0;border-left:5px solid #0E3A5C;border-radius:12px;padding:20px 24px;margin:14px 0;}
+.poetry-label{font-size:11px;color:#0E3A5C;font-weight:800;text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px;}
+.poetry-title{font-family:Georgia,serif;font-size:14px;font-weight:700;color:#0E1C42;margin-bottom:2px;}
+.poetry-author{font-size:12px;color:#7A88A8;margin-bottom:14px;}
+.poetry-lines{font-family:Georgia,serif;font-size:16px;color:#1A3A5C;line-height:2.1;}
 </style>
 </head>
 <body>
@@ -797,7 +804,32 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <button class="dol-check-btn" onclick="document.getElementById('dolAns2').classList.toggle('show')">🔍 See the Answer</button>
     <div class="dol-answer" id="dolAns2"><p><strong>Corrected:</strong> The two partners flung their hats in the air. In sheer exuberance, they clasped arms and swung around and around in the oblong pit. &ldquo;We&rsquo;ve done it, Jack — we&rsquo;ve done it!&rdquo; Praiseworthy roared. &ldquo;We&rsquo;ve struck it rich!&rdquo;</p></div>
   </div>
-</div><div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">📓</div><div style="flex:1;"><div class="activity-title">Read &amp; Write &mdash; Your Reading Journal</div></div></div><div class="activity-body"><div class="socratic-box"><div class="socratic-label">🤔 Before You Read</div><p class="socratic-q">Chapter 17 includes two triumphs: striking gold AND Praiseworthy defeating the Mountain Ox in a boxing match. In your journal: Which victory do you think matters more to the story — and why? Write 2–3 sentences before reading.</p></div></div></div><div class="tab-next-wrap"><p class="tab-transition-voice">Grammar edit SWYK today. Then Chapter 17.</p><button class="tab-next-btn" onclick="markDone('warmup');switchTab('words')">Continue to 🔤 Word Study →</button></div></div><div class="tab-panel" id="tab-words"><div class="activity bl-sage"><div class="activity-head"><div class="activity-num" style="background:#52B788;">1</div><div style="flex:1;"><div class="activity-title">✏️ Grammar: Editing Conventions — SWYK</div></div></div><div class="activity-body"><div class="key-concept"><div class="key-concept-label">📌 Editing Checklist: Punctuation, Capitalization &amp; Clarity</div>
+</div><div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">📓</div><div style="flex:1;"><div class="activity-title">Read &amp; Write &mdash; Your Reading Journal</div></div></div><div class="activity-body"><div class="socratic-box"><div class="socratic-label">🤔 Before You Read</div><p class="socratic-q">Chapter 17 includes two triumphs: striking gold AND Praiseworthy defeating the Mountain Ox in a boxing match. In your journal: Which victory do you think matters more to the story — and why? Write 2–3 sentences before reading.</p></div></div></div><!-- poetry-corner:auto -->
+  <div class="activity bl-navy">
+    <div class="activity-head"><div class="activity-num" style="background:#0E3A5C;">📜</div>
+      <div style="flex:1;"><div class="activity-title">Poetry Corner</div>
+      <div class="activity-sub">Every element, in two lines</div></div>
+    </div>
+    <div class="activity-body">
+      <p>This is the shortest poem you will study all year. It has no verb, no sentence, and no explanation. It still has all five elements at work.</p>
+      <div class="poetry-block">
+        <div class="poetry-label">📜 Poetry Corner</div>
+        <div class="poetry-title">&ldquo;In a Station of the Metro&rdquo;</div>
+        <div class="poetry-author">Ezra Pound, <em>Lustra</em>, 1916 &mdash; public domain</div>
+        <div class="poetry-lines">
+          The apparition of these faces in the crowd;<br>
+          Petals on a wet, black bough.<br>
+        </div>
+      </div>
+      <div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Form:</strong> two lines, no title-drop, nothing wasted. <strong>Rhyme:</strong> none. <strong>Meter:</strong> none regular. <strong>Line breaks:</strong> exactly one, and it does everything &mdash; it is the hinge the whole poem turns on. <strong>Figurative language:</strong> a metaphor with the connective removed. Pound does not say faces are <em>like</em> petals; he sets them side by side and steps back.</p></div>
+      <div class="socratic-box"><div class="socratic-label">🤔 Think — Write in Your Journal</div>
+        <p class="socratic-q">Explain how a poem with no rhyme, no meter and no sentence can still be a poem. <strong>What is the single line break doing?</strong></p>
+      </div>
+      <p style="font-size:13px;color:#7A88A8;font-style:italic;margin-top:10px;">Write your response in your reading journal.</p>
+    </div>
+  </div>
+<!-- /poetry-corner:auto -->
+<div class="tab-next-wrap"><p class="tab-transition-voice">Grammar edit SWYK today. Then Chapter 17.</p><button class="tab-next-btn" onclick="markDone('warmup');switchTab('words')">Continue to 🔤 Word Study →</button></div></div><div class="tab-panel" id="tab-words"><div class="activity bl-sage"><div class="activity-head"><div class="activity-num" style="background:#52B788;">1</div><div style="flex:1;"><div class="activity-title">✏️ Grammar: Editing Conventions — SWYK</div></div></div><div class="activity-body"><div class="key-concept"><div class="key-concept-label">📌 Editing Checklist: Punctuation, Capitalization &amp; Clarity</div>
   <p><strong>Punctuation:</strong></p>
   <p>✓ Commas in compound sentences (before FANBOYS joining two independent clauses)</p>
   <p>✓ Commas after introductory phrases and dependent clauses</p>

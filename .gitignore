@@ -6,3 +6,6 @@
 # OS noise
 Thumbs.db
 .DS_Store
+
+# local backups from the poetry-corner batch edit
+*.pcbak

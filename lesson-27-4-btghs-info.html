@@ -475,6 +475,13 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .umap-connector{flex:1;height:3px;min-width:14px;margin-bottom:20px;background:linear-gradient(90deg,#E2E8F4,#C8862A,#E2E8F4);}
 .tracker-chapter-label{text-align:center;padding:10px 16px;font-size:13px;color:#7A88A8;font-weight:600;background:#FAFBFF;border-top:1px solid #E2E8F4;}
 .tracker-chapter-label strong{color:#C8862A;}
+
+/* poetry-corner:auto - poem block */
+.poetry-block{background:linear-gradient(135deg,#F0F5FF 0%,#E8F0FA 100%);border:2px solid #C8D8F0;border-left:5px solid #0E3A5C;border-radius:12px;padding:20px 24px;margin:14px 0;}
+.poetry-label{font-size:11px;color:#0E3A5C;font-weight:800;text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px;}
+.poetry-title{font-family:Georgia,serif;font-size:14px;font-weight:700;color:#0E1C42;margin-bottom:2px;}
+.poetry-author{font-size:12px;color:#7A88A8;margin-bottom:14px;}
+.poetry-lines{font-family:Georgia,serif;font-size:16px;color:#1A3A5C;line-height:2.1;}
 </style>
 </head>
 <body>
@@ -782,7 +789,35 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <button class="dol-check-btn" onclick="document.getElementById('dolAns4').classList.toggle('show')">🔍 See the Answer</button>
     <div class="dol-answer" id="dolAns4"><p><strong>Corrected:</strong> Miners worked from dawn to dusk in icy mountain streams; their backs ached, their boots rotted, and most of them found little or nothing. Yet still they kept working, because the dream was more powerful than the reality.</p></div>
   </div>
-</div><div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">📓</div><div style="flex:1;"><div class="activity-title">Read &amp; Write &mdash; Your Reading Journal</div></div></div><div class="activity-body"><div class="socratic-box"><div class="socratic-label">🤔 Before You Read</div><p class="socratic-q">Jack has pictured gold fields since Boston — nuggets the size of pumpkins, grizzly bears, outlaws. In your journal: What do you think the reality will actually look like? Write 2–3 sentences predicting what Jack is about to discover.</p></div></div></div><div class="tab-next-wrap"><p class="tab-transition-voice">Day 4 — explain everything first, then read.</p><button class="tab-next-btn" onclick="markDone('warmup');switchTab('words')">Continue to 🔤 Word Study →</button></div></div><div class="tab-panel" id="tab-words"><div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div><div style="flex:1;"><div class="activity-title">🔬 Morphology: Roots <em>curr/curs</em> + <em>tract</em> — Explain</div></div></div><div class="activity-body"><div class="callout callout-think"><span class="callout-icon">✏️</span>
+</div><div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">📓</div><div style="flex:1;"><div class="activity-title">Read &amp; Write &mdash; Your Reading Journal</div></div></div><div class="activity-body"><div class="socratic-box"><div class="socratic-label">🤔 Before You Read</div><p class="socratic-q">Jack has pictured gold fields since Boston — nuggets the size of pumpkins, grizzly bears, outlaws. In your journal: What do you think the reality will actually look like? Write 2–3 sentences predicting what Jack is about to discover.</p></div></div></div><!-- poetry-corner:auto -->
+  <div class="activity bl-navy">
+    <div class="activity-head"><div class="activity-num" style="background:#0E3A5C;">📜</div>
+      <div style="flex:1;"><div class="activity-title">Poetry Corner</div>
+      <div class="activity-sub">Line breaks that hold a moment open</div></div>
+    </div>
+    <div class="activity-body">
+      <p>The same stanza, read for a different thing. Today, look only at where the lines stop.</p>
+      <div class="poetry-block">
+        <div class="poetry-label">📜 Poetry Corner</div>
+        <div class="poetry-title">&ldquo;The Road Not Taken (first stanza)&rdquo;</div>
+        <div class="poetry-author">Robert Frost, <em>Mountain Interval</em>, 1916 &mdash; public domain</div>
+        <div class="poetry-lines">
+          Two roads diverged in a yellow wood,<br>
+          And sorry I could not travel both<br>
+          And be one traveler, long I stood<br>
+          And looked down one as far as I could<br>
+          To where it bent in the undergrowth;<br>
+        </div>
+      </div>
+      <div class="callout callout-tip"><span class="callout-icon">💡</span><p>Frost breaks lines mid-thought &mdash; &ldquo;long I stood / And looked down one as far as I could&rdquo;. Each break makes you wait. A poem about hesitating is built out of hesitations. Line breaks are how a poet controls your speed.</p></div>
+      <div class="socratic-box"><div class="socratic-label">🤔 Think — Write in Your Journal</div>
+        <p class="socratic-q">Find the two line breaks that fall in the middle of a thought. <strong>Explain what waiting at that break does to the reader.</strong> Then compare it to how Fleischman paces a moment of decision in this week&rsquo;s chapters.</p>
+      </div>
+      <p style="font-size:13px;color:#7A88A8;font-style:italic;margin-top:10px;">Write your response in your reading journal.</p>
+    </div>
+  </div>
+<!-- /poetry-corner:auto -->
+<div class="tab-next-wrap"><p class="tab-transition-voice">Day 4 — explain everything first, then read.</p><button class="tab-next-btn" onclick="markDone('warmup');switchTab('words')">Continue to 🔤 Word Study →</button></div></div><div class="tab-panel" id="tab-words"><div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div><div style="flex:1;"><div class="activity-title">🔬 Morphology: Roots <em>curr/curs</em> + <em>tract</em> — Explain</div></div></div><div class="activity-body"><div class="callout callout-think"><span class="callout-icon">✏️</span>
   <p>In your journal: Explain <em>curr/curs</em> and <em>tract</em> to a classmate. For each: meaning, three example words, one sentence connecting the root to something in Chapters 7–9. 4–6 sentences total.</p>
 </div></div></div><div class="activity bl-gold"><div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">2</div><div style="flex:1;"><div class="activity-title">📚 Vocabulary SWYK: Choice Board</div></div></div><div class="activity-body"><p>Show what you know: <strong>skedaddled &middot; grubstake &middot; diggings &middot; assay &middot; jipijapa</strong></p>
 <div class="vocab-choice-grid">

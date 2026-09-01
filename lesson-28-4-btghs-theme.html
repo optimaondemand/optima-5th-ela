@@ -475,6 +475,13 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .umap-connector{flex:1;height:3px;min-width:14px;margin-bottom:20px;background:linear-gradient(90deg,#E2E8F4,#C8862A,#E2E8F4);}
 .tracker-chapter-label{text-align:center;padding:10px 16px;font-size:13px;color:#7A88A8;font-weight:600;background:#FAFBFF;border-top:1px solid #E2E8F4;}
 .tracker-chapter-label strong{color:#C8862A;}
+
+/* poetry-corner:auto - poem block */
+.poetry-block{background:linear-gradient(135deg,#F0F5FF 0%,#E8F0FA 100%);border:2px solid #C8D8F0;border-left:5px solid #0E3A5C;border-radius:12px;padding:20px 24px;margin:14px 0;}
+.poetry-label{font-size:11px;color:#0E3A5C;font-weight:800;text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px;}
+.poetry-title{font-family:Georgia,serif;font-size:14px;font-weight:700;color:#0E1C42;margin-bottom:2px;}
+.poetry-author{font-size:12px;color:#7A88A8;margin-bottom:14px;}
+.poetry-lines{font-family:Georgia,serif;font-size:16px;color:#1A3A5C;line-height:2.1;}
 </style>
 </head>
 <body>
@@ -787,7 +794,37 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <button class="dol-check-btn" onclick="document.getElementById('dolAns4').classList.toggle('show')">🔍 See the Answer</button>
     <div class="dol-answer" id="dolAns4"><p><strong>Corrected:</strong> Furthermore, Praiseworthy&rsquo;s valor in Chapter 10 demonstrates that true fortitude isn&rsquo;t recklessness; it is strength in service of what matters most &mdash; and the validity of his courage is proved by what he chooses to protect.</p></div>
   </div>
-</div><div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">📓</div><div style="flex:1;"><div class="activity-title">Read &amp; Write &mdash; Your Reading Journal</div></div></div><div class="activity-body"><div class="socratic-box"><div class="socratic-label">🤔 Before You Read</div><p class="socratic-q">Looking back over Chapters 1–12, in your journal: If you had to name one theme — one thing Fleischman is saying about life, people, or courage — what would it be? Write 2–3 sentences. This will be the core of your literary response.</p></div></div></div><div class="tab-next-wrap"><p class="tab-transition-voice">Day 4 — explain and complete. Word Study first.</p><button class="tab-next-btn" onclick="markDone('warmup');switchTab('words')">Continue to 🔤 Word Study →</button></div></div><div class="tab-panel" id="tab-words"><div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div><div style="flex:1;"><div class="activity-title">🔬 Morphology: <em>fort</em> + <em>val/valid</em> — Explain</div></div></div><div class="activity-body"><div class="callout callout-think"><span class="callout-icon">✏️</span><p>In your journal: Explain <em>fort</em> and <em>val/valid</em> to a classmate. For each root: meaning, three examples, and one sentence connecting it to Praiseworthy. 4–6 sentences total.</p></div></div></div><div class="activity bl-gold"><div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">2</div><div style="flex:1;"><div class="activity-title">📚 Vocabulary SWYK: Choice Board</div></div></div><div class="activity-body"><p>Show what you know: <strong>fortitude &middot; valor &middot; validity &middot; highwayman &middot; exasperation</strong></p>
+</div><div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">📓</div><div style="flex:1;"><div class="activity-title">Read &amp; Write &mdash; Your Reading Journal</div></div></div><div class="activity-body"><div class="socratic-box"><div class="socratic-label">🤔 Before You Read</div><p class="socratic-q">Looking back over Chapters 1–12, in your journal: If you had to name one theme — one thing Fleischman is saying about life, people, or courage — what would it be? Write 2–3 sentences. This will be the core of your literary response.</p></div></div></div><!-- poetry-corner:auto -->
+  <div class="activity bl-navy">
+    <div class="activity-head"><div class="activity-num" style="background:#0E3A5C;">📜</div>
+      <div style="flex:1;"><div class="activity-title">Poetry Corner</div>
+      <div class="activity-sub">Tracking two themes through one text</div></div>
+    </div>
+    <div class="activity-body">
+      <p>You found two themes in six lines yesterday. A novel gives an author three hundred pages to do the same thing.</p>
+      <div class="poetry-block">
+        <div class="poetry-label">📜 Poetry Corner</div>
+        <div class="poetry-title">&ldquo;The Eagle (A Fragment)&rdquo;</div>
+        <div class="poetry-author">Alfred, Lord Tennyson, 1851 &mdash; public domain</div>
+        <div class="poetry-lines">
+          He clasps the crag with crooked hands;<br>
+          Close to the sun in lonely lands,<br>
+          Ring&rsquo;d with the azure world, he stands.<br>
+          <br>
+          The wrinkled sea beneath him crawls;<br>
+          He watches from his mountain walls,<br>
+          And like a thunderbolt he falls.<br>
+        </div>
+      </div>
+      <div class="callout callout-tip"><span class="callout-icon">💡</span><p>Tennyson develops both themes at once through the same details &mdash; the height that gives the eagle power is the height that isolates him. Skilled authors rarely run themes in separate lanes; they build them out of the same material.</p></div>
+      <div class="socratic-box"><div class="socratic-label">🤔 Think — Write in Your Journal</div>
+        <p class="socratic-q">Name two themes in <em>By the Great Horn Spoon!</em> and find one scene that develops <strong>both at the same time</strong>. Explain how a single scene manages it.</p>
+      </div>
+      <p style="font-size:13px;color:#7A88A8;font-style:italic;margin-top:10px;">Write your response in your reading journal.</p>
+    </div>
+  </div>
+<!-- /poetry-corner:auto -->
+<div class="tab-next-wrap"><p class="tab-transition-voice">Day 4 — explain and complete. Word Study first.</p><button class="tab-next-btn" onclick="markDone('warmup');switchTab('words')">Continue to 🔤 Word Study →</button></div></div><div class="tab-panel" id="tab-words"><div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div><div style="flex:1;"><div class="activity-title">🔬 Morphology: <em>fort</em> + <em>val/valid</em> — Explain</div></div></div><div class="activity-body"><div class="callout callout-think"><span class="callout-icon">✏️</span><p>In your journal: Explain <em>fort</em> and <em>val/valid</em> to a classmate. For each root: meaning, three examples, and one sentence connecting it to Praiseworthy. 4–6 sentences total.</p></div></div></div><div class="activity bl-gold"><div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">2</div><div style="flex:1;"><div class="activity-title">📚 Vocabulary SWYK: Choice Board</div></div></div><div class="activity-body"><p>Show what you know: <strong>fortitude &middot; valor &middot; validity &middot; highwayman &middot; exasperation</strong></p>
 <div class="vocab-choice-grid">
   <div class="vocab-choice-card" onclick="selectVocabChoice(this)"><div class="vocab-choice-num">Option A</div><div class="vocab-choice-title">📓 Praiseworthy&rsquo;s Journal</div><div class="vocab-choice-desc">Write a 5–7 sentence journal entry from Praiseworthy&rsquo;s point of view during Chapters 10–12, using all five words naturally and accurately.</div></div>
   <div class="vocab-choice-card" onclick="selectVocabChoice(this)"><div class="vocab-choice-num">Option B</div><div class="vocab-choice-title">🔍 Root Connection</div><div class="vocab-choice-desc">For <em>fortitude</em>, <em>valor</em>, and <em>validity</em>: write the Latin root, its meaning, and explain how the root gives you the English word. Then use all five words in sentences.</div></div>

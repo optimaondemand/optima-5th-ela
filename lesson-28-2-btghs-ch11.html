@@ -475,6 +475,13 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .umap-connector{flex:1;height:3px;min-width:14px;margin-bottom:20px;background:linear-gradient(90deg,#E2E8F4,#C8862A,#E2E8F4);}
 .tracker-chapter-label{text-align:center;padding:10px 16px;font-size:13px;color:#7A88A8;font-weight:600;background:#FAFBFF;border-top:1px solid #E2E8F4;}
 .tracker-chapter-label strong{color:#C8862A;}
+
+/* poetry-corner:auto - poem block */
+.poetry-block{background:linear-gradient(135deg,#F0F5FF 0%,#E8F0FA 100%);border:2px solid #C8D8F0;border-left:5px solid #0E3A5C;border-radius:12px;padding:20px 24px;margin:14px 0;}
+.poetry-label{font-size:11px;color:#0E3A5C;font-weight:800;text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px;}
+.poetry-title{font-family:Georgia,serif;font-size:14px;font-weight:700;color:#0E1C42;margin-bottom:2px;}
+.poetry-author{font-size:12px;color:#7A88A8;margin-bottom:14px;}
+.poetry-lines{font-family:Georgia,serif;font-size:16px;color:#1A3A5C;line-height:2.1;}
 </style>
 </head>
 <body>
@@ -806,7 +813,37 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <button class="dol-check-btn" onclick="document.getElementById('dolAns2').classList.toggle('show')">🔍 See the Answer</button>
     <div class="dol-answer" id="dolAns2"><p><strong>Corrected:</strong> Jack&rsquo;s excitement at reaching Hangtown was enormous; but Praiseworthy&rsquo;s calmness and his insistence on eating lunch first turned that excitement into pure exasperation.</p></div>
   </div>
-</div><div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">📓</div><div style="flex:1;"><div class="activity-title">Read &amp; Write &mdash; Your Reading Journal</div></div></div><div class="activity-body"><div class="socratic-box"><div class="socratic-label">🤔 Before You Read</div><p class="socratic-q">Jack has waited 15,000 miles to reach the gold fields. Praiseworthy insists on eating lunch first. In your journal: Why does Praiseworthy keep slowing Jack down at every stage? Is this a flaw in his character — or is it something else? Write 2–3 sentences before reading.</p></div></div></div><div class="tab-next-wrap"><p class="tab-transition-voice">Word study first, then Hangtown.</p><button class="tab-next-btn" onclick="markDone('warmup');switchTab('words')">Continue to 🔤 Word Study →</button></div></div><div class="tab-panel" id="tab-words"><div class="activity bl-sage"><div class="activity-head"><div class="activity-num" style="background:#52B788;">1</div><div style="flex:1;"><div class="activity-title">&#x270F;&#xFE0F; Grammar: Transitions — Identify Stressed Syllables</div></div></div><div class="activity-body"><div class="key-concept"><div class="key-concept-label">📌 Syllable Breakdown</div>
+</div><div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">📓</div><div style="flex:1;"><div class="activity-title">Read &amp; Write &mdash; Your Reading Journal</div></div></div><div class="activity-body"><div class="socratic-box"><div class="socratic-label">🤔 Before You Read</div><p class="socratic-q">Jack has waited 15,000 miles to reach the gold fields. Praiseworthy insists on eating lunch first. In your journal: Why does Praiseworthy keep slowing Jack down at every stage? Is this a flaw in his character — or is it something else? Write 2–3 sentences before reading.</p></div></div></div><!-- poetry-corner:auto -->
+  <div class="activity bl-navy">
+    <div class="activity-head"><div class="activity-num" style="background:#0E3A5C;">📜</div>
+      <div style="flex:1;"><div class="activity-title">Poetry Corner</div>
+      <div class="activity-sub">More than one theme in six lines</div></div>
+    </div>
+    <div class="activity-body">
+      <p>Six lines, two stanzas. Read it twice before you decide what it is about &mdash; and be suspicious of your first answer.</p>
+      <div class="poetry-block">
+        <div class="poetry-label">📜 Poetry Corner</div>
+        <div class="poetry-title">&ldquo;The Eagle (A Fragment)&rdquo;</div>
+        <div class="poetry-author">Alfred, Lord Tennyson, 1851 &mdash; public domain</div>
+        <div class="poetry-lines">
+          He clasps the crag with crooked hands;<br>
+          Close to the sun in lonely lands,<br>
+          Ring&rsquo;d with the azure world, he stands.<br>
+          <br>
+          The wrinkled sea beneath him crawls;<br>
+          He watches from his mountain walls,<br>
+          And like a thunderbolt he falls.<br>
+        </div>
+      </div>
+      <div class="callout callout-tip"><span class="callout-icon">💡</span><p>One reading: this is a poem about power. He <strong>clasps</strong>, he <strong>stands</strong>, he falls <strong>like a thunderbolt</strong>. Another reading, equally supported: this is a poem about isolation &mdash; <strong>lonely lands</strong>, ringed by nothing but sky, watching from walls. Both are in the text. A poem is not required to be about one thing.</p></div>
+      <div class="socratic-box"><div class="socratic-label">🤔 Think — Write in Your Journal</div>
+        <p class="socratic-q">Argue for both readings using evidence. <strong>Then say whether the two themes fight each other or depend on each other</strong>, and why.</p>
+      </div>
+      <p style="font-size:13px;color:#7A88A8;font-style:italic;margin-top:10px;">Write your response in your reading journal.</p>
+    </div>
+  </div>
+<!-- /poetry-corner:auto -->
+<div class="tab-next-wrap"><p class="tab-transition-voice">Word study first, then Hangtown.</p><button class="tab-next-btn" onclick="markDone('warmup');switchTab('words')">Continue to 🔤 Word Study →</button></div></div><div class="tab-panel" id="tab-words"><div class="activity bl-sage"><div class="activity-head"><div class="activity-num" style="background:#52B788;">1</div><div style="flex:1;"><div class="activity-title">&#x270F;&#xFE0F; Grammar: Transitions — Identify Stressed Syllables</div></div></div><div class="activity-body"><div class="key-concept"><div class="key-concept-label">📌 Syllable Breakdown</div>
   <p>HOW&middot;ev&middot;er &middot; THERE&middot;fore &middot; fur&middot;THER&middot;more &middot; MEAN&middot;while</p>
   <p>nev&middot;er&middot;THE&middot;less &middot; con&middot;SE&middot;quent&middot;ly &middot; in CON&middot;trast &middot; as a re&middot;SULT</p>
   <p style="font-size:13px;color:#7A88A8;margin-top:6px;">Notice that multi-word phrases (<em>in contrast</em>, <em>as a result</em>) are two or three separate words — but function as one transition unit.</p>
