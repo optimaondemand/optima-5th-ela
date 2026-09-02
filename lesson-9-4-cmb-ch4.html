@@ -973,7 +973,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         <div class="intro-card-body">
           <div class="obj-line"><span class="obj-icon">🌱</span><span><strong>Morphology:</strong> I will <em>explain</em> which root built each word from our naut/nav/port family.</span></div>
           <div class="obj-line"><span class="obj-icon">📖</span><span><strong>Vocabulary:</strong> I will <em>choose</em> how to demonstrate what I know about this week&rsquo;s words.</span></div>
-          <div class="obj-line"><span class="obj-icon">✏️</span><span><strong>Grammar:</strong> I will <em>explain</em> why active voice makes writing stronger and choose the better sentence.</span></div>
+          <div class="obj-line"><span class="obj-icon">✏️</span><span><strong>Grammar:</strong> I will <em>explain</em> why a biographer relies on appositives, and choose the version that carries more.</span></div>
           <div class="obj-line"><span class="obj-icon">🔤</span><span><strong>Spelling:</strong> I will <em>challenge</em> myself to find the word that breaks the vowel pattern.</span></div>
           <div class="obj-line"><span class="obj-icon">📖</span><span><strong>Reading:</strong> I will <em>read</em> Chapter 4 and reflect on what stays constant in Nat across the whole week.</span></div>
         </div>
@@ -1250,39 +1250,39 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         <div class="wins-group" id="gw1">
           <div class="wins-label">Pair 1</div>
           <div class="wins-options">
-            <button class="wins-btn" onclick="gramWinsClick(this,'gw1',true)">Hab signed his name to the ship&rsquo;s roster and said goodbye to his family.</button>
-            <button class="wins-btn" onclick="gramWinsClick(this,'gw1',false)">The ship&rsquo;s roster was signed by Hab before he said goodbye to his family.</button>
+            <button class="wins-btn" onclick="gramWinsClick(this,'gw1',true)">Hab, Nat&rsquo;s brother, had signed on to a ship before the indenture papers ever came.</button>
+            <button class="wins-btn" onclick="gramWinsClick(this,'gw1',false)">Hab had signed on to a ship before the indenture papers ever came. Hab was Nat&rsquo;s brother.</button>
           </div>
           <div class="wins-msg" id="gw1-msg"></div>
         </div>
         <div class="wins-group" id="gw2">
           <div class="wins-label">Pair 2</div>
           <div class="wins-options">
-            <button class="wins-btn" onclick="gramWinsClick(this,'gw2',false)">The indenture papers were brought to Nat by the men at Ropes and Hodges.</button>
-            <button class="wins-btn" onclick="gramWinsClick(this,'gw2',true)">The men at Ropes and Hodges brought the indenture papers to Nat.</button>
+            <button class="wins-btn" onclick="gramWinsClick(this,'gw2',false)">The men at Ropes and Hodges brought the papers. Ropes and Hodges was a ship chandlery.</button>
+            <button class="wins-btn" onclick="gramWinsClick(this,'gw2',true)">The men at Ropes and Hodges, a ship chandlery on the waterfront, brought the papers.</button>
           </div>
           <div class="wins-msg" id="gw2-msg"></div>
         </div>
         <div class="wins-group" id="gw3">
           <div class="wins-label">Pair 3</div>
           <div class="wins-options">
-            <button class="wins-btn" onclick="gramWinsClick(this,'gw3',true)">Nat picked up the pen and signed his name without a word.</button>
-            <button class="wins-btn" onclick="gramWinsClick(this,'gw3',false)">The pen was picked up by Nat, and his name was signed without a word.</button>
+            <button class="wins-btn" onclick="gramWinsClick(this,'gw3',true)">Salem, a harbour town that lived by its ships, had no other trade to offer a boy.</button>
+            <button class="wins-btn" onclick="gramWinsClick(this,'gw3',false)">Salem had no other trade to offer a boy, and Salem was a harbour town that lived by its ships.</button>
           </div>
           <div class="wins-msg" id="gw3-msg"></div>
         </div>
       </div>
       <div id="gramWinsFinal" style="display:none;font-size:15px;padding:12px;background:#E8F5E9;border:2px solid #C8E6C9;border-radius:10px;margin-top:8px;">
-        ✅ You can spot the stronger sentence now. That&rsquo;s the instinct that will make your own writing sharper.
+        ✅ You can see what an appositive buys a writer now &mdash; a whole sentence saved, and nothing lost.
       </div>
 
     
       <div class="swyk" style="margin-top:14px;">
         <div class="swyk-label">&#129814; Show What You Know</div>
-        <div class="swyk-prompt">Pick one of the pairs above. Explain why the stronger version is stronger: who is doing the acting, and what happens to that person when the sentence flips into passive voice. Then write one sentence of your own about Chapter 4 in active voice.</div>
-        <div class="textbox-prompt">Name the pair, explain what passive voice hides, then write your own active sentence.</div>
+        <div class="swyk-prompt">Pick one of the pairs above. Explain what the appositive version does that the two-sentence version does not &mdash; what the commas tell the reader, and what Latham gains by writing it that way with four chapters to cover a whole childhood. Then write one sentence of your own about Chapter 4 that uses an appositive.</div>
+        <div class="textbox-prompt">Name the pair, explain what the appositive does, then write your own sentence using one.</div>
         <div class="journal-label">Your explanation <span class="saved-dot" id="dot-grammar"></span></div>
-        <textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK: Why Active Voice Carries More" placeholder="In Pair ___, the stronger sentence is... The actor is... When it flips to passive... My own sentence:" oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea>
+        <textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK: What an Appositive Buys a Biographer" placeholder="In Pair ___, the appositive version... The commas tell the reader... My own sentence:" oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea>
       </div>
 </div>
   </div>
@@ -1744,7 +1744,7 @@ function gramWinsClick(btn,itemId,isWinner){
     item.classList.add('done');
     var allBtns=item.querySelectorAll('.wins-btn');
     allBtns.forEach(function(b){b.disabled=true;});
-    if(msg){msg.textContent='✅ Correct — the doer comes first. That is active voice at work.';msg.classList.add('show');}
+    if(msg){msg.textContent='✅ Correct — the appositive hands the reader the fact without stopping the sentence.';msg.classList.add('show');}
     gramWinsAnswered++;
     if(gramWinsAnswered>=gramWinsTotal){
       _gramWinsDone=true;
@@ -1755,7 +1755,7 @@ function gramWinsClick(btn,itemId,isWinner){
   } else {
     btn.classList.add('wrong');
     btn.disabled=true;
-    if(msg){msg.textContent='Look again — in which version does the doer come first and act directly?';msg.classList.add('show');}
+    if(msg){msg.textContent='Look again — which version tucks the fact between commas instead of spending a second sentence on it?';msg.classList.add('show');}
   }
 }
 
