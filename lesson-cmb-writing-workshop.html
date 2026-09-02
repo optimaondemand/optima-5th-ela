@@ -676,8 +676,7 @@ function downloadPDF() {
   if (!text.trim()) { alert('Click "Compile My Essay" first.'); return; }
   var win = window.open('', '_blank');
   if (win) {
-    win.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Carry On, Mr. Bowditch &mdash; Research Essay</title><style>body{font-family:Georgia,serif;max-width:680px;margin:48px auto;padding:0 24px;line-height:1.8;font-size:15px;}pre{white-space:pre-wrap;font-size:14px;line-height:1.8;}@media print{body{margin:20px;}}</style></head><body><pre>' + text.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</pre>
-</body></html>');
+    win.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Carry On, Mr. Bowditch &mdash; Research Essay</title><style>body{font-family:Georgia,serif;max-width:680px;margin:48px auto;padding:0 24px;line-height:1.8;font-size:15px;}pre{white-space:pre-wrap;font-size:14px;line-height:1.8;}@media print{body{margin:20px;}}</style></head><body><pre>' + text.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</pre></body></html>');
     win.document.close();
     setTimeout(function() { win.print(); }, 400);
   }

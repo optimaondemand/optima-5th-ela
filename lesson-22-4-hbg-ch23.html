@@ -2640,6 +2640,7 @@ body {
         <div class="swyk-label">&#129814; Show What You Know</div>
         <div class="swyk-prompt">Explain why vague pronouns are a particular problem in writing about history. Give one sentence that hides who acted and one that names them, and say what changes.</div>
         <div class="textbox-prompt">Give both sentences, then explain what the reader gains from the second.</div>
+        <div class="journal-label">Your explanation <span class="saved-dot" id="dot-grammar"></span></div>
         <textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK: Why Antecedents Matter in History" placeholder="A vague pronoun hides... For example... The named version tells the reader..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea>
       </div>
     </div>
@@ -2669,7 +2670,15 @@ body {
         <div class="sort-score" id="sortScore">All sorted! Long words are just short words stacked.</div>
       </div>
       
-    </div>
+    
+      <div class="swyk" style="margin-top:14px;">
+        <div class="swyk-label">&#129814; Show What You Know</div>
+        <div class="swyk-prompt">Use the parts you sorted. If <em>photo</em> is light and <em>graph</em> is writing, what is writing done with sound? Build <strong>two</strong> words from Greek or Latin parts you know. For each one, name the parts, give your meaning, then check whether English already has that word.</div>
+        <div class="textbox-prompt">Give both words, break each into its parts, and explain the meaning you built.</div>
+        <div class="journal-label">Your explanation <span class="saved-dot" id="dot-spelling"></span></div>
+        <textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK: Building Words From Parts" placeholder="Word 1: ___ = ___ + ___ , which should mean... Word 2: ..." oninput="autoSave(this,'dot-spelling');gatherAnswers();"></textarea>
+      </div>
+</div>
   </div>
 
   <div class="tab-next-wrap">
@@ -2842,7 +2851,7 @@ function gatherAnswers() {
   var output = '';
   var sections = [
     { title: '📖 CH. 23 &mdash; CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
-    { title: 'VOCABULARY CHOICE BOARD', ids: ['journal-grammar'] },
+    { title: 'GRAMMAR SWYK', ids: ['journal-grammar'] },
     { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
     { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
   ];
@@ -2876,6 +2885,14 @@ function gatherAnswers() {
   }
   output += (spotDone >= 3 ? '✅' : '⬜') + ' Subject Spotter\n';
   output += (sortPlaced >= sortTotal ? '✅' : '⬜') + ' Spelling Word Sort\n';
+
+    output += '\n';
+  output += '✏️ SPELLING SWYK\n';
+  output += '────────────────\n';
+  (function(){ var el=document.getElementById('journal-spelling');
+    if(el){ output += '\n' + (el.getAttribute('data-label')||'journal-spelling') + '\n';
+      output += (el.value.trim()||'(no answer)') + '\n'; } })();
+  output += '\n';
 
   var gathered = document.getElementById('gatheredOutput');
   if (gathered) gathered.value = output;

@@ -2644,6 +2644,7 @@ body {
         <div class="swyk-label">&#129814; Show What You Know</div>
         <div class="swyk-prompt">Explain why blurring the novel and the historical record together is the one mistake this essay cannot survive. Give one blurred sentence and one corrected version.</div>
         <div class="textbox-prompt">Explain the problem, then show both versions and say what the corrected one tells the reader.</div>
+        <div class="journal-label">Your explanation <span class="saved-dot" id="dot-grammar"></span></div>
         <textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK: Why Attribution Matters" placeholder="Blurring them is a problem because... Blurred: ... Corrected: ..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea>
       </div>
     </div>
@@ -2849,7 +2850,7 @@ function gatherAnswers() {
   var output = '';
   var sections = [
     { title: '📖 CH. 28-29 &mdash; CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
-    { title: 'VOCABULARY CHOICE BOARD', ids: ['journal-grammar'] },
+    { title: 'GRAMMAR SWYK', ids: ['journal-grammar'] },
     { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
     { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
   ];

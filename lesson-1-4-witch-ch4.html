@@ -1055,7 +1055,15 @@ And the flung spray and the blown spume, and the sea-gulls crying.</div>
           <div class="spotter-result" id="spot3-result"></div>
         </div>
       </div>
-    </div>
+    
+      <div class="swyk" style="margin-top:14px;">
+        <div class="swyk-label">&#129814; Show What You Know</div>
+        <div class="swyk-prompt">Speare writes &ldquo;Five slits in the sleeves.&rdquo; That is a fragment &mdash; and she chose it on purpose. Write one <strong>complete sentence</strong> about something that happens in Chapter 4. Then rewrite it as a deliberate fragment. Finally, explain what the fragment does to a reader that the complete sentence does not.</div>
+        <div class="textbox-prompt">Give both versions, then explain the difference a reader would feel.</div>
+        <div class="journal-label">Your explanation <span class="saved-dot" id="dot-grammar"></span></div>
+        <textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK: Why Complete Sentences Matter" placeholder="My complete sentence is... As a fragment it becomes... The fragment makes the reader..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea>
+      </div>
+</div>
   </div>
 
   <!-- ═══ SPELLING ═══ -->
@@ -1447,6 +1455,14 @@ function gatherAnswers(){
   document.querySelectorAll('.spotter-sentence').forEach(function(s){if(s.getAttribute('data-done')==='true')spotDone++;});
   output+=(spotDone>=spotTotal&&spotTotal>0?'✅':'⬜')+' Grammar Spotter\n';
   output+=(window._spellingChallengeDone?'✅':'⬜')+' Spelling Challenge\n';
+    output += '\n';
+  output += '✏️ GRAMMAR SWYK\n';
+  output += '────────────────\n';
+  (function(){ var el=document.getElementById('journal-grammar');
+    if(el){ output += '\n' + (el.getAttribute('data-label')||'journal-grammar') + '\n';
+      output += (el.value.trim()||'(no answer)') + '\n'; } })();
+  output += '\n';
+
   var gathered=document.getElementById('gatheredOutput');
   if(gathered)gathered.value=output;
 }

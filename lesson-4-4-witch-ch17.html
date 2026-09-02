@@ -1144,7 +1144,15 @@ And never a child awake but you.</div>
         <div class="socratic-label">&#x1F9E0; Reflect</div>
         <p class="socratic-q">Why does dialogue punctuation matter when telling a story? What happens to a reader when two speakers share one paragraph, or when the quotation marks go missing?</p>
       </div>
-    </div>
+    
+      <div class="swyk" style="margin-top:14px;">
+        <div class="swyk-label">&#129814; Show What You Know</div>
+        <div class="swyk-prompt">Answer the question above using Chapter 17. Find a moment where more than one person speaks &mdash; Matthew, the doctor, Kit, Mercy. Explain how the punctuation and paragraphing tell you whose voice is whose, and what would happen to that scene if the marks disappeared.</div>
+        <div class="textbox-prompt">Name the moment, then explain how the punctuation keeps the voices apart.</div>
+        <div class="journal-label">Your explanation <span class="saved-dot" id="dot-grammar"></span></div>
+        <textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK: What the Punctuation Is Doing" placeholder="In Chapter 17 when... The punctuation tells me... Without it, a reader would..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea>
+      </div>
+</div>
   </div>
 
   <!-- ═══ SPELLING ═══ -->
@@ -1613,6 +1621,14 @@ function gatherAnswers(){
   document.querySelectorAll('.spotter-sentence').forEach(function(s){if(s.getAttribute('data-done')==='true')spotDone++;});
   output+=(spotDone>=spotTotal&&spotTotal>0?'✅':'⬜')+' Grammar Spotter\n';
   output+=(window._spellingChallengeDone?'✅':'⬜')+' Spelling Challenge\n';
+    output += '\n';
+  output += '✏️ GRAMMAR SWYK\n';
+  output += '────────────────\n';
+  (function(){ var el=document.getElementById('journal-grammar');
+    if(el){ output += '\n' + (el.getAttribute('data-label')||'journal-grammar') + '\n';
+      output += (el.value.trim()||'(no answer)') + '\n'; } })();
+  output += '\n';
+
   var gathered=document.getElementById('gatheredOutput');
   if(gathered)gathered.value=output;
 }

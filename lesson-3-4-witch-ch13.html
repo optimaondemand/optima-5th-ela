@@ -1137,7 +1137,15 @@ Of the big surf that breaks all day.</div>
           <div class="spotter-result" id="spot3-result"></div>
         </div>
       </div>
-    </div>
+    
+      <div class="swyk" style="margin-top:14px;">
+        <div class="swyk-label">&#129814; Show What You Know</div>
+        <div class="swyk-prompt">Find a sentence in Chapter 13 that contains two or more verbs. Copy it exactly and list its verbs. Then explain what would break for the reader if you shifted just one of those verbs into the present tense.</div>
+        <div class="textbox-prompt">Copy the sentence, list its verbs, then explain what a single tense shift would do to the reader.</div>
+        <div class="journal-label">Your explanation <span class="saved-dot" id="dot-grammar"></span></div>
+        <textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK: Why Tense Has to Hold" placeholder="The sentence I chose is... Its verbs are... If I changed ___ to ___, the reader would..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea>
+      </div>
+</div>
   </div>
 
   <!-- ═══ SPELLING ═══ -->
@@ -1533,6 +1541,14 @@ function gatherAnswers(){
   document.querySelectorAll('.spotter-sentence').forEach(function(s){if(s.getAttribute('data-done')==='true')spotDone++;});
   output+=(spotDone>=spotTotal&&spotTotal>0?'✅':'⬜')+' Grammar Spotter\n';
   output+=(window._spellingChallengeDone?'✅':'⬜')+' Spelling Challenge\n';
+    output += '\n';
+  output += '✏️ GRAMMAR SWYK\n';
+  output += '────────────────\n';
+  (function(){ var el=document.getElementById('journal-grammar');
+    if(el){ output += '\n' + (el.getAttribute('data-label')||'journal-grammar') + '\n';
+      output += (el.value.trim()||'(no answer)') + '\n'; } })();
+  output += '\n';
+
   var gathered=document.getElementById('gatheredOutput');
   if(gathered)gathered.value=output;
 }

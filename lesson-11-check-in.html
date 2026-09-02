@@ -500,8 +500,7 @@ function showCopied(){var e=document.getElementById('dlCopied');if(e){e.classLis
 function downloadPDF(){
   var t=gatherAll();
   var win=window.open('','_blank');
-  if(win){win.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Week 11 Check-In</title><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;padding:0 20px;line-height:1.7;}pre{white-space:pre-wrap;font-size:14px;}@media print{body{margin:20px;}}</style></head><body><pre>'+t.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</pre>
-</body></html>');win.document.close();setTimeout(()=>win.print(),400);}
+  if(win){win.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Week 11 Check-In</title><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;padding:0 20px;line-height:1.7;}pre{white-space:pre-wrap;font-size:14px;}@media print{body{margin:20px;}}</style></head><body><pre>'+t.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</pre></body></html>');win.document.close();setTimeout(()=>win.print(),400);}
 }</script>
 <!-- Video Manifest Loader -->
 <script>

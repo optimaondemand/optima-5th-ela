@@ -764,7 +764,7 @@ function downloadPDF() {
     body += '</div>';
   });
   body += '</div>';
-  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Week 3 Check-In</title><style>' + css + '</style></head><body>' + body + ' + '</body></html>';
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Week 3 Check-In</title><style>' + css + '</style></head><body>' + body + '</body></html>';
   var win = window.open('', '_blank');
   if (!win) { alert('Please allow pop-ups to download your PDF.'); return; }
   win.document.write(html);

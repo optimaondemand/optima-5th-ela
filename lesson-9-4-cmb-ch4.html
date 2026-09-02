@@ -1276,7 +1276,15 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         ✅ You can spot the stronger sentence now. That&rsquo;s the instinct that will make your own writing sharper.
       </div>
 
-    </div>
+    
+      <div class="swyk" style="margin-top:14px;">
+        <div class="swyk-label">&#129814; Show What You Know</div>
+        <div class="swyk-prompt">Pick one of the pairs above. Explain why the stronger version is stronger: who is doing the acting, and what happens to that person when the sentence flips into passive voice. Then write one sentence of your own about Chapter 4 in active voice.</div>
+        <div class="textbox-prompt">Name the pair, explain what passive voice hides, then write your own active sentence.</div>
+        <div class="journal-label">Your explanation <span class="saved-dot" id="dot-grammar"></span></div>
+        <textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK: Why Active Voice Carries More" placeholder="In Pair ___, the stronger sentence is... The actor is... When it flips to passive... My own sentence:" oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea>
+      </div>
+</div>
   </div>
 
   <!-- Activity 4: Spelling — Challenge arc (Odd One Out) -->
@@ -1736,7 +1744,7 @@ function gramWinsClick(btn,itemId,isWinner){
     item.classList.add('done');
     var allBtns=item.querySelectorAll('.wins-btn');
     allBtns.forEach(function(b){b.disabled=true;});
-    if(msg){msg.textContent='✅ Correct — the appositive packs the fact in without stopping the sentence.'s active voice at work.';msg.classList.add('show');}
+    if(msg){msg.textContent='✅ Correct — the doer comes first. That is active voice at work.';msg.classList.add('show');}
     gramWinsAnswered++;
     if(gramWinsAnswered>=gramWinsTotal){
       _gramWinsDone=true;
@@ -1783,6 +1791,14 @@ function gatherAnswers(){var o='LESSON 9.4 \u2014 CARRY ON, MR. BOWDITCH\n';o+='
 /* ───── COPY TO CLIPBOARD ───── */
 function copyToClipboard(){
   gatherAnswers();
+    output += '\n';
+  output += '✏️ GRAMMAR SWYK\n';
+  output += '────────────────\n';
+  (function(){ var el=document.getElementById('journal-grammar');
+    if(el){ output += '\n' + (el.getAttribute('data-label')||'journal-grammar') + '\n';
+      output += (el.value.trim()||'(no answer)') + '\n'; } })();
+  output += '\n';
+
   var gathered=document.getElementById('gatheredOutput');
   if(!gathered)return;
   gathered.select();
@@ -1797,8 +1813,7 @@ function showCopied(){
 }
 
 /* ───── DOWNLOAD AS PDF ───── */
-function downloadPDF(){gatherAnswers();var t=document.getElementById('gatheredOutput').value;var win=window.open('','_blank');if(win){win.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;padding:0 20px;line-height:1.7;}pre{white-space:pre-wrap;font-size:14px;}@media print{body{margin:20px;}}</style></head><body><pre>'+t.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</pre>
-</body></html>');win.document.close();setTimeout(function(){win.print();},400);}}
+function downloadPDF(){gatherAnswers();var t=document.getElementById('gatheredOutput').value;var win=window.open('','_blank');if(win){win.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;padding:0 20px;line-height:1.7;}pre{white-space:pre-wrap;font-size:14px;}@media print{body{margin:20px;}}</style></head><body><pre>'+t.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</pre></body></html>');win.document.close();setTimeout(function(){win.print();},400);}}
 
 /* ───── TURN-IN CHECKLIST ───── */
 function toggleCheck(item){

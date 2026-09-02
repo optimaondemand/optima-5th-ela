@@ -1109,7 +1109,15 @@ I come into the peace of wild things.</div>
           <div class="spotter-result" id="spot3-result"></div>
         </div>
       </div>
-    </div>
+    
+      <div class="swyk" style="margin-top:14px;">
+        <div class="swyk-label">&#129814; Show What You Know</div>
+        <div class="swyk-prompt">Find two short sentences in Chapter 8 that could be combined, or use two of your own about the chapter. Write the choppy version first, then the combined version using a compound subject or compound predicate. Then explain what combining <em>gains</em> for the reader &mdash; and what it might <em>cost</em> if a writer combined everything.</div>
+        <div class="textbox-prompt">Write both versions, then explain the gain and the cost.</div>
+        <div class="journal-label">Your explanation <span class="saved-dot" id="dot-grammar"></span></div>
+        <textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK: What Combining Gains and Costs" placeholder="Choppy: ... Combined: ... Combining helps because... But if a writer combined everything..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea>
+      </div>
+</div>
   </div>
 
   <!-- ═══ SPELLING ═══ -->
@@ -1515,6 +1523,14 @@ function gatherAnswers(){
   document.querySelectorAll('.spotter-sentence').forEach(function(s){if(s.getAttribute('data-done')==='true')spotDone++;});
   output+=(spotDone>=spotTotal&&spotTotal>0?'✅':'⬜')+' Grammar Spotter\n';
   output+=(window._spellingChallengeDone?'✅':'⬜')+' Spelling Challenge\n';
+    output += '\n';
+  output += '✏️ GRAMMAR SWYK\n';
+  output += '────────────────\n';
+  (function(){ var el=document.getElementById('journal-grammar');
+    if(el){ output += '\n' + (el.getAttribute('data-label')||'journal-grammar') + '\n';
+      output += (el.value.trim()||'(no answer)') + '\n'; } })();
+  output += '\n';
+
   var gathered=document.getElementById('gatheredOutput');
   if(gathered)gathered.value=output;
 }

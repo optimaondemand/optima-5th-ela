@@ -2639,6 +2639,7 @@ body {
         <div class="swyk-label">&#129814; Show What You Know</div>
         <div class="swyk-prompt">Explain when passive voice is a reasonable choice and when it is an evasion. Give one example of each, using something from this week&rsquo;s chapters.</div>
         <div class="textbox-prompt">Give both examples and explain what the passive is doing in each one.</div>
+        <div class="journal-label">Your explanation <span class="saved-dot" id="dot-grammar"></span></div>
         <textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK: Choosing Active or Passive Voice" placeholder="Passive is reasonable when... For example... It is an evasion when..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea>
       </div>
     </div>
@@ -2843,7 +2844,7 @@ function gatherAnswers() {
   var output = '';
   var sections = [
     { title: '📖 CH. 11 &mdash; CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
-    { title: 'VOCABULARY CHOICE BOARD', ids: ['journal-grammar'] },
+    { title: 'GRAMMAR SWYK', ids: ['journal-grammar'] },
     { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
     { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
   ];

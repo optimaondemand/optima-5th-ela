@@ -1559,8 +1559,7 @@ function downloadPDF(){
   gatherAnswers();var text=document.getElementById('gatheredOutput').value;
   var html='<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Lesson 10.1 \u2014 My Work</title>';
   html+='<style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;padding:0 20px;color:#1a1a2e;line-height:1.7;}pre{white-space:pre-wrap;font-family:Georgia,serif;font-size:14px;line-height:1.7;}@media print{body{margin:20px;}}</style></head><body>';
-  html+='<pre>'+text.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</pre>
-</body></html>';
+  html+='<pre>'+text.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</pre></body></html>';
   var win=window.open('','_blank');if(win){win.document.write(html);win.document.close();setTimeout(function(){win.print();},400);}
 }
 function toggleCheck(item){

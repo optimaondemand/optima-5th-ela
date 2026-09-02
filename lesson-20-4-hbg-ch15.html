@@ -2639,6 +2639,7 @@ body {
         <div class="swyk-label">&#129814; Show What You Know</div>
         <div class="swyk-prompt">Find one sentence in this week&rsquo;s chapters that joins two ideas. Copy it, mark every comma, and explain what each one is doing for the reader.</div>
         <div class="textbox-prompt">Copy the sentence exactly, then explain the job of each comma in it.</div>
+        <div class="journal-label">Your explanation <span class="saved-dot" id="dot-grammar"></span></div>
         <textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK: What the Commas Are Doing" placeholder="The sentence I chose is... The first comma is doing..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea>
       </div>
     </div>
@@ -2840,7 +2841,7 @@ function gatherAnswers() {
   var output = '';
   var sections = [
     { title: '📖 CH. 15 &mdash; CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
-    { title: 'VOCABULARY CHOICE BOARD', ids: ['journal-grammar'] },
+    { title: 'GRAMMAR SWYK', ids: ['journal-grammar'] },
     { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
     { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
   ];

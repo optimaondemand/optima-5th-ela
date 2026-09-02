@@ -1493,8 +1493,7 @@ function downloadPDF(){
   var text=document.getElementById('gatheredOutput').value;
   var win=window.open('','_blank');
   if(win){
-    win.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;padding:0 20px;line-height:1.7;}pre{white-space:pre-wrap;font-size:14px;}@media print{body{margin:20px;}}</style></head><body><pre>'+text.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</pre>
-</body></html>');
+    win.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;padding:0 20px;line-height:1.7;}pre{white-space:pre-wrap;font-size:14px;}@media print{body{margin:20px;}}</style></head><body><pre>'+text.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</pre></body></html>');
     win.document.close();
     setTimeout(()=>win.print(),400);
   }

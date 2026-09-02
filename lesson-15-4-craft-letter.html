@@ -959,7 +959,15 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="dol-answer" id="grammarExplain">
         <p>Quotation marks and dialogue punctuation show the reader exactly which words came out of a character's mouth versus which words are the narrator describing the scene. Without that punctuation, a reader couldn't tell where a character's exact words end and the narration begins &mdash; the sentence "&#39;All right,&#39; said Johnny blandly, &#39;just so you're up.&#39;" would be confusing as "All right said Johnny blandly just so you're up." Punctuation is a signal system that keeps speech and narration from blurring together.</p>
       </div>
-    </div>
+    
+      <div class="swyk" style="margin-top:14px;">
+        <div class="swyk-label">&#129814; Show What You Know</div>
+        <div class="swyk-prompt">Write your own explanation <strong>before</strong> you tap the button above. Why do authors put spoken words inside quotation marks and separate them from the tag with a comma? Use the Johnny Tremain line as your example. Then tap the button and add one thing the model explanation said that you did not.</div>
+        <div class="textbox-prompt">Explain it in your own words first, then add what you missed.</div>
+        <div class="journal-label">Your explanation <span class="saved-dot" id="dot-grammar"></span></div>
+        <textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK: Why the Marks Matter" placeholder="Quotation marks tell a reader... Without them... One thing I did not say was..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea>
+      </div>
+</div>
   </div>
 
   <!-- ═══ SPELLING (CHALLENGE) ═══ -->
@@ -1353,6 +1361,14 @@ function gatherAnswers(){
   var spotDone=0;var spotTotal=document.querySelectorAll('.spotter-sentence').length;
   document.querySelectorAll('.spotter-sentence').forEach(function(s){if(s.getAttribute('data-done')==='true')spotDone++;});
   output+=(spotDone>=spotTotal&&spotTotal>0?'✅':'⬜')+' Spelling Challenge\n';
+    output += '\n';
+  output += '✏️ GRAMMAR SWYK\n';
+  output += '────────────────\n';
+  (function(){ var el=document.getElementById('journal-grammar');
+    if(el){ output += '\n' + (el.getAttribute('data-label')||'journal-grammar') + '\n';
+      output += (el.value.trim()||'(no answer)') + '\n'; } })();
+  output += '\n';
+
   var gathered=document.getElementById('gatheredOutput');
   if(gathered)gathered.value=output;
 }

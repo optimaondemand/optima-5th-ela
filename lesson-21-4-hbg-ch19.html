@@ -2641,6 +2641,7 @@ body {
         <div class="swyk-label">&#129814; Show What You Know</div>
         <div class="swyk-prompt">Find a paragraph in this week&rsquo;s chapters where Tingle mixes short and long sentences. Copy two sentences from it and explain what the variety does to you as a reader.</div>
         <div class="textbox-prompt">Copy the two sentences exactly, then explain the effect of putting them next to each other.</div>
+        <div class="journal-label">Your explanation <span class="saved-dot" id="dot-grammar"></span></div>
         <textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK: Sentence Variety" placeholder="The two sentences I chose are... Putting them together makes me..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea>
       </div>
     </div>
@@ -2841,7 +2842,7 @@ function gatherAnswers() {
   var output = '';
   var sections = [
     { title: '📖 CH. 19 &mdash; CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
-    { title: 'VOCABULARY CHOICE BOARD', ids: ['journal-grammar'] },
+    { title: 'GRAMMAR SWYK', ids: ['journal-grammar'] },
     { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
     { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
   ];

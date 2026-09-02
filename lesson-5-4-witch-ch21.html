@@ -1063,7 +1063,15 @@ That kept so many warm &mdash;</div>
         <div class="socratic-label">&#x1F9E0; Reflect</div>
         <p class="socratic-q">Why does a comma after an introductory phrase matter for the reader? Think about how Kit&rsquo;s story would read if introductory phrases ran straight into main clauses with no pause.</p>
       </div>
-    </div>
+    
+      <div class="swyk" style="margin-top:14px;">
+        <div class="swyk-label">&#129814; Show What You Know</div>
+        <div class="swyk-prompt">Answer the question above using Chapter 21. Write one sentence about the ending that begins with an introductory phrase, punctuated correctly. Then explain what the comma does for a reader &mdash; and read your sentence once without it to see what changes.</div>
+        <div class="textbox-prompt">Write your sentence, then explain the work the comma is doing.</div>
+        <div class="journal-label">Your explanation <span class="saved-dot" id="dot-grammar"></span></div>
+        <textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK: Why the Comma Earns Its Place" placeholder="After... , Kit ... The comma tells the reader... Without it..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea>
+      </div>
+</div>
   </div>
 
   <!-- ═══ SPELLING ═══ -->
@@ -1452,6 +1460,14 @@ function gatherAnswers(){
   document.querySelectorAll('.spotter-sentence').forEach(function(s){if(s.getAttribute('data-done')==='true')spotDone++;});
   output+=(spotDone>=spotTotal&&spotTotal>0?'✅':'⬜')+' Grammar Spotter\n';
   output+=(window._spellingChallengeDone?'✅':'⬜')+' Spelling Challenge\n';
+    output += '\n';
+  output += '✏️ GRAMMAR SWYK\n';
+  output += '────────────────\n';
+  (function(){ var el=document.getElementById('journal-grammar');
+    if(el){ output += '\n' + (el.getAttribute('data-label')||'journal-grammar') + '\n';
+      output += (el.value.trim()||'(no answer)') + '\n'; } })();
+  output += '\n';
+
   var gathered=document.getElementById('gatheredOutput');
   if(gathered)gathered.value=output;
 }
