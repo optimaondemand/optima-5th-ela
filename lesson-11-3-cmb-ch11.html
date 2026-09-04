@@ -486,6 +486,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .rwm-sentence{font-family:Georgia,serif;font-size:17px;color:#1A2A4A;line-height:1.7;padding:12px 16px;background:rgba(255,255,255,.6);border-radius:8px;margin-bottom:14px;border-left:4px solid #C8962A;}
 .rwm-step{margin-bottom:12px;}
 .rwm-step-label{font-size:12px;color:#C8962A;font-weight:800;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px;}
+.rwm-step-text{font-size:15px;color:#1A2A4A;line-height:1.7;}
 .rwm-frame{font-family:Georgia,serif;font-size:15px;color:#1A2A4A;background:rgba(255,255,255,.8);border-radius:8px;padding:10px 14px;margin-top:8px;border:1.5px dashed #C8962A;line-height:1.8;}
 
 /* Pause card */
@@ -852,7 +853,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         <div class="intro-card-body"><div class="obj-line"><span class="obj-icon">&#x1F331;</span><span><strong>Morphology:</strong> Use geo/terr roots in original sentences about navigation.</span></div>
 <div class="obj-line"><span class="obj-icon">&#x1F524;</span><span><strong>Spelling SWYK:</strong> Spell schwa words correctly and use them accurately.</span></div>
 <div class="obj-line"><span class="obj-icon">&#x270F;&#xFE0F;</span><span><strong>Grammar:</strong> I will <em>write using</em> relative clauses punctuated correctly.</span></div>
-<div class="obj-line"><span class="obj-icon">&#x1F4D6;</span><span><strong>Reading:</strong> Chapter 11 &mdash; What Next?</span></div></div>
+<div class="obj-line"><span class="obj-icon">&#x1F4D6;</span><span><strong>Reading:</strong> I will <em>analyze</em> what nine years of study actually bought Nat, as evidence for the book&rsquo;s argument about persistence.</span></div></div>
       </div>
     </div>
     <div class="todays-path">
@@ -886,7 +887,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <div class="vp-title">Optima Academy Online</div>
   <div class="vp-slot">g5ela-11-3</div>
   <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Welcome to today&#x27;s lesson: Optima Academy Online. In your warm-up, you&#x27;ll focus on Daily Oral Language — Study the model — fix the sentence. As you read, pay close attention to the characters&#x27; actions and motivations. Think about how events connect to the bigger ideas in the story. Use your journal to capture your thoughts and any questions that come up.
+    <strong>Teacher recording notes:</strong> Welcome to today&#x27;s lesson: Optima Academy Online. In your warm-up, you&#x27;ll focus on Daily Oral Language — Study the model — fix the sentence. As you read, watch perseverance become a theme &mdash; what Nat holds onto, and what it costs him. Use your journal to capture your thoughts and any questions that come up.
   </div>
 </div>
 </div>
@@ -1011,6 +1012,33 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       </div>
     </div>
   </div>
+    <!-- ═══ RWM ═══ -->
+  <div class="rwm-block">
+    <div class="rwm-label">RWM &mdash; Read like a Reader, Read like a Writer, Mimic</div>
+    <div class="rwm-sentence">&ldquo;If we argue against any branch of liberty, just because sometimes people abuse that liberty, then we argue against liberty itself.&rdquo;</div>
+      <div class="rwm-step">
+        <div class="rwm-step-label">&#x1F4D6; Read like a Reader</div>
+        <div class="rwm-step-text">Dr. Bentley is defending a newspaper that printed something he disagrees with. What is he saying about what happens when you start making exceptions to a freedom?</div>
+        <div class="textbox-prompt">Write 1&ndash;2 sentences explaining Bentley&rsquo;s argument in your own words.</div>
+        <div class="journal-label">📓 Your response <span class="saved-dot" id="dot-rwm-reader"></span></div>
+        <textarea class="journal-box" id="journal-rwm-reader" data-label="RWM — Read like a Reader" placeholder="This sentence shows..." oninput="autoSave(this,'dot-rwm-reader');gatherAnswers();"></textarea>
+      </div>
+      <div class="rwm-step">
+        <div class="rwm-step-label">&#x270F;&#xFE0F; Read like a Writer</div>
+        <div class="rwm-step-text">This is a central idea built as a piece of reasoning: <em>If</em> &hellip; <em>just because</em> &hellip; <em>then</em>. The middle clause is the objection somebody might raise, and Bentley puts it inside his own sentence instead of ignoring it. A central idea is stronger when it answers the obvious complaint on its way past.</div>
+        <div class="textbox-prompt">Write 1 sentence explaining why Bentley puts the objection inside his own sentence.</div>
+        <div class="journal-label">📓 Your response <span class="saved-dot" id="dot-rwm-writer"></span></div>
+        <textarea class="journal-box" id="journal-rwm-writer" data-label="RWM — Read like a Writer" placeholder="Latham built it by..." oninput="autoSave(this,'dot-rwm-writer');gatherAnswers();"></textarea>
+      </div>
+      <div class="rwm-step">
+        <div class="rwm-step-label">&#x1F58A;&#xFE0F; Mimic</div>
+        <div class="rwm-step-text">Write one <em>If &hellip; just because &hellip; then &hellip;</em> sentence stating something you believe about fairness or freedom. Put the strongest objection inside your own sentence. No frame this time.</div>
+        <div class="textbox-prompt">Write your own sentence using the same technique.</div>
+        <div class="journal-label">📓 Your sentence <span class="saved-dot" id="dot-rwm-mimic"></span></div>
+        <textarea class="journal-box" id="journal-rwm-mimic" data-label="RWM — Mimic" placeholder="Write your sentence here..." oninput="autoSave(this,'dot-rwm-mimic');gatherAnswers();"></textarea>
+      </div>
+  </div>
+
   <div class="tab-next-wrap">
     <p class="tab-transition-voice">You&rsquo;ve used the roots, vocabulary, grammar, and spelling. Time to meet Nat at sea.</p>
     <button class="tab-next-btn" onclick="switchTab('reading')">Continue to &#x1F4D6; Reading &rarr;</button>
@@ -1022,10 +1050,19 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <div class="activity bl-plum" style="margin-bottom:18px;">
     <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">&#x1F4DA;</div>
       <div style="flex:1;"><div class="activity-title">What Good Readers Do</div>
-      <div class="activity-sub">Explain how events develop plot and character</div></div>
+      <div class="activity-sub">Reread — perseverance turning into skill</div></div>
     </div>
-    <div class="activity-body"><p>At sea for the first time, Nat has to put everything he learned in the chandlery &mdash; mathematics, navigation, astronomy &mdash; into actual use. Good readers notice when a character has a moment of <em>integration</em>: when everything they&rsquo;ve been building finally comes together into something real.</p>
-<div class="socratic-box"><div class="socratic-label">&#x1F9E0; Watch for this</div>
+    <div class="activity-body">
+      <p>Today reread the passage in Chapter 11 where everything Nat built in the chandlery &mdash; mathematics, navigation, astronomy &mdash; finally gets used. Reread it and ask what those nine years actually bought him. This is where the book&rsquo;s argument about persistence stops being encouragement and becomes evidence.</p>
+<div class="key-concept" style="background:#F0F7FF;border-color:#C8DCEE;margin:10px 0;">
+<div class="key-concept-label" style="color:#3D5285;">🔍 How to Do It</div>
+<ol style="margin:6px 0 6px 20px;font-size:14px;color:#3A4A6B;line-height:1.8;">
+<li><strong>Find the moment quitting was an option:</strong> Perseverance only shows where giving up was genuinely available.</li>
+<li><strong>Ask what keeps him going:</strong> Look for the reason the text gives, not the one you would supply yourself.</li>
+<li><strong>Name the theme as a sentence:</strong> Say what the book argues about people who keep going. &ldquo;Perseverance&rdquo; is a topic; a theme is a full sentence.</li>
+</ol>
+</div>
+      <div class="socratic-box"><div class="socratic-label">&#x1F9E0; Watch for this</div>
 <p class="socratic-q">What does Nat do aboard the Henry that he was never asked to do? Why?</p>
 <p class="socratic-q">How do the other sailors react to Nat&rsquo;s mathematical skill? What does this tell you about what was missing before?</p>
 <p class="socratic-q">Latham has been building toward this moment since Chapter 5. How does Chapter 11 pay off what began in those ash-breeze years?</p></div></div>
@@ -1210,6 +1247,10 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     </div>
     <div class="turn-in-body"><p class="turn-in-intro">Check each item off as you finish.</p>
       <div class="turn-in-checklist">
+        <div class="turn-in-item" onclick="toggleCheck(this)">
+          <div class="turn-in-check"></div>
+          <div class="turn-in-item-text">I wrote my three RWM responses (Reader, Writer, Mimic) in Word Study.</div>
+        </div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered all 3 comprehension questions with evidence from Chapter 11.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed the Spelling SWYK (schwa words) in Word Study.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I drafted my first body section in my reading journal.</div></div>
@@ -1444,7 +1485,7 @@ function gatherAnswers(){
   if(sw){o+='WORD STUDY SWYK (Spelling SWYK)\n'+'\u2500'.repeat(36)+'\n';o+='\n'+sw.getAttribute('data-label')+'\n'+(sw.value.trim()||'(no answer)')+'\n\n';}
   o+='CHAPTER THINKING\n'+'\u2500'.repeat(36)+'\n';
   ['journal-q1','journal-q2','journal-q3'].forEach(id=>{var el=document.getElementById(id);if(!el)return;o+='\n'+el.getAttribute('data-label')+'\n'+(el.value.trim()||'(no answer)')+'\n';});
-  o+='\nWRITING CONNECTION\n'+'\u2500'.repeat(36)+'\n';
+  o+='\nRWM \u2014 READ, WRITE, MIMIC\n'+'\u2500'.repeat(36)+'\n';['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'].forEach(function(id){var el=document.getElementById(id);if(!el)return;o+='\n'+el.getAttribute('data-label')+'\n'+(el.value.trim()||'(no answer)')+'\n';});o+='\nWRITING CONNECTION\n'+'\u2500'.repeat(36)+'\n';
   var w=document.getElementById('journal-writing');
   if(w){o+='\n'+w.getAttribute('data-label')+'\n'+(w.value.trim()||'(no answer)')+'\n';}
   var g=document.getElementById('gatheredOutput');if(g)g.value=o;

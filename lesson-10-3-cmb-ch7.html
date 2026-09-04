@@ -486,6 +486,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .rwm-sentence{font-family:Georgia,serif;font-size:17px;color:#1A2A4A;line-height:1.7;padding:12px 16px;background:rgba(255,255,255,.6);border-radius:8px;margin-bottom:14px;border-left:4px solid #C8962A;}
 .rwm-step{margin-bottom:12px;}
 .rwm-step-label{font-size:12px;color:#C8962A;font-weight:800;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px;}
+.rwm-step-text{font-size:15px;color:#1A2A4A;line-height:1.7;}
 .rwm-frame{font-family:Georgia,serif;font-size:15px;color:#1A2A4A;background:rgba(255,255,255,.8);border-radius:8px;padding:10px 14px;margin-top:8px;border:1.5px dashed #C8962A;line-height:1.8;}
 
 /* Pause card */
@@ -878,7 +879,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
           <div class="obj-line"><span class="obj-icon">&#x1F331;</span><span><strong>Morphology:</strong> Use graph/gram/meter roots in original sentences.</span></div>
           <div class="obj-line"><span class="obj-icon">&#x1F524;</span><span><strong>Spelling SWYK:</strong> Use syllable division to spell and read technical words correctly.</span></div>
           <div class="obj-line"><span class="obj-icon">&#x270F;&#xFE0F;</span><span><strong>Grammar:</strong> Use consistent tense &mdash; revise a flawed paragraph.</span></div>
-          <div class="obj-line"><span class="obj-icon">&#x1F4D6;</span><span><strong>Reading:</strong> Chapter 7 &mdash; The Almanac</span></div>
+          <div class="obj-line"><span class="obj-icon">&#x1F4D6;</span><span><strong>Reading:</strong> I will <em>analyze</em> the chain in Chapter 7 &mdash; what sent Nat to the calculations, what he did, and what it made possible.</span></div>
         </div>
       </div>
     </div>
@@ -914,7 +915,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <div class="vp-title">Optima Academy Online</div>
   <div class="vp-slot">g5ela-10-3</div>
   <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Welcome to today&#x27;s lesson: Optima Academy Online. In your warm-up, you&#x27;ll focus on Daily Oral Language — Tense revision — fix the shift in the passage. As you read, pay close attention to the characters&#x27; actions and motivations. Think about how events connect to the bigger ideas in the story. Use your journal to capture your thoughts and any questions that come up.
+    <strong>Teacher recording notes:</strong> Welcome to today&#x27;s lesson: Optima Academy Online. In your warm-up, you&#x27;ll focus on Daily Oral Language — Tense revision — fix the shift in the passage. As you read, name the problem each event creates and watch what Nat actually does about it. Use your journal to capture your thoughts and any questions that come up.
   </div>
 </div>
 </div>
@@ -1056,6 +1057,33 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     </div>
   </div>
 
+    <!-- ═══ RWM ═══ -->
+  <div class="rwm-block">
+    <div class="rwm-label">RWM &mdash; Read like a Reader, Read like a Writer, Mimic</div>
+    <div class="rwm-sentence">&ldquo;But after supper Nat went back to the chandlery to finish the work he had not done.&rdquo;</div>
+      <div class="rwm-step">
+        <div class="rwm-step-label">&#x1F4D6; Read like a Reader</div>
+        <div class="rwm-step-text">This is Nat&rsquo;s day after his day is over. He has been teaching himself navigation, surveying and astronomy &mdash; and the bookkeeping is still waiting for him. What is this sentence telling you about the cost of what he is doing?</div>
+        <div class="textbox-prompt">Write 1&ndash;2 sentences explaining what this shows about the price of Nat&rsquo;s studying.</div>
+        <div class="journal-label">📓 Your response <span class="saved-dot" id="dot-rwm-reader"></span></div>
+        <textarea class="journal-box" id="journal-rwm-reader" data-label="RWM — Read like a Reader" placeholder="This sentence shows..." oninput="autoSave(this,'dot-rwm-reader');gatherAnswers();"></textarea>
+      </div>
+      <div class="rwm-step">
+        <div class="rwm-step-label">&#x270F;&#xFE0F; Read like a Writer</div>
+        <div class="rwm-step-text">The sequence is carried by three small moves. <em>But</em> turns against the sentence before it. <em>after supper</em> places the action in the order of the day. And <em>had not done</em> reaches back to work left undone earlier. One short sentence holds three different points in time, and the verb tenses are what keep them straight.</div>
+        <div class="textbox-prompt">Write 1 sentence naming the three points in time this sentence holds at once.</div>
+        <div class="journal-label">📓 Your response <span class="saved-dot" id="dot-rwm-writer"></span></div>
+        <textarea class="journal-box" id="journal-rwm-writer" data-label="RWM — Read like a Writer" placeholder="Latham built it by..." oninput="autoSave(this,'dot-rwm-writer');gatherAnswers();"></textarea>
+      </div>
+      <div class="rwm-step">
+        <div class="rwm-step-label">&#x1F58A;&#xFE0F; Mimic</div>
+        <div class="rwm-step-text">Write one sentence about Chapter 7 that holds two points in time &mdash; something happening now, and something left undone earlier. Use a sequence word and the past perfect. No frame this time.</div>
+        <div class="textbox-prompt">Write your own sentence using the same technique.</div>
+        <div class="journal-label">📓 Your sentence <span class="saved-dot" id="dot-rwm-mimic"></span></div>
+        <textarea class="journal-box" id="journal-rwm-mimic" data-label="RWM — Mimic" placeholder="Write your sentence here..." oninput="autoSave(this,'dot-rwm-mimic');gatherAnswers();"></textarea>
+      </div>
+  </div>
+
   <div class="tab-next-wrap">
     <p class="tab-transition-voice">You&rsquo;ve used the roots, the vocabulary, fixed the paragraph, and spelled the technical words. Now go find Nat&rsquo;s errors in the almanac.</p>
     <button class="tab-next-btn" onclick="switchTab('reading')">Continue to &#x1F4D6; Reading &rarr;</button>
@@ -1066,10 +1094,18 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <div class="activity bl-plum" style="margin-bottom:18px;">
     <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">&#x1F4DA;</div>
       <div style="flex:1;"><div class="activity-title">What Good Readers Do</div>
-      <div class="activity-sub">Notice when an author shows precision in action</div></div>
+      <div class="activity-sub">Reread — how one solution builds the next</div></div>
     </div>
     <div class="activity-body">
-      <p>In Chapter 7, Latham shows us what extraordinary precision looks like &mdash; not by telling us Nat was a genius, but by showing us exactly what he did. Good readers notice when an author demonstrates something instead of just naming it.</p>
+      <p>Today reread the passage in Chapter 7 where Nat works through the calculations. Latham never tells you he was brilliant; she shows you exactly what he did. Reread it and trace the chain: what problem sent him to the book, what he did about it, and what that made possible next.</p>
+<div class="key-concept" style="background:#F0F7FF;border-color:#C8DCEE;margin:10px 0;">
+<div class="key-concept-label" style="color:#3D5285;">🔍 How to Do It</div>
+<ol style="margin:6px 0 6px 20px;font-size:14px;color:#3A4A6B;line-height:1.8;">
+<li><strong>Name the problem:</strong> For each event, say plainly what problem it puts in front of Nat.</li>
+<li><strong>Watch what he does with it:</strong> Look for the specific action he takes. A life story turns on what a person does next.</li>
+<li><strong>Follow the consequence forward:</strong> Ask what this makes possible later. A life story is a chain, not a list.</li>
+</ol>
+</div>
       <div class="socratic-box">
         <div class="socratic-label">&#x1F9E0; Watch for this</div>
         <p class="socratic-q">What is Moore&rsquo;s Almanac, and why do sailors depend on it?</p>
@@ -1244,6 +1280,10 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <div class="turn-in-body">
       <p class="turn-in-intro">Check each item off as you finish.</p>
       <div class="turn-in-checklist">
+        <div class="turn-in-item" onclick="toggleCheck(this)">
+          <div class="turn-in-check"></div>
+          <div class="turn-in-item-text">I wrote my three RWM responses (Reader, Writer, Mimic) in Word Study.</div>
+        </div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered all 3 comprehension questions with evidence from Chapter 7.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed the Spelling Show What You Know (syllable division) in Word Study.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I organized my research notes into categories A and B in my reading journal.</div></div>
@@ -1516,6 +1556,11 @@ function gatherAnswers(){
   if(sp){o+='\n'+sp.getAttribute('data-label')+'\n'+(sp.value.trim()||'(no answer)')+'\n';}
   o+='\n CHAPTER THINKING\n'+'\u2500'.repeat(36)+'\n';
   ['journal-q1','journal-q2','journal-q3'].forEach(id=>{
+    var el=document.getElementById(id);if(!el)return;
+    o+='\n'+el.getAttribute('data-label')+'\n'+(el.value.trim()||'(no answer)')+'\n';
+  });
+  o+='\nRWM \u2014 READ, WRITE, MIMIC\n'+'\u2500'.repeat(36)+'\n';
+  ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'].forEach(function(id){
     var el=document.getElementById(id);if(!el)return;
     o+='\n'+el.getAttribute('data-label')+'\n'+(el.value.trim()||'(no answer)')+'\n';
   });

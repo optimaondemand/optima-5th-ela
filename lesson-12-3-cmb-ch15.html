@@ -486,6 +486,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .rwm-sentence{font-family:Georgia,serif;font-size:17px;color:#1A2A4A;line-height:1.7;padding:12px 16px;background:rgba(255,255,255,.6);border-radius:8px;margin-bottom:14px;border-left:4px solid #C8962A;}
 .rwm-step{margin-bottom:12px;}
 .rwm-step-label{font-size:12px;color:#C8962A;font-weight:800;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px;}
+.rwm-step-text{font-size:15px;color:#1A2A4A;line-height:1.7;}
 .rwm-frame{font-family:Georgia,serif;font-size:15px;color:#1A2A4A;background:rgba(255,255,255,.8);border-radius:8px;padding:10px 14px;margin-top:8px;border:1.5px dashed #C8962A;line-height:1.8;}
 
 /* Pause card */
@@ -849,7 +850,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         <div class="intro-card-body"><div class="obj-line"><span class="obj-icon">&#x1F331;</span><span><strong>Morphology:</strong> Use -al and -ous words in original sentences about navigation.</span></div>
 <div class="obj-line"><span class="obj-icon">&#x1F524;</span><span><strong>Spelling SWYK:</strong> Spell -ous/-ious/-eous words correctly and use them accurately.</span></div>
 <div class="obj-line"><span class="obj-icon">&#x270F;&#xFE0F;</span><span><strong>Grammar:</strong> I will <em>write using</em> commas after introductory phrases.</span></div>
-<div class="obj-line"><span class="obj-icon">&#x1F4D6;</span><span><strong>Reading:</strong> Chapter 15 &mdash; &ldquo;Sail Ho-o-o-o-o!&rdquo;</span></div></div>
+<div class="obj-line"><span class="obj-icon">&#x1F4D6;</span><span><strong>Reading:</strong> I will <em>analyze</em> how much of the tension in Chapter 15 lives inside the sailing vocabulary itself.</span></div></div>
       </div>
     </div>
     <div class="todays-path">
@@ -883,7 +884,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <div class="vp-title">Optima Academy Online</div>
   <div class="vp-slot">g5ela-12-3</div>
   <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Welcome to today&#x27;s lesson: Optima Academy Online. In your warm-up, you&#x27;ll focus on Daily Oral Language — Study the model — fix the sentence. As you read, pay close attention to the characters&#x27; actions and motivations. Think about how events connect to the bigger ideas in the story. Use your journal to capture your thoughts and any questions that come up.
+    <strong>Teacher recording notes:</strong> Welcome to today&#x27;s lesson: Optima Academy Online. In your warm-up, you&#x27;ll focus on Daily Oral Language — Study the model — fix the sentence. As you read, treat the navigation words as tools &mdash; work out what each one lets a sailor do. Use your journal to capture your thoughts and any questions that come up.
   </div>
 </div>
 </div>
@@ -1011,6 +1012,33 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       </div>
     </div>
   </div>
+    <!-- ═══ RWM ═══ -->
+  <div class="rwm-block">
+    <div class="rwm-label">RWM &mdash; Read like a Reader, Read like a Writer, Mimic</div>
+    <div class="rwm-sentence">&ldquo;Celestial navigation &mdash; or sailing by the sky &mdash; is what we&rsquo;ll talk about first.&rdquo;</div>
+      <div class="rwm-step">
+        <div class="rwm-step-label">&#x1F4D6; Read like a Reader</div>
+        <div class="rwm-step-text">Nat is about to teach the crew something the experts said ordinary sailors could never learn. Why would he translate the term before he begins?</div>
+        <div class="textbox-prompt">Write 1&ndash;2 sentences explaining why Nat defines the term first.</div>
+        <div class="journal-label">📓 Your response <span class="saved-dot" id="dot-rwm-reader"></span></div>
+        <textarea class="journal-box" id="journal-rwm-reader" data-label="RWM — Read like a Reader" placeholder="This sentence shows..." oninput="autoSave(this,'dot-rwm-reader');gatherAnswers();"></textarea>
+      </div>
+      <div class="rwm-step">
+        <div class="rwm-step-label">&#x270F;&#xFE0F; Read like a Writer</div>
+        <div class="rwm-step-text">This is the cleanest version of the move: the technical term, then <em>or</em>, then the plain-English translation, and then the sentence carries on. The definition sits inside a pair of dashes, so it interrupts nothing. <em>Celestial navigation</em> keeps the precision; <em>sailing by the sky</em> makes it usable. Good explanatory writing keeps both.</div>
+        <div class="textbox-prompt">Write 1 sentence explaining what the plain-English version adds that the technical term alone could not.</div>
+        <div class="journal-label">📓 Your response <span class="saved-dot" id="dot-rwm-writer"></span></div>
+        <textarea class="journal-box" id="journal-rwm-writer" data-label="RWM — Read like a Writer" placeholder="Latham built it by..." oninput="autoSave(this,'dot-rwm-writer');gatherAnswers();"></textarea>
+      </div>
+      <div class="rwm-step">
+        <div class="rwm-step-label">&#x1F58A;&#xFE0F; Mimic</div>
+        <div class="rwm-step-text">Write one sentence that uses a real navigation term from Chapter 15 and defines it inside a pair of dashes with <em>or</em>. Keep the precise term and add the plain one. No frame this time.</div>
+        <div class="textbox-prompt">Write your own sentence using the same technique.</div>
+        <div class="journal-label">📓 Your sentence <span class="saved-dot" id="dot-rwm-mimic"></span></div>
+        <textarea class="journal-box" id="journal-rwm-mimic" data-label="RWM — Mimic" placeholder="Write your sentence here..." oninput="autoSave(this,'dot-rwm-mimic');gatherAnswers();"></textarea>
+      </div>
+  </div>
+
   <div class="tab-next-wrap">
     <p class="tab-transition-voice">Used the suffixes, filled in the vocabulary, revised with phrases. Time to read.</p>
     <button class="tab-next-btn" onclick="switchTab('reading')">Continue to &#x1F4D6; Reading &rarr;</button>
@@ -1092,10 +1120,19 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <div class="activity bl-plum">
     <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">&#x1F4DA;</div>
       <div style="flex:1;"><div class="activity-title">What Good Readers Do</div>
-      <div class="activity-sub">How setting and conflict work together</div></div>
+      <div class="activity-sub">Reread — one term, and what it makes possible</div></div>
     </div>
-    <div class="activity-body"><p>Chapter 15 returns Nat to sea, where a different kind of drama unfolds. When a lookout cries &ldquo;Sail ho!&rdquo; from the masthead, every person on deck must make a decision: prepare to flee, prepare to fight, or hold course. The <em>setting</em> (open ocean, no escape route) and <em>conflict</em> (unknown ship approaching) work together to force immediate decisions. Good readers see how Latham uses this moment to reveal what her characters are made of.</p>
-<div class="socratic-box"><div class="socratic-label">&#x1F9E0; Watch for this</div>
+    <div class="activity-body">
+      <p>Today reread the moment in Chapter 15 when the lookout cries <em>Sail ho!</em> from the masthead. Three words, and everyone on deck has to decide whether to flee, fight or hold course. Reread it and work out how much of the tension is living inside the vocabulary itself.</p>
+<div class="key-concept" style="background:#F0F7FF;border-color:#C8DCEE;margin:10px 0;">
+<div class="key-concept-label" style="color:#3D5285;">🔍 How to Do It</div>
+<ol style="margin:6px 0 6px 20px;font-size:14px;color:#3A4A6B;line-height:1.8;">
+<li><strong>Collect the terms:</strong> List the navigation and sailing words the chapter needs &mdash; longitude, lunars, masthead, bearing, tables.</li>
+<li><strong>Work out the meaning from the work it does:</strong> Ask what the word lets a sailor <em>do</em>. In this book a technical term is a tool, not decoration.</li>
+<li><strong>Test what the term unlocks:</strong> Reread the moment with the term defined and see how much the scene changes.</li>
+</ol>
+</div>
+      <div class="socratic-box"><div class="socratic-label">&#x1F9E0; Watch for this</div>
 <p class="socratic-q">When &ldquo;Sail ho!&rdquo; is called, what is Nat&rsquo;s role? Does he panic, calculate, or simply observe? What does his response reveal?</p>
 <p class="socratic-q">How does the conflict of the unknown sail shape the captain&rsquo;s decisions? Who is in charge at sea, and how does Nat&rsquo;s knowledge fit into that hierarchy?</p>
 <p class="socratic-q">What connection do you see between the &ldquo;Sail ho!&rdquo; moment and Nat&rsquo;s ongoing work correcting Moore&rsquo;s Navigator?</p></div></div>
@@ -1199,6 +1236,10 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     </div>
     <div class="turn-in-body"><p class="turn-in-intro">Check each item off as you finish.</p>
       <div class="turn-in-checklist">
+        <div class="turn-in-item" onclick="toggleCheck(this)">
+          <div class="turn-in-check"></div>
+          <div class="turn-in-item-text">I wrote my three RWM responses (Reader, Writer, Mimic) in Word Study.</div>
+        </div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered all 3 comprehension questions with evidence from Chapter 15.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed the Spelling SWYK (-ous/-ious/-eous words) in Word Study.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I drafted my second body section in my reading journal.</div></div>
@@ -1397,7 +1438,7 @@ function gatherAnswers(){
   if(sw){o+='WORD STUDY SWYK (Spelling SWYK)\n'+'\u2500'.repeat(36)+'\n';o+='\n'+sw.getAttribute('data-label')+'\n'+(sw.value.trim()||'(no answer)')+'\n\n';}
   o+='CHAPTER THINKING\n'+'\u2500'.repeat(36)+'\n';
   ['journal-q1','journal-q2','journal-q3'].forEach(id=>{var el=document.getElementById(id);if(!el)return;o+='\n'+el.getAttribute('data-label')+'\n'+(el.value.trim()||'(no answer)')+'\n';});
-  o+='\nWRITING CONNECTION\n'+'\u2500'.repeat(36)+'\n';
+  o+='\nRWM \u2014 READ, WRITE, MIMIC\n'+'\u2500'.repeat(36)+'\n';['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'].forEach(function(id){var el=document.getElementById(id);if(!el)return;o+='\n'+el.getAttribute('data-label')+'\n'+(el.value.trim()||'(no answer)')+'\n';});o+='\nWRITING CONNECTION\n'+'\u2500'.repeat(36)+'\n';
   var w=document.getElementById('journal-writing');
   if(w){o+='\n'+w.getAttribute('data-label')+'\n'+(w.value.trim()||'(no answer)')+'\n';}
   var g=document.getElementById('gatheredOutput');if(g)g.value=o;
