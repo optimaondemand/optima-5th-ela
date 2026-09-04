@@ -651,6 +651,14 @@ body {
   color: #fff;
 }
 .node.upcoming { opacity: 0.55; }
+.char-token {
+  position: absolute;
+  font-size: 26px;
+  z-index: 20;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.3));
+  animation: hop 2s ease-in-out infinite;
+}
 .character-token {
   position: absolute;
   font-size: 26px;
@@ -2425,7 +2433,7 @@ body {
     <div class="intro-card theme-objectives">
       <div class="intro-card-head"><div class="intro-card-head-icon">🎯</div><div><div class="intro-card-head-label">Objectives</div><div class="intro-card-head-title">By the end of this lesson&hellip;</div></div></div>
       <div class="intro-card-body">
-        <div class="obj-line"><span class="obj-icon">📖</span><span><strong>Reading:</strong> I will analyze Isaac's first-person narrative voice in Chapter 9.</span></div>
+        <div class="obj-line"><span class="obj-icon">📖</span><span><strong>Reading:</strong> I will <em>identify</em> how Nita&rsquo;s perspective differs from the adults&rsquo; in Chapter 9.</span></div>
         <div class="obj-line"><span class="obj-icon">✏️</span><span><strong>Grammar:</strong> I will <em>identify</em> active and passive voice, and notice when the actor is hidden.</span></div>
         <div class="obj-line"><span class="obj-icon">🔤</span><span><strong>Spelling:</strong> I will <em>sort</em> describing words by the ending their base calls for.</span></div>
       </div>
@@ -2475,7 +2483,7 @@ body {
   <div class="vp-title">Lesson 19.2: How I Became a Ghost (Ch. 9)</div>
   <div class="vp-slot">g5ela-19-2</div>
   <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Welcome to today&#x27;s lesson: Lesson 19.2: How I Became a Ghost (Ch. 9). In your warm-up, you&#x27;ll focus on 📚 What Good Readers Do — Set your reading lens for today. As you read, pay close attention to the characters&#x27; actions and motivations. Think about how events connect to the bigger ideas in the story. Use your journal to capture your thoughts and any questions that come up.
+    <strong>Teacher recording notes:</strong> Welcome to today&#x27;s lesson: Lesson 19.2: How I Became a Ghost (Ch. 9). In your warm-up, you&#x27;ll focus on 📚 What Good Readers Do — Read closely for perspective. As you read, watch what each character does and carries &mdash; that is where a perspective shows. Use your journal to capture your thoughts and any questions that come up.
   </div>
 </div>
 </div>
@@ -2486,9 +2494,17 @@ body {
 
   <!-- What Good Readers Do -->
   <div class="activity bl-purple">
-    <div class="activity-head"><div class="activity-num" style="background:#8B6FC0;">&#128218;</div><div><div class="activity-title">&#128218; What Good Readers Do</div><div class="activity-sub">Set your reading lens for today</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#8B6FC0;">&#128218;</div><div><div class="activity-title">&#128218; What Good Readers Do</div><div class="activity-sub">Read closely for perspective</div></div></div>
     <div class="activity-body">
-      <p>Good readers pay attention to the promises characters make &mdash; because promises tell you what a character values. <strong>In Chapter 9, Isaac makes an important promise. As you read, ask: what does he promise? What does it cost him? What does it reveal about who he is?</strong></p>
+      <p>Read closely and gather evidence. Nita is five years old, and she can see the ghost walkers. Watch how the adults respond to her and how she responds to them. Perspective shows most clearly when two people look at the same thing and only one of them can see it.</p>
+<div class="key-concept" style="background:#F0F7FF;border-color:#C8DCEE;margin:10px 0;">
+<div class="key-concept-label" style="color:#3D5285;">🔍 How to Do It</div>
+<ol style="margin:6px 0 6px 20px;font-size:14px;color:#3A4A6B;line-height:1.8;">
+<li><strong>Watch what a character does:</strong> Not what they say about themselves. Actions under pressure are where a perspective shows.</li>
+<li><strong>Ask what they have lost:</strong> In this book, what a person is still willing to carry tells you how they see the world.</li>
+<li><strong>Compare two people in one moment:</strong> Give the same event to two characters, and their different perspectives become visible.</li>
+</ol>
+</div>
       <div class="thinking-stop">&#128173; Hold this as you read &mdash; no need to write here.</div>
     </div>
   </div>
@@ -2702,8 +2718,21 @@ body {
   <!-- Story Journey Tracker -->
   <div class="tracker-card">
     <div class="tracker-header"><div class="tracker-header-icon">&#127807;</div><div class="tracker-header-title">Isaac&rsquo;s Path</div></div>
-  </div>
-  <div class="tracker-chapter-label">&#128205; Chapter 9 &mdash; Nita and the Ghost Walkers</div>
+    <div class="scene-wrap" id="scene">
+      <div class="title-plaque"><h1>&#128123; <em>How I Became a Ghost</em></h1></div>
+      <div class="cloud" style="width:80px;height:24px;top:16px;left:8%"></div>
+      <div class="cloud" style="width:52px;height:16px;top:26px;left:24%"></div>
+      <div class="cloud" style="width:90px;height:26px;top:12px;left:58%"></div>
+      <div class="cloud" style="width:56px;height:18px;top:30px;left:80%"></div>
+      <div class="hills-far"></div>
+      <svg class="path-svg" viewBox="0 0 1400 210" preserveAspectRatio="none">
+        <path d="M -20,168 C 70,162 90,132 160,128 C 230,124 250,158 330,150 C 410,143 430,108 520,111 C 610,115 630,152 720,144 C 810,136 840,102 930,107 C 1020,112 1040,150 1120,142 C 1200,134 1230,112 1310,117 C 1350,119 1400,132 1430,137" fill="none" stroke="#8B6914" stroke-width="14" stroke-linecap="round" opacity="0.45"/>
+        <path d="M -20,168 C 70,162 90,132 160,128 C 230,124 250,158 330,150 C 410,143 430,108 520,111 C 610,115 630,152 720,144 C 810,136 840,102 930,107 C 1020,112 1040,150 1120,142 C 1200,134 1230,112 1310,117 C 1350,119 1400,132 1430,137" fill="none" stroke="#e8dcc8" stroke-width="7" stroke-linecap="round" stroke-dasharray="4 8" opacity="0.55"/>
+      </svg>
+      <div class="char-token" id="characterToken">&#128123;</div>
+    </div>
+    <div class="tracker-chapter-label">&#128205; Chapter 9 &mdash; Nita and the Ghost Walkers</div>
+    </div>
 
   <!-- Virtue Watch -->
   <div class="activity bl-purple" style="border-left-color:#8B6FC0;">

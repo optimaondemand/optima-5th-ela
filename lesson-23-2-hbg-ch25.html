@@ -651,6 +651,14 @@ body {
   color: #fff;
 }
 .node.upcoming { opacity: 0.55; }
+.char-token {
+  position: absolute;
+  font-size: 26px;
+  z-index: 20;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.3));
+  animation: hop 2s ease-in-out infinite;
+}
 .character-token {
   position: absolute;
   font-size: 26px;
@@ -2425,7 +2433,7 @@ body {
     <div class="intro-card theme-objectives">
       <div class="intro-card-head"><div class="intro-card-head-icon">🎯</div><div><div class="intro-card-head-label">Objectives</div><div class="intro-card-head-title">By the end of this lesson&hellip;</div></div></div>
       <div class="intro-card-body">
-        <div class="obj-line"><span class="obj-icon">📖</span><span><strong>Reading:</strong> I will analyze Isaac's first-person narrative voice in Chapter 25.</span></div>
+        <div class="obj-line"><span class="obj-icon">📖</span><span><strong>Reading:</strong> I will <em>identify</em> what actually changes at each turn of Chapter 25 and summarize it in one sentence each.</span></div>
         <div class="obj-line"><span class="obj-icon">✏️</span><span><strong>Grammar:</strong> I will <em>identify</em> what slows a reader down in a draft.</span></div>
         <div class="obj-line"><span class="obj-icon">🔤</span><span><strong>Spelling:</strong> I will <em>sort</em> words by the pattern that explains their spelling.</span></div>
       </div>
@@ -2475,7 +2483,7 @@ body {
   <div class="vp-title">Lesson 23.2: How I Became a Ghost (Ch. 25)</div>
   <div class="vp-slot">g5ela-23-2</div>
   <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Welcome to today&#x27;s lesson: Lesson 23.2: How I Became a Ghost (Ch. 25). In your warm-up, you&#x27;ll focus on 📚 What Good Readers Do — Set your reading lens for today. As you read, pay close attention to the characters&#x27; actions and motivations. Think about how events connect to the bigger ideas in the story. Use your journal to capture your thoughts and any questions that come up.
+    <strong>Teacher recording notes:</strong> Welcome to today&#x27;s lesson: Lesson 23.2: How I Became a Ghost (Ch. 25). In your warm-up, you&#x27;ll focus on 📚 What Good Readers Do — Read closely, then summarize as you go. As you read, keep summarizing: after each turn, say in one sentence what has actually changed. Use your journal to capture your thoughts and any questions that come up.
   </div>
 </div>
 </div>
@@ -2486,9 +2494,17 @@ body {
 
   <!-- What Good Readers Do -->
   <div class="activity bl-purple">
-    <div class="activity-head"><div class="activity-num" style="background:#8B6FC0;">&#128218;</div><div><div class="activity-title">&#128218; What Good Readers Do</div><div class="activity-sub">Set your reading lens for today</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#8B6FC0;">&#128218;</div><div><div class="activity-title">&#128218; What Good Readers Do</div><div class="activity-sub">Read closely, then summarize as you go</div></div></div>
     <div class="activity-body">
-      <p>Good readers think about the difference between watching and witnessing. Watching is passive; witnessing is active &mdash; it means taking responsibility for what you see. <strong>As you read Chapter 25: what does Isaac witness? And how does his ghost perspective change what it means for someone to see these things?</strong></p>
+      <p>Read closely and gather evidence. Chapter 25 holds a great deal of action in very few pages. Practice summarizing as you read: after each turn, say in one sentence what has actually changed. A summary that lists everything is not a summary.</p>
+<div class="key-concept" style="background:#F0F7FF;border-color:#C8DCEE;margin:10px 0;">
+<div class="key-concept-label" style="color:#3D5285;">🔍 How to Do It</div>
+<ol style="margin:6px 0 6px 20px;font-size:14px;color:#3A4A6B;line-height:1.8;">
+<li><strong>Keep the spine, drop the rest:</strong> A summary is the events the story would break without &mdash; not everything that happened.</li>
+<li><strong>Say what it was about:</strong> A plot summary tells what happened. Add one sentence saying what it meant.</li>
+<li><strong>Check it against the text:</strong> Reread and ask whether your summary would mislead someone who has not read the chapter.</li>
+</ol>
+</div>
       <div class="thinking-stop">&#128173; Hold this as you read &mdash; no need to write here.</div>
     </div>
   </div>
@@ -2706,8 +2722,21 @@ body {
   <!-- Story Journey Tracker -->
   <div class="tracker-card">
     <div class="tracker-header"><div class="tracker-header-icon">&#127807;</div><div class="tracker-header-title">Isaac&rsquo;s Path</div></div>
-  </div>
-  <div class="tracker-chapter-label">&#128205; Chapter 25 &mdash; A Day of Death</div>
+    <div class="scene-wrap" id="scene">
+      <div class="title-plaque"><h1>&#128123; <em>How I Became a Ghost</em></h1></div>
+      <div class="cloud" style="width:80px;height:24px;top:16px;left:8%"></div>
+      <div class="cloud" style="width:52px;height:16px;top:26px;left:24%"></div>
+      <div class="cloud" style="width:90px;height:26px;top:12px;left:58%"></div>
+      <div class="cloud" style="width:56px;height:18px;top:30px;left:80%"></div>
+      <div class="hills-far"></div>
+      <svg class="path-svg" viewBox="0 0 1400 210" preserveAspectRatio="none">
+        <path d="M -20,168 C 70,162 90,132 160,128 C 230,124 250,158 330,150 C 410,143 430,108 520,111 C 610,115 630,152 720,144 C 810,136 840,102 930,107 C 1020,112 1040,150 1120,142 C 1200,134 1230,112 1310,117 C 1350,119 1400,132 1430,137" fill="none" stroke="#8B6914" stroke-width="14" stroke-linecap="round" opacity="0.45"/>
+        <path d="M -20,168 C 70,162 90,132 160,128 C 230,124 250,158 330,150 C 410,143 430,108 520,111 C 610,115 630,152 720,144 C 810,136 840,102 930,107 C 1020,112 1040,150 1120,142 C 1200,134 1230,112 1310,117 C 1350,119 1400,132 1430,137" fill="none" stroke="#e8dcc8" stroke-width="7" stroke-linecap="round" stroke-dasharray="4 8" opacity="0.55"/>
+      </svg>
+      <div class="char-token" id="characterToken">&#128123;</div>
+    </div>
+    <div class="tracker-chapter-label">&#128205; Chapter 25 &mdash; A Day of Death</div>
+    </div>
 
   <!-- Virtue Watch -->
   <div class="activity bl-purple" style="border-left-color:#8B6FC0;">
@@ -2737,16 +2766,16 @@ body {
   <!-- RWM -->
   <div class="rwm-box">
     <div class="rwm-header">&#128214; RWM &mdash; Read &bull; Notice &bull; Try</div>
-    <div class="rwm-sentence">&ldquo;A Soldier's Vow. That is the chapter title &mdash; four words. No verb. Just a noun phrase.&rdquo;</div>
+    <div class="rwm-sentence">&ldquo;Ice-covered branches fell all about the camp, destroying the fire circle and toppling the cooking pot.&rdquo;</div>
     <div class="rwm-step"><div class="rwm-step-label">&#128214; As a Reader</div>
-      <div class="rwm-step-text">What does this sentence make you see or feel?</div>
+      <div class="rwm-step-text">Leader has just ordered his soldiers to fire into the trees above the Choctaw Council. This one sentence holds everything that came down afterwards. What has Tingle chosen to show you, out of everything that must have happened?</div>
       <textarea class="journal-box" id="journal-rwm-reader" placeholder="This sentence makes me..." oninput="autoSave(this,'dot-rwm-reader');gatherAnswers();"></textarea></div>
     <div class="rwm-step"><div class="rwm-step-label">&#9999;&#65039; As a Writer</div>
-      <div class="rwm-step-text">A title that is a noun phrase creates expectation without revealing outcome. It names the moment without explaining it. Four words that carry enormous weight.</div>
+      <div class="rwm-step-text">Look at how much is packed in and how little is retold. One main clause &mdash; branches fell &mdash; and then two participles, <em>destroying</em> and <em>toppling</em>, carrying two more events without two more sentences. That is summarizing by combining: choose the events that matter, hang them off a single clause, and leave the rest out.</div>
       <textarea class="journal-box" id="journal-rwm-writer" placeholder="The author used..." oninput="autoSave(this,'dot-rwm-writer');gatherAnswers();"></textarea></div>
     <div class="rwm-step"><div class="rwm-step-label">&#128394;&#65039; Try It</div>
-      <div class="rwm-step-text">Write a four-word title for a key moment in the novel. No verb. Just the moment, named.</div>
-      <div class="rwm-frame">___. ___. ___. ___.</div>
+      <div class="rwm-step-text">Write one sentence about Chapter 25 that summarizes three things happening at once. Use one main clause and two <em>-ing</em> phrases, and leave out everything that does not matter.</div>
+      <div class="rwm-frame">___ fell all about the ___, ___ing the ___ and ___ing the ___.</div>
       <textarea class="journal-box" id="journal-rwm-mimic" placeholder="My sentence..." oninput="autoSave(this,'dot-rwm-mimic');gatherAnswers();"></textarea></div>
   </div>
   <div class="tab-next-wrap">

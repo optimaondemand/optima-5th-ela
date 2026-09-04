@@ -651,6 +651,14 @@ body {
   color: #fff;
 }
 .node.upcoming { opacity: 0.55; }
+.char-token {
+  position: absolute;
+  font-size: 26px;
+  z-index: 20;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.3));
+  animation: hop 2s ease-in-out infinite;
+}
 .character-token {
   position: absolute;
   font-size: 26px;
@@ -2425,7 +2433,7 @@ body {
     <div class="intro-card theme-objectives">
       <div class="intro-card-head"><div class="intro-card-head-icon">🎯</div><div><div class="intro-card-head-label">Objectives</div><div class="intro-card-head-title">By the end of this lesson&hellip;</div></div></div>
       <div class="intro-card-body">
-        <div class="obj-line"><span class="obj-icon">📖</span><span><strong>Reading:</strong> I will analyze Isaac's first-person narrative voice in Chapter 19.</span></div>
+        <div class="obj-line"><span class="obj-icon">📖</span><span><strong>Reading:</strong> I will <em>explain</em> the theme of Chapters 16&ndash;19 in one full sentence, supported by two places in the text.</span></div>
         <div class="obj-line"><span class="obj-icon">✏️</span><span><strong>Grammar:</strong> I will <em>explain the importance of</em> sentence variety in controlling pace.</span></div>
         <div class="obj-line"><span class="obj-icon">🔤</span><span><strong>Spelling:</strong> I will <em>utilize</em> the confusable academic pairs correctly in my own essay.</span></div>
       </div>
@@ -2475,7 +2483,7 @@ body {
   <div class="vp-title">Lesson 21.4: How I Became a Ghost (Ch. 19)</div>
   <div class="vp-slot">g5ela-21-4</div>
   <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Welcome to today&#x27;s lesson: Lesson 21.4: How I Became a Ghost (Ch. 19). In your warm-up, you&#x27;ll focus on ✏️ Daily Oral Language — Study the model, then fix the sentence.. As you read, pay close attention to the characters&#x27; actions and motivations. Think about how events connect to the bigger ideas in the story. Use your journal to capture your thoughts and any questions that come up.
+    <strong>Teacher recording notes:</strong> Welcome to today&#x27;s lesson: Lesson 21.4: How I Became a Ghost (Ch. 19). In your warm-up, you&#x27;ll focus on ✏️ Daily Oral Language — Study the model, then fix the sentence.. As you read, note the images that come back, and ask what each one carries the second time. Use your journal to capture your thoughts and any questions that come up.
   </div>
 </div>
 </div>
@@ -2687,8 +2695,21 @@ body {
   <!-- Story Journey Tracker -->
   <div class="tracker-card">
     <div class="tracker-header"><div class="tracker-header-icon">&#127807;</div><div class="tracker-header-title">Isaac&rsquo;s Path</div></div>
-  </div>
-  <div class="tracker-chapter-label">&#128205; Chapter 19 &mdash; Naomi Meets the Ghost</div>
+    <div class="scene-wrap" id="scene">
+      <div class="title-plaque"><h1>&#128123; <em>How I Became a Ghost</em></h1></div>
+      <div class="cloud" style="width:80px;height:24px;top:16px;left:8%"></div>
+      <div class="cloud" style="width:52px;height:16px;top:26px;left:24%"></div>
+      <div class="cloud" style="width:90px;height:26px;top:12px;left:58%"></div>
+      <div class="cloud" style="width:56px;height:18px;top:30px;left:80%"></div>
+      <div class="hills-far"></div>
+      <svg class="path-svg" viewBox="0 0 1400 210" preserveAspectRatio="none">
+        <path d="M -20,168 C 70,162 90,132 160,128 C 230,124 250,158 330,150 C 410,143 430,108 520,111 C 610,115 630,152 720,144 C 810,136 840,102 930,107 C 1020,112 1040,150 1120,142 C 1200,134 1230,112 1310,117 C 1350,119 1400,132 1430,137" fill="none" stroke="#8B6914" stroke-width="14" stroke-linecap="round" opacity="0.45"/>
+        <path d="M -20,168 C 70,162 90,132 160,128 C 230,124 250,158 330,150 C 410,143 430,108 520,111 C 610,115 630,152 720,144 C 810,136 840,102 930,107 C 1020,112 1040,150 1120,142 C 1200,134 1230,112 1310,117 C 1350,119 1400,132 1430,137" fill="none" stroke="#e8dcc8" stroke-width="7" stroke-linecap="round" stroke-dasharray="4 8" opacity="0.55"/>
+      </svg>
+      <div class="char-token" id="characterToken">&#128123;</div>
+    </div>
+    <div class="tracker-chapter-label">&#128205; Chapter 19 &mdash; Naomi Meets the Ghost</div>
+    </div>
 
   <!-- Virtue Watch -->
   <div class="activity bl-purple" style="border-left-color:#8B6FC0;">
@@ -2715,10 +2736,19 @@ body {
     <div class="activity-head">
       <div class="activity-num" style="background:#8B6FC0;">&#128218;</div>
       <div><div class="activity-title">&#128218; What Good Readers Do</div>
-      <div class="activity-sub">Reading lens for today</div></div>
+      <div class="activity-sub">Synthesize the week — name the theme</div></div>
     </div>
     <div class="activity-body">
-      <p>Good readers pay attention to first meetings between characters &mdash; they reveal what each person is made of. <strong>When Naomi meets Isaac&rsquo;s ghost, how does Tingle handle the scene? Watch what each of them does and says. What does it tell you about who Naomi is?</strong></p>
+      <p>Now put the week together. Choose one image that has repeated across Chapters 16&ndash;19 and earlier, and state in one full sentence what this book argues through it. Then name the two places you would point to as evidence.</p>
+<div class="key-concept" style="background:#F0F7FF;border-color:#C8DCEE;margin:10px 0;">
+<div class="key-concept-label" style="color:#3D5285;">🔍 How to Do It</div>
+<ol style="margin:6px 0 6px 20px;font-size:14px;color:#3A4A6B;line-height:1.8;">
+<li><strong>Find what comes back:</strong> Note the images, objects and phrases that appear more than once &mdash; blankets, footprints, bones, a panther.</li>
+<li><strong>Ask what changes each time:</strong> A repeated image is not a symbol until it means more on its later appearance than on its first.</li>
+<li><strong>State the theme as a sentence:</strong> Say what the book argues, in a full sentence about people. &ldquo;Family&rdquo; is a topic; a theme is a claim.</li>
+</ol>
+</div>
+<div class="callout callout-info" style="margin-top:10px;"><span class="callout-icon">🎯</span><p><strong>Whole-book thinking:</strong> State the theme of this novel as one sentence about people, not a single word. Then find the earliest place the book began building it, and the place where it became unmistakable.</p></div>
       <div class="thinking-stop">&#128173; Hold this as you read.</div>
     </div>
   </div>
@@ -2793,7 +2823,6 @@ body {
       <div class="turn-in-checklist">
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered all 3 chapter questions with evidence from the book.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed my Word Study Grammar response.</div></div>
-        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my three RWM responses (Reader, Writer, Mimic) on the Reading tab.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my Writing Connection sentence.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I copied or downloaded my work and submitted it to Canvas.</div></div>
       </div>
