@@ -836,7 +836,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="intro-card theme-objectives">
         <div class="intro-card-head"><div class="intro-card-head-icon">&#x1F3AF;</div><div><div class="intro-card-head-label">Today&#8217;s Objectives</div><div class="intro-card-head-title">By the end of this lesson&hellip;</div></div></div>
         <div class="intro-card-body">
-          <div class="obj-line"><span class="obj-icon">&#x1F4D6;</span><span><strong>Reading:</strong> I will <em>apply</em> what good readers do by noticing how Johnny responds to failure across Chapter 3.</span></div>
+          <div class="obj-line"><span class="obj-icon">&#x1F4D6;</span><span><strong>Reading:</strong> I will <em>analyze</em> how the setting of Chapter 3, and not only the injury, shapes what happens to Johnny.</span></div>
           <div class="obj-line"><span class="obj-icon">&#x270F;&#xFE0F;</span><span><strong>Grammar:</strong> I will <em>write using</em> correct capitalization for proper nouns and titles.</span></div>
           <div class="obj-line"><span class="obj-icon">&#x1F524;</span><span><strong>Spelling:</strong> I will <em>apply</em> the <em>-ous</em> spelling rules to build adjectives.</span></div>
           <div class="obj-line"><span class="obj-icon">&#x1F331;</span><span><strong>Morphology:</strong> I will <em>use</em> dict and scrib/script roots to decode vocabulary in context.</span></div>
@@ -884,7 +884,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <div class="vp-title">Lesson 6.3: Johnny Tremain (Ch. 3)</div>
   <div class="vp-slot">g5ela-6-3</div>
   <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Welcome to today&#x27;s lesson: Lesson 6.3: Johnny Tremain (Ch. 3). In your warm-up, you&#x27;ll focus on Daily Oral Language — Study the model, then fix the sentence. As you read, pay close attention to the characters&#x27; actions and motivations. Think about how events connect to the bigger ideas in the story. Use your journal to capture your thoughts and any questions that come up.
+    <strong>Teacher recording notes:</strong> Welcome to today&#x27;s lesson: Lesson 6.3: Johnny Tremain (Ch. 3). In your warm-up, you&#x27;ll focus on Daily Oral Language — Study the model, then fix the sentence. As you read, build the world first &mdash; notice the rules of 1773 Boston that the story runs on, and ask what this setting makes possible and impossible. Use your journal to capture your thoughts and any questions that come up.
   </div>
 </div>
 </div>
@@ -1082,19 +1082,27 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <!-- ═══ RWM — Day 2 ═══ -->
   <div class="rwm-box">
     <div class="rwm-header">RWM &mdash; Read like a Reader, Read like a Writer, Mimic</div>
-    <div class="rwm-sentence">&ldquo;He sat a long time with his arms hugging his knees. Now he knew what to do.&rdquo;</div>
+    <div class="rwm-sentence">&ldquo;Without heeding anyone, he crossed Dock Square and in a moment&rsquo;s time stood beside the brick Town House at the head of King Street.&rdquo;</div>
     <div class="rwm-step">
       <div class="rwm-step-label">&#x1F4D6; Read like a Reader</div>
-      <div class="rwm-step-text">Johnny has just spent weeks failing, being rejected, and being told there is no work for him. Then he breaks down crying at his mother&#8217;s grave. Why does he feel so certain in this moment? What does the calm after despair tell you?</div>
+      <div class="rwm-step-text">Johnny has been turned away from every silversmith&rsquo;s shop in Boston. This is the walk he takes afterwards. What does the pace of it &mdash; crossing a square, standing at a corner &mdash; tell you about what he is doing with himself?</div>
+      <div class="textbox-prompt">Write 1&ndash;2 sentences explaining what this walk shows about Johnny&rsquo;s situation.</div>
+      <div class="journal-label">📓 Your response <span class="saved-dot" id="dot-rwm-reader"></span></div>
+      <textarea class="journal-box" id="journal-rwm-reader" data-label="RWM — Read like a Reader" placeholder="This sentence shows..." oninput="autoSave(this,'dot-rwm-reader');gatherAnswers();"></textarea>
     </div>
     <div class="rwm-step">
       <div class="rwm-step-label">&#x270F;&#xFE0F; Read like a Writer</div>
-      <div class="rwm-step-text">Two short sentences&mdash;almost like two heartbeats. The first shows stillness; the second shows clarity. Notice how the author uses short, simple sentences at turning points. Why not a longer sentence here?</div>
+      <div class="rwm-step-text">Forbes names three real places in one sentence &mdash; Dock Square, the brick Town House, the head of King Street &mdash; and explains none of them. She writes as though you live there. That trust is the craft move: naming a place precisely makes the world solid, while explaining it would turn the reader into a tourist.</div>
+      <div class="textbox-prompt">Write 1 sentence explaining what the real place names do that a general description could not.</div>
+      <div class="journal-label">📓 Your response <span class="saved-dot" id="dot-rwm-writer"></span></div>
+      <textarea class="journal-box" id="journal-rwm-writer" data-label="RWM — Read like a Writer" placeholder="Forbes built it by..." oninput="autoSave(this,'dot-rwm-writer');gatherAnswers();"></textarea>
     </div>
     <div class="rwm-step">
       <div class="rwm-step-label">&#x1F58A;&#xFE0F; Mimic</div>
-      <div class="rwm-step-text">Write two short sentences that show a character reaching a decision after a long struggle. First sentence = the pause. Second sentence = the resolution.</div>
-      <div class="rwm-frame">He/She waited. Now ___.</div>
+      <div class="rwm-step-text">Write one sentence that moves a character through two or three named places without explaining any of them. Precise names, no tour guide. Trust your reader the way Forbes trusts hers. No frame this time &mdash; you have the pattern.</div>
+      <div class="textbox-prompt">Write your own sentence using the same technique.</div>
+      <div class="journal-label">📓 Your sentence <span class="saved-dot" id="dot-rwm-mimic"></span></div>
+      <textarea class="journal-box" id="journal-rwm-mimic" data-label="RWM — Mimic" placeholder="Write your sentence here..." oninput="autoSave(this,'dot-rwm-mimic');gatherAnswers();"></textarea>
     </div>
   </div>
 
@@ -1494,6 +1502,15 @@ function gatherAnswers(){
     output+=(wc.value.trim()||'(no answer)')+'\n';
   }
   output+='\n';
+  output+='\n';
+  output+='\u270D\uFE0F RWM \u2014 READ, WRITE, MIMIC\n';
+  output+='\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n';
+  ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(!el)return;
+    output+='\n'+(el.getAttribute('data-label')||id)+'\n';
+    output+=(el.value.trim()||'(no answer)')+'\n';
+  });
   output+='🎮 PRACTICE ACTIVITY STATUS\n';
   output+='────────────────────────────────\n';
   output+=(window._morphMatchDone?'✅':'⬜')+' Morphology dict/scrib Match\n';
