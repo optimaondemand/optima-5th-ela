@@ -359,6 +359,15 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .challenge-item{background:#fff;border:2px solid #E2E8F4;border-radius:14px;padding:16px 18px;margin-bottom:12px;}
 .challenge-word{font-family:Georgia,serif;font-size:18px;font-weight:700;color:#3B5998;margin-bottom:6px;}
 .challenge-hint{font-size:14px;color:#7A88A8;font-style:italic;margin-bottom:8px;}
+.fillin-input{display:inline-block;width:150px;padding:5px 10px;border:2px dashed #3B5998;border-radius:8px;font-family:Georgia,serif;font-size:15px;font-weight:700;color:#3B5998;text-align:center;background:#FAFBFF;outline:none;transition:border-color .2s,background .2s;}
+.fillin-input:focus{border-color:#00695C;background:#fff;}
+.fillin-input.correct{border-color:#4CAF50;background:#E8F5E9;color:#1B5E20;border-style:solid;}
+.fillin-input.wrong{border-color:#E57373;background:#FFEBEE;animation:shake .4s ease;}
+.fillin-check-btn{display:block;margin:14px auto 0;padding:10px 24px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);color:#fff;border:none;border-radius:24px;font-family:system-ui,sans-serif;font-size:15px;font-weight:800;cursor:pointer;transition:transform .2s;}
+.fillin-check-btn:hover{transform:translateY(-2px);}
+.fillin-feedback{text-align:center;padding:10px;font-size:15px;font-weight:700;color:#4CAF50;display:none;}
+.fillin-feedback.show{display:block;}
+.challenge-try{margin:10px 0 4px;font-size:14px;color:#3A4A6B;}
 .challenge-reveal-btn{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);color:#fff;border:none;border-radius:16px;font-family:system-ui,sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:transform .15s;}
 .challenge-reveal-btn:hover{transform:translateY(-1px);}
 .challenge-answer{display:none;margin-top:8px;padding:10px 14px;background:#E8F5E9;border:2px solid #C8E6C9;border-radius:10px;font-size:14px;color:#1B5E20;font-weight:600;line-height:1.6;}
@@ -1165,28 +1174,35 @@ And never a child awake but you.</div>
 
             <div class="challenge-item">
         <div class="challenge-word">decide &rarr; ?</div>
-        <div class="challenge-hint">Matthew has a decision to make about the doctor. The base ends in <em>de</em> &mdash; which ending does that call for?</div>
+        <div class="challenge-hint">Matthew must choose whether to let the doctor near Mercy again. The base ends in <em>de</em> &mdash; which ending does that call for?</div>
+        <div class="challenge-try">Write it first: <input class="fillin-input" id="spell-ch1" data-answer="decision" data-label="Spelling Challenge: decide &rarr;" maxlength="16" placeholder="______"></div>
         <button class="challenge-reveal-btn" onclick="document.getElementById('ch1').classList.toggle('show')">&#x1F50D; Reveal</button>
         <div class="challenge-answer" id="ch1"><strong>decision</strong> &mdash; a base ending in <em>d</em>, <em>de</em> or <em>se</em> takes <strong>-sion</strong>. The <em>de</em> drops and <em>-sion</em> takes over.</div>
       </div>
       <div class="challenge-item">
         <div class="challenge-word">protect &rarr; ?</div>
-        <div class="challenge-hint">Hannah has no protection when the town turns on her. The base ends in a hard consonant.</div>
+        <div class="challenge-hint">Nobody shields Hannah when the town turns on her. The base ends in a hard consonant &mdash; the ordinary case.</div>
+        <div class="challenge-try">Write it first: <input class="fillin-input" id="spell-ch2" data-answer="protection" data-label="Spelling Challenge: protect &rarr;" maxlength="16" placeholder="______"></div>
         <button class="challenge-reveal-btn" onclick="document.getElementById('ch2').classList.toggle('show')">&#x1F50D; Reveal</button>
         <div class="challenge-answer" id="ch2"><strong>protection</strong> &mdash; the ordinary case. Just add <strong>-tion</strong>; nothing in the base changes.</div>
       </div>
       <div class="challenge-item">
         <div class="challenge-word">admire &rarr; ?</div>
-        <div class="challenge-hint">Kit felt real admiration for Nat after the stocks. Watch the silent <em>e</em>.</div>
+        <div class="challenge-hint">Kit looks at Nat differently after the stocks. Watch the silent <em>e</em> at the end of the verb.</div>
+        <div class="challenge-try">Write it first: <input class="fillin-input" id="spell-ch3" data-answer="admiration" data-label="Spelling Challenge: admire &rarr;" maxlength="16" placeholder="______"></div>
         <button class="challenge-reveal-btn" onclick="document.getElementById('ch3').classList.toggle('show')">&#x1F50D; Reveal</button>
         <div class="challenge-answer" id="ch3"><strong>admiration</strong> &mdash; a longer verb with a silent <em>e</em>: drop the <em>e</em> and add <strong>-ation</strong>.</div>
       </div>
       <div class="challenge-item">
         <div class="challenge-word">permit &rarr; ?</div>
-        <div class="challenge-hint">Governor Andros would not give permission for Thanksgiving. This one changes more than the ending.</div>
+        <div class="challenge-hint">Governor Andros would not allow Thanksgiving. This one changes more than just the ending &mdash; look at the final <em>t</em>.</div>
+        <div class="challenge-try">Write it first: <input class="fillin-input" id="spell-ch4" data-answer="permission" data-label="Spelling Challenge: permit &rarr;" maxlength="16" placeholder="______"></div>
         <button class="challenge-reveal-btn" onclick="document.getElementById('ch4').classList.toggle('show')">&#x1F50D; Reveal</button>
         <div class="challenge-answer" id="ch4"><strong>permission</strong> &mdash; the <em>t</em> becomes <em>ss</em> before <strong>-ion</strong>. Compare <em>admit &rarr; admission</em>, <em>omit &rarr; omission</em>.</div>
       </div>
+
+      <button class="fillin-check-btn" onclick="checkSpellingChallenge()">Check My Spellings</button>
+      <div class="fillin-feedback" id="spellChallengeFeedback">&#x1F520; All four correct!</div>
     </div>
   </div>
 
@@ -1475,6 +1491,7 @@ And never a child awake but you.</div>
       <div class="turn-in-checklist" id="checklist">
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered all 3 comprehension questions with evidence from the text.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I submitted my final perspective paragraph using the Writer&rsquo;s Workshop Final Edit Checklist.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote out all four words in the Spelling Challenge before revealing them.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote a sentence for each vocabulary word in Use the Word.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed the Morphology Match and wrote my Explain response.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my Writing Connection response.</div></div>
@@ -1581,6 +1598,19 @@ window.addEventListener('beforeunload', function(e){
   }
 });
 /* ───── GATHER ALL ANSWERS ───── */
+function checkSpellingChallenge(){
+  var inputs=document.querySelectorAll('.challenge-item .fillin-input');
+  var allCorrect=true;
+  inputs.forEach(function(inp){
+    var answer=(inp.getAttribute('data-answer')||'').toLowerCase();
+    var val=inp.value.trim().toLowerCase();
+    if(val===answer){inp.classList.remove('wrong');inp.classList.add('correct');inp.disabled=true;}
+    else{inp.classList.remove('correct');inp.classList.add('wrong');allCorrect=false;setTimeout(function(){inp.classList.remove('wrong');},600);}
+  });
+  if(allCorrect){document.getElementById('spellChallengeFeedback').classList.add('show');window._spellingChallengeDone=true;}
+  gatherAnswers();
+}
+
 function gatherAnswers(){
   var output='';
   output+='LESSON 4.4 — THE WITCH OF BLACKBIRD POND, Chapter 17\n';
@@ -1622,6 +1652,12 @@ function gatherAnswers(){
   output+=(spotDone>=spotTotal&&spotTotal>0?'✅':'⬜')+' Grammar Spotter\n';
   output+=(window._spellingChallengeDone?'✅':'⬜')+' Spelling Challenge\n';
     output += '\n';
+  output += '🌱 MORPHOLOGY SWYK\n';
+  output += '────────────────\n';
+  (function(){ var el=document.getElementById('journal-morph');
+    if(el){ output += '\n' + (el.getAttribute('data-label')||'journal-morph') + '\n';
+      output += (el.value.trim()||'(no answer)') + '\n'; } })();
+  output += '\n';
   output += '✏️ GRAMMAR SWYK\n';
   output += '────────────────\n';
   (function(){ var el=document.getElementById('journal-grammar');
