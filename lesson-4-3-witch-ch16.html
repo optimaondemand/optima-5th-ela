@@ -1107,7 +1107,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       </div>
 
       <!-- Grammar Practice — Day 3: Rewrite to fix tense shifts -->
-      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F3AF;</span><p><strong>Practice: Fix the Dialogue!</strong> Tap the version that is punctuated correctly, then rewrite the broken one in your notebook.</p></div>
+      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F3AF;</span><p><strong>Practice: Fix the Dialogue!</strong> Tap the version that is punctuated correctly. Then, below, rewrite the broken ones yourself.</p></div>
       <div class="spotter-game" id="spotterGame">
         <div class="spotter-sentence" id="spot1">
           <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which version is punctuated correctly?</span>
@@ -1132,7 +1132,11 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         </div>
       </div>
 
-      <!-- No Grammar SWYK on Day 3 -->
+      <div style="margin-top:18px;padding-top:14px;border-top:2px dashed #F5E6C8;">
+        <div class="callout callout-info"><span class="callout-icon">&#x270F;&#xFE0F;</span><p><strong>Now write it right.</strong> Pick <strong>two</strong> of the broken versions above and rewrite them correctly. Then add one more line of your own: Hannah answers Nat, so start a <strong>new paragraph</strong> for her.</p></div>
+        <div class="journal-label">&#x1F4D3; Your corrected dialogue <span class="saved-dot" id="dot-grammar-fix"></span></div>
+        <textarea class="journal-box" id="journal-grammar-fix" data-label="Grammar: Rewrite the dialogue correctly (Ch. 16)" placeholder="Hannah smiled. &ldquo;Thee is welcome here, child.&rdquo;&#10;&#10;&ldquo;I would not go back,&rdquo; Nat said.&#10;&#10;&ldquo;...&rdquo;" oninput="autoSave(this,'dot-grammar-fix');gatherAnswers();" style="min-height:90px;"></textarea>
+      </div>
     </div>
   </div>
 
@@ -1526,6 +1530,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         </div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered all 3 comprehension questions with evidence from the text.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I revised my perspective paragraph using the Writer&rsquo;s Workshop Revision Checklist.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I rewrote the broken dialogue lines with correct punctuation and paragraphing.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed the Spelling Show What You Know response.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed the morphology fill-in-the-blank practice.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my Writing Connection response.</div></div>
@@ -1638,7 +1643,7 @@ function gatherAnswers(){
   output+='════════════════════════════════════════\n\n';
   output+='🔤 WORD STUDY — SHOW WHAT YOU KNOW\n';
   output+='────────────────────────────────\n';
-  var swykIds=['journal-spelling'];
+  var swykIds=['journal-grammar-fix','journal-spelling'];
   swykIds.forEach(function(id){
     var el=document.getElementById(id);
     if(el){
