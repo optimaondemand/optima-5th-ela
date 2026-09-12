@@ -2046,6 +2046,7 @@ body {
 
 /* ═══════════ VOCAB MATCH GAME ═══════════ */
 .vocab-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
+.vocab-decode-item{display:flex;flex-direction:column;}
 .flip-card{perspective:800px;height:175px;cursor:pointer;}
 .flip-card-inner{position:relative;width:100%;height:100%;transition:transform .5s ease;transform-style:preserve-3d;}
 .flip-card.flipped .flip-card-inner{transform:rotateY(180deg);}
@@ -2612,77 +2613,92 @@ body {
 
   <!-- VOCABULARY -->
   <div class="activity bl-cyan">
-    <div class="activity-head"><div class="activity-num" style="background:#C8A850;">2</div><div><div class="activity-title">🔤 Vocabulary</div><div class="activity-sub">Decode &amp; Discover — words from Chapters 20–23</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#C8A850;">2</div><div style="flex:1;"><div class="activity-title">&#x1F524; Vocabulary</div><div class="activity-sub">Decode &amp; Discover &mdash; words from Chapters 20–23</div></div></div>
     <div class="activity-body">
-            <p>Five words from Chapters 20–23. Read each card, say the word out loud, and make your best guess at the meaning before you tap it over.</p>
+      <p>Five words from Chapters 20–23. Read the sentence from the book first and make your best guess at the word, then tap the card to check.</p>
       <div class="vocab-grid">
-        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <div class="fc-emoji">🦴</div>
-              <div class="fc-word">bonepickers</div>
-              <div class="fc-tap">think first, then tap</div>
-            </div>
-            <div class="flip-card-back">
-              <div class="fc-word-back">bonepickers</div>
-              <div class="fc-def">Choctaws with the honored duty of preparing the dead for burial.</div>
-            </div>
-          </div>
-        </div>
-        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <div class="fc-emoji">🌳</div>
-              <div class="fc-word">ancestors</div>
-              <div class="fc-tap">think first, then tap</div>
-            </div>
-            <div class="flip-card-back">
-              <div class="fc-word-back">ancestors</div>
-              <div class="fc-def">The family members who lived long before you. The highest honor is to make the ancestors proud.</div>
+        <div class="vocab-decode-item">
+          <div class="decode-sentence">&ldquo;When a Choctaw died, the body was brought to the <strong style="color:#8B3A20;">bonepickers</strong>.&rdquo;</div>
+          <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="fc-emoji">🦴</div>
+                <div class="fc-word">bonepickers</div>
+                <div class="fc-tap">think first, then tap</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="fc-word-back">bonepickers</div>
+                <div class="fc-def">Choctaws with the honored duty of preparing the dead for burial.</div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <div class="fc-emoji">👀</div>
-              <div class="fc-word">distraction</div>
-              <div class="fc-tap">think first, then tap</div>
-            </div>
-            <div class="flip-card-back">
-              <div class="fc-word-back">distraction</div>
-              <div class="fc-def">Something that pulls attention away, so that something else can happen unnoticed.</div>
-            </div>
-          </div>
-        </div>
-        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <div class="fc-emoji">🤐</div>
-              <div class="fc-word">speechless</div>
-              <div class="fc-tap">think first, then tap</div>
-            </div>
-            <div class="flip-card-back">
-              <div class="fc-word-back">speechless</div>
-              <div class="fc-def">So surprised or moved that you cannot say a word.</div>
+        <div class="vocab-decode-item">
+          <div class="decode-sentence">&ldquo;That is the highest honor a Choctaw can ever earn, to make the <strong style="color:#8B3A20;">ancestors</strong> proud.&rdquo;</div>
+          <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="fc-emoji">🌳</div>
+                <div class="fc-word">ancestors</div>
+                <div class="fc-tap">think first, then tap</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="fc-word-back">ancestors</div>
+                <div class="fc-def">The family members who lived long before you. The highest honor is to make the ancestors proud.</div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <div class="fc-emoji">🎖️</div>
-              <div class="fc-word">honored</div>
-              <div class="fc-tap">think first, then tap</div>
+        <div class="vocab-decode-item">
+          <div class="decode-sentence">&ldquo;We needed a <strong style="color:#8B3A20;">distraction</strong>, and Jumper was ready to play.&rdquo;</div>
+          <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="fc-emoji">👀</div>
+                <div class="fc-word">distraction</div>
+                <div class="fc-tap">think first, then tap</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="fc-word-back">distraction</div>
+                <div class="fc-def">Something that pulls attention away, so that something else can happen unnoticed.</div>
+              </div>
             </div>
-            <div class="flip-card-back">
-              <div class="fc-word-back">honored</div>
-              <div class="fc-def">Treated with great respect.</div>
+          </div>
+        </div>
+        <div class="vocab-decode-item">
+          <div class="decode-sentence">&ldquo;He stood <strong style="color:#8B3A20;">speechless</strong>, his eyes filled with wonder.&rdquo;</div>
+          <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="fc-emoji">🤐</div>
+                <div class="fc-word">speechless</div>
+                <div class="fc-tap">think first, then tap</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="fc-word-back">speechless</div>
+                <div class="fc-def">So surprised or moved that you cannot say a word.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="vocab-decode-item">
+          <div class="decode-sentence">&ldquo;They spoke in a single voice and with a single word they <strong style="color:#8B3A20;">honored</strong> us.&rdquo;</div>
+          <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="fc-emoji">🎖️</div>
+                <div class="fc-word">honored</div>
+                <div class="fc-tap">think first, then tap</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="fc-word-back">honored</div>
+                <div class="fc-def">Treated with great respect.</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#127919;</span><p><strong>Now check yourself.</strong> Match each word to its meaning below.</p></div>
+      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#127919;</span><p><strong>Now check yourself.</strong> Match each word to its meaning.</p></div>
       <div class="match-game" id="vocabMatch">
         <div class="match-grid" id="matchGrid">
           <div class="match-item is-word" data-match="A" onclick="matchClick(this)">bonepickers</div>
@@ -2696,9 +2712,8 @@ body {
           <div class="match-item is-word" data-match="E" onclick="matchClick(this)">honored</div>
           <div class="match-item" data-match="D" onclick="matchClick(this)">So surprised or moved that you cannot say a word.</div>
         </div>
-        <div class="match-feedback" id="matchFeedback">✨ All matched!</div>
+        <div class="match-feedback" id="matchFeedback">&#x2728; All matched!</div>
       </div>
-      
     </div>
   </div>
 

@@ -2578,25 +2578,32 @@ body {
 
   <!-- VOCABULARY -->
   <div class="activity bl-cyan">
-    <div class="activity-head"><div class="activity-num" style="background:#C8A850;">2</div><div><div class="activity-title">🔤 Vocabulary</div><div class="activity-sub">Words from this week's chapters.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#C8A850;">2</div><div style="flex:1;"><div class="activity-title">&#x1F524; Vocabulary: Use It</div><div class="activity-sub">Fill in the Blank</div></div></div>
     <div class="activity-body">
-            <p>Earlier this week you learned these five words. Match each word to its meaning. Think before you tap!</p>
-      <div class="match-game" id="vocabMatch">
-        <div class="match-grid" id="matchGrid">
-          <div class="match-item is-word" data-match="A" onclick="matchClick(this)">Pushmataha</div>
-          <div class="match-item" data-match="C" onclick="matchClick(this)">Brought back together after being apart.</div>
-          <div class="match-item is-word" data-match="B" onclick="matchClick(this)">protector</div>
-          <div class="match-item" data-match="E" onclick="matchClick(this)">Without life; not moving or breathing.</div>
-          <div class="match-item is-word" data-match="C" onclick="matchClick(this)">reunited</div>
-          <div class="match-item" data-match="A" onclick="matchClick(this)">A famous Choctaw chief and general, honored for leading and protecting his people.</div>
-          <div class="match-item is-word" data-match="D" onclick="matchClick(this)">survived</div>
-          <div class="match-item" data-match="B" onclick="matchClick(this)">Someone who keeps another person safe from harm.</div>
-          <div class="match-item is-word" data-match="E" onclick="matchClick(this)">lifeless</div>
-          <div class="match-item" data-match="D" onclick="matchClick(this)">Stayed alive through something dangerous.</div>
-        </div>
-        <div class="match-feedback" id="matchFeedback">✨ All matched!</div>
+<details class="vocab-bank" style="margin-bottom:16px;background:#FFFCF0;border:2px solid #F5E6C8;border-radius:10px;padding:0;">
+<summary style="padding:12px 16px;cursor:pointer;font-weight:700;font-size:15px;color:#8B3A20;list-style:none;display:flex;align-items:center;gap:8px;">
+<span style="transition:transform .2s;">&#x25B6;</span> &#x1F4D6; Word Bank &mdash; tap to see this week&rsquo;s definitions
+</summary>
+<div style="padding:4px 16px 14px;font-size:14px;color:#3A4A6B;line-height:1.7;">
+<p style="margin:4px 0;"><strong>Pushmataha</strong> &mdash; A famous Choctaw chief and general, honored for leading and protecting his people.</p>
+<p style="margin:4px 0;"><strong>protector</strong> &mdash; Someone who keeps another person safe from harm.</p>
+<p style="margin:4px 0;"><strong>reunited</strong> &mdash; Brought back together after being apart.</p>
+<p style="margin:4px 0;"><strong>survived</strong> &mdash; Stayed alive through something dangerous.</p>
+<p style="margin:4px 0;"><strong>lifeless</strong> &mdash; Without life; not moving or breathing.</p>
+</div>
+</details>
+
+      <p>You have read these words and worked out their meanings. Now put them back where they belong.</p>
+      <div class="callout callout-info"><span class="callout-icon">&#x1F3AF;</span><p><strong>Practice:</strong> Type the word that fits each sentence from Chapters 28–29, then check your answers.</p></div>
+      <div class="fillin-game" id="vocabFillinGame">
+        <div class="fillin-item">We knew we would see General <input class="fillin-input" data-answer="pushmataha" maxlength="12" placeholder="______"> for many days and years to come.</div>
+        <div class="fillin-item">We met a new friend and <input class="fillin-input" data-answer="protector" maxlength="12" placeholder="______"> that day, as well.</div>
+        <div class="fillin-item">Naomi was <input class="fillin-input" data-answer="reunited" maxlength="12" placeholder="______"> with her mother and father.</div>
+        <div class="fillin-item">That is how you <input class="fillin-input" data-answer="survived" maxlength="12" placeholder="______"> that night in the cave.</div>
+        <div class="fillin-item">He lifted him off the ground, swinging him back and forth till the wolf was limp and <input class="fillin-input" data-answer="lifeless" maxlength="12" placeholder="______">.</div>
+        <button class="fillin-check-btn" onclick="checkVocabFillIn()">Check My Words</button>
+        <div class="fillin-feedback" id="vocabFillinFeedback">&#x1F331; All correct &mdash; you know this week&rsquo;s words.</div>
       </div>
-      
     </div>
   </div>
 
@@ -2906,7 +2913,7 @@ function gatherAnswers() {
   output += '🎮 PRACTICE ACTIVITIES\n';
   output += '────────────────────────────────\n';
   output += (window._fillinDone ? '✅' : '⬜') + ' Morphology Word Parts\n';
-  output += (matchCount >= 4 ? '✅' : '⬜') + ' Vocabulary Match\n';
+  output += (window._vocabFillinDone ? '✅' : '⬜') + ' Vocabulary Fill-In\n';
   var spotDone = 0;
   for (var i = 1; i <= 4; i++) {
     var s = document.getElementById('spot' + i);
@@ -3169,6 +3176,20 @@ function dropSortChip(colDrop, colName) {
 var matchFirst = null;
 var matchCount = 0;
 
+/* ───── VOCAB FILL-IN (Day 3) ───── */
+window._vocabFillinDone=false;
+function checkVocabFillIn(){
+  var items=document.querySelectorAll('#vocabFillinGame .fillin-input');var correct=0;
+  items.forEach(function(inp){
+    var ans=inp.getAttribute('data-answer').toLowerCase().trim();
+    var val=inp.value.toLowerCase().trim();
+    if(val===ans){inp.classList.remove('wrong');inp.classList.add('correct');inp.disabled=true;correct++;}
+    else{inp.classList.remove('correct');inp.classList.add('wrong');setTimeout(function(){inp.classList.remove('wrong');},600);}
+  });
+  var fb=document.getElementById('vocabFillinFeedback');
+  if(correct===items.length&&fb){fb.classList.add('show');window._vocabFillinDone=true;}
+}
+
 function matchClick(item) {
   if (item.classList.contains('matched')) return;
 
@@ -3402,7 +3423,7 @@ function downloadJournal() {
   // Mini-game results
   html += '<div class="games"><div class="games-title">🎮 Mini-Game Results</div>';
   html += '<div class="game-line">' + (window._fillinDone ? '✅' : '⬜') + ' Morphology Word Parts</div>';
-  html += '<div class="game-line">' + (matchCount >= 4 ? '✅' : '⬜') + ' Vocabulary Match</div>';
+  html += '<div class="game-line">' + (window._vocabFillinDone ? '✅' : '⬜') + ' Vocabulary Fill-In</div>';
   var spotDone = 0;
   for (var i = 1; i <= 4; i++) {
     var s = document.getElementById('spot' + i);

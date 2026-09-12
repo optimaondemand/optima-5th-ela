@@ -2573,25 +2573,32 @@ body {
 
   <!-- VOCABULARY -->
   <div class="activity bl-cyan">
-    <div class="activity-head"><div class="activity-num" style="background:#C8A850;">2</div><div><div class="activity-title">🔤 Vocabulary</div><div class="activity-sub">Words from this week's chapters.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#C8A850;">2</div><div style="flex:1;"><div class="activity-title">&#x1F524; Vocabulary: Use It</div><div class="activity-sub">Fill in the Blank</div></div></div>
     <div class="activity-body">
-            <p>Earlier this week you learned these five words. Match each word to its meaning. Think before you tap!</p>
-      <div class="match-game" id="vocabMatch">
-        <div class="match-grid" id="matchGrid">
-          <div class="match-item is-word" data-match="A" onclick="matchClick(this)">Nahullo</div>
-          <div class="match-item" data-match="C" onclick="matchClick(this)">Long tubes used to shoot darts. Isaac and Luke hunt with blowguns they made themselves.</div>
-          <div class="match-item is-word" data-match="B" onclick="matchClick(this)">missionaries</div>
-          <div class="match-item" data-match="E" onclick="matchClick(this)">Covering something so closely that it cannot breathe or burn.</div>
-          <div class="match-item is-word" data-match="C" onclick="matchClick(this)">blowguns</div>
-          <div class="match-item" data-match="A" onclick="matchClick(this)">A white person — the Choctaw word Isaac's family uses for the men who come on horseback.</div>
-          <div class="match-item is-word" data-match="D" onclick="matchClick(this)">torches</div>
-          <div class="match-item" data-match="B" onclick="matchClick(this)">People sent to a place to teach their religion. Missionaries lived in Isaac's town.</div>
-          <div class="match-item is-word" data-match="E" onclick="matchClick(this)">smothering</div>
-          <div class="match-item" data-match="D" onclick="matchClick(this)">Burning sticks carried as a light or a weapon. Twenty flaming torches fell on the town.</div>
-        </div>
-        <div class="match-feedback" id="matchFeedback">✨ All matched!</div>
+<details class="vocab-bank" style="margin-bottom:16px;background:#FFFCF0;border:2px solid #F5E6C8;border-radius:10px;padding:0;">
+<summary style="padding:12px 16px;cursor:pointer;font-weight:700;font-size:15px;color:#8B3A20;list-style:none;display:flex;align-items:center;gap:8px;">
+<span style="transition:transform .2s;">&#x25B6;</span> &#x1F4D6; Word Bank &mdash; tap to see this week&rsquo;s definitions
+</summary>
+<div style="padding:4px 16px 14px;font-size:14px;color:#3A4A6B;line-height:1.7;">
+<p style="margin:4px 0;"><strong>Nahullo</strong> &mdash; A white person — the Choctaw word Isaac's family uses for the men who come on horseback.</p>
+<p style="margin:4px 0;"><strong>missionaries</strong> &mdash; People sent to a place to teach their religion. Missionaries lived in Isaac's town.</p>
+<p style="margin:4px 0;"><strong>blowguns</strong> &mdash; Long tubes used to shoot darts. Isaac and Luke hunt with blowguns they made themselves.</p>
+<p style="margin:4px 0;"><strong>torches</strong> &mdash; Burning sticks carried as a light or a weapon. Twenty flaming torches fell on the town.</p>
+<p style="margin:4px 0;"><strong>smothering</strong> &mdash; Covering something so closely that it cannot breathe or burn.</p>
+</div>
+</details>
+
+      <p>You have read these words and worked out their meanings. Now put them back where they belong.</p>
+      <div class="callout callout-info"><span class="callout-icon">&#x1F3AF;</span><p><strong>Practice:</strong> Type the word that fits each sentence from Chapters 4–7, then check your answers.</p></div>
+      <div class="fillin-game" id="vocabFillinGame">
+        <div class="fillin-item">Men rode horses from the river, <input class="fillin-input" data-answer="nahullo" maxlength="12" placeholder="______"> men, and they carried burning torches.</div>
+        <div class="fillin-item">The <input class="fillin-input" data-answer="missionaries" maxlength="14" placeholder="______"> were visiting another Choctaw town that week, but the Nahullos didn’t know that.</div>
+        <div class="fillin-item">With <input class="fillin-input" data-answer="blowguns" maxlength="12" placeholder="______"> we caught our food.</div>
+        <div class="fillin-item">The <input class="fillin-input" data-answer="torches" maxlength="12" placeholder="______"> made slow circles, turning over and over, followed by a trail of sparks.</div>
+        <div class="fillin-item">I grabbed my blanket and wrapped it around my shoulders, <input class="fillin-input" data-answer="smothering" maxlength="12" placeholder="______"> the flames.</div>
+        <button class="fillin-check-btn" onclick="checkVocabFillIn()">Check My Words</button>
+        <div class="fillin-feedback" id="vocabFillinFeedback">&#x1F331; All correct &mdash; you know this week&rsquo;s words.</div>
       </div>
-      
     </div>
   </div>
 
@@ -2880,7 +2887,7 @@ function gatherAnswers() {
   output += '🎮 PRACTICE ACTIVITIES\n';
   output += '────────────────────────────────\n';
   output += (window._fillinDone ? '✅' : '⬜') + ' Morphology Word Parts\n';
-  output += (matchCount >= 4 ? '✅' : '⬜') + ' Vocabulary Match\n';
+  output += (window._vocabFillinDone ? '✅' : '⬜') + ' Vocabulary Fill-In\n';
   var spotDone = 0;
   for (var i = 1; i <= 4; i++) {
     var s = document.getElementById('spot' + i);
@@ -3143,6 +3150,20 @@ function dropSortChip(colDrop, colName) {
 var matchFirst = null;
 var matchCount = 0;
 
+/* ───── VOCAB FILL-IN (Day 3) ───── */
+window._vocabFillinDone=false;
+function checkVocabFillIn(){
+  var items=document.querySelectorAll('#vocabFillinGame .fillin-input');var correct=0;
+  items.forEach(function(inp){
+    var ans=inp.getAttribute('data-answer').toLowerCase().trim();
+    var val=inp.value.toLowerCase().trim();
+    if(val===ans){inp.classList.remove('wrong');inp.classList.add('correct');inp.disabled=true;correct++;}
+    else{inp.classList.remove('correct');inp.classList.add('wrong');setTimeout(function(){inp.classList.remove('wrong');},600);}
+  });
+  var fb=document.getElementById('vocabFillinFeedback');
+  if(correct===items.length&&fb){fb.classList.add('show');window._vocabFillinDone=true;}
+}
+
 function matchClick(item) {
   if (item.classList.contains('matched')) return;
 
@@ -3376,7 +3397,7 @@ function downloadJournal() {
   // Mini-game results
   html += '<div class="games"><div class="games-title">🎮 Mini-Game Results</div>';
   html += '<div class="game-line">' + (window._fillinDone ? '✅' : '⬜') + ' Morphology Word Parts</div>';
-  html += '<div class="game-line">' + (matchCount >= 4 ? '✅' : '⬜') + ' Vocabulary Match</div>';
+  html += '<div class="game-line">' + (window._vocabFillinDone ? '✅' : '⬜') + ' Vocabulary Fill-In</div>';
   var spotDone = 0;
   for (var i = 1; i <= 4; i++) {
     var s = document.getElementById('spot' + i);

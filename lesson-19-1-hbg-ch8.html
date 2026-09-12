@@ -2046,6 +2046,7 @@ body {
 
 /* ═══════════ VOCAB MATCH GAME ═══════════ */
 .vocab-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
+.vocab-decode-item{display:flex;flex-direction:column;}
 .flip-card{perspective:800px;height:175px;cursor:pointer;}
 .flip-card-inner{position:relative;width:100%;height:100%;transition:transform .5s ease;transform-style:preserve-3d;}
 .flip-card.flipped .flip-card-inner{transform:rotateY(180deg);}
@@ -2610,77 +2611,92 @@ body {
 
   <!-- VOCABULARY -->
   <div class="activity bl-cyan">
-    <div class="activity-head"><div class="activity-num" style="background:#C8A850;">2</div><div><div class="activity-title">🔤 Vocabulary</div><div class="activity-sub">Decode &amp; Discover — words from Chapters 8–11</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#C8A850;">2</div><div style="flex:1;"><div class="activity-title">&#x1F524; Vocabulary</div><div class="activity-sub">Decode &amp; Discover &mdash; words from Chapters 8–11</div></div></div>
     <div class="activity-body">
-            <p>Five words from Chapters 8–11. Read each card, say the word out loud, and make your best guess at the meaning before you tap it over.</p>
+      <p>Five words from Chapters 8–11. Read the sentence from the book first and make your best guess at the word, then tap the card to check.</p>
       <div class="vocab-grid">
-        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <div class="fc-emoji">🦠</div>
-              <div class="fc-word">smallpox</div>
-              <div class="fc-tap">think first, then tap</div>
-            </div>
-            <div class="flip-card-back">
-              <div class="fc-word-back">smallpox</div>
-              <div class="fc-def">A deadly disease that spreads from person to person. The soldiers' blankets carried it.</div>
-            </div>
-          </div>
-        </div>
-        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <div class="fc-emoji">🎒</div>
-              <div class="fc-word">belongings</div>
-              <div class="fc-tap">think first, then tap</div>
-            </div>
-            <div class="flip-card-back">
-              <div class="fc-word-back">belongings</div>
-              <div class="fc-def">The things a person owns and carries with them.</div>
+        <div class="vocab-decode-item">
+          <div class="decode-sentence">&ldquo;How did she know the blankets carried <strong style="color:#8B3A20;">smallpox</strong>?&rdquo;</div>
+          <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="fc-emoji">🦠</div>
+                <div class="fc-word">smallpox</div>
+                <div class="fc-tap">think first, then tap</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="fc-word-back">smallpox</div>
+                <div class="fc-def">A deadly disease that spreads from person to person. The soldiers' blankets carried it.</div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <div class="fc-emoji">🤒</div>
-              <div class="fc-word">sickness</div>
-              <div class="fc-tap">think first, then tap</div>
-            </div>
-            <div class="flip-card-back">
-              <div class="fc-word-back">sickness</div>
-              <div class="fc-def">Illness. On the road, Choctaws died from sickness and from hunger.</div>
-            </div>
-          </div>
-        </div>
-        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <div class="fc-emoji">✋</div>
-              <div class="fc-word">refused</div>
-              <div class="fc-tap">think first, then tap</div>
-            </div>
-            <div class="flip-card-back">
-              <div class="fc-word-back">refused</div>
-              <div class="fc-def">Said no firmly, even when told to do something.</div>
+        <div class="vocab-decode-item">
+          <div class="decode-sentence">&ldquo;Early the next morning we gathered our <strong style="color:#8B3A20;">belongings</strong> and left the camp.&rdquo;</div>
+          <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="fc-emoji">🎒</div>
+                <div class="fc-word">belongings</div>
+                <div class="fc-tap">think first, then tap</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="fc-word-back">belongings</div>
+                <div class="fc-def">The things a person owns and carries with them.</div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <div class="fc-emoji">💨</div>
-              <div class="fc-word">vanished</div>
-              <div class="fc-tap">think first, then tap</div>
+        <div class="vocab-decode-item">
+          <div class="decode-sentence">&ldquo;They died from <strong style="color:#8B3A20;">sickness</strong> and they died from hunger.&rdquo;</div>
+          <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="fc-emoji">🤒</div>
+                <div class="fc-word">sickness</div>
+                <div class="fc-tap">think first, then tap</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="fc-word-back">sickness</div>
+                <div class="fc-def">Illness. On the road, Choctaws died from sickness and from hunger.</div>
+              </div>
             </div>
-            <div class="flip-card-back">
-              <div class="fc-word-back">vanished</div>
-              <div class="fc-def">Disappeared suddenly and completely.</div>
+          </div>
+        </div>
+        <div class="vocab-decode-item">
+          <div class="decode-sentence">&ldquo;From that moment on, even though my feet burned, I <strong style="color:#8B3A20;">refused</strong> to look behind me.&rdquo;</div>
+          <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="fc-emoji">✋</div>
+                <div class="fc-word">refused</div>
+                <div class="fc-tap">think first, then tap</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="fc-word-back">refused</div>
+                <div class="fc-def">Said no firmly, even when told to do something.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="vocab-decode-item">
+          <div class="decode-sentence">&ldquo;The Choctaw ghosts <strong style="color:#8B3A20;">vanished</strong>.&rdquo;</div>
+          <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="fc-emoji">💨</div>
+                <div class="fc-word">vanished</div>
+                <div class="fc-tap">think first, then tap</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="fc-word-back">vanished</div>
+                <div class="fc-def">Disappeared suddenly and completely.</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#127919;</span><p><strong>Now check yourself.</strong> Match each word to its meaning below.</p></div>
+      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#127919;</span><p><strong>Now check yourself.</strong> Match each word to its meaning.</p></div>
       <div class="match-game" id="vocabMatch">
         <div class="match-grid" id="matchGrid">
           <div class="match-item is-word" data-match="A" onclick="matchClick(this)">smallpox</div>
@@ -2694,9 +2710,8 @@ body {
           <div class="match-item is-word" data-match="E" onclick="matchClick(this)">vanished</div>
           <div class="match-item" data-match="D" onclick="matchClick(this)">Said no firmly, even when told to do something.</div>
         </div>
-        <div class="match-feedback" id="matchFeedback">✨ All matched!</div>
+        <div class="match-feedback" id="matchFeedback">&#x2728; All matched!</div>
       </div>
-      
     </div>
   </div>
 

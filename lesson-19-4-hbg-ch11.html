@@ -2588,25 +2588,47 @@ body {
 
   <!-- VOCABULARY -->
   <div class="activity bl-cyan">
-    <div class="activity-head"><div class="activity-num" style="background:#C8A850;">2</div><div><div class="activity-title">🔤 Vocabulary</div><div class="activity-sub">Words from this week's chapters.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#C8A850;">2</div><div style="flex:1;"><div class="activity-title">&#x1F524; Vocabulary</div><div class="activity-sub">Use the Word!</div></div></div>
     <div class="activity-body">
-            <p>Earlier this week you learned these five words. Match each word to its meaning. Think before you tap!</p>
-      <div class="match-game" id="vocabMatch">
-        <div class="match-grid" id="matchGrid">
-          <div class="match-item is-word" data-match="A" onclick="matchClick(this)">smallpox</div>
-          <div class="match-item" data-match="C" onclick="matchClick(this)">Illness. On the road, Choctaws died from sickness and from hunger.</div>
-          <div class="match-item is-word" data-match="B" onclick="matchClick(this)">belongings</div>
-          <div class="match-item" data-match="E" onclick="matchClick(this)">Disappeared suddenly and completely.</div>
-          <div class="match-item is-word" data-match="C" onclick="matchClick(this)">sickness</div>
-          <div class="match-item" data-match="A" onclick="matchClick(this)">A deadly disease that spreads from person to person. The soldiers' blankets carried it.</div>
-          <div class="match-item is-word" data-match="D" onclick="matchClick(this)">refused</div>
-          <div class="match-item" data-match="B" onclick="matchClick(this)">The things a person owns and carries with them.</div>
-          <div class="match-item is-word" data-match="E" onclick="matchClick(this)">vanished</div>
-          <div class="match-item" data-match="D" onclick="matchClick(this)">Said no firmly, even when told to do something.</div>
-        </div>
-        <div class="match-feedback" id="matchFeedback">✨ All matched!</div>
+<details class="vocab-bank" style="margin-bottom:16px;background:#FFFCF0;border:2px solid #F5E6C8;border-radius:10px;padding:0;">
+<summary style="padding:12px 16px;cursor:pointer;font-weight:700;font-size:15px;color:#8B3A20;list-style:none;display:flex;align-items:center;gap:8px;">
+<span style="transition:transform .2s;">&#x25B6;</span> &#x1F4D6; Word Bank &mdash; tap to see this week&rsquo;s definitions
+</summary>
+<div style="padding:4px 16px 14px;font-size:14px;color:#3A4A6B;line-height:1.7;">
+<p style="margin:4px 0;"><strong>smallpox</strong> &mdash; A deadly disease that spreads from person to person. The soldiers' blankets carried it.</p>
+<p style="margin:4px 0;"><strong>belongings</strong> &mdash; The things a person owns and carries with them.</p>
+<p style="margin:4px 0;"><strong>sickness</strong> &mdash; Illness. On the road, Choctaws died from sickness and from hunger.</p>
+<p style="margin:4px 0;"><strong>refused</strong> &mdash; Said no firmly, even when told to do something.</p>
+<p style="margin:4px 0;"><strong>vanished</strong> &mdash; Disappeared suddenly and completely.</p>
+</div>
+</details>
+
+      <p>You have worked with these words all week. Show what you know: write your own sentence for each one. Make the sentence prove you understand the word &mdash; not just that you can spell it.</p>
+      <div class="vocab-use-item" style="margin-bottom:14px;">
+        <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">smallpox <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; A deadly disease that spreads from person to person. The soldiers' blankets carried it.</span></div>
+        <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-smallpox"></span></div>
+        <textarea class="journal-box" id="journal-vocab-smallpox" data-label="Vocabulary: smallpox" placeholder="Write a sentence using smallpox..." oninput="autoSave(this,'dot-vocab-smallpox');gatherAnswers();" style="min-height:50px;"></textarea>
       </div>
-      
+      <div class="vocab-use-item" style="margin-bottom:14px;">
+        <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">belongings <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; The things a person owns and carries with them.</span></div>
+        <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-belongings"></span></div>
+        <textarea class="journal-box" id="journal-vocab-belongings" data-label="Vocabulary: belongings" placeholder="Write a sentence using belongings..." oninput="autoSave(this,'dot-vocab-belongings');gatherAnswers();" style="min-height:50px;"></textarea>
+      </div>
+      <div class="vocab-use-item" style="margin-bottom:14px;">
+        <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">sickness <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; Illness. On the road, Choctaws died from sickness and from hunger.</span></div>
+        <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-sickness"></span></div>
+        <textarea class="journal-box" id="journal-vocab-sickness" data-label="Vocabulary: sickness" placeholder="Write a sentence using sickness..." oninput="autoSave(this,'dot-vocab-sickness');gatherAnswers();" style="min-height:50px;"></textarea>
+      </div>
+      <div class="vocab-use-item" style="margin-bottom:14px;">
+        <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">refused <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; Said no firmly, even when told to do something.</span></div>
+        <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-refused"></span></div>
+        <textarea class="journal-box" id="journal-vocab-refused" data-label="Vocabulary: refused" placeholder="Write a sentence using refused..." oninput="autoSave(this,'dot-vocab-refused');gatherAnswers();" style="min-height:50px;"></textarea>
+      </div>
+      <div class="vocab-use-item" style="margin-bottom:14px;">
+        <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">vanished <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; Disappeared suddenly and completely.</span></div>
+        <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-vanished"></span></div>
+        <textarea class="journal-box" id="journal-vocab-vanished" data-label="Vocabulary: vanished" placeholder="Write a sentence using vanished..." oninput="autoSave(this,'dot-vocab-vanished');gatherAnswers();" style="min-height:50px;"></textarea>
+      </div>
     </div>
   </div>
 
@@ -2873,6 +2895,7 @@ function expandIntro() {
 function gatherAnswers() {
   var output = '';
   var sections = [
+    { title: '🔤 USE THE WORD', ids: ['journal-vocab-smallpox','journal-vocab-belongings','journal-vocab-sickness','journal-vocab-refused','journal-vocab-vanished'] },
     { title: '📖 CH. 11 &mdash; CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: 'GRAMMAR SWYK', ids: ['journal-grammar'] },
     { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
@@ -2900,7 +2923,7 @@ function gatherAnswers() {
   output += '🎮 PRACTICE ACTIVITIES\n';
   output += '────────────────────────────────\n';
   output += (window._fillinDone ? '✅' : '⬜') + ' Morphology Word Parts\n';
-  output += (matchCount >= 4 ? '✅' : '⬜') + ' Vocabulary Match\n';
+  output += (document.getElementById('journal-vocab-smallpox') && document.getElementById('journal-vocab-smallpox').value.trim() ? '✅' : '⬜') + ' Use the Word\n';
   var spotDone = 0;
   for (var i = 1; i <= 4; i++) {
     var s = document.getElementById('spot' + i);
@@ -3396,7 +3419,7 @@ function downloadJournal() {
   // Mini-game results
   html += '<div class="games"><div class="games-title">🎮 Mini-Game Results</div>';
   html += '<div class="game-line">' + (window._fillinDone ? '✅' : '⬜') + ' Morphology Word Parts</div>';
-  html += '<div class="game-line">' + (matchCount >= 4 ? '✅' : '⬜') + ' Vocabulary Match</div>';
+  html += '<div class="game-line">' + (document.getElementById('journal-vocab-smallpox') && document.getElementById('journal-vocab-smallpox').value.trim() ? '✅' : '⬜') + ' Use the Word</div>';
   var spotDone = 0;
   for (var i = 1; i <= 4; i++) {
     var s = document.getElementById('spot' + i);

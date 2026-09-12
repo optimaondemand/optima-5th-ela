@@ -2593,25 +2593,47 @@ body {
 
   <!-- VOCABULARY -->
   <div class="activity bl-cyan">
-    <div class="activity-head"><div class="activity-num" style="background:#C8A850;">2</div><div><div class="activity-title">🔤 Vocabulary</div><div class="activity-sub">Words from this week's chapters.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#C8A850;">2</div><div style="flex:1;"><div class="activity-title">&#x1F524; Vocabulary</div><div class="activity-sub">Use the Word!</div></div></div>
     <div class="activity-body">
-            <p>Earlier this week you learned these five words. Match each word to its meaning. Think before you tap!</p>
-      <div class="match-game" id="vocabMatch">
-        <div class="match-grid" id="matchGrid">
-          <div class="match-item is-word" data-match="A" onclick="matchClick(this)">gratitude</div>
-          <div class="match-item" data-match="C" onclick="matchClick(this)">Completely worn out.</div>
-          <div class="match-item is-word" data-match="B" onclick="matchClick(this)">prophecy</div>
-          <div class="match-item" data-match="E" onclick="matchClick(this)">Hurting someone back for something they did to you.</div>
-          <div class="match-item is-word" data-match="C" onclick="matchClick(this)">exhausted</div>
-          <div class="match-item" data-match="A" onclick="matchClick(this)">Thankfulness, and the showing of it.</div>
-          <div class="match-item is-word" data-match="D" onclick="matchClick(this)">unconscious</div>
-          <div class="match-item" data-match="B" onclick="matchClick(this)">A prediction of what will happen in the future.</div>
-          <div class="match-item is-word" data-match="E" onclick="matchClick(this)">revenge</div>
-          <div class="match-item" data-match="D" onclick="matchClick(this)">Not awake and not able to feel anything, usually after being hurt.</div>
-        </div>
-        <div class="match-feedback" id="matchFeedback">✨ All matched!</div>
+<details class="vocab-bank" style="margin-bottom:16px;background:#FFFCF0;border:2px solid #F5E6C8;border-radius:10px;padding:0;">
+<summary style="padding:12px 16px;cursor:pointer;font-weight:700;font-size:15px;color:#8B3A20;list-style:none;display:flex;align-items:center;gap:8px;">
+<span style="transition:transform .2s;">&#x25B6;</span> &#x1F4D6; Word Bank &mdash; tap to see this week&rsquo;s definitions
+</summary>
+<div style="padding:4px 16px 14px;font-size:14px;color:#3A4A6B;line-height:1.7;">
+<p style="margin:4px 0;"><strong>gratitude</strong> &mdash; Thankfulness, and the showing of it.</p>
+<p style="margin:4px 0;"><strong>prophecy</strong> &mdash; A prediction of what will happen in the future.</p>
+<p style="margin:4px 0;"><strong>exhausted</strong> &mdash; Completely worn out.</p>
+<p style="margin:4px 0;"><strong>unconscious</strong> &mdash; Not awake and not able to feel anything, usually after being hurt.</p>
+<p style="margin:4px 0;"><strong>revenge</strong> &mdash; Hurting someone back for something they did to you.</p>
+</div>
+</details>
+
+      <p>You have worked with these words all week. Show what you know: write your own sentence for each one. Make the sentence prove you understand the word &mdash; not just that you can spell it.</p>
+      <div class="vocab-use-item" style="margin-bottom:14px;">
+        <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">gratitude <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; Thankfulness, and the showing of it.</span></div>
+        <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-gratitude"></span></div>
+        <textarea class="journal-box" id="journal-vocab-gratitude" data-label="Vocabulary: gratitude" placeholder="Write a sentence using gratitude..." oninput="autoSave(this,'dot-vocab-gratitude');gatherAnswers();" style="min-height:50px;"></textarea>
       </div>
-      
+      <div class="vocab-use-item" style="margin-bottom:14px;">
+        <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">prophecy <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; A prediction of what will happen in the future.</span></div>
+        <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-prophecy"></span></div>
+        <textarea class="journal-box" id="journal-vocab-prophecy" data-label="Vocabulary: prophecy" placeholder="Write a sentence using prophecy..." oninput="autoSave(this,'dot-vocab-prophecy');gatherAnswers();" style="min-height:50px;"></textarea>
+      </div>
+      <div class="vocab-use-item" style="margin-bottom:14px;">
+        <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">exhausted <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; Completely worn out.</span></div>
+        <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-exhausted"></span></div>
+        <textarea class="journal-box" id="journal-vocab-exhausted" data-label="Vocabulary: exhausted" placeholder="Write a sentence using exhausted..." oninput="autoSave(this,'dot-vocab-exhausted');gatherAnswers();" style="min-height:50px;"></textarea>
+      </div>
+      <div class="vocab-use-item" style="margin-bottom:14px;">
+        <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">unconscious <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; Not awake and not able to feel anything, usually after being hurt.</span></div>
+        <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-unconscious"></span></div>
+        <textarea class="journal-box" id="journal-vocab-unconscious" data-label="Vocabulary: unconscious" placeholder="Write a sentence using unconscious..." oninput="autoSave(this,'dot-vocab-unconscious');gatherAnswers();" style="min-height:50px;"></textarea>
+      </div>
+      <div class="vocab-use-item" style="margin-bottom:14px;">
+        <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">revenge <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; Hurting someone back for something they did to you.</span></div>
+        <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-revenge"></span></div>
+        <textarea class="journal-box" id="journal-vocab-revenge" data-label="Vocabulary: revenge" placeholder="Write a sentence using revenge..." oninput="autoSave(this,'dot-vocab-revenge');gatherAnswers();" style="min-height:50px;"></textarea>
+      </div>
     </div>
   </div>
 
@@ -2887,6 +2909,7 @@ function expandIntro() {
 function gatherAnswers() {
   var output = '';
   var sections = [
+    { title: '🔤 USE THE WORD', ids: ['journal-vocab-gratitude','journal-vocab-prophecy','journal-vocab-exhausted','journal-vocab-unconscious','journal-vocab-revenge'] },
     { title: '📖 CH. 27 &mdash; CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: 'GRAMMAR SWYK', ids: ['journal-grammar'] },
     { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
@@ -2914,7 +2937,7 @@ function gatherAnswers() {
   output += '🎮 PRACTICE ACTIVITIES\n';
   output += '────────────────────────────────\n';
   output += (window._fillinDone ? '✅' : '⬜') + ' Morphology Word Parts\n';
-  output += (matchCount >= 4 ? '✅' : '⬜') + ' Vocabulary Match\n';
+  output += (document.getElementById('journal-vocab-gratitude') && document.getElementById('journal-vocab-gratitude').value.trim() ? '✅' : '⬜') + ' Use the Word\n';
   var spotDone = 0;
   for (var i = 1; i <= 4; i++) {
     var s = document.getElementById('spot' + i);
@@ -3418,7 +3441,7 @@ function downloadJournal() {
   // Mini-game results
   html += '<div class="games"><div class="games-title">🎮 Mini-Game Results</div>';
   html += '<div class="game-line">' + (window._fillinDone ? '✅' : '⬜') + ' Morphology Word Parts</div>';
-  html += '<div class="game-line">' + (matchCount >= 4 ? '✅' : '⬜') + ' Vocabulary Match</div>';
+  html += '<div class="game-line">' + (document.getElementById('journal-vocab-gratitude') && document.getElementById('journal-vocab-gratitude').value.trim() ? '✅' : '⬜') + ' Use the Word</div>';
   var spotDone = 0;
   for (var i = 1; i <= 4; i++) {
     var s = document.getElementById('spot' + i);

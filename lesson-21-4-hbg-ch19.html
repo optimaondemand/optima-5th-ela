@@ -2590,25 +2590,47 @@ body {
 
   <!-- VOCABULARY -->
   <div class="activity bl-cyan">
-    <div class="activity-head"><div class="activity-num" style="background:#C8A850;">2</div><div><div class="activity-title">🔤 Vocabulary</div><div class="activity-sub">Words from this week's chapters.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#C8A850;">2</div><div style="flex:1;"><div class="activity-title">&#x1F524; Vocabulary</div><div class="activity-sub">Use the Word!</div></div></div>
     <div class="activity-body">
-            <p>Earlier this week you learned these five words. Match each word to its meaning. Think before you tap!</p>
-      <div class="match-game" id="vocabMatch">
-        <div class="match-grid" id="matchGrid">
-          <div class="match-item is-word" data-match="A" onclick="matchClick(this)">courage</div>
-          <div class="match-item" data-match="C" onclick="matchClick(this)">Extremely frightened.</div>
-          <div class="match-item is-word" data-match="B" onclick="matchClick(this)">mourning</div>
-          <div class="match-item" data-match="E" onclick="matchClick(this)">A traditional Choctaw game played with sticks — one of the things carried from home.</div>
-          <div class="match-item is-word" data-match="C" onclick="matchClick(this)">terrified</div>
-          <div class="match-item" data-match="A" onclick="matchClick(this)">Facing something frightening anyway. Isaac walks to the soldiers' campfire with newfound courage.</div>
-          <div class="match-item is-word" data-match="D" onclick="matchClick(this)">suffering</div>
-          <div class="match-item" data-match="B" onclick="matchClick(this)">Deep sadness after someone dies, and the quiet way people show it.</div>
-          <div class="match-item is-word" data-match="E" onclick="matchClick(this)">stickball</div>
-          <div class="match-item" data-match="D" onclick="matchClick(this)">Pain or hardship a person is living through.</div>
-        </div>
-        <div class="match-feedback" id="matchFeedback">✨ All matched!</div>
+<details class="vocab-bank" style="margin-bottom:16px;background:#FFFCF0;border:2px solid #F5E6C8;border-radius:10px;padding:0;">
+<summary style="padding:12px 16px;cursor:pointer;font-weight:700;font-size:15px;color:#8B3A20;list-style:none;display:flex;align-items:center;gap:8px;">
+<span style="transition:transform .2s;">&#x25B6;</span> &#x1F4D6; Word Bank &mdash; tap to see this week&rsquo;s definitions
+</summary>
+<div style="padding:4px 16px 14px;font-size:14px;color:#3A4A6B;line-height:1.7;">
+<p style="margin:4px 0;"><strong>courage</strong> &mdash; Facing something frightening anyway. Isaac walks to the soldiers' campfire with newfound courage.</p>
+<p style="margin:4px 0;"><strong>mourning</strong> &mdash; Deep sadness after someone dies, and the quiet way people show it.</p>
+<p style="margin:4px 0;"><strong>terrified</strong> &mdash; Extremely frightened.</p>
+<p style="margin:4px 0;"><strong>suffering</strong> &mdash; Pain or hardship a person is living through.</p>
+<p style="margin:4px 0;"><strong>stickball</strong> &mdash; A traditional Choctaw game played with sticks — one of the things carried from home.</p>
+</div>
+</details>
+
+      <p>You have worked with these words all week. Show what you know: write your own sentence for each one. Make the sentence prove you understand the word &mdash; not just that you can spell it.</p>
+      <div class="vocab-use-item" style="margin-bottom:14px;">
+        <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">courage <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; Facing something frightening anyway. Isaac walks to the soldiers' campfire with newfound courage.</span></div>
+        <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-courage"></span></div>
+        <textarea class="journal-box" id="journal-vocab-courage" data-label="Vocabulary: courage" placeholder="Write a sentence using courage..." oninput="autoSave(this,'dot-vocab-courage');gatherAnswers();" style="min-height:50px;"></textarea>
       </div>
-      
+      <div class="vocab-use-item" style="margin-bottom:14px;">
+        <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">mourning <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; Deep sadness after someone dies, and the quiet way people show it.</span></div>
+        <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-mourning"></span></div>
+        <textarea class="journal-box" id="journal-vocab-mourning" data-label="Vocabulary: mourning" placeholder="Write a sentence using mourning..." oninput="autoSave(this,'dot-vocab-mourning');gatherAnswers();" style="min-height:50px;"></textarea>
+      </div>
+      <div class="vocab-use-item" style="margin-bottom:14px;">
+        <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">terrified <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; Extremely frightened.</span></div>
+        <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-terrified"></span></div>
+        <textarea class="journal-box" id="journal-vocab-terrified" data-label="Vocabulary: terrified" placeholder="Write a sentence using terrified..." oninput="autoSave(this,'dot-vocab-terrified');gatherAnswers();" style="min-height:50px;"></textarea>
+      </div>
+      <div class="vocab-use-item" style="margin-bottom:14px;">
+        <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">suffering <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; Pain or hardship a person is living through.</span></div>
+        <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-suffering"></span></div>
+        <textarea class="journal-box" id="journal-vocab-suffering" data-label="Vocabulary: suffering" placeholder="Write a sentence using suffering..." oninput="autoSave(this,'dot-vocab-suffering');gatherAnswers();" style="min-height:50px;"></textarea>
+      </div>
+      <div class="vocab-use-item" style="margin-bottom:14px;">
+        <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">stickball <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; A traditional Choctaw game played with sticks — one of the things carried from home.</span></div>
+        <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-stickball"></span></div>
+        <textarea class="journal-box" id="journal-vocab-stickball" data-label="Vocabulary: stickball" placeholder="Write a sentence using stickball..." oninput="autoSave(this,'dot-vocab-stickball');gatherAnswers();" style="min-height:50px;"></textarea>
+      </div>
     </div>
   </div>
 
@@ -2871,6 +2893,7 @@ function expandIntro() {
 function gatherAnswers() {
   var output = '';
   var sections = [
+    { title: '🔤 USE THE WORD', ids: ['journal-vocab-courage','journal-vocab-mourning','journal-vocab-terrified','journal-vocab-suffering','journal-vocab-stickball'] },
     { title: '📖 CH. 19 &mdash; CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: 'GRAMMAR SWYK', ids: ['journal-grammar'] },
     { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
@@ -2898,7 +2921,7 @@ function gatherAnswers() {
   output += '🎮 PRACTICE ACTIVITIES\n';
   output += '────────────────────────────────\n';
   output += (window._fillinDone ? '✅' : '⬜') + ' Morphology Word Parts\n';
-  output += (matchCount >= 4 ? '✅' : '⬜') + ' Vocabulary Match\n';
+  output += (document.getElementById('journal-vocab-courage') && document.getElementById('journal-vocab-courage').value.trim() ? '✅' : '⬜') + ' Use the Word\n';
   var spotDone = 0;
   for (var i = 1; i <= 4; i++) {
     var s = document.getElementById('spot' + i);
@@ -3394,7 +3417,7 @@ function downloadJournal() {
   // Mini-game results
   html += '<div class="games"><div class="games-title">🎮 Mini-Game Results</div>';
   html += '<div class="game-line">' + (window._fillinDone ? '✅' : '⬜') + ' Morphology Word Parts</div>';
-  html += '<div class="game-line">' + (matchCount >= 4 ? '✅' : '⬜') + ' Vocabulary Match</div>';
+  html += '<div class="game-line">' + (document.getElementById('journal-vocab-courage') && document.getElementById('journal-vocab-courage').value.trim() ? '✅' : '⬜') + ' Use the Word</div>';
   var spotDone = 0;
   for (var i = 1; i <= 4; i++) {
     var s = document.getElementById('spot' + i);
