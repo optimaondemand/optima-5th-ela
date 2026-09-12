@@ -120,6 +120,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 
 /* ═══ VIDEO PLACEHOLDER ═══ */
 .video-placeholder-wrap {
+  display: none;
   border-radius: 14px; overflow: hidden; margin: 0 0 18px;
   border: 2px dashed rgba(0,137,123,0.4);
   background: linear-gradient(135deg, #0E1C42, #1A2D5A);
@@ -2270,7 +2271,7 @@ document.addEventListener('DOMContentLoaded', function() {
         iframe.removeAttribute('height');
         iframe.style.cssText = 'display:block;width:100%;aspect-ratio:16/9;border:none;';
         wrap.innerHTML = '';
-        wrap.style.cssText = 'border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
+        wrap.style.cssText = 'display:block;border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
         wrap.appendChild(iframe);
       });
     })
