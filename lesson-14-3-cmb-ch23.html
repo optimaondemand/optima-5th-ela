@@ -1520,4 +1520,41 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(function(err) { console.warn('Video manifest load failed:', err); });
 });
 </script>
+<!-- match-shuffle -->
+<script>
+(function(){
+  function isWord(el){ return el.className.indexOf('is-word') !== -1; }
+  function shuffle(grid){
+    var items = [].slice.call(grid.children).filter(function(el){
+      return el.className && el.className.indexOf('match-item') !== -1;
+    });
+    var words = [], defs = [];
+    items.forEach(function(el){ if (isWord(el)) words.push(el); else defs.push(el); });
+    if (words.length < 2 || words.length !== defs.length) return;
+    var order, tries = 0;
+    do {
+      order = defs.slice();
+      for (var i = order.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = order[i]; order[i] = order[j]; order[j] = t;
+      }
+      tries++;
+    } while (tries < 50 && order.some(function(d, i){
+      return d.getAttribute('data-match') === words[i].getAttribute('data-match');
+    }));
+    var marks = defs.map(function(el){
+      var m = document.createComment('ms');
+      grid.insertBefore(m, el); grid.removeChild(el); return m;
+    });
+    for (var k = 0; k < marks.length; k++) {
+      grid.insertBefore(order[k], marks[k]); grid.removeChild(marks[k]);
+    }
+  }
+  function init(){
+    [].slice.call(document.querySelectorAll('[class*="match-grid"]')).forEach(shuffle);
+  }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); }
+  else { init(); }
+})();
+</script>
 </body></html>
