@@ -1035,6 +1035,15 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">📚</div><div style="flex:1;"><div class="activity-title">What Good Readers Do</div><div class="activity-sub">Reflect before you write</div></div></div>
     <div class="activity-body">
       <p>Good historical fiction writers reflect on what they've read and studied. Before you write today, think back across this week:</p>
+      <!-- howto -->
+      <div class="key-concept" style="background:#F0F7FF;border-color:#C8DCEE;margin:10px 0;">
+      <div class="key-concept-label" style="color:#3D5285;">&#x1F50D; How to Do It</div>
+      <ol style="margin:6px 0 6px 20px;font-size:14px;color:#3A4A6B;line-height:1.8;">
+      <li><strong>Look back across the week:</strong> List the four craft moves you studied, one line each.</li>
+      <li><strong>Pick the one you can already do:</strong> Which came most easily in your own writing?</li>
+      <li><strong>Pick the one you will use today:</strong> Name it before you start drafting, not after.</li>
+      </ol>
+      </div>
       <div class="socratic-box">
         <div class="socratic-label">🧠 Reflect</div>
         <p class="socratic-q">What craft moves have you practiced &mdash; sensory detail, dialogue, choosing a form?</p>
@@ -1175,17 +1184,7 @@ Who remembers that famous day and year.</div>
   </div>
 
   <!-- Part C: Writing Connection -->
-  <div class="activity bl-sage">
-    <div class="activity-head"><div class="activity-num" style="background:#52B788;">C</div><div style="flex:1;"><div class="activity-title">Part C: Writing Connection &mdash; Your Letter</div><div class="activity-sub">This is today's real piece of writing</div></div></div>
-    <div class="activity-body">
-      <p>Write a letter (6&ndash;8 sentences) from a historical character to a loved one, describing an extraordinary event.</p>
-      <div class="textbox-prompt">Write in first person, in letter form (a greeting like "Dear ___," and a closing). Include at least 1 sensory detail and 1 line of dialogue, with correct punctuation.</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing Connection: Letter from a historical character describing an extraordinary event" rows="12" style="min-height:260px;"
-        placeholder="Dear..."
-        oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header">
@@ -1356,11 +1355,11 @@ function gatherAnswers(){
     output+='\n'+(el.getAttribute('data-label')||id)+'\n';
     output+=(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n';
-  output+='🪶 WRITING CONNECTION\n';
-  output+='────────────────────────────────\n';
   var wc=document.getElementById('journal-writing');
   if(wc){
+    output+='\n';
+      output+='🪶 WRITING CONNECTION\n';
+      output+='────────────────────────────────\n';
     output+='\n'+(wc.getAttribute('data-label')||'Writing Connection')+'\n';
     output+=(wc.value.trim()||'(no answer)')+'\n';
   }

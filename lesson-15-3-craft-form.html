@@ -1061,6 +1061,15 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">📚</div><div style="flex:1;"><div class="activity-title">What Good Readers Do</div><div class="activity-sub">Set your writer's lens before you read</div></div></div>
     <div class="activity-body">
       <p>Good writers choose their form &mdash; a letter, a diary, a newspaper, a field notebook &mdash; based on who they're writing for and why. As you study today's passage, ask yourself:</p>
+      <!-- howto -->
+      <div class="key-concept" style="background:#F0F7FF;border-color:#C8DCEE;margin:10px 0;">
+      <div class="key-concept-label" style="color:#3D5285;">&#x1F50D; How to Do It</div>
+      <ol style="margin:6px 0 6px 20px;font-size:14px;color:#3A4A6B;line-height:1.8;">
+      <li><strong>Name the form:</strong> Letter, diary, newspaper, notebook &mdash; decide what you are looking at before you read it.</li>
+      <li><strong>Ask who it was for:</strong> Who was meant to read this, and what does the writer want from them?</li>
+      <li><strong>Try it another way:</strong> Imagine the same content as a different form. What would be lost?</li>
+      </ol>
+      </div>
       <div class="socratic-box">
         <div class="socratic-label">🧠 Watch for this</div>
         <p class="socratic-q">Who is this piece of writing for?</p>
@@ -1178,17 +1187,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   </div>
 
   <!-- Part C: Writing Connection -->
-  <div class="activity bl-sage">
-    <div class="activity-head"><div class="activity-num" style="background:#52B788;">C</div><div style="flex:1;"><div class="activity-title">Part C: Writing Connection &mdash; Choose Your Form</div><div class="activity-sub">This is today's real piece of writing</div></div></div>
-    <div class="activity-body">
-      <p>Choose ONE form &mdash; a newspaper article, a field notebook entry, or a letter &mdash; and write a short piece (6&ndash;8 sentences) about a historical event. Choose details appropriate to the form you pick.</p>
-      <div class="textbox-prompt">Tell us which form you chose at the top of your writing, then write 6&ndash;8 sentences using details that fit that form's purpose and audience.</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing Connection: Choose a form (newspaper article, field notebook entry, or letter)" rows="12" style="min-height:260px;"
-        placeholder="Form I chose: ...&#10;&#10;Now write your 6-8 sentences here..."
-        oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header">
@@ -1351,11 +1350,11 @@ function gatherAnswers(){
     output+='\n'+(el.getAttribute('data-label')||id)+'\n';
     output+=(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n';
-  output+='🪶 WRITING CONNECTION\n';
-  output+='────────────────────────────────\n';
   var wc=document.getElementById('journal-writing');
   if(wc){
+    output+='\n';
+      output+='🪶 WRITING CONNECTION\n';
+      output+='────────────────────────────────\n';
     output+='\n'+(wc.getAttribute('data-label')||'Writing Connection')+'\n';
     output+=(wc.value.trim()||'(no answer)')+'\n';
   }

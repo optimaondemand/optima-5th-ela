@@ -865,6 +865,15 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">📚</div><div style="flex:1;"><div class="activity-title">What Good Readers Do</div><div class="activity-sub">Set your writer's lens</div></div></div>
     <div class="activity-body">
       <p>Good historical fiction writers notice small daily-life details before they notice big historical events. As you study today's passage, ask yourself:</p>
+      <!-- howto -->
+      <div class="key-concept" style="background:#F0F7FF;border-color:#C8DCEE;margin:10px 0;">
+      <div class="key-concept-label" style="color:#3D5285;">&#x1F50D; How to Do It</div>
+      <ol style="margin:6px 0 6px 20px;font-size:14px;color:#3A4A6B;line-height:1.8;">
+      <li><strong>Read for the small stuff first:</strong> Before you look for history, look for what a person touches, smells and hears in an ordinary hour.</li>
+      <li><strong>Name the sense:</strong> For each detail you find, say which sense it reaches &mdash; sight, sound, smell, touch, taste.</li>
+      <li><strong>Test it:</strong> Cover the date. Would the detail still tell a reader roughly when and where they are?</li>
+      </ol>
+      </div>
       <div class="socratic-box">
         <div class="socratic-label">🧠 Watch for this</div>
         <p class="socratic-q">What senses does the author use?</p>
@@ -1267,17 +1276,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   </div>
 
   <!-- Part C: Writing Connection -->
-  <div class="activity bl-sage">
-    <div class="activity-head"><div class="activity-num" style="background:#52B788;">C</div><div style="flex:1;"><div class="activity-title">Part C: Writing Connection &mdash; Your Journal Entry</div><div class="activity-sub">This is today's real piece of writing</div></div></div>
-    <div class="activity-body">
-      <p>Write a historical journal entry (5&ndash;7 sentences) from the perspective of a young person living in 1773 Boston, waking up on an ordinary morning.</p>
-      <div class="textbox-prompt">Write in first person, as if you are there. Include at least 2 sensory details (something you see, hear, or smell) and 1 line of dialogue with correct punctuation.</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing Connection: 1773 Boston morning journal entry" rows="10" style="min-height:220px;"
-        placeholder="The bells were ringing before I even opened my eyes..."
-        oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header">
@@ -1440,11 +1439,11 @@ function gatherAnswers(){
     output+='\n'+(el.getAttribute('data-label')||id)+'\n';
     output+=(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n';
-  output+='🪶 WRITING CONNECTION\n';
-  output+='────────────────────────────────\n';
   var wc=document.getElementById('journal-writing');
   if(wc){
+    output+='\n';
+      output+='🪶 WRITING CONNECTION\n';
+      output+='────────────────────────────────\n';
     output+='\n'+(wc.getAttribute('data-label')||'Writing Connection')+'\n';
     output+=(wc.value.trim()||'(no answer)')+'\n';
   }

@@ -1488,17 +1488,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   </div>
 
   <!-- Part D: Writing Connection -->
-  <div class="activity bl-sage">
-    <div class="activity-head"><div class="activity-num" style="background:#52B788;">D</div><div style="flex:1;"><div class="activity-title">Part D: Writing Connection</div><div class="activity-sub">Implied theme &mdash; sacrifice and belief</div></div></div>
-    <div class="activity-body">
-      <p>Hannah tells Kit that escaping without love isn&rsquo;t really escaping. Write 2&ndash;3 sentences explaining how <strong>two characters</strong> in this chapter demonstrate what they&rsquo;re willing to sacrifice for what they believe in. Use specific details from Chapter 16.</p>
-      <div class="textbox-prompt">Name two characters. For each, explain what they sacrifice and what belief drives them.</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing Connection: Sacrifice and belief in Ch. 16"
-        placeholder="In Chapter 16, Nat sacrifices..."
-        oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header">
@@ -1676,11 +1666,11 @@ function gatherAnswers(){
     output+='\n'+(ws.getAttribute('data-label')||'Writer\'s Workshop')+'\n';
     output+=(ws.value.trim()||'(no answer)')+'\n';
   }
-  output+='\n';
-  output+='🪶 WRITING CONNECTION\n';
-  output+='────────────────────────────────\n';
   var wc=document.getElementById('journal-writing');
   if(wc){
+    output+='\n';
+      output+='🪶 WRITING CONNECTION\n';
+      output+='────────────────────────────────\n';
     output+='\n'+(wc.getAttribute('data-label')||'Writing Connection')+'\n';
     output+=(wc.value.trim()||'(no answer)')+'\n';
   }

@@ -1333,26 +1333,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   </div>
 
   <!-- Part C: Writing Connection -->
-  <div class="activity bl-sage">
-    <div class="activity-head"><div class="activity-num" style="background:#52B788;">C</div><div style="flex:1;"><div class="activity-title">Part C: Writing Connection</div><div class="activity-sub">Narrative craft &middot; revise a passage that builds tension</div></div></div>
-    <div class="activity-body">
-      <p>Write 3&ndash;4 sentences showing a moment when Kit&rsquo;s double life almost gives her away. Then revise what you wrote using the checklist below &mdash; the goal is a passage where the tension climbs from the first sentence to the last.</p>
-      <div class="key-concept" style="background:#F0F7FF;border-color:#C8DCEE;margin:10px 0;">
-        <div class="key-concept-label" style="color:#3D5285;">&#x2705; Revision Checklist</div>
-        <ol style="margin:6px 0 6px 20px;font-size:14px;color:#3A4A6B;line-height:1.8;">
-          <li>Does the reader know what Kit stands to lose before the risky moment happens?</li>
-          <li>Does each sentence raise the stakes instead of restating them?</li>
-          <li>Did you show the danger through an action or a detail rather than naming the feeling?</li>
-          <li>Is every verb in the same tense?</li>
-        </ol>
-      </div>
-      <div class="textbox-prompt">Write your revised passage. Use details from the chapters, and keep your verb tense consistent.</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing Connection: Narrative craft &mdash; building tension"
-        placeholder="Kit heard the latch lift before she could..."
-        oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header">
@@ -1524,11 +1505,11 @@ function gatherAnswers(){
     output+='\n'+(vyt.getAttribute('data-label')||'Vocabulary: Your Turn')+'\n';
     output+=(vyt.value.trim()||'(no answer)')+'\n';
   }
-  output+='\n';
-  output+='🪶 WRITING CONNECTION\n';
-  output+='────────────────────────────────\n';
   var wc=document.getElementById('journal-writing');
   if(wc){
+    output+='\n';
+      output+='🪶 WRITING CONNECTION\n';
+      output+='────────────────────────────────\n';
     output+='\n'+(wc.getAttribute('data-label')||'Writing Connection')+'\n';
     output+=(wc.value.trim()||'(no answer)')+'\n';
   }

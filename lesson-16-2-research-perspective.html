@@ -873,6 +873,15 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <div class="activity-body">
       <p>Good readers of nonfiction notice the difference between a fact and a perspective. A fact can be checked and confirmed. A perspective is how someone thinks or feels about that fact.</p>
       <p>As you read today, pay attention to which parts of the passage are stated facts and which parts are someone's reflection or point of view. Ask yourself:</p>
+      <!-- howto -->
+      <div class="key-concept" style="background:#F0F7FF;border-color:#C8DCEE;margin:10px 0;">
+      <div class="key-concept-label" style="color:#3D5285;">&#x1F50D; How to Do It</div>
+      <ol style="margin:6px 0 6px 20px;font-size:14px;color:#3A4A6B;line-height:1.8;">
+      <li><strong>Ask if it can be checked:</strong> A fact can be confirmed somewhere. A perspective cannot.</li>
+      <li><strong>Look for feeling words:</strong> Words like <em>unfair</em>, <em>generous</em> or <em>should</em> usually signal a perspective.</li>
+      <li><strong>Say who is speaking:</strong> Whose perspective is it &mdash; and what would someone else say?</li>
+      </ol>
+      </div>
       <div class="socratic-box">
         <div class="socratic-label">🧠 Watch for this</div>
         <p class="socratic-q">Which sentences describe something that happened?</p>
@@ -1202,17 +1211,7 @@ I know what the caged bird feels!</div>
     </div>
   </div>
 
-  <div class="activity bl-sage">
-    <div class="activity-head"><div class="activity-num" style="background:#52B788;">C</div><div style="flex:1;"><div class="activity-title">Part C: Writing Connection</div><div class="activity-sub">Today's writing product</div></div></div>
-    <div class="activity-body">
-      <p>Explain in 2&ndash;3 sentences why the same historical event might be remembered differently by different people, using an example from today's passage.</p>
-      <div class="textbox-prompt">Use an example from today's passage to support your explanation.</div>
-      <textarea class="journal-box" style="min-height:200px" id="journal-writing" data-label="Writing Connection: Why perspectives differ"
-        placeholder="The same historical event might be remembered differently because..."
-        oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <div class="gathered-card">
     <div class="gathered-header">
       <div class="gathered-header-icon">📋</div>
@@ -1372,11 +1371,11 @@ function gatherAnswers(){
     output+='\n'+(el.getAttribute('data-label')||id)+'\n';
     output+=(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n';
-  output+='🪶 WRITING CONNECTION\n';
-  output+='────────────────────────────────\n';
   var wc=document.getElementById('journal-writing');
   if(wc){
+    output+='\n';
+      output+='🪶 WRITING CONNECTION\n';
+      output+='────────────────────────────────\n';
     output+='\n'+(wc.getAttribute('data-label')||'Writing Connection')+'\n';
     output+=(wc.value.trim()||'(no answer)')+'\n';
   }

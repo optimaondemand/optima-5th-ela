@@ -1059,6 +1059,15 @@ what shaped you stays, however far you stray.</div>
     <div class="activity-body">
       <p>Good readers reflect on everything they've read over time, not just one day at a time. This week you read about the Choctaw homeland, compared two perspectives on a treaty, and built a claim about why perspective matters.</p>
       <p>Before you answer today's questions, think back across the whole week. Ask yourself:</p>
+      <!-- howto -->
+      <div class="key-concept" style="background:#F0F7FF;border-color:#C8DCEE;margin:10px 0;">
+      <div class="key-concept-label" style="color:#3D5285;">&#x1F50D; How to Do It</div>
+      <ol style="margin:6px 0 6px 20px;font-size:14px;color:#3A4A6B;line-height:1.8;">
+      <li><strong>Lay the week out:</strong> One line for each passage you read this week.</li>
+      <li><strong>Find where they answer each other:</strong> One source usually explains something another only mentioned.</li>
+      <li><strong>Write the question that is left:</strong> What do all four together make you want to know?</li>
+      </ol>
+      </div>
       <div class="socratic-box">
         <div class="socratic-label">🧠 Reflect</div>
         <p class="socratic-q">What do I understand now about this history that I didn't understand on Monday?</p>
@@ -1176,17 +1185,7 @@ what shaped you stays, however far you stray.</div>
     </div>
   </div>
 
-  <div class="activity bl-sage">
-    <div class="activity-head"><div class="activity-num" style="background:#52B788;">C</div><div style="flex:1;"><div class="activity-title">Part C: Writing Connection</div><div class="activity-sub">Today's writing product</div></div></div>
-    <div class="activity-body">
-      <p>Compare, in 2&ndash;3 sentences, what a primary source and a secondary source can each tell a historian.</p>
-      <div class="textbox-prompt">Name something a primary source can tell a historian, and something a secondary source can tell a historian.</div>
-      <textarea class="journal-box" style="min-height:220px" id="journal-writing" data-label="Writing Connection: Primary vs. secondary sources"
-        placeholder="A primary source can tell a historian... A secondary source can tell a historian..."
-        oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <div class="gathered-card">
     <div class="gathered-header">
       <div class="gathered-header-icon">📋</div>
@@ -1352,11 +1351,11 @@ function gatherAnswers(){
     output+='\n'+(el.getAttribute('data-label')||id)+'\n';
     output+=(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n';
-  output+='🪶 WRITING CONNECTION\n';
-  output+='────────────────────────────────\n';
   var wc=document.getElementById('journal-writing');
   if(wc){
+    output+='\n';
+      output+='🪶 WRITING CONNECTION\n';
+      output+='────────────────────────────────\n';
     output+='\n'+(wc.getAttribute('data-label')||'Writing Connection')+'\n';
     output+=(wc.value.trim()||'(no answer)')+'\n';
   }

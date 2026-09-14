@@ -863,6 +863,15 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">📚</div><div style="flex:1;"><div class="activity-title">What Good Readers Do</div><div class="activity-sub">Set your writer's lens</div></div></div>
     <div class="activity-body">
       <p>Good writers let dialogue do the work. They trust readers to figure out a character's personality just from what that character says &mdash; and how they say it &mdash; without a narrator stepping in to explain it. As you study today's passage, ask yourself:</p>
+      <!-- howto -->
+      <div class="key-concept" style="background:#F0F7FF;border-color:#C8DCEE;margin:10px 0;">
+      <div class="key-concept-label" style="color:#3D5285;">&#x1F50D; How to Do It</div>
+      <ol style="margin:6px 0 6px 20px;font-size:14px;color:#3A4A6B;line-height:1.8;">
+      <li><strong>Read only the spoken words:</strong> Cover the tags and the description. What is left?</li>
+      <li><strong>Listen for the person:</strong> What does the way they speak tell you &mdash; their age, their mood, their standing?</li>
+      <li><strong>Cut the narrator:</strong> Find one line where the author could have explained a feeling and let the dialogue carry it instead.</li>
+      </ol>
+      </div>
       <div class="socratic-box">
         <div class="socratic-label">🧠 Watch for this</div>
         <p class="socratic-q">What does each character's own words reveal about them?</p>
@@ -1227,17 +1236,7 @@ It said unto the fields of corn,
   </div>
 
   <!-- Part C: Writing Connection -->
-  <div class="activity bl-sage">
-    <div class="activity-head"><div class="activity-num" style="background:#52B788;">C</div><div style="flex:1;"><div class="activity-title">Part C: Writing Connection &mdash; Your Diary Entry</div><div class="activity-sub">This is today's real piece of writing</div></div></div>
-    <div class="activity-body">
-      <p>Write a short diary entry (5&ndash;6 sentences) that includes one line of dialogue revealing your character's personality. Let the dialogue do the work &mdash; don't have the narrator explain the personality directly.</p>
-      <div class="textbox-prompt">Write in first person. Include one line of dialogue, correctly punctuated, that shows something about your character's personality without you (the narrator) stating it outright.</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing Connection: Diary entry with revealing dialogue" rows="10" style="min-height:220px;"
-        placeholder="Dear Journal, this morning..."
-        oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header">
@@ -1400,11 +1399,11 @@ function gatherAnswers(){
     output+='\n'+(el.getAttribute('data-label')||id)+'\n';
     output+=(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n';
-  output+='🪶 WRITING CONNECTION\n';
-  output+='────────────────────────────────\n';
   var wc=document.getElementById('journal-writing');
   if(wc){
+    output+='\n';
+      output+='🪶 WRITING CONNECTION\n';
+      output+='────────────────────────────────\n';
     output+='\n'+(wc.getAttribute('data-label')||'Writing Connection')+'\n';
     output+=(wc.value.trim()||'(no answer)')+'\n';
   }

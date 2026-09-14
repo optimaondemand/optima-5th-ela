@@ -1348,17 +1348,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   </div>
 
   <!-- Part C: Writing Connection -->
-  <div class="activity bl-sage">
-    <div class="activity-head"><div class="activity-num" style="background:#52B788;">C</div><div style="flex:1;"><div class="activity-title">Part C: Writing Connection</div><div class="activity-sub">Step into William&rsquo;s perspective</div></div></div>
-    <div class="activity-body">
-      <p>William never says much, but his actions speak for him. Write 3&ndash;4 sentences describing William&rsquo;s courtship from his perspective. What is he thinking during those long silent Saturday evenings?</p>
-      <div class="textbox-prompt">Write from William&rsquo;s point of view. Use details from the chapter to stay true to his character.</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing Connection: William's perspective"
-        placeholder="Every Saturday evening, I..."
-        oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header">
@@ -1523,11 +1513,11 @@ function gatherAnswers(){
     output+='\n'+(el.getAttribute('data-label')||id)+'\n';
     output+=(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n';
-  output+='🪶 WRITING CONNECTION\n';
-  output+='────────────────────────────────\n';
   var wc=document.getElementById('journal-writing');
   if(wc){
+    output+='\n';
+      output+='🪶 WRITING CONNECTION\n';
+      output+='────────────────────────────────\n';
     output+='\n'+(wc.getAttribute('data-label')||'Writing Connection')+'\n';
     output+=(wc.value.trim()||'(no answer)')+'\n';
   }

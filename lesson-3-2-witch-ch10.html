@@ -1377,17 +1377,7 @@ And live alone in the bee-loud glade.</div>
   </div>
 
   <!-- Part C: Writing Connection -->
-  <div class="activity bl-sage">
-    <div class="activity-head"><div class="activity-num" style="background:#52B788;">C</div><div style="flex:1;"><div class="activity-title">Part C: Writing Connection</div><div class="activity-sub">A short response tied to the reading</div></div></div>
-    <div class="activity-body">
-      <p>Hannah says &ldquo;I need to be near the water.&rdquo; Kit feels the same way about the Meadows. Write 3&ndash;4 sentences explaining what the water and the Meadows represent for both characters.</p>
-      <div class="textbox-prompt">Think about why both characters are drawn to these places. What feeling or need does each place fulfill?</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing Connection: Water and the Meadows"
-        placeholder="For Hannah, the water represents..."
-        oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header">
@@ -1551,11 +1541,11 @@ function gatherAnswers(){
     output+='\n'+(el.getAttribute('data-label')||id)+'\n';
     output+=(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n';
-  output+='🪶 WRITING CONNECTION\n';
-  output+='────────────────────────────────\n';
   var wc=document.getElementById('journal-writing');
   if(wc){
+    output+='\n';
+      output+='🪶 WRITING CONNECTION\n';
+      output+='────────────────────────────────\n';
     output+='\n'+(wc.getAttribute('data-label')||'Writing Connection')+'\n';
     output+=(wc.value.trim()||'(no answer)')+'\n';
   }

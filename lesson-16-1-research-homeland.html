@@ -877,6 +877,15 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <div class="activity-body">
       <p>Good readers of nonfiction look for the central idea before the details.</p>
       <p>As you read today, pay attention to what the passage is mostly about. Ask yourself:</p>
+      <!-- howto -->
+      <div class="key-concept" style="background:#F0F7FF;border-color:#C8DCEE;margin:10px 0;">
+      <div class="key-concept-label" style="color:#3D5285;">&#x1F50D; How to Do It</div>
+      <ol style="margin:6px 0 6px 20px;font-size:14px;color:#3A4A6B;line-height:1.8;">
+      <li><strong>Read the whole passage first:</strong> The central idea is built across it, not stated in the first line.</li>
+      <li><strong>Ask what it keeps returning to:</strong> That repeated point is the central idea.</li>
+      <li><strong>Collect the support:</strong> Find two or three facts that hold the idea up.</li>
+      </ol>
+      </div>
       <div class="socratic-box">
         <div class="socratic-label">🧠 Watch for this</div>
         <p class="socratic-q">What is this passage mostly about?</p>
@@ -1237,17 +1246,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     </div>
   </div>
 
-  <div class="activity bl-sage">
-    <div class="activity-head"><div class="activity-num" style="background:#52B788;">C</div><div style="flex:1;"><div class="activity-title">Part C: Writing Connection</div><div class="activity-sub">Today's writing product</div></div></div>
-    <div class="activity-body">
-      <p>Summarize the central idea of today's passage in your own words (2&ndash;3 sentences), using at least one specific detail.</p>
-      <div class="textbox-prompt">Write your summary below. Use your own words — don't just copy from the passage.</div>
-      <textarea class="journal-box" style="min-height:200px" id="journal-writing" data-label="Writing Connection: Summary of central idea"
-        placeholder="Today's passage is mostly about..."
-        oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <div class="gathered-card">
     <div class="gathered-header">
       <div class="gathered-header-icon">📋</div>
@@ -1407,11 +1406,11 @@ function gatherAnswers(){
     output+='\n'+(el.getAttribute('data-label')||id)+'\n';
     output+=(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n';
-  output+='🪶 WRITING CONNECTION\n';
-  output+='────────────────────────────────\n';
   var wc=document.getElementById('journal-writing');
   if(wc){
+    output+='\n';
+      output+='🪶 WRITING CONNECTION\n';
+      output+='────────────────────────────────\n';
     output+='\n'+(wc.getAttribute('data-label')||'Writing Connection')+'\n';
     output+=(wc.value.trim()||'(no answer)')+'\n';
   }

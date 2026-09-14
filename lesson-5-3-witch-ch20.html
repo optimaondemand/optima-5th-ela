@@ -1304,17 +1304,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   </div>
 
   <!-- Part C: Writing Connection -->
-  <div class="activity bl-sage">
-    <div class="activity-head"><div class="activity-num" style="background:#52B788;">C</div><div style="flex:1;"><div class="activity-title">Part C: Writing Connection</div><div class="activity-sub">Implied theme &mdash; sacrifice and belief</div></div></div>
-    <div class="activity-body">
-      <p>Kit tells William, &ldquo;we would always be uneasy.&rdquo; Write 2&ndash;3 sentences explaining what Kit needs that William cannot give her, using evidence from this chapter.</p>
-      <div class="textbox-prompt">Think about what Kit values now that she didn&rsquo;t understand when she first arrived in Wethersfield.</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing Connection: What Kit needs that William cannot give"
-        placeholder="Kit needs..."
-        oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header">
@@ -1482,11 +1472,11 @@ function gatherAnswers(){
     output+='\n'+(el.getAttribute('data-label')||id)+'\n';
     output+=(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n';
-  output+='🪶 WRITING CONNECTION\n';
-  output+='────────────────────────────────\n';
   var wc=document.getElementById('journal-writing');
   if(wc){
+    output+='\n';
+      output+='🪶 WRITING CONNECTION\n';
+      output+='────────────────────────────────\n';
     output+='\n'+(wc.getAttribute('data-label')||'Writing Connection')+'\n';
     output+=(wc.value.trim()||'(no answer)')+'\n';
   }

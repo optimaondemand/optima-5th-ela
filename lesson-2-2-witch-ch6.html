@@ -1387,17 +1387,7 @@ In the strife of Truth with Falsehood, for the good or evil side.</div>
   </div>
 
   <!-- Part C: Writing Connection -->
-  <div class="activity bl-sage">
-    <div class="activity-head"><div class="activity-num" style="background:#52B788;">C</div><div style="flex:1;"><div class="activity-title">Part C: Writing Connection</div><div class="activity-sub">A short response tied to the reading</div></div></div>
-    <div class="activity-body">
-      <p>Rewrite the dinner scene from Reverend Bulkeley&rsquo;s perspective. In 3&ndash;4 sentences, describe what he sees, thinks, and feels during the argument with Matthew.</p>
-      <div class="textbox-prompt">Write as if you are Bulkeley. What does he notice? What does he believe? How does the argument make him feel?</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing Connection: Bulkeley's perspective"
-        placeholder="I had come to the Wood house expecting a pleasant evening, but..."
-        oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header">
@@ -1561,11 +1551,11 @@ function gatherAnswers(){
     output+='\n'+(el.getAttribute('data-label')||id)+'\n';
     output+=(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n';
-  output+='🪶 WRITING CONNECTION\n';
-  output+='────────────────────────────────\n';
   var wc=document.getElementById('journal-writing');
   if(wc){
+    output+='\n';
+      output+='🪶 WRITING CONNECTION\n';
+      output+='────────────────────────────────\n';
     output+='\n'+(wc.getAttribute('data-label')||'Writing Connection')+'\n';
     output+=(wc.value.trim()||'(no answer)')+'\n';
   }

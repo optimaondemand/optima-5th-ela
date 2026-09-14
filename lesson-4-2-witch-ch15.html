@@ -1436,17 +1436,7 @@ For some, the right to live.</div>
   </div>
 
   <!-- Part D: Writing Connection -->
-  <div class="activity bl-sage">
-    <div class="activity-head"><div class="activity-num" style="background:#52B788;">D</div><div style="flex:1;"><div class="activity-title">Part D: Writing Connection</div><div class="activity-sub">A short response tied to the reading</div></div></div>
-    <div class="activity-body">
-      <p>Matthew says they will &ldquo;show the world what it means to be free men.&rdquo; Write 2&ndash;3 sentences explaining what freedom means to Matthew versus what it means to Kit. How are their ideas of freedom different or similar?</p>
-      <div class="textbox-prompt">Think about what each character has given up or fought for. How does each one define freedom?</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing Connection: Freedom for Matthew vs. Kit"
-        placeholder="For Matthew, freedom means..."
-        oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header">
@@ -1623,11 +1613,11 @@ function gatherAnswers(){
     output+='\n'+(ws.getAttribute('data-label')||'Writer\'s Workshop')+'\n';
     output+=(ws.value.trim()||'(no answer)')+'\n';
   }
-  output+='\n';
-  output+='🪶 WRITING CONNECTION\n';
-  output+='────────────────────────────────\n';
   var wc=document.getElementById('journal-writing');
   if(wc){
+    output+='\n';
+      output+='🪶 WRITING CONNECTION\n';
+      output+='────────────────────────────────\n';
     output+='\n'+(wc.getAttribute('data-label')||'Writing Connection')+'\n';
     output+=(wc.value.trim()||'(no answer)')+'\n';
   }
