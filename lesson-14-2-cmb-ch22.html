@@ -819,7 +819,10 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <div class="tab-next-wrap"><p class="tab-transition-voice">Ready. On to Word Study to lock in grammar and vocabulary.</p><button class="tab-next-btn" onclick="switchTab('words')">Continue to &#x1F524; Word Study &rarr;</button></div>
 </div><div class="tab-panel" id="tab-words">
   <div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div><div style="flex:1;"><div class="activity-title">&#x1F9ED; Morphology: Word Family Sort</div><div class="activity-sub">Sort by part of speech</div></div></div>
-    <div class="activity-body">      <div class="sort-bank" id="sortBank">
+    <div class="activity-body">
+<!-- morph-notice-first -->
+<div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F50D;</span><p>Before you start: find the family resemblance.</p></div>
+      <div class="sort-bank" id="sortBank">
         <span class="sort-chip" data-group="verb" onclick="pickChip(this)">navigate</span>
         <span class="sort-chip" data-group="noun" onclick="pickChip(this)">navigation</span>
         <span class="sort-chip" data-group="noun" onclick="pickChip(this)">navigator</span>
@@ -844,13 +847,19 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       </div>
     </div></div>
   <div class="activity bl-gold"><div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">3</div><div style="flex:1;"><div class="activity-title">&#x270F;&#xFE0F; Grammar: Editing for Conventions</div><div class="activity-sub">Identify &mdash; find the convention error</div></div></div>
-    <div class="activity-body">      <div class="swyk"><div class="swyk-label">&#x270F;&#xFE0F; Show What You Know &middot; Grammar</div>
+    <div class="activity-body">
+<!-- grammar-notice-first -->
+<div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F50E;</span><p>Before you start: read as a hunter, not as a reader.</p></div>
+      <div class="swyk"><div class="swyk-label">&#x270F;&#xFE0F; Show What You Know &middot; Grammar</div>
         <div class="swyk-prompt">Edit each sentence for conventions, and name the rule you applied. 1. nat corrected the book called The New American Practical Navigator. 2. In the chapter Science and Sumatra Latham shows how mathematics travels across the globe. 3. Every sailor on the Putnam brought their own copy, they trusted it completely.</div>
         <div class="textbox-prompt">Use italics for book/ship titles, quotation marks for chapter titles. For the citation, follow: Last name, First. <em>Title.</em> Publisher, Year.</div>
         <textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK: Editing for Conventions" placeholder='1. Nat corrected the book called "The New American Practical Navigator." Wait — is that a book title? Yes: Nat corrected the book called [italics]The New American Practical Navigator[/italics].&#10;2. In the chapter "Science and Sumatra," Latham shows...&#10;3. Latham, Jean Lee. [italics]Carry On, Mr. Bowditch.[/italics] Houghton Mifflin, 1955.' oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea>
         <div class="journal-label">&#x1F4D3; <span class="saved-dot" id="dot-grammar"></span></div></div>    </div></div>
   <div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E3A5C;">4</div><div style="flex:1;"><div class="activity-title">&#x1F524; Spelling: Apply Patterns</div><div class="activity-sub">Cumulative review &mdash; apply all four patterns</div></div></div>
-    <div class="activity-body">      <div class="choice-game">
+    <div class="activity-body">
+<!-- spell-notice-first -->
+<div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F440;</span><p>Before you start: look for the pattern before you are told it.</p></div>
+      <div class="choice-game">
         <div class="choice-item"><div class="choice-prompt">Which word uses the assimilation rule correctly? (sub- before -port)</div>
           <div class="choice-row"><button class="choice-btn" onclick="choiceBtn(this,false)">subport</button><button class="choice-btn" onclick="choiceBtn(this,true)">support</button><button class="choice-btn" onclick="choiceBtn(this,false)">sopport</button></div>
           <div class="choice-score">Correct! sub + port &rarr; support (b &rarr; p before p).</div></div>

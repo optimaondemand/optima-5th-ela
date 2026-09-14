@@ -813,7 +813,10 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <div class="tab-next-wrap"><p class="tab-transition-voice">Final draft day. Let&rsquo;s review and assemble.</p><button class="tab-next-btn" onclick="switchTab('words')">Continue to &#x1F524; Word Study &rarr;</button></div>
 </div><div class="tab-panel" id="tab-words">
   <div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div><div style="flex:1;"><div class="activity-title">&#x1F9ED; Morphology: Explain Word Families</div><div class="activity-sub">Teach the system to a classmate</div></div></div>
-    <div class="activity-body">      <div class="root-det-group" id="odd1"><div class="root-det-word">All use the root <em>navig-</em> (sail) except one. Find the odd one.</div><div class="root-det-row">
+    <div class="activity-body">
+<!-- morph-notice-first -->
+<div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F50D;</span><p>Before you start: find the family resemblance.</p></div>
+      <div class="root-det-group" id="odd1"><div class="root-det-word">All use the root <em>navig-</em> (sail) except one. Find the odd one.</div><div class="root-det-row">
         <button class="root-det-btn" onclick="oddOne(this,'odd1',false)">navigate</button>
         <button class="root-det-btn" onclick="oddOne(this,'odd1',false)">navigator</button>
         <button class="root-det-btn" onclick="oddOne(this,'odd1',true)">information</button>
@@ -831,10 +834,16 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     <div class="activity-body">      <div class="callout callout-think"><span class="callout-icon">&#x270F;&#xFE0F;</span><p>In your reading journal: write a 5&ndash;6 sentence summary of Chapter 23 &ldquo;Captain Bowditch Commanding&rdquo; using all six vocabulary words naturally: <strong>navigate, navigation, navigator, inform, information, informative</strong>. Each word should appear once. It should read like a real summary, not like a vocabulary exercise.</p></div>
     </div></div>
   <div class="activity bl-gold"><div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">3</div><div style="flex:1;"><div class="activity-title">&#x270F;&#xFE0F; Grammar: Editing for Conventions</div><div class="activity-sub">Use &mdash; edit your own expository essay</div></div></div>
-    <div class="activity-body">      <div class="callout callout-think"><span class="callout-icon">&#x1F50D;</span><p>Scan your expository essay draft. Find every place where you mention <em>Carry On, Mr. Bowditch</em> or any chapter title. Check: are book titles italicized (or underlined)? Are chapter titles in quotation marks? Fix any errors you find. Write your count in your reading journal: &ldquo;I checked ___ title mentions and corrected ___ errors.&rdquo;</p></div>
+    <div class="activity-body">
+<!-- grammar-notice-first -->
+<div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F50E;</span><p>Before you start: read as a hunter, not as a reader.</p></div>
+      <div class="callout callout-think"><span class="callout-icon">&#x1F50D;</span><p>Scan your expository essay draft. Find every place where you mention <em>Carry On, Mr. Bowditch</em> or any chapter title. Check: are book titles italicized (or underlined)? Are chapter titles in quotation marks? Fix any errors you find. Write your count in your reading journal: &ldquo;I checked ___ title mentions and corrected ___ errors.&rdquo;</p></div>
     </div></div>
   <div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E3A5C;">4</div><div style="flex:1;"><div class="activity-title">&#x1F524; Spelling SWYK: Cumulative</div><div class="activity-sub">Show What You Know</div></div></div>
-    <div class="activity-body">      <div class="swyk"><div class="swyk-label">&#x1F524; Show What You Know &middot; Spelling</div>
+    <div class="activity-body">
+<!-- spell-notice-first -->
+<div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F440;</span><p>Before you start: look for the pattern before you are told it.</p></div>
+      <div class="swyk"><div class="swyk-label">&#x1F524; Show What You Know &middot; Spelling</div>
         <div class="swyk-prompt">Choose 5 words from across the CMB unit &mdash; one from each major spelling pattern studied. For each word: (1) write the correct spelling, (2) name the pattern it uses, (3) explain the rule, (4) write a sentence using the word in the context of Nat&rsquo;s story.</div>
         <div class="textbox-prompt">Word 1 (schwa): ___ &mdash; pattern: schwa vowel &mdash; rule: ... &mdash; sentence: ...<br>Word 2 (-ous/-ious/-eous): ___ &mdash; pattern: ... &mdash; sentence: ...<br>Word 3 (assimilation): ___ &mdash; pattern: ... &mdash; sentence: ...<br>Word 4 (word family): ___ &mdash; pattern: ... &mdash; sentence: ...<br>Word 5 (your choice): ...</div>
         <textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK: Cumulative four-pattern review" placeholder="1. navigation (schwa) — schwa in -tion — unstressed vowel sounds like 'uh'. The science of navigation was Nat's life's work.&#10;2. courageous (-eous) — adj. from courage + -eous. Nat's courageous voyages transformed navigation.&#10;3. support (assimilation) — sub + port, b→p. The crew's support of Captain Bowditch was complete.&#10;4. navigator (word family) — navig- + -ator. As navigator, Nat knew exactly where the ship was.&#10;5. ..." oninput="autoSave(this,'dot-spelling');gatherAnswers();"></textarea>
