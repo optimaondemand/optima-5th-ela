@@ -2689,11 +2689,13 @@ body {
         <div class="sort-bank" id="sortBank">
           <span class="sort-chip" data-group="plain" onclick="pickSortChip(this)">brutal</span>
           <span class="sort-chip" data-group="drop" onclick="pickSortChip(this)">creative</span>
-          <span class="sort-chip" data-group="drop" onclick="pickSortChip(this)">expressive</span>
+          <span class="sort-chip" data-group="drop" onclick="pickSortChip(this)">descriptive</span>
+          <span class="sort-chip" data-group="drop" onclick="pickSortChip(this)">narrative</span>
+          <span class="sort-chip" data-group="plain" onclick="pickSortChip(this)">expressive</span>
           <span class="sort-chip" data-group="yi" onclick="pickSortChip(this)">historic</span>
           <span class="sort-chip" data-group="plain" onclick="pickSortChip(this)">personal</span>
           <span class="sort-chip" data-group="plain" onclick="pickSortChip(this)">protective</span>
-          <span class="sort-chip" data-group="drop" onclick="pickSortChip(this)">supportive</span>
+          <span class="sort-chip" data-group="plain" onclick="pickSortChip(this)">supportive</span>
           <span class="sort-chip" data-group="yi" onclick="pickSortChip(this)">tragic</span>
         </div>
         <div class="sort-columns">
@@ -3146,7 +3148,7 @@ function fireConfetti() {
 /* ───── WORD SORT GAME ───── */
 var sortSelected = null;
 var sortPlaced = 0;
-var sortTotal = 8;
+var sortTotal = 10;
 
 function pickSortChip(chip) {
   if (chip.classList.contains('placed')) return;

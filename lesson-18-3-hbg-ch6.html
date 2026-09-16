@@ -2436,7 +2436,7 @@ body {
       <div class="intro-card-body">
         <div class="obj-line"><span class="obj-icon">📖</span><span><strong>Reading:</strong> I will <em>analyze</em> how the historical context of Chapters 5&ndash;6 supplies what Isaac never explains.</span></div>
         <div class="obj-line"><span class="obj-icon">✏️</span><span><strong>Grammar:</strong> I will <em>identify</em> appositives in sentences from Chapters 5&ndash;6.</span></div>
-        <div class="obj-line"><span class="obj-icon">🔤</span><span><strong>Spelling:</strong> I will <em>sort</em> historical vocabulary words by syllable count.</span></div>
+        <div class="obj-line"><span class="obj-icon">🔤</span><span><strong>Spelling:</strong> I will <em>split</em> a long word and name the kind of syllable it starts with.</span></div>
       </div>
     </div>
   </div>
@@ -2632,26 +2632,25 @@ body {
 
   <!-- SPELLING -->
   <div class="activity bl-navy">
-    <div class="activity-head"><div class="activity-num" style="background:#2C5F2E;">4</div><div><div class="activity-title">🔠 Spelling: Open &amp; Closed Syllables</div><div class="activity-sub">Sort the words by how many syllables they have.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#2C5F2E;">4</div><div><div class="activity-title">&#x1F520; Spelling: Open &amp; Closed Syllables</div><div class="activity-sub">Apply &mdash; split a word you have not met</div></div></div>
     <div class="activity-body">
-<!-- spell-notice-first -->
-<div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F5C2;&#xFE0F;</span><p>Before you start: clap the beats, then decide where the splits go.</p></div>
-            <p>This week's spelling words are all <strong>historical vocabulary</strong> words. Sort them by how many syllables they have. Tap a word to select it, then tap the column where it belongs.</p>
+            <p>These are longer, and some come from Tingle's chapters rather than from a spelling list. The rule does not change. Find the first beat, look at the letter it ends on, and let the vowel sound check your answer.</p>
 
-      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">🎮</span><p><strong>Sort by syllable count.</strong> Remember: Choc-taw, Mis-sis-sip-pi, re-mov-al, ter-ri-to-ry, gov-ern-ment, trea-ty.</p></div>
+      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F3AE;</span><p><strong>Split it, then sort it.</strong> Say the word slowly, decide where the first beat stops, then tap its column.</p></div>
       <div class="sort-game" id="spellSort">
         <div class="sort-bank" id="sortBank">
-          <span class="sort-chip" data-group="two" onclick="pickSortChip(this)">Choctaw</span>
-          <span class="sort-chip" data-group="four" onclick="pickSortChip(this)">Mississippi</span>
-          <span class="sort-chip" data-group="three" onclick="pickSortChip(this)">removal</span>
-          <span class="sort-chip" data-group="four" onclick="pickSortChip(this)">territory</span>
-          <span class="sort-chip" data-group="three" onclick="pickSortChip(this)">government</span>
-          <span class="sort-chip" data-group="two" onclick="pickSortChip(this)">treaty</span>
+          <span class="sort-chip" data-group="open" onclick="pickSortChip(this)">human</span>
+          <span class="sort-chip" data-group="closed" onclick="pickSortChip(this)">soldier</span>
+          <span class="sort-chip" data-group="open" onclick="pickSortChip(this)">pilot</span>
+          <span class="sort-chip" data-group="closed" onclick="pickSortChip(this)">rattle</span>
+          <span class="sort-chip" data-group="open" onclick="pickSortChip(this)">later</span>
+          <span class="sort-chip" data-group="closed" onclick="pickSortChip(this)">hollow</span>
+          <span class="sort-chip" data-group="open" onclick="pickSortChip(this)">removal</span>
+          <span class="sort-chip" data-group="closed" onclick="pickSortChip(this)">sudden</span>
         </div>
         <div class="sort-columns">
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#2C5F2E,#3A7A3C);">2 syllables</div><div class="sort-col-drop" data-col="two" onclick="dropSortChip(this,'two')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B3A20,#A84A2A);">3 syllables</div><div class="sort-col-drop" data-col="three" onclick="dropSortChip(this,'three')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">4 syllables</div><div class="sort-col-drop" data-col="four" onclick="dropSortChip(this,'four')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#2C5F2E,#3A7A3C);">Open &mdash; ends on a vowel</div><div class="sort-col-drop" data-col="open" onclick="dropSortChip(this,'open')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B3A20,#A84A2A);">Closed &mdash; ends on a consonant</div><div class="sort-col-drop" data-col="closed" onclick="dropSortChip(this,'closed')"></div></div>
         </div>
         <div class="sort-score" id="sortScore"></div>
       </div>
@@ -3112,7 +3111,7 @@ function fireConfetti() {
 /* ───── WORD SORT GAME ───── */
 var sortSelected = null;
 var sortPlaced = 0;
-var sortTotal = 6;
+var sortTotal = 8;
 
 function pickSortChip(chip) {
   if (chip.classList.contains('placed')) return;
@@ -3145,7 +3144,7 @@ function dropSortChip(colDrop, colName) {
 
   if (sortPlaced >= sortTotal) {
     var sc = document.getElementById('sortScore');
-    sc.textContent = '🎉 All sorted correctly! You can hear how many syllables each word has.';
+    sc.textContent = '🎉 All sorted correctly! You can split a long word and tell which kind of syllable starts it.';
     sc.classList.add('show');
   }
 }

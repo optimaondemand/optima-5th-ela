@@ -2436,7 +2436,7 @@ body {
       <div class="intro-card-body">
         <div class="obj-line"><span class="obj-icon">📖</span><span><strong>Reading:</strong> I will <em>explain</em> what a first-person narrator gives a reader that a history of the same events could not.</span></div>
         <div class="obj-line"><span class="obj-icon">✏️</span><span><strong>Grammar:</strong> I will <em>identify</em> appositives in sentences from Chapter 7.</span></div>
-        <div class="obj-line"><span class="obj-icon">🔤</span><span><strong>Spelling:</strong> I will <em>sort</em> historical vocabulary words by syllable count.</span></div>
+        <div class="obj-line"><span class="obj-icon">🔤</span><span><strong>Spelling:</strong> I will <em>use</em> open and closed syllables to decide how a tricky word is spelled.</span></div>
       </div>
     </div>
   </div>
@@ -2657,26 +2657,25 @@ body {
 
   <!-- SPELLING -->
   <div class="activity bl-navy">
-    <div class="activity-head"><div class="activity-num" style="background:#2C5F2E;">4</div><div><div class="activity-title">🔠 Spelling: Open &amp; Closed Syllables</div><div class="activity-sub">Sort the words by how many syllables they have.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#2C5F2E;">4</div><div><div class="activity-title">&#x1F520; Spelling: Open &amp; Closed Syllables</div><div class="activity-sub">Utilize &mdash; the ones that trip people up</div></div></div>
     <div class="activity-body">
-<!-- spell-notice-first -->
-<div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F5C2;&#xFE0F;</span><p>Before you start: clap the beats, then decide where the splits go.</p></div>
-            <p>This week's spelling words are all <strong>historical vocabulary</strong> words. Sort them by how many syllables they have. Tap a word to select it, then tap the column where it belongs.</p>
+            <p>Last day, and these are the ones that catch people out. Every word here <em>looks</em> like it could split either way. Only your ear settles it: if the first vowel says its name, the syllable is open; if it says its short sound, a consonant has closed it in. Say <em>ro-bin</em> and <em>rob-in</em> aloud and you will hear which one is a real word.</p>
 
-      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">🎮</span><p><strong>Sort by syllable count.</strong> Remember: Choc-taw, Mis-sis-sip-pi, re-mov-al, ter-ri-to-ry, gov-ern-ment, trea-ty.</p></div>
+      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F3AE;</span><p><strong>Let your ear decide.</strong> Say each word both ways, keep the one that sounds right, then tap its column.</p></div>
       <div class="sort-game" id="spellSort">
         <div class="sort-bank" id="sortBank">
-          <span class="sort-chip" data-group="two" onclick="pickSortChip(this)">Choctaw</span>
-          <span class="sort-chip" data-group="four" onclick="pickSortChip(this)">Mississippi</span>
-          <span class="sort-chip" data-group="three" onclick="pickSortChip(this)">removal</span>
-          <span class="sort-chip" data-group="four" onclick="pickSortChip(this)">territory</span>
-          <span class="sort-chip" data-group="three" onclick="pickSortChip(this)">government</span>
-          <span class="sort-chip" data-group="two" onclick="pickSortChip(this)">treaty</span>
+          <span class="sort-chip" data-group="open" onclick="pickSortChip(this)">begin</span>
+          <span class="sort-chip" data-group="closed" onclick="pickSortChip(this)">cabin</span>
+          <span class="sort-chip" data-group="open" onclick="pickSortChip(this)">prevent</span>
+          <span class="sort-chip" data-group="closed" onclick="pickSortChip(this)">river</span>
+          <span class="sort-chip" data-group="open" onclick="pickSortChip(this)">equal</span>
+          <span class="sort-chip" data-group="closed" onclick="pickSortChip(this)">robin</span>
+          <span class="sort-chip" data-group="open" onclick="pickSortChip(this)">notice</span>
+          <span class="sort-chip" data-group="closed" onclick="pickSortChip(this)">never</span>
         </div>
         <div class="sort-columns">
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#2C5F2E,#3A7A3C);">2 syllables</div><div class="sort-col-drop" data-col="two" onclick="dropSortChip(this,'two')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B3A20,#A84A2A);">3 syllables</div><div class="sort-col-drop" data-col="three" onclick="dropSortChip(this,'three')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">4 syllables</div><div class="sort-col-drop" data-col="four" onclick="dropSortChip(this,'four')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#2C5F2E,#3A7A3C);">Open &mdash; ends on a vowel</div><div class="sort-col-drop" data-col="open" onclick="dropSortChip(this,'open')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B3A20,#A84A2A);">Closed &mdash; ends on a consonant</div><div class="sort-col-drop" data-col="closed" onclick="dropSortChip(this,'closed')"></div></div>
         </div>
         <div class="sort-score" id="sortScore"></div>
       </div>
@@ -3123,7 +3122,7 @@ function fireConfetti() {
 /* ───── WORD SORT GAME ───── */
 var sortSelected = null;
 var sortPlaced = 0;
-var sortTotal = 6;
+var sortTotal = 8;
 
 function pickSortChip(chip) {
   if (chip.classList.contains('placed')) return;
@@ -3156,7 +3155,7 @@ function dropSortChip(colDrop, colName) {
 
   if (sortPlaced >= sortTotal) {
     var sc = document.getElementById('sortScore');
-    sc.textContent = '🎉 All sorted correctly! You can hear how many syllables each word has.';
+    sc.textContent = '🎉 All sorted correctly! You can hear the difference even when the spelling hides it.';
     sc.classList.add('show');
   }
 }
