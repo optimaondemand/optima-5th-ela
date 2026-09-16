@@ -1551,8 +1551,8 @@ var trackerPos=[
     /* hook into dropSortChip to save state */
     var origDrop = window.dropSortChip;
     if(origDrop){
-      window.dropSortChip = function(col, colName){
-        origDrop(col, colName);
+      window.dropSortChip = function(){
+        origDrop.apply(null, arguments);
         try{
           var placed = [];
           document.querySelectorAll('.sort-col-drop .sort-chip.correct').forEach(function(c){

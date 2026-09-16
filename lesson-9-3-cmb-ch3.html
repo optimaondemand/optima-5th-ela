@@ -1799,7 +1799,7 @@ function dropSortChip(col,colGroup){
   sortSelected.style.outline='';sortSelected=null;
   if(sortPlaced>=sortTotal){
     var sc=document.getElementById('sortScore');
-    if(sc){sc.textContent='✅ All sorted correctly! AI words have two vowels side by side. A–E words have a vowel, consonant, and silent e.';sc.classList.add('show');}
+    if(sc){sc.textContent='✅ All sorted correctly! You can hear where the accent lands.';sc.classList.add('show');}
     window._sortDone=true;
     gatherAnswers();
   }
