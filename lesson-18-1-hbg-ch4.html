@@ -2578,26 +2578,37 @@ body {
 
   <!-- MORPHOLOGY -->
   <div class="activity bl-purple">
-    <div class="activity-head"><div class="activity-num" style="background:#8B6FC0;">1</div><div><div class="activity-title">🌱 Morphology: Roots <em>mem/memor</em> + <em>script</em></div><div class="activity-sub">Day 2: Identify &mdash; match the roots to their meanings.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#8B6FC0;">1</div><div><div class="activity-title">&#x1F331; Morphology: Roots <em>mem/memor</em> + <em>script</em></div><div class="activity-sub">Day 1: Notice &mdash; work out the pattern before you are told it.</div></div></div>
     <div class="activity-body">
-            <p>Yesterday you defined the roots. Today, <strong>identify</strong> which root lives in each word. Both roots show up everywhere in Chapter 1 &mdash; Isaac is writing his <em>memoir</em> (<em>mem</em>), and this book IS a kind of written <em>script</em>.</p>
-      <div class="key-concept">
-        <div class="key-concept-label">📌 Quick Recap</div>
-        <p><strong>mem / memor</strong> = memory &nbsp;→&nbsp; memoir, memorial, memorize, commemorate<br><strong>script</strong> = write &nbsp;→&nbsp; script, inscription, description, manuscript, prescribe</p>
+            <p>Isaac is telling you this story after it happened, and he says so on the first page. Two word-parts run under everything he does &mdash; one for holding on to what happened, one for setting it down. You can find them both without being told what they mean.</p>
+
+      <div class="key-concept" style="background:#F5F1FB;border-color:#D9CCF0;">
+        <div class="key-concept-label">&#x1F50D; Hunt the root</div>
+        <p><strong>Group A:</strong> memoir &middot; memorial &middot; memorize</p>
+        <p><strong>Group B:</strong> manuscript &middot; inscription &middot; description</p>
       </div>
-      <div class="callout callout-info"><span class="callout-icon">🎯</span><p><strong>Match each word to its root family.</strong> Tap a word, then tap the root it belongs to.</p></div>
-      <div class="root-match-game" id="rootMatchGame">
-        <div class="root-match-grid">
-          <div class="root-match-item is-word" data-match="A" onclick="rootMatchClick(this)">memoir</div>
-          <div class="root-match-item" data-match="B" onclick="rootMatchClick(this)">Root: <em>script</em> (write)</div>
-          <div class="root-match-item is-word" data-match="B" onclick="rootMatchClick(this)">inscription</div>
-          <div class="root-match-item" data-match="A" onclick="rootMatchClick(this)">Root: <em>mem/memor</em> (memory)</div>
-          <div class="root-match-item is-word" data-match="A" onclick="rootMatchClick(this)">commemorate</div>
-          <div class="root-match-item" data-match="B" onclick="rootMatchClick(this)">Root: <em>script</em> (write)</div>
-          <div class="root-match-item is-word" data-match="B" onclick="rootMatchClick(this)">manuscript</div>
-          <div class="root-match-item" data-match="A" onclick="rootMatchClick(this)">Root: <em>mem/memor</em> (memory)</div>
-        </div>
-        <div class="root-match-feedback" id="rootMatchFeedback">✨ All matched!</div>
+
+      <div class="callout callout-info" style="margin-top:12px;"><span class="callout-icon">&#x1F9D0;</span><p><strong>Try these first:</strong></p>
+      <ul style="margin:6px 0 0 20px;font-size:15px;color:#3A4A6B;line-height:1.8;">
+      <li>What letters do all three words in Group A share? Cover the rest of each word and read just that piece.</li>
+      <li>What do a memoir, a memorial and memorizing all have in common? What is each one <em>for</em>?</li>
+      <li>Now do the same with Group B. What piece repeats, and what do all three have to do with?</li>
+      </ul></div>
+      <button class="dol-check-btn" onclick="document.getElementById('morphNotice').classList.toggle('show')">&#x1F331; See what was hiding</button>
+      <div class="dol-answer" id="morphNotice">
+      <p><strong>mem / memor</strong> means <strong>memory</strong>. A memoir is a memory written down, a memorial keeps a memory standing, and to memorize is to put something into memory.</p>
+      <p><strong>script</strong> means <strong>write</strong>. A manuscript is written by hand, an inscription is written into stone, a description is writing that shows you something.</p>
+      <p>Isaac's whole book sits on both of them: he is remembering, and he is writing it down.</p>
+      </div>
+
+      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F9E9;</span><p><strong>Practice: use the root to name the word.</strong></p></div>
+      <div class="fillin-game" id="morphFillinGame">
+        <div class="fillin-item">A written record of your own life is a <input class="fillin-input" data-answer="memoir" maxlength="10" placeholder="______">.</div>
+        <div class="fillin-item">A book written out by hand, before it is printed, is a <input class="fillin-input" data-answer="manuscript" maxlength="12" placeholder="______">.</div>
+        <div class="fillin-item">Words cut into a stone are an <input class="fillin-input" data-answer="inscription" maxlength="13" placeholder="______">.</div>
+        <div class="fillin-item">To put something safely into your memory is to <input class="fillin-input" data-answer="memorize" maxlength="10" placeholder="______"> it.</div>
+        <button class="fillin-check-btn" onclick="checkFillIn()">Check My Answers</button>
+        <div class="fillin-feedback" id="fillinFeedback">&#x1F331; All correct &mdash; you found both roots.</div>
       </div>
       
     </div>
