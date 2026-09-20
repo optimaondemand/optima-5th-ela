@@ -589,6 +589,129 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         </label>
         <span id="ora-status" role="status" aria-live="polite"></span>
     </div>
+<style id="g5kit-v1">
+.g5-sel{outline:3px solid #8B3A20;outline-offset:2px;}
+.g5-bad{background:#FBE3E3 !important;border-color:#D9534F !important;}
+.g5-fb{display:none;margin-top:12px;padding:10px 14px;border-radius:10px;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;font-weight:700;}
+.g5-task{background:#FFFCF0;border:1px solid #F5E6C8;border-left:4px solid #8B3A20;border-radius:10px;padding:12px 16px;margin:12px 0;font-family:Georgia,serif;}
+.g5-match .root-match-item{cursor:pointer;}
+</style>
+<script>
+function g5Pick(el){var g=el.closest('.g5-sort');if(!g||el.classList.contains('placed'))return;
+g.querySelectorAll('.sort-chip').forEach(function(c){c.classList.remove('g5-sel');});
+el.classList.add('g5-sel');}
+function g5Drop(col){var g=col.closest('.g5-sort');if(!g)return;
+var sel=g.querySelector('.sort-chip.g5-sel');if(!sel)return;
+if(sel.getAttribute('data-group')!==col.getAttribute('data-col')){
+sel.classList.add('g5-bad');var s=sel;setTimeout(function(){s.classList.remove('g5-bad');},500);return;}
+sel.classList.remove('g5-sel');sel.classList.add('placed');col.appendChild(sel);
+if(g.querySelectorAll('.sort-chip:not(.placed)').length===0){
+var sc=g.querySelector('.sort-score');if(sc){sc.classList.add('show');sc.style.display='block';}}
+g5Save(g);}
+function g5Spot(el,sid){var s=document.getElementById(sid);if(!s||s.getAttribute('data-done')==='true')return;
+var r=document.getElementById(sid+'-result');
+if(el.getAttribute('data-correct')==='true'){el.classList.add('correct-reveal');
+if(r){r.innerHTML=el.getAttribute('data-explain')||'\u2705 Correct.';r.className='spotter-result show win';r.style.display='block';}
+var need=s.querySelectorAll('.spotter-word[data-correct="true"]').length;
+var got=s.querySelectorAll('.spotter-word.correct-reveal').length;
+if(got>=need)s.setAttribute('data-done','true');g5SaveSpot(s);}
+else{el.classList.add('wrong-reveal');
+if(r){r.innerHTML=el.getAttribute('data-explain')||'Not quite \u2014 try again.';r.className='spotter-result show miss';r.style.display='block';}
+var w=el;setTimeout(function(){w.classList.remove('wrong-reveal');},1200);}}
+function g5Match(el){var g=el.closest('.g5-match');if(!g||el.classList.contains('matched'))return;
+var sel=g.querySelector('.root-match-item.g5-sel');
+if(!sel){el.classList.add('g5-sel');return;}
+if(sel===el){el.classList.remove('g5-sel');return;}
+if(sel.getAttribute('data-match')===el.getAttribute('data-match')&&sel.classList.contains('is-word')!==el.classList.contains('is-word')){
+sel.classList.remove('g5-sel');sel.classList.add('matched');el.classList.add('matched');
+if(g.querySelectorAll('.root-match-item:not(.matched)').length===0){
+var f=g.querySelector('.g5-fb');if(f)f.style.display='block';}
+g5Save(g);}
+else{el.classList.add('g5-bad');sel.classList.add('g5-bad');var a=sel,b=el;
+setTimeout(function(){a.classList.remove('g5-bad','g5-sel');b.classList.remove('g5-bad');},500);}}
+function g5Fill(btn){var g=btn.closest('.g5-fill');if(!g)return;var ok=true;
+g.querySelectorAll('.fillin-input').forEach(function(i){
+var a=(i.getAttribute('data-answer')||'').trim().toLowerCase();
+if(i.value.trim().toLowerCase()===a){i.classList.add('correct');i.classList.remove('wrong');i.disabled=true;}
+else{i.classList.add('wrong');i.classList.remove('correct');ok=false;
+setTimeout(function(){i.classList.remove('wrong');},600);}});
+if(ok){var f=g.querySelector('.g5-fb');if(f)f.style.display='block';}g5Save(g);}
+/* ---- per-game save / restore. Keyed by this page and this game's own id,
+   so no game can ever be handed another game's state. ---- */
+function g5MatchAny(el){var g=el.closest('.match-game')||el.closest('.match-grid');if(!g)return;
+if(el.classList.contains('matched'))return;
+var sel=g.querySelector('.match-item.selected');
+if(!sel){el.classList.add('selected');return;}
+if(sel===el){el.classList.remove('selected');return;}
+if(sel.getAttribute('data-match')===el.getAttribute('data-match')&&sel.classList.contains('is-word')!==el.classList.contains('is-word')){
+sel.classList.remove('selected');sel.classList.add('matched');el.classList.add('matched');
+if(g.querySelectorAll('.match-item:not(.matched)').length===0){
+var fb=g.querySelector('.match-feedback');
+if(!fb){var gg=g.closest('.match-game');if(gg)fb=gg.querySelector('.match-feedback');}
+if(fb){fb.classList.add('show');fb.style.display='block';}}
+g5SaveAny(g);}
+else{el.classList.add('g5-bad');sel.classList.add('g5-bad');var a=sel,b=el;
+setTimeout(function(){a.classList.remove('g5-bad','selected');b.classList.remove('g5-bad');},500);}}
+function g5AnyKey(g){var t=(document.title||'ela').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+var grid=g.querySelector('.match-grid')||g;
+return 'g5kit-'+t+'-any-'+(g.id||grid.id||(grid.textContent||'').slice(0,24).replace(/[^a-zA-Z0-9]+/g,''));}
+function g5SaveAny(g){try{localStorage.setItem(g5AnyKey(g),JSON.stringify(
+[].map.call(g.querySelectorAll('.match-item.matched'),function(c){return c.getAttribute('data-match')+'|'+(c.classList.contains('is-word')?'w':'l');})));}catch(e){}}
+function g5RestoreAny(){document.querySelectorAll('.match-game').forEach(function(g){
+if(!g.querySelector('.match-item[onclick*="g5MatchAny"]'))return;
+var v;try{v=JSON.parse(localStorage.getItem(g5AnyKey(g))||'null');}catch(e){v=null;}
+if(!v||!v.length)return;
+v.forEach(function(k){var p=k.split('|');
+var it=[].filter.call(g.querySelectorAll('.match-item'),function(x){
+return x.getAttribute('data-match')===p[0]&&(x.classList.contains('is-word')?'w':'l')===p[1];})[0];
+if(it)it.classList.add('matched');});
+if(g.querySelectorAll('.match-item:not(.matched)').length===0){
+var fb=g.querySelector('.match-feedback');if(fb){fb.classList.add('show');fb.style.display='block';}}});}
+function g5Key(g){var t=(document.title||'ela').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+return 'g5kit-'+t+'-'+(g.id||'');}
+function g5Save(g){if(!g||!g.id)return;var st={};
+if(g.classList.contains('g5-sort'))st.placed=[].map.call(g.querySelectorAll('.sort-chip.placed'),function(c){return c.textContent;});
+if(g.classList.contains('g5-match'))st.matched=[].map.call(g.querySelectorAll('.root-match-item.matched'),function(c){return c.getAttribute('data-match')+'|'+(c.classList.contains('is-word')?'w':'l');});
+if(g.classList.contains('g5-fill'))st.vals=[].map.call(g.querySelectorAll('.fillin-input'),function(i){return i.value;});
+try{localStorage.setItem(g5Key(g),JSON.stringify(st));}catch(e){}}
+function g5Restore(){document.querySelectorAll('.g5-sort,.g5-match,.g5-fill').forEach(function(g){
+var st;try{st=JSON.parse(localStorage.getItem(g5Key(g))||'null');}catch(e){st=null;}
+if(!st)return;
+if(st.placed)st.placed.forEach(function(txt){
+var c=[].filter.call(g.querySelectorAll('.sort-chip'),function(x){return x.textContent===txt&&!x.classList.contains('placed');})[0];
+if(!c)return;var col=g.querySelector('.sort-col-drop[data-col="'+c.getAttribute('data-group')+'"]');
+if(col){c.classList.add('placed');col.appendChild(c);}});
+if(st.matched)st.matched.forEach(function(k){var p=k.split('|');
+var it=[].filter.call(g.querySelectorAll('.root-match-item'),function(x){
+return x.getAttribute('data-match')===p[0]&&(x.classList.contains('is-word')?'w':'l')===p[1];})[0];
+if(it)it.classList.add('matched');});
+if(st.vals){var ins=g.querySelectorAll('.fillin-input');
+st.vals.forEach(function(v,i){if(ins[i]&&v)ins[i].value=v;});}
+if(g.classList.contains('g5-sort')&&g.querySelectorAll('.sort-chip:not(.placed)').length===0){
+var sc=g.querySelector('.sort-score');if(sc){sc.classList.add('show');sc.style.display='block';}}
+if(g.classList.contains('g5-match')&&g.querySelectorAll('.root-match-item:not(.matched)').length===0){
+var f=g.querySelector('.g5-fb');if(f)f.style.display='block';}});}
+function g5SaveSpot(s){if(!s.id)return;
+var t=(document.title||'ela').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+try{localStorage.setItem('g5kit-'+t+'-'+s.id,JSON.stringify(
+[].map.call(s.querySelectorAll('.spotter-word.correct-reveal'),function(w){return w.textContent;})));}catch(e){}}
+function g5RestoreSpot(){var t=(document.title||'ela').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+document.querySelectorAll('.spotter-sentence').forEach(function(s){
+if(!s.id||!s.querySelector('.spotter-word[onclick*="g5Spot"]'))return;
+var v;try{v=JSON.parse(localStorage.getItem('g5kit-'+t+'-'+s.id)||'null');}catch(e){v=null;}
+if(!v||!v.length)return;
+v.forEach(function(txt){var w=[].filter.call(s.querySelectorAll('.spotter-word'),function(x){
+return x.textContent===txt&&x.getAttribute('data-correct')==='true'&&!x.classList.contains('correct-reveal');})[0];
+if(w)w.classList.add('correct-reveal');});
+var need=s.querySelectorAll('.spotter-word[data-correct="true"]').length;
+var got=s.querySelectorAll('.spotter-word.correct-reveal').length;
+if(got>=need){s.setAttribute('data-done','true');
+var r=document.getElementById(s.id+'-result');
+if(r){r.innerHTML='\u2705 Answered.';r.className='spotter-result show win';r.style.display='block';}}});}
+function g5RestoreAll(){g5Restore();g5RestoreSpot();g5RestoreAny();}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',g5RestoreAll);else g5RestoreAll();
+</script>
+
 <script>
 (function () {
     "use strict";
@@ -950,7 +1073,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <div class="activity bl-plum">
     <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div>
       <div style="flex:1;"><div class="activity-title">&#x1F331; Morphology: Roots <em>meter/metr</em> + <em>scope/spect</em></div>
-      <div class="activity-sub">Explain &mdash; the instruments of a science</div></div>
+      <div class="activity-sub">Explain &mdash; the instruments of a science</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">&#9997;&#65039; Word Study Level: Word Engineer</span></div></div>
     </div>
     <div class="activity-body">
         <div class="callout callout-tip"><span class="callout-icon">&#x1F914;</span><p>Odd One Out &mdash; three words share a root. One does not. Click the word that does <em>not</em> belong.</p></div>
@@ -985,7 +1108,9 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         <div class="root-det-msg" id="odd3-msg">Correct! A <em>chronometer</em> measures. The others are all about looking.</div>
       </div>
 
-    </div>
+    
+<div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#127919;</span><p><strong>Match each instrument to what its root says it does.</strong></p></div><div class="root-match-game g5-match" id="g11d4m"><div class="root-match-grid"><div class="root-match-item is-word" data-match="A" onclick="g5Match(this)">barometer</div><div class="root-match-item" data-match="B" onclick="g5Match(this)">It <em>measures</em> &mdash; root <em>meter</em></div><div class="root-match-item is-word" data-match="B" onclick="g5Match(this)">thermometer</div><div class="root-match-item" data-match="C" onclick="g5Match(this)">It <em>looks</em> &mdash; root <em>scope</em></div><div class="root-match-item is-word" data-match="C" onclick="g5Match(this)">telescope</div><div class="root-match-item" data-match="D" onclick="g5Match(this)">It <em>looks</em> &mdash; root <em>scope</em></div><div class="root-match-item is-word" data-match="D" onclick="g5Match(this)">microscope</div><div class="root-match-item" data-match="A" onclick="g5Match(this)">It <em>measures</em> &mdash; root <em>meter</em></div></div><div class="g5-fb">&#10024; Matched. Two roots name almost every instrument in a ship&rsquo;s cabin.</div></div>
+</div>
   </div>
   <div class="activity bl-teal">
     <div class="activity-head"><div class="activity-num" style="background:#00796B;">2</div>
@@ -1015,7 +1140,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <div class="activity bl-gold">
     <div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">3</div>
       <div style="flex:1;"><div class="activity-title">&#x270F;&#xFE0F; Grammar: Relative Pronouns &amp; Clauses</div>
-      <div class="activity-sub">Explain the importance</div></div>
+      <div class="activity-sub">Explain the importance</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#EEF3FA;color:#2B4C7E;border:1px solid #5A7FBF;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">&#9997;&#65039; Grammar Level: Sentence Engineer</span></div></div>
     </div>
     <div class="activity-body">
 <!-- grammar-notice-first -->
@@ -1025,18 +1150,22 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         <p class="socratic-q">A classmate says: &ldquo;I always get confused when there are extra words between the subject and the verb. How do I know which noun is really the subject?&rdquo; Write a 3&ndash;4 sentence explanation with a clear example from this week&rsquo;s novel sentences.</p>
       </div>
       <p style="font-size:13px;color:#7A88A8;font-style:italic;margin-top:10px;">Write your explanation in your reading journal.</p>
-    </div>
+    
+<div class="g5-task"><div style="color:#8B3A20;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;">Before</div><div style="margin-bottom:10px;">Nat had no schooling after twelve. Nat taught himself Latin.</div><div style="color:#1E7A47;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;">After</div><div>Nat, who had no schooling after twelve, taught himself Latin.</div></div><p style="margin-top:10px;color:#3A4A6B;">The relative clause folds one fact inside the other and says which one is the point. The teaching-himself is the sentence; the schooling is the background.</p><div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#127919;</span><p><strong>Tap the right answer.</strong></p></div><div class="spotter-game" id="g11d4g"><div class="spotter-sentence" id="g11d4gs1"><span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">What does a relative clause let a writer do?</span><span class="spotter-word" onclick="g5Spot(this,'g11d4gs1')" data-correct="false" data-explain="Length is a side effect, not a purpose.">Make sentences longer.</span><span style="display:block;height:6px;"></span><span class="spotter-word" onclick="g5Spot(this,'g11d4gs1')" data-correct="true" data-explain="&#9989; That is the whole use of it &mdash; ranking information inside one sentence.">Put a fact in without making it the main point.</span><span style="display:block;height:6px;"></span><div class="spotter-result" id="g11d4gs1-result" style="display:none;"></div></div><div class="spotter-sentence" id="g11d4gs2"><span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which is correct?</span><span class="spotter-word" onclick="g5Spot(this,'g11d4gs2')" data-correct="false" data-explain="<em>who</em> is for people. A ship takes <em>that</em> or <em>which</em>.">The ship who carried him was the <em>Henry</em>.</span><span style="display:block;height:6px;"></span><span class="spotter-word" onclick="g5Spot(this,'g11d4gs2')" data-correct="true" data-explain="&#9989; <em>that</em> for a thing, and the clause is essential.">The ship that carried him was the <em>Henry</em>.</span><span style="display:block;height:6px;"></span><div class="spotter-result" id="g11d4gs2-result" style="display:none;"></div></div></div>
+</div>
   </div>
   <div class="activity bl-navy">
     <div class="activity-head"><div class="activity-num" style="background:#0E3A5C;">4</div>
       <div style="flex:1;"><div class="activity-title">&#x1F520; Spelling: Dividing Long Words by Their Parts</div>
-      <div class="activity-sub">Explain &mdash; why parts beat syllables</div></div>
+      <div class="activity-sub">Explain &mdash; why parts beat syllables</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">&#9997;&#65039; Word Study Level: Word Engineer</span></div></div>
     </div>
     <div class="activity-body">
 <!-- spell-notice-first -->
 <div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F5C2;&#xFE0F;</span><p>Before you start: clap the beats, then decide where the splits go.</p></div>
         <div class="callout callout-tip"><span class="callout-icon">&#x1F4A1;</span><p>A classmate says: &ldquo;Why bother splitting a word up? I just sound it out.&rdquo; In your reading journal, explain why cutting at the meaning-seams beats sounding out &mdash; and give two long words from this unit where knowing the parts told you both the meaning and the spelling.</p></div>
-    </div>
+    
+<div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#127919;</span><p><strong>Tap the right answer.</strong></p></div><div class="spotter-game" id="g11d4s"><div class="spotter-sentence" id="g11d4ss1"><span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Why break a long word into parts rather than syllables?</span><span class="spotter-word" onclick="g5Spot(this,'g11d4ss1')" data-correct="true" data-explain="&#9989; <em>in&middot;spect&middot;ion</em> tells you what the word means. <em>in&middot;spec&middot;tion</em> only tells you how to say it.">Because parts carry meaning and syllables do not.</span><span style="display:block;height:6px;"></span><span class="spotter-word" onclick="g5Spot(this,'g11d4ss1')" data-correct="false" data-explain="It is not always faster. It is more useful.">Because it is faster.</span><span style="display:block;height:6px;"></span><div class="spotter-result" id="g11d4ss1-result" style="display:none;"></div></div><div class="spotter-sentence" id="g11d4ss2"><span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which split follows the parts?</span><span class="spotter-word" onclick="g5Spot(this,'g11d4ss2')" data-correct="true" data-explain="&#9989; <em>baro</em> (weight) + <em>meter</em> (measure).">baro &middot; meter</span><span style="display:block;height:6px;"></span><span class="spotter-word" onclick="g5Spot(this,'g11d4ss2')" data-correct="false" data-explain="That is how you say it, not how it is built.">ba &middot; rom &middot; eter</span><span style="display:block;height:6px;"></span><div class="spotter-result" id="g11d4ss2-result" style="display:none;"></div></div><div class="spotter-sentence" id="g11d4ss3"><span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which split follows the parts?</span><span class="spotter-word" onclick="g5Spot(this,'g11d4ss3')" data-correct="false" data-explain="Those are sound chunks, not meaning chunks.">tel &middot; es &middot; cope</span><span style="display:block;height:6px;"></span><span class="spotter-word" onclick="g5Spot(this,'g11d4ss3')" data-correct="true" data-explain="&#9989; <em>tele</em> (far) + <em>scope</em> (look).">tele &middot; scope</span><span style="display:block;height:6px;"></span><div class="spotter-result" id="g11d4ss3-result" style="display:none;"></div></div></div>
+</div>
   </div>
   <div class="tab-next-wrap">
     <p class="tab-transition-voice">You&rsquo;ve explained everything. Now read the final chapter of this week &mdash; Nat proves himself on the open sea.</p>

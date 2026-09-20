@@ -564,6 +564,129 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         </label>
         <span id="ora-status" role="status" aria-live="polite"></span>
     </div>
+<style id="g5kit-v1">
+.g5-sel{outline:3px solid #8B3A20;outline-offset:2px;}
+.g5-bad{background:#FBE3E3 !important;border-color:#D9534F !important;}
+.g5-fb{display:none;margin-top:12px;padding:10px 14px;border-radius:10px;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;font-weight:700;}
+.g5-task{background:#FFFCF0;border:1px solid #F5E6C8;border-left:4px solid #8B3A20;border-radius:10px;padding:12px 16px;margin:12px 0;font-family:Georgia,serif;}
+.g5-match .root-match-item{cursor:pointer;}
+</style>
+<script>
+function g5Pick(el){var g=el.closest('.g5-sort');if(!g||el.classList.contains('placed'))return;
+g.querySelectorAll('.sort-chip').forEach(function(c){c.classList.remove('g5-sel');});
+el.classList.add('g5-sel');}
+function g5Drop(col){var g=col.closest('.g5-sort');if(!g)return;
+var sel=g.querySelector('.sort-chip.g5-sel');if(!sel)return;
+if(sel.getAttribute('data-group')!==col.getAttribute('data-col')){
+sel.classList.add('g5-bad');var s=sel;setTimeout(function(){s.classList.remove('g5-bad');},500);return;}
+sel.classList.remove('g5-sel');sel.classList.add('placed');col.appendChild(sel);
+if(g.querySelectorAll('.sort-chip:not(.placed)').length===0){
+var sc=g.querySelector('.sort-score');if(sc){sc.classList.add('show');sc.style.display='block';}}
+g5Save(g);}
+function g5Spot(el,sid){var s=document.getElementById(sid);if(!s||s.getAttribute('data-done')==='true')return;
+var r=document.getElementById(sid+'-result');
+if(el.getAttribute('data-correct')==='true'){el.classList.add('correct-reveal');
+if(r){r.innerHTML=el.getAttribute('data-explain')||'\u2705 Correct.';r.className='spotter-result show win';r.style.display='block';}
+var need=s.querySelectorAll('.spotter-word[data-correct="true"]').length;
+var got=s.querySelectorAll('.spotter-word.correct-reveal').length;
+if(got>=need)s.setAttribute('data-done','true');g5SaveSpot(s);}
+else{el.classList.add('wrong-reveal');
+if(r){r.innerHTML=el.getAttribute('data-explain')||'Not quite \u2014 try again.';r.className='spotter-result show miss';r.style.display='block';}
+var w=el;setTimeout(function(){w.classList.remove('wrong-reveal');},1200);}}
+function g5Match(el){var g=el.closest('.g5-match');if(!g||el.classList.contains('matched'))return;
+var sel=g.querySelector('.root-match-item.g5-sel');
+if(!sel){el.classList.add('g5-sel');return;}
+if(sel===el){el.classList.remove('g5-sel');return;}
+if(sel.getAttribute('data-match')===el.getAttribute('data-match')&&sel.classList.contains('is-word')!==el.classList.contains('is-word')){
+sel.classList.remove('g5-sel');sel.classList.add('matched');el.classList.add('matched');
+if(g.querySelectorAll('.root-match-item:not(.matched)').length===0){
+var f=g.querySelector('.g5-fb');if(f)f.style.display='block';}
+g5Save(g);}
+else{el.classList.add('g5-bad');sel.classList.add('g5-bad');var a=sel,b=el;
+setTimeout(function(){a.classList.remove('g5-bad','g5-sel');b.classList.remove('g5-bad');},500);}}
+function g5Fill(btn){var g=btn.closest('.g5-fill');if(!g)return;var ok=true;
+g.querySelectorAll('.fillin-input').forEach(function(i){
+var a=(i.getAttribute('data-answer')||'').trim().toLowerCase();
+if(i.value.trim().toLowerCase()===a){i.classList.add('correct');i.classList.remove('wrong');i.disabled=true;}
+else{i.classList.add('wrong');i.classList.remove('correct');ok=false;
+setTimeout(function(){i.classList.remove('wrong');},600);}});
+if(ok){var f=g.querySelector('.g5-fb');if(f)f.style.display='block';}g5Save(g);}
+/* ---- per-game save / restore. Keyed by this page and this game's own id,
+   so no game can ever be handed another game's state. ---- */
+function g5MatchAny(el){var g=el.closest('.match-game')||el.closest('.match-grid');if(!g)return;
+if(el.classList.contains('matched'))return;
+var sel=g.querySelector('.match-item.selected');
+if(!sel){el.classList.add('selected');return;}
+if(sel===el){el.classList.remove('selected');return;}
+if(sel.getAttribute('data-match')===el.getAttribute('data-match')&&sel.classList.contains('is-word')!==el.classList.contains('is-word')){
+sel.classList.remove('selected');sel.classList.add('matched');el.classList.add('matched');
+if(g.querySelectorAll('.match-item:not(.matched)').length===0){
+var fb=g.querySelector('.match-feedback');
+if(!fb){var gg=g.closest('.match-game');if(gg)fb=gg.querySelector('.match-feedback');}
+if(fb){fb.classList.add('show');fb.style.display='block';}}
+g5SaveAny(g);}
+else{el.classList.add('g5-bad');sel.classList.add('g5-bad');var a=sel,b=el;
+setTimeout(function(){a.classList.remove('g5-bad','selected');b.classList.remove('g5-bad');},500);}}
+function g5AnyKey(g){var t=(document.title||'ela').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+var grid=g.querySelector('.match-grid')||g;
+return 'g5kit-'+t+'-any-'+(g.id||grid.id||(grid.textContent||'').slice(0,24).replace(/[^a-zA-Z0-9]+/g,''));}
+function g5SaveAny(g){try{localStorage.setItem(g5AnyKey(g),JSON.stringify(
+[].map.call(g.querySelectorAll('.match-item.matched'),function(c){return c.getAttribute('data-match')+'|'+(c.classList.contains('is-word')?'w':'l');})));}catch(e){}}
+function g5RestoreAny(){document.querySelectorAll('.match-game').forEach(function(g){
+if(!g.querySelector('.match-item[onclick*="g5MatchAny"]'))return;
+var v;try{v=JSON.parse(localStorage.getItem(g5AnyKey(g))||'null');}catch(e){v=null;}
+if(!v||!v.length)return;
+v.forEach(function(k){var p=k.split('|');
+var it=[].filter.call(g.querySelectorAll('.match-item'),function(x){
+return x.getAttribute('data-match')===p[0]&&(x.classList.contains('is-word')?'w':'l')===p[1];})[0];
+if(it)it.classList.add('matched');});
+if(g.querySelectorAll('.match-item:not(.matched)').length===0){
+var fb=g.querySelector('.match-feedback');if(fb){fb.classList.add('show');fb.style.display='block';}}});}
+function g5Key(g){var t=(document.title||'ela').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+return 'g5kit-'+t+'-'+(g.id||'');}
+function g5Save(g){if(!g||!g.id)return;var st={};
+if(g.classList.contains('g5-sort'))st.placed=[].map.call(g.querySelectorAll('.sort-chip.placed'),function(c){return c.textContent;});
+if(g.classList.contains('g5-match'))st.matched=[].map.call(g.querySelectorAll('.root-match-item.matched'),function(c){return c.getAttribute('data-match')+'|'+(c.classList.contains('is-word')?'w':'l');});
+if(g.classList.contains('g5-fill'))st.vals=[].map.call(g.querySelectorAll('.fillin-input'),function(i){return i.value;});
+try{localStorage.setItem(g5Key(g),JSON.stringify(st));}catch(e){}}
+function g5Restore(){document.querySelectorAll('.g5-sort,.g5-match,.g5-fill').forEach(function(g){
+var st;try{st=JSON.parse(localStorage.getItem(g5Key(g))||'null');}catch(e){st=null;}
+if(!st)return;
+if(st.placed)st.placed.forEach(function(txt){
+var c=[].filter.call(g.querySelectorAll('.sort-chip'),function(x){return x.textContent===txt&&!x.classList.contains('placed');})[0];
+if(!c)return;var col=g.querySelector('.sort-col-drop[data-col="'+c.getAttribute('data-group')+'"]');
+if(col){c.classList.add('placed');col.appendChild(c);}});
+if(st.matched)st.matched.forEach(function(k){var p=k.split('|');
+var it=[].filter.call(g.querySelectorAll('.root-match-item'),function(x){
+return x.getAttribute('data-match')===p[0]&&(x.classList.contains('is-word')?'w':'l')===p[1];})[0];
+if(it)it.classList.add('matched');});
+if(st.vals){var ins=g.querySelectorAll('.fillin-input');
+st.vals.forEach(function(v,i){if(ins[i]&&v)ins[i].value=v;});}
+if(g.classList.contains('g5-sort')&&g.querySelectorAll('.sort-chip:not(.placed)').length===0){
+var sc=g.querySelector('.sort-score');if(sc){sc.classList.add('show');sc.style.display='block';}}
+if(g.classList.contains('g5-match')&&g.querySelectorAll('.root-match-item:not(.matched)').length===0){
+var f=g.querySelector('.g5-fb');if(f)f.style.display='block';}});}
+function g5SaveSpot(s){if(!s.id)return;
+var t=(document.title||'ela').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+try{localStorage.setItem('g5kit-'+t+'-'+s.id,JSON.stringify(
+[].map.call(s.querySelectorAll('.spotter-word.correct-reveal'),function(w){return w.textContent;})));}catch(e){}}
+function g5RestoreSpot(){var t=(document.title||'ela').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+document.querySelectorAll('.spotter-sentence').forEach(function(s){
+if(!s.id||!s.querySelector('.spotter-word[onclick*="g5Spot"]'))return;
+var v;try{v=JSON.parse(localStorage.getItem('g5kit-'+t+'-'+s.id)||'null');}catch(e){v=null;}
+if(!v||!v.length)return;
+v.forEach(function(txt){var w=[].filter.call(s.querySelectorAll('.spotter-word'),function(x){
+return x.textContent===txt&&x.getAttribute('data-correct')==='true'&&!x.classList.contains('correct-reveal');})[0];
+if(w)w.classList.add('correct-reveal');});
+var need=s.querySelectorAll('.spotter-word[data-correct="true"]').length;
+var got=s.querySelectorAll('.spotter-word.correct-reveal').length;
+if(got>=need){s.setAttribute('data-done','true');
+var r=document.getElementById(s.id+'-result');
+if(r){r.innerHTML='\u2705 Answered.';r.className='spotter-result show win';r.style.display='block';}}});}
+function g5RestoreAll(){g5Restore();g5RestoreSpot();g5RestoreAny();}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',g5RestoreAll);else g5RestoreAll();
+</script>
+
 <script>
 (function () {
     "use strict";
@@ -806,7 +929,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 <div class="activity bl-teal"><div class="activity-head"><div class="activity-num" style="background:#00796B;">&#x1F4DD;</div><div style="flex:1;"><div class="activity-title">Daily Oral Language</div><div class="activity-sub">Study the model &mdash; fix the sentence</div></div></div><div class="activity-body"><p style="font-size:14px;color:#7A88A8;font-weight:700;text-transform:uppercase;margin-bottom:8px;">Sentence 1 &mdash; The Correct Model</p><p style="font-size:14px;color:#3A4A6B;margin-bottom:10px;">Tap highlighted words to see what makes them correct.</p><div class="dol-model-sentence" id="dolModel">In Chapter 21, <span class="dol-highlight-word" onclick="dolWordClick(this,'Chapter titles go in quotation marks. Book and ship titles are italicized.')">Latham shows</span> that choosing a meaningful path &mdash; even a dangerous one &mdash; was always more important to Nat than choosing the <span class="dol-highlight-word" onclick="dolWordClick(this,'&ldquo;safer&rdquo; is correctly compared here; the superlative would be &ldquo;safest.&rdquo;')">safer</span> one.</div><div class="dol-explanation" id="dolExplanation"></div><p style="font-size:14px;color:#7A88A8;font-weight:700;text-transform:uppercase;margin-top:16px;margin-bottom:8px;">Sentence 2 &mdash; Fix It</p><p style="font-size:14px;color:#3A4A6B;margin-bottom:10px;">Write the corrected sentence in your reading journal.</p><div class="dol-fix-sentence">in the chapter called sealing is safer nat must decide between a voyage that is cautious and one that will test everything he knows about navigation</div><button class="dol-check-btn" onclick="document.getElementById('dolAns').classList.toggle('show')">&#x1F50D; Check My Work</button><div class="dol-answer" id="dolAns"><p><strong>Corrected:</strong> In the chapter called &ldquo;Sealing Is Safer,&rdquo; Nat must decide between a voyage that is cautious and one that will test everything he knows about navigation.</p><p style="font-size:13px;color:#7A88A8;font-style:italic;margin-top:8px;">Fixes: capitalize &ldquo;In&rdquo;; chapter title in quotation marks; capitalize &ldquo;Nat&rdquo;; period at end.</p></div></div></div>
   <div class="tab-next-wrap"><p class="tab-transition-voice">Final week, final push. Let&rsquo;s review everything you&rsquo;ve learned and get ready to publish.</p><button class="tab-next-btn" onclick="switchTab('words')">Continue to &#x1F524; Word Study &rarr;</button></div>
 </div><div class="tab-panel" id="tab-words">
-  <div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div><div style="flex:1;"><div class="activity-title">&#x1F9ED; Morphology: Word Families</div><div class="activity-sub">navigate &rarr; navigation &rarr; navigator &middot; inform &rarr; information &rarr; informative</div></div></div>
+  <div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div><div style="flex:1;"><div class="activity-title">&#x1F9ED; Morphology: Word Families</div><div class="activity-sub">navigate &rarr; navigation &rarr; navigator &middot; inform &rarr; information &rarr; informative</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">&#9997;&#65039; Word Study Level: Word Engineer</span></div></div></div>
     <div class="activity-body">
 <!-- morph-notice-first -->
 <div class="key-concept NOTICEBOX" style="background:#EAF6EF;border-color:#BEE3CC;margin:0 0 14px;">
@@ -860,7 +983,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         <div class="match-item" data-match="A" onclick="matchClick(this)">a person who guides a ship by plotting its course</div>
       </div><div class="match-feedback" id="matchFeedback">&#x2728; All matched! Word families make vocabulary stick.</div></div>
     </div></div>
-  <div class="activity bl-gold"><div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">3</div><div style="flex:1;"><div class="activity-title">&#x270F;&#xFE0F; Grammar: Editing for Conventions</div><div class="activity-sub">Day 1: Notice &mdash; work out the pattern before you are told it.</div></div></div>
+  <div class="activity bl-gold"><div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">3</div><div style="flex:1;"><div class="activity-title">&#x270F;&#xFE0F; Grammar: Editing for Conventions</div><div class="activity-sub">Day 1: Notice &mdash; work out the pattern before you are told it.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#EEF3FA;color:#2B4C7E;border:1px solid #5A7FBF;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">&#9997;&#65039; Grammar Level: Sentence Engineer</span></div></div></div>
     <div class="activity-body">
 <!-- grammar-notice-first -->
 <div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;">
@@ -917,7 +1040,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
           <div class="spotter-result" id="spot3-result"></div>
         </div>
       </div>    </div></div>
-  <div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E3A5C;">4</div><div style="flex:1;"><div class="activity-title">&#x1F524; Spelling: Cumulative Review</div><div class="activity-sub">Four patterns from the CMB unit</div></div></div>
+  <div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E3A5C;">4</div><div style="flex:1;"><div class="activity-title">&#x1F524; Spelling: Cumulative Review</div><div class="activity-sub">Four patterns from the CMB unit</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">&#9997;&#65039; Word Study Level: Word Engineer</span></div></div></div>
     <div class="activity-body">
 <!-- spell-notice-first -->
 <div class="key-concept NOTICEBOX" style="background:#EEF3FA;border-color:#C8D6EA;margin:0 0 14px;">
@@ -945,7 +1068,9 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 <p><strong>Word families (Week 14):</strong> Changing a suffix changes the part of speech but not the core meaning. Ex: <em>navigate &rarr; navigation &rarr; navigator</em></p>
 </div>
 
-    </div></div>
+    
+<div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F9ED;</span><p>Four patterns from this unit, in one place.</p></div><div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#127919;</span><p><strong>Sort each word by the pattern it depends on.</strong></p></div><div class="sort-game g5-sort" id="g14d1s"><div class="sort-bank"><span class="sort-chip" data-group="doer" onclick="g5Pick(this)">navigator</span><span class="sort-chip" data-group="doer" onclick="g5Pick(this)">surveyor</span><span class="sort-chip" data-group="adj" onclick="g5Pick(this)">nautical</span><span class="sort-chip" data-group="adj" onclick="g5Pick(this)">magnetic</span><span class="sort-chip" data-group="pre" onclick="g5Pick(this)">submarine</span><span class="sort-chip" data-group="pre" onclick="g5Pick(this)">international</span></div><div class="sort-columns"><div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#2C5F2E,#3A7A3C);">A doer ending</div><div class="sort-col-drop" data-col="doer" onclick="g5Drop(this)"></div></div><div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B3A20,#A84A2A);">An adjective ending</div><div class="sort-col-drop" data-col="adj" onclick="g5Drop(this)"></div></div><div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#2B4C7E,#3A63A0);">A prefix of direction</div><div class="sort-col-drop" data-col="pre" onclick="g5Drop(this)"></div></div></div><div class="sort-score" id="g14d1s-score" style="display:none;">Sorted. Three of this unit&rsquo;s four patterns, in six words.</div></div>
+</div></div>
   <div class="tab-next-wrap"><p class="tab-transition-voice">Word families locked in, grammar reviewed, spelling patterns summarized. Time to read.</p><button class="tab-next-btn" onclick="switchTab('reading')">Continue to &#x1F4D6; Reading &rarr;</button></div>
 </div><div class="tab-panel" id="tab-reading">
 <div class="tracker-card"><div class="tracker-header"><div class="tracker-header-icon">&#x1F5FA;&#xFE0F;</div><div><div class="tracker-header-label">Your Unit Journey</div><div class="tracker-header-title">Six Weeks with <em>Carry On, Mr. Bowditch</em></div></div></div><div class="umap-row"><div class="umap-stop umap-done"><div class="umap-circle">⛵</div><div class="umap-label">Week 9</div><div class="umap-sub">Chs. 1–4</div></div><div class="umap-connector"></div><div class="umap-stop umap-done"><div class="umap-circle">🌊</div><div class="umap-label">Week 10</div><div class="umap-sub">Chs. 5–8</div></div><div class="umap-connector"></div><div class="umap-stop umap-done"><div class="umap-circle">⚓</div><div class="umap-label">Week 11</div><div class="umap-sub">Chs. 9–12</div></div><div class="umap-connector"></div><div class="umap-stop umap-done"><div class="umap-circle">🌙</div><div class="umap-label">Week 12</div><div class="umap-sub">Chs. 13–16</div></div><div class="umap-connector"></div><div class="umap-stop umap-done"><div class="umap-circle">🧭</div><div class="umap-label">Week 13</div><div class="umap-sub">Chs. 17–20</div></div><div class="umap-connector"></div><div class="umap-stop umap-active"><div class="umap-circle">🔭</div><div class="umap-label">Week 14</div><div class="umap-sub">Chs. 21–24</div></div></div><div class="tracker-chapter-label">&#x1F4CD; You are here: <strong>Week 14 &mdash; Chapter 21 — Sealing Is Safer</strong></div></div>

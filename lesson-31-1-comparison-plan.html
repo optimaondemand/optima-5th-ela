@@ -562,6 +562,35 @@ setTimeout(function(){i.classList.remove('wrong');},600);}});
 if(ok){var f=g.querySelector('.g5-fb');if(f)f.style.display='block';}g5Save(g);}
 /* ---- per-game save / restore. Keyed by this page and this game's own id,
    so no game can ever be handed another game's state. ---- */
+function g5MatchAny(el){var g=el.closest('.match-game')||el.closest('.match-grid');if(!g)return;
+if(el.classList.contains('matched'))return;
+var sel=g.querySelector('.match-item.selected');
+if(!sel){el.classList.add('selected');return;}
+if(sel===el){el.classList.remove('selected');return;}
+if(sel.getAttribute('data-match')===el.getAttribute('data-match')&&sel.classList.contains('is-word')!==el.classList.contains('is-word')){
+sel.classList.remove('selected');sel.classList.add('matched');el.classList.add('matched');
+if(g.querySelectorAll('.match-item:not(.matched)').length===0){
+var fb=g.querySelector('.match-feedback');
+if(!fb){var gg=g.closest('.match-game');if(gg)fb=gg.querySelector('.match-feedback');}
+if(fb){fb.classList.add('show');fb.style.display='block';}}
+g5SaveAny(g);}
+else{el.classList.add('g5-bad');sel.classList.add('g5-bad');var a=sel,b=el;
+setTimeout(function(){a.classList.remove('g5-bad','selected');b.classList.remove('g5-bad');},500);}}
+function g5AnyKey(g){var t=(document.title||'ela').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+var grid=g.querySelector('.match-grid')||g;
+return 'g5kit-'+t+'-any-'+(g.id||grid.id||(grid.textContent||'').slice(0,24).replace(/[^a-zA-Z0-9]+/g,''));}
+function g5SaveAny(g){try{localStorage.setItem(g5AnyKey(g),JSON.stringify(
+[].map.call(g.querySelectorAll('.match-item.matched'),function(c){return c.getAttribute('data-match')+'|'+(c.classList.contains('is-word')?'w':'l');})));}catch(e){}}
+function g5RestoreAny(){document.querySelectorAll('.match-game').forEach(function(g){
+if(!g.querySelector('.match-item[onclick*="g5MatchAny"]'))return;
+var v;try{v=JSON.parse(localStorage.getItem(g5AnyKey(g))||'null');}catch(e){v=null;}
+if(!v||!v.length)return;
+v.forEach(function(k){var p=k.split('|');
+var it=[].filter.call(g.querySelectorAll('.match-item'),function(x){
+return x.getAttribute('data-match')===p[0]&&(x.classList.contains('is-word')?'w':'l')===p[1];})[0];
+if(it)it.classList.add('matched');});
+if(g.querySelectorAll('.match-item:not(.matched)').length===0){
+var fb=g.querySelector('.match-feedback');if(fb){fb.classList.add('show');fb.style.display='block';}}});}
 function g5Key(g){var t=(document.title||'ela').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
 return 'g5kit-'+t+'-'+(g.id||'');}
 function g5Save(g){if(!g||!g.id)return;var st={};
@@ -603,7 +632,7 @@ var got=s.querySelectorAll('.spotter-word.correct-reveal').length;
 if(got>=need){s.setAttribute('data-done','true');
 var r=document.getElementById(s.id+'-result');
 if(r){r.innerHTML='\u2705 Answered.';r.className='spotter-result show win';r.style.display='block';}}});}
-function g5RestoreAll(){g5Restore();g5RestoreSpot();}
+function g5RestoreAll(){g5Restore();g5RestoreSpot();g5RestoreAny();}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',g5RestoreAll);else g5RestoreAll();
 </script>
 
