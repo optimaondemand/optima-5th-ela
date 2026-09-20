@@ -514,6 +514,100 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         </label>
         <span id="ora-status" role="status" aria-live="polite"></span>
     </div>
+<style id="g5kit-v1">
+.g5-sel{outline:3px solid #8B3A20;outline-offset:2px;}
+.g5-bad{background:#FBE3E3 !important;border-color:#D9534F !important;}
+.g5-fb{display:none;margin-top:12px;padding:10px 14px;border-radius:10px;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;font-weight:700;}
+.g5-task{background:#FFFCF0;border:1px solid #F5E6C8;border-left:4px solid #8B3A20;border-radius:10px;padding:12px 16px;margin:12px 0;font-family:Georgia,serif;}
+.g5-match .root-match-item{cursor:pointer;}
+</style>
+<script>
+function g5Pick(el){var g=el.closest('.g5-sort');if(!g||el.classList.contains('placed'))return;
+g.querySelectorAll('.sort-chip').forEach(function(c){c.classList.remove('g5-sel');});
+el.classList.add('g5-sel');}
+function g5Drop(col){var g=col.closest('.g5-sort');if(!g)return;
+var sel=g.querySelector('.sort-chip.g5-sel');if(!sel)return;
+if(sel.getAttribute('data-group')!==col.getAttribute('data-col')){
+sel.classList.add('g5-bad');var s=sel;setTimeout(function(){s.classList.remove('g5-bad');},500);return;}
+sel.classList.remove('g5-sel');sel.classList.add('placed');col.appendChild(sel);
+if(g.querySelectorAll('.sort-chip:not(.placed)').length===0){
+var sc=g.querySelector('.sort-score');if(sc){sc.classList.add('show');sc.style.display='block';}}
+g5Save(g);}
+function g5Spot(el,sid){var s=document.getElementById(sid);if(!s||s.getAttribute('data-done')==='true')return;
+var r=document.getElementById(sid+'-result');
+if(el.getAttribute('data-correct')==='true'){el.classList.add('correct-reveal');
+if(r){r.innerHTML=el.getAttribute('data-explain')||'\u2705 Correct.';r.className='spotter-result show win';r.style.display='block';}
+var need=s.querySelectorAll('.spotter-word[data-correct="true"]').length;
+var got=s.querySelectorAll('.spotter-word.correct-reveal').length;
+if(got>=need)s.setAttribute('data-done','true');g5SaveSpot(s);}
+else{el.classList.add('wrong-reveal');
+if(r){r.innerHTML=el.getAttribute('data-explain')||'Not quite \u2014 try again.';r.className='spotter-result show miss';r.style.display='block';}
+var w=el;setTimeout(function(){w.classList.remove('wrong-reveal');},1200);}}
+function g5Match(el){var g=el.closest('.g5-match');if(!g||el.classList.contains('matched'))return;
+var sel=g.querySelector('.root-match-item.g5-sel');
+if(!sel){el.classList.add('g5-sel');return;}
+if(sel===el){el.classList.remove('g5-sel');return;}
+if(sel.getAttribute('data-match')===el.getAttribute('data-match')&&sel.classList.contains('is-word')!==el.classList.contains('is-word')){
+sel.classList.remove('g5-sel');sel.classList.add('matched');el.classList.add('matched');
+if(g.querySelectorAll('.root-match-item:not(.matched)').length===0){
+var f=g.querySelector('.g5-fb');if(f)f.style.display='block';}
+g5Save(g);}
+else{el.classList.add('g5-bad');sel.classList.add('g5-bad');var a=sel,b=el;
+setTimeout(function(){a.classList.remove('g5-bad','g5-sel');b.classList.remove('g5-bad');},500);}}
+function g5Fill(btn){var g=btn.closest('.g5-fill');if(!g)return;var ok=true;
+g.querySelectorAll('.fillin-input').forEach(function(i){
+var a=(i.getAttribute('data-answer')||'').trim().toLowerCase();
+if(i.value.trim().toLowerCase()===a){i.classList.add('correct');i.classList.remove('wrong');i.disabled=true;}
+else{i.classList.add('wrong');i.classList.remove('correct');ok=false;
+setTimeout(function(){i.classList.remove('wrong');},600);}});
+if(ok){var f=g.querySelector('.g5-fb');if(f)f.style.display='block';}g5Save(g);}
+/* ---- per-game save / restore. Keyed by this page and this game's own id,
+   so no game can ever be handed another game's state. ---- */
+function g5Key(g){var t=(document.title||'ela').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+return 'g5kit-'+t+'-'+(g.id||'');}
+function g5Save(g){if(!g||!g.id)return;var st={};
+if(g.classList.contains('g5-sort'))st.placed=[].map.call(g.querySelectorAll('.sort-chip.placed'),function(c){return c.textContent;});
+if(g.classList.contains('g5-match'))st.matched=[].map.call(g.querySelectorAll('.root-match-item.matched'),function(c){return c.getAttribute('data-match')+'|'+(c.classList.contains('is-word')?'w':'l');});
+if(g.classList.contains('g5-fill'))st.vals=[].map.call(g.querySelectorAll('.fillin-input'),function(i){return i.value;});
+try{localStorage.setItem(g5Key(g),JSON.stringify(st));}catch(e){}}
+function g5Restore(){document.querySelectorAll('.g5-sort,.g5-match,.g5-fill').forEach(function(g){
+var st;try{st=JSON.parse(localStorage.getItem(g5Key(g))||'null');}catch(e){st=null;}
+if(!st)return;
+if(st.placed)st.placed.forEach(function(txt){
+var c=[].filter.call(g.querySelectorAll('.sort-chip'),function(x){return x.textContent===txt&&!x.classList.contains('placed');})[0];
+if(!c)return;var col=g.querySelector('.sort-col-drop[data-col="'+c.getAttribute('data-group')+'"]');
+if(col){c.classList.add('placed');col.appendChild(c);}});
+if(st.matched)st.matched.forEach(function(k){var p=k.split('|');
+var it=[].filter.call(g.querySelectorAll('.root-match-item'),function(x){
+return x.getAttribute('data-match')===p[0]&&(x.classList.contains('is-word')?'w':'l')===p[1];})[0];
+if(it)it.classList.add('matched');});
+if(st.vals){var ins=g.querySelectorAll('.fillin-input');
+st.vals.forEach(function(v,i){if(ins[i]&&v)ins[i].value=v;});}
+if(g.classList.contains('g5-sort')&&g.querySelectorAll('.sort-chip:not(.placed)').length===0){
+var sc=g.querySelector('.sort-score');if(sc){sc.classList.add('show');sc.style.display='block';}}
+if(g.classList.contains('g5-match')&&g.querySelectorAll('.root-match-item:not(.matched)').length===0){
+var f=g.querySelector('.g5-fb');if(f)f.style.display='block';}});}
+function g5SaveSpot(s){if(!s.id)return;
+var t=(document.title||'ela').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+try{localStorage.setItem('g5kit-'+t+'-'+s.id,JSON.stringify(
+[].map.call(s.querySelectorAll('.spotter-word.correct-reveal'),function(w){return w.textContent;})));}catch(e){}}
+function g5RestoreSpot(){var t=(document.title||'ela').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+document.querySelectorAll('.spotter-sentence').forEach(function(s){
+if(!s.id||!s.querySelector('.spotter-word[onclick*="g5Spot"]'))return;
+var v;try{v=JSON.parse(localStorage.getItem('g5kit-'+t+'-'+s.id)||'null');}catch(e){v=null;}
+if(!v||!v.length)return;
+v.forEach(function(txt){var w=[].filter.call(s.querySelectorAll('.spotter-word'),function(x){
+return x.textContent===txt&&x.getAttribute('data-correct')==='true'&&!x.classList.contains('correct-reveal');})[0];
+if(w)w.classList.add('correct-reveal');});
+var need=s.querySelectorAll('.spotter-word[data-correct="true"]').length;
+var got=s.querySelectorAll('.spotter-word.correct-reveal').length;
+if(got>=need){s.setAttribute('data-done','true');
+var r=document.getElementById(s.id+'-result');
+if(r){r.innerHTML='\u2705 Answered.';r.className='spotter-result show win';r.style.display='block';}}});}
+function g5RestoreAll(){g5Restore();g5RestoreSpot();}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',g5RestoreAll);else g5RestoreAll();
+</script>
+
 <script>
 (function () {
     "use strict";
@@ -855,7 +949,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 
   <!-- Spelling SWYK (Day 3 rotation — GRADED) -->
   <div class="activity bl-navy">
-    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">1</div><div style="flex:1;"><div class="activity-title">🔠 Spelling: Geography Words — Use</div><div class="activity-sub">Use &mdash; syllables, stress, and spelling all at once</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">1</div><div style="flex:1;"><div class="activity-title">🔠 Spelling: Geography Words — Use</div><div class="activity-sub">Use &mdash; syllables, stress, and spelling all at once</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">&#9997;&#65039; Word Study Level: Wordsmith</span></div></div></div>
     <div class="activity-body">
 <!-- spell-notice-first -->
 <div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F5C2;&#xFE0F;</span><p>Before you start: split the long word before you try to spell it.</p></div>
@@ -877,7 +971,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 
   <!-- Morphology Day 3 (no SWYK) -->
   <div class="activity bl-plum">
-    <div class="activity-head"><div class="activity-num" style="background:#6B3D9A;">2</div><div style="flex:1;"><div class="activity-title">🔬 Morphology: Roots <em>aud</em> + <em>oral/or</em> — Use</div><div class="activity-sub">Use these roots to figure out new words</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#6B3D9A;">2</div><div style="flex:1;"><div class="activity-title">🔬 Morphology: Roots <em>aud</em> + <em>oral/or</em> — Use</div><div class="activity-sub">Use these roots to figure out new words</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">&#9997;&#65039; Word Study Level: Wordsmith</span></div></div></div>
     <div class="activity-body">
             <div class="key-concept">
         <div class="key-concept-label">📌 Use the Roots to Figure It Out</div>
@@ -888,7 +982,9 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="callout callout-think"><span class="callout-icon">✏️</span>
         <p>In your journal: Invent a scene from the novel where Praiseworthy uses his gift for <em>oration</em> (formal speaking). What does he say? Write 2&ndash;3 sentences in his voice. Try to sound like Fleischman.</p>
       </div>
-    </div>
+    
+<div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#127919;</span><p><strong>Match each word to the root it carries. <em>aud</em> = hear. <em>oral / or</em> = speak.</strong></p></div><div class="root-match-game g5-match" id="g25d3m"><div class="root-match-grid"><div class="root-match-item is-word" data-match="A" onclick="g5Match(this)">audible</div><div class="root-match-item" data-match="B" onclick="g5Match(this)">Root: <em>aud</em> &mdash; hear</div><div class="root-match-item is-word" data-match="B" onclick="g5Match(this)">audience</div><div class="root-match-item" data-match="C" onclick="g5Match(this)">Root: <em>or</em> &mdash; speak</div><div class="root-match-item is-word" data-match="C" onclick="g5Match(this)">oration</div><div class="root-match-item" data-match="D" onclick="g5Match(this)">Root: <em>oral</em> &mdash; spoken</div><div class="root-match-item is-word" data-match="D" onclick="g5Match(this)">oral</div><div class="root-match-item" data-match="A" onclick="g5Match(this)">Root: <em>aud</em> &mdash; hear</div></div><div class="g5-fb">&#10024; Matched. Every one is about a voice or an ear.</div></div>
+</div>
   </div>
 
   <!-- Vocabulary Day 3 (match game — no SWYK) -->
@@ -916,7 +1012,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 
   <!-- Grammar Day 3 (no SWYK) -->
   <div class="activity bl-teal">
-    <div class="activity-head"><div class="activity-num" style="background:#A86820;">4</div><div style="flex:1;"><div class="activity-title">✏️ Grammar: Prepositional Phrases — Use</div><div class="activity-sub">Use them like Fleischman does &mdash; stack them for maximum effect</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#A86820;">4</div><div style="flex:1;"><div class="activity-title">✏️ Grammar: Prepositional Phrases — Use</div><div class="activity-sub">Use them like Fleischman does &mdash; stack them for maximum effect</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#EEF3FA;color:#2B4C7E;border:1px solid #5A7FBF;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">&#9997;&#65039; Grammar Level: Author</span></div></div></div>
     <div class="activity-body">
 <!-- grammar-notice-first -->
 <div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F440;</span><p>Before you start: find where each phrase begins and ends.</p></div>
@@ -928,7 +1024,9 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
       <div class="callout callout-think"><span class="callout-icon">✏️</span>
         <p>In your reading journal: Write one sentence about the moment when Cut-Eye Higgins is revealed. Include at least <strong>three</strong> prepositional phrases. Underline each one.</p>
       </div>
-    </div>
+    
+<div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#127919;</span><p><strong>Build the setting. Choose the preposition that puts the reader in the right place.</strong></p></div><div class="fillin-game g5-fill" id="g25d3g"><p style="margin:8px 0;color:#3A4A6B;"><strong>Word bank:</strong> <em>under &middot; beside &middot; across &middot; inside</em></p><div style="margin:10px 0;font-size:16px;line-height:2;">The miners slept <input class="fillin-input" data-answer="under" style="width:150px;padding:4px 8px;border:2px solid #C8D6EA;border-radius:6px;font-size:15px;"> canvas, with the rain coming through.</div><div style="margin:10px 0;font-size:16px;line-height:2;">Praiseworthy stood <input class="fillin-input" data-answer="beside" style="width:150px;padding:4px 8px;border:2px solid #C8D6EA;border-radius:6px;font-size:15px;"> the rail and said nothing.</div><div style="margin:10px 0;font-size:16px;line-height:2;"><input class="fillin-input" data-answer="Across" style="width:150px;padding:4px 8px;border:2px solid #C8D6EA;border-radius:6px;font-size:15px;"> the isthmus, the mules went single file.</div><div style="margin:10px 0;font-size:16px;line-height:2;">Jack hid the nugget <input class="fillin-input" data-answer="inside" style="width:150px;padding:4px 8px;border:2px solid #C8D6EA;border-radius:6px;font-size:15px;"> his boot.</div><button onclick="g5Fill(this)" style="margin-top:10px;padding:8px 18px;border:none;border-radius:8px;background:#2C5F2E;color:#fff;font-weight:700;cursor:pointer;">Check My Work</button><div class="g5-fb">Every phrase now tells the reader where to stand.</div></div>
+</div>
   </div>
 
   <div class="tab-next-wrap">

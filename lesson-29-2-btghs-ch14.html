@@ -520,6 +520,100 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         </label>
         <span id="ora-status" role="status" aria-live="polite"></span>
     </div>
+<style id="g5kit-v1">
+.g5-sel{outline:3px solid #8B3A20;outline-offset:2px;}
+.g5-bad{background:#FBE3E3 !important;border-color:#D9534F !important;}
+.g5-fb{display:none;margin-top:12px;padding:10px 14px;border-radius:10px;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;font-weight:700;}
+.g5-task{background:#FFFCF0;border:1px solid #F5E6C8;border-left:4px solid #8B3A20;border-radius:10px;padding:12px 16px;margin:12px 0;font-family:Georgia,serif;}
+.g5-match .root-match-item{cursor:pointer;}
+</style>
+<script>
+function g5Pick(el){var g=el.closest('.g5-sort');if(!g||el.classList.contains('placed'))return;
+g.querySelectorAll('.sort-chip').forEach(function(c){c.classList.remove('g5-sel');});
+el.classList.add('g5-sel');}
+function g5Drop(col){var g=col.closest('.g5-sort');if(!g)return;
+var sel=g.querySelector('.sort-chip.g5-sel');if(!sel)return;
+if(sel.getAttribute('data-group')!==col.getAttribute('data-col')){
+sel.classList.add('g5-bad');var s=sel;setTimeout(function(){s.classList.remove('g5-bad');},500);return;}
+sel.classList.remove('g5-sel');sel.classList.add('placed');col.appendChild(sel);
+if(g.querySelectorAll('.sort-chip:not(.placed)').length===0){
+var sc=g.querySelector('.sort-score');if(sc){sc.classList.add('show');sc.style.display='block';}}
+g5Save(g);}
+function g5Spot(el,sid){var s=document.getElementById(sid);if(!s||s.getAttribute('data-done')==='true')return;
+var r=document.getElementById(sid+'-result');
+if(el.getAttribute('data-correct')==='true'){el.classList.add('correct-reveal');
+if(r){r.innerHTML=el.getAttribute('data-explain')||'\u2705 Correct.';r.className='spotter-result show win';r.style.display='block';}
+var need=s.querySelectorAll('.spotter-word[data-correct="true"]').length;
+var got=s.querySelectorAll('.spotter-word.correct-reveal').length;
+if(got>=need)s.setAttribute('data-done','true');g5SaveSpot(s);}
+else{el.classList.add('wrong-reveal');
+if(r){r.innerHTML=el.getAttribute('data-explain')||'Not quite \u2014 try again.';r.className='spotter-result show miss';r.style.display='block';}
+var w=el;setTimeout(function(){w.classList.remove('wrong-reveal');},1200);}}
+function g5Match(el){var g=el.closest('.g5-match');if(!g||el.classList.contains('matched'))return;
+var sel=g.querySelector('.root-match-item.g5-sel');
+if(!sel){el.classList.add('g5-sel');return;}
+if(sel===el){el.classList.remove('g5-sel');return;}
+if(sel.getAttribute('data-match')===el.getAttribute('data-match')&&sel.classList.contains('is-word')!==el.classList.contains('is-word')){
+sel.classList.remove('g5-sel');sel.classList.add('matched');el.classList.add('matched');
+if(g.querySelectorAll('.root-match-item:not(.matched)').length===0){
+var f=g.querySelector('.g5-fb');if(f)f.style.display='block';}
+g5Save(g);}
+else{el.classList.add('g5-bad');sel.classList.add('g5-bad');var a=sel,b=el;
+setTimeout(function(){a.classList.remove('g5-bad','g5-sel');b.classList.remove('g5-bad');},500);}}
+function g5Fill(btn){var g=btn.closest('.g5-fill');if(!g)return;var ok=true;
+g.querySelectorAll('.fillin-input').forEach(function(i){
+var a=(i.getAttribute('data-answer')||'').trim().toLowerCase();
+if(i.value.trim().toLowerCase()===a){i.classList.add('correct');i.classList.remove('wrong');i.disabled=true;}
+else{i.classList.add('wrong');i.classList.remove('correct');ok=false;
+setTimeout(function(){i.classList.remove('wrong');},600);}});
+if(ok){var f=g.querySelector('.g5-fb');if(f)f.style.display='block';}g5Save(g);}
+/* ---- per-game save / restore. Keyed by this page and this game's own id,
+   so no game can ever be handed another game's state. ---- */
+function g5Key(g){var t=(document.title||'ela').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+return 'g5kit-'+t+'-'+(g.id||'');}
+function g5Save(g){if(!g||!g.id)return;var st={};
+if(g.classList.contains('g5-sort'))st.placed=[].map.call(g.querySelectorAll('.sort-chip.placed'),function(c){return c.textContent;});
+if(g.classList.contains('g5-match'))st.matched=[].map.call(g.querySelectorAll('.root-match-item.matched'),function(c){return c.getAttribute('data-match')+'|'+(c.classList.contains('is-word')?'w':'l');});
+if(g.classList.contains('g5-fill'))st.vals=[].map.call(g.querySelectorAll('.fillin-input'),function(i){return i.value;});
+try{localStorage.setItem(g5Key(g),JSON.stringify(st));}catch(e){}}
+function g5Restore(){document.querySelectorAll('.g5-sort,.g5-match,.g5-fill').forEach(function(g){
+var st;try{st=JSON.parse(localStorage.getItem(g5Key(g))||'null');}catch(e){st=null;}
+if(!st)return;
+if(st.placed)st.placed.forEach(function(txt){
+var c=[].filter.call(g.querySelectorAll('.sort-chip'),function(x){return x.textContent===txt&&!x.classList.contains('placed');})[0];
+if(!c)return;var col=g.querySelector('.sort-col-drop[data-col="'+c.getAttribute('data-group')+'"]');
+if(col){c.classList.add('placed');col.appendChild(c);}});
+if(st.matched)st.matched.forEach(function(k){var p=k.split('|');
+var it=[].filter.call(g.querySelectorAll('.root-match-item'),function(x){
+return x.getAttribute('data-match')===p[0]&&(x.classList.contains('is-word')?'w':'l')===p[1];})[0];
+if(it)it.classList.add('matched');});
+if(st.vals){var ins=g.querySelectorAll('.fillin-input');
+st.vals.forEach(function(v,i){if(ins[i]&&v)ins[i].value=v;});}
+if(g.classList.contains('g5-sort')&&g.querySelectorAll('.sort-chip:not(.placed)').length===0){
+var sc=g.querySelector('.sort-score');if(sc){sc.classList.add('show');sc.style.display='block';}}
+if(g.classList.contains('g5-match')&&g.querySelectorAll('.root-match-item:not(.matched)').length===0){
+var f=g.querySelector('.g5-fb');if(f)f.style.display='block';}});}
+function g5SaveSpot(s){if(!s.id)return;
+var t=(document.title||'ela').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+try{localStorage.setItem('g5kit-'+t+'-'+s.id,JSON.stringify(
+[].map.call(s.querySelectorAll('.spotter-word.correct-reveal'),function(w){return w.textContent;})));}catch(e){}}
+function g5RestoreSpot(){var t=(document.title||'ela').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+document.querySelectorAll('.spotter-sentence').forEach(function(s){
+if(!s.id||!s.querySelector('.spotter-word[onclick*="g5Spot"]'))return;
+var v;try{v=JSON.parse(localStorage.getItem('g5kit-'+t+'-'+s.id)||'null');}catch(e){v=null;}
+if(!v||!v.length)return;
+v.forEach(function(txt){var w=[].filter.call(s.querySelectorAll('.spotter-word'),function(x){
+return x.textContent===txt&&x.getAttribute('data-correct')==='true'&&!x.classList.contains('correct-reveal');})[0];
+if(w)w.classList.add('correct-reveal');});
+var need=s.querySelectorAll('.spotter-word[data-correct="true"]').length;
+var got=s.querySelectorAll('.spotter-word.correct-reveal').length;
+if(got>=need){s.setAttribute('data-done','true');
+var r=document.getElementById(s.id+'-result');
+if(r){r.innerHTML='\u2705 Answered.';r.className='spotter-result show win';r.style.display='block';}}});}
+function g5RestoreAll(){g5Restore();g5RestoreSpot();}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',g5RestoreAll);else g5RestoreAll();
+</script>
+
 <script>
 (function () {
     "use strict";
@@ -836,7 +930,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
     </div>
   </div>
 <!-- /poetry-corner:auto -->
-<div class="tab-next-wrap"><p class="tab-transition-voice">Grammar SWYK today — sentence variety is everything.</p><button class="tab-next-btn" onclick="markDone('warmup');switchTab('words')">Continue to 🔤 Word Study →</button></div></div><div class="tab-panel" id="tab-words"><div class="activity bl-sage"><div class="activity-head"><div class="activity-num" style="background:#52B788;">1</div><div style="flex:1;"><div class="activity-title">✏️ Grammar: Sentence Variety — Identify &amp; SWYK</div></div></div><div class="activity-body">
+<div class="tab-next-wrap"><p class="tab-transition-voice">Grammar SWYK today — sentence variety is everything.</p><button class="tab-next-btn" onclick="markDone('warmup');switchTab('words')">Continue to 🔤 Word Study →</button></div></div><div class="tab-panel" id="tab-words"><div class="activity bl-sage"><div class="activity-head"><div class="activity-num" style="background:#52B788;">1</div><div style="flex:1;"><div class="activity-title">✏️ Grammar: Sentence Variety — Identify &amp; SWYK</div><div class="activity-sub">Identify &mdash; find it in the writing.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#EEF3FA;color:#2B4C7E;border:1px solid #5A7FBF;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">&#9997;&#65039; Grammar Level: Author</span></div></div></div><div class="activity-body">
 <!-- grammar-notice-first -->
 <div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F50E;</span><p>Before you start: notice the length and the opening word of each sentence.</p></div>
 <div class="key-concept"><div class="key-concept-label">📌 Sentence Variety for Style</div>
@@ -854,7 +948,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <div class="textbox-prompt">5–7 sentences with deliberate variety. Label: (short), (participial phrase opener), (subordinating conjunction opener).</div>
   <textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK: 5–7 sentence paragraph with variety — labeled short, participial, and subordinating conjunction" placeholder="[Write your paragraph here, then label each sentence type in parentheses after it.]" oninput="autoSave(this,'dot-grammar');"></textarea>
   <div class="journal-label">📓 <span class="saved-dot" id="dot-grammar"></span></div>
-</div></div></div><div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">2</div><div style="flex:1;"><div class="activity-title">🔬 Morphology: Suffixes –ous/–ive/–ity — Identify</div></div></div><div class="activity-body">
+</div></div></div><div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">2</div><div style="flex:1;"><div class="activity-title">🔬 Morphology: Suffixes –ous/–ive/–ity — Identify</div><div class="activity-sub">Identify &mdash; find it in the writing.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">&#9997;&#65039; Word Study Level: Wordsmith</span></div></div></div><div class="activity-body">
 <!-- morph-notice-first -->
 <div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F50D;</span><p>Before you start: find the base word hiding under the ending.</p></div>
 <div class="fillin-game" id="morphGame2">
@@ -865,7 +959,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <button class="fillin-check-btn" onclick="checkFillin('morphGame2','morphFb2')">Check ✓</button>
   <div class="fillin-feedback" id="morphFb2" style="display:none;">🌱 All correct!</div>
 </div>
-<div class="callout callout-think"><span class="callout-icon">✏️</span><p>In your journal: Use <em>adventurous</em> and <em>tenacity</em> in two separate sentences about Jack&rsquo;s character in Chapters 13–15.</p></div></div></div><div class="activity bl-gold"><div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">3</div><div style="flex:1;"><div class="activity-title">📚 Vocabulary: Flip Cards</div></div></div><div class="activity-body"><p>Tap each card to flip.</p><div class="flip-card-row" style="flex-wrap:wrap;"><div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')" style="width:calc(50% - 8px);min-width:140px;height:128px;"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">📢</div><div class="fc-word">notoriety</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">notoriety</div><div class="fc-def">The state of being famous for something questionable or bold. From Latin <em>notus</em> (known) + –ity. Praiseworthy&rsquo;s reputation as &ldquo;Bullwhip&rdquo; spread through the diggings as notoriety.</div></div></div></div><div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')" style="width:calc(50% - 8px);min-width:140px;height:128px;"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🌿</div><div class="fc-word">tenacious</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">tenacious</div><div class="fc-def">Holding firmly; refusing to give up. From Latin <em>tenax</em> (holding fast) + –ous. Jack and Praiseworthy&rsquo;s daily prospecting shows tenacious effort.</div></div></div></div><div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')" style="width:calc(50% - 8px);min-width:140px;height:128px;"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🏃</div><div class="fc-word">evasive</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">evasive</div><div class="fc-def">Tending to avoid or escape; not straightforward. From Latin <em>evadere</em> + –ive. Cut-Eye Higgins proves evasive — he&rsquo;s always one step ahead.</div></div></div></div><div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')" style="width:calc(50% - 8px);min-width:140px;height:128px;"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🫶</div><div class="fc-word">benefactor</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">benefactor</div><div class="fc-def">A person who gives help or advantage to another. From Latin <em>bene</em> (well) + <em>factor</em> (doer). The reformed road agent is Jack&rsquo;s unlikely benefactor in Ch.15.</div></div></div></div><div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')" style="width:calc(50% - 8px);min-width:140px;height:128px;"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">⛏️</div><div class="fc-word">prospector</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">prospector</div><div class="fc-def">A person who searches for gold, oil, or other minerals. From Latin <em>prospectus</em> (view ahead) + –or. Jack and Praiseworthy become prospectors in the Sierra Nevada foothills.</div></div></div></div></div><div class="callout callout-think"><span class="callout-icon">✏️</span><p>In your journal: Which vocabulary word best describes Jack in Chapter 14? Use the word in a specific sentence about the chapter.</p></div></div></div><div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div style="flex:1;"><div class="activity-title">🔠 Spelling: Word Families — Identify Spelling Shifts</div></div></div><div class="activity-body">
+<div class="callout callout-think"><span class="callout-icon">✏️</span><p>In your journal: Use <em>adventurous</em> and <em>tenacity</em> in two separate sentences about Jack&rsquo;s character in Chapters 13–15.</p></div></div></div><div class="activity bl-gold"><div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">3</div><div style="flex:1;"><div class="activity-title">📚 Vocabulary: Flip Cards</div></div></div><div class="activity-body"><p>Tap each card to flip.</p><div class="flip-card-row" style="flex-wrap:wrap;"><div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')" style="width:calc(50% - 8px);min-width:140px;height:128px;"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">📢</div><div class="fc-word">notoriety</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">notoriety</div><div class="fc-def">The state of being famous for something questionable or bold. From Latin <em>notus</em> (known) + –ity. Praiseworthy&rsquo;s reputation as &ldquo;Bullwhip&rdquo; spread through the diggings as notoriety.</div></div></div></div><div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')" style="width:calc(50% - 8px);min-width:140px;height:128px;"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🌿</div><div class="fc-word">tenacious</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">tenacious</div><div class="fc-def">Holding firmly; refusing to give up. From Latin <em>tenax</em> (holding fast) + –ous. Jack and Praiseworthy&rsquo;s daily prospecting shows tenacious effort.</div></div></div></div><div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')" style="width:calc(50% - 8px);min-width:140px;height:128px;"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🏃</div><div class="fc-word">evasive</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">evasive</div><div class="fc-def">Tending to avoid or escape; not straightforward. From Latin <em>evadere</em> + –ive. Cut-Eye Higgins proves evasive — he&rsquo;s always one step ahead.</div></div></div></div><div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')" style="width:calc(50% - 8px);min-width:140px;height:128px;"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🫶</div><div class="fc-word">benefactor</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">benefactor</div><div class="fc-def">A person who gives help or advantage to another. From Latin <em>bene</em> (well) + <em>factor</em> (doer). The reformed road agent is Jack&rsquo;s unlikely benefactor in Ch.15.</div></div></div></div><div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')" style="width:calc(50% - 8px);min-width:140px;height:128px;"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">⛏️</div><div class="fc-word">prospector</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">prospector</div><div class="fc-def">A person who searches for gold, oil, or other minerals. From Latin <em>prospectus</em> (view ahead) + –or. Jack and Praiseworthy become prospectors in the Sierra Nevada foothills.</div></div></div></div></div><div class="callout callout-think"><span class="callout-icon">✏️</span><p>In your journal: Which vocabulary word best describes Jack in Chapter 14? Use the word in a specific sentence about the chapter.</p></div></div></div><div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div style="flex:1;"><div class="activity-title">🔠 Spelling: Word Families — Identify Spelling Shifts</div><div class="activity-sub">Identify &mdash; find it in the writing.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">&#9997;&#65039; Word Study Level: Wordsmith</span></div></div></div><div class="activity-body">
 <!-- spell-notice-first -->
 <div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F440;</span><p>Before you start: look for the pattern before you are told it.</p></div>
 <div class="key-concept"><div class="key-concept-label">📌 Word Families — Related Words from One Root</div>
@@ -887,7 +981,9 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <p><em>notorious</em> → <em>notori<strong>ety</strong></em> (–ious dropped, –ety added)</p>
   <p style="font-size:13px;color:#7A88A8;margin-top:6px;">These shifts follow predictable patterns. Knowing the family helps you spell each member.</p>
 </div>
-<div class="callout callout-think"><span class="callout-icon">✏️</span><p>In your journal: Write all members of the <em>prospect</em> family: prospect, prospector, prospective, prospectus, prosperous, prosperity. For each: circle any spelling shift from the base word, note the part of speech, and use two of them in sentences about the Gold Rush.</p></div></div></div><div class="tab-next-wrap"><p class="tab-transition-voice">Sentences varied. Into Chapter 14.</p><button class="tab-next-btn" onclick="markDone('words');switchTab('reading')">Continue to 📖 Reading →</button></div></div><div class="tab-panel" id="tab-reading">
+<div class="callout callout-think"><span class="callout-icon">✏️</span><p>In your journal: Write all members of the <em>prospect</em> family: prospect, prospector, prospective, prospectus, prosperous, prosperity. For each: circle any spelling shift from the base word, note the part of speech, and use two of them in sentences about the Gold Rush.</p></div>
+<div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#127919;</span><p><strong>Tap every word that belongs to the <em>sign</em> family.</strong></p></div><div class="spotter-game" id="g29d2s"><div class="spotter-sentence" id="g29d2ss1"><span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Only the <em>sign</em> family. Some of these belong elsewhere.</span><span class="spotter-word" onclick="g5Spot(this,'g29d2ss1')" data-correct="true" data-explain="&#9989; Yes &mdash; that one counts.">signature</span> <span class="spotter-word" onclick="g5Spot(this,'g29d2ss1')" data-correct="true" data-explain="&#9989; Yes &mdash; that one counts.">signal</span> <span class="spotter-word" onclick="g5Spot(this,'g29d2ss1')" data-correct="false" data-explain="&#129300; Not that one. Look again.">nature</span> <span class="spotter-word" onclick="g5Spot(this,'g29d2ss1')" data-correct="true" data-explain="&#9989; Yes &mdash; that one counts.">design</span> <span class="spotter-word" onclick="g5Spot(this,'g29d2ss1')" data-correct="false" data-explain="&#129300; Not that one. Look again.">decide</span> <span class="spotter-word" onclick="g5Spot(this,'g29d2ss1')" data-correct="true" data-explain="&#9989; Yes &mdash; that one counts.">resign</span> <span class="spotter-word" onclick="g5Spot(this,'g29d2ss1')" data-correct="false" data-explain="&#129300; Not that one. Look again.">natural</span> <span class="spotter-word" onclick="g5Spot(this,'g29d2ss1')" data-correct="true" data-explain="&#9989; Yes &mdash; that one counts.">significant</span> <div class="spotter-result" id="g29d2ss1-result" style="display:none;"></div></div></div>
+</div></div><div class="tab-next-wrap"><p class="tab-transition-voice">Sentences varied. Into Chapter 14.</p><button class="tab-next-btn" onclick="markDone('words');switchTab('reading')">Continue to 📖 Reading →</button></div></div><div class="tab-panel" id="tab-reading">
   <div class="tracker-card">
     <div class="tracker-header"><div class="tracker-header-icon" style="background:rgba(255,255,255,.2);">🗺️</div><div><div class="tracker-header-label">Your Unit Journey</div><div class="tracker-header-title">Six Weeks with <em>By the Great Horn Spoon!</em></div></div></div>
     <div class="umap-row"><div class="umap-stop umap-done"><div class="umap-circle">🪙</div><div class="umap-label">Week 25</div><div class="umap-sub">Chs. 1–3</div></div><div class="umap-connector"></div><div class="umap-stop umap-done"><div class="umap-circle">🚢</div><div class="umap-label">Week 26</div><div class="umap-sub">Chs. 4–6</div></div><div class="umap-connector"></div><div class="umap-stop umap-done"><div class="umap-circle">⚓</div><div class="umap-label">Week 27</div><div class="umap-sub">Chs. 7–9</div></div><div class="umap-connector"></div><div class="umap-stop umap-done"><div class="umap-circle">⛏️</div><div class="umap-label">Week 28</div><div class="umap-sub">Chs. 10–12</div></div><div class="umap-connector"></div><div class="umap-stop umap-active"><div class="umap-circle">🏔️</div><div class="umap-label">Week 29</div><div class="umap-sub">Chs. 13–15</div></div><div class="umap-connector"></div><div class="umap-stop umap-future"><div class="umap-circle">🥇</div><div class="umap-label">Week 30</div><div class="umap-sub">Chs. 16–18</div></div></div>

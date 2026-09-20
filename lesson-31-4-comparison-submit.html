@@ -520,6 +520,100 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         </label>
         <span id="ora-status" role="status" aria-live="polite"></span>
     </div>
+<style id="g5kit-v1">
+.g5-sel{outline:3px solid #8B3A20;outline-offset:2px;}
+.g5-bad{background:#FBE3E3 !important;border-color:#D9534F !important;}
+.g5-fb{display:none;margin-top:12px;padding:10px 14px;border-radius:10px;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;font-weight:700;}
+.g5-task{background:#FFFCF0;border:1px solid #F5E6C8;border-left:4px solid #8B3A20;border-radius:10px;padding:12px 16px;margin:12px 0;font-family:Georgia,serif;}
+.g5-match .root-match-item{cursor:pointer;}
+</style>
+<script>
+function g5Pick(el){var g=el.closest('.g5-sort');if(!g||el.classList.contains('placed'))return;
+g.querySelectorAll('.sort-chip').forEach(function(c){c.classList.remove('g5-sel');});
+el.classList.add('g5-sel');}
+function g5Drop(col){var g=col.closest('.g5-sort');if(!g)return;
+var sel=g.querySelector('.sort-chip.g5-sel');if(!sel)return;
+if(sel.getAttribute('data-group')!==col.getAttribute('data-col')){
+sel.classList.add('g5-bad');var s=sel;setTimeout(function(){s.classList.remove('g5-bad');},500);return;}
+sel.classList.remove('g5-sel');sel.classList.add('placed');col.appendChild(sel);
+if(g.querySelectorAll('.sort-chip:not(.placed)').length===0){
+var sc=g.querySelector('.sort-score');if(sc){sc.classList.add('show');sc.style.display='block';}}
+g5Save(g);}
+function g5Spot(el,sid){var s=document.getElementById(sid);if(!s||s.getAttribute('data-done')==='true')return;
+var r=document.getElementById(sid+'-result');
+if(el.getAttribute('data-correct')==='true'){el.classList.add('correct-reveal');
+if(r){r.innerHTML=el.getAttribute('data-explain')||'\u2705 Correct.';r.className='spotter-result show win';r.style.display='block';}
+var need=s.querySelectorAll('.spotter-word[data-correct="true"]').length;
+var got=s.querySelectorAll('.spotter-word.correct-reveal').length;
+if(got>=need)s.setAttribute('data-done','true');g5SaveSpot(s);}
+else{el.classList.add('wrong-reveal');
+if(r){r.innerHTML=el.getAttribute('data-explain')||'Not quite \u2014 try again.';r.className='spotter-result show miss';r.style.display='block';}
+var w=el;setTimeout(function(){w.classList.remove('wrong-reveal');},1200);}}
+function g5Match(el){var g=el.closest('.g5-match');if(!g||el.classList.contains('matched'))return;
+var sel=g.querySelector('.root-match-item.g5-sel');
+if(!sel){el.classList.add('g5-sel');return;}
+if(sel===el){el.classList.remove('g5-sel');return;}
+if(sel.getAttribute('data-match')===el.getAttribute('data-match')&&sel.classList.contains('is-word')!==el.classList.contains('is-word')){
+sel.classList.remove('g5-sel');sel.classList.add('matched');el.classList.add('matched');
+if(g.querySelectorAll('.root-match-item:not(.matched)').length===0){
+var f=g.querySelector('.g5-fb');if(f)f.style.display='block';}
+g5Save(g);}
+else{el.classList.add('g5-bad');sel.classList.add('g5-bad');var a=sel,b=el;
+setTimeout(function(){a.classList.remove('g5-bad','g5-sel');b.classList.remove('g5-bad');},500);}}
+function g5Fill(btn){var g=btn.closest('.g5-fill');if(!g)return;var ok=true;
+g.querySelectorAll('.fillin-input').forEach(function(i){
+var a=(i.getAttribute('data-answer')||'').trim().toLowerCase();
+if(i.value.trim().toLowerCase()===a){i.classList.add('correct');i.classList.remove('wrong');i.disabled=true;}
+else{i.classList.add('wrong');i.classList.remove('correct');ok=false;
+setTimeout(function(){i.classList.remove('wrong');},600);}});
+if(ok){var f=g.querySelector('.g5-fb');if(f)f.style.display='block';}g5Save(g);}
+/* ---- per-game save / restore. Keyed by this page and this game's own id,
+   so no game can ever be handed another game's state. ---- */
+function g5Key(g){var t=(document.title||'ela').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+return 'g5kit-'+t+'-'+(g.id||'');}
+function g5Save(g){if(!g||!g.id)return;var st={};
+if(g.classList.contains('g5-sort'))st.placed=[].map.call(g.querySelectorAll('.sort-chip.placed'),function(c){return c.textContent;});
+if(g.classList.contains('g5-match'))st.matched=[].map.call(g.querySelectorAll('.root-match-item.matched'),function(c){return c.getAttribute('data-match')+'|'+(c.classList.contains('is-word')?'w':'l');});
+if(g.classList.contains('g5-fill'))st.vals=[].map.call(g.querySelectorAll('.fillin-input'),function(i){return i.value;});
+try{localStorage.setItem(g5Key(g),JSON.stringify(st));}catch(e){}}
+function g5Restore(){document.querySelectorAll('.g5-sort,.g5-match,.g5-fill').forEach(function(g){
+var st;try{st=JSON.parse(localStorage.getItem(g5Key(g))||'null');}catch(e){st=null;}
+if(!st)return;
+if(st.placed)st.placed.forEach(function(txt){
+var c=[].filter.call(g.querySelectorAll('.sort-chip'),function(x){return x.textContent===txt&&!x.classList.contains('placed');})[0];
+if(!c)return;var col=g.querySelector('.sort-col-drop[data-col="'+c.getAttribute('data-group')+'"]');
+if(col){c.classList.add('placed');col.appendChild(c);}});
+if(st.matched)st.matched.forEach(function(k){var p=k.split('|');
+var it=[].filter.call(g.querySelectorAll('.root-match-item'),function(x){
+return x.getAttribute('data-match')===p[0]&&(x.classList.contains('is-word')?'w':'l')===p[1];})[0];
+if(it)it.classList.add('matched');});
+if(st.vals){var ins=g.querySelectorAll('.fillin-input');
+st.vals.forEach(function(v,i){if(ins[i]&&v)ins[i].value=v;});}
+if(g.classList.contains('g5-sort')&&g.querySelectorAll('.sort-chip:not(.placed)').length===0){
+var sc=g.querySelector('.sort-score');if(sc){sc.classList.add('show');sc.style.display='block';}}
+if(g.classList.contains('g5-match')&&g.querySelectorAll('.root-match-item:not(.matched)').length===0){
+var f=g.querySelector('.g5-fb');if(f)f.style.display='block';}});}
+function g5SaveSpot(s){if(!s.id)return;
+var t=(document.title||'ela').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+try{localStorage.setItem('g5kit-'+t+'-'+s.id,JSON.stringify(
+[].map.call(s.querySelectorAll('.spotter-word.correct-reveal'),function(w){return w.textContent;})));}catch(e){}}
+function g5RestoreSpot(){var t=(document.title||'ela').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+document.querySelectorAll('.spotter-sentence').forEach(function(s){
+if(!s.id||!s.querySelector('.spotter-word[onclick*="g5Spot"]'))return;
+var v;try{v=JSON.parse(localStorage.getItem('g5kit-'+t+'-'+s.id)||'null');}catch(e){v=null;}
+if(!v||!v.length)return;
+v.forEach(function(txt){var w=[].filter.call(s.querySelectorAll('.spotter-word'),function(x){
+return x.textContent===txt&&x.getAttribute('data-correct')==='true'&&!x.classList.contains('correct-reveal');})[0];
+if(w)w.classList.add('correct-reveal');});
+var need=s.querySelectorAll('.spotter-word[data-correct="true"]').length;
+var got=s.querySelectorAll('.spotter-word.correct-reveal').length;
+if(got>=need){s.setAttribute('data-done','true');
+var r=document.getElementById(s.id+'-result');
+if(r){r.innerHTML='\u2705 Answered.';r.className='spotter-result show win';r.style.display='block';}}});}
+function g5RestoreAll(){g5Restore();g5RestoreSpot();}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',g5RestoreAll);else g5RestoreAll();
+</script>
+
 <script>
 (function () {
     "use strict";
@@ -823,10 +917,14 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 <div class="swyk-prompt">Choose five words from across the year — at least one from each of the three novel units. For each word: write it, identify which unit it&rsquo;s from, define it in your own words, and use it in a sentence that connects to your comparison essay theme.</div>
 <div class="textbox-prompt">Five words from across the year — unit identified, definition, essay-connected sentence.</div>
 <textarea class="journal-box" id="journal-vocab" data-label="Vocabulary Year-Long Review SWYK: Five words across three units — definition + essay-connected sentence" placeholder="Word 1 (Unit: ___): Definition: ___  Sentence: ...&#10;&#10;Word 2 (Unit: ___): ...&#10;..." oninput="autoSave(this,'dot-vocab');"></textarea>
-<div class="journal-label">📓 <span class="saved-dot" id="dot-vocab"></span></div></div></div></div><div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">2</div><div style="flex:1;"><div class="activity-title">🔬 Morphology: Year-Long Review — Explain</div></div></div><div class="activity-body">
+<div class="journal-label">📓 <span class="saved-dot" id="dot-vocab"></span></div></div></div></div><div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">2</div><div style="flex:1;"><div class="activity-title">🔬 Morphology: Year-Long Review — Explain</div><div class="activity-sub">Explain &mdash; say why, and justify it.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">&#9997;&#65039; Word Study Level: Wordsmith</span></div></div></div><div class="activity-body">
 <!-- morph-notice-first -->
 <div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F52E;</span><p>Before you start: break it into parts and predict the meaning.</p></div>
-<div class="callout callout-think"><span class="callout-icon">✏️</span><p>In your journal: Which root from the entire year do you think gives you the most useful vocabulary for academic writing? Explain in 3 sentences — name the root, give 3 example words, and explain why these words appear so often in essays and analysis.</p></div></div></div><div class="activity bl-sage"><div class="activity-head"><div class="activity-num" style="background:#52B788;">3</div><div style="flex:1;"><div class="activity-title">✏️ Grammar: Final Conventions Check</div></div></div><div class="activity-body">
+<div class="callout callout-think"><span class="callout-icon">✏️</span><p>In your journal: Which root from the entire year do you think gives you the most useful vocabulary for academic writing? Explain in 3 sentences — name the root, give 3 example words, and explain why these words appear so often in essays and analysis.</p></div>
+<div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#127919;</span><p><strong>Which root, and what does it mean? Tap the right answer.</strong></p></div><div class="spotter-game" id="g31d4m"><div class="spotter-sentence" id="g31d4ms1"><span style="font-family:Georgia,serif;display:block;margin-bottom:8px;"><em>Inscription</em></span><span class="spotter-word" onclick="g5Spot(this,'g31d4ms1')" data-correct="true" data-explain="&#9989; <em>in-</em> (on) + <em>script</em> (write): written on something."><em>script</em> &mdash; write</span><span style="display:block;height:6px;"></span><span class="spotter-word" onclick="g5Spot(this,'g31d4ms1')" data-correct="false" data-explain="The root is <em>script</em>, and it means write."><em>scrip</em> &mdash; paper</span><span style="display:block;height:6px;"></span><div class="spotter-result" id="g31d4ms1-result" style="display:none;"></div></div><div class="spotter-sentence" id="g31d4ms2"><span style="font-family:Georgia,serif;display:block;margin-bottom:8px;"><em>Apathy</em></span><span class="spotter-word" onclick="g5Spot(this,'g31d4ms2')" data-correct="true" data-explain="&#9989; <em>a-</em> (without) + <em>path</em>: no feeling at all."><em>path</em> &mdash; feeling</span><span style="display:block;height:6px;"></span><span class="spotter-word" onclick="g5Spot(this,'g31d4ms2')" data-correct="false" data-explain="That is a different word family. Here the root is <em>path</em>, feeling."><em>pathy</em> &mdash; illness</span><span style="display:block;height:6px;"></span><div class="spotter-result" id="g31d4ms2-result" style="display:none;"></div></div><div class="spotter-sentence" id="g31d4ms3"><span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Why is knowing roots worth anything?</span><span class="spotter-word" onclick="g5Spot(this,'g31d4ms3')" data-correct="true" data-explain="&#9989; That is the whole point &mdash; and it keeps working after this year ends.">It lets you read a word you have never seen.</span><span style="display:block;height:6px;"></span><span class="spotter-word" onclick="g5Spot(this,'g31d4ms3')" data-correct="false" data-explain="It does help with spelling, but that is the smaller prize.">It helps you memorise spelling lists.</span><span style="display:block;height:6px;"></span><div class="spotter-result" id="g31d4ms3-result" style="display:none;"></div></div></div>
+</div></div><div class="activity bl-plum"><div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">4</div><div style="flex:1;"><div class="activity-title">&#x1F520; Spelling: Cumulative Review</div><div class="activity-sub">Explain &mdash; the words you will misspell in your own essay</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">&#9997;&#65039; Word Study Level: Wordsmith</span></div></div></div><div class="activity-body">
+<div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F9ED;</span><p>The sheet gives Week 31 Day 4 a cumulative spelling and word-analysis review. Here it is, aimed at the essay you are about to hand in.</p></div><div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#127919;</span><p><strong>Correct each one. Type the right spelling.</strong></p></div><div class="fillin-game g5-fill" id="g31d4s"><div style="margin:10px 0;font-size:16px;line-height:2;">seperate &rarr; <input class="fillin-input" data-answer="separate" style="width:150px;padding:4px 8px;border:2px solid #C8D6EA;border-radius:6px;font-size:15px;"></div><div style="margin:10px 0;font-size:16px;line-height:2;">definately &rarr; <input class="fillin-input" data-answer="definitely" style="width:150px;padding:4px 8px;border:2px solid #C8D6EA;border-radius:6px;font-size:15px;"></div><div style="margin:10px 0;font-size:16px;line-height:2;">occured &rarr; <input class="fillin-input" data-answer="occurred" style="width:150px;padding:4px 8px;border:2px solid #C8D6EA;border-radius:6px;font-size:15px;"></div><div style="margin:10px 0;font-size:16px;line-height:2;">diffrent &rarr; <input class="fillin-input" data-answer="different" style="width:150px;padding:4px 8px;border:2px solid #C8D6EA;border-radius:6px;font-size:15px;"></div><button onclick="g5Fill(this)" style="margin-top:10px;padding:8px 18px;border:none;border-radius:8px;background:#2C5F2E;color:#fff;font-weight:700;cursor:pointer;">Check My Work</button><div class="g5-fb">Now run the same check on your own comparison draft, one word at a time.</div></div>
+</div></div><div class="activity bl-sage"><div class="activity-head"><div class="activity-num" style="background:#52B788;">3</div><div style="flex:1;"><div class="activity-title">✏️ Grammar: Final Conventions Check</div><div class="activity-sub">Explain &mdash; say why, and justify it.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#EEF3FA;color:#2B4C7E;border:1px solid #5A7FBF;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">&#9997;&#65039; Grammar Level: Author</span></div></div></div><div class="activity-body">
 <!-- grammar-notice-first -->
 <div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F50E;</span><p>Before you start: read as a hunter, not as a reader.</p></div>
 <div class="key-concept"><div class="key-concept-label">📌 Grammar Spiral Review — All Year</div>
@@ -836,7 +934,9 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <p><strong>Abstract nouns:</strong> –ity, –ment, –ness · transitions: however, therefore, furthermore, consequently</p>
   <p style="font-size:13px;color:#7A88A8;margin-top:6px;">In your final comparison project, use all of these tools deliberately — vary your sentence structure, choose the right transition, punctuate carefully.</p>
 </div>
-<div class="callout callout-think"><span class="callout-icon">✏️</span><p>In your journal: Run the full grammar conventions checklist on your essay. Count: How many compound sentences? How many complex sentences? How many transition words? How many different sentence openers? Write your count and note one thing you&rsquo;ll fix.</p></div></div></div><div class="tab-next-wrap"><p class="tab-transition-voice">All reviewed. Peer review and submit.</p><button class="tab-next-btn" onclick="markDone('words');switchTab('reading')">Continue to 👥 Peer Review →</button></div></div><div class="tab-panel" id="tab-reading">
+<div class="callout callout-think"><span class="callout-icon">✏️</span><p>In your journal: Run the full grammar conventions checklist on your essay. Count: How many compound sentences? How many complex sentences? How many transition words? How many different sentence openers? Write your count and note one thing you&rsquo;ll fix.</p></div>
+<div class="g5-task"><div style="color:#8B3A20;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;">Before</div><div style="margin-bottom:10px;">Jack is brave. Isaac is brave too. They are different though.</div><div style="color:#1E7A47;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;">After</div><div>Both boys are brave, but their courage is not the same kind: Jack risks a fortune, Isaac survives a loss.</div></div><p style="margin-top:10px;color:#3A4A6B;">The weak version states three facts and connects none of them. The strong one names the similarity, turns on <em>but</em>, and then makes the difference concrete. That is the whole move of a comparison essay.</p><div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#127919;</span><p><strong>Tap the stronger sentence, and know why.</strong></p></div><div class="spotter-game" id="g31d4g"><div class="spotter-sentence" id="g31d4gs1"><span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which is the better comparison sentence?</span><span class="spotter-word" onclick="g5Spot(this,'g31d4gs1')" data-correct="false" data-explain="True, but it compares nothing. A list is not a comparison.">Jack is brave and Isaac is brave.</span><span style="display:block;height:6px;"></span><span class="spotter-word" onclick="g5Spot(this,'g31d4gs1')" data-correct="true" data-explain="&#9989; Similarity, turn, difference &mdash; all in one sentence.">Both boys are brave, but their courage is not the same kind.</span><span style="display:block;height:6px;"></span><div class="spotter-result" id="g31d4gs1-result" style="display:none;"></div></div><div class="spotter-sentence" id="g31d4gs2"><span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">What is missing from <em>Jack and Isaac are both characters who go on journeys</em>?</span><span class="spotter-word" onclick="g5Spot(this,'g31d4gs2')" data-correct="false" data-explain="It is true of almost every novel ever written. A claim has to be arguable.">Nothing &mdash; it is a fine opening.</span><span style="display:block;height:6px;"></span><span class="spotter-word" onclick="g5Spot(this,'g31d4gs2')" data-correct="true" data-explain="&#9989; Right. Ask what you are arguing, not what you noticed.">A claim. It states a fact anyone could see.</span><span style="display:block;height:6px;"></span><div class="spotter-result" id="g31d4gs2-result" style="display:none;"></div></div></div>
+</div></div><div class="tab-next-wrap"><p class="tab-transition-voice">All reviewed. Peer review and submit.</p><button class="tab-next-btn" onclick="markDone('words');switchTab('reading')">Continue to 👥 Peer Review →</button></div></div><div class="tab-panel" id="tab-reading">
     <div class="activity bl-plum">
     <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">&#x1F4DA;</div><div style="flex:1;"><div class="activity-title">What Good Readers Do</div><div class="activity-sub">Synthesise &mdash; read a classmate&rsquo;s comparison</div></div></div>
     <div class="activity-body">

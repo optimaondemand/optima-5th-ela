@@ -514,6 +514,100 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         </label>
         <span id="ora-status" role="status" aria-live="polite"></span>
     </div>
+<style id="g5kit-v1">
+.g5-sel{outline:3px solid #8B3A20;outline-offset:2px;}
+.g5-bad{background:#FBE3E3 !important;border-color:#D9534F !important;}
+.g5-fb{display:none;margin-top:12px;padding:10px 14px;border-radius:10px;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;font-weight:700;}
+.g5-task{background:#FFFCF0;border:1px solid #F5E6C8;border-left:4px solid #8B3A20;border-radius:10px;padding:12px 16px;margin:12px 0;font-family:Georgia,serif;}
+.g5-match .root-match-item{cursor:pointer;}
+</style>
+<script>
+function g5Pick(el){var g=el.closest('.g5-sort');if(!g||el.classList.contains('placed'))return;
+g.querySelectorAll('.sort-chip').forEach(function(c){c.classList.remove('g5-sel');});
+el.classList.add('g5-sel');}
+function g5Drop(col){var g=col.closest('.g5-sort');if(!g)return;
+var sel=g.querySelector('.sort-chip.g5-sel');if(!sel)return;
+if(sel.getAttribute('data-group')!==col.getAttribute('data-col')){
+sel.classList.add('g5-bad');var s=sel;setTimeout(function(){s.classList.remove('g5-bad');},500);return;}
+sel.classList.remove('g5-sel');sel.classList.add('placed');col.appendChild(sel);
+if(g.querySelectorAll('.sort-chip:not(.placed)').length===0){
+var sc=g.querySelector('.sort-score');if(sc){sc.classList.add('show');sc.style.display='block';}}
+g5Save(g);}
+function g5Spot(el,sid){var s=document.getElementById(sid);if(!s||s.getAttribute('data-done')==='true')return;
+var r=document.getElementById(sid+'-result');
+if(el.getAttribute('data-correct')==='true'){el.classList.add('correct-reveal');
+if(r){r.innerHTML=el.getAttribute('data-explain')||'\u2705 Correct.';r.className='spotter-result show win';r.style.display='block';}
+var need=s.querySelectorAll('.spotter-word[data-correct="true"]').length;
+var got=s.querySelectorAll('.spotter-word.correct-reveal').length;
+if(got>=need)s.setAttribute('data-done','true');g5SaveSpot(s);}
+else{el.classList.add('wrong-reveal');
+if(r){r.innerHTML=el.getAttribute('data-explain')||'Not quite \u2014 try again.';r.className='spotter-result show miss';r.style.display='block';}
+var w=el;setTimeout(function(){w.classList.remove('wrong-reveal');},1200);}}
+function g5Match(el){var g=el.closest('.g5-match');if(!g||el.classList.contains('matched'))return;
+var sel=g.querySelector('.root-match-item.g5-sel');
+if(!sel){el.classList.add('g5-sel');return;}
+if(sel===el){el.classList.remove('g5-sel');return;}
+if(sel.getAttribute('data-match')===el.getAttribute('data-match')&&sel.classList.contains('is-word')!==el.classList.contains('is-word')){
+sel.classList.remove('g5-sel');sel.classList.add('matched');el.classList.add('matched');
+if(g.querySelectorAll('.root-match-item:not(.matched)').length===0){
+var f=g.querySelector('.g5-fb');if(f)f.style.display='block';}
+g5Save(g);}
+else{el.classList.add('g5-bad');sel.classList.add('g5-bad');var a=sel,b=el;
+setTimeout(function(){a.classList.remove('g5-bad','g5-sel');b.classList.remove('g5-bad');},500);}}
+function g5Fill(btn){var g=btn.closest('.g5-fill');if(!g)return;var ok=true;
+g.querySelectorAll('.fillin-input').forEach(function(i){
+var a=(i.getAttribute('data-answer')||'').trim().toLowerCase();
+if(i.value.trim().toLowerCase()===a){i.classList.add('correct');i.classList.remove('wrong');i.disabled=true;}
+else{i.classList.add('wrong');i.classList.remove('correct');ok=false;
+setTimeout(function(){i.classList.remove('wrong');},600);}});
+if(ok){var f=g.querySelector('.g5-fb');if(f)f.style.display='block';}g5Save(g);}
+/* ---- per-game save / restore. Keyed by this page and this game's own id,
+   so no game can ever be handed another game's state. ---- */
+function g5Key(g){var t=(document.title||'ela').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+return 'g5kit-'+t+'-'+(g.id||'');}
+function g5Save(g){if(!g||!g.id)return;var st={};
+if(g.classList.contains('g5-sort'))st.placed=[].map.call(g.querySelectorAll('.sort-chip.placed'),function(c){return c.textContent;});
+if(g.classList.contains('g5-match'))st.matched=[].map.call(g.querySelectorAll('.root-match-item.matched'),function(c){return c.getAttribute('data-match')+'|'+(c.classList.contains('is-word')?'w':'l');});
+if(g.classList.contains('g5-fill'))st.vals=[].map.call(g.querySelectorAll('.fillin-input'),function(i){return i.value;});
+try{localStorage.setItem(g5Key(g),JSON.stringify(st));}catch(e){}}
+function g5Restore(){document.querySelectorAll('.g5-sort,.g5-match,.g5-fill').forEach(function(g){
+var st;try{st=JSON.parse(localStorage.getItem(g5Key(g))||'null');}catch(e){st=null;}
+if(!st)return;
+if(st.placed)st.placed.forEach(function(txt){
+var c=[].filter.call(g.querySelectorAll('.sort-chip'),function(x){return x.textContent===txt&&!x.classList.contains('placed');})[0];
+if(!c)return;var col=g.querySelector('.sort-col-drop[data-col="'+c.getAttribute('data-group')+'"]');
+if(col){c.classList.add('placed');col.appendChild(c);}});
+if(st.matched)st.matched.forEach(function(k){var p=k.split('|');
+var it=[].filter.call(g.querySelectorAll('.root-match-item'),function(x){
+return x.getAttribute('data-match')===p[0]&&(x.classList.contains('is-word')?'w':'l')===p[1];})[0];
+if(it)it.classList.add('matched');});
+if(st.vals){var ins=g.querySelectorAll('.fillin-input');
+st.vals.forEach(function(v,i){if(ins[i]&&v)ins[i].value=v;});}
+if(g.classList.contains('g5-sort')&&g.querySelectorAll('.sort-chip:not(.placed)').length===0){
+var sc=g.querySelector('.sort-score');if(sc){sc.classList.add('show');sc.style.display='block';}}
+if(g.classList.contains('g5-match')&&g.querySelectorAll('.root-match-item:not(.matched)').length===0){
+var f=g.querySelector('.g5-fb');if(f)f.style.display='block';}});}
+function g5SaveSpot(s){if(!s.id)return;
+var t=(document.title||'ela').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+try{localStorage.setItem('g5kit-'+t+'-'+s.id,JSON.stringify(
+[].map.call(s.querySelectorAll('.spotter-word.correct-reveal'),function(w){return w.textContent;})));}catch(e){}}
+function g5RestoreSpot(){var t=(document.title||'ela').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+document.querySelectorAll('.spotter-sentence').forEach(function(s){
+if(!s.id||!s.querySelector('.spotter-word[onclick*="g5Spot"]'))return;
+var v;try{v=JSON.parse(localStorage.getItem('g5kit-'+t+'-'+s.id)||'null');}catch(e){v=null;}
+if(!v||!v.length)return;
+v.forEach(function(txt){var w=[].filter.call(s.querySelectorAll('.spotter-word'),function(x){
+return x.textContent===txt&&x.getAttribute('data-correct')==='true'&&!x.classList.contains('correct-reveal');})[0];
+if(w)w.classList.add('correct-reveal');});
+var need=s.querySelectorAll('.spotter-word[data-correct="true"]').length;
+var got=s.querySelectorAll('.spotter-word.correct-reveal').length;
+if(got>=need){s.setAttribute('data-done','true');
+var r=document.getElementById(s.id+'-result');
+if(r){r.innerHTML='\u2705 Answered.';r.className='spotter-result show win';r.style.display='block';}}});}
+function g5RestoreAll(){g5Restore();g5RestoreSpot();}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',g5RestoreAll);else g5RestoreAll();
+</script>
+
 <script>
 (function () {
     "use strict";
@@ -853,7 +947,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 <div class="tab-panel" id="tab-words">
   <!-- MORPHOLOGY (Day 1 → SWYK graded) -->
   <div class="activity bl-plum">
-    <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div><div style="flex:1;"><div class="activity-title">🔬 Morphology: Roots <em>rid/ris</em> + <em>lud/lus</em></div><div class="activity-sub">Define &mdash; what do these roots mean?</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#7B5EA7;">1</div><div style="flex:1;"><div class="activity-title">🔬 Morphology: Roots <em>rid/ris</em> + <em>lud/lus</em></div><div class="activity-sub">Define &mdash; what do these roots mean?</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">&#9997;&#65039; Word Study Level: Wordsmith</span></div></div></div>
     <div class="activity-body">
             <div class="key-concept"><div class="key-concept-label">📌 Two Latin Roots This Week</div>
         <p><strong><em>rid / ris</em></strong> (Latin) = <em>laugh, mock</em>. Words with this root deal with laughter &mdash; especially laughing <em>at</em> something.</p>
@@ -902,7 +996,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 
   <!-- GRAMMAR Day 1 (introduced, no SWYK) -->
   <div class="activity bl-sage">
-    <div class="activity-head"><div class="activity-num" style="background:#52B788;">3</div><div style="flex:1;"><div class="activity-title">✏️ Grammar: Dialogue Punctuation</div><div class="activity-sub">Day 1: Notice &mdash; work out the pattern before you are told it.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#52B788;">3</div><div style="flex:1;"><div class="activity-title">✏️ Grammar: Dialogue Punctuation</div><div class="activity-sub">Day 1: Notice &mdash; work out the pattern before you are told it.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#EEF3FA;color:#2B4C7E;border:1px solid #5A7FBF;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">&#9997;&#65039; Grammar Level: Author</span></div></div></div>
     <div class="activity-body">
 <!-- grammar-notice-first -->
 <div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;">
@@ -929,12 +1023,14 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 </div>
 
 
-    </div>
+    
+<div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#127919;</span><p><strong>Sort each line by whether its dialogue punctuation is correct.</strong></p></div><div class="sort-game g5-sort" id="g26d1g"><div class="sort-bank"><span class="sort-chip" data-group="ok" onclick="g5Pick(this)">&ldquo;Land ho!&rdquo; cried the lookout.</span><span class="sort-chip" data-group="ok" onclick="g5Pick(this)">&ldquo;We are sinking,&rdquo; said Jack.</span><span class="sort-chip" data-group="no" onclick="g5Pick(this)">&ldquo;Hurry.&rdquo; said Praiseworthy.</span><span class="sort-chip" data-group="no" onclick="g5Pick(this)">&ldquo;Is that gold&rdquo;? asked Jack.</span><span class="sort-chip" data-group="ok" onclick="g5Pick(this)">Praiseworthy said, &ldquo;We shall walk.&rdquo;</span><span class="sort-chip" data-group="no" onclick="g5Pick(this)">&ldquo;We shall walk&rdquo; Praiseworthy said.</span></div><div class="sort-columns"><div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#2C5F2E,#3A7A3C);">Punctuated correctly</div><div class="sort-col-drop" data-col="ok" onclick="g5Drop(this)"></div></div><div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B3A20,#A84A2A);">Something is wrong</div><div class="sort-col-drop" data-col="no" onclick="g5Drop(this)"></div></div></div><div class="sort-score" id="g26d1g-score" style="display:none;">Sorted. The comma, the capital and the quotation mark each have one right place.</div></div>
+</div>
   </div>
 
   <!-- SPELLING Day 1 (introduced, no SWYK) -->
   <div class="activity bl-navy">
-    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div style="flex:1;"><div class="activity-title">🔠 Spelling: Dialogue Tags</div><div class="activity-sub">Define &mdash; the words that tell HOW we speak</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div style="flex:1;"><div class="activity-title">🔠 Spelling: Dialogue Tags</div><div class="activity-sub">Define &mdash; the words that tell HOW we speak</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">&#9997;&#65039; Word Study Level: Wordsmith</span></div></div></div>
     <div class="activity-body">
             <div class="key-concept"><div class="key-concept-label">📌 Dialogue Tags This Week</div>
         <p>Dialogue tags tell the reader <em>how</em> someone is speaking. Fleischman uses them brilliantly. This week&rsquo;s spelling words are verbs used as dialogue tags:</p>
@@ -942,7 +1038,9 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
         <p style="font-size:13px;color:#7A88A8;margin-top:8px;">Many of these end in <em>-ed</em> or contain tricky double letters. Learn the spelling by learning the word.</p>
       </div>
       <div class="callout callout-info"><span class="callout-icon">✏️</span><p>In your journal: Write each word, circle any double letters or tricky parts, then use three of the words in dialogue sentences from a fictional adventure scene.</p></div>
-    </div>
+    
+<div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F9ED;</span><p>A dialogue tag is the <em>said</em> word. Strong ones tell you how the line was spoken.</p></div><div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#127919;</span><p><strong>Sort each tag by what it tells the reader.</strong></p></div><div class="sort-game g5-sort" id="g26d1s"><div class="sort-bank"><span class="sort-chip" data-group="vol" onclick="g5Pick(this)">whispered</span><span class="sort-chip" data-group="vol" onclick="g5Pick(this)">bellowed</span><span class="sort-chip" data-group="emo" onclick="g5Pick(this)">pleaded</span><span class="sort-chip" data-group="emo" onclick="g5Pick(this)">grumbled</span><span class="sort-chip" data-group="pla" onclick="g5Pick(this)">said</span><span class="sort-chip" data-group="pla" onclick="g5Pick(this)">replied</span></div><div class="sort-columns"><div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B3A20,#A84A2A);">How loud</div><div class="sort-col-drop" data-col="vol" onclick="g5Drop(this)"></div></div><div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#2B4C7E,#3A63A0);">How they felt</div><div class="sort-col-drop" data-col="emo" onclick="g5Drop(this)"></div></div><div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#2C5F2E,#3A7A3C);">Just who spoke</div><div class="sort-col-drop" data-col="pla" onclick="g5Drop(this)"></div></div></div><div class="sort-score" id="g26d1s-score" style="display:none;">Sorted. Now you know which tags earn their place and which just keep score.</div></div>
+</div>
   </div>
 
   <div class="tab-next-wrap"><p class="tab-transition-voice">Word tools ready. Time for Chapter 4.</p><button class="tab-next-btn" onclick="markDone('words');switchTab('reading')">Continue to 📖 Reading →</button></div>
