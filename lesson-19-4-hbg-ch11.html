@@ -2406,8 +2406,8 @@ body {
 
 <!-- ═══════════ INFO STRIP ═══════════ -->
 <div class="info-strip">
-  <div class="info-cell"><div class="info-icon" style="background:#EBF5EB;">📚</div><div><div class="info-label">Unit</div><div class="info-value">Unit 17</div><div class="info-detail">How I Became a Ghost</div></div></div>
-  <div class="info-cell"><div class="info-icon" style="background:#FBF7E8;">📅</div><div><div class="info-label">Week</div><div class="info-value">Week 17</div><div class="info-detail">Lesson 19.4 of 4</div></div></div>
+  <div class="info-cell"><div class="info-icon" style="background:#EBF5EB;">📚</div><div><div class="info-label">Unit</div><div class="info-value">Weeks 18&ndash;24</div><div class="info-detail">How I Became a Ghost</div></div></div>
+  <div class="info-cell"><div class="info-icon" style="background:#FBF7E8;">📅</div><div><div class="info-label">Week</div><div class="info-value">Week 19</div><div class="info-detail">Lesson 19.4 of 4</div></div></div>
   <div class="info-cell"><div class="info-icon" style="background:#FBF5E6;">📖</div><div><div class="info-label">Reading</div><div class="info-value">Ch. 11</div><div class="info-detail">Nita&rsquo;s Walk</div></div></div>
   <div class="info-cell"><div class="info-icon" style="background:#F0E8FF;">🔤</div><div><div class="info-label">Focus</div><div class="info-value">Strong Verbs &amp; Active Voice</div><div class="info-detail">+ <em>-ive/-al/-ic</em> &amp; Roots <em>anim/spir</em></div></div></div>
 </div>
@@ -2862,8 +2862,8 @@ body {
 
 <!-- ═══════════ FOOTER ═══════════ -->
 <div class="footer">
-  <div class="footer-main"><span>Optima Academy Online</span> · 5th Grade ELA · Week 17 · Lesson 19.4</div>
-  <div class="footer-sub"><em>How I Became a Ghost</em> &mdash; Ch. 3</div>
+  <div class="footer-main"><span>Optima Academy Online</span> · 5th Grade ELA · Week 19 · Lesson 19.4</div>
+  <div class="footer-sub"><em>How I Became a Ghost</em> &mdash; Ch. 11</div>
   <div class="footer-standards">FL: ELA.5.R.1.3, ELA.5.R.1.1, ELA.5.C.1.5, ELA.5.V.1.3, ELA.5.C.3.1 &middot; TX: 5.10.E, 5.8.B, 5.8.C, 5.8.D, 5.11, 5.3.B, 5.11.D</div>
   <div class="footer-copy">© Optima Academy Online · An Education Experience Company</div>
 </div>
@@ -2900,13 +2900,13 @@ function gatherAnswers() {
   var output = '';
   var sections = [
     { title: '🔤 USE THE WORD', ids: ['journal-vocab-smallpox','journal-vocab-belongings','journal-vocab-sickness','journal-vocab-refused','journal-vocab-vanished'] },
-    { title: '📖 CH. 11 &mdash; CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
+    { title: '📖 CH. 11 — CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: 'GRAMMAR SWYK', ids: ['journal-grammar'] },
     { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
     { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
   ];
 
-  output += 'LESSON 19.4 &mdash; How I Became a Ghost, Ch. 11 (Nita&rsquo;s Walk)';
+  output += 'LESSON 19.4 — How I Became a Ghost, Ch. 11 (Nita’s Walk)\n';
   output += '════════════════════════════════════════\n\n';
 
   sections.forEach(function(sec) {
@@ -3402,7 +3402,7 @@ function downloadJournal() {
   html += '.game-line{font-size:14px;margin-bottom:4px;}';
   html += '</style></head><body>';
   html += '<h1>📓 My Work &mdash; Lesson 19.4</h1>';
-  html += '<h2>How I Became a Ghost &mdash; Ch. 3</h2>';
+  html += '<h2>How I Became a Ghost &mdash; Ch. 11</h2>';
 
   sections.forEach(function(sec) {
     html += '<div class="section-title">' + sec.title + '</div>';
@@ -3443,7 +3443,7 @@ function downloadJournal() {
 
 /* ───── STORY JOURNEY TRACKER ───── */
 const TRACKER_TOTAL = 5;
-const TRACKER_PROGRESS = 4.0; // Week 17 D2 &mdash; at stop 1 (Choctaw home)
+const TRACKER_PROGRESS = 4.0; // Week 19 Day 4
 
 const trackerIcons = ["🏠", "📜", "🌊", "🔥", "🛤️"];
 const trackerPos = [
