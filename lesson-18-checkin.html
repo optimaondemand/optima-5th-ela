@@ -40,7 +40,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#1A
 .footer-standards{font-size:10px;color:rgba(255,255,255,.3);margin-top:6px;letter-spacing:.3px;}
 .content{padding:28px;}
 .intro{background:linear-gradient(135deg,#EBF5EB 0%,#FBF7E8 100%);border:2px solid #C8A850;border-radius:18px;padding:22px 24px;margin-bottom:28px;}
-.intro p{font-size:18px;color:#2C5F2E;line-height:1.75;margin:0;}
+.intro p{font-size:22px;color:#2C5F2E;line-height:1.75;margin:0;}
 .section{margin-bottom:28px;}
 .section-head{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:10px;border-bottom:3px solid #C8A850;}
 .section-icon{width:42px;height:42px;border-radius:14px;color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
@@ -55,7 +55,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#1A
 .question:last-child{margin-bottom:0;}
 .q-number{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#2C5F2E;color:#fff;font-size:13px;font-weight:800;margin-right:10px;flex-shrink:0;}
 .q-label{font-size:11px;color:#7A88A8;text-transform:uppercase;letter-spacing:.8px;font-weight:700;margin-bottom:8px;}
-.q-text{font-size:18px;color:#1A3320;line-height:1.7;margin-bottom:12px;font-weight:600;}
+.q-text{font-size:22px;color:#1A3320;line-height:1.7;margin-bottom:12px;font-weight:600;}
 .options{list-style:none;margin:0;padding:0;}
 .options li{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;margin-bottom:6px;border:2px solid #E2E8F4;border-radius:12px;font-size:16px;color:#3A4A6B;line-height:1.6;cursor:pointer;transition:background .15s,border-color .15s;}
 .options li:last-child{margin-bottom:0;}
@@ -70,7 +70,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#1A
 .response-box.short{min-height:50px;}
 .rwm-model{background:linear-gradient(135deg,#EBF5EB,#F0FBF0);border:2px solid #A8D8A8;border-radius:14px;padding:16px 20px;margin-bottom:12px;}
 .rwm-model-label{font-size:11px;color:#2C5F2E;text-transform:uppercase;letter-spacing:.8px;font-weight:800;margin-bottom:6px;}
-.rwm-model-text{font-family:Georgia,serif;font-size:18px;color:#1A3320;line-height:1.7;font-style:italic;}
+.rwm-model-text{font-family:Georgia,serif;font-size:22px;color:#1A3320;line-height:1.7;font-style:italic;}
 .pts{display:inline-flex;align-items:center;gap:4px;background:#EBF5EB;border:1.5px solid #A8D8A8;border-radius:20px;padding:3px 10px;font-size:12px;color:#2C5F2E;font-weight:800;margin-left:8px;}
 .hint{font-size:14px;color:#7A88A8;font-style:italic;margin-top:8px;}
 .total-bar{background:linear-gradient(135deg,#2C5F2E,#3A7A3C);border-radius:18px;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
@@ -400,14 +400,14 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#1A
       <div class="q-label">Correction <span class="pts">1 pt</span></div>
       <div class="q-text"><span class="q-number">2</span>Fix this sentence so the appositive is punctuated correctly.</div>
       <div class="excerpt">Mister Jonah a respected elder sat with his back against the old tree.</div>
-      <textarea oninput="gatherAnswers()" data-label="Q1: Corrected sentence:" id="resp1" class="response-box short" placeholder="Write the corrected sentence here..."></textarea>
+      <textarea oninput="gatherAnswers()" data-label="Q2: Corrected sentence:" id="resp1" class="response-box short" placeholder="Write the corrected sentence here..."></textarea>
     </div>
 
     <div class="question">
       <div class="q-label">Application <span class="pts">1 pt</span></div>
       <div class="q-text"><span class="q-number">3</span>Add an appositive to this sentence. Write the new sentence with the appositive correctly set off by commas.</div>
       <div class="excerpt">Treaty Talk had come to Isaac's town.</div>
-      <textarea oninput="gatherAnswers()" data-label="Q2: Sentence with appositive:" id="resp2" class="response-box short" placeholder="Treaty Talk, ___, had come to Isaac's town."></textarea>
+      <textarea oninput="gatherAnswers()" data-label="Q3: Sentence with appositive:" id="resp2" class="response-box short" placeholder="Treaty Talk, ___, had come to Isaac's town."></textarea>
     </div>
   </div>
 
@@ -445,7 +445,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#1A
     <div class="question">
       <div class="q-label">Use It <span class="pts">1 pt</span></div>
       <div class="q-text"><span class="q-number">6</span>Use the word <strong>removal</strong> in a sentence that shows you know what it means. Connect it to what you read this week.</div>
-      <textarea oninput="gatherAnswers()" data-label="Q3: Sentence using 'removal':" id="resp3" class="response-box short" placeholder="Write your sentence here..."></textarea>
+      <textarea oninput="gatherAnswers()" data-label="Q6: Sentence using 'removal':" id="resp3" class="response-box short" placeholder="Write your sentence here..."></textarea>
     </div>
   </div>
 
@@ -468,19 +468,19 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#1A
         <span style="display:inline-block;background:#E2E8F4;padding:6px 14px;border-radius:10px;font-size:16px;font-weight:700;">territory</span>
         <span style="display:inline-block;background:#E2E8F4;padding:6px 14px;border-radius:10px;font-size:16px;font-weight:700;">Choctaw</span>
       </div>
-      <textarea oninput="gatherAnswers()" data-label="Q4: Syllable Sort — 2 syllables: ___ / 3 syllables: ___ / 4 syllables: ___" id="resp4" class="response-box short" placeholder="2 syllables: ___ / 3 syllables: ___ / 4 syllables: ___"></textarea>
+      <textarea oninput="gatherAnswers()" data-label="Q7: Syllable Sort — 2 syllables: ___ / 3 syllables: ___ / 4 syllables: ___" id="resp4" class="response-box short" placeholder="2 syllables: ___ / 3 syllables: ___ / 4 syllables: ___"></textarea>
     </div>
 
     <div class="question">
       <div class="q-label">Spell It <span class="pts">1 pt</span></div>
       <div class="q-text"><span class="q-number">8</span>Write the correct spelling of the word that means &ldquo;the act of forcing a group of people to leave their land.&rdquo;</div>
-      <textarea oninput="gatherAnswers()" data-label="Q5: Correct spelling:" id="resp5" class="response-box short" placeholder="The word is: ___"></textarea>
+      <textarea oninput="gatherAnswers()" data-label="Q8: Correct spelling:" id="resp5" class="response-box short" placeholder="The word is: ___"></textarea>
     </div>
 
     <div class="question">
       <div class="q-label">Syllable Division <span class="pts">1 pt</span></div>
       <div class="q-text"><span class="q-number">9</span>Write the word <strong>Mississippi</strong> with dots to show where the syllables divide.</div>
-      <textarea oninput="gatherAnswers()" data-label="Q6: Mississippi with syllable dots:" id="resp6" class="response-box short" placeholder="Mis·sis·___·___"></textarea>
+      <textarea oninput="gatherAnswers()" data-label="Q9: Mississippi with syllable dots:" id="resp6" class="response-box short" placeholder="Mis·sis·___·___"></textarea>
     </div>
   </div>
 
@@ -495,20 +495,20 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#1A
     </div>
 
     <div class="excerpt">
-      &ldquo;These men are saying good-bye to their home.&rdquo; Isaac looked at Mister Jonah, still sitting against the tree. &ldquo;Their homes are in town.&rdquo; His mother gripped his hand tight. &ldquo;Come on,&rdquo; she said. &ldquo;There is more to see.&rdquo;
+      &ldquo;These men are saying good-bye to their home.&rdquo;<br><br>&ldquo;They live in town. Their homes are in town.&rdquo;<br><br>My mother gripped my hand tight. &ldquo;Come on,&rdquo; she said. &ldquo;There is more to see.&rdquo;
       <div class="excerpt-source">&mdash; Tim Tingle, <em>How I Became a Ghost</em>, Chapter 2</div>
     </div>
 
     <div class="question">
       <div class="q-label">Detail <span class="pts">1 pt</span></div>
       <div class="q-text"><span class="q-number">10</span>When Isaac says &ldquo;Their homes are in town,&rdquo; what does he think his mother means by &ldquo;home&rdquo;? What does his mother actually mean?</div>
-      <textarea oninput="gatherAnswers()" data-label="Q7: Isaac thinks 'home' means ___ / His mother means ___" id="resp7" class="response-box short" placeholder="Isaac thinks 'home' means... His mother means..."></textarea>
+      <textarea oninput="gatherAnswers()" data-label="Q10: Isaac thinks 'home' means ___ / His mother means ___" id="resp7" class="response-box short" placeholder="Isaac thinks 'home' means... His mother means..."></textarea>
     </div>
 
     <div class="question">
       <div class="q-label">Inference <span class="pts">2 pts</span></div>
-      <div class="q-text"><span class="q-number">11</span>Across Chapters 1, 2, and 3, Isaac witnesses three different ceremonies. <strong>What do all three ceremonies have in common?</strong> What do they tell you about how the Choctaw people feel about leaving their home? Use at least two specific details from the text.</div>
-      <textarea oninput="gatherAnswers()" data-label="Q8: Three ceremonies — what they share:" id="resp8" class="response-box" placeholder="All three ceremonies share... They show that the Choctaw people feel..."></textarea>
+      <div class="q-text"><span class="q-number">11</span>In Chapters 2 and 3, Isaac watches three different ceremonies by the river. <strong>What do all three ceremonies have in common?</strong> What do they tell you about how the Choctaw people feel about leaving their home? Use at least two specific details from the text.</div>
+      <textarea oninput="gatherAnswers()" data-label="Q11: Three ceremonies — what they share:" id="resp8" class="response-box" placeholder="All three ceremonies share... They show that the Choctaw people feel..."></textarea>
     </div>
   </div>
 
@@ -528,15 +528,15 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#1A
         <div class="rwm-model-label">Model Sentence</div>
         <div class="rwm-model-text">&ldquo;Everything about this day was wrong.&rdquo;</div>
       </div>
-      <div class="q-text">Notice the pattern: one short, sweeping sentence that covers a whole feeling. Write your own sentence using this same pattern &mdash; a single statement about a time when everything felt wrong (or right, or strange).</div>
-      <textarea oninput="gatherAnswers()" data-label="Q9: Mimic sentence:" id="resp9" class="response-box" placeholder="Write your mimic sentence here..."></textarea>
+      <div class="q-text"><span class="q-number">12</span>Notice the pattern: one short, sweeping sentence that covers a whole feeling. Write your own sentence using this same pattern &mdash; a single statement about a time when everything felt wrong (or right, or strange).</div>
+      <textarea oninput="gatherAnswers()" data-label="Q12: Mimic sentence:" id="resp9" class="response-box" placeholder="Write your mimic sentence here..."></textarea>
       <div class="hint">Pattern: Everything about ___ was ___.</div>
     </div>
 
     <div class="question">
       <div class="q-label">Short Response <span class="pts">1 pt</span></div>
       <div class="q-text"><span class="q-number">13</span>In 2&ndash;3 sentences, explain why Tim Tingle begins this story with Isaac already knowing he will become a ghost. What effect does this have on the reader?</div>
-      <textarea oninput="gatherAnswers()" data-label="Q10: Effect of opening with the future:" id="resp10" class="response-box" placeholder="Tingle begins this way because... It makes the reader feel..."></textarea>
+      <textarea oninput="gatherAnswers()" data-label="Q13: Effect of opening with the future:" id="resp10" class="response-box" placeholder="Tingle begins this way because... It makes the reader feel..."></textarea>
     </div>
   </div>
 
