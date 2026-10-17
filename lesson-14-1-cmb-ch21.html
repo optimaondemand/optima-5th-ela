@@ -1013,16 +1013,16 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <p><strong>Commas</strong> &mdash; after introductory phrases; around extra relative clauses and appositives; between items in a series.</p>
 <p><strong>Verb tense</strong> &mdash; consistent, and past tense for events that are over.</p>
 <p><strong>Pronouns</strong> &mdash; every one points clearly at a noun, and agrees with it.</p>
-<p><strong>Titles</strong> &mdash; a book, newspaper or long work is <em>italicised</em>: <em>The New American Practical Navigator</em>. A chapter or article goes in &ldquo;quotation marks.&rdquo;</p>
+<p><strong>Titles</strong> &mdash; a book, newspaper or long work is <em>italicized</em>: <em>The New American Practical Navigator</em>. A chapter or article goes in &ldquo;quotation marks.&rdquo;</p>
 <p><strong>Capitals</strong> &mdash; names, places, titles in front of names, and the first word of every sentence.</p>
 </div>
 
 <div class="spotter-game">
         <div class="spotter-sentence" id="spot1">
           <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which sentence follows the conventions?</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true" data-explain="Correct! A book title is italicised, and the proper nouns are capitalised.">Bowditch published <em>The New American Practical Navigator</em> in 1802.</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true" data-explain="Correct! A book title is italicized, and the proper nouns are capitalised.">Bowditch published <em>The New American Practical Navigator</em> in 1802.</span>
           <span style="display:block;height:6px;"></span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false" data-explain="Quotation marks are for chapters and articles. A whole book is italicised.">Bowditch published &ldquo;The New American Practical Navigator&rdquo; in 1802.</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false" data-explain="Quotation marks are for chapters and articles. A whole book is italicized.">Bowditch published &ldquo;The New American Practical Navigator&rdquo; in 1802.</span>
           <div class="spotter-result" id="spot1-result"></div>
         </div>
         <div class="spotter-sentence" id="spot2">
@@ -1048,10 +1048,10 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <p>Every pattern from the year, in one pile.</p>
 </div>
 <div class="key-concept"><div class="key-concept-label">&#x1F50D; Four patterns to remember</div>
-        <p><strong>Schwa vowels</p>
-        <p><strong>-ous / -ious / -eous</p>
-        <p><strong>Assimilated prefixes</p>
-        <p><strong>Word families</p>
+        <p><strong>Schwa vowels</strong> (Week 11)</p>
+        <p><strong>-ous / -ious / -eous</strong> (Week 12)</p>
+        <p><strong>Assimilated prefixes</strong> (Week 13)</p>
+        <p><strong>Word families</strong> (Week 14)</p>
       </div>
       <div class="callout callout-think"><span class="callout-icon">&#x270F;&#xFE0F;</span><p>In your reading journal, write one example word for each of the four patterns above. Then write a sentence using one word from <em>each</em> pattern. You should have four words and four sentences total.</p></div>
 <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F9D0;</span><p><strong>Work through these before you read on:</strong></p>
@@ -1193,7 +1193,7 @@ window.addEventListener('beforeunload', function(e){
 function dolWordClick(el,msg){el.classList.toggle('tapped');document.getElementById('dolExplanation').textContent=el.classList.contains('tapped')?msg:'';}
 var _fDone=false;function checkFillIn(){var ok=true;document.querySelectorAll('.fillin-input').forEach(inp=>{if(inp.value.trim().toLowerCase()===inp.getAttribute('data-answer').toLowerCase()){inp.classList.add('correct');inp.classList.remove('wrong');inp.disabled=true;}else{inp.classList.add('wrong');inp.classList.remove('correct');ok=false;setTimeout(()=>inp.classList.remove('wrong'),600);}});if(ok){var fb=document.getElementById('fillinFeedback');if(fb)fb.classList.add('show');_fDone=true;}}
 var _mF=null,_mC=0,_mT=4,_mD=false;function matchClick(item){if(item.classList.contains('matched'))return;if(!_mF){_mF=item;item.classList.add('selected');return;}if(_mF===item){_mF.classList.remove('selected');_mF=null;return;}var k1=_mF.getAttribute('data-match'),k2=item.getAttribute('data-match');if(k1===k2&&_mF.classList.contains('is-word')!==item.classList.contains('is-word')){_mF.classList.remove('selected');_mF.classList.add('matched');item.classList.add('matched');_mC++;_mF=null;if(_mC>=_mT){var fb=document.getElementById('matchFeedback');if(fb)fb.classList.add('show');_mD=true;}}else{item.classList.add('wrong-flash');_mF.classList.add('wrong-flash');var a=_mF,b=item;setTimeout(()=>{a.classList.remove('wrong-flash','selected');b.classList.remove('wrong-flash');},500);_mF=null;}}
-var _sD=false;function spotterPick(word,sid){var s=document.getElementById(sid);if(!s||s.getAttribute('data-done')==='true')return;var r=document.getElementById(sid+'-r');if(word.getAttribute('data-correct')==='true'){word.classList.add('correct-reveal');if(r){r.textContent='\u2705 Correct!';r.className='spotter-result show win';}s.setAttribute('data-done','true');}else{word.classList.add('wrong-reveal');if(r){r.textContent='Look again.';r.className='spotter-result show miss';}setTimeout(()=>{word.classList.remove('wrong-reveal');if(r)r.classList.remove('show');},1500);}}
+var _sD=false;function spotterPick(word,sid){var s=document.getElementById(sid);if(!s||s.getAttribute('data-done')==='true')return;var r=document.getElementById(sid+'-r')||document.getElementById(sid+'-result');var ex=word.getAttribute('data-explain');if(word.getAttribute('data-correct')==='true'){word.classList.add('correct-reveal');if(r){if(ex){r.innerHTML='\u2705 '+ex;}else{r.textContent='\u2705 Correct!';}r.className='spotter-result show win';}s.setAttribute('data-done','true');}else{word.classList.add('wrong-reveal');if(r){r.innerHTML=ex?('Look again. '+ex):'Look again.';r.className='spotter-result show miss';}setTimeout(()=>{word.classList.remove('wrong-reveal');if(r)r.classList.remove('show');},3500);}}
 var _ss=null,_sp=0,_st=6,_sd=false;function pickChip(chip){if(chip.classList.contains('placed'))return;if(_ss)_ss.style.outline='';_ss=chip;chip.style.outline='3px solid #C8962A';}
 function dropChip(col,colName){if(!_ss)return;var g=_ss.getAttribute('data-group');var clone=_ss.cloneNode(true);clone.style.outline='';clone.onclick=null;clone.style.cursor='default';if(g===colName){clone.classList.add('correct');_ss.classList.add('placed');col.appendChild(clone);_sp++;}else{clone.classList.add('wrong');col.appendChild(clone);setTimeout(()=>col.removeChild(clone),600);}_ss.style.outline='';_ss=null;if(_sp>=_st){var sc=document.getElementById('sortScore');if(sc){sc.textContent='\u2728 All sorted!';sc.classList.add('show');}}}
 function selectVocabChoice(card,opt){document.querySelectorAll('.vocab-choice-card').forEach(c=>c.classList.remove('selected'));card.classList.add('selected');var sel=document.getElementById('vocabChoiceSelected');if(sel){sel.textContent='You chose Option '+opt+'. Complete it below.';sel.style.display='block';}}
