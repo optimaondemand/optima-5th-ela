@@ -1557,17 +1557,17 @@ var _spotDone=false;
 function spotterPick(word,sid){
   var s=document.getElementById(sid);
   if(!s||s.getAttribute('data-done')==='true')return;
-  var r=document.getElementById(sid+'-r');
+  var r=document.getElementById(sid+'-r')||document.getElementById(sid+'-result');var ex=word.getAttribute('data-explain');
   if(word.getAttribute('data-correct')==='true'){
     word.classList.add('correct-reveal');
-    if(r){r.textContent='\u2705 Correct!';r.className='spotter-result show win';}
+    if(r){if(ex){r.innerHTML='\u2705 '+ex;}else{r.textContent='\u2705 Correct!';}r.className='spotter-result show win';}
     s.setAttribute('data-done','true');
     var all=[...document.querySelectorAll('.spotter-sentence')];
     if(all.every(x=>x.getAttribute('data-done')==='true'))_spotDone=true;
   }else{
     word.classList.add('wrong-reveal');
-    if(r){r.textContent='Look again.';r.className='spotter-result show miss';}
-    setTimeout(()=>{word.classList.remove('wrong-reveal');if(r)r.classList.remove('show');},1500);
+    if(r){r.innerHTML=ex?('Look again. '+ex):'Look again.';r.className='spotter-result show miss';}
+    setTimeout(()=>{word.classList.remove('wrong-reveal');if(r)r.classList.remove('show');},3500);
   }
 }
 /* ── sort game ── */

@@ -1129,22 +1129,21 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <!-- grammar-notice-first -->
 <div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;">
 <div class="key-concept-label" style="color:#3D5285;">&#x1F50E; What do you notice?</div>
-<p>Every pronoun here is standing in for a noun. Find the noun.</p>
+<p>Each <strong>bold</strong> word is a pronoun standing in for a noun. Find the noun it points back to.</p>
+<ol style="margin:8px 0 0 20px;font-size:15px;color:#3A4A6B;line-height:1.9;">
+<li>Nat was a boy <strong>who</strong> loved numbers.</li>
+<li>The book <strong>that</strong> he carried everywhere was written in Latin.</li>
+<li>The <em>Principia</em>, <strong>which</strong> was written in Latin, took him two years.</li>
+<li>Dr. Bentley, <strong>whose</strong> library filled a whole room, lent Nat his books.</li>
+<li>The sailors <strong>who</strong> learned from Nat could find their position at sea.</li>
+</ol>
+<p style="margin-top:8px;">Now look at the commas. Which sentences fence the clause off with commas, and which do not?</p>
 </div>
-<div class="key-concept">
-        <div class="key-concept-label">&#x1F449; The Rules</div>
-        
-        <p><strong>Essential clause</p>
-        <p><strong>Extra clause</p>
-        
-        
-      </div>
-      
 <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F4AD;</span><p><strong>Think it through.</strong></p>
 <ol style="margin:6px 0 0 20px;font-size:15px;color:#3A4A6B;line-height:1.8;">
 <li>Which noun does each pronoun replace?</li>
 <li>How do you know for sure &mdash; what is the clue?</li>
-<li>Is there any sentence where two nouns could both fit?</li>
+<li>Why do sentences 3 and 4 have commas, but sentences 2 and 5 do not?</li>
 </ol></div>
 <button class="dol-check-btn" onclick="document.getElementById('gramNotice').classList.toggle('show')">&#x1F50D; Now check your thinking</button>
 <div class="dol-answer" id="gramNotice">
@@ -1156,7 +1155,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <p><strong>Convention:</strong> use <em>that</em> for essential clauses and <em>which</em> for extra ones.</p>
 </div>
 
-<div class="callout callout-info"><span class="callout-icon">&#x1F3AF;</span><p><strong>Identify the subject:</strong> For each sentence, tap the word that is the actual subject (not the noun in the middle phrase). Use that to decide if the verb is correct.</p></div>
+<div class="callout callout-info"><span class="callout-icon">&#x1F3AF;</span><p><strong>Spot the clause:</strong> In each pair, tap the sentence where <em>who</em>, <em>which</em>, or <em>that</em> adds information about a noun.</p></div>
       <div class="spotter-game">
         <div class="spotter-sentence" id="spot1">
           <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which sentence contains a relative clause?</span>
@@ -1178,6 +1177,13 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
           <span style="display:block;height:6px;"></span>
           <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false" data-explain="No relative pronoun, so no relative clause.">The chronometer cost more than the ship&rsquo;s cargo and kept perfect time.</span>
           <div class="spotter-result" id="spot3-result"></div>
+        </div>
+        <div class="spotter-sentence" id="spot4">
+          <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Take the clause out. Which clause is <strong>essential</strong> &mdash; the sentence stops making sense without it?</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot4')" data-correct="true" data-explain="Right! Without &lsquo;who could not read,&rsquo; you no longer know which sailor. Essential clause, no commas.">The sailor who could not read still learned to navigate.</span>
+          <span style="display:block;height:6px;"></span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot4')" data-correct="false" data-explain="Take the clause out: &lsquo;The chronometer kept perfect time.&rsquo; You still know exactly which thing. That makes it extra, so it gets commas.">The chronometer, which cost more than the ship&rsquo;s cargo, kept perfect time.</span>
+          <div class="spotter-result" id="spot4-result"></div>
         </div>
       </div>
     </div>
@@ -1539,17 +1545,17 @@ var _spotDone=false;
 function spotterPick(word,sid){
   var s=document.getElementById(sid);
   if(!s||s.getAttribute('data-done')==='true')return;
-  var r=document.getElementById(sid+'-r');
+  var r=document.getElementById(sid+'-r')||document.getElementById(sid+'-result');var ex=word.getAttribute('data-explain');
   if(word.getAttribute('data-correct')==='true'){
     word.classList.add('correct-reveal');
-    if(r){r.textContent='\u2705 Correct!';r.className='spotter-result show win';}
+    if(r){if(ex){r.innerHTML='\u2705 '+ex;}else{r.textContent='\u2705 Correct!';}r.className='spotter-result show win';}
     s.setAttribute('data-done','true');
     var all=[...document.querySelectorAll('.spotter-sentence')];
     if(all.every(x=>x.getAttribute('data-done')==='true'))_spotDone=true;
   }else{
     word.classList.add('wrong-reveal');
-    if(r){r.textContent='Look again.';r.className='spotter-result show miss';}
-    setTimeout(()=>{word.classList.remove('wrong-reveal');if(r)r.classList.remove('show');},1500);
+    if(r){r.innerHTML=ex?('Look again. '+ex):'Look again.';r.className='spotter-result show miss';}
+    setTimeout(()=>{word.classList.remove('wrong-reveal');if(r)r.classList.remove('show');},3500);
   }
 }
 /* ── sort game ── */
