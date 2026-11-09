@@ -1277,6 +1277,16 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   </div>
 
   <!-- Part C: Writing Connection -->
+  <div class="activity bl-sage">
+    <div class="activity-head"><div class="activity-num" style="background:#52B788;">C</div><div style="flex:1;"><div class="activity-title">Part C: Writing Connection &mdash; Your Journal Entry</div><div class="activity-sub">This is today's real piece of writing</div></div></div>
+    <div class="activity-body">
+      <p>Write a historical journal entry (5&ndash;7 sentences) from the perspective of a young person living in 1773 Boston, waking up on an ordinary morning.</p>
+      <div class="textbox-prompt">Write in first person, as if you are there. Include at least 2 sensory details (something you see, hear, or smell) and 1 line of dialogue with correct punctuation.</div>
+      <textarea class="journal-box" id="journal-writing" data-label="Writing Connection: 1773 Boston morning journal entry" rows="10" style="min-height:220px;"
+        placeholder="The bells were ringing before I even opened my eyes..."
+        oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
+    </div>
+  </div>
   
   <!-- Gathered Answers -->
   <div class="gathered-card">
