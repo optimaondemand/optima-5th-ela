@@ -1,0 +1,232 @@
+/* g5-sparkle.css — OAO Grade 5 ELA: The Commonplace Book.
+   Cream paper, marbled accents, letterpress headings, big readable type.
+   Everything is scoped under html.g5-on so the layer off = the original page. */
+
+html.g5-on {
+  --g5-paper: #FBF6EA;
+  --g5-paper2: #F4EBD6;
+  --g5-ink: #2B2118;
+  --g5-ink2: #5A4A38;
+  --g5-rule: #E2D3B3;
+  --g5-gold: #C8A850;
+  --g5-ox: #8B3A20;
+  --g5-indigo: #2E3D6B;
+  --g5-teal: #3E6E6C;
+  --g5-ok: #2F6B3A;
+  --g5-marble: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='120'%3E%3Cfilter id='a' filterUnits='userSpaceOnUse' x='-120' y='-120' width='880' height='360' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.01 0.04' numOctaves='3' seed='5' stitchTiles='stitch' result='n'/%3E%3CfeTurbulence type='turbulence' baseFrequency='0.015 0.05' numOctaves='2' seed='4' stitchTiles='stitch' result='t'/%3E%3CfeDisplacementMap in='n' in2='t' scale='70' xChannelSelector='R' yChannelSelector='G' result='d'/%3E%3CfeColorMatrix in='d' type='saturate' values='0' result='g'/%3E%3CfeComponentTransfer in='g'%3E%3CfeFuncR type='discrete' tableValues='0.96 0.18 0.55 0.96 0.78 0.24 0.96'/%3E%3CfeFuncG type='discrete' tableValues='0.93 0.24 0.23 0.93 0.62 0.43 0.93'/%3E%3CfeFuncB type='discrete' tableValues='0.85 0.42 0.13 0.85 0.30 0.42 0.85'/%3E%3CfeFuncA type='table' tableValues='1 1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect x='-120' y='-120' width='880' height='360' filter='url(%23a)'/%3E%3C/svg%3E");
+}
+
+/* ── page frame: the banner (navy header, Optima logo, progress bar) is left exactly as the page draws it ── */
+html.g5-on .g5-page-h,
+html.g5-on .g5-pg-h { font-family: 'Libre Baskerville', Georgia, serif; }
+
+/* ── ribbon bookmark ────────────────────────────────────────── */
+.g5-ribbon {
+  position: fixed; right: 0; top: 96px; z-index: 300;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  width: 64px; padding: 10px 6px 18px;
+  background: var(--g5-ox); color: #FFF8E6; border: 0; cursor: pointer;
+  font: 700 11px/1.2 'Nunito', system-ui, sans-serif; text-align: center;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 10px), 0 100%);
+  box-shadow: -2px 2px 6px rgba(0,0,0,.18);
+}
+.g5-ribbon:focus-visible { outline: 3px solid var(--g5-gold); outline-offset: 2px; }
+.g5-rib-ico { font-size: 20px; }
+.g5-rib-dots { display: flex; flex-direction: column; gap: 4px; margin-top: 2px; }
+.g5-rdot { width: 10px; height: 10px; border-radius: 50%; border: 2px solid #F0DCA4; background: transparent; }
+.g5-rdot.on { background: var(--g5-gold); border-color: var(--g5-gold); }
+.g5-rdot.here { box-shadow: 0 0 0 2px #FFF8E6; }
+@media (max-width: 760px) {
+  .g5-ribbon { top: auto; bottom: 74px; width: 54px; padding: 8px 4px 14px; }
+  .g5-rib-t { display: none; }
+  .g5-rib-dots { flex-direction: row; }
+}
+
+/* ── shared cards and buttons ───────────────────────────────── */
+.g5-card, .g5-listen, .g5-plate, .g5-page {
+  font-size: 17px; line-height: 1.6; color: var(--g5-ink);
+}
+.g5-card {
+  background: var(--g5-paper); border: 1px solid var(--g5-rule); border-radius: 10px;
+  padding: 16px 18px; margin: 16px 0;
+}
+.g5-card-k, .g5-page-k {
+  font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--g5-ox);
+}
+.g5-choices { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0; }
+.g5-choice, .g5-btn {
+  font: 700 16px/1.3 'Nunito', system-ui, sans-serif; cursor: pointer;
+  border-radius: 10px; padding: 10px 16px; min-height: 44px;
+}
+.g5-choice { background: #fff; color: var(--g5-ink); border: 2px solid var(--g5-rule); }
+.g5-choice[aria-pressed="true"] { border-color: var(--g5-indigo); background: #EEF1F8; }
+.g5-choice.g5-right { border-color: var(--g5-ok); background: #EAF4EA; }
+.g5-choice.g5-notyet { border-color: var(--g5-ox); background: #FBEDE6; }
+.g5-btn { background: var(--g5-ink); color: #FFF8E6; border: 2px solid var(--g5-ink); }
+.g5-btn-ghost { background: transparent; color: var(--g5-ink); }
+.g5-btn-small { padding: 6px 12px; min-height: 36px; font-size: 15px; }
+.g5-btn-choice { background: #fff; color: var(--g5-ink); border-color: var(--g5-rule); }
+.g5-choice:focus-visible, .g5-btn:focus-visible, .g5-gap:focus-visible, .g5-lt:focus-visible, .g5-gloss:focus-visible {
+  outline: 3px solid var(--g5-gold); outline-offset: 2px;
+}
+.g5-quote {
+  margin: 10px 0; padding: 10px 16px; border-left: 4px solid var(--g5-gold);
+  background: #FFFDF6; font-family: 'Libre Baskerville', Georgia, serif; font-size: 18px; font-style: italic;
+}
+.g5-quote cite { display: block; margin-top: 4px; font: 600 14px/1.3 'Nunito', system-ui, sans-serif; font-style: normal; color: var(--g5-ink2); }
+.g5-note { font-size: 15px; color: var(--g5-ink2); }
+.g5-look { margin: 8px 0 12px; }
+.g5-look > summary, .g5-why > summary, .g5-listen-words > summary, .g5-extra > summary {
+  cursor: pointer; font-weight: 800; color: var(--g5-indigo);
+}
+.g5-look > p { margin: 6px 0 0; }
+
+/* ── Listen card ───────────────────────────────────────────── */
+.g5-listen {
+  display: flex; gap: 12px; align-items: flex-start;
+  background: #F2F4F8; border: 1px solid #D6DCE8; border-radius: 10px; padding: 12px 16px; margin: 16px 0;
+}
+.g5-listen-ico { color: var(--g5-indigo); padding-top: 2px; }
+.g5-listen-t { font-weight: 800; color: var(--g5-indigo); }
+.g5-listen-play {
+  margin: 6px 0; font: 700 15px 'Nunito', system-ui, sans-serif; cursor: pointer;
+  background: var(--g5-indigo); color: #fff; border: 0; border-radius: 999px; padding: 6px 14px; min-height: 36px;
+}
+.g5-listen-play.g5-playing { background: var(--g5-ox); }
+.g5-listen-words p { margin: 6px 0 0; }
+
+/* ── What to do ────────────────────────────────────────────── */
+.g5-do {
+  background: #FFFBEF; border: 1px solid var(--g5-rule); border-radius: 10px;
+  padding: 10px 14px; margin: 0 0 14px; font-size: 16px; color: var(--g5-ink);
+}
+.g5-do-h { display: flex; align-items: center; gap: 8px; }
+.g5-do-say { border: 1px solid var(--g5-rule); background: #fff; border-radius: 999px; cursor: pointer; padding: 2px 8px; font-size: 15px; }
+.g5-do-steps { margin: 6px 0 4px 22px; padding: 0; }
+.g5-do-steps li { margin: 2px 0; }
+.g5-why p { margin: 6px 0 0; }
+.g5-use { color: var(--g5-ink2); }
+
+[hidden].g5-gloss-tip, [hidden].g5-hint, [hidden].g5-miss, [hidden].g5-listen-play, [hidden].g5-do-say { display: none !important; }
+
+/* ── glossary taps ─────────────────────────────────────────── */
+.g5-gloss {
+  background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: help;
+  border-bottom: 2px dotted var(--g5-indigo);
+}
+.g5-gloss-tip {
+  display: inline-block; margin: 0 4px; padding: 2px 8px; border-radius: 6px;
+  background: #EEF1F8; color: var(--g5-indigo); font-size: 15px; font-style: normal;
+}
+
+/* ── hints and misses ──────────────────────────────────────── */
+.g5-hint-b { border: 1px solid var(--g5-rule); background: #fff; border-radius: 999px; cursor: pointer; margin: 0 4px; padding: 2px 7px; font-size: 14px; }
+.g5-hint { display: inline-block; font-size: 15px; color: var(--g5-indigo); background: #EEF1F8; border-radius: 6px; padding: 2px 8px; margin: 2px 4px; }
+.g5-miss { margin: 10px 0; padding: 8px 12px; border-left: 4px solid var(--g5-ox); background: #FBEDE6; font-size: 16px; color: var(--g5-ink); }
+
+/* ── art plate ─────────────────────────────────────────────── */
+.g5-plate { margin: 18px 0; background: var(--g5-paper); border: 1px solid var(--g5-rule); border-radius: 10px; padding: 14px; }
+.g5-plate-frame { border: 6px solid #fff; outline: 1px solid var(--g5-rule); background: #fff; }
+.g5-plate img { display: block; width: 100%; max-height: 640px; object-fit: contain; background: #F4EBD6; }
+.g5-plate-t { font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; margin-top: 10px; }
+.g5-credit { font-size: 13px; color: var(--g5-ink2); margin-top: 6px; }
+.g5-credit a { color: var(--g5-indigo); }
+
+/* ── extra card ────────────────────────────────────────────── */
+.g5-extra > summary { list-style: none; }
+.g5-extra > summary::before { content: '▸ '; }
+.g5-extra[open] > summary::before { content: '▾ '; }
+.g5-opt { font-weight: 600; font-size: 13px; color: var(--g5-ink2); }
+.g5-terms dt { font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; margin-top: 10px; }
+.g5-terms dd { margin: 2px 0 0 0; }
+.g5-terms-line { display: block; font-style: italic; color: var(--g5-ink2); margin-top: 2px; }
+.g5-terms-line cite { font-style: normal; font-size: 13px; }
+
+/* ── Stones in the River ───────────────────────────────────── */
+.g5-game .g5-game-num { background: var(--g5-teal) !important; }
+.g5-river { border-radius: 10px; overflow: hidden; border: 1px solid #3B5560; margin: 8px 0 12px; line-height: 0; }
+.g5-river svg { width: 100%; height: auto; aspect-ratio: 900 / 170; display: block; }
+.g5-st.cur { animation: g5bob 2.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes g5bob { 50% { transform: translateY(-3px); } }
+.g5-ripple { animation: g5ripple 7s linear infinite; }
+@keyframes g5ripple { from { transform: translateX(0); } to { transform: translateX(-60px); } }
+@media (prefers-reduced-motion: reduce) { .g5-st.cur, .g5-ripple { animation: none; } }
+.g5-stone-step { font-size: 17px; margin: 6px 0; }
+.g5-stepn { display: block; font-size: 13px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: var(--g5-teal); }
+.g5-stone-word {
+  display: flex; flex-wrap: wrap; align-items: stretch; justify-content: center;
+  font: 700 38px/1 'Libre Baskerville', Georgia, serif; margin: 12px 0; gap: 2px; color: var(--g5-ink);
+}
+.g5-l { padding: 6px 1px; }
+.g5-gap {
+  width: 18px; min-height: 52px; border: 0; background: transparent; cursor: pointer; border-radius: 4px;
+  position: relative;
+}
+.g5-gap::after { content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 3px; border-radius: 2px; background: #D7CBB0; }
+.g5-gap:hover::after, .g5-gap:focus-visible::after { background: var(--g5-teal); }
+.g5-gap.g5-cut::after { background: var(--g5-ox); width: 4px; }
+.g5-gap:disabled { cursor: default; }
+.g5-shake { animation: g5shake .4s; }
+@keyframes g5shake { 25% { transform: translateX(-3px); } 75% { transform: translateX(3px); } }
+.g5-lt {
+  font: inherit; min-width: 34px; min-height: 52px; border: 2px solid var(--g5-rule); background: #fff;
+  border-radius: 6px; cursor: pointer; color: var(--g5-ink);
+}
+.g5-lt[aria-pressed="true"] { background: #F6E7BE; border-color: var(--g5-gold); }
+.g5-lt.g5-rootlit { background: var(--g5-gold); color: #fff; border-color: #8A6E25; }
+.g5-stone-ctrl { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 8px 0; }
+.g5-stone-fb { min-height: 1.6em; text-align: center; font-size: 17px; color: var(--g5-ink); }
+.g5-stone-tally { font-size: 14px; color: var(--g5-ink2); text-align: center; }
+@media (max-width: 480px) { .g5-stone-word { font-size: 28px; } .g5-lt { min-width: 26px; } }
+
+/* ── the Commonplace Book page ─────────────────────────────── */
+.g5-page {
+  position: relative; margin: 26px 0 18px; padding: 26px 22px 18px;
+  background: var(--g5-paper);
+  border: 1px solid var(--g5-rule); border-radius: 4px 12px 12px 4px;
+  box-shadow: inset 10px 0 0 var(--g5-paper2), 0 2px 10px rgba(43,33,24,.08);
+}
+.g5-page-marble { position: absolute; top: 0; left: 0; right: 0; height: 10px; background: var(--g5-marble) center / 640px 120px; border-radius: 4px 12px 0 0; }
+.g5-page-h { font-size: 22px; margin: 4px 0 6px; color: var(--g5-ink); }
+.g5-owner { font-family: 'Libre Baskerville', Georgia, serif; font-style: italic; color: var(--g5-ink2); margin: 0 0 6px; }
+.g5-name { margin: 6px 0 10px; }
+.g5-name input { font: 17px 'Nunito', system-ui, sans-serif; padding: 6px 10px; border: 2px solid var(--g5-rule); border-radius: 8px; margin: 0 6px; }
+.g5-name-msg { color: var(--g5-ox); font-size: 15px; }
+.g5-pg-sec { border-top: 1px solid var(--g5-rule); padding-top: 12px; margin-top: 14px; }
+.g5-pg-h { font-size: 18px; margin: 0 0 8px; color: var(--g5-ink); }
+.g5-lab { display: block; font-weight: 700; margin: 10px 0 4px; }
+.g5-lab-inline { display: inline; }
+.g5-ta {
+  width: 100%; box-sizing: border-box; font: 17px/1.55 'Nunito', system-ui, sans-serif;
+  padding: 10px 12px; border: 2px solid var(--g5-rule); border-radius: 8px; background: #fff; color: var(--g5-ink);
+}
+.g5-ta-line { font-family: 'Libre Baskerville', Georgia, serif; font-style: italic; }
+.g5-ta:focus, .g5-pg-in:focus { outline: none; border-color: var(--g5-indigo); }
+.g5-pg-in { width: 70px; font: 17px 'Nunito', system-ui, sans-serif; padding: 4px 8px; border: 2px solid var(--g5-rule); border-radius: 8px; margin-top: 6px; }
+.g5-count { display: block; font-size: 14px; color: var(--g5-ink2); margin-top: 2px; }
+.g5-count.ok { color: var(--g5-ok); font-weight: 700; }
+.g5-wod { font-size: 20px; margin: 4px 0; }
+.g5-wod b { font-family: 'Libre Baskerville', Georgia, serif; }
+.g5-wod-root { font-size: 16px; color: var(--g5-ink2); margin-left: 6px; }
+.g5-wod-def { margin: 0 0 6px; }
+.g5-move { font-weight: 700; }
+.g5-carry { margin: 8px 0; padding: 8px 14px; border-left: 4px solid var(--g5-teal); background: #EEF5F4; }
+.g5-pg-foot { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; border-top: 1px solid var(--g5-rule); margin-top: 16px; padding-top: 12px; }
+.g5-done { font-size: 16px; color: var(--g5-ox); flex: 1 1 260px; }
+.g5-done.ok { color: var(--g5-ok); }
+.g5-status { font-size: 14px; color: var(--g5-ink2); }
+
+/* ── the whole book ────────────────────────────────────────── */
+.g5-modal { position: fixed; inset: 0; z-index: 1000; background: rgba(30,22,14,.55); display: flex; align-items: flex-start; justify-content: center; overflow-y: auto; padding: 24px 12px; }
+.g5-modal-in { position: relative; width: 100%; max-width: 720px; background: var(--g5-paper); color: var(--g5-ink); border-radius: 8px; padding: 22px 24px 26px; font-size: 17px; line-height: 1.6; }
+.g5-modal-bar { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; margin: 4px 0 12px; }
+.g5-book-title { text-align: center; border-bottom: 3px double var(--g5-ink2); padding-bottom: 12px; margin-bottom: 12px; }
+.g5-book-title h2 { font-family: 'Libre Baskerville', Georgia, serif; font-size: 26px; margin: 4px 0; }
+.g5-tp { text-align: center; margin: 22px 0 8px; padding: 14px 0; border-top: 2px solid var(--g5-ink); border-bottom: 1px solid var(--g5-rule); }
+.g5-tp h3 { font-family: 'Libre Baskerville', Georgia, serif; font-size: 22px; margin: 0; }
+.g5-tp p { margin: 2px 0; color: var(--g5-ink2); }
+.g5-tp-set { font-style: italic; }
+.g5-bp { padding: 10px 0 14px; border-bottom: 1px solid var(--g5-rule); }
+.g5-bp h4 { margin: 4px 0; font-family: 'Libre Baskerville', Georgia, serif; }
+.g5-mine { border-left-color: var(--g5-teal); }
+@media print { .g5-ribbon, .g5-modal { display: none !important; } }
