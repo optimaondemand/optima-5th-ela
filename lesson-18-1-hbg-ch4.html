@@ -2739,9 +2739,9 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 
   <!-- VOCABULARY -->
   <div class="activity bl-cyan">
-    <div class="activity-head"><div class="activity-num" style="background:#C8A850;">2</div><div style="flex:1;"><div class="activity-title">&#x1F524; Vocabulary</div><div class="activity-sub">Decode &amp; Discover &mdash; words from Chapters 1–7</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#C8A850;">2</div><div style="flex:1;"><div class="activity-title">&#x1F524; Vocabulary</div><div class="activity-sub">Decode &amp; Discover &mdash; words from this week&rsquo;s chapters</div></div></div>
     <div class="activity-body">
-      <p>Seven words from Chapters 1–7. Read the sentence from the book first and make your best guess at the word, then tap the card to check.</p>
+      <p>Seven words from this week&rsquo;s chapters (some you will read on Days 2 and 3). Read the sentence from the book first and make your best guess at the word, then tap the card to check.</p>
       <div class="vocab-grid">
         <div class="vocab-decode-item">
           <div class="decode-sentence">&ldquo;Men rode horses from the river, <strong style="color:#8B3A20;">Nahullo</strong> men, and they carried burning torches.&rdquo;</div>
@@ -3025,7 +3025,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
         <span style="background:#FAFBFF;color:#7A88A8;padding:4px 8px;border-radius:6px;font-size:11px;">&#9675; Apply</span>
         <span style="background:#FAFBFF;color:#7A88A8;padding:4px 8px;border-radius:6px;font-size:11px;">&#9675; Submit</span>
       </div>
-      <div class="textbox-prompt">Today is the <strong>Plan</strong> stage. Tim Tingle writes from inside Isaac&rsquo;s thoughts &mdash; we feel what Isaac feels because we&rsquo;re in his head. In your reading journal: brainstorm 3&ndash;4 moments from your own life where you felt fear, wonder, or loss &mdash; moments you could narrate from the inside.</div>
+      <div class="textbox-prompt">Today is the <strong>Plan</strong> stage. Tim Tingle writes from inside Isaac&rsquo;s thoughts &mdash; we feel what Isaac feels because we&rsquo;re in his head. In the box below, brainstorm 3&ndash;4 moments from your own life where you felt fear, wonder, or loss &mdash; moments you could narrate from the inside.</div>
       <textarea class="journal-box" id="journal-writing" data-label="Writer's Workshop: Narrative Voice — Plan" placeholder="Moment 1: ... Moment 2: ... Moment 3: ..." oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
     </div>
   </div>
@@ -3051,7 +3051,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
       <div class="turn-in-checklist">
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered all 3 chapter questions with evidence from the book.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed my Word Study Grammar response.</div></div>
-        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my Writing Connection sentence.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my Writer&rsquo;s Workshop response.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I copied or downloaded my work and submitted it to Canvas.</div></div>
       </div>
     </div>
@@ -3099,9 +3099,9 @@ function gatherAnswers() {
   var output = '';
   var sections = [
     { title: '📖 CH. 1–2 — CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
-    { title: 'MORPHOLOGY SWYK', ids: ['journal-grammar'] },
+    { title: 'GRAMMAR SWYK', ids: ['journal-grammar'] },
     { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
-    { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
+    { title: '✍️ WRITER\'S WORKSHOP', ids: ['journal-writing'] }
   ];
 
   output += 'LESSON 18.1 — How I Became a Ghost, Ch. 1–2 (Talking Ghost & Treaty Talk)\n';
@@ -3582,7 +3582,7 @@ function downloadJournal() {
     { title: '📖 CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: '🔤 WORD STUDY CONNECTION (GRAMMAR)', ids: ['journal-grammar'] },
     { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
-    { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
+    { title: '✍️ WRITER\'S WORKSHOP', ids: ['journal-writing'] }
   ];
 
   var html = '<!DOCTYPE html><html><head><meta charset="UTF-8">';
