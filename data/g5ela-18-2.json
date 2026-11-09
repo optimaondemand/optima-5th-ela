@@ -1,0 +1,207 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "Last lesson, Isaac saw something nobody else could see. Today you find out what it meant. Start with the warm-up. The DOL sentence comes straight from Chapter 4, and it moves. Then read the poem and listen for who is talking in it."
+  },
+  "words": {
+   "text": "Today you match each word to its root, and you read this week's words in sentences from the book. In the river game, say each word slowly and listen for where your voice stops."
+  },
+  "reading": {
+   "text": "Read Chapters 3 and 4 in your book. These are hard chapters. Isaac sees more visions, and then something happens that is not a vision at all. Take your time. When you finish, try the quick check, then the Read Like a Writer box."
+  },
+  "assignment": {
+   "text": "Three questions about Chapters 3 and 4, and then a draft of your own moment. Pick one moment from your list. Write it from the inside, with I, the way Isaac does."
+  }
+ },
+ "how": [
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read today's skill.",
+    "Read the three steps in How to Do It.",
+    "Notice one detail Isaac warns you about."
+   ],
+   "why": "Isaac tells the story as someone who already knows the ending. Noticing his warnings shows you how his voice works."
+  },
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted words in the first sentence.",
+    "Fix the second sentence out loud.",
+    "Tap Check My Work to compare."
+   ],
+   "why": "Strong verbs and a subject that acts make a sentence easy to see."
+  },
+  {
+   "match": "Poetry Corner",
+   "do": [
+    "Read the poem out loud once.",
+    "Read Think About It.",
+    "Keep your answer in mind as you read."
+   ],
+   "why": "The speaker of a poem and the narrator of a book are both voices a writer creates."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Tap a word.",
+    "Then tap the root it belongs to.",
+    "Match all four words."
+   ],
+   "why": "Finding the root tells you what a long word is about."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Read each sentence from the book.",
+    "Look for clues around the word.",
+    "Tap a word, then tap its meaning."
+   ],
+   "why": "Clues in the sentence can tell you what a word means."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Tap the first word of each appositive.",
+    "Open Check under Precise nouns.",
+    "Answer Show What You Know in the box."
+   ],
+   "why": "Appositives and precise nouns both tell the reader exactly who or what."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Say each word and stop after the first beat.",
+    "Tap a word, then tap its column."
+   ],
+   "why": "Open and closed syllables help you read and spell long words."
+  },
+  {
+   "match": "Chapter Thinking",
+   "do": [
+    "Read Chapters 3 and 4 first.",
+    "Answer each question in 2 or more sentences.",
+    "Use details from the chapters as evidence."
+   ],
+   "why": "These questions check the events and what Isaac's voice tells you about them."
+  },
+  {
+   "match": "Workshop",
+   "do": [
+    "Pick one moment from your Day 1 list.",
+    "Write 3 to 5 sentences with I.",
+    "Put one thought or feeling inside."
+   ],
+   "why": "Writing from the inside is how Isaac pulls you into his story.",
+   "use": "Next lesson you will revise this draft."
+  }
+ ],
+ "glossary": [
+  {
+   "word": "evidence",
+   "in": "What Good Readers Do",
+   "meaning": "details from the book that show something is true"
+  }
+ ],
+ "miss": {
+  "cedar": "Say ce-dar. The first beat, ce, ends on the vowel e, and the e says its name. That makes it open.",
+  "willow": "Say wil-low. The first beat, wil, ends on the consonant l, and the i is short. That makes it closed.",
+  "bible": "Say Bi-ble. The first beat, Bi, ends on the vowel i, and the i says its name. That makes it open.",
+  "stickball": "Say stick-ball. The first beat, stick, ends on the consonant sound k, and the i is short. That makes it closed.",
+  "cypress": "Say cy-press. The first beat, cy, ends on y. Here y works as a vowel and says a long i. That makes it open.",
+  "chicken": "Say chick-en. The first beat, chick, ends on the consonant sound k, and the i is short. That makes it closed.",
+  "comet": "Say com-et. The first beat, com, ends on the consonant m, and the o is short. That makes it closed.",
+  "hollow": "Say hol-low. The first beat, hol, ends on the consonant l, and the o is short. That makes it closed."
+ },
+ "game": {
+  "type": "stones",
+  "title": "Stones in the River",
+  "after": "Spelling",
+  "look": "Each stone holds a word. Syllable stones: split the word after its first beat, then say open or closed. Root stones: tap only the letters of the root hiding inside the word. Every word you finish lights a stone, and your crossing keeps going all week.",
+  "doneLine": "Every stone for today is lit.",
+  "sub": "This week's word game · 6 stones today",
+  "how": {
+   "do": [
+    "Say the word slowly.",
+    "Tap the gap where the first beat ends.",
+    "Tap Open or Closed.",
+    "Tap Next stone."
+   ],
+   "why": "New words, same rule. If you can split a word you never practiced, you know the rule."
+  },
+  "stones": [
+   {
+    "w": "open",
+    "split": 1,
+    "kind": "open",
+    "why": "Yes. o ends on the vowel o, and it says its name. Open."
+   },
+   {
+    "w": "thunder",
+    "split": 4,
+    "kind": "closed",
+    "why": "Yes. thun ends on the consonant n, and the vowel is short. Closed."
+   },
+   {
+    "w": "over",
+    "split": 1,
+    "kind": "open",
+    "why": "Yes. o ends on the vowel o, and it says its name. Open."
+   },
+   {
+    "w": "shadow",
+    "split": 4,
+    "kind": "closed",
+    "why": "Yes. shad ends on the consonant d, and the vowel is short. Closed."
+   },
+   {
+    "w": "silent",
+    "split": 2,
+    "kind": "open",
+    "why": "Yes. si ends on the vowel i, and it says its name. Open."
+   },
+   {
+    "w": "ladder",
+    "split": 3,
+    "kind": "closed",
+    "why": "Yes. lad ends on the consonant d, and the vowel is short. Closed."
+   }
+  ]
+ },
+ "art": {
+  "tab": "reading",
+  "file": "assets/art/hbg/bluff-lake-cypress.jpg",
+  "title": "Cypress trees standing in a Mississippi lake",
+  "alt": "Tall cypress trees with rust-colored autumn needles standing in still water that reflects them.",
+  "look": "This is a modern photo, taken in 2006 at Noxubee National Wildlife Refuge in east-central Mississippi, on land that was part of the Choctaw Nation in 1830. Cypress trees grow right in the water. This is the kind of river and swamp country Isaac's family knew.",
+  "creator": "Eddie Harsh, U.S. Fish and Wildlife Service",
+  "date": "2006",
+  "license": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Cypress_trees_in_Bluff_Lake_(6882771297).jpg"
+ },
+ "checks": [
+  {
+   "tab": "reading",
+   "after": "Chapter Introduction",
+   "kicker": "Quick check",
+   "q": "Which of these really happens in Chapter 4, and is not one of Isaac's visions?",
+   "options": [
+    {
+     "t": "Mister Jonah's hair bursts into flames.",
+     "ok": false,
+     "why": "That was a vision in Chapter 2. It came after the warm shiver, and when Isaac looked again, Mister Jonah had no burns. In Chapter 4 Isaac tells you the difference: “I felt no shiver. This was real.”"
+    },
+    {
+     "t": "Old Woman falls into the river and stops moving.",
+     "ok": false,
+     "why": "That was a vision in Chapter 3. When Isaac opened his eyes again, she was laughing and playing in the river. In Chapter 4 Isaac tells you the difference: “I felt no shiver. This was real.”"
+    },
+    {
+     "t": "Isaac's hair catches fire and he smothers it with his blanket.",
+     "ok": true,
+     "why": "Isaac tells you, “I felt no shiver. This was real.” The visions always come after the warm shiver."
+    }
+   ]
+  }
+ ]
+}

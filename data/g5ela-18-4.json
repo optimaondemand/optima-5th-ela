@@ -1,0 +1,243 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "This is the last day of the week, and Chapter 7 has a surprise in it. It is funny. Start with the warm-up. In the poem, think about the speaker, the voice inside the poem."
+  },
+  "words": {
+   "text": "Last day with these roots. Build the words from their pieces, then use this week's words in your own sentences. Finish your river crossing too."
+  },
+  "reading": {
+   "text": "Read Chapter 7. Then look at the painting on this tab. When you finish, think about the whole week. What has Isaac's voice shown you that a history book could not?"
+  },
+  "assignment": {
+   "text": "Three questions, and the last one looks back over the whole week. Then write the clean, final version of your moment, and submit your work."
+  }
+ },
+ "how": [
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted words in the first sentence.",
+    "Fix the second sentence out loud.",
+    "Tap Check My Work to compare."
+   ],
+   "why": "A short, active sentence can carry a lot of feeling."
+  },
+  {
+   "match": "Poetry Corner",
+   "do": [
+    "Read the poem out loud once.",
+    "Read Think About It.",
+    "Keep your answer in mind as you read."
+   ],
+   "why": "Knowing who is speaking helps you understand any poem or story."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Say the pieces in order.",
+    "Type the word they make.",
+    "Tap Check My Answers.",
+    "Explain one word out loud."
+   ],
+   "why": "Building words from parts shows you how the parts make the meaning."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Read each word and its meaning.",
+    "Write one sentence for each word.",
+    "Make each sentence show the meaning."
+   ],
+   "why": "Using a word in your own sentence is the best proof you know it."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Read the Before and After.",
+    "Tap the right answer for each question.",
+    "Write your own sentence in the box."
+   ],
+   "why": "Commas change what a sentence means, so they matter."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Say each word both ways.",
+    "Keep the way that sounds right.",
+    "Tap the word, then its column."
+   ],
+   "why": "Your ear can settle a split when the letters look tricky."
+  },
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read today's skill.",
+    "Do the Whole-book thinking in your head.",
+    "Use it for question 3."
+   ],
+   "why": "Putting the week together shows what Isaac's voice adds to the history."
+  },
+  {
+   "match": "Chapter Thinking",
+   "do": [
+    "Read Chapter 7 first.",
+    "Answer each question in 2 or more sentences.",
+    "For question 3, pick one moment from each part."
+   ],
+   "why": "These questions look at Chapter 7 and back over the whole week."
+  },
+  {
+   "match": "Workshop",
+   "do": [
+    "Write a clean final version, 5 to 7 sentences.",
+    "Include an opening, an inside detail, and a closing line.",
+    "Add one sentence about what Isaac taught you."
+   ],
+   "why": "Today you finish your moment and turn it in."
+  }
+ ],
+ "glossary": [
+  {
+   "word": "first-person narrator",
+   "in": "What Good Readers Do",
+   "meaning": "a narrator who tells the story as I, from inside it"
+  }
+ ],
+ "hints": {
+  "memorial": [
+   "Something built to keep a memory standing.",
+   "memor + -ial",
+   "It ends with ial."
+  ],
+  "inscription": [
+   "Words written into stone.",
+   "in + script + -ion",
+   "It starts with in and has script in the middle."
+  ],
+  "description": [
+   "Writing that shows what something is like.",
+   "de + script + -ion",
+   "It starts with de."
+  ],
+  "commemorate": [
+   "To honor a memory together.",
+   "com + memor + -ate",
+   "It starts with com."
+  ]
+ },
+ "miss": {
+  "even": "Say e-ven. The first beat, e, ends on the vowel e, and the e says its name. That makes it open.",
+  "river": "Say riv-er. The first beat, riv, ends on the consonant v, and the i is short. That makes it closed.",
+  "moment": "Say mo-ment. The first beat, mo, ends on the vowel o, and the o says its name. That makes it open.",
+  "shiver": "Say shiv-er. The first beat, shiv, ends on the consonant v, and the i is short. That makes it closed.",
+  "silent": "Say si-lent. The first beat, si, ends on the vowel i, and the i says its name. That makes it open.",
+  "visit": "Say vis-it. The first beat, vis, ends on the consonant s, and the i is short. That makes it closed.",
+  "final": "Say fi-nal. The first beat, fi, ends on the vowel i, and the i says its name. That makes it open.",
+  "never": "Say nev-er. The first beat, nev, ends on the consonant v, and the e is short. That makes it closed."
+ },
+ "game": {
+  "type": "stones",
+  "title": "Stones in the River",
+  "after": "Spelling",
+  "look": "Each stone holds a word. Syllable stones: split the word after its first beat, then say open or closed. Root stones: tap only the letters of the root hiding inside the word. Every word you finish lights a stone, and your crossing keeps going all week.",
+  "doneLine": "Every stone for today is lit.",
+  "sub": "This week's word game · 6 stones today",
+  "how": {
+   "do": [
+    "Read the step under the river.",
+    "Syllable stone: tap the gap, then Open or Closed.",
+    "Root stone: tap the root's letters, then Check.",
+    "Tap Next stone."
+   ],
+   "why": "The last crossing of the week mixes both skills one more time."
+  },
+  "stones": [
+   {
+    "kind": "root",
+    "w": "memento",
+    "root": "mem",
+    "at": 0,
+    "means": "memory",
+    "family": "mem, the memory root",
+    "why": "Yes: mem means memory. A memento is something you keep to remember a person or a time."
+   },
+   {
+    "w": "lemon",
+    "split": 3,
+    "kind": "closed",
+    "why": "Yes. lem ends on the consonant m, and the vowel is short. Closed."
+   },
+   {
+    "kind": "root",
+    "w": "transcript",
+    "root": "script",
+    "at": 4,
+    "means": "write",
+    "family": "script, the write root",
+    "why": "Yes: script means write. A transcript is a written copy of what someone said."
+   },
+   {
+    "w": "tulip",
+    "split": 2,
+    "kind": "open",
+    "why": "Yes. tu ends on the vowel u, and it says its name. Open."
+   },
+   {
+    "kind": "root",
+    "w": "memorable",
+    "root": "memor",
+    "at": 0,
+    "means": "memory",
+    "family": "memor, the memory root",
+    "why": "Yes: memor means memory. Something memorable is easy to remember.",
+    "alt": [
+     [
+      0,
+      3
+     ]
+    ]
+   },
+   {
+    "kind": "root",
+    "w": "manuscript",
+    "root": "script",
+    "at": 4,
+    "means": "write",
+    "family": "script, the write root",
+    "why": "Yes: script means write. A manuscript is written by hand."
+   }
+  ]
+ },
+ "art": {
+  "tab": "reading",
+  "file": "assets/art/hbg/catlin-ball-play.jpg",
+  "title": "Ball-play of the Choctaw: Ball Up",
+  "alt": "A painting of a huge stickball game on a green field, with hundreds of Choctaw players running and reaching with sticks.",
+  "look": "George Catlin painted this stickball game in 1834–35. He watched it in 1834 in Indian Territory, now Oklahoma, after many Choctaw families had already been forced to move west. Stickball was, and still is, an important Choctaw game. Luke runs off to play it in Chapter 2. Even in hard times, people still play.",
+  "creator": "George Catlin",
+  "date": "1834–35",
+  "license": "Public domain (Smithsonian American Art Museum, 1985.66.428)",
+  "url": "https://commons.wikimedia.org/wiki/File:George_Catlin_-_Ball-play_of_the_Choctaw-ball_up_-_1985.66.428_-_Smithsonian_American_Art_Museum.jpg"
+ },
+ "checks": [
+  {
+   "tab": "reading",
+   "after": "Chapter Introduction",
+   "kicker": "Quick check",
+   "q": "Jumper talks in this book. Does that mean the history in it is made up?",
+   "options": [
+    {
+     "t": "Yes. A talking dog means none of it is real.",
+     "ok": false,
+     "why": "How I Became a Ghost is historical fiction: a made-up story, with a talking dog and a ghost, set inside real history. The treaty that took the Choctaw homeland in Mississippi was real, and it was signed in 1830."
+    },
+    {
+     "t": "No. The story is made up, but the history around it is real.",
+     "ok": true,
+     "why": "That is historical fiction: a made-up story set inside real history. The treaty that took the Choctaw homeland in Mississippi was real, and it was signed in 1830."
+    }
+   ]
+  }
+ ]
+}
