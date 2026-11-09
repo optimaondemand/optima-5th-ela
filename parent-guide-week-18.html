@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 18 Parent Guide · 5th Grade ELA · Optima Academy Online</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+:root{
+  --navy:#0E1C42; --ink:#3A4A6B; --muted:#5E6C8C; --line:#E2E8F4;
+  --sky:#55C8E8; --sky-bg:#EAF8FD; --gold:#C7922C; --gold-bg:#FFF3DC;
+  --green:#34B76F; --green-bg:#E3F8ED; --plum:#8B6FC0; --plum-bg:#F1ECFA;
+  --paper:#FAFBFF; --cream:#FFF8F0;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:"Nunito",sans-serif;font-size:18px;line-height:1.6;}
+.wrap{max-width:880px;margin:0 auto;padding:24px 16px 48px;}
+h1,h2,h3{font-family:"Lora",Georgia,serif;color:var(--navy);margin:0;}
+p{margin:0 0 10px;}
+strong{color:var(--navy);}
+
+/* header */
+.hero{background:var(--navy);color:#fff;border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1.25fr 1fr;}
+.hero-text{padding:28px 28px 26px;}
+.brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#BFD0EE;margin-bottom:14px;}
+.brand img{width:38px;height:38px;border-radius:50%;background:#fff;}
+.hero h1{color:#fff;font-size:34px;line-height:1.2;margin-bottom:6px;}
+.hero .sub{font-size:19px;color:#DCE6F7;margin-bottom:16px;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 13px;font-size:16px;font-weight:700;color:#fff;}
+.hero-art{background:#F5E6C8 center/cover no-repeat;min-height:240px;}
+
+/* cards */
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-top:18px;}
+.card-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.card-head .ico{font-size:26px;line-height:1;}
+.card-head h2{font-size:24px;}
+.card-head .tag{margin-left:auto;font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+
+.glance{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.glance .box{border-radius:12px;padding:14px 16px;}
+.box-label{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.b-sky{background:var(--sky-bg);} .b-sky .box-label{color:#1F8CB0;}
+.b-gold{background:var(--gold-bg);} .b-gold .box-label{color:#9A6C14;}
+.b-green{background:var(--green-bg);} .b-green .box-label{color:#1F8452;}
+.b-plum{background:var(--plum-bg);} .b-plum .box-label{color:#6A4FA3;}
+.quote{font-family:"Lora",Georgia,serif;font-style:italic;font-size:20px;color:var(--navy);border-left:4px solid var(--gold);padding:4px 0 4px 16px;margin:16px 0 0;}
+.quote small{display:block;font-family:"Nunito",sans-serif;font-style:normal;font-size:15px;color:var(--muted);margin-top:4px;}
+
+/* day table */
+.days{width:100%;border-collapse:collapse;}
+.days th{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:2px solid var(--line);}
+.days td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+.days tr:last-child td{border-bottom:none;}
+.day-n{font-family:"Lora",Georgia,serif;font-weight:700;font-size:20px;color:var(--navy);white-space:nowrap;}
+.day-n span{display:block;font-family:"Nunito",sans-serif;font-size:15px;font-weight:700;color:var(--muted);}
+.ch{font-weight:800;color:var(--navy);}
+.small{font-size:16px;color:var(--muted);}
+.pill{display:inline-block;font-size:14px;font-weight:800;border-radius:999px;padding:2px 10px;margin:4px 4px 0 0;}
+.p-poem{background:var(--plum-bg);color:#6A4FA3;}
+.p-guide{background:var(--cream);color:#9A6C14;border:1px solid #F5E6C8;}
+.extra-row td{background:var(--paper);}
+
+/* words */
+.words{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.word{border:1px solid var(--line);border-radius:12px;padding:12px 16px;}
+.word b{font-family:"Lora",Georgia,serif;font-size:21px;color:var(--navy);display:block;}
+.word span{font-size:17px;}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;}
+.skills .box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.eg{display:block;margin-top:6px;font-weight:700;color:var(--navy);}
+
+/* poem */
+.poem-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;}
+.poem{font-family:"Lora",Georgia,serif;font-size:22px;line-height:1.9;color:var(--navy);background:var(--plum-bg);border-radius:12px;padding:16px 22px;}
+.poem small{display:block;font-family:"Nunito",sans-serif;font-size:15px;color:var(--muted);line-height:1.4;margin-top:6px;}
+
+/* ask */
+.ask{list-style:none;margin:0;padding:0;counter-reset:q;}
+.ask li{counter-increment:q;position:relative;padding:12px 0 12px 50px;border-bottom:1px dashed var(--line);}
+.ask li:last-child{border-bottom:none;}
+.ask li::before{content:counter(q);position:absolute;left:0;top:11px;width:34px;height:34px;border-radius:50%;background:var(--gold-bg);color:#9A6C14;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:17px;}
+.ask .q{font-weight:800;color:var(--navy);display:block;}
+.ask .listen{font-size:16px;color:var(--muted);}
+
+/* checklist */
+.check{list-style:none;margin:0;padding:0;}
+.check li{padding:7px 0 7px 34px;position:relative;}
+.check li::before{content:"✓";position:absolute;left:4px;top:6px;color:var(--green);font-weight:900;font-size:19px;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+
+.next{background:var(--navy);color:#DCE6F7;border:none;}
+.next h2{color:#fff;}
+.next strong{color:#fff;}
+.foot{text-align:center;font-size:15px;color:var(--muted);margin-top:26px;}
+
+.print-btn{display:inline-block;margin-top:16px;background:var(--gold);color:#fff;border:none;border-radius:999px;padding:9px 18px;font-family:"Nunito",sans-serif;font-weight:800;font-size:16px;cursor:pointer;}
+
+@media (max-width:720px){
+  .hero{grid-template-columns:1fr;}
+  .hero-art{min-height:180px;order:-1;}
+  .glance,.words,.skills,.poem-wrap,.two{grid-template-columns:1fr;}
+  .days thead{display:none;}
+  .days tr{display:block;border-bottom:1px solid var(--line);padding:8px 0;}
+  .days td{display:block;border:none;padding:4px 0;}
+}
+@media print{
+  body{background:#fff;font-size:15px;}
+  .wrap{padding:0;}
+  .print-btn{display:none;}
+  .card{break-inside:avoid;margin-top:12px;padding:14px 16px;}
+  .hero,.next{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+
+/* lesson mechanics */
+.howto{background:var(--cream);border:1px solid #F5E6C8;border-radius:16px;padding:18px 22px;margin-top:18px;}
+.howto h2{font-size:21px;margin-bottom:10px;}
+.howto ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 22px;}
+.howto li{position:relative;padding-left:32px;font-size:17px;line-height:1.5;}
+.howto li span{position:absolute;left:0;top:0;font-size:20px;}
+@media (max-width:760px){.howto ul{grid-template-columns:1fr;}}
+@media print{.howto{break-inside:avoid;}}
+.b-rose{background:#FDEEEE;border-radius:12px;padding:14px 16px;} .b-rose .box-label{color:#A8434A;}
+
+.p-museum{background:var(--sky-bg);color:#1F6F8C;}
+.p-extra{background:var(--green-bg);color:#1F8452;}
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.extras .box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.essay{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.essay span{font-size:15px;font-weight:800;border-radius:999px;padding:4px 12px;background:var(--paper);border:1px solid var(--line);color:var(--muted);}
+.essay span.now{background:var(--gold-bg);border-color:#F5E6C8;color:#9A6C14;}
+.essay span.done{background:var(--green-bg);border-color:#CDEFDB;color:#1F8452;}
+@media (max-width:720px){.extras{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="hero">
+    <div class="hero-text">
+      <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy Online">Family Guide · 5th Grade ELA</div>
+      <h1>Week 18: A Ghost Tells the Story</h1>
+      <div class="sub"><em>How I Became a Ghost</em> by Tim Tingle, Chapters 1–7</div>
+      <div class="chips">
+        <span class="chip">4 lessons</span>
+        <span class="chip">1 fluency recording</span>
+        <span class="chip">Ch. 1–7</span>
+        <span class="chip">Check-In at week’s end</span>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨️ Print this guide</button>
+    </div>
+    <div class="hero-art" style="background-image:url('assets/art/hbg/finley-mississippi.jpg');background-position:center 45%;" role="img" aria-label="A hand-colored map of Mississippi printed around 1831, with a large area marked Choctaw Indians"></div>
+  </header>
+
+  <!-- HOW THE LESSON PAGES WORK -->
+  <section class="howto">
+    <h2>🧭 How the Lesson Pages Work</h2>
+    <ul>
+      <li><span>🗂️</span><strong>Four tabs, in order:</strong> Warm-Up → Word Study → Reading → Assignment. A button at the bottom of each tab moves to the next.</li>
+      <li><span>🎧</span><strong>A short Listen clip at the top of each tab</strong> tells your student what the tab is for. “Read the words instead” shows the same words on screen.</li>
+      <li><span>📝</span><strong>Every answer goes on the page.</strong> There’s a box for each one, including the Daily Oral Language sentence.</li>
+      <li><span>💾</span><strong>Answers save as you type</strong>, but only in that browser on that computer. Switching computers or clearing the browser loses them.</li>
+      <li><span>📓</span><strong>Copy or download everything</strong> at the bottom of the Assignment tab, then <strong>submit it in Canvas</strong>. A lesson isn’t turned in until it’s submitted there.</li>
+      <li><span>🎙️</span><strong>Fluency is a separate page</strong> in the Canvas module, because recording doesn’t work inside a lesson. Keep the book nearby.</li>
+    </ul>
+  </section>
+
+  <!-- AT A GLANCE -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🧭</span><h2>This Week at a Glance</h2></div>
+    <p>A new novel begins. Isaac is a ten-year-old Choctaw boy in Mississippi around 1830, and he tells the reader on the very first page that he is a ghost. “Treaty Talk” comes to his town: the United States wants the Choctaw Nation’s land. Over these seven chapters the old people say goodbye to the river, men on horseback burn the town at night, and Isaac’s family hides on an island in a swamp with about a hundred other Choctaws. Then, in Chapter 7, comes a snowball fight. In Writer’s Workshop, your student writes a true moment from their own life, told from the inside with “I,” the way Isaac tells his.</p>
+    <div class="box b-rose" style="margin-bottom:12px;"><div class="box-label">💛 A heads-up for families</div>This book tells the story of the Choctaw removal, when the United States forced the Choctaw people to leave their homeland in Mississippi after the Treaty of Dancing Rabbit Creek (1830). Isaac tells us from the start that he does not survive the story. Some parts this week are hard. In Chapters 2 and 3, the oldest people in town say goodbye to their land in painful ways: an old man rubs his back against tree bark until it bleeds, and old women jump into the river and dance on its sharp stones. Isaac sometimes sees things before they happen, and in these visions he sees who is going to die. In Chapter 4, men with torches burn the town at night. Isaac’s hair catches fire and he puts it out with his blanket, and a man fires a shotgun at the family. Isaac’s father throws himself over the family, and a neighbor is hurt in the shoulder. In Chapter 6, soldiers hand out blankets, and Isaac’s mother keeps her family away from them. The book uses a Choctaw word, <em>Nahullo</em>, for the white men who come. Reading together, or checking in after each chapter, helps. The <a href="parent-guide-hbg-unit.html" style="color:#A8434A;font-weight:700;">unit guide</a> has the history and what comes later.</div>
+    <div class="glance">
+      <div class="box b-sky"><div class="box-label">Reading skill</div><strong>Two things at once.</strong> Your student builds the history behind the story (the Choctaw Nation, Treaty Talk, the move) while listening to Isaac’s voice: what he says plainly, what he won’t explain, and what he warns you about before it happens.</div>
+      <div class="box b-green"><div class="box-label">Big idea</div><strong>A first-person narrator shows what a history book can’t.</strong> We see the removal through one boy’s eyes: his family, his dog Jumper, his fear, and the moments that are still funny.</div>
+    </div>
+    <p class="quote">“I am a ghost. I am not a ghost when this book begins, so you have to pay very close attention.”<small>Isaac, Chapter 1</small></p>
+  </section>
+
+  <!-- DAY BY DAY -->
+  <section class="card">
+    <div class="card-head"><span class="ico">📅</span><h2>Day by Day</h2></div>
+    <table class="days">
+      <thead><tr><th>Lesson</th><th>Reading</th><th>Big question</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="day-n">18.1<span>Day 1</span></td>
+          <td><span class="ch">Chapters 1–2 · Talking Ghost; Treaty Talk</span><br>Isaac tells you he is a ghost and that he sees things before they happen. Treaty Talk comes to town, and his mother takes him to the river to watch the old men say goodbye.<br><span class="pill p-museum">Old map of the Choctaw Nation</span><span class="pill p-extra">Choctaw words in the book</span></td>
+          <td>Why would a narrator tell you how his story ends on the very first page?</td>
+        </tr>
+        <tr>
+          <td class="day-n">18.2<span>Day 2</span></td>
+          <td><span class="ch">Chapters 3–4 · Dancing on the Stones; Fire in the Hair</span><br>The old women say goodbye at the pier. After midnight Isaac smells smoke: men with torches are burning the town. His father shields the family, and they run for the woods.<br><span class="pill p-poem">Poetry Corner</span><span class="pill p-museum">Cypress trees in a Mississippi lake</span></td>
+          <td>What did Isaac’s vision at the river turn out to mean?</td>
+        </tr>
+        <tr>
+          <td class="day-n">18.3<span>Day 3</span></td>
+          <td><span class="ch">Chapters 5–6 · Swamp Choctaws; Men with Blankets</span><br>About a hundred Choctaws start over on an island in the swamp, with lean-tos, blowguns and hidden cooking fires. Winter freezes the swamp, and soldiers ride in with wagons of blankets.<br><span class="pill p-museum">A cypress swamp today</span></td>
+          <td>What does Isaac’s mother seem to know that he doesn’t?</td>
+        </tr>
+        <tr>
+          <td class="day-n">18.4<span>Day 4</span></td>
+          <td><span class="ch">Chapter 7 · Snow Monsters</span><br>Everything is “rotten sad,” so Isaac’s father takes the boys and Jumper for a walk across the frozen swamp. Isaac’s snowball misses Luke and hits his father in the face.<br><span class="pill p-poem">Poetry Corner</span><span class="pill p-museum">Catlin’s painting of Choctaw stickball</span></td>
+          <td>Why would the author put a funny chapter in the middle of a forced removal?</td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">🎙️<span>Fluency</span></td>
+          <td colspan="2">The opening of Chapter 1, where Isaac talks right to the reader. Your student reads it once to themselves, again for smoothness, and once more for expression, then <strong>records and submits it in Canvas.</strong></td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">📋<span>Check-In</span></td>
+          <td colspan="2">A 14-point wrap-up on the week: appositives and precise nouns, the roots <em>mem/memor</em> and <em>script</em>, open and closed syllables, two reading questions, and two short writing questions.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- WORDS -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🔤</span><h2>Words to Know</h2><span class="tag">Use them at home!</span></div>
+    <div class="words">
+      <div class="word"><b>treaty</b><span>a formal written agreement between two nations</span></div>
+      <div class="word"><b>Nahullo</b><span>a white person; the Choctaw word Isaac’s family uses for the men who come on horseback</span></div>
+      <div class="word"><b>missionaries</b><span>people sent to a place to teach their religion</span></div>
+      <div class="word"><b>scattered</b><span>spread out over an area rather than standing together</span></div>
+      <div class="word"><b>torches</b><span>burning sticks carried as a light or a weapon</span></div>
+      <div class="word"><b>blowguns</b><span>long tubes used to shoot darts; Isaac and Luke make their own</span></div>
+      <div class="word"><b>smothering</b><span>covering something so closely that it cannot breathe or burn</span></div>
+    </div>
+    <div class="skills">
+      <div class="box b-sky"><div class="box-label">Word parts</div><strong>mem / memor</strong> means “memory.” <strong>script</strong> means “write.” Isaac is doing both: remembering, and writing it down.<span class="eg">memoir · memorial · memorize · manuscript · inscription · description</span></div>
+      <div class="box b-gold"><div class="box-label">Spelling</div><strong>Open and closed syllables.</strong> A syllable that ends on a vowel is open, and the vowel says its name. One that ends on a consonant is closed.<span class="eg">open: na·tion, ce·dar, fro·zen · closed: blan·ket, gov·ern·ment</span></div>
+      <div class="box b-green"><div class="box-label">Grammar</div><strong>Appositives</strong> rename the noun beside them and sit between commas. This week also asks for <strong>precise nouns</strong> instead of vague ones.<span class="eg">Jumper, Isaac’s dog, followed him everywhere.</span></div>
+    </div>
+  </section>
+
+  <!-- EXTRAS -->
+  <section class="card">
+    <div class="card-head"><span class="ico">✨</span><h2>New in the Lessons</h2></div>
+    <p>Starting with this book, the lessons have a few new pieces. Look for these:</p>
+    <div class="extras">
+      <div class="box b-gold"><div class="box-label">🎧 A narrator for every tab</div>A short clip at the top of each tab says what to do and what to watch for. The narrator never speaks for Isaac or any Choctaw character; the book’s own words are for your student to read.</div>
+      <div class="box b-plum"><div class="box-label">🪨 Stones in the River</div>The week’s word game. In Chapter 3, Isaac remembers a river with sharp stones on the bottom. In the game, the stones help: each holds a word from Isaac’s world, and your student splits it into syllables (and later finds its root) to cross.</div>
+      <div class="box b-sky"><div class="box-label">🖼️ Real pictures from the time and place</div>Each Reading tab has one: a map of Mississippi printed around 1831 with the Choctaw Nation marked, photos of cypress swamps like the one where Isaac’s family hides, and George Catlin’s 1834–35 painting of a Choctaw stickball game.</div>
+      <div class="box b-green"><div class="box-label">🗣️ Choctaw words in the book</div>Isaac tells his story in English, but some Choctaw words stay in it, like <em>Hoke</em> (“okay”). A card on Day 1 explains the ones your student meets this week.</div>
+      <div class="box b-rose"><div class="box-label">🧭 “What to do” lines</div>Each activity now opens with a short list: what to do, why it matters, and where your student will use it. If an answer is off, a hint points back to the rule instead of just saying “try again.”</div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section class="card">
+    <div class="card-head"><span class="ico">✍️</span><h2>Your Student’s Writing: A Moment From the Inside</h2><span class="tag">Writer’s Workshop</span></div>
+    <div class="essay"><span class="now">Day 1 · Plan</span><span class="now">Day 2 · Draft</span><span class="now">Day 3 · Revise</span><span class="now">Day 4 · Submit</span></div>
+    <p>One short piece, start to finish this week. <strong>Day 1:</strong> list 3–4 moments from your own life when you felt fear, wonder or loss. <strong>Day 2:</strong> pick one and write 3–5 sentences about it from the inside, with “I.” <strong>Day 3:</strong> add one inside detail, something you saw, heard, felt or thought. <strong>Day 4:</strong> write a clean final version of 5–7 sentences with a specific opening, at least one inside detail and a strong closing line, plus one sentence on what Isaac taught you about telling a story from the inside.</p>
+  </section>
+
+  <!-- POETRY -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🪶</span><h2>Poetry Corner: Who Is Talking?</h2></div>
+    <div class="poem-wrap">
+      <div class="poem">Nature’s first green is gold,<br>Her hardest hue to hold.<br>Her early leaf’s a flower;<br>But only so an hour.<br>Then leaf subsides to leaf.<br>So Eden sank to grief,<br>So dawn goes down to day.<br>Nothing gold can stay.<small>Robert Frost, “Nothing Gold Can Stay” (1923), Day 4. On Day 2: Emily Dickinson, “We grow accustomed to the Dark” (about 1862).</small></div>
+      <div><p>This week’s poems teach the <strong>speaker</strong>: the voice talking inside a poem, who is not the same as the poet. It’s the same idea as the novel. Isaac tells the story, but Tim Tingle wrote it.</p><p><strong>How to help:</strong> Read the poem aloud together. Ask who the speaker is and how they feel about the gold that can’t stay. Then ask what the “gold” was that Isaac’s family lost.</p></div>
+    </div>
+  </section>
+
+  <!-- ASK AT HOME -->
+  <section class="card">
+    <div class="card-head"><span class="ico">💬</span><h2>Ask at Home</h2><span class="tag">Better than “How was school?”</span></div>
+    <ol class="ask">
+      <li><span class="q">Isaac says he is a ghost on the very first page. Why tell the reader that?</span><span class="listen">Listen for: so you pay close attention. He also says he sees things before they happen, and that Treaty Talk is why he became a ghost.</span></li>
+      <li><span class="q">What did the old people do down by the river?</span><span class="listen">Listen for: they were saying goodbye to their home. Mister Jonah rubbed his back against a tree until it bled, and the old women jumped from the pier and danced on the sharp stones in the river.</span></li>
+      <li><span class="q">What did Isaac’s father do the night the town burned?</span><span class="listen">Listen for: when a man aimed a shotgun at the family, he threw himself over them. Then he told them to run and stay together, and they hid in the woods.</span></li>
+      <li><span class="q">When the soldiers brought blankets, what did Isaac’s mother do?</span><span class="listen">Listen for: she held her family back. “We do not need their blankets.” Isaac doesn’t know why yet.</span></li>
+      <li><span class="q">Why is Chapter 7 funny?</span><span class="listen">Listen for: Luke called Isaac a snow monster, and Isaac’s snowball missed Luke and hit their father in the face.</span></li>
+      <li><span class="q">Read me your moment. Which line is your inside detail?</span><span class="listen">Listen for: a line about something they saw, heard, felt or thought in that moment, told with “I.”</span></li>
+    </ol>
+  </section>
+
+  <!-- TURN IN + TRY AT HOME -->
+  <div class="two">
+    <section class="card">
+      <div class="card-head"><span class="ico">📬</span><h2>What Gets Turned In</h2></div>
+      <ul class="check">
+        <li><strong>Each lesson:</strong> 3 chapter questions answered with evidence from the book, the grammar response, and that day’s Writer’s Workshop step, submitted in Canvas</li>
+        <li><strong>Days 2 and 3:</strong> the Read Like a Writer responses on a sentence from the book</li>
+        <li><strong>Fluency:</strong> a recording of the opening of Chapter 1</li>
+        <li><strong>Check-In:</strong> at the end of the week</li>
+      </ul>
+      <p class="small" style="margin-top:10px;"><strong>Done well looks like:</strong> answers that use Isaac’s own words as evidence, and a final moment that sounds like your student telling it from the inside.</p>
+    </section>
+    <section class="card">
+      <div class="card-head"><span class="ico">🏡</span><h2>Try at Home</h2><span class="tag">5 minutes</span></div>
+      <ul class="check">
+        <li><strong>Find Mississippi on a map</strong> and the area that was the Choctaw Nation. Then find Oklahoma, where the Choctaw Nation has its headquarters today.</li>
+        <li><strong>Tell your student a moment from your own childhood</strong>, from the inside. It’s a model for Day 2’s draft.</li>
+        <li><strong>Hunt the roots</strong> around the house: a <em>memo</em>, a <em>memory</em> card, a <em>script</em> for a play.</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- NEED -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🎒</span><h2>Have on Hand</h2></div>
+    <p><strong><em>How I Became a Ghost</em></strong> by Tim Tingle · <strong>A device that records audio</strong> for the fluency reading</p>
+  </section>
+
+  <!-- NEXT WEEK -->
+  <section class="card next">
+    <div class="card-head"><span class="ico">🔭</span><h2>Coming Up in Week 19</h2></div>
+    <p><strong><em>How I Became a Ghost</em>, Chapters 8–11.</strong> Sickness comes to the swamp camp, and the long walk west begins in winter. Isaac meets Nita, a little girl who becomes like a sister to him. These are some of the hardest chapters in the book; the <a href="parent-guide-hbg-unit.html" style="color:#fff;font-weight:700;">unit guide</a> has details. Grammar moves to <strong>strong verbs and active voice</strong>, spelling to the suffix <strong>-ive</strong>, the root is <strong>anim</strong>, and Writer’s Workshop builds a scene of <strong>conflict and rising action</strong>.</p>
+  </section>
+
+  <p class="foot"><a href="parent-guide-hbg-unit.html" style="color:#1F6FA8;font-weight:700;">See the whole How I Became a Ghost unit →</a><br><br>Optima Academy Online · 5th Grade ELA · Week 18 Family Guide<br>Questions? Reach out to your student’s teacher anytime.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How I Became a Ghost Unit Guide · 5th Grade ELA · Optima Academy Online</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+:root{
+  --navy:#0E1C42; --ink:#3A4A6B; --muted:#5E6C8C; --line:#E2E8F4;
+  --sky-bg:#EAF8FD; --gold:#C7922C; --gold-bg:#FFF3DC;
+  --green-bg:#E3F8ED; --plum-bg:#F1ECFA; --rose-bg:#FDEEEE;
+  --paper:#FAFBFF; --cream:#FFF8F0;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:"Nunito",sans-serif;font-size:18px;line-height:1.6;}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 48px;}
+h1,h2,h3{font-family:"Lora",Georgia,serif;color:var(--navy);margin:0;}
+p{margin:0 0 10px;}
+strong{color:var(--navy);}
+a{color:#1F6FA8;font-weight:700;}
+
+.hero{background:var(--navy);color:#fff;border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1.3fr 1fr;}
+.hero-text{padding:28px 28px 26px;}
+.brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#BFD0EE;margin-bottom:14px;}
+.brand img{width:38px;height:38px;border-radius:50%;background:#fff;}
+.hero h1{color:#fff;font-size:34px;line-height:1.2;margin-bottom:6px;}
+.hero .sub{font-size:19px;color:#DCE6F7;margin-bottom:16px;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 13px;font-size:16px;font-weight:700;color:#fff;}
+.hero-art{background:#F5E6C8 center/cover no-repeat;min-height:250px;}
+.print-btn{display:inline-block;margin-top:16px;background:var(--gold);color:#fff;border:none;border-radius:999px;padding:9px 18px;font-family:"Nunito",sans-serif;font-weight:800;font-size:16px;cursor:pointer;}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-top:18px;}
+.card-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap;}
+.card-head .ico{font-size:26px;line-height:1;}
+.card-head h2{font-size:24px;}
+.card-head .tag{margin-left:auto;font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+.small{font-size:16px;color:var(--muted);}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.box-label{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.b-sky{background:var(--sky-bg);} .b-sky .box-label{color:#1F8CB0;}
+.b-gold{background:var(--gold-bg);} .b-gold .box-label{color:#9A6C14;}
+.b-green{background:var(--green-bg);} .b-green .box-label{color:#1F8452;}
+.b-plum{background:var(--plum-bg);} .b-plum .box-label{color:#6A4FA3;}
+.b-rose{background:var(--rose-bg);} .b-rose .box-label{color:#A8434A;}
+.quote{font-family:"Lora",Georgia,serif;font-style:italic;font-size:20px;color:var(--navy);border-left:4px solid var(--gold);padding:4px 0 4px 16px;margin:14px 0 0;}
+.quote small{display:block;font-family:"Nunito",sans-serif;font-style:normal;font-size:15px;color:var(--muted);margin-top:4px;}
+
+/* rhythm */
+.rhythm{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px;}
+.rhythm div{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center;font-size:16px;}
+.rhythm b{display:block;font-family:"Lora",Georgia,serif;font-size:19px;color:var(--navy);}
+.routines{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;}
+.routines li{padding-left:30px;position:relative;font-size:17px;}
+.routines li span{position:absolute;left:0;top:0;}
+
+/* week map */
+.weeks{display:grid;gap:12px;}
+.wk{display:grid;grid-template-columns:96px 1fr;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+.wk-n{background:var(--navy);color:#fff;text-align:center;padding:14px 6px;display:flex;flex-direction:column;justify-content:center;}
+.wk-n b{font-family:"Lora",Georgia,serif;font-size:30px;line-height:1;}
+.wk-n span{font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#BFD0EE;margin-top:4px;}
+.wk-body{padding:14px 18px;}
+.wk-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-bottom:4px;}
+.wk-ch{font-weight:900;color:var(--navy);font-size:18px;}
+.theme{font-size:14px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#1F8452;background:var(--green-bg);border-radius:999px;padding:2px 10px;}
+.wk-sum{margin:2px 0 8px;}
+.skills{display:flex;flex-wrap:wrap;gap:6px;}
+.sk{font-size:15px;font-weight:700;border-radius:8px;padding:3px 9px;background:var(--paper);border:1px solid var(--line);}
+.sk i{font-style:normal;color:var(--muted);font-weight:800;margin-right:4px;}
+.wk-link{display:inline-block;margin-top:8px;font-size:16px;}
+.wk-soon{display:inline-block;margin-top:8px;font-size:15px;color:var(--muted);font-weight:700;}
+
+/* writing path */
+.path{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;margin-top:6px;}
+.step{text-align:center;border-radius:10px;padding:10px 4px;background:var(--plum-bg);font-size:15px;}
+.step b{display:block;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#6A4FA3;}
+.step.draft{background:var(--gold-bg);} .step.draft b{color:#9A6C14;}
+.step.pub{background:var(--green-bg);} .step.pub b{color:#1F8452;}
+
+.poem{font-family:"Lora",Georgia,serif;font-size:22px;line-height:1.9;color:var(--navy);background:var(--plum-bg);border-radius:12px;padding:16px 22px;}
+.poem small{display:block;font-family:"Nunito",sans-serif;font-size:15px;color:var(--muted);line-height:1.4;margin-top:6px;}
+
+.check{list-style:none;margin:0;padding:0;}
+.check li{padding:7px 0 7px 34px;position:relative;}
+.check li::before{content:"✓";position:absolute;left:4px;top:6px;color:#34B76F;font-weight:900;font-size:19px;}
+.dont li::before{content:"✗";color:#C0545C;}
+
+.books{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.book{border:1px solid var(--line);border-radius:12px;padding:12px 16px;}
+.book b{font-family:"Lora",Georgia,serif;font-size:19px;color:var(--navy);display:block;}
+.book span{font-size:16px;}
+
+.pending{border:2px dashed var(--gold);background:var(--cream);}
+.foot{text-align:center;font-size:15px;color:var(--muted);margin-top:26px;}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;}
+  .hero-art{min-height:180px;order:-1;}
+  .grid2,.grid3,.books,.routines{grid-template-columns:1fr;}
+  .rhythm{grid-template-columns:1fr 1fr;}
+  .path{grid-template-columns:repeat(4,1fr);}
+  .wk{grid-template-columns:72px 1fr;}
+  .wk-n b{font-size:24px;}
+}
+@media print{
+  body{background:#fff;font-size:15px;}
+  .wrap{padding:0;}
+  .print-btn{display:none;}
+  .card,.wk{break-inside:avoid;}
+  .card{margin-top:12px;padding:14px 16px;}
+  .hero,.wk-n{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+
+/* lesson mechanics */
+.howto{background:var(--cream);border:1px solid #F5E6C8;border-radius:16px;padding:18px 22px;margin-top:18px;}
+.howto h2{font-size:21px;margin-bottom:10px;}
+.howto ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 22px;}
+.howto li{position:relative;padding-left:32px;font-size:17px;line-height:1.5;}
+.howto li span{position:absolute;left:0;top:0;font-size:20px;}
+@media (max-width:760px){.howto ul{grid-template-columns:1fr;}}
+@media print{.howto{break-inside:avoid;}}
+
+.path5{grid-template-columns:repeat(5,1fr);}
+@media (max-width:760px){.path5{grid-template-columns:repeat(5,1fr);} .path5 .step{font-size:13px;}}
+.poem small{display:block;font-family:"Nunito",sans-serif;font-size:15px;color:var(--muted);line-height:1.4;margin-top:6px;}
+.path7{grid-template-columns:repeat(7,1fr);}
+@media (max-width:760px){.path7{grid-template-columns:repeat(2,1fr);}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="hero-text">
+      <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy Online">Family Guide · 5th Grade ELA</div>
+      <h1>Unit: How I Became a Ghost</h1>
+      <div class="sub">Weeks 18–24 · 29 chapters · Tim Tingle</div>
+      <div class="chips">
+        <span class="chip">7 weeks</span>
+        <span class="chip">28 lessons</span>
+        <span class="chip">A weekly Check-In</span>
+        <span class="chip">A writing piece every week</span>
+        <span class="chip">Ends with a real-history comparison</span>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨️ Print this guide</button>
+    </div>
+    <div class="hero-art" style="background-image:url('assets/art/hbg/catlin-ball-play.jpg');background-position:center 40%;" role="img" aria-label="George Catlin's painting of a huge Choctaw stickball game, 1834–35"></div>
+  </header>
+
+  <!-- HOW THE LESSON PAGES WORK -->
+  <section class="howto">
+    <h2>🧭 How the Lesson Pages Work</h2>
+    <ul>
+      <li><span>🗂️</span><strong>Four tabs, in order:</strong> Warm-Up → Word Study → Reading → Assignment. A button at the bottom of each tab moves to the next.</li>
+      <li><span>🎧</span><strong>A short Listen clip at the top of each tab</strong> says what to do. “Read the words instead” shows the same words on screen.</li>
+      <li><span>💾</span><strong>Answers save as you type</strong>, but only in that browser on that computer. Switching computers or clearing the browser loses them.</li>
+      <li><span>📄</span><strong>Copy or Download as PDF</strong> at the bottom of the Assignment tab gathers the day’s work. Use it to <strong>submit in Canvas</strong>. A lesson isn’t turned in until it’s submitted there.</li>
+      <li><span>💡</span><strong>Check My Answers and hints</strong> give instant feedback. A hint points back to the rule instead of just saying “try again.”</li>
+      <li><span>🎙️</span><strong>Fluency is a separate page</strong> in the Canvas module, because recording doesn’t work inside a lesson. Keep the novel nearby.</li>
+    </ul>
+  </section>
+
+  <!-- ABOUT THE BOOK -->
+  <section class="card">
+    <div class="card-head"><span class="ico">📕</span><h2>About the Book</h2></div>
+    <p><em>How I Became a Ghost: A Choctaw Trail of Tears Story</em> is by Tim Tingle, a storyteller and member of the Choctaw Nation of Oklahoma, and it won the American Indian Youth Literature Award. Isaac is a ten-year-old Choctaw boy in Mississippi. On the first page he tells the reader that he is a ghost, and that he was not a ghost when the book began. Then he tells how it happened, as his family is forced to leave their home and walk west.</p>
+    <p>Isaac and his friends are made up, but the history around them is real. After the Treaty of Dancing Rabbit Creek in 1830, the United States removed the Choctaw people from their homeland in Mississippi to Indian Territory, now Oklahoma, in three groups from 1831 to 1833. Nearly 15,000 Choctaws made the move, and historians estimate about 2,500 died along the way, many in bitter winter weather and a cholera epidemic in 1832. About 5,000–6,000 Choctaws stayed in Mississippi; the Mississippi Band of Choctaw Indians lives there today.</p>
+    <p>We read it because it lets fifth graders see a hard chapter of American history through a child’s eyes, told by a Choctaw author, with a family that loves each other, a talking dog, and real humor alongside the sorrow.</p>
+    <p class="quote">“I am a ghost. I am not a ghost when this book begins, so you have to pay very close attention.”<small>Isaac, Chapter 1</small></p>
+  </section>
+
+  <!-- STORY VS HISTORY -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🧭</span><h2>Story and History: What’s What</h2></div>
+    <div class="grid2">
+      <div class="box b-sky"><div class="box-label">Choctaw storytelling</div>Isaac sees ghosts and visions, his dog Jumper talks, and his friend Joseph can become a panther. These come from the Choctaw storytelling tradition Tim Tingle grew up with. Your student reads them as part of the story, the way they would a myth or legend.</div>
+      <div class="box b-gold"><div class="box-label">The blankets</div>In the novel, the soldiers’ blankets carry smallpox, and Isaac’s mother keeps her family away from them. That is part of Tingle’s story. The history sources we checked record that most of the Choctaws who died on removal died of cold and disease, including cholera, and don’t describe infected blankets. The lessons keep the two apart, and Week 24 is built around comparing the novel with real history.</div>
+    </div>
+  </section>
+
+  <!-- HOW A WEEK WORKS -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🗓️</span><h2>How a Week Works</h2></div>
+    <p>Every week has four lessons, one fluency reading, and a Check-In. Each lesson follows the same path, so your student always knows what comes next. Across the four days, the grammar and word skills build:</p>
+    <div class="rhythm">
+      <div><b>Day 1</b>Notice: work out the rule</div>
+      <div><b>Day 2</b>Identify: find and sort</div>
+      <div><b>Day 3</b>Use: build it yourself</div>
+      <div><b>Day 4</b>Explain: say why it works</div>
+    </div>
+    <ul class="routines">
+      <li><span>📚</span><strong>What Good Readers Do:</strong> one reading habit to try in the chapters</li>
+      <li><span>✏️</span><strong>Daily Oral Language:</strong> fix a sentence, often from the book</li>
+      <li><span>🌱</span><strong>Word study:</strong> a Latin root, a spelling pattern, and vocabulary from the chapters</li>
+      <li><span>🧩</span><strong>Grammar:</strong> one sentence skill each week, practiced with sentences from the book</li>
+      <li><span>🪶</span><strong>Poetry Corner:</strong> a short classic poem on Days 2 and 4</li>
+      <li><span>✅</span><strong>Virtue Watch:</strong> courage, perseverance or justice, found in the chapter</li>
+      <li><span>📖</span><strong>Read Like a Writer:</strong> one sentence from the book to notice and try</li>
+      <li><span>🪨</span><strong>Stones in the River:</strong> the unit’s word game</li>
+      <li><span>🖼️</span><strong>Real pictures:</strong> old maps, paintings and photos of the places in the story</li>
+      <li><span>🎙️</span><strong>Fluency:</strong> a short passage read three times, then recorded</li>
+    </ul>
+  </section>
+
+  <!-- WEEK MAP -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🗺️</span><h2>The Unit, Week by Week</h2></div>
+    <div class="weeks">
+      <div class="wk"><div class="wk-n"><b>18</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Chapters 1–7</span><span class="theme">A ghost tells the story</span></div>
+        <p class="wk-sum">Treaty Talk comes to Isaac’s town. The old people say goodbye to the river, men burn the town at night, and the family hides on an island in a swamp. Then a snowball fight.</p>
+        <div class="skills"><span class="sk"><i>Reading</i>history and the narrator’s voice</span><span class="sk"><i>Grammar</i>appositives, precise nouns</span><span class="sk"><i>Spelling</i>open &amp; closed syllables</span><span class="sk"><i>Roots</i>mem/memor, script</span></div>
+        <a class="wk-link" href="parent-guide-week-18.html">Open the Week 18 guide →</a>
+      </div></div>
+      <div class="wk"><div class="wk-n"><b>19</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Chapters 8–11</span><span class="theme">The walk begins</span></div>
+        <p class="wk-sum">Sickness comes to the swamp camp, and the long walk west begins in winter. Isaac’s family travels with Gabe, Ruth and their five-year-old daughter, Nita.</p>
+        <div class="skills"><span class="sk"><i>Grammar</i>strong verbs, active voice</span><span class="sk"><i>Spelling</i>-ive</span><span class="sk"><i>Roots</i>anim</span><span class="sk"><i>Writing</i>conflict and rising action</span></div>
+        <span class="wk-soon">Weekly guide comes with the week</span>
+      </div></div>
+      <div class="wk"><div class="wk-n"><b>20</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Chapters 12–15</span><span class="theme">A secret comes out</span></div>
+        <p class="wk-sum">The walkers grieve for Nita, and her parents tell a secret: soldiers took their older daughter, Naomi. Joseph, Old Man’s grandson, has seen where she is held.</p>
+        <div class="skills"><span class="sk"><i>Grammar</i>commas with clauses, transitions</span><span class="sk"><i>Spelling</i>accent shifts</span><span class="sk"><i>Roots</i>path</span><span class="sk"><i>Writing</i>a theme paragraph</span></div>
+        <span class="wk-soon">Weekly guide comes with the week</span>
+      </div></div>
+      <div class="wk"><div class="wk-n"><b>21</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Chapters 16–19</span><span class="theme">How Isaac became a ghost</span></div>
+        <p class="wk-sum">Isaac and Joseph plan to free Naomi. Isaac says goodbye to his family, and in Chapter 18 he becomes a ghost, one who can now help Naomi in ways the living can’t.</p>
+        <div class="skills"><span class="sk"><i>Grammar</i>compound &amp; complex sentences</span><span class="sk"><i>Spelling</i>homophones</span><span class="sk"><i>Roots</i>vis/vid</span><span class="sk"><i>Writing</i>revising with imagery</span></div>
+        <span class="wk-soon">Weekly guide comes with the week</span>
+      </div></div>
+      <div class="wk"><div class="wk-n"><b>22</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Chapters 20–23</span><span class="theme">The rescue</span></div>
+        <p class="wk-sum">Ghost Isaac finds Naomi. Joseph, as the panther, sets the soldiers’ camp on fire, and Naomi hides in the wagon of the bonepickers.</p>
+        <div class="skills"><span class="sk"><i>Grammar</i>pronoun clarity</span><span class="sk"><i>Spelling</i>Greek &amp; Latin roots</span><span class="sk"><i>Roots</i>luc/lum</span><span class="sk"><i>Writing</i>drafting a literary analysis</span></div>
+        <span class="wk-soon">Weekly guide comes with the week</span>
+      </div></div>
+      <div class="wk"><div class="wk-n"><b>23</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Chapters 24–27</span><span class="theme">Stronger together</span></div>
+        <p class="wk-sum">Soldiers search every camp for Naomi. The Choctaws stand together: “We are Choctaws. We are stronger than the soldiers.”</p>
+        <div class="skills"><span class="sk"><i>Grammar</i>editing, sentence combining</span><span class="sk"><i>Spelling</i>word analysis in your draft</span><span class="sk"><i>Roots</i>voc/voke</span><span class="sk"><i>Writing</i>publish</span></div>
+        <span class="wk-soon">Weekly guide comes with the week</span>
+      </div></div>
+      <div class="wk"><div class="wk-n"><b>24</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Chapters 28–29 + real history</span><span class="theme">Story meets history</span></div>
+        <p class="wk-sum">The panther and the wolf, and Naomi home with her family. Then your student compares the novel with a historical source.</p>
+        <div class="skills"><span class="sk"><i>Grammar</i>formal style, source transitions</span><span class="sk"><i>Words</i>the vocabulary of history</span><span class="sk"><i>Writing</i>claim, evidence, reasoning</span></div>
+        <span class="wk-soon">Weekly guide comes with the week</span>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section class="card">
+    <div class="card-head"><span class="ico">✍️</span><h2>Your Student’s Writing</h2><span class="tag">Writer’s Workshop</span></div>
+    <p>Each week your student plans, drafts, works on and turns in one piece, Day 1 to Day 4. The pieces grow from personal writing toward writing about the book and about history.</p>
+    <div class="path path7">
+      <div class="step"><b>Wk 18</b>A moment from the inside</div>
+      <div class="step"><b>Wk 19</b>A scene of conflict</div>
+      <div class="step draft"><b>Wk 20</b>A theme paragraph</div>
+      <div class="step draft"><b>Wk 21</b>Revise with imagery</div>
+      <div class="step draft"><b>Wk 22</b>Literary analysis draft</div>
+      <div class="step pub"><b>Wk 23</b>Publish</div>
+      <div class="step pub"><b>Wk 24</b>Novel vs. history</div>
+    </div>
+    <p class="small" style="margin-top:12px;">The writing boxes save in the browser on the computer your student uses, so <strong>if your student switches computers, help them keep a copy somewhere else too</strong> (a document or a printout).</p>
+  </section>
+
+  <!-- POETRY -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🪶</span><h2>Poetry Corner</h2></div>
+    <p>On Days 2 and 4, your student reads a short classic poem (Emily Dickinson and Robert Frost in Week 18) and learns to tell the <strong>speaker</strong>, the voice inside the poem, from the poet who wrote it. It’s the same idea as the novel: Isaac tells the story, but Tim Tingle wrote it. Reading the poems aloud together takes two minutes and helps a lot.</p>
+  </section>
+
+  <!-- HOW WORK IS CHECKED -->
+  <section class="card">
+    <div class="card-head"><span class="ico">📋</span><h2>How Learning Is Checked</h2></div>
+    <div class="grid3">
+      <div class="box b-sky"><div class="box-label">Every lesson</div>Chapter questions answered with evidence from the book, plus word-study and writing responses, submitted in Canvas.</div>
+      <div class="box b-gold"><div class="box-label">Every week</div>A fluency recording, plus a <strong>Check-In</strong> in Canvas covering grammar, word parts, spelling, reading, and short writing.</div>
+      <div class="box b-green"><div class="box-label">End of unit</div>In Week 24, your student compares the novel with a historical source, using a claim, evidence and reasoning.</div>
+    </div>
+  </section>
+
+  <!-- HEADS UP -->
+  <section class="card">
+    <div class="card-head"><span class="ico">💛</span><h2>Good to Know Ahead of Time</h2></div>
+    <p class="small">This book is about a forced removal, and people die in it, including the narrator. It is written for young readers and never lingers, but it doesn’t look away either. It’s fine to say “that’s a hard part of history” and talk it through. Here is where the hardest parts fall, so nothing surprises you.</p>
+    <div class="grid2">
+      <div class="box b-rose"><div class="box-label">Week 18 · Chapters 1–7</div>Old people say goodbye to their land in painful ways. Men with torches burn the town at night; Isaac’s hair catches fire, and a man fires a shotgun at the family. Soldiers hand out blankets.</div>
+      <div class="box b-rose"><div class="box-label">Week 19 · Chapters 8–11</div>Smallpox spreads through the swamp camp, and people Isaac knows die. On the walk, in freezing rain, Isaac’s feet are cut and bleeding. At the end of the week, five-year-old Nita dies in the cold.</div>
+      <div class="box b-rose"><div class="box-label">Week 20 · Chapters 12–15</div>Nita’s mother carries her body as the walk goes on. Nita’s parents reveal that soldiers took their twelve-year-old daughter, Naomi, to cook for them, and knocked her father down when he tried to stop them.</div>
+      <div class="box b-rose"><div class="box-label">Week 21 · Chapter 18</div>A wolf attacks and kills Isaac. It is told briefly but plainly, in his own voice. From here on, Isaac narrates as a ghost. It may help to read this chapter together or check in afterward.</div>
+      <div class="box b-plum"><div class="box-label">Week 22 · The bonepickers</div>The book describes the bonepickers, who in Choctaw tradition cared for the bodies of the dead and cleaned their bones. Naomi hides in their wagon.</div>
+      <div class="box b-plum"><div class="box-label">Weeks 23–24 · The ending</div>Soldiers threaten the Choctaw camps with shotguns, and the panther fights the wolf. The book ends with Naomi safe with her family.</div>
+    </div>
+  </section>
+
+  <!-- HOW TO HELP -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🤝</span><h2>How to Help (Without Doing It for Them)</h2></div>
+    <div class="grid2">
+      <div>
+        <h3 style="font-size:19px;margin-bottom:6px;">Try this</h3>
+        <ul class="check">
+          <li>Ask “Where in the book does it say that?” when your student answers a question.</li>
+          <li>Ask “Is that the story or the history?” It’s the question the whole unit builds toward.</li>
+          <li>Ask the questions in each weekly guide. Talking it through first makes the writing easier.</li>
+          <li>Be the audience for the fluency reading and the finished writing.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:19px;margin-bottom:6px;">Try to avoid</h3>
+        <ul class="check dont">
+          <li>Typing or wording answers for them. Teachers need to see your student’s own thinking.</li>
+          <li>Fixing their drafts. Revising is a lesson of its own.</li>
+          <li>Telling them what happens next. Isaac promises a ghost story; let him tell it.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKSHELF -->
+  <section class="card">
+    <div class="card-head"><span class="ico">📚</span><h2>Family Bookshelf</h2><span class="tag">Optional</span></div>
+    <p class="small">For students who want more, or for reading aloud together. Please preview first.</p>
+    <div class="books">
+      <div class="book"><b>When a Ghost Talks, Listen</b><span>Tim Tingle (2018). The sequel: Isaac’s story continues on the walk west.</span></div>
+      <div class="book"><b>Crossing Bok Chitto</b><span>Tim Tingle. A picture book about a Choctaw girl in Mississippi who helps an enslaved family cross the river to freedom.</span></div>
+      <div class="book"><b>Saltypie</b><span>Tim Tingle. A picture book about the author’s own Choctaw family and his grandmother.</span></div>
+      <div class="book"><b>The Birchbark House</b><span>Louise Erdrich. An Ojibwe girl’s year in 1847, with the seasons, her family, and a smallpox epidemic.</span></div>
+    </div>
+  </section>
+
+  <p class="foot">Optima Academy Online · 5th Grade ELA · How I Became a Ghost Unit Family Guide<br>Questions? Reach out to your student’s teacher anytime.</p>
+</div>
+</body>
+</html>
