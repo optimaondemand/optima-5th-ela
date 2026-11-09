@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – G5 ELA {{CANVAS}}</title>
+<!--
+  {{HEADCOMMENT}}
+  Built by tools/vr/build_vr.py from tools/vr/week{{WEEK}}.json. Edit the JSON, not this file.
+-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0E1C42;--gold:#C7922C;--cream:#FFF3DC;--paper:#FFFDF7;--ink:#2B1D12;--soft:#4F5A73;--edge:#EBD9AF;--rose:#B5476B;--teal:#1F6F78;--green:#2F7A55;--red:#C8553D}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',Verdana,sans-serif;background:#F3EEE4;color:var(--ink);line-height:1.6}
+.wrap{max-width:920px;margin:0 auto;background:#FBF8F2;min-height:100vh;box-shadow:0 0 40px rgba(43,29,18,.06);overflow:hidden}
+img{max-width:100%}button{font-family:inherit}
+h2,h3,.hd-title{font-family:'Lora',Georgia,serif}
+.hd{background:linear-gradient(135deg,#0E1C42,#1B2C5E 60%,#0E1C42);border-bottom:5px solid var(--gold);padding:14px 22px;display:flex;align-items:center;gap:14px}
+.hd-logo{width:46px;height:46px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hd-logo img{width:40px;height:32px}
+.hd-org{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:#C9D2EE;font-weight:800}
+.hd-title{font-size:25px;color:#fff;font-weight:700;line-height:1.2}
+.hd-sub{font-size:13px;color:#C9D2EE;margin-top:3px;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.hd-sub b{color:#fff}
+.wk{background:var(--cream);color:var(--navy);font-weight:900;font-size:11px;letter-spacing:1px;padding:2px 8px;border-radius:4px;transform:rotate(-2deg);display:inline-block}
+.banner{border-bottom:4px solid var(--gold);background:#F6D7C3;line-height:0}
+.banner svg{width:100%;height:auto;display:block}
+main{padding:22px 22px 40px}
+.card{background:var(--paper);border:2px solid #EADFCB;border-radius:18px;box-shadow:0 2px 12px rgba(43,29,18,.06);margin:0 0 22px}
+.card-pad{padding:18px 22px}
+.kicker{font-size:11px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase;color:#8A6420}
+h2{font-size:23px;color:var(--navy);line-height:1.25;margin:2px 0 8px;font-weight:700}
+h3{font-size:19px;color:var(--navy);margin:0 0 6px;font-weight:700}
+p{font-size:17px;color:var(--soft);line-height:1.7;margin-bottom:10px}
+p:last-child{margin-bottom:0}
+.media{margin:0 0 18px}
+.vslot-ph{display:none}html.review .vslot-ph.on{display:block;border:2px dashed #C9B489;border-radius:12px;padding:10px 14px;font-size:13px;color:#7A6A55;margin-bottom:10px}
+.vid video{width:100%;border-radius:12px;display:block;background:#000}
+.cc-btn{margin-top:6px;background:#fff;border:1.5px solid #C9B489;border-radius:999px;padding:3px 12px;font-weight:800;font-size:12px;cursor:pointer}
+.cc-btn[aria-pressed="true"]{background:var(--navy);color:#fff}
+/* guide clip */
+.radio{display:flex;gap:14px;align-items:center;background:var(--cream);border:1.5px solid var(--edge);border-radius:14px;padding:10px 14px}
+.radio.hidden{display:none}
+.av{width:62px;height:62px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font:900 22px 'Nunito',sans-serif;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.35),rgba(255,255,255,0) 62%),var(--avc);border:3px solid #fff;box-shadow:0 0 0 2px var(--avc),0 3px 8px rgba(0,0,0,.18);position:relative}
+.radio.playing .av::after{content:'';position:absolute;inset:-8px;border-radius:50%;border:3px solid var(--gold);animation:ring 1.3s ease-out infinite}
+@keyframes ring{from{opacity:.9;transform:scale(.92)}to{opacity:0;transform:scale(1.18)}}
+.r-body{flex:1;min-width:0}
+.r-who{font:900 12px 'Nunito',sans-serif;color:#8A6420;text-transform:uppercase;letter-spacing:.8px}
+.r-label{font-size:16px;font-weight:900;color:var(--navy);margin:1px 0 5px}
+.r-ctl{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.r-play{background:var(--navy);color:#fff;border:0;border-radius:999px;padding:6px 14px;font:800 14px 'Nunito',sans-serif;cursor:pointer}
+.r-read{background:none;border:0;color:#8A6420;font:800 13px 'Nunito',sans-serif;text-decoration:underline;cursor:pointer}
+.r-tr{display:none;margin-top:8px;font-size:16px;line-height:1.6;background:rgba(255,255,255,.7);border-radius:10px;padding:8px 12px}
+.r-tr.open{display:block}
+.radio.playing .r-tr span:not(.said):not(.now){color:#9C8C70}
+.r-tr span.now{background:#FFE08A;border-radius:4px;box-shadow:0 0 0 2px #FFE08A}
+/* postcard */
+.postcard{display:grid;grid-template-columns:1.25fr .9fr;gap:0;background:#FFFBF1;border:2px solid #E5D3AE;border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(43,29,18,.10);transform:rotate(-.6deg);margin:0 0 22px}
+.pc-l{padding:18px 22px;border-right:2px dashed #D9C49A}
+.pc-l p{font-family:'Lora',Georgia,serif;font-style:italic;color:#3D2E1E;font-size:18px}
+.pc-sign{font-family:'Lora',Georgia,serif;font-style:italic;font-weight:700;color:var(--rose);font-size:20px;text-align:right}
+.pc-r{padding:16px 18px;display:flex;flex-direction:column;gap:12px;background:repeating-linear-gradient(0deg,#FFFBF1 0 30px,#EFE3CA 30px 31px)}
+.pc-stamp{align-self:flex-end;width:74px;height:88px;border:3px dotted #C9B489;background:#F7E7E1;display:flex;align-items:center;justify-content:center;transform:rotate(4deg)}
+.pc-word{background:#fff;border-left:4px solid var(--gold);border-radius:8px;padding:8px 12px;font-size:15px;color:var(--soft)}
+.pc-word b{color:var(--navy)}
+.pc-l blockquote{font-family:'Lora',Georgia,serif;font-style:italic;font-size:19px;color:var(--navy);border-left:4px solid var(--gold);padding:4px 0 4px 12px;margin:4px 0 12px}
+.pc-l blockquote cite{display:block;font-style:normal;font-family:'Nunito',sans-serif;font-size:13px;color:#8A6420;margin-top:2px}
+.journal{background:repeating-linear-gradient(0deg,#FFFBF1 0 30px,#EFE3CA 30px 31px)}
+/* path bar */
+.pathbar{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 22px}
+.pb{display:flex;gap:12px;align-items:center;text-align:left;border:2.5px solid #E2D6C4;background:#fff;border-radius:16px;padding:12px 14px;cursor:pointer;color:var(--ink)}
+.pb:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.pb-ic{font-size:30px}
+.pb-t b{display:block;font-size:17px;color:var(--navy)}
+.pb-t small{display:block;font-size:13.5px;color:var(--soft);line-height:1.35}
+.pb[aria-pressed="true"]{border-color:var(--navy);background:var(--navy)}
+.pb[aria-pressed="true"] b{color:#fff}.pb[aria-pressed="true"] small{color:#D6DEF2}
+.alt{display:none}body.path-alt .alt{display:block}body.path-alt .vr-only{display:none}
+/* mission */
+.mission-top{display:flex;gap:14px;align-items:center;padding:18px 22px;border-bottom:2px solid #EFE6D3}
+.mission-ic{font-size:40px}
+.peek{margin-left:auto;text-align:center;flex-shrink:0}
+.peek small{display:block;font-size:12px;font-weight:800;color:#8A6420;line-height:1.2}
+.peek svg{width:70px;height:70px}
+.mission-body{padding:18px 22px}
+.jobline{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;background:#F4F7FD;border:1.5px solid #CBD6EE;border-radius:12px;padding:8px 12px;margin:0 0 12px;font-size:15px}
+.job-k{font-weight:900;color:var(--navy);text-transform:uppercase;font-size:11.5px;letter-spacing:1px;margin-right:4px}
+.job-s{font-weight:800;color:var(--navy)}
+.job-s i{font-style:normal;display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--gold);color:#fff;align-items:center;justify-content:center;font-size:12px;margin-right:5px}
+.job-a{color:#9AA6C4}
+.meter{display:flex;align-items:center;gap:10px;margin:0 0 6px}
+.meter-bar{flex:1;height:10px;background:#EDE5D6;border-radius:999px;overflow:hidden}
+.meter-bar i{display:block;height:100%;width:0;background:var(--green);transition:width .3s}
+.meter b{font-size:14px;color:var(--navy)}
+.steps{list-style:none;margin:6px 0 14px}
+.phase{font-weight:900;color:#8A6420;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;margin:16px 0 6px;display:flex;gap:6px;align-items:center}
+.phase:first-child{margin-top:4px}
+.step{display:flex;gap:12px;align-items:flex-start;background:#fff;border:2px solid #EADFCB;border-radius:14px;padding:12px 14px;margin:0 0 10px}
+.step.done{background:#EEF8F0;border-color:#B8E8CF}
+.chk{width:34px;height:34px;flex-shrink:0;border-radius:9px;border:2.5px solid #C9B489;background:#fff;font-weight:900;font-size:18px;color:#fff;cursor:pointer}
+.step.done .chk{background:var(--green);border-color:var(--green)}
+.chk:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.step-n{font-weight:900;color:var(--navy);font-size:15px}
+.step-t{font-size:16.5px;color:#3E4558;line-height:1.6}
+.step-t b{color:var(--navy)}
+.mlist,.road-order,.sub{margin:8px 0 8px 24px;font-size:17px;line-height:1.7}.mlist b{color:var(--navy)}
+.howto{background:#F4F7FD;border:1.5px solid #CBD6EE;border-radius:10px;padding:8px 12px;margin-top:8px;font-size:15px;color:#3E4558}
+.xtag{display:inline-block;background:var(--gold);color:#fff;font-weight:900;font-size:11px;letter-spacing:.8px;border-radius:999px;padding:1px 9px;margin-right:6px;text-transform:uppercase}
+.points{background:#FFF8E6;border:1.5px solid #F2D58E;border-radius:12px;padding:10px 14px;margin:12px 0;font-size:15.5px;color:#5A4D3E}
+.points ul{margin:4px 0 0 20px}
+.done-box{display:none;text-align:center;background:linear-gradient(180deg,#FFFDF7,var(--cream));border:2px solid var(--edge);border-radius:16px;padding:16px 18px;margin-top:12px}
+.done-box.show{display:block}
+.done-box svg.keep{width:120px;height:120px;animation:press .7s ease-out}
+@keyframes press{from{transform:scale(1.4) rotate(-12deg);opacity:0}to{transform:none;opacity:1}}
+/* help drawer */
+.helpdrawer{border:2px solid #CBD6EE;border-radius:14px;background:#F8FAFE;margin:12px 0}
+.helpdrawer summary{list-style:none;display:flex;gap:10px;align-items:center;padding:10px 14px;cursor:pointer}
+.helpdrawer summary::-webkit-details-marker{display:none}
+.helpdrawer summary b{display:block;color:var(--navy)}.helpdrawer summary small{display:block;color:var(--soft);font-size:13px}
+.hd-ic{font-size:24px}.hd-chev{margin-left:auto;transition:transform .2s}.helpdrawer[open] .hd-chev{transform:rotate(180deg)}
+.hd-body{padding:4px 14px 14px}
+.hd-frame{position:relative;padding-top:56.25%;background:#0E1C42;border-radius:10px;overflow:hidden}
+.hd-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.hd-cap{font-size:13px;text-align:center;margin-top:4px}
+.hd-note{font-size:14.5px;background:#FFF8E6;border-radius:8px;padding:6px 10px;margin:10px 0}
+.hd-group{font-size:15px;color:var(--navy);margin:14px 0 6px}
+.hd-steps{list-style:none}
+.hd-step{display:grid;grid-template-columns:200px 1fr;gap:12px;align-items:start;background:#fff;border:1.5px solid #E2E8F4;border-radius:10px;padding:8px;margin-bottom:8px}
+.hd-step img{width:100%;border-radius:6px;border:1px solid #DDD}
+.hd-step b{color:var(--navy)}.hd-step p{font-size:14.5px;margin:2px 0 0}
+.hd-n{display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--navy);color:#fff;font-size:12px;font-weight:900;align-items:center;justify-content:center;margin-right:6px}
+.hd-alt{font-size:14.5px}
+/* field notes day */
+.alt-note{display:flex;gap:10px;align-items:center;background:#F4F7FD;border-radius:10px;padding:8px 12px;font-size:14.5px;color:#3E4558;margin-top:12px}
+.msg{display:none;margin:10px 0;padding:8px 12px;border-radius:10px;font-weight:700;font-size:15.5px;background:#FDECEA;color:#8A2E22}
+.msg.show{display:block}.msg.ok{background:#EEF8F0;color:#1a6b35}
+.bmark{display:none;margin:12px auto 0;text-align:center}.bmark.show{display:block}
+.bmark svg{width:110px;height:110px;animation:press .7s ease-out}
+.bmark b{display:block;color:var(--navy)}
+.write-q{font-size:17px;color:#3E4558}
+textarea.answer{width:100%;min-height:150px;border:2px solid #E2D6C4;border-radius:12px;padding:10px 12px;font:16.5px/1.6 'Nunito',sans-serif;margin-top:8px;resize:vertical}
+textarea.answer:focus{outline:none;border-color:var(--gold)}
+.counter{font-size:14px;font-weight:800;color:#8A6420;margin:4px 0}.counter.met{color:var(--green)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:6px 0}
+.chips .lbl{font-size:13px;font-weight:800;color:#7A6A55}
+.chip{border:1.5px solid #D0C8BE;border-radius:999px;padding:2px 10px;font-size:13.5px;font-weight:800;color:#7A6A55;background:#fff}
+.chip.on{background:#EEF8F0;border-color:#34B76F;color:#1a6b35}.chip.on::before{content:'✓ '}
+.help-btn{background:none;border:0;color:#8A6420;font-weight:800;text-decoration:underline;cursor:pointer;font-size:14.5px;margin:4px 0}
+.helps{display:none;background:#FFF8E6;border-radius:10px;padding:8px 14px;font-size:15px}.helps.show{display:block}
+.helps ul{margin:4px 0 0 18px}
+.gathered-card{background:#fff;border:2px solid #CBD6EE;border-radius:18px;overflow:hidden;margin:0 0 22px}
+.gathered-header{display:flex;gap:12px;align-items:center;background:var(--navy);color:#fff;padding:12px 18px}
+.gathered-header .ic{font-size:26px}.gathered-header .k{font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:#C9D2EE;font-weight:800}
+.gathered-header .t{font-family:'Lora',Georgia,serif;font-size:19px;font-weight:700}
+.gathered-body{padding:14px 18px}
+.name-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.name-row label{font-weight:800;color:var(--navy)}
+.name-row input{flex:1 1 200px;border:2px solid #E2D6C4;border-radius:10px;padding:8px 12px;font:16px 'Nunito',sans-serif}
+.name-msg{color:var(--red);font-size:14px;min-height:1em}
+.g-out{white-space:pre-wrap;background:#FAFAF6;border:1px solid #E2E8F4;border-radius:10px;padding:10px 12px;font-size:14px;margin:8px 0;max-height:260px;overflow:auto}
+.btn{border:0;border-radius:999px;padding:10px 18px;font-weight:900;font-size:16px;cursor:pointer;background:var(--navy);color:#fff}
+.btn.green{background:var(--green)}
+.turnin{font-size:15px;margin-top:8px}
+.turn-steps{margin:0 0 0 20px;font-size:16px}.turn-steps li{margin:4px 0}
+.timer-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:10px 0}.timer{font-size:22px;color:var(--navy);font-variant-numeric:tabular-nums}.timer.up{color:var(--red)}
+footer{font-size:12.5px;color:#7A6A55;padding:14px 22px 26px;border-top:1px solid #EADFCB}
+{{GAME_CSS}}
+@media (max-width:700px){.postcard{grid-template-columns:1fr}.pc-l{border-right:0;border-bottom:2px dashed #D9C49A}.groups{grid-template-columns:1fr}.hd-step{grid-template-columns:1fr}.hd-title{font-size:21px}}
+@media (max-width:480px){main{padding:16px 14px 30px}.card-pad,.mission-body,.mission-top{padding:14px}.pathbar{grid-template-columns:1fr}.hd{padding:12px 14px}.peek{display:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hd">
+  <div class="hd-logo"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" /></div>
+  <div>
+    <div class="hd-org">Optima Academy Online · 5th Grade ELA</div>
+    <div class="hd-title">{{TITLE}}</div>
+    <div class="hd-sub"><span class="wk">WEEK {{WEEK}}</span><span>{{BOOK}}, {{CHAPTERS}} · Guide: <b>{{GUIDE}}</b></span></div>
+  </div>
+</header>
+<div class="banner" aria-hidden="true">{{BANNER}}</div>
+<main>
+  <section class="media">
+    <div class="vslot-ph" data-ph="vr">🎥 Teacher video slot: assets/video/teacher/{{PRE}}.mp4 (+ .jpg, .vtt). Hidden from students until the file exists.</div>
+    <div id="vslot-vr"></div>
+    <div class="vr-only"><div class="radio" data-clip="brief" data-label="{{L_BRIEF}}"></div></div>
+  </section>
+
+  <section class="postcard journal" aria-label="{{PC_KICKER}}">
+    <div class="pc-l"><div class="kicker">{{PC_KICKER}}</div><h2>{{PC_H}}</h2>{{PC_BODY}}<div class="pc-sign">{{PC_SIGN}}</div></div>
+    <div class="pc-r"><div class="pc-stamp" aria-hidden="true">{{STAMP_ART}}</div><div class="pc-word">{{PC_WORD}}</div></div>
+  </section>
+
+  <div class="pathbar" role="group" aria-label="Choose how you will do this activity">
+    <button type="button" class="pb" id="pb-vr"><span class="pb-ic">🥽</span><span class="pb-t"><b>Story Expedition</b><small>Use your headset and earn a {{KEEP_NAME}}</small></span></button>
+    <button type="button" class="pb" id="pb-alt"><span class="pb-ic">📓</span><span class="pb-t"><b>No headset today?</b><small>Do Field Notes Day on your computer</small></span></button>
+  </div>
+
+  <section class="card vr-only" id="vr">
+    <div class="mission-top">
+      <div class="mission-ic" aria-hidden="true">🥽</div>
+      <div><div class="kicker">Story Expedition · about {{MINUTES}} minutes</div><h2>{{MISSION_H}}</h2><p>{{MISSION_P}}</p></div>
+      <div class="peek" aria-hidden="true">{{KEEP_ART}}<small>{{KEEP_SHORT}}</small></div>
+    </div>
+    <div class="mission-body">
+      <div class="jobline"><span class="job-k">Your job</span><span class="job-s"><i>1</i>{{JOB}}</span><span class="job-a">→</span><span class="job-s"><i>2</i>Record a 30 second video</span><span class="job-a">→</span><span class="job-s"><i>3</i>Submit it to Canvas</span></div>
+      <div class="meter"><div class="meter-bar"><i id="vr-bar"></i></div><b id="vr-count">0 of 7 steps</b></div>
+      <p style="font-size:15px">Tap the box next to each step when you finish it.</p>
+      <ol class="steps" id="vr-steps">
+        <li class="phase">🖥️ Before you put on your headset</li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 1 done"></button><div><div class="step-n">Step 1 · Know your models</div><div class="step-t">You need these models. In VR, type the first word in the <b>Filter models</b> box.{{GROUPS}}This list is also in VR: open your menu, click the <b>Canvas</b> tab, then pick our assignment.</div></div></li>
+        <li class="phase">🥽 In VR</li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 2 done"></button><div><div class="step-n">Step 2 · Go in</div><div class="step-t"><div class="howto" style="margin:0 0 8px">🔗 <b>First time?</b> Connect Canvas at <a href="https://xr.optimaed.com" target="_blank" rel="noopener">xr.optimaed.com</a> first. See <b>Having trouble in VR?</b> below.</div><ol class="sub"><li>Put on your headset. Open the <b>On-Demand</b> app.</li><li>Click <b>Explore</b>. Type <b>{{MAP_FILTER}}</b> in the <b>Filter environments</b> box.</li><li>Click <b>{{MAP}}</b>, then <b>Begin Solo</b>.</li></ol></div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 3 done"></button><div><div class="step-n">Step 3 · Build it</div><div class="step-t">{{S_BUILD}}<div class="howto">✋ <b>To move a model:</b> grab it with the <b>palm trigger</b> (under your middle finger). Use <b>both</b> palm triggers to make it bigger or smaller.</div></div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 4 done"></button><div><div class="step-n">Step 4 · Practice your 2 sentences</div><div class="step-t">{{S_SAY}}<div class="howto">🗣 {{S_FRAME}}</div></div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 5 done"></button><div><div class="step-n">Step 5 · Earn your {{KEEP_NAME}}</div><div class="step-t"><span class="xtag">VR only</span>{{S_EXTRA}}</div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 6 done"></button><div><div class="step-n">Step 6 · Record and submit</div><div class="step-t"><ol class="sub"><li>Stand back so you can see {{FITS}}.</li><li>Open your menu. Click <b>Library</b>, then <b>Camera</b>, then <b>Video</b>.</li><li>Record. Show your build and say your 2 sentences. Stop by <b>30 seconds</b>.</li><li>Click the <b>Canvas</b> tab. Pick <b>{{CANVAS}}</b>.</li><li>Click <b>Choose from My Files</b>. Pick your video. Click <b>Use this file</b>.</li><li>Click <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.</li></ol><div class="howto">📌 This video is the only thing you turn in. Want to fix it? Record again and submit again.</div></div></div></li>
+        <li class="phase">✅ After</li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 7 done"></button><div><div class="step-n">Step 7 · Check and leave</div><div class="step-t"><ol class="sub"><li>Press the <b>Meta button</b> on your right controller. Click <b>Quit</b>.</li><li>Open the Canvas assignment. Check that your video is there.</li></ol>Not there? Open <b>Having trouble in VR?</b> below.</div></div></li>
+      </ol>
+      {{HELP}}
+      <div class="points">⭐ <b>Full points:</b><ul><li>{{POINTS}}</li></ul></div>
+      <div class="done-box" id="vr-done">
+        {{KEEP_ART_BIG}}
+        <h3>{{KEEP_TITLE}}</h3>
+        <p style="font-size:15px">{{KEEP_LINE}}</p>
+        <div class="radio" data-wait data-clip="saved" data-label="{{L_SAVED}}" style="text-align:left;margin-top:10px"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="card"><div class="card-pad">
+      <div class="kicker">Field Notes Day · no headset</div>
+      <h2>{{ALT_H}}</h2>
+      <div class="radio" data-clip="alt" data-label="{{L_ALT}}" style="margin:8px 0 12px"></div>
+      <div class="jobline"><span class="job-k">Your job</span><span class="job-s"><i>1</i>{{ALT_JOB}}</span><span class="job-a">→</span><span class="job-s"><i>2</i>Plan 2 sentences</span><span class="job-a">→</span><span class="job-s"><i>3</i>Record a 30 second video</span></div>
+      <p>{{ALT_P}}</p>
+      {{GAME_HTML}}
+      <div class="msg" id="g-msg" role="status" aria-live="polite"></div>
+      <div class="bmark" id="bmark">{{BMARK_ART}}<b>Field notes stamp earned!</b></div>
+      <div class="alt-note">📌 <span>Story Expedition travelers earn a {{KEEP_NAME}}. You’ll earn a field notes stamp. Got a headset after all? Pick <b>Story Expedition</b> at the top.</span></div>
+    </div></div>
+
+    <div class="card"><div class="card-pad">
+      <div class="kicker">Explain your thinking</div>
+      <h3>Say 2 sentences on video (30 seconds or less)</h3>
+      <p class="write-q">{{WRITE_Q}}</p>
+      <textarea class="answer" id="para" data-label="My 2 sentences" placeholder="Plan your 2 sentences here. You do not turn this in."></textarea>
+      <div class="counter" id="para-count">0 of 2 sentences</div>
+      <div class="chips"><span class="lbl">Your sentences need</span>{{CHIPS}}</div>
+      <button class="help-btn" type="button" id="help-btn">💡 Need help starting?</button>
+      <div class="helps" id="helps">Try these sentence starters:<ul>{{STARTERS}}</ul></div>
+      <div class="timer-row"><button class="btn" type="button" id="timer-btn">⏱ Practice with a 30 second timer</button><b class="timer" id="timer" aria-live="polite"></b></div>
+      <div class="points">⭐ <b>Full points:</b><ul><li>You finished the game.</li><li>Your video is 30 seconds or less.</li><li>Your 2 sentences have all {{NCHIPS}} checks.</li></ul></div>
+    </div></div>
+
+    <div class="gathered-card">
+      <div class="gathered-header"><span class="ic">🎥</span><div><div class="k">Turn it in</div><div class="t">Record your video</div></div></div>
+      <div class="gathered-body">
+        <ol class="turn-steps">
+          <li>Open the Canvas assignment <b>{{CANVAS}}</b> and click <b>Start Assignment</b>.</li>
+          <li>Click <b>Media</b>, then <b>Record/Upload Media</b>, then <b>Start Recording</b>.</li>
+          <li>Say your 2 sentences. Stop at <b>30 seconds</b> or less. Click <b>Finish</b>, then <b>Save</b>.</li>
+          <li>Click <b>Submit Assignment</b>.</li>
+        </ol>
+        <p class="turnin">📌 This video is the only thing you turn in.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>{{CREDITS}}</footer>
+</div>
+<script type="application/json" id="vr-data">{{DATA}}</script>
+<script>
+(function () {
+  'use strict';
+  var D = JSON.parse(document.getElementById('vr-data').textContent);
+  var PRE = D.pre, AUDIO = 'assets/audio/guide/' + D.guide.folder + '/', VIDEO = 'assets/video/teacher/';
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function get(k, d) { try { var v = localStorage.getItem(PRE + '-' + k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } }
+  function set(k, v) { try { localStorage.setItem(PRE + '-' + k, JSON.stringify(v)); } catch (e) {} }
+  if (/[?&]review\b/.test(location.search)) document.documentElement.classList.add('review');
+
+  /* sounds (WebAudio, never on load) */
+  var AC = null;
+  function ac() { try { AC = AC || new (window.AudioContext || window.webkitAudioContext)(); } catch (e) {} return AC; }
+  function tone(f, t0, d, type, vol) { var c = ac(); if (!c) return; var o = c.createOscillator(), g = c.createGain(); o.type = type || 'sine'; o.frequency.value = f;
+    g.gain.setValueAtTime(0.0001, c.currentTime + t0); g.gain.exponentialRampToValueAtTime(vol || 0.08, c.currentTime + t0 + 0.015); g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + t0 + d);
+    o.connect(g); g.connect(c.destination); o.start(c.currentTime + t0); o.stop(c.currentTime + t0 + d + 0.05); }
+  function ding() { tone(660, 0, 0.18); tone(990, 0.09, 0.25); }
+  function bonk() { tone(180, 0, 0.18, 'triangle', 0.06); }
+  function fanfare() { [523, 659, 784, 1047].forEach(function (f, i) { tone(f, i * 0.11, 0.3, 'triangle', 0.07); }); }
+
+  /* guide clips: hidden until the mp3 exists */
+  var current = null;
+  function makeRadio(host) {
+    var id = host.dataset.clip, src = AUDIO + PRE + '-' + id + '.mp3', words = (D.transcripts[id] || '').split(/(\s+)/);
+    host.classList.add('hidden');
+    host.innerHTML = '<div class="av" style="--avc:' + D.guide.color + '">' + esc(D.guide.initials) + '</div>' +
+      '<div class="r-body"><div class="r-who">' + esc(D.guide.name) + '</div><div class="r-label">' + esc(host.dataset.label) + '</div>' +
+      '<div class="r-ctl"><button class="r-play" type="button">▶ Listen</button><button class="r-read" type="button">Read along</button></div>' +
+      '<div class="r-tr">' + words.map(function (w, i) { return /^\s+$/.test(w) ? w : '<span data-w="' + i + '">' + esc(w) + '</span>'; }).join('') + '</div></div>';
+    var audio = new Audio(); audio.preload = 'metadata';
+    var wait = host.hasAttribute('data-wait');
+    function showIf() { if (host.dataset.ok && (!wait || host.dataset.reveal)) host.classList.remove('hidden'); }
+    audio.addEventListener('loadedmetadata', function () { host.dataset.ok = '1'; showIf(); });
+    audio.src = src;
+    var b = $('.r-play', host), tr = $('.r-tr', host), wordEls = $$('[data-w]', tr), raf = null;
+    $('.r-read', host).addEventListener('click', function () { tr.classList.toggle('open'); });
+    function frame() { if (audio.duration) { var k = Math.floor(audio.currentTime / audio.duration * wordEls.length); wordEls.forEach(function (w, i) { w.classList.toggle('said', i < k); w.classList.toggle('now', i === k); }); } raf = requestAnimationFrame(frame); }
+    function stop() { host.classList.remove('playing'); b.textContent = '▶ Listen'; cancelAnimationFrame(raf); wordEls.forEach(function (w) { w.classList.remove('now'); }); }
+    b.addEventListener('click', function () {
+      if (!audio.paused) { audio.pause(); return; }
+      if (current && current !== audio) current.pause();
+      current = audio; tr.classList.add('open'); audio.play().then(function () { host.classList.add('playing'); b.textContent = '❚❚ Pause'; frame(); }).catch(function () {});
+    });
+    audio.addEventListener('pause', stop); audio.addEventListener('ended', function () { stop(); wordEls.forEach(function (w) { w.classList.add('said'); }); });
+    host.reveal = function () { host.dataset.reveal = '1'; showIf(); };
+  }
+  $$('.radio').forEach(makeRadio);
+
+  /* teacher video slot: hidden until the file exists */
+  function probe(url, cb) { fetch(url, { method: 'HEAD', cache: 'no-store' }).then(function (r) { cb(r.ok && !/text\/html/.test(r.headers.get('content-type') || '')); }).catch(function () { cb(false); }); }
+  (function () {
+    var file = VIDEO + PRE + '.mp4', host = $('#vslot-vr'), ph = $('[data-ph="vr"]');
+    probe(file, function (ok) {
+      if (!ok) { ph.classList.add('on'); return; }
+      host.innerHTML = '<div class="vid"><video controls playsinline preload="metadata" poster="' + file.replace('.mp4', '.jpg') + '" src="' + file + '"><track kind="captions" srclang="en" label="English" src="' + file.replace('.mp4', '.vtt') + '"></video><button class="cc-btn" type="button" aria-pressed="false">CC Captions</button></div>';
+      var v = $('video', host), cc = $('.cc-btn', host);
+      function setCC(on) { if (v.textTracks[0]) v.textTracks[0].mode = on ? 'showing' : 'hidden'; cc.setAttribute('aria-pressed', on ? 'true' : 'false'); set('cc', on); }
+      v.addEventListener('loadedmetadata', function () { setCC(!!get('cc', false)); });
+      cc.addEventListener('click', function () { setCC(cc.getAttribute('aria-pressed') !== 'true'); });
+    });
+  })();
+
+  /* help drawer: the video loads only when opened */
+  (function () { var d = $('#vr-help'); if (!d) return; d.addEventListener('toggle', function () { var f = $('.hd-frame', d); if (d.open && f && !f.firstChild) { var i = document.createElement('iframe'); i.src = f.dataset.src; i.title = 'How-to video: Optima On-Demand and Canvas'; i.allow = 'encrypted-media; picture-in-picture; fullscreen'; i.allowFullscreen = true; f.appendChild(i); } }); })();
+
+  /* path toggle (VR is the default) */
+  function setPath(p) {
+    document.body.classList.toggle('path-alt', p === 'alt'); set('path', p);
+    $('#pb-vr').setAttribute('aria-pressed', p === 'alt' ? 'false' : 'true'); $('#pb-alt').setAttribute('aria-pressed', p === 'alt' ? 'true' : 'false');
+  }
+  $('#pb-alt').addEventListener('click', function () { setPath('alt'); });
+  $('#pb-vr').addEventListener('click', function () { setPath('vr'); });
+  setPath(get('path', 'vr'));
+
+  /* VR checklist: the chapter token needs all 7 steps (step 5 is the token step) */
+  var steps = $$('#vr-steps .step'), vrDone = get('steps', []);
+  function vrUpd(celebrate) {
+    var n = 0; steps.forEach(function (s, i) { var on = vrDone.indexOf(i) >= 0; s.classList.toggle('done', on); $('.chk', s).textContent = on ? '✓' : ''; $('.chk', s).setAttribute('aria-pressed', on ? 'true' : 'false'); if (on) n++; });
+    $('#vr-bar').style.width = (n / steps.length * 100) + '%'; $('#vr-count').textContent = n + ' of ' + steps.length + ' steps';
+    var req = [0, 1, 2, 3, 4, 5, 6].every(function (i) { return vrDone.indexOf(i) >= 0; });
+    var box = $('#vr-done'), was = box.classList.contains('show');
+    box.classList.toggle('show', req);
+    if (req) $('#vr-done .radio').reveal();
+    if (req && !was && celebrate) { fanfare(); setTimeout(function () { box.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 200); }
+  }
+  steps.forEach(function (s, i) { $('.chk', s).addEventListener('click', function () { var k = vrDone.indexOf(i); if (k >= 0) vrDone.splice(k, 1); else { vrDone.push(i); ding(); } set('steps', vrDone); vrUpd(true); }); });
+  vrUpd(false);
+
+  /* shared helpers for the game */
+  var msg = $('#g-msg');
+  var KIT = {
+    D: D, $: $, $$: $$, esc: esc, get: get, set: set, ding: ding, bonk: bonk, fanfare: fanfare,
+    say: function (t, ok) { msg.textContent = t; msg.className = 'msg show' + (ok ? ' ok' : ''); },
+    done: function (yes) { $('#bmark').classList.toggle('show', !!yes); },
+    refresh: function () { refreshG(); }
+  };
+{{GAME_JS}}
+
+  /* 2 sentences: counter + chips + help (planning only, not turned in) */
+  var para = $('#para'), MIN = 2, RX = {};
+  D.chips.forEach(function (c) { RX[c.k] = new RegExp(c.rx, 'i'); });
+  function sentences(t) { return t.split(/[.!?]+/).filter(function (s) { return /[A-Za-z]{2,}/.test(s); }).length; }
+  function updPara() {
+    var t = para.value, n = sentences(t), cnt = $('#para-count');
+    cnt.textContent = Math.min(n, 9) + ' of ' + MIN + ' sentences' + (n >= MIN ? ' ✓' : ''); cnt.classList.toggle('met', n >= MIN);
+    $$('[data-chip]').forEach(function (c) { c.classList.toggle('on', RX[c.dataset.chip].test(t)); });
+    set('para', t);
+  }
+  para.value = get('para', ''); para.addEventListener('input', updPara);
+  $('#help-btn').addEventListener('click', function () { $('#helps').classList.toggle('show'); });
+  function refreshG() {}
+
+  /* 30 second practice timer */
+  var tick = null;
+  $('#timer-btn').addEventListener('click', function () {
+    var left = 30, el = $('#timer'), btn = this;
+    if (tick) { clearInterval(tick); tick = null; el.textContent = ''; el.classList.remove('up'); btn.textContent = '⏱ Practice with a 30 second timer'; return; }
+    btn.textContent = '■ Stop the timer'; el.classList.remove('up'); el.textContent = '0:30'; ding();
+    tick = setInterval(function () {
+      left--; el.textContent = '0:' + (left < 10 ? '0' : '') + left;
+      if (left <= 0) { clearInterval(tick); tick = null; el.textContent = 'Time!'; el.classList.add('up'); bonk(); btn.textContent = '⏱ Practice again'; }
+    }, 1000);
+  });
+
+  GAME.render(); updPara();
+})();
+</script>
+</body>
+</html>

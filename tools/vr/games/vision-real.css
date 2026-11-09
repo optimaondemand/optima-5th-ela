@@ -1,0 +1,14 @@
+.vclue{background:#F4F7FD;border:1.5px solid #CBD6EE;border-radius:10px;padding:8px 12px;font-size:15px;color:#3E4558;margin:0 0 10px}
+.vtally{font-weight:900;color:var(--navy);font-size:14px;margin:0 0 6px}
+.vcards{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.vcard{background:#fff;border:2px solid #E2D6C4;border-radius:14px;padding:10px 12px;display:flex;flex-direction:column;gap:8px}
+.vcard.got.vision{background:#F3F0FB;border-color:#B9AEE0}
+.vcard.got.real{background:#EEF8F0;border-color:#B8E8CF}
+.vc-t{font-family:'Lora',Georgia,serif;font-size:16px;color:var(--ink);line-height:1.5}
+.vc-ch{display:block;font-family:'Nunito',sans-serif;font-size:11px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#8A6420}
+.vc-btns{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.vbtn{flex:1 1 140px;border:2px solid #E2D6C4;background:#FFFBF1;border-radius:999px;padding:6px 10px;font-weight:800;font-size:14px;color:var(--navy);cursor:pointer}
+.vbtn:hover{border-color:var(--gold)}
+.vbtn.no{border-color:#E7B3A9;background:#FDECEA;color:#8A2E22;text-decoration:line-through}
+.vc-why{font-size:14.5px;color:#3E4558}
+@media (max-width:560px){.vcards{grid-template-columns:1fr}}

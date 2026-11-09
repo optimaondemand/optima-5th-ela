@@ -1,0 +1,90 @@
+{
+ "week": 18,
+ "day": 2,
+ "bookId": "hbg",
+ "book": "How I Became a Ghost",
+ "chapters": "Chapters 3 and 4",
+ "title": "This River, This Dirt",
+ "guide": {"name": "Mason", "initials": "M", "color": "#1F3F7A", "folder": "mason", "voice": "1Mx54eW85zYpnx1WfIdU"},
+ "map": "Tranquil Forest",
+ "mapFilter": "Tranquil",
+ "minutes": 15,
+ "banner": "river",
+ "token": {
+  "name": "river stone",
+  "art": "stone",
+  "line": "Only Story Expedition travelers earn this one. It comes from the river Isaac’s mother called home."
+ },
+ "journal": {
+  "kicker": "From Mason’s field journal",
+  "h": "A house or a home?",
+  "body": [
+   "In Chapter 3, Isaac’s mother walks him to the river. On the way back, she says something I copied into my notebook:",
+   ">Their houses are in town. This river, this dirt, this is their home.|Isaac’s mother, Chapter 3",
+   "Today’s expedition: build both places. Then tell me what she means."
+  ],
+  "sign": "Mason",
+  "word": "<b>Treaty Talk</b>: a <b>treaty</b> is a written deal between nations. In Chapter 1, Isaac’s father hears Treaty Talk in town and says the family must move."
+ },
+ "mission": {
+  "h": "Build Isaac’s house and his home",
+  "p": "Put the house in town on one side and the river on the other. Then explain what Isaac’s mother means by home."
+ },
+ "job": "Build both places in VR",
+ "groups": [
+  {"k": "house", "h": "The house in town"},
+  {"k": "home", "h": "The river home"}
+ ],
+ "models": [
+  {"name": "Log Cabin - Wall (with Door slot)", "is": "the front of Isaac’s house", "group": "house"},
+  {"name": "Log Cabin - Roof Middle", "is": "the roof", "group": "house"},
+  {"name": "Red Folded Blanket", "is": "the blanket Isaac grabbed the night of the fire", "group": "house"},
+  {"name": "Lilypads - Large", "is": "the river (use 3 or 4 in a line)", "group": "home"},
+  {"name": "Bench", "is": "the long wooden pier (use 2 or 3 in a row)", "group": "home"},
+  {"name": "Dog", "is": "Jumper, who swims in the river with Isaac", "group": "home"}
+ ],
+ "steps": {
+  "build": "Open your menu (top button, right controller) and click <b>Models</b>. Build two places with open ground between them:<ol class=\"road-order\"><li><b>The house:</b> the wall, the roof and Isaac’s blanket.</li><li><b>The home:</b> the river, the pier and Jumper.</li></ol>",
+  "say": "Walk from the house to the river. Practice saying these 2 sentences out loud:",
+  "frame": "“Isaac’s mother says the river is their home because ___. In Chapter 3, ___ shows this.”",
+  "extra": "Put a <b>Stone Ring</b> in the water at the end of your pier. Those are the sharp stones where the old women danced to say good‑bye. This step earns your river stone.",
+  "extraModels": ["Stone Ring"],
+  "fits": "both places"
+ },
+ "points": "Your video is 30 seconds or less. It shows the house and the river home, and you say 2 sentences: what Isaac’s mother means by home, and one detail from Chapter 3 or 4 that shows it.",
+ "alt": {
+  "h": "Vision or real?",
+  "job": "Sort 6 moments",
+  "p": "Isaac sees things before they happen. Sort each moment from Chapters 3 and 4: did only Isaac see it, or did it really happen?",
+  "game": "vision-real",
+  "clue": "🔎 <b>Clue:</b> before a vision, Isaac feels a <b>warm shiver</b> and closes his eyes. When something is real, other people see it too.",
+  "miss": "Not quite. Check the clue: did Isaac feel the warm shiver first? Did anyone else see it?",
+  "cards": [
+   {"ch": "Chapter 3", "t": "The old women jump from the pier and dance on the sharp stones.", "ans": "real", "why": "His mother watched it too. She said they were saying good‑bye to their home."},
+   {"ch": "Chapter 3", "t": "Flames start at Missus Jonah’s feet, under the water.", "ans": "vision", "why": "Isaac felt the warm shiver first. His mother did not see the flames."},
+   {"ch": "Chapter 3", "t": "Old Man claps a double handful of wet sand on Old Woman’s face, and she laughs.", "ans": "real", "why": "Isaac and his mother both watched them play from the shadows."},
+   {"ch": "Chapter 3", "t": "Old Man and Old Woman are suddenly very sick, covered in sores.", "ans": "vision", "why": "The warm shiver came again. When Isaac looked back, they were laughing and playing."},
+   {"ch": "Chapter 4", "t": "After midnight, Isaac smells smoke and runs out of the burning house.", "ans": "real", "why": "Isaac says it himself: “I felt no shiver. This was real.”"},
+   {"ch": "Chapter 4", "t": "The houses shake and fall, one by one, while the family hides in the woods.", "ans": "real", "why": "The whole family and their neighbors watched from the bushes all night."}
+  ]
+ },
+ "write": {
+  "q": "In <b>2 sentences</b>, explain what Isaac’s mother means when she says the river is their <b>home</b> and the house is not. Give <b>one detail from Chapter 3 or 4</b> that shows it.",
+  "chips": [
+   {"k": "home", "t": "home or house", "rx": "\\b(homes?|houses?)\\b"},
+   {"k": "detail", "t": "a detail", "rx": "\\b(river|pier|stones?|willow|sand|dirt|fish\\w*|swim\\w*|danc\\w*|good-?bye|treaty|fire|burn\\w*|blanket|jumper|woods|old (wo)?m[ae]n|land)\\b"},
+   {"k": "why", "t": "because", "rx": "\\b(because|since|so|shows?)\\b"}
+  ],
+  "starters": [
+   "Isaac’s mother says the river is their home because ___.",
+   "In Chapter 3, ___ shows this."
+  ]
+ },
+ "scripts": {
+  "brief": "[warmly] Welcome to your Story Expedition. I’m Mason. In Chapter 3, Isaac’s mother walks him to the river and says something I can’t stop thinking about. Their houses are in town, but this river, this dirt, is their home. [thoughtfully] Today you’ll build both places, side by side. Then tell me in your own words what she means.",
+  "alt": "[friendly] No headset today? That’s fine. Field Notes Day works just as well. Isaac sees things before they happen, and that makes this book tricky to read. Sort each moment. Was it a vision only Isaac saw, or did it really happen? Look for his clue, the warm shiver. Then plan your 2 sentences.",
+  "saved": "[pleased] Video submitted! You built Isaac’s house and his home, and you explained the difference. That river stone is yours now. [softly] Keep it with your field notes."
+ },
+ "labels": {"brief": "Mason · today’s expedition", "alt": "Mason · Field Notes Day", "saved": "Video submitted!"},
+ "credits": "Drawings made for this page. Short lines from How I Became a Ghost by Tim Tingle (2013) are quoted for teaching."
+}

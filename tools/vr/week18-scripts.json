@@ -1,0 +1,24 @@
+{
+ "pre": "g5ela-18-vr",
+ "voice": "1Mx54eW85zYpnx1WfIdU",
+ "folder": "mason",
+ "model": "eleven_v4",
+ "status": "deferred until Bethany says to add clips",
+ "clips": {
+  "brief": {
+   "file": "assets/audio/guide/mason/g5ela-18-vr-brief.mp3",
+   "prompt": "[warmly] Welcome to your Story Expedition. I’m Mason. In Chapter 3, Isaac’s mother walks him to the river and says something I can’t stop thinking about. Their houses are in town, but this river, this dirt, is their home. [thoughtfully] Today you’ll build both places, side by side. Then tell me in your own words what she means.",
+   "transcript": "Welcome to your Story Expedition. I’m Mason. In Chapter 3, Isaac’s mother walks him to the river and says something I can’t stop thinking about. Their houses are in town, but this river, this dirt, is their home. Today you’ll build both places, side by side. Then tell me in your own words what she means."
+  },
+  "alt": {
+   "file": "assets/audio/guide/mason/g5ela-18-vr-alt.mp3",
+   "prompt": "[friendly] No headset today? That’s fine. Field Notes Day works just as well. Isaac sees things before they happen, and that makes this book tricky to read. Sort each moment. Was it a vision only Isaac saw, or did it really happen? Look for his clue, the warm shiver. Then plan your 2 sentences.",
+   "transcript": "No headset today? That’s fine. Field Notes Day works just as well. Isaac sees things before they happen, and that makes this book tricky to read. Sort each moment. Was it a vision only Isaac saw, or did it really happen? Look for his clue, the warm shiver. Then plan your 2 sentences."
+  },
+  "saved": {
+   "file": "assets/audio/guide/mason/g5ela-18-vr-saved.mp3",
+   "prompt": "[pleased] Video submitted! You built Isaac’s house and his home, and you explained the difference. That river stone is yours now. [softly] Keep it with your field notes.",
+   "transcript": "Video submitted! You built Isaac’s house and his home, and you explained the difference. That river stone is yours now. Keep it with your field notes."
+  }
+ }
+}
