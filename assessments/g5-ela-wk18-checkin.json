@@ -1,0 +1,190 @@
+{
+ "id": "g5-ela-wk18-checkin",
+ "title": "Week 18 Check-In · How I Became a Ghost",
+ "description": "This week you started How I Became a Ghost and met Isaac, a ten-year-old Choctaw boy who tells his story from after it happened. You practiced appositives and precise nouns, the roots mem/memor and script, and open and closed syllables. Show what you know.",
+ "chapters": "Ch. 1–7",
+ "questions": [
+  {
+   "n": 1,
+   "section": "Grammar",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which sentence contains an appositive?",
+   "options": [
+    "Isaac looked up at the sun and waited.",
+    "Jumper, Isaac’s dog, followed him everywhere in the woods.",
+    "Luke left quickly to play stickball before supper.",
+    "The old men sat by the river."
+   ],
+   "answer": 1,
+   "from": "18.1–18.2 Grammar (find the appositive)",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 2,
+   "section": "Grammar",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which sentence sets off the appositive correctly?",
+   "options": [
+    "Mister Jonah a respected elder, sat with his back against the old tree.",
+    "Mister Jonah, a respected elder, sat with his back against the old tree.",
+    "Mister Jonah, a respected elder sat with his back against the old tree.",
+    "Mister Jonah a respected elder sat, with his back against the old tree."
+   ],
+   "answer": 1,
+   "from": "18.1–18.4 Grammar (commas on both sides)",
+   "status": "changed: same sentence, now multiple choice (was a written fix)"
+  },
+  {
+   "n": 3,
+   "section": "Grammar",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which sentence uses the most precise nouns?",
+   "options": [
+    "A man came home with his weapon.",
+    "Isaac’s father came home with his shotgun.",
+    "Someone came back with a thing.",
+    "The person came home with his stuff."
+   ],
+   "answer": 1,
+   "from": "18.1–18.4 Grammar (precise nouns, scope week 17)",
+   "status": "new (old Q3 asked for another appositive; precise nouns are in the scope and now taught)"
+  },
+  {
+   "n": 4,
+   "section": "Morphology & Vocabulary",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which root is in the word commemorate?",
+   "options": [
+    "script (write)",
+    "mem / memor (memory)",
+    "port (carry)",
+    "spect (look)"
+   ],
+   "answer": 1,
+   "from": "18.2–18.4 Morphology",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 5,
+   "section": "Morphology & Vocabulary",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Read this sentence from Chapter 4: “The missionaries were visiting another Choctaw town that week, but the Nahullos didn’t know that.” Who are missionaries?",
+   "options": [
+    "People sent to a place to teach their religion",
+    "Soldiers sent to guard a town",
+    "The oldest men in a Choctaw town",
+    "Men who ride horses at night"
+   ],
+   "answer": 0,
+   "from": "18.1–18.4 Vocabulary (missionaries)",
+   "status": "new (old Q5 tested “prophecy,” a word the week never taught, in a sentence that is not from the book)"
+  },
+  {
+   "n": 6,
+   "section": "Morphology & Vocabulary",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Use the word smothering in a sentence that shows you know what it means.",
+   "from": "18.4 Vocabulary (Use the Word)",
+   "status": "new (old Q6 used “removal,” not one of the week’s words)"
+  },
+  {
+   "n": 7,
+   "section": "Spelling",
+   "type": "multiple_answers_question",
+   "points": 1,
+   "text": "Which words begin with an open syllable? Choose all that are right.",
+   "options": [
+    "nation",
+    "Choctaw",
+    "cedar",
+    "blanket"
+   ],
+   "answers": [
+    0,
+    2
+   ],
+   "from": "18.1–18.2 Spelling sorts",
+   "status": "new (old Q7 sorted by number of syllables; the week teaches open and closed)"
+  },
+  {
+   "n": 8,
+   "section": "Spelling",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Where does the first beat of government end?",
+   "options": [
+    "go | vernment",
+    "gov | ernment",
+    "gover | nment",
+    "g | overnment"
+   ],
+   "answer": 1,
+   "from": "18.3 Spelling (split a long word)",
+   "status": "new (old Q8 spelled “removal” from a definition)"
+  },
+  {
+   "n": 9,
+   "section": "Spelling",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "The first syllable of frozen is —",
+   "options": [
+    "open, because fro ends on the vowel o and the o says its name",
+    "closed, because fro ends on a consonant",
+    "closed, because the o is short",
+    "open, because frozen has two syllables"
+   ],
+   "answer": 0,
+   "from": "18.3 Spelling (frozen)",
+   "status": "new (old Q9 split Mississippi, not taught this week)"
+  },
+  {
+   "n": 10,
+   "section": "Reading",
+   "type": "essay_question",
+   "points": 1,
+   "text": "When Isaac says “Their homes are in town,” what does he think his mother means by “home”? What does his mother actually mean?",
+   "from": "18.1 Reading (Ch. 2) and 18.2 (Ch. 3)",
+   "status": "kept"
+  },
+  {
+   "n": 11,
+   "section": "Reading",
+   "type": "essay_question",
+   "points": 2,
+   "text": "In Chapters 2 and 3, Isaac watches three different ways the old people say good-bye by the river. What do all three have in common? What do they tell you about how the Choctaw people feel about leaving their home? Use at least two details from the book.",
+   "from": "18.1–18.2 Reading (Ch. 2–3)",
+   "status": "kept (“ceremonies” now said plainly)"
+  },
+  {
+   "n": 12,
+   "section": "Writing",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Isaac steps back into a memory: “When I was only six, I went fishing by myself with my new cane fishing pole.” Write one sentence with I that steps back into a memory of your own and shows how you feel about it.",
+   "from": "18.2 Read Like a Writer (first-person narration that reveals memory)",
+   "status": "new (old Q12 used a sentence pattern this week’s RWM no longer teaches)"
+  },
+  {
+   "n": 13,
+   "section": "Writing",
+   "type": "essay_question",
+   "points": 1,
+   "text": "In 2–3 sentences, explain why Tim Tingle begins this story with Isaac already knowing he will become a ghost. What does that do for the reader?",
+   "from": "18.1 Big Question; 18.4 Reading",
+   "status": "kept"
+  }
+ ],
+ "passage": {
+  "before": 10,
+  "title": "Reading passage (Chapter 2)",
+  "text": "“These men are saying good-bye to their home.”\n“They live in town. Their homes are in town.”\nMy mother gripped my hand tight. “Come on,” she said. “There is more to see.”",
+  "cite": "Tim Tingle, How I Became a Ghost, Chapter 2"
+ }
+}
