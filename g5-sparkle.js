@@ -814,6 +814,39 @@
     }
   }
 
+  /* ── 15. Hear the word: 🔊 beside each vocabulary word (Nov 2026).
+     One recording per word, course-wide: assets/audio/words/g5ela-word-<word>.mp3.
+     A word with no recording (e.g. Choctaw words, on purpose) gets no button.
+     Cards, word bank, match words and use-it lines only: not inside book
+     sentences (clutter) and not on the fill-in (it would give the answer away). ── */
+  function wordSlug(w) { return String(w).trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+  function wordUrl(w) { return clip('assets/audio/words/g5ela-word-' + wordSlug(w) + '.mp3'); }
+  function sayBtn(word) {
+    var b = h('button', { type: 'button', 'class': 'g5-say', hidden: 'hidden', 'aria-label': 'Hear the word ' + word, title: 'Hear the word' }, ['🔊']);
+    b.addEventListener('click', function (e) { e.stopPropagation(); e.preventDefault(); play(wordUrl(word), b); });
+    fileExists(wordUrl(word), function (ok) { if (ok) b.hidden = false; });
+    return b;
+  }
+  function firstText(el) {
+    for (var n = el.firstChild; n; n = n.nextSibling) if (n.nodeType === 3 && n.nodeValue.trim()) return n;
+    return null;
+  }
+  function buildWordSay() {
+    var act = activityByTitle('Vocabulary', panel('words')); if (!act) return;
+    function add(el, word) {
+      if (!el || !word || el.querySelector(':scope > .g5-say')) return;
+      el.appendChild(sayBtn(word.trim()));
+    }
+    act.querySelectorAll('.fc-word').forEach(function (el) { add(el, el.textContent); });
+    act.querySelectorAll('.vocab-bank strong').forEach(function (el) { add(el, el.textContent); });
+    act.querySelectorAll('.match-item.is-word').forEach(function (el) { add(el, el.textContent); });
+    act.querySelectorAll('.vocab-use-item > div:first-child').forEach(function (el) {
+      var t = firstText(el); if (!t) return;
+      if (el.querySelector('.g5-say')) return;
+      var b = sayBtn(t.nodeValue.trim()); el.insertBefore(b, t.nextSibling);
+    });
+  }
+
   /* ── boot, in page order ──────────────────────────────────── */
   function boot() {
     guard('theme', buildTheme);
@@ -822,6 +855,7 @@
     guard('art', buildArt);
     guard('how', buildHow);
     guard('glossary', buildGlossary);
+    guard('wordsay', buildWordSay);
     guard('hints', buildHints);
     guard('miss', buildMiss);
     guard('stones', buildStones);
@@ -832,7 +866,7 @@
     guard('nav', buildNav);
     window.__g5SparkleAPI = {
       teardown: function () {
-        document.querySelectorAll('.g5-listen, .g5-hook, .g5-check, .g5-do, .g5-plate, .g5-extra, .g5-game, .g5-page, .g5-ribbon, .g5-modal, .g5-marble, .g5-kicker, .g5-miss, .g5-hint-b, .g5-hint').forEach(function (n) { n.remove(); });
+        document.querySelectorAll('.g5-say, .g5-listen, .g5-hook, .g5-check, .g5-do, .g5-plate, .g5-extra, .g5-game, .g5-page, .g5-ribbon, .g5-modal, .g5-marble, .g5-kicker, .g5-miss, .g5-hint-b, .g5-hint').forEach(function (n) { n.remove(); });
         document.querySelectorAll('.g5-gloss').forEach(function (b) { var t = b.nextSibling; b.replaceWith(document.createTextNode(b.textContent)); if (t && t.classList && t.classList.contains('g5-gloss-tip')) t.remove(); });
         document.documentElement.classList.remove('g5-on');
         return document.querySelectorAll('.g5-listen, .g5-hook, .g5-check, .g5-do, .g5-plate, .g5-extra, .g5-game, .g5-page, .g5-ribbon, .g5-modal, .g5-marble, .g5-kicker, .g5-miss, .g5-hint-b, .g5-gloss').length;

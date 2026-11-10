@@ -289,3 +289,10 @@ html.g5-on .g5-pg-h { font-family: 'Libre Baskerville', Georgia, serif; }
   .root-match-grid > .root-match-item::before, .sort-bank > .sort-chip::before, .spotter-sentence::before,
   .g5-choices > .g5-choice::before, .g5-stone-word::before, .turn-in-checklist > .turn-in-item::before { animation:none; }
 }
+
+/* 🔊 hear the word (Nov 2026) */
+.g5-say { display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; margin-left:6px; padding:0; vertical-align:middle;
+  border:1px solid var(--g5-rule); border-radius:999px; background:#fff; cursor:pointer; font-size:14px; line-height:1; font-style:normal; }
+.g5-say:hover { background:#FBF7E8; }
+.g5-say.g5-playing { background:#EAF2FF; border-color:#5A7FBF; }
+.g5-say[hidden] { display:none; }
