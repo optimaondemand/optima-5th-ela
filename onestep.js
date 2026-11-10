@@ -19,14 +19,16 @@
 
   /* split an activity body into steps */
   function chunks(body) {
-    var out = [], cur = null, glue = false;
+    var out = [], cur = null, glue = false, prev = null;
     [].slice.call(body.children).forEach(function (k) {
       if (k.matches('.g5-do, .nav-do')) { k.classList.add('os-off'); return; }
-      var attach = !cur ? false :
-        glue || k.tagName === 'BUTTON' || !shown(k) ||
-        k.matches('.dol-answer, .task-box, .match-game, .sort-game, .fillin-game, .spotter-game, .vocab-grid, .decode-steps');
+      var media = k.matches('.spk-guide-wrap, .spk-guide');
+      var afterEx = prev && prev.matches('.task-box, .key-concept') && k.tagName === 'P';   // the line that explains an example stays with it
+      var attach = !cur || media ? false :
+        glue || afterEx || k.tagName === 'BUTTON' || !shown(k) ||
+        k.matches('.dol-answer, .task-box, .match-game, .sort-game, .fillin-game, .spotter-game, .vocab-grid, .decode-steps, .textbox-prompt, textarea, .journal-label, .spk-wc, .spk-coach, .spk-notes-use, .saved-dot');   // a question and its answer box are one step
       if (!attach) { cur = []; out.push(cur); }
-      cur.push(k);
+      cur.push(k); prev = k;
       // an instruction line or a "notice" heading belongs with what follows it
       glue = (k.matches('.callout, .g3-model-h, .key-concept, .spk-copia-seed') || (k.tagName === 'P' && !k.querySelector('textarea,input'))) && !k.matches('.swyk');
     });
@@ -43,6 +45,10 @@
         if (/level:/i.test(n.textContent) && n.children.length === 0) (n.closest('div[style*="margin-top"]') || n).classList.add('os-off');
       });
       var body = act.querySelector(':scope > .activity-body, :scope > .spk-card-body') || act;
+      // a listen/watch clip that sits above the body becomes the activity's first step
+      [].slice.call(act.querySelectorAll(':scope > .spk-guide-wrap, :scope > .spk-guide')).reverse().forEach(function (g) {
+        if (body !== act) body.insertBefore(g, body.firstChild);
+      });
       var steps = isWhole(act) ? [[].slice.call(body.children)] : chunks(body);
       steps.forEach(function (c, j) { c.forEach(function (n) { n.classList.add('os-part'); n.dataset.osStep = j; }); });
 
@@ -61,7 +67,16 @@
       return { act: act, body: body, steps: steps, at: 0, back: back, next: next, dots: dots, head: head };
     });
 
+    function empty(s, j) {
+      return !(s.steps[j] || []).some(function (n) {
+        if (n.hidden) return false;
+        if (n.matches('.spk-guide-wrap, .spk-guide')) return !!n.querySelector('.spk-audio:not([hidden]), .spk-media:not([hidden]), .spk-yt:not([hidden])') || (n.matches('.spk-guide') && !n.hidden);
+        return true;
+      });
+    }
+    function step(s, j, dir) { while (j > 0 && j < s.steps.length - 1 && empty(s, j)) j += dir; if (j === 0 && empty(s, 0) && s.steps.length > 1) j = 1; return j; }
     function show(i, j, scroll) {
+      j = step(state[i], j, 1);
       state.forEach(function (s, k) {
         s.act.classList.toggle('os-open', k === i);
         s.act.classList.toggle('os-closed', k !== i);
@@ -69,7 +84,7 @@
       var s = state[i]; s.at = j;
       s.body.querySelectorAll(':scope > .os-part').forEach(function (n) { n.classList.toggle('os-hide', +n.dataset.osStep !== j); });
       [].forEach.call(s.dots.children, function (d, k) { d.classList.toggle('on', k <= j); });
-      s.back.style.visibility = j > 0 ? 'visible' : 'hidden';
+      s.back.style.visibility = (j > 1 || (j === 1 && !empty(s, 0))) ? 'visible' : 'hidden';
       var last = j >= s.steps.length - 1, after = state[i + 1];
       var label = last ? (after ? 'Next: ' + after.title : 'Done') : 'Next';
       var hand = s.next.querySelector('.nav-hand');
@@ -79,13 +94,13 @@
     state.forEach(function (s, i) {
       s.title = titleOf(s.act).replace(/^[^A-Za-z]+/, '').split(':')[0];
       s.next.addEventListener('click', function () {
-        if (s.at < s.steps.length - 1) return show(i, s.at + 1, true);
+        if (s.at < s.steps.length - 1) return show(i, step(s, s.at + 1, 1), true);
         s.act.classList.add('os-done');
         if (state[i + 1]) show(i + 1, 0, true);
         else { s.act.classList.remove('os-open'); s.act.classList.add('os-closed');
           var nw = panel.querySelector(':scope > .tab-next-wrap'); if (nw) try { nw.scrollIntoView({ block: 'center', behavior: 'smooth' }); } catch (e) {} }
       });
-      s.back.addEventListener('click', function () { if (s.at > 0) show(i, s.at - 1, true); });
+      s.back.addEventListener('click', function () { var j = s.at - 1; while (j > 0 && empty(s, j)) j--; if (j >= 0 && !(j === 0 && empty(s, 0))) show(i, j, true); });
       if (s.head) s.head.addEventListener('click', function () { if (s.act.classList.contains('os-closed')) show(i, s.act.classList.contains('os-done') ? 0 : s.at, true); });
     });
     show(0, 0, false);
@@ -99,6 +114,7 @@
     });
   }
   function boot() {
+    if (!document.querySelector('.tab-panel .activity')) return;   // one-page lessons (fluency) stay as they are
     document.body.classList.add('os-on');
     oneQuestion();
     document.querySelectorAll('.tab-panel').forEach(setup);

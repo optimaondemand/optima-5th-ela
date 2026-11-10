@@ -876,7 +876,7 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
 })();
 
-/* Preview only: ?steps=1 turns on "one step at a time" (onestep.js), Nov 2026 */
-(function () { try { if (!/[?&]steps=1/.test(location.search)) return;
+/* One step at a time (onestep.js), on for every sparkled lesson since Nov 10 2026; ?steps=0 turns it off */
+(function () { try { if (/[?&]steps=0/.test(location.search)) return;
   var l = document.createElement("link"); l.rel = "stylesheet"; l.href = "onestep.css"; document.head.appendChild(l);
   var s = document.createElement("script"); s.src = "onestep.js"; document.body.appendChild(s); } catch (e) {} })();
