@@ -777,6 +777,12 @@
       var hd = document.createElement('span'); hd.className = 'nav-hand'; hd.setAttribute('aria-hidden', 'true'); hd.textContent = '👆';
       b.insertBefore(hd, b.firstChild);
     });
+    // the book-words drawer keeps its ▸ arrow in ::before, so its hand is a real span
+    document.querySelectorAll('.g5-extra > summary').forEach(function (sm) {
+      if (sm.querySelector('.nav-hand')) return;
+      var hd = document.createElement('span'); hd.className = 'nav-hand'; hd.setAttribute('aria-hidden', 'true'); hd.textContent = '👆 ';
+      sm.insertBefore(hd, sm.firstChild);
+    });
   }
   function navKeyAndStart() {
     var hdr = document.querySelector('.header'); if (!hdr || document.querySelector('.nav-key')) return;

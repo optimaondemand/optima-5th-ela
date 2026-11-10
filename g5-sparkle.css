@@ -268,3 +268,24 @@ html.g5-on .g5-pg-h { font-family: 'Libre Baskerville', Georgia, serif; }
 .nav-hand { display:inline-block; transform-origin:50% 90%; animation:navTap 3s ease-in-out infinite; }
 @keyframes navTap { 0%,64%,100% { transform:translateY(0) scale(1); } 72% { transform:translateY(3px) scale(.86); } 80% { transform:translateY(0) scale(1); } 88% { transform:translateY(3px) scale(.86); } }
 @media (prefers-reduced-motion: reduce) { .nav-hand { animation:none; } }
+/* 👆 also on things you tap that are not buttons (Nov 10 2026, G5 pilot review):
+   toggles, flip cards, and the first tile of each tap game (it moves on as tiles are used) */
+.tab-panel details:not(.g5-look):not(.g5-extra):not(.nav-start) > summary::before,
+.fc-tap::before,
+.match-grid > .match-item:first-child::before,
+.root-match-grid > .root-match-item:first-child::before,
+.sort-bank > .sort-chip:first-child::before,
+.spotter-sentence::before,
+.g5-choices > .g5-choice::before,
+.g5-stone-word::before,
+.turn-in-checklist > .turn-in-item:first-child::before {
+  content:'👆'; display:inline-block; margin-right:6px; font-style:normal; text-transform:none;
+  transform-origin:50% 90%; animation:navTap 3s ease-in-out infinite;
+}
+.g5-stone-word::before { align-self:center; font-size:.55em; margin-right:10px; }
+/* every answer choice gets a hand, so no one choice looks like the hint */
+@media (prefers-reduced-motion: reduce) {
+  .tab-panel details > summary::before, .fc-tap::before, .match-grid > .match-item::before,
+  .root-match-grid > .root-match-item::before, .sort-bank > .sort-chip::before, .spotter-sentence::before,
+  .g5-choices > .g5-choice::before, .g5-stone-word::before, .turn-in-checklist > .turn-in-item::before { animation:none; }
+}
