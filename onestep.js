@@ -14,7 +14,7 @@
 
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function shown(n) { return n.nodeType === 1 && getComputedStyle(n).display !== 'none'; }
-  function titleOf(act) { var t = act.querySelector('.activity-title, .spk-card-title'); return t ? t.textContent.replace(/\s+/g, ' ').trim() : ''; }
+  function titleOf(act) { var t = act.querySelector('.activity-title, .spk-card-title, .oao-bh-title, [class*="-title"]'); return t ? t.textContent.replace(/\s+/g, ' ').trim() : ''; }
   function isWhole(act) { return act.classList.contains('g5-game') || act.querySelector('.g5-river, .spk-wg, .wordgame, [class*="spk-wg"]'); }
 
   /* split an activity body into steps */
@@ -26,17 +26,20 @@
       var afterEx = prev && prev.matches('.task-box, .key-concept') && k.tagName === 'P';   // the line that explains an example stays with it
       var attach = !cur || media ? false :
         glue || afterEx || k.tagName === 'BUTTON' || !shown(k) ||
-        k.matches('.dol-answer, .task-box, .match-game, .sort-game, .fillin-game, .spotter-game, .vocab-grid, .decode-steps, .textbox-prompt, textarea, .journal-label, .spk-wc, .spk-coach, .spk-notes-use, .saved-dot');   // a question and its answer box are one step
+        k.matches('.spk-write-tools, .dol-answer, .task-box, .match-game, .sort-game, .fillin-game, .spotter-game, .vocab-grid, .decode-steps, .textbox-prompt, textarea, .journal-label, .spk-wc, .spk-coach, .spk-notes-use, .saved-dot');   // a question and its answer box are one step
       if (!attach) { cur = []; out.push(cur); }
       cur.push(k); prev = k;
       // an instruction line or a "notice" heading belongs with what follows it
-      glue = (k.matches('.callout, .g3-model-h, .key-concept, .spk-copia-seed') || (k.tagName === 'P' && !k.querySelector('textarea,input'))) && !k.matches('.swyk');
+      var decor = k.matches('.spk-arc-head, .spk-ornament');   // a picture-only ornament is not a step
+      glue = decor || (k.matches('.oao-bh-head, .spk-goal, .callout, .g3-model-h, .key-concept, .spk-copia-seed') || (k.tagName === 'P' && !k.querySelector('textarea,input'))) && !k.matches('.swyk');
     });
     return out.filter(function (c) { return c.length; });
   }
 
   function setup(panel) {
-    var acts = [].slice.call(panel.querySelectorAll(':scope > .activity, :scope > .spk-copia-card'));
+    var acts = [].slice.call(panel.querySelectorAll(':scope > .activity, :scope > .spk-copia-card')).filter(function (a) {
+      return !a.hasAttribute('data-oao-retired') && !a.hidden && a.style.display !== 'none' && getComputedStyle(a).display !== 'none';   // audit Nov 10: a retired Poetry Corner was still a stop, so Next led to a blank
+    });
     if (!acts.length) return;
     var state = acts.map(function (act, i) {
       act.classList.add('os-act');
@@ -86,7 +89,7 @@
       [].forEach.call(s.dots.children, function (d, k) { d.classList.toggle('on', k <= j); });
       s.back.style.visibility = (j > 1 || (j === 1 && !empty(s, 0))) ? 'visible' : 'hidden';
       var last = j >= s.steps.length - 1, after = state[i + 1];
-      var label = last ? (after ? 'Next: ' + after.title : 'Done') : 'Next';
+      var label = last ? (after ? (after.title ? 'Next: ' + after.title : 'Next') : 'Done') : 'Next';
       var hand = s.next.querySelector('.nav-hand');
       s.next.textContent = label; if (hand) s.next.insertBefore(hand, s.next.firstChild);
       if (scroll) try { s.act.scrollIntoView({ block: 'start', behavior: 'smooth' }); } catch (e) {}
