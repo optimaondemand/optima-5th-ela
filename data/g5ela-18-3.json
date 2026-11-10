@@ -84,6 +84,22 @@
    ],
    "why": "Revising means making your draft better, not starting over.",
    "use": "Next lesson you will write the final version."
+  },
+  {
+   "match": "Virtue Watch",
+   "do": [
+    "Read what courage means.",
+    "Read how courage shows up in this week's chapters.",
+    "Watch for courage while you read. Nothing to write here."
+   ]
+  },
+  {
+   "match": "Chapter Introduction",
+   "do": [
+    "Read the chapter introduction and today's reading skill.",
+    "Open your book and read Chapters 5–6.",
+    "Do the RWM box: read the sentence, then answer as a reader and as a writer."
+   ]
   }
  ],
  "glossary": [
@@ -232,6 +248,7 @@
   "creator": "National Park Service",
   "date": "2010",
   "license": "Public domain",
-  "url": "https://commons.wikimedia.org/wiki/File:Cypress_Swamp_(milepost_122)_on_the_Natchez_Trace_Parkway_(b8e23b68-1dd8-b71c-07c5-a458df66db4c).jpg"
+  "url": "https://commons.wikimedia.org/wiki/File:Cypress_Swamp_(milepost_122)_on_the_Natchez_Trace_Parkway_(b8e23b68-1dd8-b71c-07c5-a458df66db4c).jpg",
+  "lookBtn": "Tap to learn about this swamp photo"
  }
 }

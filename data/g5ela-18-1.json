@@ -112,6 +112,22 @@
    ],
    "why": "This week you will write one moment from the inside, the way Isaac does. Today you only choose it.",
    "use": "Tomorrow you will pick one moment from this list and draft it."
+  },
+  {
+   "match": "Virtue Watch",
+   "do": [
+    "Read what courage means.",
+    "Read how courage shows up in this week's chapters.",
+    "Watch for courage while you read. Nothing to write here."
+   ]
+  },
+  {
+   "match": "Chapter Introduction",
+   "do": [
+    "Tap Listen, or read the chapter introduction.",
+    "Open your book and read Chapters 1–2.",
+    "Answer the Quick Check."
+   ]
   }
  ],
  "glossary": [
@@ -226,7 +242,8 @@
   "creator": "Anthony Finley, engraved by Young & Delleker",
   "date": "about 1831",
   "license": "Public domain (David Rumsey Map Collection)",
-  "url": "https://commons.wikimedia.org/wiki/File:Mississippi._Published_by_A._Finley_Philada._Young_%26_Delleker_Sc._(IA_dr_mississippi-published-by-a-finley-philada-young-delleker-sc-00064028).jpg"
+  "url": "https://commons.wikimedia.org/wiki/File:Mississippi._Published_by_A._Finley_Philada._Young_%26_Delleker_Sc._(IA_dr_mississippi-published-by-a-finley-philada-young-delleker-sc-00064028).jpg",
+  "lookBtn": "Tap to learn about this map"
  },
  "checks": [
   {

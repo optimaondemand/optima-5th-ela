@@ -94,6 +94,23 @@
    ],
    "why": "Writing from the inside is how Isaac pulls you into his story.",
    "use": "Next lesson you will revise this draft."
+  },
+  {
+   "match": "Virtue Watch",
+   "do": [
+    "Read what courage means.",
+    "Read how courage shows up in this week's chapters.",
+    "Watch for courage while you read. Nothing to write here."
+   ]
+  },
+  {
+   "match": "Chapter Introduction",
+   "do": [
+    "Tap Listen, or read the chapter introduction.",
+    "Open your book and read Chapters 3–4.",
+    "Answer the Quick Check.",
+    "Do the RWM box: read the sentence, then answer as a reader and as a writer."
+   ]
   }
  ],
  "glossary": [
@@ -177,7 +194,8 @@
   "creator": "Eddie Harsh, U.S. Fish and Wildlife Service",
   "date": "2006",
   "license": "Public domain",
-  "url": "https://commons.wikimedia.org/wiki/File:Cypress_trees_in_Bluff_Lake_(6882771297).jpg"
+  "url": "https://commons.wikimedia.org/wiki/File:Cypress_trees_in_Bluff_Lake_(6882771297).jpg",
+  "lookBtn": "Tap to learn about this cypress photo"
  },
  "checks": [
   {

@@ -304,7 +304,8 @@
     fig.appendChild(h('div', { 'class': 'g5-plate-frame' }, [img]));
     var cap = h('figcaption');
     cap.innerHTML = '<div class="g5-plate-t">' + esc(A.title) + '</div>' +
-      (A.look ? '<details class="g5-look" open><summary>👀 What am I looking at?</summary><p>' + esc(A.look) + '</p></details>' : '') +
+      (A.look ? '<div class="g5-notice"><div class="g5-notice-h">👀 Look closely.</div><p class="g5-notice-q">What do you <b>notice</b>? What do you <b>wonder</b>?</p></div>' +
+        '<details class="g5-look"><summary>' + esc(A.lookBtn || 'Tap to learn about this picture') + '</summary><p>' + esc(A.look) + '</p></details>' : '') +
       '<div class="g5-credit">' + esc([A.creator, A.date, A.license].filter(Boolean).join(' · ')) +
       (A.url ? ' · <a href="' + esc(A.url) + '" target="_blank" rel="noopener">source</a>' : '') + '</div>';
     fig.appendChild(cap);
@@ -730,6 +731,69 @@
   }
   window.openCommonplaceBook = openBook;
 
+
+  /* ── 14. Pilot-review fixes (Nov 10 2026), from the G3 ELA review,
+     applied ahead of G5's: a new tab starts at the top; 👆 on every
+     button that does something (it taps now and then, so the eye goes
+     there); a key line under the header; Opti's "How to use your
+     lesson" video in a Start here drawer at the very top. ───────── */
+  function navTabTop() {
+    if (typeof window.switchTab !== 'function' || window.switchTab._navTop) return;
+    var inner = window.switchTab;
+    var f = function () {
+      var r = inner.apply(this, arguments);
+      var t = document.getElementById('pageTop');
+      try { if (t) t.scrollIntoView({ block: 'start' }); else window.scrollTo(0, 0); } catch (e) { window.scrollTo(0, 0); }
+      try {
+        if (window.parent && window.parent !== window) {
+          window.parent.postMessage(JSON.stringify({ subject: 'lti.scrollToTop' }), '*');
+          window.parent.postMessage({ subject: 'lti.scrollToTop' }, '*');
+        }
+      } catch (e) {}
+      return r;
+    };
+    f._navTop = true; window.switchTab = f;
+  }
+  var NAV_TAP = 'button.dol-check-btn, button.fillin-check-btn, button.tab-next-btn, button.g5-hint-b, button.g5-btn, button.gathered-btn';
+  function navTaps() {
+    document.querySelectorAll(NAV_TAP).forEach(function (b) {
+      if (b.querySelector('.nav-hand')) return;
+      var t = b.firstChild;
+      if (t && t.nodeType === 3) t.nodeValue = t.nodeValue.replace(/^\s*(?:\p{Extended_Pictographic}️?\s*)+/u, '');
+      var hd = document.createElement('span'); hd.className = 'nav-hand'; hd.setAttribute('aria-hidden', 'true'); hd.textContent = '👆';
+      b.insertBefore(hd, b.firstChild);
+    });
+  }
+  function navKeyAndStart() {
+    var hdr = document.querySelector('.header'); if (!hdr || document.querySelector('.nav-key')) return;
+    var k = h('div', { 'class': 'nav-key' });
+    k.innerHTML = '<span><b>👆</b> You can tap it.</span><span><b>🔊</b> You can listen.</span><span><b class="nav-dot">dotted word</b> Tap it to see what it means.</span>';
+    afterNode(hdr, k);
+    var src = window.NAV_HOWTO_SRC || 'assets/video/g5ela-howto.mp4';
+    var poster = window.NAV_HOWTO_POSTER || 'assets/video/g5ela-howto.jpg';
+    var owl = window.NAV_OWL || 'assets/companions/owl.png';
+    var card = document.createElement('details'); card.className = 'nav-start';
+    card.innerHTML = '<summary class="nav-start-bar"><span class="nav-start-play" aria-hidden="true">▶</span>' +
+      '<span class="nav-start-txt"><span class="nav-start-k">Start here</span>' +
+      '<span class="nav-start-t">Watch how to use your lesson · 1 minute</span></span>' +
+      '<span class="nav-start-face" aria-hidden="true"><img src="' + owl + '" alt="" onerror="this.remove()"></span>' +
+      '<span class="nav-start-chev" aria-hidden="true">▾</span></summary>' +
+      '<div class="nav-howto"><video class="nav-howto-v" controls preload="metadata" playsinline></video></div>';
+    var v = card.querySelector('video');
+    v.poster = poster; v.src = src;
+    v.addEventListener('play', function () { if (nowPlaying) { try { nowPlaying.pause(); } catch (e) {} } });
+    card.addEventListener('toggle', function () { if (!card.open) { try { v.pause(); } catch (e) {} } });
+    afterNode(k, card);
+  }
+  function buildNav() {
+    document.documentElement.classList.add('nav-fixes');
+    navTabTop(); navKeyAndStart(); navTaps();
+    if (window.MutationObserver) {
+      var t = null;
+      new MutationObserver(function () { clearTimeout(t); t = setTimeout(navTaps, 60); }).observe(document.body, { childList: true, subtree: true });
+    }
+  }
+
   /* ── boot, in page order ──────────────────────────────────── */
   function boot() {
     guard('theme', buildTheme);
@@ -745,6 +809,7 @@
     guard('cards', buildCards);
     guard('book', buildBook);
     guard('ribbon', buildRibbon);
+    guard('nav', buildNav);
     window.__g5SparkleAPI = {
       teardown: function () {
         document.querySelectorAll('.g5-listen, .g5-hook, .g5-check, .g5-do, .g5-plate, .g5-extra, .g5-game, .g5-page, .g5-ribbon, .g5-modal, .g5-marble, .g5-kicker, .g5-miss, .g5-hint-b, .g5-hint').forEach(function (n) { n.remove(); });
