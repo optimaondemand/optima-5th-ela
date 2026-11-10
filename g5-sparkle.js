@@ -222,13 +222,27 @@
     }
     return box;
   }
+  /* Pilot review (Nov 2026): "too much to read". On the Warm-Up and Word Study
+     tabs, the lead-in paragraph under What to do mostly repeats it. Fold it into
+     a closed "More help" so it is there for a student who wants it. */
+  function foldIntro(act, box) {
+    var tab = act.closest('.tab-panel');
+    if (!tab || !/^tab-(warmup|words)$/.test(tab.id)) return;
+    var nx = box.nextElementSibling;
+    if (!nx || nx.tagName !== 'P' || nx.querySelector('input,textarea,button,select')) return;
+    var more = h('details', { 'class': 'g5-why g5-more' }, [h('summary', { text: 'More help' })]);
+    more.appendChild(nx);
+    box.appendChild(more);
+  }
   function buildHow() {
     (D.how || []).forEach(function (H) {
       var act = H.match ? activityByTitle(H.match) : null;
       if (!act) { if (H.match) window.OAO_SPARKLE_FAILED.push('how: no activity titled "' + H.match + '"'); return; }
       var body = act.querySelector(':scope > .activity-body') || act;
       if (body.querySelector(':scope > .g5-do')) return;
-      body.insertBefore(howLine(H), body.firstChild);
+      var box = howLine(H);
+      body.insertBefore(box, body.firstChild);
+      foldIntro(act, box);
     });
   }
 
