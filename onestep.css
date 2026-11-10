@@ -1,0 +1,17 @@
+/* One step at a time (prototype) */
+.os-on .os-off { display: none !important; }
+.os-on .os-hide { display: none !important; }
+.os-on .os-closed > .activity-body, .os-on .os-closed > .spk-card-body, .os-on .os-closed > .spk-guide-wrap { display: none !important; }
+.os-on .os-closed { cursor: pointer; opacity: .8; }
+.os-on .os-closed > .activity-head, .os-on .os-closed > .spk-card-head { padding-top: 10px; padding-bottom: 10px; }
+.os-on .os-closed:hover { opacity: 1; }
+.os-check { display: none; margin-left: auto; width: 26px; height: 26px; border-radius: 999px; background: #2E7D4F; color: #fff;
+  font-weight: 800; align-items: center; justify-content: center; font-size: 14px; flex: 0 0 auto; }
+.os-on .os-done .os-check { display: inline-flex; }
+.os-on .os-open { box-shadow: 0 6px 22px rgba(20, 30, 60, .12); }
+.os-bar { display: flex; align-items: center; gap: 12px; margin-top: 18px; padding-top: 14px; border-top: 1px dashed #E2DCC8; }
+.os-dots { flex: 1; display: flex; gap: 6px; justify-content: center; }
+.os-dot { width: 9px; height: 9px; border-radius: 999px; background: #E2DCC8; }
+.os-dot.on { background: #C8A850; }
+.os-back { border: 0; background: none; color: #6B7591; font: 700 14px Nunito, system-ui, sans-serif; cursor: pointer; padding: 8px 4px; }
+.os-next { margin: 0 !important; }
