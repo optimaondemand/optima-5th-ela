@@ -31,7 +31,7 @@
       cur.push(k); prev = k;
       // an instruction line or a "notice" heading belongs with what follows it
       var decor = k.matches('.spk-arc-head, .spk-ornament');   // a picture-only ornament is not a step
-      glue = decor || (k.matches('.oao-bh-head, .spk-goal, .callout, .g3-model-h, .key-concept, .spk-copia-seed') || (k.tagName === 'P' && !k.querySelector('textarea,input'))) && !k.matches('.swyk');
+      glue = decor || (k.matches('.open-book-wrap, .oao-bh-head, .spk-goal, .callout, .g3-model-h, .key-concept, .spk-copia-seed') || (k.tagName === 'P' && !k.querySelector('textarea,input'))) && !k.matches('.swyk');
     });
     return out.filter(function (c) { return c.length; });
   }
