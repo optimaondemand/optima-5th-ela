@@ -78,7 +78,19 @@
       });
     }
     function step(s, j, dir) { while (j > 0 && j < s.steps.length - 1 && empty(s, j)) j += dir; if (j === 0 && empty(s, 0) && s.steps.length > 1) j = 1; return j; }
+    /* Nov 11 2026 (Bethany): Next must not move the page. Whatever was on screen
+       stays where it was; only if the new step's title would end up above the
+       sticky bars do we nudge it down into view (instantly, no glide). */
+    function hold(el) { return el ? { el: el, top: el.getBoundingClientRect().top } : null; }
+    function settle(h, act) {
+      if (!h) return;
+      var d = h.el.getBoundingClientRect().top - h.top;
+      if (d) window.scrollBy(0, d);
+      var t = act ? act.getBoundingClientRect().top : 0, pad = 110;
+      if (act && t < pad) window.scrollBy(0, t - pad);
+    }
     function show(i, j, scroll) {
+      var h = scroll ? hold(panel.querySelector(':scope > .os-open') || state[i].act) : null;
       j = step(state[i], j, 1);
       state.forEach(function (s, k) {
         s.act.classList.toggle('os-open', k === i);
@@ -92,7 +104,7 @@
       var label = last ? (after ? (after.title ? 'Next: ' + after.title : 'Next') : 'Done') : 'Next';
       var hand = s.next.querySelector('.nav-hand');
       s.next.textContent = label; if (hand) s.next.insertBefore(hand, s.next.firstChild);
-      if (scroll) try { s.act.scrollIntoView({ block: 'start', behavior: 'smooth' }); } catch (e) {}
+      settle(h, s.act);
     }
     state.forEach(function (s, i) {
       s.title = titleOf(s.act).replace(/^[^A-Za-z]+/, '').split(':')[0];
@@ -100,8 +112,8 @@
         if (s.at < s.steps.length - 1) return show(i, step(s, s.at + 1, 1), true);
         s.act.classList.add('os-done');
         if (state[i + 1]) show(i + 1, 0, true);
-        else { s.act.classList.remove('os-open'); s.act.classList.add('os-closed');
-          var nw = panel.querySelector(':scope > .tab-next-wrap'); if (nw) try { nw.scrollIntoView({ block: 'center', behavior: 'smooth' }); } catch (e) {} }
+        else { var hd = hold(s.act); s.act.classList.remove('os-open'); s.act.classList.add('os-closed');
+          settle(hd, null); }
       });
       s.back.addEventListener('click', function () { var j = s.at - 1; while (j > 0 && empty(s, j)) j--; if (j >= 0 && !(j === 0 && empty(s, 0))) show(i, j, true); });
       if (s.head) s.head.addEventListener('click', function () { if (s.act.classList.contains('os-closed')) show(i, s.act.classList.contains('os-done') ? 0 : s.at, true); });
