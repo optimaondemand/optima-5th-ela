@@ -18,3 +18,14 @@
 
 /* audit Nov 10: the sticky progress bar + tabs (about 90px) no longer cover the top of the step you land on */
 .os-on .os-act { scroll-margin-top: 104px; }
+
+/* pilot improvements (Nov 11 2026) */
+.os-count { font: 800 13px Nunito, system-ui, sans-serif; color: #5B6785; white-space: nowrap; }
+.os-dolbox { display: block; width: 100%; box-sizing: border-box; margin: 12px 0 10px; }
+.os-finish { margin: 14px 0 12px 22px; padding: 0; font: 600 16px/1.7 Nunito, system-ui, sans-serif; color: #24324F; }
+.os-more { margin-top: 14px; }
+.os-more > summary, .os-intro > summary { cursor: pointer; font: 800 15px Nunito, system-ui, sans-serif; color: #24324F; padding: 8px 4px; }
+.os-more > summary::before, .os-intro > summary::before, .os-howto > summary::before { content: '\1F446\00A0'; }
+.os-more-row { margin-top: 10px; }
+.os-intro { margin: 0; padding: 4px 18px; border-bottom: 1px solid #E2E8F4; background: #fff; }
+.os-g5 .info-strip { display: none; }
