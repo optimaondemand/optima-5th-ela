@@ -49,9 +49,32 @@
       var body = a.querySelector(':scope > .activity-body'), d = body && body.querySelector(':scope > .g5-do'), lis = d && d.querySelectorAll('ol > li');
       if (!lis || !lis.length || body.querySelector('.os-todo')) return;
       var box = el('div', 'callout os-todo'), ol = el('ol'); box.appendChild(el('b', '', 'What to do'));
-      [].forEach.call(lis, function (li) { ol.appendChild(el('li', '', li.textContent.replace(/\s+/g, ' ').trim())); });
-      box.appendChild(ol); body.insertBefore(box, d.nextSibling);
+      [].forEach.call(lis, function (li) { ol.appendChild(el('li', '', li.textContent.replace(/\s+/g, ' ').trim().replace(/\bRWM box\b/, 'Read Like a Writer box'))); });
+      box.appendChild(ol);
+      var more = d.querySelector('.g5-more p'), sents = more && /What Good Readers/i.test(a.querySelector('.activity-title').textContent) && more.textContent.replace(/\s+/g, ' ').trim().match(/[^.!?]+[.!?]+["\u201d]?/g);
+      if (sents && !body.querySelector(':scope > p')) box.appendChild(el('p', 'os-hold', sents[sents.length - 1].trim()));
+      body.insertBefore(box, d.nextSibling);
     });
+  }
+
+  /* ── ROUND 4 (Nov 11 2026) ──
+     the running story box is hidden on days that say "Nothing to draft yet" and is its own step on drafting days;
+     By Heart's "How to read a poem" opens on a tap; G5 plain words */
+  function storyBox() {
+    [].forEach.call(document.querySelectorAll('.tab-panel .key-concept'), function (k) {
+      if (/Nothing to draft yet/i.test(k.textContent) && k.querySelector('textarea')) k.classList.add('os-story-off');
+    });
+  }
+  function foldPoemHow() {
+    [].forEach.call(document.querySelectorAll('.oao-bh-how'), function (h) {
+      if (h.closest('details') || words(h) < 60) return;
+      var d = el('details', 'nav-fold os-howto'); d.appendChild(el('summary', '', '\ud83d\udca1 How to read a poem'));
+      h.parentNode.insertBefore(d, h); d.appendChild(h);
+    });
+  }
+  function g5Words() {
+    if (!document.body.classList.contains('os-g5')) return;
+    swap(document.body, /((?:each sentence|sentences?)) from Chapters \d+ and \d+/i, '$1 from this week\u2019s chapters');
   }
   var ALL = [];
   function words(n) { return ((n.textContent || '').replace(/\s+/g, ' ').trim().match(/\S+/g) || []).length; }
@@ -144,6 +167,7 @@
     var out = [], cur = null, glue = false, prev = null;
     [].slice.call(body.children).forEach(function (k) {
       if (k.matches('.g5-do, .nav-do')) { k.classList.add('os-off'); return; }
+      if (k.classList.contains('os-story-off')) { cur = [k]; out.push(cur); prev = k; glue = true; return; }
       var media = k.matches('.spk-guide-wrap, .spk-guide');
       var afterEx = prev && prev.matches('.task-box, .key-concept') && k.tagName === 'P';   // the line that explains an example stays with it
       var attach = !cur || media ? false :
@@ -151,6 +175,7 @@
         k.matches('.thinking-stop, .spk-write-tools, .dol-answer, .task-box, .match-game, .sort-game, .fillin-game, .spotter-game, .vocab-grid, .decode-steps, .textbox-prompt, textarea, .journal-label, .spk-wc, .spk-coach, .spk-notes-use, .saved-dot');   // a question and its answer box are one step
       if (attach && cur && k.matches('.key-concept, .callout') && !k.matches('.os-off') && shown(k) && !(prev && prev.tagName === 'P') &&
           cur.reduce(function (t, x) { return t + words(x); }, 0) > 70 && !cur.some(function (x) { return x.matches('textarea') || x.querySelector('textarea, input'); }) === true) attach = false;
+      if (attach && cur && prev && prev.matches('.key-concept') && prev.querySelector('textarea') && shown(prev) && k.matches('.key-concept, .callout') && shown(k) && !k.querySelector('textarea')) attach = false;   // the running story box is its own step
       if (k.matches('.chapter-section-title')) attach = false;   // a chapter heading starts its own step and leads it
       if (cur && !media && k.id && /count|progress|score/i.test(k.id)) attach = true;   // a game's "0 of 6" counter stays with the game
       if (!attach) { cur = []; out.push(cur); }
@@ -266,6 +291,7 @@
     if (!document.querySelector('.tab-panel .activity')) return;   // one-page lessons (fluency) stay as they are
     document.body.classList.add('os-on');
     try { moveWgrd(); foldHowTo(); dolBox(); finishOrder(); shortTop(); g5Todo(); finishWords(); } catch (e) {}
+    try { storyBox(); foldPoemHow(); g5Words(); } catch (e) {}
     oneQuestion();
     document.querySelectorAll('.tab-panel').forEach(setup);
   }

@@ -34,3 +34,7 @@
 .os-hint { margin: 10px 0 0; text-align: center; font: 700 15px Nunito, system-ui, sans-serif; color: #5B6785; }
 .os-todo { display: block; }
 .os-todo ol { margin: 6px 0 0 22px; padding: 0; line-height: 1.7; }
+
+/* round 4 (Nov 11 2026) */
+.os-on .os-story-off { display: none !important; }
+.os-hold { margin: 8px 0 0; font-weight: 700; }
