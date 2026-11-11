@@ -23,6 +23,36 @@
      5 "Step 3 of 27"                          6 finish = copy, then paste in Canvas
      8 activity numbers hidden                 9 a shorter top (G5)
      10 What Good Readers Do always on Warm-Up; later-chapter word tags say so */
+
+  /* ── ROUND 3 (Nov 11 2026): the words match the copy-and-paste finish; no direction is lost or left pointing at nothing ── */
+  function swap(root, rx, to) {
+    if (!root) return; var w = document.createTreeWalker(root, 4, null), nd, hit = [];
+    while ((nd = w.nextNode())) if (rx.test(nd.nodeValue)) hit.push(nd);
+    hit.forEach(function (x) { x.nodeValue = x.nodeValue.replace(rx, to); });
+  }
+  function finishWords() {
+    var acts = document.querySelector('.gathered-actions'); if (!acts) return;
+    var panel = acts.closest('.tab-panel') || document.body;
+    swap(panel, /Review, Copy,? or Download/i, 'Copy Your Work');
+    swap(panel, /Copy to paste into Canvas, or download[^.]*\./i, 'Copy it, then paste it in Canvas.');
+    swap(panel, /copy or download( your work)? at the bottom/i, 'copy your work at the bottom and paste it in Canvas');
+    swap(panel, /I copied or downloaded my work and submitted it to Canvas/i, 'I copied my work, pasted it in Canvas, and submitted it');
+    if (!titled(/Read Like a Writer/i).length && !document.querySelector('.rwm-step-label'))
+      swap(panel, /\s*[—-]+\s*including your three RWM responses from the Reading tab/i, '');
+    /* the questions are on the step before, not "above" */
+    swap(document.body, /The Pause & Think prompts are above — look them over first, then stop at each one as you read\./, 'Stop at each Pause & Think question as you read. Tap ◂ Back to see the questions again.');
+  }
+  /* G5: one-step hides the What to do box, but on Reading and What Good Readers Do it held the only directions ("Open your book and read Chapters 3-4") */
+  function g5Todo() {
+    if (!document.body.classList.contains('os-g5')) return;
+    titled(/Reading\b|What Good Readers Do/i).forEach(function (a) {
+      var body = a.querySelector(':scope > .activity-body'), d = body && body.querySelector(':scope > .g5-do'), lis = d && d.querySelectorAll('ol > li');
+      if (!lis || !lis.length || body.querySelector('.os-todo')) return;
+      var box = el('div', 'callout os-todo'), ol = el('ol'); box.appendChild(el('b', '', 'What to do'));
+      [].forEach.call(lis, function (li) { ol.appendChild(el('li', '', li.textContent.replace(/\s+/g, ' ').trim())); });
+      box.appendChild(ol); body.insertBefore(box, d.nextSibling);
+    });
+  }
   var ALL = [];
   function words(n) { return ((n.textContent || '').replace(/\s+/g, ' ').trim().match(/\S+/g) || []).length; }
   function titled(rx) {
@@ -121,11 +151,13 @@
         k.matches('.thinking-stop, .spk-write-tools, .dol-answer, .task-box, .match-game, .sort-game, .fillin-game, .spotter-game, .vocab-grid, .decode-steps, .textbox-prompt, textarea, .journal-label, .spk-wc, .spk-coach, .spk-notes-use, .saved-dot');   // a question and its answer box are one step
       if (attach && cur && k.matches('.key-concept, .callout') && !k.matches('.os-off') && shown(k) && !(prev && prev.tagName === 'P') &&
           cur.reduce(function (t, x) { return t + words(x); }, 0) > 70 && !cur.some(function (x) { return x.matches('textarea') || x.querySelector('textarea, input'); }) === true) attach = false;
+      if (k.matches('.chapter-section-title')) attach = false;   // a chapter heading starts its own step and leads it
+      if (cur && !media && k.id && /count|progress|score/i.test(k.id)) attach = true;   // a game's "0 of 6" counter stays with the game
       if (!attach) { cur = []; out.push(cur); }
       cur.push(k); prev = k;
       // an instruction line or a "notice" heading belongs with what follows it
       var decor = k.matches('.spk-arc-head, .spk-ornament');   // a picture-only ornament is not a step
-      glue = decor || (k.matches('.open-book-wrap, .oao-bh-head, .spk-goal, .callout, .g3-model-h, .key-concept, .spk-copia-seed') || (k.tagName === 'P' && !k.querySelector('textarea,input'))) && !k.matches('.swyk');
+      glue = decor || k.matches('.chapter-section-title') || (k.matches('.open-book-wrap, .oao-bh-head, .spk-goal, .callout, .g3-model-h, .key-concept, .spk-copia-seed') || (k.tagName === 'P' && !k.querySelector('textarea,input'))) && !k.matches('.swyk');
     });
     return out.filter(function (c) { return c.length; });
   }
@@ -149,6 +181,11 @@
       });
       var steps = isWhole(act) ? [[].slice.call(body.children)] : chunks(body);
       steps.forEach(function (c, j) { c.forEach(function (n) { n.classList.add('os-part'); n.dataset.osStep = j; }); });
+      steps.forEach(function (c) {
+        var vis = c.filter(function (n) { return !n.classList.contains('os-off'); });
+        if (steps.length > 1 && vis.length && vis.every(function (n) { return n.matches('.spk-guide-wrap, .spk-guide'); }) && !vis[vis.length - 1].querySelector('.os-hint'))
+          vis[vis.length - 1].appendChild(el('p', 'os-hint', 'Listen. Then tap Next.'));
+      });
 
       var bar = el('div', 'os-bar');
       var dots = el('div', 'os-dots');
@@ -228,7 +265,7 @@
   function boot() {
     if (!document.querySelector('.tab-panel .activity')) return;   // one-page lessons (fluency) stay as they are
     document.body.classList.add('os-on');
-    try { moveWgrd(); foldHowTo(); dolBox(); finishOrder(); shortTop(); } catch (e) {}
+    try { moveWgrd(); foldHowTo(); dolBox(); finishOrder(); shortTop(); g5Todo(); finishWords(); } catch (e) {}
     oneQuestion();
     document.querySelectorAll('.tab-panel').forEach(setup);
   }

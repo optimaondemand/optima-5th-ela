@@ -29,3 +29,8 @@
 .os-more-row { margin-top: 10px; }
 .os-intro { margin: 0; padding: 4px 18px; border-bottom: 1px solid #E2E8F4; background: #fff; }
 .os-g5 .info-strip { display: none; }
+
+/* round 3 (Nov 11 2026) */
+.os-hint { margin: 10px 0 0; text-align: center; font: 700 15px Nunito, system-ui, sans-serif; color: #5B6785; }
+.os-todo { display: block; }
+.os-todo ol { margin: 6px 0 0 22px; padding: 0; line-height: 1.7; }
