@@ -847,6 +847,30 @@
     });
   }
 
+  /* ── spot ornaments: the same pen-and-ink set and the same places as G4 ELA ──
+     A divider before every tab's Next button (two designs, alternating) and one
+     under the opening card; ivy in the corner of the opening card and the book
+     page; the quill on the Writer's Workshop; the blossom on Poetry Corner.
+     All decorative: CSS backgrounds or aria-hidden, so a screen reader never meets them. */
+  function buildOrnaments() {
+    var O = { divider: 'divider.png', divider2: 'divider-books.png', corner: 'corner.png', quill: 'quill.png', blossom: 'blossom.png' };
+    var root = document.documentElement;
+    Object.keys(O).forEach(function (k) { root.style.setProperty('--g5-orn-' + k, 'url("assets/ornaments/' + O[k] + '")'); });
+    function rule(alt) { return h('div', { 'class': 'g5-divider' + (alt ? ' g5-divider-b' : ''), 'aria-hidden': 'true' }); }
+    var n = 0;
+    document.querySelectorAll('.tab-panel > .tab-next-wrap').forEach(function (w) {
+      if (w.previousElementSibling && w.previousElementSibling.classList.contains('g5-divider')) return;
+      w.parentNode.insertBefore(rule(n++ % 2), w);
+    });
+    var hook = document.querySelector('.g5-hook');
+    if (hook && !(hook.nextElementSibling && hook.nextElementSibling.classList.contains('g5-divider'))) afterNode(hook, rule(false));
+    document.querySelectorAll('.activity > .activity-head').forEach(function (hd) {
+      var t = (hd.querySelector('.activity-title') || hd).textContent;
+      if (/Writer.s Workshop/i.test(t)) hd.classList.add('g5-orn-quill');
+      else if (/Poetry/i.test(t)) hd.classList.add('g5-orn-blossom');
+    });
+  }
+
   /* ── boot, in page order ──────────────────────────────────── */
   function boot() {
     guard('theme', buildTheme);
@@ -862,11 +886,12 @@
     guard('checks', buildChecks);
     guard('cards', buildCards);
     guard('book', buildBook);
+    guard('ornaments', buildOrnaments);
     guard('ribbon', buildRibbon);
     guard('nav', buildNav);
     window.__g5SparkleAPI = {
       teardown: function () {
-        document.querySelectorAll('.g5-say, .g5-listen, .g5-hook, .g5-check, .g5-do, .g5-plate, .g5-extra, .g5-game, .g5-page, .g5-ribbon, .g5-modal, .g5-marble, .g5-kicker, .g5-miss, .g5-hint-b, .g5-hint').forEach(function (n) { n.remove(); });
+        document.querySelectorAll('.g5-say, .g5-divider, .g5-listen, .g5-hook, .g5-check, .g5-do, .g5-plate, .g5-extra, .g5-game, .g5-page, .g5-ribbon, .g5-modal, .g5-marble, .g5-kicker, .g5-miss, .g5-hint-b, .g5-hint').forEach(function (n) { n.remove(); });
         document.querySelectorAll('.g5-gloss').forEach(function (b) { var t = b.nextSibling; b.replaceWith(document.createTextNode(b.textContent)); if (t && t.classList && t.classList.contains('g5-gloss-tip')) t.remove(); });
         document.documentElement.classList.remove('g5-on');
         return document.querySelectorAll('.g5-listen, .g5-hook, .g5-check, .g5-do, .g5-plate, .g5-extra, .g5-game, .g5-page, .g5-ribbon, .g5-modal, .g5-marble, .g5-kicker, .g5-miss, .g5-hint-b, .g5-gloss').length;

@@ -296,3 +296,49 @@ html.g5-on .g5-pg-h { font-family: 'Libre Baskerville', Georgia, serif; }
 .g5-say:hover { background:#FBF7E8; }
 .g5-say.g5-playing { background:#EAF2FF; border-color:#5A7FBF; }
 .g5-say[hidden] { display:none; }
+
+/* ── spot ornaments (same pen-and-ink set and places as G4 ELA) ── */
+.g5-divider {
+  height: 46px; margin: 26px auto 22px; max-width: 560px;
+  background: var(--g5-orn-divider) center / contain no-repeat; opacity: .85;
+}
+.g5-divider-b {
+  background-image: var(--g5-orn-divider2, var(--g5-orn-divider));
+  height: 118px; max-width: 360px; margin: 20px auto 16px; opacity: .9;
+}
+@media (max-width: 700px) {
+  .g5-divider { height: 34px; margin: 18px auto 16px; max-width: 82%; }
+  .g5-divider-b { height: 92px; max-width: 280px; }
+}
+/* ivy in the corner of the opening card and the book page (top right, mirrored) */
+.g5-hook, .g5-page { position: relative; overflow: hidden; }
+.g5-hook::before, .g5-page::before {
+  content: ''; position: absolute; top: -4px; right: -10px;
+  width: 96px; height: 112px; pointer-events: none; opacity: .34;
+  background: var(--g5-orn-corner) top left / contain no-repeat;
+  transform: scaleX(-1);
+}
+.g5-hook > *, .g5-page > * { position: relative; }
+.g5-hook .g5-hook-q { padding-right: 70px; }
+@media (max-width: 700px) {
+  .g5-hook::before, .g5-page::before { width: 58px; height: 68px; opacity: .26; }
+  .g5-hook .g5-hook-q { padding-right: 32px; }
+}
+/* the quill marks the Writer's Workshop; the blossom marks Poetry Corner */
+.activity-head.g5-orn-quill, .activity-head.g5-orn-blossom { position: relative; overflow: hidden; }
+.activity-head.g5-orn-quill > *, .activity-head.g5-orn-blossom > * { position: relative; z-index: 1; }
+.activity-head.g5-orn-quill::after, .activity-head.g5-orn-blossom::after {
+  content: ''; position: absolute; pointer-events: none; z-index: 0;
+}
+.activity-head.g5-orn-quill::after {
+  right: -18px; top: -6px; width: 170px; height: 80px; opacity: .3;
+  background: var(--g5-orn-quill) center / contain no-repeat; transform: rotate(-8deg);
+}
+.activity-head.g5-orn-blossom::after {
+  right: 10px; top: 4px; bottom: 4px; width: 110px; opacity: .34;
+  background: var(--g5-orn-blossom) center / contain no-repeat;
+}
+@media (max-width: 700px) {
+  .activity-head.g5-orn-quill::after { width: 110px; opacity: .22; }
+  .activity-head.g5-orn-blossom::after { width: 76px; opacity: .26; }
+}
