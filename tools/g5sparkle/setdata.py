@@ -26,10 +26,11 @@ old = json.loads(m.group(2))
 if old != json.load(io.open(dfile, encoding='utf-8')): print('WARNING: page DATA and data file already differed; page now follows the data file')
 old_body = m.group(2)
 if '\n' not in old_body.strip():   # the page keeps the format it had (compact stays compact)
-    body = json.dumps(D, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
+    body = json.dumps(D, ensure_ascii=False, separators=(',', ':')).replace('</script', '<\\/script')
 else:
-    body = json.dumps(D, ensure_ascii=False, indent=1).replace('</', '<\\/')
-new = html[:m.start(2)] + body + html[m.end(2):]
+    body = json.dumps(D, ensure_ascii=False, indent=1).replace('</script', '<\\/script')
+lead = old_body[:len(old_body) - len(old_body.lstrip())]; tail = old_body[len(old_body.rstrip()):]
+new = html[:m.start(2)] + lead + body + tail + html[m.end(2):]
 if apply:
     io.open(lesson, 'w', encoding='utf-8', newline='').write(new)
     raw = io.open(dfile, encoding='utf-8').read(); ind = len(raw.split('\n')[1]) - len(raw.split('\n')[1].lstrip()) if '\n' in raw.strip() else None
