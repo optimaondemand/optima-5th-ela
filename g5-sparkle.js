@@ -349,6 +349,9 @@
       '<div class="g5-credit">' + esc([A.creator, A.date, A.license].filter(Boolean).join(' · ')) +
       (A.url ? ' · <a href="' + esc(A.url) + '" target="_blank" rel="noopener">source</a>' : '') + '</div>';
     fig.appendChild(cap);
+    /* the plate is the lesson's frontispiece: right under the book quote, as in G3 and G4 */
+    var qs = document.querySelector('.quote-strip');
+    if (qs && A.tab !== 'reading-only') { fig.classList.add('g5-plate-top'); qs.classList.add('g5-quote'); afterNode(qs, fig); return; }
     var tab = A.tab || 'reading', p = panel(tab), li = p && p.querySelector(':scope > .g5-listen');
     if (li) afterNode(li, fig); else putTop(tab, fig);
   }
@@ -873,6 +876,142 @@
     });
   }
 
+  /* ── section icons: one hand-drawn set (assets/icons/*.png) in every activity circle ──
+     Matched on the activity title; the emoji in front of the title goes (the icon replaces it).
+     A missing file leaves the original circle exactly as it was. */
+  var ICONS = [[/Good Readers/i, 'lens'], [/Daily Oral/i, 'dol'], [/Morpholog/i, 'morphology'], [/Vocabular/i, 'vocabulary'],
+    [/Chapter Thinking/i, 'chapter'], [/Chapter Introduction|^\W*Reading/i, 'reading'], [/Poetry|By Heart/i, 'poetry'],
+    [/Spelling/i, 'spelling'], [/Virtue/i, 'virtue'], [/Writer/i, 'writing'], [/Grammar/i, 'grammar']];
+  function buildIcons() {
+    document.querySelectorAll('.activity > .activity-head').forEach(function (hd) {
+      var num = hd.querySelector('.activity-num'), t = hd.querySelector('.activity-title');
+      if (!num || !t || num.querySelector('.g5-ico')) return;
+      var name = 'compass';
+      for (var i = 0; i < ICONS.length; i++) if (ICONS[i][0].test(t.textContent)) { name = ICONS[i][1]; break; }
+      var img = new Image();
+      img.className = 'g5-ico'; img.alt = ''; img.setAttribute('aria-hidden', 'true');
+      img.onload = function () {
+        num.setAttribute('data-g5-was', num.innerHTML);
+        num.innerHTML = ''; num.appendChild(img); num.classList.add('g5-ico-num');
+        var tn = t.firstChild;
+        if (tn && tn.nodeType === 3) {
+          var stripped = tn.nodeValue.replace(/^[\s☀-➿️‍]*(?:[\uD83C-\uD83E][\uDC00-\uDFFF][️‍]*)*\s*/, '');
+          if (stripped !== tn.nodeValue) { t.setAttribute('data-g5-was', tn.nodeValue); tn.nodeValue = stripped; }
+        }
+      };
+      img.src = 'assets/icons/' + name + '.png';
+    });
+  }
+
+  /* ── the reading lens: What Good Readers Do becomes a choice that follows the student ──
+     The lenses ARE the page's own "How to Do It" steps (scope-and-sequence content untouched):
+     <strong>name:</strong> tip. The student taps one; it shows as a bookmark on the later tabs and
+     comes back as one short line at the end of Chapter Thinking (added to My Work). */
+  function buildLens() {
+    var act = activityByTitle('What Good Readers Do'); if (!act) return;
+    var kc = null;
+    act.querySelectorAll('.key-concept').forEach(function (k) { if (!kc && /How to Do It/i.test(k.textContent) && k.querySelector('ol li strong')) kc = k; });
+    if (!kc) return;
+    var lenses = [];
+    kc.querySelectorAll('ol > li').forEach(function (li) {
+      var st = li.querySelector('strong'); if (!st) return;
+      var name = st.textContent.replace(/[:\s]+$/, '').trim();
+      var tip = li.textContent.slice(li.textContent.indexOf(st.textContent) + st.textContent.length).trim();
+      lenses.push({ name: name, tip: tip });
+    });
+    if (lenses.length < 2) return;
+    kc.hidden = true; kc.classList.add('g5-lens-src');
+    act.querySelectorAll('.thinking-stop').forEach(function (n) { n.hidden = true; n.style.display = 'none'; n.classList.add('g5-lens-src'); });
+
+    var pick = store(KEY + '.lens');
+    var box = h('div', { 'class': 'g5-lens' });
+    box.innerHTML = '<div class="g5-lens-hero" aria-hidden="true"></div>' +
+      '<div class="g5-lens-h">Choose your reading lens</div>' +
+      '<p class="g5-lens-sub">Tap one. You will read today’s chapters through it.</p>';
+    var hero = new Image(); hero.alt = '';
+    hero.onload = function () { box.querySelector('.g5-lens-hero').appendChild(hero); box.classList.add('has-hero'); };
+    hero.src = 'assets/icons/lens-hero.jpg';
+    var row = h('div', { 'class': 'g5-lens-row', role: 'group', 'aria-label': 'Reading lenses' });
+    var said = h('div', { 'class': 'g5-lens-said', 'aria-live': 'polite' });
+    lenses.forEach(function (L2, i) {
+      var b = h('button', { type: 'button', 'class': 'g5-lens-card', 'aria-pressed': 'false' });
+      b.innerHTML = '<span class="g5-lens-n">' + (i + 1) + '</span><span class="g5-lens-name">' + esc(L2.name) + '</span><span class="g5-lens-tip">' + esc(L2.tip) + '</span>';
+      b.addEventListener('click', function () { choose(i); });
+      row.appendChild(b);
+    });
+    box.appendChild(row); box.appendChild(said);
+    kc.parentNode.insertBefore(box, kc);
+
+    /* the bookmark on every tab after the lens's own tab. Placed at paint time, not now:
+       onestep.js moves What Good Readers Do to Warm-Up after this layer runs. */
+    var marks = [];
+    function placeMarks() {
+      marks.forEach(function (m) { m.remove(); }); marks = [];
+      var home = box.closest('.tab-panel'), tabs = Array.prototype.slice.call(document.querySelectorAll('.tab-panel'));
+      tabs.slice(tabs.indexOf(home) + 1).forEach(function (tp) {
+        var m = h('div', { 'class': 'g5-lens-mark' });
+        var tl = tp.querySelector(':scope > .g5-listen');
+        if (tl) afterNode(tl, m); else tp.insertBefore(m, tp.firstChild);
+        marks.push(m);
+      });
+    }
+    /* one line at the end of Chapter Thinking */
+    var ct = activityByTitle('Chapter Thinking'), use = null, ta = null;
+    if (ct) {
+      var body = ct.querySelector(':scope > .activity-body') || ct;
+      use = h('div', { 'class': 'g5-lens-use' });
+      use.innerHTML = '<div class="g5-lens-use-h">🔍 Through your lens</div><p class="g5-lens-use-q"></p>';
+      ta = h('textarea', { 'class': 'journal-box g5-lens-ta', id: 'journal-lens', rows: '3',
+        placeholder: 'Through my lens, I noticed…' });
+      ta.value = store(KEY + '.lensNote') || '';
+      ta.addEventListener('input', function () { store(KEY + '.lensNote', ta.value); if (typeof window.gatherAnswers === 'function') window.gatherAnswers(); });
+      use.appendChild(ta);
+      body.appendChild(use);
+    }
+    function goHome() {
+      var home = box.closest('.tab-panel');
+      if (home && typeof window.switchTab === 'function') window.switchTab(home.id.replace(/^tab-/, ''));
+      setTimeout(function () { box.scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth', block: 'center' }); }, 60);
+    }
+    function paint() {
+      var L2 = typeof pick === 'number' ? lenses[pick] : null;
+      row.querySelectorAll('.g5-lens-card').forEach(function (b, j) { b.setAttribute('aria-pressed', j === pick ? 'true' : 'false'); });
+      placeMarks();
+      said.innerHTML = L2 ? '<b>Your lens today:</b> ' + esc(L2.name) + '. Keep it in mind as you read. You will use it at the end of the lesson.' : '';
+      marks.forEach(function (m) {
+        m.hidden = false;
+        m.innerHTML = L2
+          ? '<span class="g5-lens-mark-ico" aria-hidden="true"></span><span><b>Your lens:</b> ' + esc(L2.name) + '<span class="g5-lens-mark-tip">' + esc(L2.tip) + '</span></span><button type="button" class="g5-lens-change">Change</button>'
+          : '<span class="g5-lens-mark-ico" aria-hidden="true"></span><span><b>Pick your reading lens first.</b></span><button type="button" class="g5-lens-change">Go pick</button>';
+        m.querySelector('button').addEventListener('click', goHome);
+      });
+      if (use) {
+        use.querySelector('.g5-lens-use-q').innerHTML = L2
+          ? 'Your lens was <b>' + esc(L2.name) + '</b>. In 1 or 2 sentences, tell what it helped you notice in today’s chapters.'
+          : 'First pick a reading lens in What Good Readers Do. Then tell what it helped you notice.';
+      }
+      if (typeof window.gatherAnswers === 'function') try { window.gatherAnswers(); } catch (e) {}
+    }
+    function choose(i) { pick = i; store(KEY + '.lens', i); paint(); }
+    window.addEventListener('load', function () { setTimeout(paint, 900); });   /* after onestep.js (load + 400 ms) moves the activity */
+
+    /* My Work: add the lens and the line to the gathered answers */
+    var orig = window.gatherAnswers;
+    if (typeof orig === 'function' && !orig.__g5lens) {
+      var wrapped = function () {
+        var r = orig.apply(this, arguments);
+        var out = document.getElementById('gatheredOutput');
+        if (out && typeof pick === 'number') {
+          out.value += '\n🔍 MY READING LENS\n────────────────────────────────\nLens: ' + lenses[pick].name + '\n' +
+            ((ta && ta.value.trim()) || '(no answer)') + '\n';
+        }
+        return r;
+      };
+      wrapped.__g5lens = true; window.gatherAnswers = wrapped;
+    }
+    paint();
+  }
+
   /* ── spot ornaments: the same pen-and-ink set and the same places as G4 ELA ──
      A divider before every tab's Next button (two designs, alternating) and one
      under the opening card; ivy in the corner of the opening card and the book
@@ -904,6 +1043,8 @@
     guard('hook', buildHook);
     guard('art', buildArt);
     guard('how', buildHow);
+    guard('lens', buildLens);
+    guard('icons', buildIcons);
     guard('glossary', buildGlossary);
     guard('wordsay', buildWordSay);
     guard('hints', buildHints);
@@ -917,7 +1058,7 @@
     guard('nav', buildNav);
     window.__g5SparkleAPI = {
       teardown: function () {
-        document.querySelectorAll('.g5-say, .g5-divider, .g5-listen, .g5-hook, .g5-check, .g5-do, .g5-plate, .g5-extra, .g5-game, .g5-page, .g5-ribbon, .g5-modal, .g5-marble, .g5-kicker, .g5-miss, .g5-hint-b, .g5-hint').forEach(function (n) { n.remove(); });
+        document.querySelectorAll('.g5-say, .g5-divider, .g5-lens, .g5-lens-mark, .g5-lens-use, .g5-listen, .g5-hook, .g5-check, .g5-do, .g5-plate, .g5-extra, .g5-game, .g5-page, .g5-ribbon, .g5-modal, .g5-marble, .g5-kicker, .g5-miss, .g5-hint-b, .g5-hint').forEach(function (n) { n.remove(); });
         document.querySelectorAll('.g5-gloss').forEach(function (b) { b.replaceWith(document.createTextNode(b.textContent)); }); document.querySelectorAll('.g5-gloss-tip').forEach(function (t) { t.remove(); });
         document.documentElement.classList.remove('g5-on');
         return document.querySelectorAll('.g5-listen, .g5-hook, .g5-check, .g5-do, .g5-plate, .g5-extra, .g5-game, .g5-page, .g5-ribbon, .g5-modal, .g5-marble, .g5-kicker, .g5-miss, .g5-hint-b, .g5-gloss').length;
