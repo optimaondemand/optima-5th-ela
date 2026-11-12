@@ -252,14 +252,21 @@
       var scope = G['in'] ? activityByTitle(G['in']) : document.body;
       if (!scope) return;
       var re = new RegExp('\\b(' + G.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')\\b', 'i');
-      var walker = document.createTreeWalker(scope, NodeFilter.SHOW_TEXT, {
-        acceptNode: function (n) {
-          var p = n.parentNode;
-          if (!p || p.closest('button, textarea, input, script, style, .g5-gloss, .g5-do, .activity-title, summary')) return NodeFilter.FILTER_REJECT;
-          return re.test(n.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
-        }
-      });
-      var node = walker.nextNode(); if (!node) return;
+      /* first look in the page text students see; only if the word is not there,
+         look in the folds under What to do ("Why are we doing this?", "More help").
+         The What to do steps themselves stay clean. */
+      function find(folds) {
+        var w = document.createTreeWalker(scope, NodeFilter.SHOW_TEXT, {
+          acceptNode: function (n) {
+            var p = n.parentNode;
+            if (!p || p.closest('button, textarea, input, script, style, .g5-gloss, .activity-title, summary')) return NodeFilter.FILTER_REJECT;
+            if (p.closest('.g5-do') && !(folds && p.closest('.g5-why'))) return NodeFilter.FILTER_REJECT;
+            return re.test(n.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+          }
+        });
+        return w.nextNode();
+      }
+      var node = find(false) || find(true); if (!node) return;
       var m = re.exec(node.nodeValue);
       var after = node.splitText(m.index); after.nodeValue = after.nodeValue.slice(m[0].length);
       /* hover (or focus, or tap on a tablet) shows the meaning in a box that floats
