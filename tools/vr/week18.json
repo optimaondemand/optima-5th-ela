@@ -5,7 +5,7 @@
  "book": "How I Became a Ghost",
  "chapters": "Chapters 3 and 4",
  "title": "This River, This Dirt",
- "guide": {"name": "Mason", "initials": "M", "color": "#1F3F7A", "folder": "mason", "photo": "assets/companions/mason.jpg", "voice": "1Mx54eW85zYpnx1WfIdU"},
+ "guide": {"name": "Mason", "initials": "M", "color": "#1F3F7A", "folder": "mason", "photo": "assets/companions/mason-v2.jpg", "voice": "1Mx54eW85zYpnx1WfIdU"},
  "map": "Tranquil Forest",
  "mapFilter": "Tranquil",
  "minutes": 15,

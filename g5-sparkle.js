@@ -126,7 +126,7 @@
     r.innerHTML = '<span class="g5-rib-ico" aria-hidden="true">📖</span><span class="g5-rib-t">My book</span><span class="g5-rib-dots">' + dots + '</span>';
   }
 
-  /* ── 3. Listen cards: Mason, the G5 ELA guide (portrait assets/companions/mason.jpg) ── */
+  /* ── 3. Listen cards: Mason, the G5 ELA guide (portrait assets/companions/mason-v2.jpg) ── */
   function buildListen() {
     if (!D.listen) return;
     ['page', 'warmup', 'words', 'reading', 'assignment'].forEach(function (tab) {
@@ -135,7 +135,7 @@
       var play_ = h('button', { 'class': 'g5-listen-play', type: 'button', hidden: 'hidden', 'aria-label': 'Play' }, ['▶ Listen']);
       var words_ = h('details', { 'class': 'g5-listen-words' }, [h('summary', { text: 'Read the words instead' }), h('p', { text: c.text })]);
       var card = h('div', { 'class': 'g5-listen', 'data-tab': tab }, [
-        h('img', { 'class': 'g5-listen-av', src: 'assets/companions/mason.jpg', alt: '' }),
+        h('img', { 'class': 'g5-listen-av', src: 'assets/companions/mason-v2.jpg', alt: '' }),
         h('div', { 'class': 'g5-listen-main' }, [h('div', { 'class': 'g5-listen-t', text: 'Mason' }), play_, words_])
       ]);
       play_.addEventListener('click', function () { play(audioUrl(slot), play_); });
@@ -350,8 +350,9 @@
       (A.url ? ' · <a href="' + esc(A.url) + '" target="_blank" rel="noopener">source</a>' : '') + '</div>';
     fig.appendChild(cap);
     /* the plate is the lesson's frontispiece: right under the book quote, as in G3 and G4 */
-    var qs = document.querySelector('.quote-strip');
-    if (qs && A.tab !== 'reading-only') { fig.classList.add('g5-plate-top'); qs.classList.add('g5-quote'); afterNode(qs, fig); return; }
+    /* first thing on the Warm-Up tab, so it shows on Warm-Up only (Bethany, Nov 12 2026) */
+    var wu = panel('warmup');
+    if (wu) { fig.classList.add('g5-plate-top'); wu.insertBefore(fig, wu.firstChild); return; }
     var tab = A.tab || 'reading', p = panel(tab), li = p && p.querySelector(':scope > .g5-listen');
     if (li) afterNode(li, fig); else putTop(tab, fig);
   }
@@ -950,7 +951,7 @@
       var home = box.closest('.tab-panel'), tabs = Array.prototype.slice.call(document.querySelectorAll('.tab-panel'));
       tabs.slice(tabs.indexOf(home) + 1).forEach(function (tp) {
         var m = h('div', { 'class': 'g5-lens-mark' });
-        var tl = tp.querySelector(':scope > .g5-listen');
+        var tl = tp.querySelector(':scope > .g5-readnow') || tp.querySelector(':scope > .g5-listen');
         if (tl) afterNode(tl, m); else tp.insertBefore(m, tp.firstChild);
         marks.push(m);
       });
@@ -1081,21 +1082,30 @@
         s += '<g><title>Week ' + w + '</title><circle cx="' + p[0] + '" cy="' + p[1] + '" r="' + (B.r + 1) + '" fill="#FBF3DF" opacity=".55"/></g>';
       }
     });
-    /* Mason stands just above today's space, with the lesson tag beside him */
-    var mx = here[0], my = Math.max(60, here[1] - 98);
-    s += '<g class="g5-board-me" transform="translate(' + mx + ',' + my + ')">' +
-      '<circle r="58" fill="#FFF8E9" stroke="#C7922C" stroke-width="6"/>' +
-      '<image href="assets/companions/mason.jpg" x="-52" y="-52" width="104" height="104" clip-path="url(#g5bFace)" preserveAspectRatio="xMidYMid slice"/>' +
-      '<path d="M -12 54 L 0 74 L 12 54 Z" fill="#C7922C"/></g>';
+    /* today's space: the gold ring and the lesson tag (no portrait on the map, Bethany Nov 12 2026) */
+    var mx = here[0], my = here[1];
     var label = 'LESSON ' + L.week + '.' + (typeof L.day === 'number' ? L.day : 4), bw = 22 + label.length * 11;
-    var bx = mx + 70 + bw < B.w ? mx + 70 : mx - 70 - bw;
+    var bx = Math.max(8, Math.min(B.w - bw - 8, mx - bw / 2)); my = my - 66;   /* tag sits just above the ring */
     s += '<rect x="' + bx + '" y="' + (my - 19) + '" width="' + bw + '" height="38" rx="19" fill="#8B3A20"/>' +
       '<text x="' + (bx + bw / 2) + '" y="' + (my + 7) + '" text-anchor="middle" font-family="Nunito,sans-serif" font-weight="800" font-size="19" fill="#FFF8E9">' + label + '</text>';
     svg.innerHTML = s;
     card.appendChild(svg);
-    card.appendChild(h('p', { 'class': 'g5-board-note', text: 'Every colored space is one week. Mason moves one space each week, all the way to Finish.' }));
-    if (old) { old.parentNode.insertBefore(card, old); old.hidden = true; old.style.display = 'none'; old.classList.add('g5-board-old'); }
-    else putTop('reading', card);
+    card.appendChild(h('p', { 'class': 'g5-board-note', text: 'Every colored space is one week. The gold ring shows where you are, all the way to Finish.' }));
+    if (old) { old.hidden = true; old.style.display = 'none'; old.classList.add('g5-board-old'); }
+    var nx = rp.querySelector(':scope > .tab-next-wrap');
+    if (nx) rp.insertBefore(card, nx); else rp.appendChild(card);
+  }
+
+  /* ── today's reading, said plainly at the top of the Reading tab ── */
+  function buildReadNow() {
+    var rp = panel('reading'); if (!rp || !L.chapters || rp.querySelector('.g5-readnow')) return;
+    var hasCheck = !!(D.checks || []).filter(function (c) { return (c.tab || 'reading') === 'reading'; }).length;
+    var card = h('div', { 'class': 'g5-readnow' });
+    card.innerHTML = '<div class="g5-readnow-ico" aria-hidden="true"></div><div><div class="g5-readnow-k">Today’s reading</div>' +
+      '<div class="g5-readnow-t">Read <b>' + esc(L.chapters) + '</b> of <em>' + esc(L.bookTitle) + '</em> in your book.</div>' +
+      (hasCheck ? '<div class="g5-readnow-s">Then answer the Quick check at the end of this tab.</div>' : '') + '</div>';
+    var li = rp.querySelector(':scope > .g5-listen');
+    if (li) afterNode(li, card); else rp.insertBefore(card, rp.firstChild);
   }
 
   /* ── spot ornaments: the same pen-and-ink set and the same places as G4 ELA ──
@@ -1126,6 +1136,7 @@
   function boot() {
     guard('theme', buildTheme);
     guard('listen', buildListen);
+    guard('readnow', buildReadNow);
     guard('hook', buildHook);
     guard('art', buildArt);
     guard('board', buildBoard);
@@ -1137,15 +1148,15 @@
     guard('hints', buildHints);
     guard('miss', buildMiss);
     guard('stones', buildStones);
-    guard('checks', buildChecks);
     guard('cards', buildCards);
+    guard('checks', buildChecks);
     guard('book', buildBook);
     guard('ornaments', buildOrnaments);
     guard('ribbon', buildRibbon);
     guard('nav', buildNav);
     window.__g5SparkleAPI = {
       teardown: function () {
-        document.querySelectorAll('.g5-say, .g5-board, .g5-divider, .g5-lens, .g5-lens-mark, .g5-lens-use, .g5-listen, .g5-hook, .g5-check, .g5-do, .g5-plate, .g5-extra, .g5-game, .g5-page, .g5-ribbon, .g5-modal, .g5-marble, .g5-kicker, .g5-miss, .g5-hint-b, .g5-hint').forEach(function (n) { n.remove(); });
+        document.querySelectorAll('.g5-say, .g5-board, .g5-readnow, .g5-divider, .g5-lens, .g5-lens-mark, .g5-lens-use, .g5-listen, .g5-hook, .g5-check, .g5-do, .g5-plate, .g5-extra, .g5-game, .g5-page, .g5-ribbon, .g5-modal, .g5-marble, .g5-kicker, .g5-miss, .g5-hint-b, .g5-hint').forEach(function (n) { n.remove(); });
         document.querySelectorAll('.g5-gloss').forEach(function (b) { b.replaceWith(document.createTextNode(b.textContent)); }); document.querySelectorAll('.g5-gloss-tip').forEach(function (t) { t.remove(); });
         document.documentElement.classList.remove('g5-on');
         return document.querySelectorAll('.g5-listen, .g5-hook, .g5-check, .g5-do, .g5-plate, .g5-extra, .g5-game, .g5-page, .g5-ribbon, .g5-modal, .g5-marble, .g5-kicker, .g5-miss, .g5-hint-b, .g5-gloss').length;

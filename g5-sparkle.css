@@ -448,3 +448,13 @@ html.g5-on .activity-num.g5-ico-num { background: transparent !important; width:
 html.g5-on .os-todo, html.g5-on .os-todo *, html.g5-on .os-hold,
 html.g5-on .callout, html.g5-on .callout p, html.g5-on .callout li, html.g5-on .callout b, html.g5-on .callout strong,
 html.g5-on .g5-do, html.g5-on .g5-do li { color: #1F1A14 !important; }
+
+/* today's reading: the main job on the Reading tab, impossible to miss */
+.g5-readnow { display: flex; align-items: center; gap: 14px; margin: 14px 0 16px; padding: 14px 18px;
+  background: #FFF6E3; border: 2px solid #D9B46A; border-radius: 14px; box-shadow: 0 6px 16px -12px rgba(43,33,24,.45); }
+.g5-readnow-ico { flex: none; width: 64px; height: 64px; border-radius: 50%; background: url("assets/icons/reading.png") center / cover; }
+.g5-readnow-k { font: 800 13px 'Nunito', sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--g5-ox); }
+.g5-readnow-t { font: 700 21px/1.35 'Libre Baskerville', Georgia, serif; color: #1F1A14; }
+.g5-readnow-s { margin-top: 4px; font-size: 16px; color: #1F1A14; }
+@media (max-width: 700px) { .g5-readnow-ico { width: 48px; height: 48px; } .g5-readnow-t { font-size: 18px; } }
+.g5-plate.g5-plate-top { margin: 0 0 16px; border-radius: 12px; border: 1px solid var(--g5-rule); }
