@@ -1012,6 +1012,92 @@
     paint();
   }
 
+  /* ── the year board: one painted path, one space per week, Mason walks it ──
+     Replaces the page's old chapter tracker on the Reading tab. The art is
+     assets/maps/year-board.jpg; BOARD.spaces are measured off it in PATH order
+     (tools/g5sparkle/measure_board.py), so a repaint means re-measuring.
+     Weeks before this lesson's week count as travelled. Books not reached yet
+     lie quiet: colour drained, paper veiled. */
+  var BOARD = {
+    src: 'assets/maps/year-board.jpg', w: 1536, h: 1024, r: 33,
+    spaces: [[212,216],[312,214],[412,214],[508,212],[608,212],[1118,214],[1216,212],[1316,212],[1346,478],[1262,478],[1176,478],[1094,478],[1006,476],[920,476],[382,476],[294,478],[200,476],[206,702],[302,706],[402,706],[494,708],[588,708],[682,710],[778,710],[1366,956],[1276,954],[1186,956],[1090,956],[996,956],[902,956],[392,956],[300,958]],
+    books: [
+      { t: 'The Witch of Blackbird Pond', weeks: [1, 5],   ink: '#7F9A55', rect: [140, 40, 560, 170] },
+      { t: 'Johnny Tremain',              weeks: [6, 8],   ink: '#B5573F', rect: [1030, 0, 506, 190] },
+      { t: 'Carry On, Mr. Bowditch',      weeks: [9, 14],  ink: '#4C5F96', rect: [790, 280, 700, 180] },
+      { t: 'Writer’s Workshop',      weeks: [15, 17], ink: '#C9962F', rect: [20, 280, 480, 180] },
+      { t: 'How I Became a Ghost',        weeks: [18, 24], ink: '#4F8C7E', rect: [80, 510, 760, 170] },
+      { t: 'By the Great Horn Spoon!',    weeks: [25, 30], ink: '#D07A2C', rect: [780, 770, 720, 170] },
+      { t: 'Journey’s End',          weeks: [31, 32], ink: '#8C6FA6', rect: [120, 770, 420, 160] }
+    ]
+  };
+  function bookOfWeek(w) { for (var i = 0; i < BOARD.books.length; i++) if (w >= BOARD.books[i].weeks[0] && w <= BOARD.books[i].weeks[1]) return BOARD.books[i]; return BOARD.books[0]; }
+  function buildBoard() {
+    if (typeof L.week !== 'number' || L.week < 1 || L.week > 32) return;
+    var rp = panel('reading'); if (!rp) return;
+    var old = rp.querySelector('.tracker-card');
+    var B = BOARD, cur = L.week, here = B.spaces[cur - 1]; if (!here) return;
+    var card = h('div', { 'class': 'g5-board' });
+    card.innerHTML = '<div class="g5-board-head"><div class="g5-card-k">My reading journey</div>' +
+      '<div class="g5-board-t">Week ' + cur + ' of 32 · <em>' + esc(bookOfWeek(cur).t) + '</em></div></div>';
+    var NS = 'http://www.w3.org/2000/svg';
+    var svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('viewBox', '0 0 ' + B.w + ' ' + B.h); svg.setAttribute('class', 'g5-board-svg');
+    svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-label', 'Year map. You are on week ' + cur + ' of 32, in ' + bookOfWeek(cur).t + '.');
+    var s = '<defs><filter id="g5bUnread" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0.12"/></filter>' +
+      '<filter id="g5bSoft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="16"/></filter>' +
+      '<clipPath id="g5bFace"><circle cx="0" cy="0" r="52"/></clipPath>';
+    B.books.forEach(function (b, i) {
+      var r = b.rect;
+      s += '<mask id="g5bM' + i + '" maskUnits="userSpaceOnUse" x="0" y="0" width="' + B.w + '" height="' + B.h + '">' +
+        '<rect x="' + (r[0] + 6) + '" y="' + (r[1] + 6) + '" width="' + (r[2] - 12) + '" height="' + (r[3] - 12) + '" rx="26" fill="#fff" filter="url(#g5bSoft)"/></mask>';
+    });
+    s += '</defs><image id="g5bImg" href="' + B.src + '" x="0" y="0" width="' + B.w + '" height="' + B.h + '"/>';
+    B.books.forEach(function (b, i) {
+      if (cur >= b.weeks[0]) return;
+      var r = b.rect;
+      s += '<g mask="url(#g5bM' + i + ')"><use href="#g5bImg" filter="url(#g5bUnread)"/>' +
+        '<rect x="' + r[0] + '" y="' + r[1] + '" width="' + r[2] + '" height="' + r[3] + '" fill="#FBF3DF" opacity=".42"/></g>';
+    });
+    /* book titles: a cream label under each book's own spaces */
+    B.books.forEach(function (b) {
+      var xs = [], ys = [];
+      for (var w = b.weeks[0]; w <= b.weeks[1]; w++) { xs.push(B.spaces[w - 1][0]); ys.push(B.spaces[w - 1][1]); }
+      var cx = (Math.min.apply(0, xs) + Math.max.apply(0, xs)) / 2, cy = Math.max.apply(0, ys) + 62;
+      if (cy + 18 > B.h) cy = Math.min.apply(0, ys) - 56;   /* bottom row: label above the spaces */
+      var reached = cur >= b.weeks[0], tw = 16 + b.t.length * 11.5;
+      s += '<g opacity="' + (reached ? 1 : .6) + '"><rect x="' + (cx - tw / 2) + '" y="' + (cy - 20) + '" width="' + tw + '" height="34" rx="17" fill="#FFF8E9" stroke="' + b.ink + '" stroke-width="2"/>' +
+        '<text x="' + cx + '" y="' + (cy + 4) + '" text-anchor="middle" font-family="Libre Baskerville,Georgia,serif" font-size="19" font-style="italic" fill="#3A2C1E">' + esc(b.t) + '</text></g>';
+    });
+    B.spaces.forEach(function (p, i) {
+      var w = i + 1, ink = bookOfWeek(w).ink;
+      if (w < cur) {
+        s += '<g><title>Week ' + w + ' · done</title><circle cx="' + p[0] + '" cy="' + p[1] + '" r="' + B.r + '" fill="' + ink + '" opacity=".9"/>' +
+          '<path d="M' + (p[0] - 12) + ' ' + p[1] + ' l8 9 16 -18" stroke="#FFF8E9" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>';
+      } else if (w === cur) {
+        s += '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="' + (B.r + 7) + '" fill="none" stroke="#C7922C" stroke-width="6"/>';
+      } else {
+        s += '<g><title>Week ' + w + '</title><circle cx="' + p[0] + '" cy="' + p[1] + '" r="' + (B.r + 1) + '" fill="#FBF3DF" opacity=".55"/></g>';
+      }
+    });
+    /* Mason stands just above today's space, with the lesson tag beside him */
+    var mx = here[0], my = Math.max(60, here[1] - 98);
+    s += '<g class="g5-board-me" transform="translate(' + mx + ',' + my + ')">' +
+      '<circle r="58" fill="#FFF8E9" stroke="#C7922C" stroke-width="6"/>' +
+      '<image href="assets/companions/mason.jpg" x="-52" y="-52" width="104" height="104" clip-path="url(#g5bFace)" preserveAspectRatio="xMidYMid slice"/>' +
+      '<path d="M -12 54 L 0 74 L 12 54 Z" fill="#C7922C"/></g>';
+    var label = 'LESSON ' + L.week + '.' + (typeof L.day === 'number' ? L.day : 4), bw = 22 + label.length * 11;
+    var bx = mx + 70 + bw < B.w ? mx + 70 : mx - 70 - bw;
+    s += '<rect x="' + bx + '" y="' + (my - 19) + '" width="' + bw + '" height="38" rx="19" fill="#8B3A20"/>' +
+      '<text x="' + (bx + bw / 2) + '" y="' + (my + 7) + '" text-anchor="middle" font-family="Nunito,sans-serif" font-weight="800" font-size="19" fill="#FFF8E9">' + label + '</text>';
+    svg.innerHTML = s;
+    card.appendChild(svg);
+    card.appendChild(h('p', { 'class': 'g5-board-note', text: 'Every colored space is one week. Mason moves one space each week, all the way to Finish.' }));
+    if (old) { old.parentNode.insertBefore(card, old); old.hidden = true; old.style.display = 'none'; old.classList.add('g5-board-old'); }
+    else putTop('reading', card);
+  }
+
   /* ── spot ornaments: the same pen-and-ink set and the same places as G4 ELA ──
      A divider before every tab's Next button (two designs, alternating) and one
      under the opening card; ivy in the corner of the opening card and the book
@@ -1042,6 +1128,7 @@
     guard('listen', buildListen);
     guard('hook', buildHook);
     guard('art', buildArt);
+    guard('board', buildBoard);
     guard('how', buildHow);
     guard('lens', buildLens);
     guard('icons', buildIcons);
@@ -1058,7 +1145,7 @@
     guard('nav', buildNav);
     window.__g5SparkleAPI = {
       teardown: function () {
-        document.querySelectorAll('.g5-say, .g5-divider, .g5-lens, .g5-lens-mark, .g5-lens-use, .g5-listen, .g5-hook, .g5-check, .g5-do, .g5-plate, .g5-extra, .g5-game, .g5-page, .g5-ribbon, .g5-modal, .g5-marble, .g5-kicker, .g5-miss, .g5-hint-b, .g5-hint').forEach(function (n) { n.remove(); });
+        document.querySelectorAll('.g5-say, .g5-board, .g5-divider, .g5-lens, .g5-lens-mark, .g5-lens-use, .g5-listen, .g5-hook, .g5-check, .g5-do, .g5-plate, .g5-extra, .g5-game, .g5-page, .g5-ribbon, .g5-modal, .g5-marble, .g5-kicker, .g5-miss, .g5-hint-b, .g5-hint').forEach(function (n) { n.remove(); });
         document.querySelectorAll('.g5-gloss').forEach(function (b) { b.replaceWith(document.createTextNode(b.textContent)); }); document.querySelectorAll('.g5-gloss-tip').forEach(function (t) { t.remove(); });
         document.documentElement.classList.remove('g5-on');
         return document.querySelectorAll('.g5-listen, .g5-hook, .g5-check, .g5-do, .g5-plate, .g5-extra, .g5-game, .g5-page, .g5-ribbon, .g5-modal, .g5-marble, .g5-kicker, .g5-miss, .g5-hint-b, .g5-gloss').length;

@@ -436,3 +436,10 @@ html.g5-on .activity-num.g5-ico-num { background: transparent !important; width:
 .g5-lens-use-h { font: 800 13px 'Nunito', sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--g5-ox); }
 .g5-lens-use-q { margin: 6px 0 10px; font-size: 16px; color: var(--g5-ink); }
 .g5-lens-ta { width: 100%; box-sizing: border-box; }
+
+/* the year board */
+.g5-board { margin: 16px 0; background: var(--g5-paper); border: 1px solid var(--g5-rule); border-radius: 14px; overflow: hidden; }
+.g5-board-head { padding: 12px 18px 8px; }
+.g5-board-t { font: 700 19px/1.35 'Libre Baskerville', Georgia, serif; color: var(--g5-ink); }
+.g5-board-svg { display: block; width: 100%; height: auto; }
+.g5-board-note { margin: 0; padding: 8px 18px 12px; font-size: 15px; color: var(--g5-ink2); }
