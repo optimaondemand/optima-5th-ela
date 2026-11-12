@@ -15,7 +15,7 @@
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function shown(n) { return n.nodeType === 1 && getComputedStyle(n).display !== 'none'; }
   function titleOf(act) { var t = act.querySelector('.activity-title, .spk-card-title, .oao-bh-title, [class*="-title"]'); return t ? t.textContent.replace(/\s+/g, ' ').trim() : ''; }
-  function isWhole(act) { return act.classList.contains('g5-game') || act.querySelector('.g5-river, .spk-wg, .wordgame, [class*="spk-wg"]'); }
+  function isWhole(act) { return act.classList.contains('g5-game') || act.querySelector('.g5-river, .spk-wg, .wordgame, [class*="spk-wg"]') || /Chapter Introduction/i.test((act.querySelector('.activity-title') || {}).textContent || ''); }   /* the reading box is one step (Bethany, Nov 12 2026) */
 
 
   /* ══ PILOT IMPROVEMENTS (Nov 11 2026) ══════════════════════════════

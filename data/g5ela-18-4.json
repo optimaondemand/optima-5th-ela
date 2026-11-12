@@ -108,7 +108,7 @@
   {
    "match": "Chapter Introduction",
    "do": [
-    "Read the chapter introduction and today's reading skill.",
+    "Read the chapter introduction below.",
     "Open your book and read Chapter 7.",
     "Then do the Virtue Watch at the end of this tab."
    ]

@@ -497,3 +497,6 @@ html.g5-on .g5-do, html.g5-on .g5-do li { color: #1F1A14 !important; }
 .g5-readnow-steps { margin: 4px 0 0 20px; padding: 0; color: #1F1A14; font-size: 16px; line-height: 1.6; }
 [data-g5-step]::before { content: 'Step ' attr(data-g5-step); display: inline-block; margin-right: 8px; padding: 2px 10px; border-radius: 999px; background: #8B3A20; color: #FFF8E9;
   font: 800 13px/1.5 'Nunito', sans-serif; letter-spacing: .04em; vertical-align: 2px; }
+
+/* one What to do per box: when one-step shows its own list, the layer's box steps aside */
+.os-on .activity-body:has(> .os-todo) > .g5-do { display: none !important; }

@@ -953,7 +953,7 @@
       var ci = activityByTitle('Chapter Introduction'); if (!ci) return;
       var body = ci.querySelector(':scope > .activity-body') || ci;
       var m = h('div', { 'class': 'g5-lens-mark' });
-      var first = body.querySelector(':scope > .g5-do') || body.querySelector(':scope > .os-todo');
+      var first = body.querySelector(':scope > .os-todo') || body.querySelector(':scope > .g5-do');
       if (first) afterNode(first, m); else body.insertBefore(m, body.firstChild);
       marks.push(m);
     }

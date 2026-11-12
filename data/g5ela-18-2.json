@@ -107,10 +107,9 @@
   {
    "match": "Chapter Introduction",
    "do": [
-    "Tap Listen, or read the chapter introduction.",
+    "Read the chapter introduction below.",
     "Open your book and read Chapters 3–4.",
-    "Then do the Virtue Watch at the end of this tab.",
-    "Do the Read Like a Writer box: read the sentence, then answer as a reader and as a writer."
+    "Then do the Virtue Watch and the Read Like a Writer box."
    ]
   }
  ],

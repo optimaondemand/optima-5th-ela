@@ -125,7 +125,7 @@
   {
    "match": "Chapter Introduction",
    "do": [
-    "Tap Listen, or read the chapter introduction.",
+    "Read the chapter introduction below.",
     "Open your book and read Chapters 1–2.",
     "Then do the Virtue Watch at the end of this tab."
    ]
