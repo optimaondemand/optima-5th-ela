@@ -44,6 +44,7 @@ p:last-child{margin-bottom:0}
 .radio{display:flex;gap:14px;align-items:center;background:var(--cream);border:1.5px solid var(--edge);border-radius:14px;padding:10px 14px}
 .radio.hidden{display:none}
 .av{width:62px;height:62px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font:900 22px 'Nunito',sans-serif;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.35),rgba(255,255,255,0) 62%),var(--avc);border:3px solid #fff;box-shadow:0 0 0 2px var(--avc),0 3px 8px rgba(0,0,0,.18);position:relative}
+.av img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
 .radio.playing .av::after{content:'';position:absolute;inset:-8px;border-radius:50%;border:3px solid var(--gold);animation:ring 1.3s ease-out infinite}
 @keyframes ring{from{opacity:.9;transform:scale(.92)}to{opacity:0;transform:scale(1.18)}}
 .r-body{flex:1;min-width:0}
@@ -303,7 +304,7 @@ footer{font-size:12.5px;color:#7A6A55;padding:14px 22px 26px;border-top:1px soli
   function makeRadio(host) {
     var id = host.dataset.clip, src = AUDIO + PRE + '-' + id + '.mp3', words = (D.transcripts[id] || '').split(/(\s+)/);
     host.classList.add('hidden');
-    host.innerHTML = '<div class="av" style="--avc:' + D.guide.color + '">' + esc(D.guide.initials) + '</div>' +
+    host.innerHTML = '<div class="av" style="--avc:' + D.guide.color + '">' + (D.guide.photo ? '<img src="' + esc(D.guide.photo) + '" alt="">' : esc(D.guide.initials)) + '</div>' +
       '<div class="r-body"><div class="r-who">' + esc(D.guide.name) + '</div><div class="r-label">' + esc(host.dataset.label) + '</div>' +
       '<div class="r-ctl"><button class="r-play" type="button">▶ Listen</button><button class="r-read" type="button">Read along</button></div>' +
       '<div class="r-tr">' + words.map(function (w, i) { return /^\s+$/.test(w) ? w : '<span data-w="' + i + '">' + esc(w) + '</span>'; }).join('') + '</div></div>';

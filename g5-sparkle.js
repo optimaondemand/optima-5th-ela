@@ -126,7 +126,7 @@
     r.innerHTML = '<span class="g5-rib-ico" aria-hidden="true">📖</span><span class="g5-rib-t">My book</span><span class="g5-rib-dots">' + dots + '</span>';
   }
 
-  /* ── 3. Listen cards (plain narrator, no character) ───────── */
+  /* ── 3. Listen cards: Mason, the G5 ELA guide (portrait assets/companions/mason.jpg) ── */
   function buildListen() {
     if (!D.listen) return;
     ['page', 'warmup', 'words', 'reading', 'assignment'].forEach(function (tab) {
@@ -135,8 +135,8 @@
       var play_ = h('button', { 'class': 'g5-listen-play', type: 'button', hidden: 'hidden', 'aria-label': 'Play' }, ['▶ Listen']);
       var words_ = h('details', { 'class': 'g5-listen-words' }, [h('summary', { text: 'Read the words instead' }), h('p', { text: c.text })]);
       var card = h('div', { 'class': 'g5-listen', 'data-tab': tab }, [
-        h('span', { 'class': 'g5-listen-ico', 'aria-hidden': 'true', html: '<svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 3a9 9 0 0 0-9 9v6a3 3 0 0 0 3 3h1a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H5v-1a7 7 0 0 1 14 0v1h-2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h1a3 3 0 0 0 3-3v-6a9 9 0 0 0-9-9z"/></svg>' }),
-        h('div', { 'class': 'g5-listen-main' }, [h('div', { 'class': 'g5-listen-t', text: 'Listen' }), play_, words_])
+        h('img', { 'class': 'g5-listen-av', src: 'assets/companions/mason.jpg', alt: '' }),
+        h('div', { 'class': 'g5-listen-main' }, [h('div', { 'class': 'g5-listen-t', text: 'Mason' }), play_, words_])
       ]);
       play_.addEventListener('click', function () { play(audioUrl(slot), play_); });
       fileExists(audioUrl(slot), function (ok) { if (ok) { play_.hidden = false; words_.querySelector('summary').textContent = 'Read the words'; } else { words_.open = true; } });

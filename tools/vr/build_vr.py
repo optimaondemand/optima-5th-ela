@@ -129,7 +129,7 @@ REPL = {
  '{{WRITE_Q}}': WR['q'], '{{CHIPS}}': ''.join('<span class="chip" data-chip="%s">%s</span>' % (c['k'], e(c['t'])) for c in WR['chips']),
  '{{NCHIPS}}': str(len(WR['chips'])), '{{STARTERS}}': ''.join('<li>%s</li>' % e(s) for s in WR['starters']),
  '{{CREDITS}}': e(D.get('credits', '')),
- '{{DATA}}': json.dumps({'week': W, 'pre': PRE, 'canvas': CANVAS, 'guide': {k: g[k] for k in ('name', 'initials', 'color', 'folder')},
+ '{{DATA}}': json.dumps({'week': W, 'pre': PRE, 'canvas': CANVAS, 'guide': {k: g[k] for k in ('name', 'initials', 'color', 'folder', 'photo') if k in g},
                           'transcripts': TRANSCRIPTS, 'game': GAME_CFG, 'chips': [{'k': c['k'], 'rx': c['rx']} for c in WR['chips']],
                           'writeQ': strip(WR['q'])}, ensure_ascii=False).replace('</', '<\\/'),
 }
