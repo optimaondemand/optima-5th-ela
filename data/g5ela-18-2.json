@@ -7,7 +7,8 @@
    "text": "Today you match each word to its root, and you read this week's words in sentences from the book. In the river game, say each word slowly and listen for where your voice stops."
   },
   "reading": {
-   "text": "Read Chapters 3 and 4 in your book. These are hard chapters. Isaac sees more visions, and then something happens that is not a vision at all. Take your time. When you finish, try the quick check, then the Read Like a Writer box."
+   "text": "Read Chapters 3 and 4 in your book. These are hard chapters. Isaac sees more visions, and then something happens that is not a vision at all. Take your time. When you finish, do the Virtue Watch, then the Read Like a Writer box.",
+   "clip": "listen-reading-v2"
   },
   "assignment": {
    "text": "Three questions about Chapters 3 and 4, and then a draft of your own moment. Pick one moment from your list. Write it from the inside, with I, the way Isaac does."
@@ -99,8 +100,8 @@
    "match": "Virtue Watch",
    "do": [
     "Read what courage means.",
-    "Read how courage shows up in this week's chapters.",
-    "Watch for courage while you read. Nothing to write here."
+    "Read the example from the river.",
+    "After you read, fill in your courage log at the end of this tab."
    ]
   },
   {
@@ -108,8 +109,8 @@
    "do": [
     "Tap Listen, or read the chapter introduction.",
     "Open your book and read Chapters 3–4.",
-    "Answer the Quick Check.",
-    "Do the RWM box: read the sentence, then answer as a reader and as a writer."
+    "Then do the Virtue Watch at the end of this tab.",
+    "Do the Read Like a Writer box: read the sentence, then answer as a reader and as a writer."
    ]
   }
  ],
@@ -197,29 +198,23 @@
   "url": "https://commons.wikimedia.org/wiki/File:Joseph_Rusling_Meeker_-_Bayou_Teche,_Louisiana_-_15-2008_-_Saint_Louis_Art_Museum.jpg",
   "lookBtn": "Tap to learn about this painting"
  },
- "checks": [
-  {
-   "tab": "reading",
-   "after": "Chapter Introduction",
-   "kicker": "Quick check",
-   "q": "Which of these really happens in Chapter 4, and is not one of Isaac's visions?",
-   "options": [
-    {
-     "t": "Mister Jonah's hair bursts into flames.",
-     "ok": false,
-     "why": "That was a vision in Chapter 2. It came after the warm shiver, and when Isaac looked again, Mister Jonah had no burns. In Chapter 4 Isaac tells you the difference: “I felt no shiver. This was real.”"
-    },
-    {
-     "t": "Old Woman falls into the river and stops moving.",
-     "ok": false,
-     "why": "That was a vision in Chapter 3. When Isaac opened his eyes again, she was laughing and playing in the river. In Chapter 4 Isaac tells you the difference: “I felt no shiver. This was real.”"
-    },
-    {
-     "t": "Isaac's hair catches fire and he smothers it with his blanket.",
-     "ok": true,
-     "why": "Isaac tells you, “I felt no shiver. This was real.” The visions always come after the warm shiver."
-    }
-   ]
-  }
- ]
+ "virtue": {
+  "name": "courage",
+  "kind": "log",
+  "title": "My courage log",
+  "intro": "Chapters 3 and 4 have brave moments. Tap the one you think took the most courage.",
+  "options": [
+   {
+    "t": "On the night of the fire, Isaac and Luke run into their neighbors' burning house to wake them up."
+   },
+   {
+    "t": "When a man aims a shotgun at them, Isaac's father throws himself over his family."
+   },
+   {
+    "t": "Hiding in the bushes, Isaac stays still and quiet while a man on a horse rides close enough to touch."
+   }
+  ],
+  "line": "Finish the sentence: It took courage because…",
+  "placeholder": "It took courage because…"
+ }
 }

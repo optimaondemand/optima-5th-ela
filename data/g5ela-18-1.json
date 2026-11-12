@@ -7,7 +7,8 @@
    "text": "Two word parts run through this whole book. One is about remembering. One is about writing. Isaac is doing both. Try to find them before the page tells you. When you get to the river game, say each word slowly and listen for where your voice stops."
   },
   "reading": {
-   "text": "Read Chapters 1 and 2 in your book. First, look at the old map. It was printed around the time of this story, and it shows where the Choctaw Nation was. Then do the quick check at the bottom of this tab."
+   "text": "Read Chapters 1 and 2 in your book. Keep your reading lens in mind as you go. When you finish, do the Virtue Watch at the end of this tab.",
+   "clip": "listen-reading-v2"
   },
   "assignment": {
    "text": "Three questions about the chapters, then the first step of your own writing. When a question asks for evidence, use Isaac's own words. In the Writer's Workshop you are only making a list today. Pick moments you can still feel."
@@ -117,8 +118,8 @@
    "match": "Virtue Watch",
    "do": [
     "Read what courage means.",
-    "Read how courage shows up in this week's chapters.",
-    "Watch for courage while you read. Nothing to write here."
+    "Read the example from the river.",
+    "After you read, sort the moments at the end of this tab."
    ]
   },
   {
@@ -126,7 +127,7 @@
    "do": [
     "Tap Listen, or read the chapter introduction.",
     "Open your book and read Chapters 1–2.",
-    "Answer the Quick Check."
+    "Then do the Virtue Watch at the end of this tab."
    ]
   }
  ],
@@ -245,26 +246,6 @@
   "url": "https://commons.wikimedia.org/wiki/File:Mississippi._Published_by_A._Finley_Philada._Young_%26_Delleker_Sc._(IA_dr_mississippi-published-by-a-finley-philada-young-delleker-sc-00064028).jpg",
   "lookBtn": "Tap to learn about this map"
  },
- "checks": [
-  {
-   "tab": "reading",
-   "after": "Chapter Introduction",
-   "kicker": "Quick check",
-   "q": "True or false: when Chapter 1 begins, Isaac is already a ghost.",
-   "options": [
-    {
-     "t": "True",
-     "ok": false,
-     "why": "He tells you, “I’m ten years old and I’m not a ghost yet.” He is telling the story from later. In this week’s chapters he is a living boy."
-    },
-    {
-     "t": "False",
-     "ok": true,
-     "why": "He tells you, “I’m ten years old and I’m not a ghost yet.” He is telling the story from later. In this week’s chapters he is a living boy."
-    }
-   ]
-  }
- ],
  "cards": [
   {
    "tab": "reading",
@@ -294,5 +275,33 @@
    ],
    "note": "The narrator does not say these words aloud. Choctaw has its own sounds, and we would rather not teach them wrong."
   }
- ]
+ ],
+ "virtue": {
+  "name": "courage",
+  "kind": "sort",
+  "title": "Courage or not?",
+  "intro": "You just read Chapters 1 and 2. Read each moment. Tap Courage or Not courage.",
+  "items": [
+   {
+    "t": "At the river, Isaac's mother tells him, “Don't talk. Just watch.” Isaac stays and watches, even though it scares him.",
+    "ok": true,
+    "why": "He keeps looking at something hard instead of turning away. That takes courage."
+   },
+   {
+    "t": "When Luke hears there is Treaty Talk, he leaves to play stickball with his friends.",
+    "ok": false,
+    "why": "Luke walks away from the hard news. Playing is not wrong, but this moment is not courage."
+   },
+   {
+    "t": "Isaac sees Mister Jonah's hair burst into flames. He jerks his arm free from his mother and runs toward him.",
+    "ok": true,
+    "why": "He moves toward danger to help someone. That is courage, even though the flames turn out to be a vision."
+   },
+   {
+    "t": "Isaac is afraid of Treaty Talk and does not want to listen anymore. He thinks, maybe it will all go away.",
+    "ok": false,
+    "why": "Wishing a hard thing away is normal, but it is not courage yet. Courage means facing it."
+   }
+  ]
+ }
 }

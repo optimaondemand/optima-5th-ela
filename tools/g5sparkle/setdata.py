@@ -14,6 +14,8 @@ for k, v in P.items():
             hit = [x for x in D.get('how', []) if x.get('match') == m]
             if not hit: sys.exit('no how block ' + m)
             hit[0]['do'] = lines
+    elif v is None:
+        D.pop(k, None)   # null in the patch removes the key
     else:
         D[k] = v
 html = io.open(lesson, encoding='utf-8', newline='').read()

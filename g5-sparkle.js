@@ -895,6 +895,7 @@
         num.setAttribute('data-g5-was', num.innerHTML);
         num.innerHTML = ''; num.appendChild(img); num.classList.add('g5-ico-num');
         var tn = t.firstChild;
+        while (tn && tn.nodeType !== 3) tn = tn.nextSibling;
         if (tn && tn.nodeType === 3) {
           var stripped = tn.nodeValue.replace(/^[\s☀-➿️‍]*(?:[\uD83C-\uD83E][\uDC00-\uDFFF][️‍]*)*\s*/, '');
           if (stripped !== tn.nodeValue) { t.setAttribute('data-g5-was', tn.nodeValue); tn.nodeValue = stripped; }
@@ -947,14 +948,14 @@
        onestep.js moves What Good Readers Do to Warm-Up after this layer runs. */
     var marks = [];
     function placeMarks() {
+      /* one bookmark only, at the top of the Chapter Introduction box (Bethany, Nov 12 2026) */
       marks.forEach(function (m) { m.remove(); }); marks = [];
-      var home = box.closest('.tab-panel'), tabs = Array.prototype.slice.call(document.querySelectorAll('.tab-panel'));
-      tabs.slice(tabs.indexOf(home) + 1).forEach(function (tp) {
-        var m = h('div', { 'class': 'g5-lens-mark' });
-        var tl = tp.querySelector(':scope > .g5-readnow') || tp.querySelector(':scope > .g5-listen');
-        if (tl) afterNode(tl, m); else tp.insertBefore(m, tp.firstChild);
-        marks.push(m);
-      });
+      var ci = activityByTitle('Chapter Introduction'); if (!ci) return;
+      var body = ci.querySelector(':scope > .activity-body') || ci;
+      var m = h('div', { 'class': 'g5-lens-mark' });
+      var first = body.querySelector(':scope > .g5-do') || body.querySelector(':scope > .os-todo');
+      if (first) afterNode(first, m); else body.insertBefore(m, body.firstChild);
+      marks.push(m);
     }
     /* one line at the end of Chapter Thinking */
     var ct = activityByTitle('Chapter Thinking'), use = null, ta = null;
@@ -1092,20 +1093,159 @@
     card.appendChild(svg);
     card.appendChild(h('p', { 'class': 'g5-board-note', text: 'Every colored space is one week. The gold ring shows where you are, all the way to Finish.' }));
     if (old) { old.hidden = true; old.style.display = 'none'; old.classList.add('g5-board-old'); }
-    var nx = rp.querySelector(':scope > .tab-next-wrap');
-    if (nx) rp.insertBefore(card, nx); else rp.appendChild(card);
+    rp.insertBefore(card, rp.firstChild);   /* back at the top of Reading (Bethany, Nov 12 2026) */
   }
 
-  /* ── today's reading, said plainly at the top of the Reading tab ── */
+  /* ── today's reading, said plainly at the top of the Reading tab, with the tab's order:
+     the card lists the jobs in order and each job gets a matching "Step N" chip, so a student
+     always knows what comes first (Bethany, Nov 12 2026: read first, or the courage activity first?) ── */
   function buildReadNow() {
     var rp = panel('reading'); if (!rp || !L.chapters || rp.querySelector('.g5-readnow')) return;
-    var hasCheck = !!(D.checks || []).filter(function (c) { return (c.tab || 'reading') === 'reading'; }).length;
     var card = h('div', { 'class': 'g5-readnow' });
-    card.innerHTML = '<div class="g5-readnow-ico" aria-hidden="true"></div><div><div class="g5-readnow-k">Today’s reading</div>' +
+    card.innerHTML = '<div class="g5-readnow-ico" aria-hidden="true"></div><div class="g5-readnow-main"><div class="g5-readnow-k">Today’s reading</div>' +
       '<div class="g5-readnow-t">Read <b>' + esc(L.chapters) + '</b> of <em>' + esc(L.bookTitle) + '</em> in your book.</div>' +
-      (hasCheck ? '<div class="g5-readnow-s">Then answer the Quick check at the end of this tab.</div>' : '') + '</div>';
+      '<div class="g5-readnow-s">On this tab, in order:</div><ol class="g5-readnow-steps"></ol></div>';
     var li = rp.querySelector(':scope > .g5-listen');
     if (li) afterNode(li, card); else rp.insertBefore(card, rp.firstChild);
+    function paintSteps() {
+      var ol = card.querySelector('.g5-readnow-steps'); ol.innerHTML = '';
+      rp.querySelectorAll('[data-g5-step]').forEach(function (c) { c.removeAttribute('data-g5-step'); });
+      var n = 0;
+      Array.prototype.forEach.call(rp.children, function (el) {
+        if (el.offsetParent === null && getComputedStyle(el).display === 'none') return;
+        var label = null, host = null, t;
+        if (el.classList.contains('activity')) {
+          t = (el.querySelector('.activity-title') || el).textContent;
+          host = el.querySelector('.activity-title');
+          if (/Chapter Introduction/i.test(t)) label = '<b>Read ' + esc(L.chapters) + '</b> in your book';
+          else if (/Virtue/i.test(t)) label = 'Learn the virtue: <b>' + esc(t.replace(/^\W*Virtue Watch:?\s*/i, '').trim().toLowerCase()) + '</b> (before you read)';
+          else label = esc(t.replace(/^[^A-Za-z]+/, '').trim());
+        } else if (el.classList.contains('g5-virtue')) {
+          host = el.querySelector('.g5-virtue-t'); label = 'Virtue Watch: <b>' + esc(host.textContent) + '</b> (after you read)';
+        } else if (el.classList.contains('rwm-box')) {
+          host = el.querySelector('.rwm-header'); label = 'The <b>Read Like a Writer</b> box';
+        }
+        if (!label || !host) return;
+        n++;
+        ol.insertAdjacentHTML('beforeend', '<li>' + label + '</li>');
+        host.setAttribute('data-g5-step', n);   /* drawn by CSS, so it never becomes part of the title text */
+      });
+      card.querySelector('.g5-readnow-s').hidden = n < 2; ol.hidden = n < 2;
+    }
+    paintSteps();
+    window.addEventListener('load', function () { setTimeout(paintSteps, 1000); });   /* after onestep.js has moved things */
+  }
+
+  /* ── Virtue Watch, active: the page's own Virtue Watch introduces the virtue; after the
+     reading, one short job at the end of the Reading tab. The kind changes across the week
+     (DATA.virtue.kind): sort (Courage or not?), log (tap the bravest moment + one line),
+     meter (slide how brave, one line, then Mason's take), best (bravest of the week).
+     The week's answers are kept together (oao.g5ela.virtue.wk<NN>) and go into My Work. */
+  function buildVirtue() {
+    var V = D.virtue; if (!V || !V.kind) return;
+    var rp = panel(V.tab || 'reading'); if (!rp) return;
+    var wkKey = 'virtue.wk' + L.week, all = store(wkKey) || {}, mine = all[L.day] || {};
+    function save() { all[L.day] = mine; store(wkKey, all); if (typeof window.gatherAnswers === 'function') try { window.gatherAnswers(); } catch (e) {} }
+    var Name = V.name.charAt(0).toUpperCase() + V.name.slice(1);
+    var card = h('div', { 'class': 'g5-card g5-virtue' });
+    card.innerHTML = '<div class="g5-virtue-head"><span class="g5-virtue-ico" aria-hidden="true"></span><div>' +
+      '<div class="g5-card-k">Virtue Watch · after you read</div><div class="g5-virtue-t">' + esc(V.title) + '</div></div></div>' +
+      (V.intro ? '<p class="g5-virtue-intro">' + esc(V.intro) + '</p>' : '');
+    function lineBox(ph) {
+      var ta = h('textarea', { 'class': 'journal-box g5-virtue-ta', rows: '2', placeholder: ph || 'It took ' + V.name + ' because…' });
+      ta.value = mine.why || '';
+      ta.addEventListener('input', function () { mine.why = ta.value; save(); });
+      return ta;
+    }
+    function choiceList(opts, onPick) {
+      var g = h('div', { 'class': 'g5-virtue-opts', role: 'group' });
+      opts.forEach(function (o, i) {
+        var b = h('button', { type: 'button', 'class': 'g5-virtue-opt', 'aria-pressed': mine.pick === i ? 'true' : 'false' }, [o.t]);
+        b.addEventListener('click', function () {
+          mine.pick = i; mine.pickText = o.t;
+          g.querySelectorAll('.g5-virtue-opt').forEach(function (x, j) { x.setAttribute('aria-pressed', j === i ? 'true' : 'false'); });
+          save(); onPick && onPick(i);
+        });
+        g.appendChild(b);
+      });
+      return g;
+    }
+    if (V.kind === 'sort') {
+      mine.sort = mine.sort || {};
+      V.items.forEach(function (it, i) {
+        var row = h('div', { 'class': 'g5-virtue-row' });
+        row.appendChild(h('p', { 'class': 'g5-virtue-moment', text: it.t }));
+        var btns = h('div', { 'class': 'g5-virtue-btns' }), fb = h('p', { 'class': 'g5-virtue-fb', 'aria-live': 'polite' });
+        [[true, Name], [false, 'Not ' + V.name]].forEach(function (pair) {
+          var b = h('button', { type: 'button', 'class': 'g5-btn g5-virtue-sortbtn' }, [pair[1]]);
+          b.addEventListener('click', function () { mine.sort[i] = pair[0]; paintRow(); save(); });
+          btns.appendChild(b);
+        });
+        function paintRow() {
+          var a = mine.sort[i]; if (a === undefined) return;
+          var right = a === it.ok;
+          btns.querySelectorAll('button').forEach(function (b, j) { b.setAttribute('aria-pressed', (j === 0) === a ? 'true' : 'false'); });
+          fb.className = 'g5-virtue-fb ' + (right ? 'ok' : 'no');
+          fb.textContent = (right ? '✓ Yes. ' : 'Look again. ') + it.why;
+        }
+        row.appendChild(btns); row.appendChild(fb); card.appendChild(row); paintRow();
+      });
+    } else if (V.kind === 'log' || V.kind === 'best') {
+      if (V.kind === 'best') {
+        var past = [];
+        Object.keys(all).sort().forEach(function (d) { if (+d !== L.day && all[d] && (all[d].pickText || all[d].why)) past.push(all[d]); });
+        if (past.length) {
+          var lg = h('div', { 'class': 'g5-virtue-log' }, [h('div', { 'class': 'g5-virtue-log-h', text: 'Your Virtue log this week' })]);
+          past.forEach(function (x) { lg.appendChild(h('p', { text: (x.pickText ? x.pickText + ' ' : '') + (x.why ? '“' + x.why.trim() + '”' : '') })); });
+          card.appendChild(lg);
+        }
+      }
+      card.appendChild(choiceList(V.options));
+      card.appendChild(h('p', { 'class': 'g5-virtue-q', text: V.line || 'Finish the sentence.' }));
+      card.appendChild(lineBox(V.placeholder));
+    } else if (V.kind === 'meter') {
+      card.appendChild(h('p', { 'class': 'g5-virtue-moment', text: V.moment }));
+      card.appendChild(h('p', { 'class': 'g5-virtue-q', text: V.ask }));
+      var lab = V.scale || ['Not brave', 'A little brave', 'Somewhat brave', 'Brave', 'Very brave'];
+      var wrap = h('div', { 'class': 'g5-virtue-meter' });
+      var sl = h('input', { type: 'range', min: '1', max: String(lab.length), step: '1', value: String(mine.score || 3), 'aria-label': V.ask });
+      var out = h('div', { 'class': 'g5-virtue-meter-out', 'aria-live': 'polite' });
+      var take = h('div', { 'class': 'g5-virtue-take', hidden: 'hidden' });
+      take.innerHTML = '<img src="assets/companions/mason-v2.jpg" alt="" class="g5-virtue-take-av"><p></p>';
+      take.querySelector('p').textContent = V.take;
+      function paintM() { out.textContent = lab[(+sl.value) - 1]; }
+      sl.addEventListener('input', function () { mine.score = +sl.value; mine.scoreLabel = lab[mine.score - 1]; paintM(); take.hidden = false; save(); });
+      wrap.appendChild(sl); wrap.appendChild(out);
+      var ends = h('div', { 'class': 'g5-virtue-ends' }, [h('span', { text: lab[0] }), h('span', { text: lab[lab.length - 1] })]);
+      card.appendChild(wrap); card.appendChild(ends); paintM();
+      card.appendChild(h('p', { 'class': 'g5-virtue-q', text: V.line }));
+      card.appendChild(lineBox(V.placeholder));
+      card.appendChild(take);
+      if (mine.score) take.hidden = false;
+    }
+    /* after the Quick check if there is one, else after the reading activity */
+    var checks = rp.querySelectorAll(':scope > .g5-check'), at = checks.length ? checks[checks.length - 1] : activityByTitle('Chapter Introduction', rp);
+    if (at) afterNode(at, card); else { var nx = rp.querySelector(':scope > .tab-next-wrap'); rp.insertBefore(card, nx); }
+
+    var orig = window.gatherAnswers;
+    if (typeof orig === 'function' && !orig.__g5virtue) {
+      var wrapped = function () {
+        var r = orig.apply(this, arguments), o = document.getElementById('gatheredOutput');
+        if (o) {
+          var t = '';
+          if (V.kind === 'sort') V.items.forEach(function (it, i) { if (mine.sort && mine.sort[i] !== undefined) t += (mine.sort[i] === it.ok ? '✅ ' : '⬜ ') + it.t + '\n'; });
+          else {
+            if (mine.pickText) t += 'Moment: ' + mine.pickText + '\n';
+            if (mine.scoreLabel) t += 'Rating: ' + mine.scoreLabel + '\n';
+            t += (mine.why && mine.why.trim()) || '(no answer)';
+            t += '\n';
+          }
+          if (t) o.value += '\n🏮 VIRTUE WATCH: ' + Name.toUpperCase() + '\n────────────────────────────────\n' + t;
+        }
+        return r;
+      };
+      wrapped.__g5virtue = true; window.gatherAnswers = wrapped;
+    }
   }
 
   /* ── spot ornaments: the same pen-and-ink set and the same places as G4 ELA ──
@@ -1136,7 +1276,6 @@
   function boot() {
     guard('theme', buildTheme);
     guard('listen', buildListen);
-    guard('readnow', buildReadNow);
     guard('hook', buildHook);
     guard('art', buildArt);
     guard('board', buildBoard);
@@ -1150,13 +1289,15 @@
     guard('stones', buildStones);
     guard('cards', buildCards);
     guard('checks', buildChecks);
+    guard('virtue', buildVirtue);
+    guard('readnow', buildReadNow);
     guard('book', buildBook);
     guard('ornaments', buildOrnaments);
     guard('ribbon', buildRibbon);
     guard('nav', buildNav);
     window.__g5SparkleAPI = {
       teardown: function () {
-        document.querySelectorAll('.g5-say, .g5-board, .g5-readnow, .g5-divider, .g5-lens, .g5-lens-mark, .g5-lens-use, .g5-listen, .g5-hook, .g5-check, .g5-do, .g5-plate, .g5-extra, .g5-game, .g5-page, .g5-ribbon, .g5-modal, .g5-marble, .g5-kicker, .g5-miss, .g5-hint-b, .g5-hint').forEach(function (n) { n.remove(); });
+        document.querySelectorAll('.g5-say, .g5-board, .g5-readnow, .g5-virtue, .g5-divider, .g5-lens, .g5-lens-mark, .g5-lens-use, .g5-listen, .g5-hook, .g5-check, .g5-do, .g5-plate, .g5-extra, .g5-game, .g5-page, .g5-ribbon, .g5-modal, .g5-marble, .g5-kicker, .g5-miss, .g5-hint-b, .g5-hint').forEach(function (n) { n.remove(); });
         document.querySelectorAll('.g5-gloss').forEach(function (b) { b.replaceWith(document.createTextNode(b.textContent)); }); document.querySelectorAll('.g5-gloss-tip').forEach(function (t) { t.remove(); });
         document.documentElement.classList.remove('g5-on');
         return document.querySelectorAll('.g5-listen, .g5-hook, .g5-check, .g5-do, .g5-plate, .g5-extra, .g5-game, .g5-page, .g5-ribbon, .g5-modal, .g5-marble, .g5-kicker, .g5-miss, .g5-hint-b, .g5-gloss').length;
