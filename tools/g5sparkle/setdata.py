@@ -24,11 +24,16 @@ m = rx.search(html)
 if not m: sys.exit('no oao-data in ' + lesson)
 old = json.loads(m.group(2))
 if old != json.load(io.open(dfile, encoding='utf-8')): print('WARNING: page DATA and data file already differed; page now follows the data file')
-body = json.dumps(D, ensure_ascii=False, indent=1).replace('</', '<\\/')
+old_body = m.group(2)
+if '\n' not in old_body.strip():   # the page keeps the format it had (compact stays compact)
+    body = json.dumps(D, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
+else:
+    body = json.dumps(D, ensure_ascii=False, indent=1).replace('</', '<\\/')
 new = html[:m.start(2)] + body + html[m.end(2):]
 if apply:
     io.open(lesson, 'w', encoding='utf-8', newline='').write(new)
-    io.open(dfile, 'w', encoding='utf-8').write(json.dumps(D, ensure_ascii=False, indent=1) + '\n')
+    raw = io.open(dfile, encoding='utf-8').read(); ind = len(raw.split('\n')[1]) - len(raw.split('\n')[1].lstrip()) if '\n' in raw.strip() else None
+    io.open(dfile, 'w', encoding='utf-8').write(json.dumps(D, ensure_ascii=False, indent=ind) + '\n')
     print('written', lesson, dfile)
 else:
     print('dry run ok', lesson)
