@@ -262,11 +262,30 @@
       var node = walker.nextNode(); if (!node) return;
       var m = re.exec(node.nodeValue);
       var after = node.splitText(m.index); after.nodeValue = after.nodeValue.slice(m[0].length);
-      var btn = h('button', { type: 'button', 'class': 'g5-gloss', 'aria-expanded': 'false' }, [m[0]]);
-      var tip = h('span', { 'class': 'g5-gloss-tip', role: 'note', hidden: 'hidden', text: G.meaning });
-      btn.addEventListener('click', function (e) { e.stopPropagation(); var open = tip.hidden; tip.hidden = !open; btn.setAttribute('aria-expanded', open ? 'true' : 'false'); });
+      /* hover (or focus, or tap on a tablet) shows the meaning in a box that floats
+         over the page; nothing around the word moves */
+      var btn = h('span', { 'class': 'g5-gloss', tabindex: '0', 'aria-label': m[0] + ': ' + G.meaning }, [m[0]]);
+      var tip = h('span', { 'class': 'g5-gloss-tip', role: 'tooltip', 'aria-hidden': 'true', hidden: 'hidden' },
+        [h('b', { text: G.word }), h('span', { text: G.meaning })]);
+      document.body.appendChild(tip);
+      function place() {
+        tip.hidden = false; tip.classList.remove('below');
+        var r = btn.getBoundingClientRect(), tw = tip.offsetWidth, th = tip.offsetHeight, vw = document.documentElement.clientWidth;
+        var x = Math.max(8, Math.min(vw - tw - 8, r.left + r.width / 2 - tw / 2)), y = r.top - th - 10;
+        if (y < 8) { y = r.bottom + 10; tip.classList.add('below'); }
+        tip.style.left = x + 'px'; tip.style.top = y + 'px';
+        tip.style.setProperty('--g5-arrow', Math.max(12, Math.min(tw - 12, r.left + r.width / 2 - x)) + 'px');
+      }
+      function hide() { tip.hidden = true; btn.classList.remove('open'); }
+      btn.addEventListener('mouseenter', place);
+      btn.addEventListener('mouseleave', function () { if (!btn.classList.contains('open')) hide(); });
+      btn.addEventListener('focus', place);
+      btn.addEventListener('blur', hide);
+      btn.addEventListener('click', function (e) { e.stopPropagation(); if (btn.classList.toggle('open')) place(); else hide(); });
+      btn.addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
+      document.addEventListener('click', function (e) { if (!btn.contains(e.target)) hide(); });
+      window.addEventListener('scroll', function () { if (!tip.hidden) hide(); }, { passive: true });
       node.parentNode.insertBefore(btn, after);
-      node.parentNode.insertBefore(tip, after);
     });
   }
 
@@ -892,7 +911,7 @@
     window.__g5SparkleAPI = {
       teardown: function () {
         document.querySelectorAll('.g5-say, .g5-divider, .g5-listen, .g5-hook, .g5-check, .g5-do, .g5-plate, .g5-extra, .g5-game, .g5-page, .g5-ribbon, .g5-modal, .g5-marble, .g5-kicker, .g5-miss, .g5-hint-b, .g5-hint').forEach(function (n) { n.remove(); });
-        document.querySelectorAll('.g5-gloss').forEach(function (b) { var t = b.nextSibling; b.replaceWith(document.createTextNode(b.textContent)); if (t && t.classList && t.classList.contains('g5-gloss-tip')) t.remove(); });
+        document.querySelectorAll('.g5-gloss').forEach(function (b) { b.replaceWith(document.createTextNode(b.textContent)); }); document.querySelectorAll('.g5-gloss-tip').forEach(function (t) { t.remove(); });
         document.documentElement.classList.remove('g5-on');
         return document.querySelectorAll('.g5-listen, .g5-hook, .g5-check, .g5-do, .g5-plate, .g5-extra, .g5-game, .g5-page, .g5-ribbon, .g5-modal, .g5-marble, .g5-kicker, .g5-miss, .g5-hint-b, .g5-gloss').length;
       }
