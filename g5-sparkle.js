@@ -813,7 +813,7 @@
   function navKeyAndStart() {
     var hdr = document.querySelector('.header'); if (!hdr || document.querySelector('.nav-key')) return;
     var k = h('div', { 'class': 'nav-key' });
-    k.innerHTML = '<span><b>👆</b> You can tap it.</span><span><b>🔊</b> You can listen.</span><span><b class="nav-dot">dotted word</b> Tap it to see what it means.</span>';
+    k.innerHTML = '<span><b>👆</b> You can tap it.</span><span><b>🔊</b> You can listen.</span><span><b class="nav-dot">dotted word</b> Point to it (or tap it) to see what it means.</span>';
     afterNode(hdr, k);
     var src = window.NAV_HOWTO_SRC || 'assets/video/g5ela-howto.mp4';
     var poster = window.NAV_HOWTO_POSTER || 'assets/video/g5ela-howto.jpg';
