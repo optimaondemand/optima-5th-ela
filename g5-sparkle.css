@@ -500,3 +500,36 @@ html.g5-on .g5-do, html.g5-on .g5-do li { color: #1F1A14 !important; }
 
 /* one What to do per box: when one-step shows its own list, the layer's box steps aside */
 .os-on .activity-body:has(> .os-todo) > .g5-do { display: none !important; }
+
+/* ══ THE COMPACT BANNER (Nov 12 2026, same as G3/G4 buildTop): logo + title + pills on one navy row ══ */
+html.g5-top .standards-toggle-bar,
+html.g5-top .standards-panel,
+html.g5-top .info-strip { display: none !important; }
+html.g5-top .header.g5-hd { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 12px 18px 14px; }
+html.g5-top .header.g5-hd::after { display: none; }
+html.g5-top .g5-hd .header-brand { margin: 0; }
+html.g5-top .g5-hd .header-brand > div:not(.header-logo) { display: none; }
+html.g5-top .g5-hd .header-logo { width: 38px; height: 38px; }
+html.g5-top .g5-hd .header-logo img { width: 32px; height: 26px; }
+html.g5-top .g5-hd .header-title { flex: 1 1 260px; min-width: 0; margin: 0; font-size: 22px; line-height: 1.2; }
+html.g5-top .g5-hd .header-badge { display: none; }
+.g5-hd-meta { font: 700 12.5px/1.5 'Nunito', sans-serif; color: #B8C6E0; margin-top: 3px; letter-spacing: .01em; }
+.g5-hd-meta b { color: #fff; font-weight: 800; }
+.g5-hd-tools { display: flex; gap: 6px; flex-wrap: wrap; }
+.g5-pill { font: 800 12.5px 'Nunito', sans-serif; color: #fff; background: rgba(85,200,232,.14); border: 1.5px solid rgba(85,200,232,.45);
+  border-radius: 999px; padding: 6px 12px; cursor: pointer; white-space: nowrap; display: inline-flex; gap: 5px; align-items: center; }
+.g5-pill:hover, .g5-pill[aria-expanded="true"] { background: #55C8E8; color: #0E1C42; border-color: #55C8E8; }
+.g5-pill:focus-visible { outline: 3px solid #E9C46A; outline-offset: 2px; }
+.g5-hd-panel { display: none; background: #F4F9FC; border-bottom: 1px solid #C5DCE5; padding: 12px 18px; font: 600 13.5px/1.5 'Nunito', sans-serif; color: #22304A; }
+.g5-hd-panel.open { display: block; }
+.g5-hd-panel #optima-read-aloud { margin: 0 !important; border: 0 !important; background: none !important; padding: 0 !important; box-shadow: none !important; }
+.g5-hd-panel dl { display: grid; grid-template-columns: max-content 1fr; gap: 5px 16px; margin: 0; }
+.g5-hd-panel dt { font: 800 10.5px 'Nunito', sans-serif; letter-spacing: .12em; text-transform: uppercase; color: #5B667A; padding-top: 3px; }
+.g5-hd-panel dd { margin: 0; }
+.g5-hd-panel dd.g5-std { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; }
+html.g5-top:not([data-g5-tab="warmup"]) .quote-strip { display: none !important; }
+@media (max-width: 640px) {
+  html.g5-top .g5-hd .header-title { font-size: 18px; }
+  .g5-hd-panel dl { grid-template-columns: 1fr; gap: 0; }
+  .g5-hd-panel dt { padding-top: 8px; }
+}

@@ -1248,6 +1248,63 @@
     }
   }
 
+  /* ── the compact banner (Bethany, Nov 12 2026: "match the condensed version", as in G3/G4 buildTop) ──
+     One navy row: the Optima logo, the title, a meta line (Lesson · Week), a 🔊 Read aloud pill that opens
+     the page's own read-aloud player, and an ⓘ Lesson details pill holding the unit/week/reading/focus
+     cells and the standards. Nothing is deleted: the original nodes are moved or hidden, so the lesson's
+     own scripts keep working. Logo and navy color stay. */
+  function buildTop() {
+    var header = document.querySelector('.header'); if (!header || header.classList.contains('g5-hd')) return;
+    var root = document.documentElement;
+    root.classList.add('g5-top'); header.classList.add('g5-hd');
+    var title = header.querySelector('.header-title'), badge = header.querySelector('.header-badge-text');
+    var meta = h('div', { 'class': 'g5-hd-meta' }), bits = [];
+    if (badge && badge.textContent.trim()) bits.push('<b>' + esc(badge.textContent.trim()) + '</b>');
+    if (L.week) bits.push('Week ' + L.week);
+    meta.innerHTML = bits.join(' · ');
+    if (title) title.appendChild(meta);
+    var tools = h('div', { 'class': 'g5-hd-tools' }); header.appendChild(tools);
+    var after = header;
+    var panels = [];
+    function pnl() { var pn = h('div', { 'class': 'g5-hd-panel' }); afterNode(after, pn); after = pn; panels.push(pn); return pn; }
+    /* the panels open right under the banner, above the key line and Start here (built later) */
+    function placePanels() { var a = header; panels.forEach(function (pn) { afterNode(a, pn); a = pn; }); }
+    setTimeout(placePanels, 0);
+    window.addEventListener('load', function () { setTimeout(placePanels, 950); });
+    function pill(label, pn) {
+      var b = h('button', { type: 'button', 'class': 'g5-pill', 'aria-expanded': 'false', html: label });
+      b.addEventListener('click', function () {
+        var open = !pn.classList.contains('open');
+        document.querySelectorAll('.g5-hd-panel.open').forEach(function (x) { x.classList.remove('open'); });
+        document.querySelectorAll('.g5-pill[aria-expanded="true"]').forEach(function (x) { x.setAttribute('aria-expanded', 'false'); });
+        if (open) { pn.classList.add('open'); b.setAttribute('aria-expanded', 'true'); }
+      });
+      tools.appendChild(b); return b;
+    }
+    var ra = document.getElementById('optima-read-aloud');
+    if (ra) { var rp = pnl(); rp.classList.add('g5-hd-ra'); rp.appendChild(ra); pill('🔊 Read aloud', rp); }
+    var dl = '';
+    document.querySelectorAll('.info-strip .info-cell').forEach(function (c) {
+      var l = c.querySelector('.info-label'), v = c.querySelector('.info-value'), d = c.querySelector('.info-detail');
+      if (!l || !v) return;
+      dl += '<dt>' + esc(l.textContent.trim()) + '</dt><dd><b>' + esc(v.textContent.trim()) + '</b>' +
+        (d && d.textContent.trim() ? ' · ' + esc(d.textContent.replace(/\s+/g, ' ').trim()) : '') + '</dd>';
+    });
+    document.querySelectorAll('.standards-panel .standards-group').forEach(function (g) {
+      var l = g.querySelector('.standards-group-label');
+      var codes = Array.prototype.map.call(g.querySelectorAll('.standards-codes span, .fl-code, .tx-code'), function (x) { return x.textContent.trim(); })
+        .filter(function (x, i, a) { return x && x !== '·' && a.indexOf(x) === i; });
+      if (!l || !codes.length) return;
+      dl += '<dt>' + esc(l.textContent.trim()) + '</dt><dd class="g5-std">' + codes.map(esc).join(' · ') + '</dd>';
+    });
+    if (dl) { var dp = pnl(); dp.innerHTML = '<dl>' + dl + '</dl>'; pill('ⓘ Lesson details', dp); }
+    function mark(id) { root.setAttribute('data-g5-tab', id || 'warmup'); }
+    var active = document.querySelector('.tab-panel.active');
+    mark(active && active.id ? active.id.replace(/^tab-/, '') : 'warmup');
+    var inner = window.switchTab;
+    if (typeof inner === 'function') window.switchTab = function (id) { var r = inner.apply(this, arguments); mark(id); return r; };
+  }
+
   /* ── spot ornaments: the same pen-and-ink set and the same places as G4 ELA ──
      A divider before every tab's Next button (two designs, alternating) and one
      under the opening card; ivy in the corner of the opening card and the book
@@ -1275,6 +1332,7 @@
   /* ── boot, in page order ──────────────────────────────────── */
   function boot() {
     guard('theme', buildTheme);
+    guard('top', buildTop);
     guard('listen', buildListen);
     guard('hook', buildHook);
     guard('art', buildArt);
