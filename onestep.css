@@ -38,3 +38,10 @@
 /* round 4 (Nov 11 2026) */
 .os-on .os-story-off { display: none !important; }
 .os-hold { margin: 8px 0 0; font-weight: 700; }
+
+/* Read Like a Writer box steps (Nov 13 2026) */
+.os-on .rwm-box.os-closed > :not(.rwm-header) { display: none !important; }
+.os-on .rwm-box.os-act > .rwm-header { display: flex; align-items: center; gap: 8px; }
+.os-on .rwm-box.os-closed > .rwm-header { margin-bottom: 0; }
+.os-on .rwm-box .os-rwm-mini { font-size: .92em; padding: 10px 14px; margin-bottom: 12px; opacity: .92; }
+.os-on .rwm-box .os-bar { margin-top: 14px; }

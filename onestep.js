@@ -187,8 +187,29 @@
     return out.filter(function (c) { return c.length; });
   }
 
+  /* Read Like a Writer box (Bethany, Nov 13 2026): one step at a time like the other boxes.
+     Step 1 = the sentence (and any Opti video/how-to above it); then Reader, Writer, Mimic each
+     on their own step with a small copy of the sentence on top so it stays in view. */
+  function rwmSteps(box) {
+    var sent = box.querySelector(':scope > .rwm-sentence'), out = [[]];
+    [].slice.call(box.children).forEach(function (k) {
+      if (k.matches('.rwm-header, .os-bar')) return;
+      if (k.matches('.rwm-step')) out.push([]);
+      out[out.length - 1].push(k);
+    });
+    var lone = out[0].length === 1 && out[0][0] === sent;   // nothing but the sentence: fold it into the first step
+    if (lone) { out[1] && out[1].unshift(sent); out.shift(); }
+    out.forEach(function (c, j) {
+      if (!sent || c.indexOf(sent) > -1 || !c[0] || !c[0].matches('.rwm-step')) return;
+      var m = sent.cloneNode(true); m.classList.add('os-rwm-mini'); m.removeAttribute('id');
+      [].forEach.call(m.querySelectorAll('[id]'), function (n) { n.removeAttribute('id'); });
+      box.insertBefore(m, c[0]); c.unshift(m);
+    });
+    return out.filter(function (c) { return c.length; });
+  }
+
   function setup(panel) {
-    var acts = [].slice.call(panel.querySelectorAll(':scope > .activity, :scope > .spk-copia-card')).filter(function (a) {
+    var acts = [].slice.call(panel.querySelectorAll(':scope > .activity, :scope > .spk-copia-card, :scope > .rwm-box')).filter(function (a) {
       return !a.hasAttribute('data-oao-retired') && !a.hidden && a.style.display !== 'none' && getComputedStyle(a).display !== 'none';   // audit Nov 10: a retired Poetry Corner was still a stop, so Next led to a blank
     });
     if (!acts.length) return;
@@ -204,7 +225,7 @@
       [].slice.call(act.querySelectorAll(':scope > .spk-guide-wrap, :scope > .spk-guide')).reverse().forEach(function (g) {
         if (body !== act) body.insertBefore(g, body.firstChild);
       });
-      var steps = isWhole(act) ? [[].slice.call(body.children)] : chunks(body);
+      var steps = act.matches('.rwm-box') ? rwmSteps(act) : isWhole(act) ? [[].slice.call(body.children)] : chunks(body);
       steps.forEach(function (c, j) { c.forEach(function (n) { n.classList.add('os-part'); n.dataset.osStep = j; }); });
       steps.forEach(function (c) {
         var vis = c.filter(function (n) { return !n.classList.contains('os-off'); });
@@ -222,7 +243,7 @@
       body.appendChild(bar);
       if (steps.length < 2) dots.style.visibility = 'hidden';
 
-      var head = act.querySelector(':scope > .activity-head, :scope > .spk-card-head');
+      var head = act.querySelector(':scope > .activity-head, :scope > .spk-card-head, :scope > .rwm-header');
       var check = el('span', 'os-check', '✓');
       if (head) head.appendChild(check);
       return { act: act, body: body, steps: steps, at: 0, back: back, next: next, dots: dots, head: head, count: count };
