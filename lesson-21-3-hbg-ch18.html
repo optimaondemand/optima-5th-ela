@@ -2497,31 +2497,28 @@ body {
     <div class="activity-body">
       <p>The first sentence is <strong>correct</strong>. Tap highlighted parts to see what&rsquo;s right. Use the model to fix the second sentence.</p>
       <div class="task-box">
-        <div class="dol-model-label">&#9989; Correct &mdash; Consistent pronoun</div>
+        <div class="dol-model-label">&#9989; Correct &mdash; Clear pronoun reference</div>
         <div class="dol-sentence-wrap" id="dolModel">
-          <span class="dol-highlight-word" onclick="dolHighlight(this,&quot;Antecedent.&quot;)">Naomi </span>
-          <span>watched </span>
-          <span>the </span>
-          <span>ghost </span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,&quot;One person, named first.&quot;)">Joseph </span>
+          <span>told </span>
+          <span>Isaac&rsquo;s </span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,&quot;Parents = they.&quot;)">parents </span>
+          <span>what </span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,&quot;Comma before and: two complete sentences are joined.&quot;)">happened, </span>
           <span>and </span>
-          <span class="dol-highlight-word" onclick="dolHighlight(this,&quot;She = Naomi.&quot;)">she </span>
-          <span class="dol-highlight-word" onclick="dolHighlight(this,&quot;Strong verb.&quot;)">understood </span>
-          <span>that </span>
-          <span class="dol-highlight-word" onclick="dolHighlight(this,&quot;It = ghost.&quot;)">it </span>
-          <span>meant </span>
-          <span>her </span>
-          <span>no </span>
-          <span>harm. </span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,&quot;They = Isaac&rsquo;s parents.&quot;)">they </span>
+          <span>cried </span>
+          <span>together. </span>
         </div>
         <div id="dolExplain" style="min-height:24px;margin-top:6px;font-size:13px;color:#34B76F;font-weight:700;"></div>
         <div class="dol-hint">Tap the highlighted words to see what&rsquo;s correct.</div>
         <div class="dol-fix-label">&#128295; Now fix this one</div>
-        <div class="dol-sentence-wrap" style="border-left:4px solid #8B3A20;">isaac and joseph knew they had to act before they took naomi farther away</div>
-        <div class="dol-hint">Rewrite in active voice with strong verbs. Fix capitalization and punctuation.</div>
+        <div class="dol-sentence-wrap" style="border-left:4px solid #8B3A20;">joseph saw a deer across the river and he told isaac that he was going hunting</div>
+        <div class="dol-hint">Fix the unclear pronoun. Fix capitalization and punctuation.</div>
         <button class="dol-check-btn" style="margin-top:12px;" onclick="document.getElementById('dolAns').classList.toggle('show')">&#128269; Check My Work</button>
         <div class="dol-answer" id="dolAns">
-          <p style="margin-bottom:6px;"><strong>Corrected:</strong> Isaac and Joseph knew they had to act before the soldiers took Naomi farther away.</p>
-          <p style="font-size:13px;color:#7A88A8;font-style:italic;">First &ldquo;they&rdquo; = Isaac and Joseph (fine). Second &ldquo;they&rdquo; is unclear &mdash; replace with &ldquo;the soldiers.&rdquo; Capitalize names.</p>
+          <p style="margin-bottom:6px;"><strong>Corrected:</strong> Joseph saw a deer across the river and told Isaac, &ldquo;I&rsquo;m going hunting.&rdquo;</p>
+          <p style="font-size:13px;color:#7A88A8;font-style:italic;">&ldquo;He was going hunting&rdquo; could mean Joseph or Isaac. Joseph&rsquo;s own words make it clear. Capitalize the names.</p>
         </div>
       </div>
     </div>
@@ -2583,22 +2580,22 @@ body {
 <span style="transition:transform .2s;">&#x25B6;</span> &#x1F4D6; Word Bank &mdash; tap to see this week&rsquo;s definitions
 </summary>
 <div style="padding:4px 16px 14px;font-size:14px;color:#3A4A6B;line-height:1.7;">
-<p style="margin:4px 0;"><strong>courage</strong> &mdash; Facing something frightening anyway. Isaac walks to the soldiers' campfire with newfound courage.</p>
-<p style="margin:4px 0;"><strong>mourning</strong> &mdash; Deep sadness after someone dies, and the quiet way people show it.</p>
 <p style="margin:4px 0;"><strong>terrified</strong> &mdash; Extremely frightened.</p>
+<p style="margin:4px 0;"><strong>stickball</strong> &mdash; A traditional Choctaw game played with sticks and a ball.</p>
+<p style="margin:4px 0;"><strong>mourning</strong> &mdash; Deep sadness after someone dies, and the quiet way people show it.</p>
 <p style="margin:4px 0;"><strong>suffering</strong> &mdash; Pain or hardship a person is living through.</p>
-<p style="margin:4px 0;"><strong>stickball</strong> &mdash; A traditional Choctaw game played with sticks — one of the things carried from home.</p>
+<p style="margin:4px 0;"><strong>courage</strong> &mdash; Facing something frightening anyway.</p>
 </div>
 </details>
 
       <p>You have read these words and worked out their meanings. Now put them back where they belong.</p>
       <div class="callout callout-info"><span class="callout-icon">&#x1F3AF;</span><p><strong>Practice:</strong> Type the word that fits each sentence from Chapters 16–19, then check your answers.</p></div>
       <div class="fillin-game" id="vocabFillinGame">
-        <div class="fillin-item">With my newfound <input class="fillin-input" data-answer="courage" maxlength="12" placeholder="______">, I walked to the soldiers’ campfire.</div>
-        <div class="fillin-item">My mother started crying, a soft muffled cry that turned the blue and sunny day into one of quiet <input class="fillin-input" data-answer="mourning" maxlength="12" placeholder="______">.</div>
-        <div class="fillin-item">A <input class="fillin-input" data-answer="terrified" maxlength="12" placeholder="______"> young girl,” said another woman.</div>
-        <div class="fillin-item">Will the <input class="fillin-input" data-answer="suffering" maxlength="12" placeholder="______"> ever be over?</div>
+        <div class="fillin-item">&ldquo;A <input class="fillin-input" data-answer="terrified" maxlength="12" placeholder="______"> young girl,&rdquo; said another woman.</div>
         <div class="fillin-item">Each one held something, a blowgun, a boat paddle, a <input class="fillin-input" data-answer="stickball" maxlength="12" placeholder="______"> bat, a cane fishing pole.</div>
+        <div class="fillin-item">My mother started crying, a soft muffled cry that turned the blue and sunny day into one of quiet <input class="fillin-input" data-answer="mourning" maxlength="12" placeholder="______">.</div>
+        <div class="fillin-item">Will the <input class="fillin-input" data-answer="suffering" maxlength="12" placeholder="______"> ever be over?</div>
+        <div class="fillin-item">With my newfound <input class="fillin-input" data-answer="courage" maxlength="12" placeholder="______">, I walked to the soldiers’ campfire.</div>
         <button class="fillin-check-btn" onclick="checkVocabFillIn()">Check My Words</button>
         <div class="fillin-feedback" id="vocabFillinFeedback">&#x1F331; All correct &mdash; you know this week&rsquo;s words.</div>
       </div>
@@ -2627,9 +2624,9 @@ body {
         </div>
         <div class="spotter-sentence" id="spot2">
           <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which version matches the meaning?</span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="true" data-explain="Correct! The contrast between his age and what he did is the point &mdash; and <em>but</em> carries it.">Isaac was ten years old, but he carried his brother all day.</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="true" data-explain="Correct! The contrast between the fear and what he did is the point, and <em>but</em> carries it.">Isaac was afraid, but he stepped into the soldiers&rsquo; camp.</span>
           <span style="display:block;height:6px;"></span>
-          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false" data-explain="<em>And</em> flattens it into a list. The contrast disappears.">Isaac was ten years old, and he carried his brother all day.</span>
+          <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false" data-explain="<em>And</em> flattens it into a list. The contrast disappears.">Isaac was afraid, and he stepped into the soldiers&rsquo; camp.</span>
           <div class="spotter-result" id="spot2-result"></div>
         </div>
         <div class="spotter-sentence" id="spot3">
@@ -2643,7 +2640,7 @@ body {
 
       <div class="swyk">
         <div class="swyk-label">&#129718; Show What You Know</div>
-        <div class="swyk-prompt">Join each pair twice &mdash; once compound, once complex &mdash; and say which version says what actually happened: <em>(1) The ghosts appeared. Isaac knew what was coming. (2) Isaac was ten. He carried his brother all day.</em></div>
+        <div class="swyk-prompt">Join each pair twice &mdash; once compound, once complex &mdash; and say which version says what actually happened: <em>(1) The ghosts appeared. Isaac knew what was coming. (2) Joseph saw a deer. He went hunting.</em></div>
         <div class="textbox-prompt">Write four sentences, then name the better version in each pair and why.</div>
         <div class="journal-label">Your explanation <span class="saved-dot" id="dot-grammar"></span></div>
         <textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK: Choosing the Sentence Shape" placeholder="Compound: The ghosts appeared, and Isaac knew... Complex: Because the ghosts appeared..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea>
@@ -2734,6 +2731,7 @@ body {
   <div class="activity bl-navy">
     <div class="activity-head"><div class="activity-num" style="background:#2C5F2E;">&#127280;</div><div><div class="activity-title">&#128212; Reading &middot; Chapter Introduction</div><div class="activity-sub">Watch, then read.</div></div></div>
     <div class="activity-body">
+        <p>Chapter 18 is the hardest chapter in the book. Isaac says good-bye to his mother, and on the way back to the council wagon a wolf attacks him. <strong>As you read, watch: what does Isaac see once he becomes a ghost, and what does he decide when he wants to go back?</strong></p>
         <div class="activity bl-purple" style="margin-bottom:18px;">
     <div class="activity-head">
       <div class="activity-num" style="background:#8B6FC0;">&#128218;</div>
@@ -2761,7 +2759,7 @@ body {
     <div class="rwm-header">&#128214; RWM &mdash; Read &bull; Notice &bull; Try</div>
     <div class="rwm-sentence">&ldquo;For the first time I realized what a burden I would be for my family.&rdquo;</div>
     <div class="rwm-step"><div class="rwm-step-label">&#128214; As a Reader</div>
-      <div class="rwm-step-text">Isaac is watching his own father lift his body onto his shoulder. Back in Chapter 13 he told his family he would soon be a ghost. What does he understand now that he did not understand then?</div>
+      <div class="rwm-step-text">Isaac is watching his family set out to carry his body. Back in Chapter 13 he told his family he would soon be a ghost. What does he understand now that he did not understand then?</div>
       <textarea class="journal-box" id="journal-rwm-reader" placeholder="This sentence makes me..." oninput="autoSave(this,'dot-rwm-reader');gatherAnswers();"></textarea></div>
     <div class="rwm-step"><div class="rwm-step-label">&#9999;&#65039; As a Writer</div>
       <div class="rwm-step-text">This is a theme sentence, and it works by reaching backwards. <em>For the first time</em> tells you there was a before &mdash; the chapter where he announced it and did not yet grasp it. A theme cannot be explained out of one moment. Tingle builds this one out of two moments far apart, and lets the phrase <em>for the first time</em> do the connecting.</div>
@@ -2794,7 +2792,7 @@ body {
       <div class="textbox-prompt">There&rsquo;s no single right answer. Make an argument and support it.</div>
       <textarea class="journal-box" id="journal-q2" data-label="Q2: Ch. 18 — letting go" placeholder="Isaac chooses not to because... I think this is right/wrong because..." oninput="autoSave(this,'dot-q2');gatherAnswers();"></textarea>
 
-      <div class="q-block"><div class="q-text"><span class="q-num">3</span>&#127775; <strong>Week Closer.</strong> In Chapters 16, 17, and 18, Isaac transitions fully into ghost life. <strong>What has he gained from this transition? What has he lost? And what does Tingle suggest about what it means to &ldquo;live&rdquo; beyond death?</strong></div></div>
+      <div class="q-block"><div class="q-text"><span class="q-num">3</span>In Chapters 16, 17, and 18, Isaac transitions fully into ghost life. <strong>What has he gained from this transition? What has he lost? And what does Tingle suggest about what it means to &ldquo;live&rdquo; beyond death?</strong></div></div>
       <div class="textbox-prompt">Use specific details from all three chapters.</div>
       <textarea class="journal-box" id="journal-q3" data-label="Q3 (week closer): Isaac's ghost life — gain and loss" placeholder="Isaac has gained... He has lost... Tingle suggests that &ldquo;living&rdquo; beyond death means..." oninput="autoSave(this,'dot-q3');gatherAnswers();"></textarea>
     </div>
@@ -2813,7 +2811,7 @@ body {
         <span style="background:#8B3A20;color:#fff;padding:4px 8px;border-radius:6px;font-size:11px;">&#9733; Apply</span>
         <span style="background:#FAFBFF;color:#7A88A8;padding:4px 8px;border-radius:6px;font-size:11px;">&#9675; Submit</span>
       </div>
-      <div class="textbox-prompt">Today is the <strong>Apply</strong> stage. Revise Moment 2 from your plan. This time focus on a comparison: something the moment is <em>like</em>. Tingle compares movement to fog, to smoke, to snow. Your comparison should fit the emotion of the moment.</div>
+      <div class="textbox-prompt">Today is the <strong>Apply</strong> stage. Revise Moment 2 from your plan. This time focus on a comparison: something the moment is <em>like</em>. Tingle does this in Chapter 18: the panther&rsquo;s black coat goes away &ldquo;like dark grass fading into the ground.&rdquo; Your comparison should fit the feeling of the moment.</div>
       <textarea class="journal-box" id="journal-writing" data-label="Writer's Workshop: Narrative Revision — Apply" placeholder="Original: ... Revised with comparison: ..." oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
     </div>
   </div>
@@ -2839,8 +2837,8 @@ body {
       <div class="turn-in-checklist">
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered all 3 chapter questions with evidence from the book.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed my Word Study Grammar response.</div></div>
-        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my three RWM responses (Reader, Writer, Mimic) on the Reading tab.</div></div>
-        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my Writing Connection sentence.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my Read Like a Writer answers on the Reading tab.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my Writer&rsquo;s Workshop piece.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I copied or downloaded my work and submitted it to Canvas.</div></div>
       </div>
     </div>
