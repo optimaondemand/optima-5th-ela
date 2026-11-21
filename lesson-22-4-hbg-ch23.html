@@ -2497,29 +2497,28 @@ body {
     <div class="activity-body">
       <p>The first sentence is <strong>correct</strong>. Tap highlighted parts to see what&rsquo;s right. Use the model to fix the second sentence.</p>
       <div class="task-box">
-        <div class="dol-model-label">&#9989; Correct &mdash; Editing for tightness</div>
+        <div class="dol-model-label">&#9989; Correct &mdash; Clear pronoun reference</div>
         <div class="dol-sentence-wrap" id="dolModel">
-          <span class="dol-highlight-word" onclick="dolHighlight(this,&quot;Contrast transition.&quot;)">Nonetheless, </span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,&quot;One person, named first.&quot;)">Joseph </span>
+          <span>caught </span>
+          <span>a </span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,&quot;Raccoon = it.&quot;)">raccoon </span>
+          <span>and </span>
+          <span>dropped </span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,&quot;It = the raccoon.&quot;)">it </span>
+          <span>in </span>
           <span>the </span>
-          <span>ghost </span>
-          <span>walkers </span>
-          <span class="dol-highlight-word" onclick="dolHighlight(this,&quot;Strong verb.&quot;)">held </span>
-          <span>their </span>
-          <span>ground </span>
-          <span class="dol-highlight-word" onclick="dolHighlight(this,&quot;FANBOYS.&quot;)">and </span>
-          <span>did </span>
-          <span>not </span>
-          <span>retreat. </span>
+          <span>wagon. </span>
         </div>
         <div id="dolExplain" style="min-height:24px;margin-top:6px;font-size:13px;color:#34B76F;font-weight:700;"></div>
         <div class="dol-hint">Tap the highlighted words to see what&rsquo;s correct.</div>
         <div class="dol-fix-label">&#128295; Now fix this one</div>
-        <div class="dol-sentence-wrap" style="border-left:4px solid #8B3A20;">the panther it roared loud and it was a big roar and the soldiers they all ran away fast</div>
-        <div class="dol-hint">Rewrite in active voice with strong verbs. Fix capitalization and punctuation.</div>
+        <div class="dol-sentence-wrap" style="border-left:4px solid #8B3A20;">luke told joseph and isaac that he needed to get back to the family</div>
+        <div class="dol-hint">Fix the unclear pronoun. Fix capitalization and punctuation.</div>
         <button class="dol-check-btn" style="margin-top:12px;" onclick="document.getElementById('dolAns').classList.toggle('show')">&#128269; Check My Work</button>
         <div class="dol-answer" id="dolAns">
-          <p style="margin-bottom:6px;"><strong>Corrected:</strong> The panther roared, and the soldiers fled.</p>
-          <p style="font-size:13px;color:#7A88A8;font-style:italic;">Cut: &ldquo;it&rdquo; (redundant), &ldquo;loud&rdquo; and &ldquo;it was a big roar&rdquo; (redundant with &ldquo;roared&rdquo;), &ldquo;they all&rdquo; and &ldquo;fast&rdquo; (redundant). Strong verbs do the work: &ldquo;roared&rdquo; and &ldquo;fled.&rdquo;</p>
+          <p style="margin-bottom:6px;"><strong>Corrected:</strong> Luke told Joseph and Isaac, &ldquo;I need to get back to the family.&rdquo;</p>
+          <p style="font-size:13px;color:#7A88A8;font-style:italic;">&ldquo;He&rdquo; could be Luke, Joseph or Isaac. Luke&rsquo;s own words make it clear. Capitalize the names.</p>
         </div>
       </div>
     </div>
@@ -2596,34 +2595,34 @@ body {
 <span style="transition:transform .2s;">&#x25B6;</span> &#x1F4D6; Word Bank &mdash; tap to see this week&rsquo;s definitions
 </summary>
 <div style="padding:4px 16px 14px;font-size:14px;color:#3A4A6B;line-height:1.7;">
-<p style="margin:4px 0;"><strong>bonepickers</strong> &mdash; Choctaws with the honored duty of preparing the dead for burial.</p>
-<p style="margin:4px 0;"><strong>ancestors</strong> &mdash; The family members who lived long before you. The highest honor is to make the ancestors proud.</p>
 <p style="margin:4px 0;"><strong>distraction</strong> &mdash; Something that pulls attention away, so that something else can happen unnoticed.</p>
+<p style="margin:4px 0;"><strong>bonepickers</strong> &mdash; Choctaws whose sacred job was to prepare the dead for burial.</p>
 <p style="margin:4px 0;"><strong>speechless</strong> &mdash; So surprised or moved that you cannot say a word.</p>
+<p style="margin:4px 0;"><strong>ancestors</strong> &mdash; The family members who lived long before you.</p>
 <p style="margin:4px 0;"><strong>honored</strong> &mdash; Treated with great respect.</p>
 </div>
 </details>
 
       <p>You have worked with these words all week. Show what you know: write your own sentence for each one. Make the sentence prove you understand the word &mdash; not just that you can spell it.</p>
       <div class="vocab-use-item" style="margin-bottom:14px;">
-        <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">bonepickers <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; Choctaws with the honored duty of preparing the dead for burial.</span></div>
-        <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-bonepickers"></span></div>
-        <textarea class="journal-box" id="journal-vocab-bonepickers" data-label="Vocabulary: bonepickers" placeholder="Write a sentence using bonepickers..." oninput="autoSave(this,'dot-vocab-bonepickers');gatherAnswers();" style="min-height:50px;"></textarea>
-      </div>
-      <div class="vocab-use-item" style="margin-bottom:14px;">
-        <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">ancestors <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; The family members who lived long before you. The highest honor is to make the ancestors proud.</span></div>
-        <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-ancestors"></span></div>
-        <textarea class="journal-box" id="journal-vocab-ancestors" data-label="Vocabulary: ancestors" placeholder="Write a sentence using ancestors..." oninput="autoSave(this,'dot-vocab-ancestors');gatherAnswers();" style="min-height:50px;"></textarea>
-      </div>
-      <div class="vocab-use-item" style="margin-bottom:14px;">
         <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">distraction <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; Something that pulls attention away, so that something else can happen unnoticed.</span></div>
         <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-distraction"></span></div>
         <textarea class="journal-box" id="journal-vocab-distraction" data-label="Vocabulary: distraction" placeholder="Write a sentence using distraction..." oninput="autoSave(this,'dot-vocab-distraction');gatherAnswers();" style="min-height:50px;"></textarea>
       </div>
       <div class="vocab-use-item" style="margin-bottom:14px;">
+        <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">bonepickers <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; Choctaws whose sacred job was to prepare the dead for burial.</span></div>
+        <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-bonepickers"></span></div>
+        <textarea class="journal-box" id="journal-vocab-bonepickers" data-label="Vocabulary: bonepickers" placeholder="Write a sentence using bonepickers..." oninput="autoSave(this,'dot-vocab-bonepickers');gatherAnswers();" style="min-height:50px;"></textarea>
+      </div>
+      <div class="vocab-use-item" style="margin-bottom:14px;">
         <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">speechless <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; So surprised or moved that you cannot say a word.</span></div>
         <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-speechless"></span></div>
         <textarea class="journal-box" id="journal-vocab-speechless" data-label="Vocabulary: speechless" placeholder="Write a sentence using speechless..." oninput="autoSave(this,'dot-vocab-speechless');gatherAnswers();" style="min-height:50px;"></textarea>
+      </div>
+      <div class="vocab-use-item" style="margin-bottom:14px;">
+        <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">ancestors <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; The family members who lived long before you.</span></div>
+        <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-ancestors"></span></div>
+        <textarea class="journal-box" id="journal-vocab-ancestors" data-label="Vocabulary: ancestors" placeholder="Write a sentence using ancestors..." oninput="autoSave(this,'dot-vocab-ancestors');gatherAnswers();" style="min-height:50px;"></textarea>
       </div>
       <div class="vocab-use-item" style="margin-bottom:14px;">
         <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">honored <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; Treated with great respect.</span></div>
@@ -2639,29 +2638,29 @@ body {
     <div class="activity-body">
 <!-- grammar-notice-first -->
 <div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F50E;</span><p>Before you start: hunt for the noun each pronoun replaced.</p></div>
-            <p>Last day. Now <strong>explain</strong> why this matters most in writing about history. &ldquo;They took everything&rdquo; hides who <em>they</em> were. Naming the antecedent is not just good grammar &mdash; it is the difference between a record and a rumour.</p>
+            <p>Last day. Now <strong>explain</strong> why this matters most in writing about history. &ldquo;They took everything&rdquo; hides who <em>they</em> were. Naming the antecedent is not just good grammar &mdash; it is the difference between a record and a rumor.</p>
       <div class="task-box" style="background:#FFFCF0;border-color:#F5E6C8;">
         <div class="task-sentence" style="border-left-color:#8B3A20;"><strong>The government</strong> broke the treaty <strong>it</strong> had signed.</div>
       </div>
-      <p style="margin-top:10px;color:#3A4A6B;">A single body acting as one takes a singular pronoun &mdash; and naming it is what makes the sentence a record rather than a rumour.</p>
+      <p style="margin-top:10px;color:#3A4A6B;">A single body acting as one takes a singular pronoun &mdash; and naming it is what makes the sentence a record rather than a rumor.</p>
       <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#127919;</span><p><strong>Tap the version that names who acted.</strong></p></div>
       <div class="spotter-game" id="spotterGame">
         <div class="spotter-sentence" id="spot1">
-          <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which version is a record rather than a rumour?</span>
+          <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which version is a record rather than a rumor?</span>
           <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false" data-explain="No antecedent. The sentence describes a theft with no thief.">They took everything that winter.</span>
           <span style="display:block;height:6px;"></span>
           <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true" data-explain="Correct! Naming the actor is what makes the sentence usable as history.">The soldiers took everything that winter.</span>
           <div class="spotter-result" id="spot1-result"></div>
         </div>
         <div class="spotter-sentence" id="spot2">
-          <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which version is a record rather than a rumour?</span>
+          <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which version is a record rather than a rumor?</span>
           <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="true" data-explain="Correct! The actor is named and the pronoun points straight back to it.">The government broke the treaty it had signed.</span>
           <span style="display:block;height:6px;"></span>
           <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false" data-explain="Two pronouns, no antecedents. The reader learns nothing about who did what.">It was broken not long after it was signed.</span>
           <div class="spotter-result" id="spot2-result"></div>
         </div>
         <div class="spotter-sentence" id="spot3">
-          <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which version is a record rather than a rumour?</span>
+          <span style="font-family:Georgia,serif;display:block;margin-bottom:8px;">Which version is a record rather than a rumor?</span>
           <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false" data-explain="Passive plus a vague pronoun. Nobody made them and nobody broke them.">Promises were made, and they were not kept.</span>
           <span style="display:block;height:6px;"></span>
           <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true" data-explain="Correct! Both actions are attached to a named actor.">The government made promises, and the government did not keep them.</span>
@@ -2768,6 +2767,7 @@ body {
   <div class="activity bl-navy">
     <div class="activity-head"><div class="activity-num" style="background:#2C5F2E;">&#127280;</div><div><div class="activity-title">&#128212; Reading &middot; Chapter Introduction</div><div class="activity-sub">Watch, then read.</div></div></div>
     <div class="activity-body">
+        <p>In Chapter 23, the women carry out their plan to keep the soldiers away from the trunk, and Isaac, Joseph and Luke get a visit they will never forget. <strong>As you read, watch: how does the plan work, and how do the ghosts honor the three boys?</strong></p>
         <div class="activity bl-purple" style="margin-bottom:18px;">
     <div class="activity-head">
       <div class="activity-num" style="background:#8B6FC0;">&#128218;</div>
@@ -2784,7 +2784,7 @@ body {
 <li><strong>Notice what is left unsaid:</strong> Symbolism works by not explaining itself. Ask what Tingle trusts you to work out.</li>
 </ol>
 </div>
-<div class="callout callout-info" style="margin-top:10px;"><span class="callout-icon">🎯</span><p><strong>Whole-book thinking:</strong> Choose the figurative image that has done the most work across the whole novel. Explain it in your own words, then find the place where a reader could first have understood it.</p></div>
+<div class="callout callout-info" style="margin-top:10px;"><span class="callout-icon">🎯</span><p><strong>Whole-book thinking:</strong> Choose the figurative image that has done the most work in the novel so far. Explain it in your own words, then find the place where a reader could first have understood it.</p></div>
       <div class="thinking-stop">&#128173; Hold this as you read.</div>
     </div>
   </div>
@@ -2859,7 +2859,7 @@ body {
       <div class="turn-in-checklist">
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered all 3 chapter questions with evidence from the book.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed my Word Study Grammar response.</div></div>
-        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my Writing Connection sentence.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my Writer&rsquo;s Workshop piece.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I copied or downloaded my work and submitted it to Canvas.</div></div>
       </div>
     </div>
