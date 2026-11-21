@@ -1,0 +1,189 @@
+#!/usr/bin/env python3
+"""Week 20 family guide (parent-guide-week-20.html) from the week 18 guide's look. Every line from the
+finished week 20 lessons and Ch. 12-15 of the book (checked in planning docs/hbg_ocr.txt). Nov 21 2026."""
+import io, re
+s = io.open('parent-guide-week-18.html', encoding='utf-8').read()
+head, body = s[:s.index('<body>')], s[s.index('<body>'):]
+head = re.sub(r'<title>[^<]*</title>', '<title>Week 20 Parent Guide · 5th Grade ELA · Optima Academy Online</title>', head)
+assert '<title>Week 20' in head
+B = '''<body>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="hero">
+    <div class="hero-text">
+      <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy Online">Family Guide · 5th Grade ELA</div>
+      <h1>Week 20: Secrets Come Out</h1>
+      <div class="sub"><em>How I Became a Ghost</em> by Tim Tingle, Chapters 12–15</div>
+      <div class="chips">
+        <span class="chip">4 lessons</span>
+        <span class="chip">1 fluency recording</span>
+        <span class="chip">Ch. 12–15</span>
+        <span class="chip">Check-In at week’s end</span>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨️ Print this guide</button>
+    </div>
+    <div class="hero-art" style="background-image:url('assets/art/hbg/homer-camp-fire.jpg');background-position:center 55%;" role="img" aria-label="A painting of a campfire at night in a dark forest, with sparks rising and two men resting by a lean-to"></div>
+  </header>
+
+  <!-- HOW THE LESSON PAGES WORK -->
+  <section class="howto">
+    <h2>🧭 How the Lesson Pages Work</h2>
+    <ul>
+      <li><span>🗂️</span><strong>Four tabs, in order:</strong> Warm-Up → Word Study → Reading → Assignment. A button at the bottom of each tab moves to the next.</li>
+      <li><span>👣</span><strong>One step at a time.</strong> Each tab shows one activity at a time, and a Next button moves through its steps.</li>
+      <li><span>📝</span><strong>Every answer goes on the page.</strong> There’s a box for each one, including the Daily Oral Language sentence.</li>
+      <li><span>💾</span><strong>Answers save as you type</strong>, but only in that browser on that computer. Switching computers or clearing the browser loses them.</li>
+      <li><span>📓</span><strong>Copy your work</strong> at the bottom of the Assignment tab, then <strong>paste it into the assignment in Canvas and submit</strong>. A lesson isn’t turned in until it’s submitted there.</li>
+      <li><span>🎙️</span><strong>Fluency is a separate page</strong> in the Canvas module, because recording doesn’t work inside a lesson. Keep the book nearby.</li>
+    </ul>
+  </section>
+
+  <!-- AT A GLANCE -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🧭</span><h2>This Week at a Glance</h2></div>
+    <p>Nita’s ghost comes to Isaac with a request: find her sister. That night around the campfire, two secrets come out. Gabe tells everyone that soldiers took his older daughter, Naomi, and Isaac tells his family that he will soon be a ghost. Before morning, Joseph, the grandson of Old Man and Old Woman, wakes Isaac. He knows where Naomi is. Joseph tells how he was caught by the soldiers and how he got away. Then the ghost of Old Man gives Isaac a plan: go to the Choctaw Council wagon and help the councilmen, and watch for Naomi. In Writer’s Workshop, your student writes a theme paragraph.</p>
+    <div class="box b-rose" style="margin-bottom:12px;"><div class="box-label">💛 A heads-up for families</div>In Chapter 12, Nita’s parents carry her body on the walk, and Isaac has a frightening daydream about an icicle falling on him. In Chapter 13, Gabe tells how a soldier took Naomi, knocked him down with a shotgun, and threatened to take Nita too. In Chapter 14, Joseph tells how soldiers left him bleeding in the snow, tied him up, and laughed as they told him the blankets had killed his town. He escapes by turning into a panther; Isaac had heard stories of panther people but never believed them. The lessons name these moments plainly and do not dwell on them.</div>
+    <div class="glance">
+      <div class="box b-sky"><div class="box-label">Reading skill</div><strong>How a story’s conflict rises.</strong> Your student names who wants what and what stands in the way, follows how each event makes the next one possible, and finds where the danger changes from the road to the soldiers themselves.</div>
+      <div class="box b-green"><div class="box-label">Big idea</div><strong>Telling the truth can take courage.</strong> Gabe and Isaac each kept a secret to protect the people they love. Once the secrets are told, the family can act together.</div>
+    </div>
+    <p class="quote">“I will soon be a ghost.”<small>Isaac, Chapter 13</small></p>
+  </section>
+
+  <!-- DAY BY DAY -->
+  <section class="card">
+    <div class="card-head"><span class="ico">📅</span><h2>Day by Day</h2></div>
+    <table class="days">
+      <thead><tr><th>Lesson</th><th>Reading</th><th>Big question</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="day-n">20.1<span>Day 1</span></td>
+          <td><span class="ch">Chapter 12 · Disappearing Daughter</span><br>Nita’s ghost asks Isaac to find her sister. When Isaac asks, Gabe says, “Do not speak of this!” Later Gabe agrees they will talk that night. Walking blind in the snow, Isaac has a bad dream.<br><span class="pill p-museum">Hahn’s snowstorm painting</span><span class="pill p-extra">Keep a secret, or tell?</span></td>
+          <td>When is it right to keep a secret, and when is it right to tell?</td>
+        </tr>
+        <tr>
+          <td class="day-n">20.2<span>Day 2</span></td>
+          <td><span class="ch">Chapter 13 · The Coming of My Final Day</span><br>Around the fire, Gabe tells about Naomi, and Isaac tells his own secret. Late that night, Joseph wakes Isaac. He knows where Naomi is.<br><span class="pill p-poem">Poetry Corner</span><span class="pill p-museum">A winter night under the moon</span></td>
+          <td>How does a chapter raise the tension instead of letting it go?</td>
+        </tr>
+        <tr>
+          <td class="day-n">20.3<span>Day 3</span></td>
+          <td><span class="ch">Chapter 14 · Joseph’s Story</span><br>Joseph tells how the soldiers caught him, how he earned their trust, and how he cut the ropes with a sharp stone and ran.<br><span class="pill p-museum">Moonlight in a winter forest</span></td>
+          <td>How does each event make the next one possible?</td>
+        </tr>
+        <tr>
+          <td class="day-n">20.4<span>Day 4</span></td>
+          <td><span class="ch">Chapter 15 · The Bending Branch of Treaty Talk</span><br>Joseph explains that the Choctaw Council rides in its own wagon. Old Man’s ghost tells Isaac to go there alone and help. The council welcomes Isaac.<br><span class="pill p-poem">Poetry Corner</span><span class="pill p-museum">Homer’s campfire</span><span class="pill p-extra">Choctaw words</span></td>
+          <td>Where did the danger change shape this week?</td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">🎙️<span>Fluency</span></td>
+          <td colspan="2">Isaac’s daydream in the snowstorm in Chapter 12. Your student reads it once to themselves, again for smoothness, and once more with the tension it builds, then <strong>records and submits it in Canvas.</strong></td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">📋<span>Check-In</span></td>
+          <td colspan="2">A 14-point wrap-up on the week: commas with clauses and transitions, the roots <em>path</em> and <em>sens/sent</em>, accent shifts in related words, two reading questions, and two short writing questions.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- WORDS -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🔤</span><h2>Words to Know</h2><span class="tag">Use them at home!</span></div>
+    <div class="words">
+      <div class="word"><b>determined</b><span>having your mind firmly made up, no matter how hard the thing is</span></div>
+      <div class="word"><b>treaty</b><span>a formal agreement between governments; in the story, the one that forced the Choctaws from their homeland</span></div>
+      <div class="word"><b>council</b><span>a group chosen to make decisions for their people</span></div>
+      <div class="word"><b>invisible</b><span>impossible to see</span></div>
+      <div class="word"><b>permission</b><span>being allowed to do something by the person in charge</span></div>
+    </div>
+    <div class="skills">
+      <div class="box b-sky"><div class="box-label">Word parts</div><strong>path</strong> means “feeling, suffering.” <strong>sens/sent</strong> means “feel, perceive.” <em>Sympathy</em> is feeling for someone; <em>empathy</em> is feeling with them.<span class="eg">sympathy · empathy · apathy · sensitive · sensation · sentiment</span></div>
+      <div class="box b-gold"><div class="box-label">Spelling</div><strong>Accent shifts.</strong> When a word grows, its strong beat can move. A related word helps you hear a vowel that is hard to hear.<span class="eg">atom → atomic · major → majority · define → definite · history → historic</span></div>
+      <div class="box b-green"><div class="box-label">Grammar</div><strong>Commas with clauses and transitions.</strong> A comma goes after an opening clause, and before <em>and</em>, <em>but</em> or <em>so</em> when they join two sentences. A comma alone can’t join two sentences.<span class="eg">By nightfall the snow stopped, but the air turned bitter and cold.</span></div>
+    </div>
+  </section>
+
+  <!-- EXTRAS -->
+  <section class="card">
+    <div class="card-head"><span class="ico">✨</span><h2>New This Week</h2></div>
+    <div class="extras">
+      <div class="box b-plum"><div class="box-label">🔥 Council Fire</div>The week’s word game. Each log holds a pair of words, like <em>courage</em> and <em>courageous</em>. Your student says both out loud and taps the strong beat in each, to hear where it moves. Five pairs a day.</div>
+      <div class="box b-gold"><div class="box-label">⚖️ Virtue Watch: justice</div>After reading, your student sorts moments, keeps a log, rates a moment on a meter, and on Day 4 picks the strongest moment of justice in the week.</div>
+      <div class="box b-sky"><div class="box-label">🖼️ Paintings from the 1800s</div>Each lesson opens with a painting: a snowstorm in the Sierra Nevada, a moonlit winter night, moonlight in a winter forest, and Winslow Homer’s campfire. They were painted far from Mississippi, and the captions say so.</div>
+      <div class="box b-green"><div class="box-label">🗣️ Choctaw words</div>A card on Day 4 explains <em>Halito</em> (hello), <em>Yakoke</em> (thank you), <em>Hoke</em> (okay) and <em>Pashofa</em> (corn soup). The narrator never says Choctaw words aloud.</div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section class="card">
+    <div class="card-head"><span class="ico">✍️</span><h2>Your Student’s Writing: A Theme Paragraph</h2><span class="tag">Writer’s Workshop</span></div>
+    <div class="essay"><span class="now">Day 1 · Plan</span><span class="now">Day 2 · Draft</span><span class="now">Day 3 · Revise</span><span class="now">Day 4 · Submit</span></div>
+    <p>One paragraph that explains a theme from the novel and proves it with evidence. <strong>Day 1:</strong> pick a theme (survival, courage, justice, loss or memory) and note two pieces of evidence from the last few chapters. <strong>Day 2:</strong> write the first 3–4 sentences: a topic sentence that names the theme, then one piece of evidence. <strong>Day 3:</strong> check that each piece of evidence proves the theme, then add a second piece and a sentence that explains how both support it. <strong>Day 4:</strong> write the full paragraph in 5–7 sentences, ending with a closing sentence that returns to the theme in a new way.</p>
+    <p>Every day also has a <strong>Read Like a Writer</strong> box with one of Isaac’s sentences. This week they show how a sentence controls time: it can make the reader wait, as in “The icicle responds. It shakes, but it keeps everybody waiting,” or fit a whole night into a few words.</p>
+  </section>
+
+  <!-- POETRY -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🪶</span><h2>Poetry Corner: Line Breaks</h2></div>
+    <div class="poem-wrap">
+      <div class="poem">Two roads diverged in a wood, and I—<br>I took the one less traveled by,<br>And that has made all the difference.<small>Robert Frost, “The Road Not Taken” (1916), last lines, Day 2. On Day 4: Emily Dickinson, “A narrow fellow in the grass” (published 1866).</small></div>
+      <div><p>A poet chooses where each line ends. Frost breaks the line right after “and I—”, so the reader stops for a breath before the choice is made, just as the speaker did. Dickinson’s short lines move like the snake in her poem: there, then gone.</p><p><strong>How to help:</strong> Read the Frost lines aloud together, pausing at the dash. Ask what that pause makes you feel, and when Isaac had to choose a road this week.</p></div>
+    </div>
+  </section>
+
+  <!-- ASK AT HOME -->
+  <section class="card">
+    <div class="card-head"><span class="ico">💬</span><h2>Ask at Home</h2><span class="tag">Better than “How was school?”</span></div>
+    <ol class="ask">
+      <li><span class="q">What did Nita’s ghost ask Isaac to do?</span><span class="listen">Listen for: find her sister, to make her mother and father happy again. Nita told him to ask her father about it.</span></li>
+      <li><span class="q">Why did Gabe and Ruth keep Naomi a secret?</span><span class="listen">Listen for: the soldiers said they would take Nita too if they told anyone. Now that Nita is gone, they can’t be hurt that way.</span></li>
+      <li><span class="q">What secret did Isaac tell his family, and why had he waited?</span><span class="listen">Listen for: that he will soon be a ghost. He didn’t want to upset anyone after they had lost their home.</span></li>
+      <li><span class="q">How did Joseph get away from the soldiers?</span><span class="listen">Listen for: he earned their trust by fishing for them, hid a sharp stone, cut the ropes at night and ran. When they found his cave, he turned into a panther and scared them off.</span></li>
+      <li><span class="q">What plan did Old Man’s ghost give Isaac?</span><span class="listen">Listen for: go alone to the Choctaw Council wagon, help the councilmen, and watch for Naomi. Joseph should stay hidden in the woods.</span></li>
+      <li><span class="q">Read me your theme paragraph. What is the theme, and what proves it?</span><span class="listen">Listen for: a topic sentence that names the theme, and two pieces of evidence from the book.</span></li>
+    </ol>
+  </section>
+
+  <!-- TURN IN + TRY AT HOME -->
+  <div class="two">
+    <section class="card">
+      <div class="card-head"><span class="ico">📬</span><h2>What Gets Turned In</h2></div>
+      <ul class="check">
+        <li><strong>Each lesson:</strong> 3 chapter questions answered with evidence from the book, the grammar response, the Read Like a Writer box and that day’s Writer’s Workshop step, copied and pasted into Canvas</li>
+        <li><strong>Fluency:</strong> a recording of the Chapter 12 passage</li>
+        <li><strong>Check-In:</strong> at the end of the week</li>
+      </ul>
+      <p class="small" style="margin-top:10px;"><strong>Done well looks like:</strong> answers that use the book’s own words as evidence, and a theme paragraph where every piece of evidence proves the theme.</p>
+    </section>
+    <section class="card">
+      <div class="card-head"><span class="ico">🏡</span><h2>Try at Home</h2><span class="tag">5 minutes</span></div>
+      <ul class="check">
+        <li><strong>Talk about secrets:</strong> when is it right to keep one, and when is it right to tell a grown-up?</li>
+        <li><strong>Clap the beat:</strong> say <em>photograph</em>, then <em>photography</em>, and clap on the strongest beat. Where did it move?</li>
+        <li><strong>Hunt the roots:</strong> a <em>sensitive</em> friend, a <em>sympathy</em> card, a strange <em>sensation</em>.</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- NEED -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🎒</span><h2>Have on Hand</h2></div>
+    <p><strong><em>How I Became a Ghost</em></strong> by Tim Tingle · <strong>A device that records audio</strong> for the fluency reading</p>
+  </section>
+
+  <!-- NEXT WEEK -->
+  <section class="card next">
+    <div class="card-head"><span class="ico">🔭</span><h2>Coming Up in Week 21</h2></div>
+    <p><strong><em>How I Became a Ghost</em>, Chapters 16–19.</strong> Isaac and Joseph go looking for Naomi. Grammar moves to <strong>compound and complex sentences</strong>, spelling to <strong>homophones and confusable words</strong>, the roots are <strong>vis/vid</strong> and <strong>spect</strong>, and Writer’s Workshop turns to <strong>imagery and description</strong>.</p>
+  </section>
+
+  <p class="foot"><a href="parent-guide-hbg-unit.html" style="color:#1F6FA8;font-weight:700;">See the whole How I Became a Ghost unit →</a><br><br>Optima Academy Online · 5th Grade ELA · Week 20 Family Guide<br>Questions? Reach out to your student’s teacher anytime.</p>
+</div>
+</body>
+</html>
+'''
+io.open('parent-guide-week-20.html', 'w', encoding='utf-8').write(head + B)
+print('wrote parent-guide-week-20.html')
