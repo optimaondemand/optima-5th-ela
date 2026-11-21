@@ -1,0 +1,184 @@
+{
+ "id": "g5-ela-wk19-checkin",
+ "title": "Week 19 Check-In · How I Became a Ghost",
+ "description": "This week Isaac's family joined the Choctaw walkers on the road west. You practiced strong verbs and active voice, the roots anim and spir, and the endings -ive, -al and -ic. Show what you know.",
+ "chapters": "Ch. 8–11",
+ "questions": [
+  {
+   "n": 1,
+   "section": "Grammar",
+   "label": "Identification",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which sentence is in the active voice?",
+   "options": [
+    "The houses were burned in the night.",
+    "The older women sang the Choctaw death song.",
+    "The blankets were handed out from the wagons.",
+    "Shoes were cut from a blanket."
+   ],
+   "answer": 1,
+   "from": "19.1–19.2 Grammar (active or passive)",
+   "status": "kept (a fourth option added; the right sentence is from Ch. 11)"
+  },
+  {
+   "n": 2,
+   "section": "Grammar",
+   "label": "Rewrite",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Rewrite this sentence in the active voice. Make sure the reader knows who did the action.",
+   "excerpt": "Blanket shoes were tied on Nita’s feet.",
+   "key": "Isaac tied blanket shoes on Nita’s feet. (Any active sentence with Isaac as the subject.)",
+   "from": "19.2 Grammar (rewrite in the active voice); Ch. 9",
+   "status": "changed (the old sentence was about Ch. 6 blankets; this one is from this week's chapters)"
+  },
+  {
+   "n": 3,
+   "section": "Grammar",
+   "label": "Explain",
+   "type": "essay_question",
+   "points": 1,
+   "text": "A history writer could say “Isaac’s town was burned” or “The Nahullos burned Isaac’s town.” Which version is better for writing about history? Explain what the other version hides.",
+   "key": "The active version. The passive version hides who did it; it never names the Nahullos.",
+   "from": "19.4 Grammar (active voice names who is responsible)",
+   "status": "fixed (the old item said soldiers burned the town; in the book it was the Nahullos)"
+  },
+  {
+   "n": 4,
+   "section": "Morphology & Vocabulary",
+   "label": "Root Identification",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "The root anim means “life, spirit.” The root spir means “breathe.” Which word has the root that means “breathe”?",
+   "options": [
+    "animal",
+    "inspire",
+    "unanimous",
+    "animate"
+   ],
+   "answer": 1,
+   "from": "19.1–19.4 Morphology",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 5,
+   "section": "Morphology & Vocabulary",
+   "label": "Context Clues",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Read the sentences from Chapter 10. What does vanished most likely mean?",
+   "excerpt": "“Then another voice cut through the snow. ‘Son!’ It was my father’s voice. The Choctaw ghosts vanished.”",
+   "options": [
+    "Grew louder and closer",
+    "Disappeared suddenly",
+    "Began to sing",
+    "Walked slowly away"
+   ],
+   "answer": 1,
+   "from": "19.1–19.3 Vocabulary (vanished)",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 6,
+   "section": "Morphology & Vocabulary",
+   "label": "Use It",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Use the word refused in a sentence that shows you know what it means. Connect it to something Isaac does in Chapter 10 or 11.",
+   "key": "Uses refused correctly (said no firmly). Ch. 10: Isaac refused to look behind him. Ch. 11: he had learned never to refuse a gift.",
+   "from": "19.4 Vocabulary (Use the Word)",
+   "status": "kept"
+  },
+  {
+   "n": 7,
+   "section": "Spelling",
+   "label": "Add the Ending",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Add -ive, -al or -ic to make a describing word. Write all three: protect → ___   season → ___   hero → ___",
+   "key": "protective, seasonal, heroic",
+   "from": "19.1 Spelling sort",
+   "status": "kept"
+  },
+  {
+   "n": 8,
+   "section": "Spelling",
+   "label": "Spot It",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which describing word is spelled correctly?",
+   "options": [
+    "historal",
+    "destructive",
+    "seasonic",
+    "protectal"
+   ],
+   "answer": 1,
+   "from": "19.1 Spelling sort",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 9,
+   "section": "Spelling",
+   "label": "Tricky Bases",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Add -ive to create and -al to nature. Write both new words. What happened to the base word each time?",
+   "key": "creative, natural. The final e drops before the vowel ending.",
+   "from": "19.2 and 19.4 Spelling (silent e drops)",
+   "status": "kept"
+  },
+  {
+   "n": 10,
+   "section": "Reading",
+   "label": "Detail",
+   "type": "essay_question",
+   "points": 1,
+   "text": "What does Isaac do after his father says these words? What happens to his feet afterward?",
+   "key": "He stops looking behind him, keeps walking and forgets the pain. Three days later his feet heal (the healing began with his father’s words).",
+   "from": "19.3 Reading (Ch. 10)",
+   "status": "kept"
+  },
+  {
+   "n": 11,
+   "section": "Reading",
+   "label": "Inference",
+   "type": "essay_question",
+   "points": 2,
+   "text": "In Chapter 9, Isaac promises to be Nita’s big brother and take care of her. How do Isaac and Nita take care of each other in Chapters 9 to 11? What does Nita’s death in Chapter 11 mean for Isaac’s promise? Use at least two details from two different chapters.",
+   "key": "2 pts: two details from two chapters. Ch. 9: he cuts blanket shoes for her feet. Ch. 11: she gives him her shoes; he cuts her another pair. Her death means he can no longer keep the promise while she is alive (Mister Jonah taught him the dead can still help the living). 1 pt: one detail or one chapter.",
+   "from": "19.2 and 19.4 Reading (Ch. 9, 11)",
+   "status": "kept"
+  },
+  {
+   "n": 12,
+   "section": "Writing",
+   "label": "Read Like a Writer",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Write two sentences with I about a time you were very cold, tired or hungry. First give one detail only you could feel. Then give one plain reaction.",
+   "excerpt": "“My feet were freezing cold and burning hot at the same time. I never knew pain could hurt this bad.”",
+   "key": "Two first-person sentences: a felt detail, then a plain reaction (thoughts, details, reactions).",
+   "from": "19.3 Read Like a Writer (first-person voice: a detail, then a reaction)",
+   "status": "changed (the old model taught a pattern this week's Read Like a Writer no longer teaches)"
+  },
+  {
+   "n": 13,
+   "section": "Writing",
+   "label": "Short Response",
+   "type": "essay_question",
+   "points": 1,
+   "text": "In Chapter 8, Isaac says, “The smallpox blankets were ghost-making blankets.” In 2–3 sentences, explain why Isaac’s family waits before taking blankets on the walk, and how Mister Jonah’s ghost helps them decide.",
+   "key": "They remember the swamp blankets carried smallpox. Mister Jonah’s ghost tells Isaac the new blankets are safe, so his father asks for blankets in the morning.",
+   "from": "19.1 Reading (Ch. 8)",
+   "status": "kept"
+  }
+ ],
+ "passage": {
+  "before": 10,
+  "title": "Reading passage (Chapter 10)",
+  "text": "“Son,” he said, “you cannot keep your eyes on the bloody footprints you have left behind you. You must keep your eyes on where you are going.”\nI took a deep breath. I nodded. From that moment on, even though my feet burned, I refused to look behind me. I looked where I was going and forgot about the pain.",
+  "cite": "Tim Tingle, How I Became a Ghost, Chapter 10"
+ }
+}
