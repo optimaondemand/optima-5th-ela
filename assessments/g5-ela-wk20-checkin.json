@@ -1,0 +1,187 @@
+{
+ "id": "g5-ela-wk20-checkin",
+ "title": "Week 20 Check-In · How I Became a Ghost",
+ "description": "This week Gabe told the family about Naomi, Isaac told his own secret, and Joseph came back. You practiced commas with clauses and transitions, the roots path and sens/sent, and accent shifts in related words. Show what you know.",
+ "chapters": "Ch. 12–15",
+ "questions": [
+  {
+   "n": 1,
+   "section": "Grammar",
+   "label": "Identification",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which sentence uses commas correctly?",
+   "options": [
+    "Nita was gone, Gabe told the families about Naomi.",
+    "Isaac felt the warm shiver, and the ghosts gathered around him.",
+    "When the soldiers took Naomi Gabe ran to help her.",
+    "Ruth wrapped her blanket tight, so, no one could see her face."
+   ],
+   "answer": 1,
+   "from": "20.1–20.2 Grammar (the three comma rules; find the missing comma)",
+   "status": "changed (the old right answer was the same sentence as Q12's model; a new right answer from Ch. 13 and a fourth option added)"
+  },
+  {
+   "n": 2,
+   "section": "Grammar",
+   "label": "Fix the Splice",
+   "type": "essay_question",
+   "points": 1,
+   "text": "This is a comma splice. Fix it so it is correct. Write the whole sentence.",
+   "excerpt": "Joseph cut the ropes with a sharp stone, he ran to the river.",
+   "key": "Joseph cut the ropes with a sharp stone, and he ran to the river. (Or a period or a semicolon.)",
+   "from": "20.3 Grammar (fix comma splices); Ch. 14",
+   "status": "kept"
+  },
+  {
+   "n": 3,
+   "section": "Grammar",
+   "label": "Explain",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Add the missing comma, then explain the rule you used.",
+   "excerpt": "After Nita was gone Gabe told everyone about Naomi.",
+   "key": "After Nita was gone, Gabe told everyone about Naomi. A comma comes after an introductory clause.",
+   "from": "20.4 Grammar (explain what the commas do)",
+   "status": "kept"
+  },
+  {
+   "n": 4,
+   "section": "Morphology & Vocabulary",
+   "label": "Root Identification",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "The root path means “feeling” and sym- means “with.” Which word means “feeling with someone”?",
+   "options": [
+    "sensitive",
+    "sympathy",
+    "apathy",
+    "sentiment"
+   ],
+   "answer": 1,
+   "from": "20.1–20.4 Morphology (path, sens/sent)",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 5,
+   "section": "Morphology & Vocabulary",
+   "label": "Context Clues",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Read the sentences from Chapter 12. What does determined most likely mean?",
+   "excerpt": "“You are right,” he said. “She is a determined little girl. Tonight we can talk.”",
+   "options": [
+    "Shy and quiet",
+    "Firmly decided and not willing to give up",
+    "Lost and confused",
+    "Angry and loud"
+   ],
+   "answer": 1,
+   "from": "20.1 Vocabulary (determined)",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 6,
+   "section": "Morphology & Vocabulary",
+   "label": "Use It",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Use the word permission in a sentence that shows you know what it means. Connect it to what Isaac tells Nani Humma in Chapter 15.",
+   "key": "Uses permission correctly (being allowed by someone in charge). Isaac tells Nani Humma his parents gave him permission to leave camp.",
+   "from": "20.4 Vocabulary (permission)",
+   "status": "kept"
+  },
+  {
+   "n": 7,
+   "section": "Spelling",
+   "label": "Hidden Vowel",
+   "type": "essay_question",
+   "points": 1,
+   "text": "The middle vowel in definite is hard to hear. Write a related word where you can hear that vowel clearly, and explain how it helps you spell definite.",
+   "key": "define. The accent falls on the i in define, so you can hear it; definite keeps the same i.",
+   "from": "20.3–20.4 Spelling (use a related word for the hidden vowel)",
+   "status": "kept"
+  },
+  {
+   "n": 8,
+   "section": "Spelling",
+   "label": "Accent Shift",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "In which word does the accent fall on the second syllable?",
+   "options": [
+    "photograph",
+    "photography",
+    "history",
+    "major"
+   ],
+   "answer": 1,
+   "from": "20.1–20.2 Spelling (accent shifts; sort by stress)",
+   "status": "kept (a fourth option added from this week's list)"
+  },
+  {
+   "n": 9,
+   "section": "Spelling",
+   "label": "Use a Related Word",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Fill in the missing vowel: hist_ry. Then name the related word that tells you which vowel it is.",
+   "key": "history (o). historic or historical: the accent moves onto the o.",
+   "from": "20.3 Spelling (apply a related word)",
+   "status": "kept"
+  },
+  {
+   "n": 10,
+   "section": "Reading",
+   "label": "Detail",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Why did Gabe and Ruth keep Naomi a secret? Why does Gabe feel he can finally tell?",
+   "key": "The soldiers said they would take Nita too if they told anyone. Now that Nita is gone, the soldiers cannot hurt them that way.",
+   "from": "20.2 Reading (Ch. 13)",
+   "status": "kept"
+  },
+  {
+   "n": 11,
+   "section": "Reading",
+   "label": "Inference",
+   "type": "essay_question",
+   "points": 2,
+   "text": "In Chapters 12 to 15, two big secrets come out: Gabe’s secret about Naomi, and Isaac’s secret that he will soon be a ghost. Why did each person keep the secret, and what changes once it is told? Use at least two details from two different chapters.",
+   "key": "2 pts: both secrets, with a reason and a result. Gabe kept quiet because the soldiers threatened to take Nita (Ch. 12: “Do not speak of this!”; Ch. 13: he tells). Isaac did not want to upset his family after losing their home; once he tells, he asks them not to stop him if he leaves camp to find Naomi (Ch. 13), and in Ch. 15 he tells Nani Humma his parents gave him permission to leave. 1 pt: one secret or one chapter.",
+   "from": "20.1–20.4 Reading (Ch. 12, 13, 15)",
+   "status": "kept (key details checked against the book and named by chapter)"
+  },
+  {
+   "n": 12,
+   "section": "Writing",
+   "label": "Read Like a Writer",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Notice the pattern: a time phrase, one change, a comma and but, then a second change that pulls the other way. Write your own sentence with the same shape. Pattern: By ___ the ___, but ___.",
+   "excerpt": "“By nightfall the snow stopped, but the air turned bitter and cold.”",
+   "key": "Follows By ___ the ___, but ___, with a comma before but and a second change that pulls the other way.",
+   "from": "20.2 Read Like a Writer (Ch. 13)",
+   "status": "fixed (the section name showed as “{19: }”)"
+  },
+  {
+   "n": 13,
+   "section": "Writing",
+   "label": "Short Response",
+   "type": "essay_question",
+   "points": 1,
+   "text": "In Chapter 15, Joseph explains, “That is what the treaty says. They have to take us safely to our new home in the west.” Isaac answers that he wishes he had never heard of Treaty Talk. In 2–3 sentences, explain how the treaty both protects and hurts the Choctaw people.",
+   "key": "It forced the Choctaw from their homes (the cause of the walk and the deaths), but it also makes the soldiers feed them and keep them safe on the way west.",
+   "from": "20.4 Reading (Ch. 15)",
+   "status": "fixed (the section name showed as “{19: }”)"
+  }
+ ],
+ "passage": {
+  "before": 10,
+  "title": "Reading passage (Chapter 13)",
+  "ch": 13,
+  "text": "“The soldiers. They said they would take Nita away if we told anybody what I am about to tell you. We have another daughter. Her name is Naomi and she is twelve years old.”",
+  "cite": "Tim Tingle, How I Became a Ghost, Chapter 13"
+ },
+ "rwm_ch": 13
+}
