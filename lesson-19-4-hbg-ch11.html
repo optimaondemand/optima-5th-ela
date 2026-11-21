@@ -2684,23 +2684,23 @@ body {
     <div class="activity-body">
             <p>Last day, and these are the ones that catch people out: bases that drop a letter, and bases that can take more than one ending with different meanings.</p>
 
-      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">🎮</span><p><strong>Sort by what changed.</strong> Look at the base word inside each adjective: did a silent <em>e</em> drop, did a <em>y</em> become <em>i</em>, or did nothing change at all?</p></div>
+      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">🎮</span><p><strong>Sort by what changed.</strong> Look at the base word inside each adjective: did a silent <em>e</em> drop, did the base change its spelling some other way (<em>describe &rarr; descriptive</em>), or did nothing change at all?</p></div>
       <div class="sort-game" id="spellSort">
         <div class="sort-bank" id="sortBank">
           <span class="sort-chip" data-group="plain" onclick="pickSortChip(this)">national</span>
           <span class="sort-chip" data-group="drop" onclick="pickSortChip(this)">creative</span>
-          <span class="sort-chip" data-group="drop" onclick="pickSortChip(this)">descriptive</span>
+          <span class="sort-chip" data-group="base" onclick="pickSortChip(this)">descriptive</span>
           <span class="sort-chip" data-group="drop" onclick="pickSortChip(this)">narrative</span>
           <span class="sort-chip" data-group="plain" onclick="pickSortChip(this)">expressive</span>
-          <span class="sort-chip" data-group="yi" onclick="pickSortChip(this)">historic</span>
+          <span class="sort-chip" data-group="base" onclick="pickSortChip(this)">historic</span>
           <span class="sort-chip" data-group="plain" onclick="pickSortChip(this)">personal</span>
           <span class="sort-chip" data-group="plain" onclick="pickSortChip(this)">protective</span>
           <span class="sort-chip" data-group="plain" onclick="pickSortChip(this)">supportive</span>
-          <span class="sort-chip" data-group="yi" onclick="pickSortChip(this)">tragic</span>
+          <span class="sort-chip" data-group="base" onclick="pickSortChip(this)">tragic</span>
         </div>
         <div class="sort-columns">
           <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#2C5F2E,#3A7A3C);">Silent e drops</div><div class="sort-col-drop" data-col="drop" onclick="dropSortChip(this,'drop')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B3A20,#A84A2A);">y becomes i</div><div class="sort-col-drop" data-col="yi" onclick="dropSortChip(this,'yi')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B3A20,#A84A2A);">Base changes spelling</div><div class="sort-col-drop" data-col="base" onclick="dropSortChip(this,'base')"></div></div>
           <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">Nothing changes</div><div class="sort-col-drop" data-col="plain" onclick="dropSortChip(this,'plain')"></div></div>
         </div>
         <div class="sort-score" id="sortScore"></div>
