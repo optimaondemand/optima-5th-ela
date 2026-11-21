@@ -36,9 +36,9 @@ def pick(*ws): return {w: MISS[w] for w in ws}
 D = {}
 D[1] = {
  "listen": {
-  "warmup": {"text": "In Chapter 16, Nani Humma catches Isaac and Joseph talking by the creek at night, and the Choctaw Council learns about Naomi. Your reading lens this week is theme. Watch for things that come back in the story, like blankets and footprints. Each time, ask what they mean now."},
+  "warmup": {"text": "In Chapter 16, a council leader catches Isaac and Joseph talking by the creek at night, and the Choctaw Council learns about Naomi. Your reading lens this week is theme. Watch for things that come back in the story, like blankets and footprints. Each time, ask what they mean now."},
   "words": {"text": "Two roots this week, and both are about sight. One means see. One means look. Then words that sound the same but are spelled differently. A spell checker will not catch them. In the spyglass game, find the root first, then the meaning."},
-  "reading": {"text": "Read Chapter 16 of How I Became a Ghost in your book. Watch what the boys tell Nani Humma, and what the council decides to do about Naomi. Then do the Read Like a Writer box and the Virtue Watch at the end of this tab."},
+  "reading": {"text": "Read Chapter 16 of How I Became a Ghost in your book. Watch what the boys tell the council leader, and what the council decides to do about Naomi. Then do the Read Like a Writer box and the Virtue Watch at the end of this tab."},
   "assignment": {"text": "Three questions about Chapter 16. Then a new piece of writing begins. This week you will go back to a story you wrote and make the pictures in it stronger. Today you only choose three moments to work on."}},
  "how": [
   {"match": "What Good Readers Do", "do": ["Read the three lenses.", "Tap the one you will use today.", "Keep it in mind as you read. You will use it at the end."],
@@ -73,7 +73,7 @@ D[2] = {
  "listen": {
   "warmup": {"text": "In Chapter 17, Isaac goes back to visit his family. The poem today repeats one line, and a new picture follows it each time. Watch what the second picture adds. Then think about something that keeps coming back in Isaac's story."},
   "words": {"text": "Today you decide which root each word carries: see, or look. Then sort the sound alike words by the job they do. Does the word show who owns something, name a thing, or squeeze two words together? Then five new words in the spyglass."},
-  "reading": {"text": "Read Chapter 17 in your book. Watch how Isaac spends the day with his family, and what he says when it is time to go. Then read the Read Like a Writer sentence about Nani Humma, and finish with the Virtue Watch at the end of this tab."},
+  "reading": {"text": "Read Chapter 17 in your book. Watch how Isaac spends the day with his family, and what he says when it is time to go. Then read the Read Like a Writer sentence about a council leader, and finish with the Virtue Watch at the end of this tab."},
   "assignment": {"text": "Three questions about Chapter 17, then your first revision. Take the first moment from your plan. Add one detail you can see, hear, smell or feel, and one comparison. Show the old version first, then the new one."}},
  "hook": {"q": "When someone you love leaves for a long time, what do you say?",
   "options": [{"t": "Good-bye", "reply": "That is what most of us say. Isaac's family says something different. Here is why:"},
