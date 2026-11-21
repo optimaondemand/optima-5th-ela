@@ -677,6 +677,131 @@
     else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
   }
 
+  /* ── 12c. the week's word game: Council Fire (week 20) ──────
+     DATA.game = {type:'fire', title, sub, after, look, how, doneLine,
+                  logs:[{a:'cour·age', sa:0, b:'cou·ra·geous', sb:1, why}]}  (sa/sb = index of the stressed beat)
+     Tap the stressed beat in each word of a related pair; the log goes on the fire.
+     Storage oao.g5ela.fire.wk<NN> {day:{done:[i]}}. */
+  function buildFire() {
+    var G = D.game; if (!G || G.type !== 'fire' || !G.logs || !G.logs.length) return;
+    var wkKey = 'fire.wk' + L.week;
+    var st = store(wkKey) || {};
+    var mine = st[L.day] || { done: [] };
+    var logs = G.logs, idx = 0;
+    while (idx < logs.length && mine.done.indexOf(idx) >= 0) idx++;
+    var wrap = h('div', { 'class': 'activity g5-game' });
+    wrap.innerHTML =
+      '<div class="activity-head"><div class="activity-num g5-game-num" aria-hidden="true">🔥</div><div>' +
+      '<div class="activity-title">' + esc(G.title || 'Council Fire') + '</div>' +
+      '<div class="activity-sub">' + esc(G.sub || 'Word game for this week') + '</div></div></div>';
+    var body = h('div', { 'class': 'activity-body' });
+    wrap.appendChild(body);
+    var look = h('details', { 'class': 'g5-look' }, [h('summary', { text: '👀 What am I looking at?' }), h('p', { text: G.look })]);
+    if (!mine.done.length) look.open = true;
+    body.appendChild(look);
+    if (G.how) body.appendChild(howLine(G.how));
+    var scene = h('div', { 'class': 'g5-river g5-fire', role: 'img', 'aria-label': 'A campfire at night. Each pair of words you finish adds a log.' });
+    body.appendChild(scene);
+    var stepBox = h('div', { 'class': 'g5-stone-step', 'aria-live': 'polite' });
+    var wordBox = h('div', { 'class': 'g5-fire-words' });
+    var ctrl = h('div', { 'class': 'g5-stone-ctrl' });
+    var fb = h('p', { 'class': 'g5-stone-fb', 'aria-live': 'polite' });
+    var tally = h('p', { 'class': 'g5-stone-tally' });
+    [stepBox, wordBox, ctrl, fb, tally].forEach(function (n) { body.appendChild(n); });
+
+    function draw() {
+      var allDone = 0;
+      Object.keys(st).forEach(function (k) { allDone += (st[k].done || []).length; });
+      var n = mine.done.length, w = 900, hgt = 170, cx = 450, svg = '';
+      svg += '<svg viewBox="0 0 ' + w + ' ' + hgt + '" preserveAspectRatio="xMidYMid meet" aria-hidden="true">' +
+        '<defs><radialGradient id="g5glow" cx=".5" cy=".75" r=".6"><stop offset="0" stop-color="rgba(255,170,60,' + (0.15 + 0.08 * n) + ')"/><stop offset="1" stop-color="rgba(255,170,60,0)"/></radialGradient>' +
+        '<linearGradient id="g5night" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16213A"/><stop offset="1" stop-color="#2B2A33"/></linearGradient></defs>' +
+        '<rect width="' + w + '" height="' + hgt + '" fill="url(#g5night)"/><rect width="' + w + '" height="' + hgt + '" fill="url(#g5glow)"/>';
+      for (var s = 0; s < 26; s++) svg += '<circle cx="' + ((s * 137) % w) + '" cy="' + (8 + (s * 53) % 60) + '" r="1.2" fill="rgba(255,255,255,.55)"/>';
+      for (var t = 0; t < 8; t++) {   // pines on the far edge
+        var tx = 40 + t * 120 + (t > 3 ? 60 : 0), th = 70 + (t % 3) * 14;
+        if (Math.abs(tx - cx) < 120) continue;
+        svg += '<path d="M' + tx + ',' + (150 - th) + ' L' + (tx - 22) + ',150 L' + (tx + 22) + ',150 Z" fill="#101826"/>';
+      }
+      svg += '<ellipse cx="' + cx + '" cy="152" rx="160" ry="10" fill="rgba(0,0,0,.35)"/>';
+      for (var i = 0; i < logs.length; i++) {   // one log per pair; lit logs are on the fire
+        var on = mine.done.indexOf(i) >= 0, ang = (i % 2 ? -1 : 1) * (8 + i * 4);
+        var lx = on ? cx : 120 + i * 30, ly = on ? 146 - Math.floor(mine.done.indexOf(i) / 2) * 9 : 160;
+        svg += '<g transform="translate(' + lx + ',' + ly + ') rotate(' + (on ? ang : 0) + ')"><rect x="-46" y="-6" width="92" height="12" rx="6" fill="' + (on ? '#6B4426' : '#4A3423') + '" stroke="#2C1D12"/><circle cx="46" cy="0" r="6" fill="#A87A4E"/></g>';
+      }
+      if (n) {   // flames grow with the logs
+        var fh = 28 + n * 12;
+        svg += '<path class="g5-flame" d="M' + (cx - 30) + ',140 C' + (cx - 34) + ',' + (140 - fh * .5) + ' ' + (cx - 6) + ',' + (140 - fh * .7) + ' ' + cx + ',' + (140 - fh) + ' C' + (cx + 8) + ',' + (140 - fh * .65) + ' ' + (cx + 36) + ',' + (140 - fh * .5) + ' ' + (cx + 30) + ',140 Z" fill="#F29A2E"/>' +
+               '<path d="M' + (cx - 15) + ',140 C' + (cx - 16) + ',' + (140 - fh * .35) + ' ' + (cx - 2) + ',' + (140 - fh * .5) + ' ' + cx + ',' + (140 - fh * .7) + ' C' + (cx + 4) + ',' + (140 - fh * .45) + ' ' + (cx + 18) + ',' + (140 - fh * .35) + ' ' + (cx + 15) + ',140 Z" fill="#FFD36B"/>';
+      }
+      svg += '</svg>';
+      scene.innerHTML = svg;
+      tally.textContent = 'Today: ' + n + ' of ' + logs.length + ' logs. This week: ' + allDone + (allDone === 1 ? ' log' : ' logs') + ' on the fire.';
+    }
+    function save() { st[L.day] = mine; store(wkKey, st); }
+    function beats(word, right, label, onDone) {
+      var row = h('div', { 'class': 'g5-fire-row' }), parts = word.split('·'), done = false;
+      row.appendChild(h('span', { 'class': 'g5-fire-label', text: label }));
+      parts.forEach(function (p, k) {
+        var b = h('button', { type: 'button', 'class': 'g5-beat', 'aria-label': 'Stress on ' + p }, [p]);
+        b.addEventListener('click', function () {
+          if (done) return;
+          if (k === right) {
+            done = true; b.classList.add('g5-beat-on');
+            row.querySelectorAll('.g5-beat').forEach(function (x) { x.disabled = true; });
+            onDone();
+          } else {
+            fb.textContent = 'Say it out loud and lean hard on ' + p.toUpperCase() + '. Does that sound like English? Try another beat.';
+            b.classList.add('g5-shake'); setTimeout(function () { b.classList.remove('g5-shake'); }, 450);
+          }
+        });
+        row.appendChild(b);
+      });
+      wordBox.appendChild(row);
+    }
+    function show() {
+      draw(); fb.textContent = ''; ctrl.innerHTML = ''; wordBox.innerHTML = '';
+      if (idx >= logs.length) {
+        stepBox.innerHTML = '<b>Every log is on the fire.</b> ' + esc(G.doneLine || 'Come back tomorrow for more.');
+        var again = h('button', { type: 'button', 'class': 'g5-btn g5-btn-ghost' }, ['↺ Build it again']);
+        again.addEventListener('click', function () { mine.done = []; idx = 0; save(); show(); });
+        ctrl.appendChild(again); return;
+      }
+      var S = logs[idx], got = 0;
+      stepBox.innerHTML = '<span class="g5-stepn">Log ' + (idx + 1) + ' of ' + logs.length + '</span> Say each word. Tap the beat you say the strongest.';
+      function both() {
+        got++;
+        if (got < 2) { fb.textContent = 'Good. Now the second word.'; return; }
+        fb.textContent = S.why || 'Yes. The stress moved.';
+        if (mine.done.indexOf(idx) < 0) mine.done.push(idx);
+        save(); if (!REDUCED) chime(); draw();
+        var next = h('button', { type: 'button', 'class': 'g5-btn' }, [idx + 1 < logs.length ? 'Next log →' : 'Finish →']);
+        next.addEventListener('click', function () { idx++; while (idx < logs.length && mine.done.indexOf(idx) >= 0) idx++; show(); setTimeout(function () { var f = ctrl.querySelector('button'); if (f) f.focus(); }, 30); });
+        ctrl.appendChild(next);
+      }
+      beats(S.a, S.sa, '1', both);
+      beats(S.b, S.sb, '2', both);
+    }
+    var ctx;
+    function chime() {
+      try {
+        ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
+        [329.63, 440].forEach(function (f, i) {
+          var o = ctx.createOscillator(), g = ctx.createGain();
+          o.type = 'sine'; o.frequency.value = f;
+          g.gain.setValueAtTime(0.0001, ctx.currentTime + i * 0.1);
+          g.gain.exponentialRampToValueAtTime(0.1, ctx.currentTime + i * 0.1 + 0.02);
+          g.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + i * 0.1 + 0.5);
+          o.connect(g); g.connect(ctx.destination); o.start(ctx.currentTime + i * 0.1); o.stop(ctx.currentTime + i * 0.1 + 0.55);
+        });
+      } catch (e) {}
+    }
+    show();
+    var ref = G.after ? activityByTitle(G.after, panel('words')) : null;
+    if (ref) afterNode(ref, wrap);
+    else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
+  }
+
   /* ── 13. the Commonplace Book page ─────────────────────────── */
   var NAME_BAD = /\b(ass|butt|poop|fart|stupid|dumb|idiot|hate|kill|sex|damn|hell|crap)\b/i;
   function profileName() { var p = store('profile'); return p && p.name ? p.name : ''; }
@@ -1462,6 +1587,7 @@
     guard('miss', buildMiss);
     guard('stones', buildStones);
     guard('footprints', buildFootprints);
+    guard('fire', buildFire);
     guard('cards', buildCards);
     guard('checks', buildChecks);
     guard('virtue', buildVirtue);

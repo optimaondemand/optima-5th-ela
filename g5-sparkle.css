@@ -537,3 +537,13 @@ html.g5-top:not([data-g5-tab="warmup"]) .quote-strip { display: none !important;
 .g5-snow { border-color: #A9B4BE; }
 .g5-snow .g5-fp.cur { filter: drop-shadow(0 0 4px rgba(26,45,90,.45)); }
 .g5-fp-word::before { content: none !important; animation: none !important; }   /* the word is not tappable */
+/* Council Fire (week 20) */
+.g5-fire { border-color: #2C2A33; }
+.g5-fire-words { display: flex; flex-direction: column; gap: 10px; align-items: center; margin: 12px 0; }
+.g5-fire-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: center; }
+.g5-fire-label { font-size: 13px; font-weight: 800; color: var(--g5-ink2); width: 20px; }
+.g5-beat { font: 700 26px/1 'Libre Baskerville', Georgia, serif; min-width: 54px; min-height: 52px; padding: 6px 12px; border: 2px solid var(--g5-rule); background: #fff; border-radius: 8px; cursor: pointer; color: var(--g5-ink); }
+.g5-beat:hover, .g5-beat:focus-visible { border-color: var(--g5-gold); }
+.g5-beat.g5-beat-on { background: #F29A2E; border-color: #A85F12; color: #fff; }
+.g5-beat:disabled { cursor: default; }
+@media (max-width: 480px) { .g5-beat { font-size: 20px; min-width: 44px; } }
