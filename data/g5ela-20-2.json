@@ -1,0 +1,222 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "In Chapter 13, two secrets come out around one campfire, and then someone new arrives in the dark. The poem today is about choosing a road. Look at where its lines break. A line break can make a reader wait, the same way a writer builds tension."
+  },
+  "words": {
+   "text": "Today you decide which feeling root is in each word: the one for emotion, or the one for the senses. Then sort words by where the stress falls. Say each word twice, leaning on a different beat each time. Only one way sounds right."
+  },
+  "reading": {
+   "text": "Read Chapter 13 in your book. Listen for Gabe's secret and Isaac's secret, and notice why each one was kept. Then look at how Tingle orders the events in the Read Like a Writer sentence. Finish with the Virtue Watch at the end of this tab."
+  },
+  "assignment": {
+   "text": "Three questions about Chapter 13, then the first sentences of your theme paragraph. Start with a sentence that names the theme. Then add one piece of evidence from the book, and connect them with a complex sentence."
+  }
+ },
+ "how": [
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read today's skill.",
+    "Tap the lens you will use today.",
+    "Watch what changes for Isaac's family the moment they know."
+   ],
+   "why": "Saying a secret out loud can raise the tension instead of ending it.",
+   "use": "You will use this for the chapter questions."
+  },
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted words in the first sentence.",
+    "Fix the second sentence out loud.",
+    "Tap Check My Work to compare."
+   ],
+   "why": "A comma in the right place shows the reader where one part of a sentence ends and the next begins."
+  },
+  {
+   "match": "Poetry Corner",
+   "do": [
+    "Read the poem out loud once.",
+    "Pause at every line break.",
+    "Read Think About It and keep your answer in mind."
+   ],
+   "why": "Where a poet breaks a line changes how a reader feels the words. A break can make you wait."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Ask: is this word about emotion or about the senses?",
+    "Tap a word, then tap its root.",
+    "Match all four."
+   ],
+   "why": "Both roots mean feel, but they lean different ways."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Read each sentence from the book.",
+    "Look for clues around the word.",
+    "Tap a word, then tap its meaning."
+   ],
+   "why": "Clues in a sentence can tell you what a word means."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Find where the two parts of the sentence meet.",
+    "Tap the version with the comma in the right place.",
+    "Write both sentences in the box and explain."
+   ],
+   "why": "The order of the parts decides whether a comma is needed."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Say each word twice, leaning on a different beat.",
+    "Keep the way that sounds like English.",
+    "Tap a word, then tap its column."
+   ],
+   "why": "The stress can jump when a word grows."
+  },
+  {
+   "match": "Chapter Thinking",
+   "do": [
+    "Read Chapter 13 first.",
+    "Answer each question in 2 or more sentences.",
+    "Use details from the chapter as evidence."
+   ],
+   "why": "These questions check what happened and what each event made harder."
+  },
+  {
+   "match": "Workshop",
+   "do": [
+    "Write a topic sentence that names your theme.",
+    "Add one piece of evidence from the book.",
+    "Join them with a complex sentence and a comma."
+   ],
+   "why": "A clear topic sentence tells the reader what the whole paragraph will prove.",
+   "use": "Next lesson you will revise and add more evidence."
+  },
+  {
+   "match": "Virtue Watch",
+   "do": [
+    "Read what justice means.",
+    "Read the example from this week.",
+    "After you read, fill in your justice log at the end of this tab."
+   ]
+  },
+  {
+   "match": "Chapter Introduction",
+   "do": [
+    "Read the chapter introduction below.",
+    "Open your book and read Chapter 13.",
+    "Then do the Virtue Watch and the Read Like a Writer box below."
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "word": "line break",
+   "in": "Poetry Corner",
+   "meaning": "the place where a poet ends one line and starts the next"
+  },
+  {
+   "word": "rising action",
+   "in": "What Good Readers Do",
+   "meaning": "the part of a story where the problem grows and the tension climbs"
+  }
+ ],
+ "miss": {
+  "compete": "com-PETE: the strong beat is PETE, syllable 2.",
+  "competitor": "com-PET-i-tor: the strong beat is PET, syllable 2.",
+  "familiar": "fa-MIL-iar: the strong beat is MIL, syllable 2.",
+  "family": "FAM-i-ly: the strong beat is FAM, syllable 1.",
+  "origin": "OR-i-gin: the strong beat is OR, syllable 1.",
+  "original": "o-RIG-i-nal: the strong beat is RIG, syllable 2."
+ },
+ "game": {
+  "type": "fire",
+  "title": "Council Fire",
+  "sub": "This week's word game · 5 logs today",
+  "after": "Spelling",
+  "look": "On the walk, families gather around a fire every night. In this game, each pair of related words is a log. Say each word and tap the beat you say the strongest. Get both words right and the log goes on the fire. Your fire keeps burning all week.",
+  "how": {
+   "do": [
+    "Say the first word out loud.",
+    "Tap the beat you say the strongest.",
+    "Do the same for the second word.",
+    "Tap Next log."
+   ],
+   "why": "When a word grows, its strong beat can move. Hearing the move helps you spell the quiet vowels."
+  },
+  "doneLine": "Come back tomorrow for more.",
+  "logs": [
+   {
+    "a": "in·vite",
+    "sa": 1,
+    "b": "in·vi·ta·tion",
+    "sb": 2,
+    "why": "Yes: in-VITE, then in-vi-TA-tion. The strong beat moves."
+   },
+   {
+    "a": "ex·plain",
+    "sa": 1,
+    "b": "ex·pla·na·tion",
+    "sb": 2,
+    "why": "Yes: ex-PLAIN, then ex-pla-NA-tion. The strong beat moves."
+   },
+   {
+    "a": "pre·pare",
+    "sa": 1,
+    "b": "prep·a·ra·tion",
+    "sb": 2,
+    "why": "Yes: pre-PARE, then prep-a-RA-tion. The strong beat moves."
+   },
+   {
+    "a": "ad·mire",
+    "sa": 1,
+    "b": "ad·mi·ra·tion",
+    "sb": 2,
+    "why": "Yes: ad-MIRE, then ad-mi-RA-tion. The strong beat moves."
+   },
+   {
+    "a": "in·form",
+    "sa": 1,
+    "b": "in·for·ma·tion",
+    "sb": 2,
+    "why": "Yes: in-FORM, then in-for-MA-tion. The strong beat moves."
+   }
+  ]
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/hbg/kuindzhi-moon-night-winter.jpg",
+  "title": "Moon Night. Winter.",
+  "alt": "A painting of a snowy field at night under a dark blue sky, with mounds of snow catching pale moonlight.",
+  "look": "Arkhip Kuindzhi painted this winter night in Russia around 1900. It is not Isaac's road, but it feels like Chapter 13: the snow has stopped, the air is bitter cold, and the night holds secrets.",
+  "lookBtn": "Tap to learn about this painting",
+  "creator": "Arkhip Kuindzhi",
+  "date": "around 1900",
+  "license": "Public domain (Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Kuindzhi_Moon_night_Winter.jpg"
+ },
+ "virtue": {
+  "name": "justice",
+  "kind": "log",
+  "title": "My justice log",
+  "intro": "In Chapter 13, the truth comes out. Tap the moment you think did the most for justice.",
+  "options": [
+   {
+    "t": "Gabe finally tells everyone that the soldiers took his daughter Naomi."
+   },
+   {
+    "t": "Isaac tells his family he will soon be a ghost, and asks them not to stop him from helping Naomi."
+   },
+   {
+    "t": "Joseph wakes Isaac in the night: “Right now, we need to find Naomi.”"
+   }
+  ],
+  "line": "Finish the sentence: This did the most for justice because…",
+  "placeholder": "This did the most for justice because…"
+ }
+}

@@ -1,0 +1,258 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "This is the last day of the week. In Chapter 15, Isaac learns that Choctaw leaders travel with the walkers in a council wagon, and a ghost gives him a plan. The poem today never names what it describes. Let each line break show you a little more."
+  },
+  "words": {
+   "text": "Last day with the feeling roots. Explain the difference between feeling with someone and feeling from inside their experience. In spelling, the vowel you cannot hear hides in the quiet beat. Find a relative that makes it loud."
+  },
+  "reading": {
+   "text": "Read Chapter 15 in your book. Watch how the Choctaw Council welcomes Isaac, and listen to what Nani Humma asks him. Then put the week together with your lens: where did the danger change? Finish with the Virtue Watch at the end of this tab."
+  },
+  "assignment": {
+   "text": "Three questions about Chapter 15, then your finished theme paragraph: five to seven sentences, with a topic sentence, two pieces of evidence and a closing. Then one sentence about the hardest part. Copy your work and paste it into Canvas."
+  }
+ },
+ "how": [
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted words in the first sentence.",
+    "Fix the second sentence out loud.",
+    "Tap Check My Work to compare."
+   ],
+   "why": "A comma in the right place shows the reader where one part of a sentence ends and the next begins."
+  },
+  {
+   "match": "Poetry Corner",
+   "do": [
+    "Read the poem out loud once.",
+    "Pause at every line break.",
+    "Read Think About It and keep your answer in mind."
+   ],
+   "why": "Where a poet breaks a line changes how a reader feels the words. A break can make you wait."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Tap a word.",
+    "Then tap its meaning.",
+    "Say out loud how sympathy and empathy are different."
+   ],
+   "why": "Explaining two close words out loud shows you know them."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Read each word and its meaning.",
+    "Write one sentence for each word.",
+    "Make each sentence show the meaning."
+   ],
+   "why": "Using a word in your own sentence is the best proof you know it."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Tap the version a reader can follow the first time.",
+    "Find a sentence in this week's chapters that joins two ideas.",
+    "Copy it and explain each comma in the box."
+   ],
+   "why": "Commas help a reader follow a long sentence on the first read."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Say the word, then a related word.",
+    "Listen for the vowel that comes back.",
+    "Tap a word, then tap its column."
+   ],
+   "why": "The schwa hides in quiet beats. A relative brings it out."
+  },
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read today's skill.",
+    "Tap your lens for today.",
+    "Lay the week's events in order and find where the danger changed."
+   ],
+   "why": "Putting the week together shows how the story's pressure has grown.",
+   "use": "You will use this for question 3."
+  },
+  {
+   "match": "Chapter Thinking",
+   "do": [
+    "Read Chapter 15 first.",
+    "Answer each question in 2 or more sentences.",
+    "Use details from the chapter as evidence."
+   ],
+   "why": "These questions check what happened and what each event made harder."
+  },
+  {
+   "match": "Workshop",
+   "do": [
+    "Write the full paragraph, 5 to 7 sentences.",
+    "Use a topic sentence, two pieces of evidence and a closing.",
+    "Add one sentence about the hardest part."
+   ],
+   "why": "Today you finish your theme paragraph and turn it in."
+  },
+  {
+   "match": "Virtue Watch",
+   "do": [
+    "Read what justice means.",
+    "Read the example from this week.",
+    "After you read, pick the strongest moment of the week at the end of this tab."
+   ]
+  },
+  {
+   "match": "Chapter Introduction",
+   "do": [
+    "Read the chapter introduction below.",
+    "Open your book and read Chapter 15.",
+    "Then do the Virtue Watch and the Read Like a Writer box below."
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "word": "synthesize",
+   "in": "What Good Readers Do",
+   "meaning": "to put ideas from different parts together into one bigger idea"
+  }
+ ],
+ "miss": {
+  "memorial": "me-MOR-i-al: the strong beat is MOR, syllable 2.",
+  "memory": "MEM-o-ry: the strong beat is MEM, syllable 1.",
+  "relation": "re-LA-tion: the strong beat is LA, syllable 2.",
+  "relative": "REL-a-tive: the strong beat is REL, syllable 1.",
+  "major": "MA-jor: the strong beat is MA, syllable 1.",
+  "majority": "ma-JOR-i-ty: the strong beat is JOR, syllable 2."
+ },
+ "game": {
+  "type": "fire",
+  "title": "Council Fire",
+  "sub": "This week's word game · 5 logs today",
+  "after": "Spelling",
+  "look": "On the walk, families gather around a fire every night. In this game, each pair of related words is a log. Say each word and tap the beat you say the strongest. Get both words right and the log goes on the fire. Your fire keeps burning all week.",
+  "how": {
+   "do": [
+    "Say the first word out loud.",
+    "Tap the beat you say the strongest.",
+    "Do the same for the second word.",
+    "Tap Next log."
+   ],
+   "why": "When a word grows, its strong beat can move. Hearing the move helps you spell the quiet vowels."
+  },
+  "doneLine": "That is the whole week's fire. Well done.",
+  "logs": [
+   {
+    "a": "cel·e·brate",
+    "sa": 0,
+    "b": "ce·leb·ri·ty",
+    "sb": 1,
+    "why": "Yes: CEL-e-brate, then ce-LEB-ri-ty. The strong beat moves."
+   },
+   {
+    "a": "pa·tri·ot",
+    "sa": 0,
+    "b": "pa·tri·ot·ic",
+    "sb": 2,
+    "why": "Yes: PA-tri-ot, then pa-tri-OT-ic. The strong beat moves."
+   },
+   {
+    "a": "per·son",
+    "sa": 0,
+    "b": "per·son·al·i·ty",
+    "sb": 2,
+    "why": "Yes: PER-son, then per-son-AL-i-ty. The strong beat moves."
+   },
+   {
+    "a": "com·pose",
+    "sa": 1,
+    "b": "com·po·si·tion",
+    "sb": 2,
+    "why": "Yes: com-POSE, then com-po-SI-tion. The strong beat moves."
+   },
+   {
+    "a": "com·bine",
+    "sa": 1,
+    "b": "com·bi·na·tion",
+    "sb": 2,
+    "why": "Yes: com-BINE, then com-bi-NA-tion. The strong beat moves."
+   }
+  ]
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/hbg/homer-camp-fire.jpg",
+  "title": "Camp Fire",
+  "alt": "A painting of a campfire at night in a dark forest, with sparks rising and two men resting by a lean-to.",
+  "look": "Winslow Homer painted this campfire in the Adirondack mountains of New York in 1880. It is far from Isaac's road, but it fits Chapter 15: a fire in the woods at night, where the Choctaw councilmen eat pashofa and welcome Isaac.",
+  "lookBtn": "Tap to learn about this painting",
+  "creator": "Winslow Homer",
+  "date": "1880",
+  "license": "CC0 (The Metropolitan Museum of Art, via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Camp_Fire_MET_DT2829.jpg"
+ },
+ "cards": [
+  {
+   "tab": "reading",
+   "after": "Chapter Introduction",
+   "title": "Choctaw words in Chapters 12 to 15",
+   "min": 1,
+   "intro": "Isaac tells his story in English, but some Choctaw words stay in it.",
+   "items": [
+    {
+     "term": "Halito",
+     "meaning": "Hello. Nani Humma says it when Isaac walks into the council camp.",
+     "line": "“Halito,” he said. “Welcome to our camp.”",
+     "cite": "Chapter 15"
+    },
+    {
+     "term": "Yakoke",
+     "meaning": "Thank you. Isaac says it to Gabe in Chapter 12 and to the council in Chapter 15.",
+     "line": "“Yakoke. Gabe, I miss her, too.”",
+     "cite": "Chapter 12"
+    },
+    {
+     "term": "Hoke",
+     "meaning": "Okay. Isaac's father asks if he is hoke after his bad dream in the snow.",
+     "line": "",
+     "cite": "Chapter 12"
+    },
+    {
+     "term": "Pashofa",
+     "meaning": "Choctaw corn soup. The councilmen are eating bowls of it.",
+     "line": "",
+     "cite": "Chapter 15"
+    }
+   ],
+   "note": "The narrator does not say these words aloud. Choctaw has its own sounds, and we would rather not teach them wrong."
+  }
+ ],
+ "virtue": {
+  "name": "justice",
+  "kind": "best",
+  "title": "The strongest moment of justice this week",
+  "intro": "Look back at Chapters 12 to 15. Tap the moment you think shows justice the most.",
+  "options": [
+   {
+    "t": "Isaac offers to help Gabe find his other daughter."
+   },
+   {
+    "t": "Gabe tells everyone the truth: the soldiers took Naomi."
+   },
+   {
+    "t": "Isaac tells his family his own secret so they can help."
+   },
+   {
+    "t": "Joseph comes back to find Naomi instead of running away for good."
+   },
+   {
+    "t": "Isaac decides to tell Nani Humma the whole truth as soon as he can."
+   }
+  ],
+  "line": "Finish the sentence: This shows justice the most because…",
+  "placeholder": "This shows justice the most because…"
+ }
+}
