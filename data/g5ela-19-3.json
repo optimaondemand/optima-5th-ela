@@ -1,0 +1,230 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "Chapter 10 is the coldest day of the walk. Mister Jonah warned Isaac it would be hard. As you read, notice the moment Isaac almost gives up, and the words that bring him back. Today you will reread one line closely. One sentence can hold a whole way of seeing the world."
+  },
+  "words": {
+   "text": "Today you put the roots to work. In Spelling, the words are new. Build each describing word in your head before you place it. If the base ends in a silent e, check whether it stays or goes. The footprint game works the same way."
+  },
+  "reading": {
+   "text": "Read Chapter 10 in your book. It is a hard chapter. Read the part where Isaac's father speaks to him twice: once for the story, and once to hear how his father says it. Then try the Read Like a Writer box, and finish with the Virtue Watch."
+  },
+  "assignment": {
+   "text": "Three questions about Chapter 10. The last one looks back across Chapters 8, 9 and 10. Then revise your draft. Read it with the checklist first and fix what it shows you. Then add one sentence where everything is about to break."
+  }
+ },
+ "how": [
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted words in the first sentence.",
+    "Fix the second sentence out loud.",
+    "Tap Check My Work to compare."
+   ],
+   "why": "Commas after an opening phrase or clause tell the reader where to pause."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Tap a word.",
+    "Then tap the root it belongs to.",
+    "Match all four words."
+   ],
+   "why": "If you know the root, you can work out a word you have never seen."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Type the word that fits each sentence.",
+    "Open the Word Bank if you need it.",
+    "Tap Check My Words."
+   ],
+   "why": "Putting a word back in its sentence shows you really know it."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Tap the stronger rewrite in each pair.",
+    "Replace the weak verbs in the box.",
+    "Name the verb you chose and why."
+   ],
+   "why": "One strong verb says more than a weak verb plus extra words."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Build each describing word in your head first.",
+    "Tap a word, then tap its column."
+   ],
+   "why": "Long words get easier to spell when you see the base and the ending."
+  },
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Tap your lens for today.",
+    "Reread the part where Isaac's father speaks to him.",
+    "Ask what kind of person says that, at that moment."
+   ],
+   "why": "Rereading one line slowly shows you things you missed the first time.",
+   "use": "You will use this for question 2."
+  },
+  {
+   "match": "Chapter Thinking",
+   "do": [
+    "Read Chapter 10 first.",
+    "Answer each question in 2 or more sentences.",
+    "For question 3, use one detail from each chapter."
+   ],
+   "why": "These questions check what happened and what it shows about the people on the road."
+  },
+  {
+   "match": "Workshop",
+   "do": [
+    "Reread your draft with the checklist.",
+    "Fix one thing it shows you.",
+    "Add one sentence where everything is about to break."
+   ],
+   "why": "Revising means making your draft stronger, not starting over.",
+   "use": "Next lesson you will write the final version."
+  },
+  {
+   "match": "Virtue Watch",
+   "do": [
+    "Read what perseverance means.",
+    "Read the example from this week.",
+    "After you read, use the perseverance meter at the end of this tab."
+   ]
+  },
+  {
+   "match": "Chapter Introduction",
+   "do": [
+    "Read the chapter introduction below.",
+    "Open your book and read Chapter 10.",
+    "Then do the Virtue Watch and the Read Like a Writer box below."
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "word": "outlook",
+   "in": "What Good Readers Do",
+   "meaning": "a person's way of looking at life"
+  }
+ ],
+ "hints": {
+  "smallpox": [
+   "A dangerous sickness.",
+   "In Chapter 8 the blankets carry it. It starts with small.",
+   "small + pox"
+  ],
+  "belongings": [
+   "The things a family owns and carries.",
+   "It ends with -ings.",
+   "It starts with belong."
+  ],
+  "sickness": [
+   "Another word for illness.",
+   "sick + an ending that makes a noun.",
+   "It ends with -ness."
+  ],
+  "refused": [
+   "He said no, firmly.",
+   "Past tense of refuse.",
+   "It ends with -ed."
+  ],
+  "vanished": [
+   "They disappeared all at once.",
+   "Past tense of vanish.",
+   "It starts with van."
+  ]
+ },
+ "miss": {
+  "active": "Find act inside. It takes -ive: active.",
+  "angelic": "Find angel inside. It takes -ic: angelic.",
+  "athletic": "Find athlete inside. The silent e drops, then -ic: athletic.",
+  "cultural": "Find culture inside. The silent e drops, then -al: cultural.",
+  "inventive": "Find invent inside. It takes -ive: inventive.",
+  "massive": "Find mass inside. It takes -ive: massive.",
+  "musical": "Find music inside. It takes -al: musical.",
+  "rhythmic": "Find rhythm inside. It takes -ic: rhythmic.",
+  "tribal": "Find tribe inside. The silent e drops, then -al: tribal."
+ },
+ "game": {
+  "type": "footprints",
+  "title": "Footprints Forward",
+  "sub": "This week's word game · 6 footprints today",
+  "after": "Spelling",
+  "look": "Isaac's family walks for days on a snowy road. In this game, each footprint in the snow holds a word. Pick the ending, -ive, -al or -ic, that turns it into a describing word, and the footprint lights up. Your walk keeps going all week.",
+  "how": {
+   "do": [
+    "Read the word on the footprint.",
+    "Say it with each ending.",
+    "Tap the ending that makes a real describing word.",
+    "Tap Next footprint."
+   ],
+   "why": "These are the same three endings from Spelling, with new words. If you can build a word you have never practiced, you know the endings."
+  },
+  "doneLine": "Come back tomorrow for more.",
+  "steps": [
+   {
+    "base": "decorate",
+    "end": "ive",
+    "word": "decorative",
+    "why": "Yes: decorate + -ive = decorative. The silent e drops."
+   },
+   {
+    "base": "region",
+    "end": "al",
+    "word": "regional",
+    "why": "Yes: region + -al = regional."
+   },
+   {
+    "base": "acid",
+    "end": "ic",
+    "word": "acidic",
+    "why": "Yes: acid + -ic = acidic."
+   },
+   {
+    "base": "select",
+    "end": "ive",
+    "word": "selective",
+    "why": "Yes: select + -ive = selective."
+   },
+   {
+    "base": "form",
+    "end": "al",
+    "word": "formal",
+    "why": "Yes: form + -al = formal."
+   },
+   {
+    "base": "base",
+    "end": "ic",
+    "word": "basic",
+    "why": "Yes: base + -ic = basic. The silent e drops."
+   }
+  ]
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/hbg/shishkin-winter.jpg",
+  "title": "Winter",
+  "alt": "A painting of a deep pine forest buried in snow, with bent branches and drifts between the dark trunks.",
+  "look": "Ivan Shishkin painted this snowy forest in Russia in 1890. Isaac's road is in a different place, but Chapter 10 has this kind of snow: so thick that he cannot see the branches above him.",
+  "lookBtn": "Tap to learn about this painting",
+  "creator": "Ivan Shishkin",
+  "date": "1890",
+  "license": "Public domain (Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Ivan_Shishkin_-_Winter.JPG"
+ },
+ "virtue": {
+  "name": "perseverance",
+  "kind": "meter",
+  "title": "The perseverance meter",
+  "intro": "Think about one moment from Chapter 10.",
+  "moment": "Isaac's feet are bleeding and burning. His father tells him to keep his eyes on where he is going. From that moment on, Isaac refuses to look behind him.",
+  "ask": "How much perseverance did Isaac show? Slide to show.",
+  "line": "Tell why in one sentence.",
+  "placeholder": "He showed this much because…",
+  "take": "Mason's take: a lot. The pain did not stop, but Isaac kept walking. He says, “I was stronger than the pain.”"
+ }
+}

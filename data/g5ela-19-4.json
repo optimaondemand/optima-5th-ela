@@ -1,0 +1,232 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "This is the last day of the week. In Chapter 11, Nita gives Isaac a gift, and the chapter ends with a hard loss. Read it slowly. The poem today is spoken by a mother to her son. Listen for how her advice sounds like the words Isaac's father said in Chapter 10."
+  },
+  "words": {
+   "text": "Last day with life and breath. Today you explain why one idea needed two roots. In Spelling, the words change in different ways when an ending is added. Sometimes a silent e drops. Sometimes the base changes more. Sometimes nothing changes. Look closely at the base each time."
+  },
+  "reading": {
+   "text": "Read Chapter 11 in your book. Go slowly. Notice Nita's gift to Isaac, and how Isaac's family and friends take care of each other. Then put the week together with your lens: pick two people and compare how they see the same road. Finish with the Virtue Watch at the end of this tab."
+  },
+  "assignment": {
+   "text": "Three questions about Chapter 11, then your final piece. Write your conflict scene in five to seven sentences, and end while the tension is still high. Then write one sentence about what Isaac taught you about rising action. Copy your work and paste it into Canvas."
+  }
+ },
+ "how": [
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted words in the first sentence.",
+    "Fix the second sentence out loud.",
+    "Tap Check My Work to compare."
+   ],
+   "why": "Commas after an opening phrase or clause tell the reader where to pause."
+  },
+  {
+   "match": "Poetry Corner",
+   "do": [
+    "Read the poem out loud once.",
+    "Read Think About It.",
+    "Keep your answer in mind as you read."
+   ],
+   "why": "Knowing who is speaking, and that it may not be the writer, helps you understand any poem or story."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Tap a word.",
+    "Then tap the root it belongs to.",
+    "Say out loud why each word fits its root."
+   ],
+   "why": "Explaining a root out loud is how you know you own it."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Read each word and its meaning.",
+    "Write one sentence for each word.",
+    "Make each sentence show the meaning."
+   ],
+   "why": "Using a word in your own sentence is the best proof you know it."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Tap the version that takes responsibility.",
+    "Read the last question carefully.",
+    "Give one example of each in the box."
+   ],
+   "why": "Choosing active or passive voice is choosing whether to say who did it."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Find the base word inside.",
+    "Decide: did an e drop, did the base change, or did nothing change?",
+    "Tap a word, then tap its column."
+   ],
+   "why": "Knowing how a base changes keeps you from misspelling long words."
+  },
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read today's skill.",
+    "Tap your lens for today.",
+    "Pick two people from Chapters 8 to 11 to compare."
+   ],
+   "why": "Putting the week together shows how each person's life shapes how they see the same road.",
+   "use": "You will use this for question 2."
+  },
+  {
+   "match": "Chapter Thinking",
+   "do": [
+    "Read Chapter 11 first.",
+    "Answer each question in 2 or more sentences.",
+    "Use details from the chapter as evidence."
+   ],
+   "why": "These questions check what happened and what it shows about the people on the road."
+  },
+  {
+   "match": "Workshop",
+   "do": [
+    "Write your final scene, 5 to 7 sentences.",
+    "End while the tension is still high.",
+    "Add one sentence about what Isaac taught you."
+   ],
+   "why": "Today you finish your scene and turn it in."
+  },
+  {
+   "match": "Virtue Watch",
+   "do": [
+    "Read what perseverance means.",
+    "Read the example from this week.",
+    "After you read, pick the strongest moment of the week at the end of this tab."
+   ]
+  },
+  {
+   "match": "Chapter Introduction",
+   "do": [
+    "Read the chapter introduction below.",
+    "Open your book and read Chapter 11.",
+    "Then do the Virtue Watch and the Read Like a Writer box below."
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "word": "synthesize",
+   "in": "What Good Readers Do",
+   "meaning": "to put ideas from different parts together into one bigger idea"
+  },
+  {
+   "word": "rising action",
+   "in": "Writer",
+   "meaning": "the part of a story where the problem grows and the tension climbs"
+  }
+ ],
+ "miss": {
+  "national": "nation + -al. Nothing in the base changes.",
+  "creative": "create: the silent e drops before -ive.",
+  "descriptive": "describe → descriptive: the b changes to p. The base changes its spelling.",
+  "narrative": "narrate: the silent e drops before -ive.",
+  "expressive": "express + -ive. Nothing in the base changes.",
+  "historic": "history → historic: the y drops. The base changes its spelling.",
+  "personal": "person + -al. Nothing in the base changes.",
+  "protective": "protect + -ive. Nothing in the base changes.",
+  "supportive": "support + -ive. Nothing in the base changes.",
+  "tragic": "tragedy → tragic: the end of the base changes."
+ },
+ "game": {
+  "type": "footprints",
+  "title": "Footprints Forward",
+  "sub": "This week's word game · 6 footprints today",
+  "after": "Spelling",
+  "look": "Isaac's family walks for days on a snowy road. In this game, each footprint in the snow holds a word. Pick the ending, -ive, -al or -ic, that turns it into a describing word, and the footprint lights up. Your walk keeps going all week.",
+  "how": {
+   "do": [
+    "Read the word on the footprint.",
+    "Say it with each ending.",
+    "Tap the ending that makes a real describing word.",
+    "Tap Next footprint."
+   ],
+   "why": "These are the same three endings from Spelling, with new words. If you can build a word you have never practiced, you know the endings."
+  },
+  "doneLine": "That is the whole week's walk. Well done.",
+  "steps": [
+   {
+    "base": "instruct",
+    "end": "ive",
+    "word": "instructive",
+    "why": "Yes: instruct + -ive = instructive."
+   },
+   {
+    "base": "globe",
+    "end": "al",
+    "word": "global",
+    "why": "Yes: globe + -al = global. The silent e drops."
+   },
+   {
+    "base": "ocean",
+    "end": "ic",
+    "word": "oceanic",
+    "why": "Yes: ocean + -ic = oceanic."
+   },
+   {
+    "base": "possess",
+    "end": "ive",
+    "word": "possessive",
+    "why": "Yes: possess + -ive = possessive."
+   },
+   {
+    "base": "logic",
+    "end": "al",
+    "word": "logical",
+    "why": "Yes: logic + -al = logical."
+   },
+   {
+    "base": "patriot",
+    "end": "ic",
+    "word": "patriotic",
+    "why": "Yes: patriot + -ic = patriotic."
+   }
+  ]
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/hbg/shishkin-wild-north.jpg",
+  "title": "In the Wild North",
+  "alt": "A painting of a single tall pine tree heavy with snow, standing on a rocky cliff under a dark night sky.",
+  "look": "Ivan Shishkin painted this lone pine in 1891. It is not Isaac's Mississippi, but it fits Chapter 11: one quiet tree in the cold, standing still after a loss.",
+  "lookBtn": "Tap to learn about this painting",
+  "creator": "Ivan Shishkin",
+  "date": "1891",
+  "license": "Public domain (Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Шишкин_И._И._(1891)_На_севере_диком.jpg"
+ },
+ "virtue": {
+  "name": "perseverance",
+  "kind": "best",
+  "title": "The strongest moment of perseverance this week",
+  "intro": "Look back at Chapters 8 to 11. Tap the moment you think shows the most perseverance.",
+  "options": [
+   {
+    "t": "Isaac's family leaves the swamp and walks on, with nowhere certain to go."
+   },
+   {
+    "t": "Isaac cuts pieces from his own blanket to make shoes for Nita."
+   },
+   {
+    "t": "Isaac keeps walking on bleeding feet after his father's words."
+   },
+   {
+    "t": "When Nita gives Isaac her blanket shoes, he takes them, then cuts her a new pair."
+   },
+   {
+    "t": "Luke tells Isaac, “Whatever happens, we are strong.”"
+   }
+  ],
+  "line": "Finish the sentence: This shows the most perseverance because…",
+  "placeholder": "This shows the most perseverance because…"
+ }
+}

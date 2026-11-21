@@ -1,0 +1,279 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "Isaac's family has been hiding in the swamp. In Chapter 8 they have to decide whether to stay or go, and what to take with them. Before you read, think about what people carry when they leave home. What someone holds on to can show how they see the world. That is your reading lens this week."
+  },
+  "words": {
+   "text": "Two roots this week. One means life. One means breath. Long ago, people thought those were almost the same thing. Look for them in words you already know. Then three endings that turn a word into a describing word. In the footprint game, say each word out loud before you pick an ending."
+  },
+  "reading": {
+   "text": "Read Chapter 8 of How I Became a Ghost in your book. Keep your reading lens in mind. Watch how Isaac's family meets new people on the road, and listen for what Mister Jonah tells Isaac about the blankets. When you finish, do the Virtue Watch at the end of this tab."
+  },
+  "assignment": {
+   "text": "Three questions about Chapter 8, then the first step of a new piece of writing. When a question asks why, give the reason and the words from the book that show it. In the Writer's Workshop you are only planning today. A few notes are enough."
+  }
+ },
+ "hook": {
+  "q": "You have to leave home with one bag, and you will carry it for days. What goes in first?",
+  "options": [
+   {
+    "t": "Food",
+    "reply": "Smart. On the road in this book, food is never certain. Here is what Isaac's family does:"
+   },
+   {
+    "t": "Something warm",
+    "reply": "In winter, warmth matters most. In this chapter, even warm things are a hard choice. Here is what Isaac's family does:"
+   },
+   {
+    "t": "Something that reminds me of home",
+    "reply": "Many readers pick that. It shows what they hold on to. Here is what Isaac's family does:"
+   }
+  ],
+  "reveal": {
+   "line": "Early the next morning we gathered our belongings and left the camp.",
+   "cite": "Isaac, Chapter 8",
+   "then": "As you read Chapter 8, watch what each person carries, and what it shows about how they see the world."
+  }
+ },
+ "how": [
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read the three lenses.",
+    "Tap the one you will use today.",
+    "Keep it in mind as you read. You will use it at the end."
+   ],
+   "why": "A character's perspective is built from what they have lived through. Watching what they do shows it.",
+   "use": "You will use this when you answer the chapter questions."
+  },
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted words in the first sentence.",
+    "Fix the second sentence out loud.",
+    "Tap Check My Work to compare."
+   ],
+   "why": "Commas after an opening phrase or clause tell the reader where to pause."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Read the two roots and what they mean.",
+    "Tap a word, then tap its meaning.",
+    "Match all four."
+   ],
+   "why": "Isaac tells his story after his life has ended. These roots name life and breath."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Read the book sentence on each card.",
+    "Guess what the word means.",
+    "Tap the card to check.",
+    "Match each word to its meaning."
+   ],
+   "why": "These words show up in this week's chapters. Knowing them first keeps the reading smooth."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Read the two sentences in the box.",
+    "Think through the questions.",
+    "Tap Now check your thinking.",
+    "Tap the active sentence in each pair, then answer in the box."
+   ],
+   "why": "Active voice tells the reader who did the action. In this book, that matters."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Find the smaller word inside each describing word.",
+    "Tap a word, then tap the column for its ending."
+   ],
+   "why": "Spotting the base and the ending helps you spell long describing words."
+  },
+  {
+   "match": "Chapter Thinking",
+   "do": [
+    "Read Chapter 8 first.",
+    "Answer each question in 2 or more sentences.",
+    "Use details from the chapter as evidence."
+   ],
+   "why": "These questions check what happened and what it shows about the people on the road."
+  },
+  {
+   "match": "Workshop",
+   "do": [
+    "Think of a moment where danger and hope came together.",
+    "In the box, note the conflict, what makes it tense, and one small hope.",
+    "A few lines is enough."
+   ],
+   "why": "This week you will write a scene where the tension keeps rising. Today you only choose it.",
+   "use": "Tomorrow you will draft this moment."
+  },
+  {
+   "match": "Virtue Watch",
+   "do": [
+    "Read what perseverance means.",
+    "Read the example from this week.",
+    "After you read, sort the moments at the end of this tab."
+   ]
+  },
+  {
+   "match": "Chapter Introduction",
+   "do": [
+    "Read the chapter introduction below.",
+    "Open your book and read Chapter 8.",
+    "Then do the Virtue Watch and the Read Like a Writer box below."
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "word": "characterization",
+   "in": "What Good Readers Do",
+   "meaning": "how an author shows what a character is like"
+  },
+  {
+   "word": "perspective",
+   "in": "What Good Readers Do",
+   "meaning": "the way a person sees what is happening, based on what they have lived through"
+  }
+ ],
+ "miss": {
+  "brutal": "Find brute inside. The silent e drops, then -al: brutal.",
+  "destructive": "Find destruct, from destroy. It takes -ive: destructive.",
+  "expressive": "Find express inside. It takes -ive: expressive.",
+  "heroic": "Find hero inside. It takes -ic: heroic.",
+  "historic": "Find history inside. The y drops, then -ic: historic.",
+  "personal": "Find person inside. It takes -al: personal.",
+  "protective": "Find protect inside. It takes -ive: protective.",
+  "seasonal": "Find season inside. It takes -al: seasonal.",
+  "tragic": "Find tragedy inside. Its end changes, then -ic: tragic."
+ },
+ "game": {
+  "type": "footprints",
+  "title": "Footprints Forward",
+  "sub": "This week's word game · 6 footprints today",
+  "after": "Spelling",
+  "look": "Isaac's family walks for days on a snowy road. In this game, each footprint in the snow holds a word. Pick the ending, -ive, -al or -ic, that turns it into a describing word, and the footprint lights up. Your walk keeps going all week.",
+  "how": {
+   "do": [
+    "Read the word on the footprint.",
+    "Say it with each ending.",
+    "Tap the ending that makes a real describing word.",
+    "Tap Next footprint."
+   ],
+   "why": "These are the same three endings from Spelling, with new words. If you can build a word you have never practiced, you know the endings."
+  },
+  "doneLine": "Come back tomorrow for more.",
+  "steps": [
+   {
+    "base": "effect",
+    "end": "ive",
+    "word": "effective",
+    "why": "Yes: effect + -ive = effective."
+   },
+   {
+    "base": "emotion",
+    "end": "al",
+    "word": "emotional",
+    "why": "Yes: emotion + -al = emotional."
+   },
+   {
+    "base": "artist",
+    "end": "ic",
+    "word": "artistic",
+    "why": "Yes: artist + -ic = artistic."
+   },
+   {
+    "base": "attract",
+    "end": "ive",
+    "word": "attractive",
+    "why": "Yes: attract + -ive = attractive."
+   },
+   {
+    "base": "origin",
+    "end": "al",
+    "word": "original",
+    "why": "Yes: origin + -al = original."
+   },
+   {
+    "base": "magnet",
+    "end": "ic",
+    "word": "magnetic",
+    "why": "Yes: magnet + -ic = magnetic."
+   }
+  ]
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/hbg/savrasov-winter-road.jpg",
+  "title": "Winter Road",
+  "alt": "A painting of an empty country road in snow, with thin bare birch trees under a gray sky.",
+  "look": "Alexei Savrasov painted this snowy road in Russia in the 1870s. It is not Mississippi, but it shows the kind of winter road Isaac's family comes to in Chapter 8: wide, cold and empty, with no shelter in sight.",
+  "lookBtn": "Tap to learn about this painting",
+  "creator": "Alexei Savrasov",
+  "date": "1870s",
+  "license": "Public domain (Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Зімовая_дарога._Аляксей_Саўрасаў.jpg"
+ },
+ "cards": [
+  {
+   "tab": "reading",
+   "after": "Chapter Introduction",
+   "title": "The real walk",
+   "min": 2,
+   "intro": "Isaac's story is made up, but the walk he is on really happened.",
+   "items": [
+    {
+     "term": "1830",
+     "meaning": "U.S. commissioners and Choctaw leaders signed the Treaty of Dancing Rabbit Creek. It gave up the Choctaw homeland in Mississippi.",
+     "line": "",
+     "cite": ""
+    },
+    {
+     "term": "1831 to 1833",
+     "meaning": "Thousands of Choctaw people were moved west to what is now Oklahoma, in groups, many of them in winter.",
+     "line": "",
+     "cite": ""
+    },
+    {
+     "term": "The cold",
+     "meaning": "The winter of 1831 was very hard. People on the real walk suffered from cold, hunger and sickness, and many died.",
+     "line": "",
+     "cite": ""
+    }
+   ],
+   "note": "The smallpox blankets are part of Tim Tingle's story. When you read, keep the book's events and the real history side by side."
+  }
+ ],
+ "virtue": {
+  "name": "perseverance",
+  "kind": "sort",
+  "title": "Perseverance or not?",
+  "intro": "You just read Chapter 8. Read each moment. Tap Perseverance or Not perseverance.",
+  "items": [
+   {
+    "t": "Isaac's family leaves the swamp, walks all day and sleeps in the woods.",
+    "ok": true,
+    "why": "They keep going with nowhere certain to go. That is perseverance."
+   },
+   {
+    "t": "Isaac's mother says, “I hate to leave our friends.”",
+    "ok": false,
+    "why": "Saying how you feel is honest, but it is not perseverance yet. Perseverance is what she does next: she walks on."
+   },
+   {
+    "t": "Isaac carries Jumper for three days so he won't chase the walking people.",
+    "ok": true,
+    "why": "Carrying his dog day after day is hard, steady work. That is perseverance."
+   },
+   {
+    "t": "For three days the family follows the walkers, hiding in the tree shadows, before they step out and ask to join.",
+    "ok": true,
+    "why": "They keep watching and waiting until it is safe. Patience that keeps going is perseverance."
+   }
+  ]
+ }
+}
