@@ -562,3 +562,12 @@ html.g5-top:not([data-g5-tab="warmup"]) .quote-strip { display: none !important;
 .g5-spy-opt:hover, .g5-spy-opt:focus-visible { border-color: var(--g5-gold); }
 .g5-spy-opt.g5-spy-on { background: #F6E7C4; border-color: #A8661A; }
 .g5-spy-opt:disabled { cursor: default; }
+/* Light the Lanterns (week 22) */
+.g5-lan { border-color: #3A2A18; }
+.g5-lan-slots { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 10px 0 4px; }
+.g5-lan-slot { min-width: 64px; min-height: 44px; padding: 6px 10px; border: 2px dashed var(--g5-rule); border-radius: 8px; font: 700 22px/1.4 'Libre Baskerville', Georgia, serif; color: #9AA3B5; text-align: center; background: #fff; }
+.g5-lan-slot.g5-lan-full { border-style: solid; border-color: #A8661A; color: var(--g5-ink); background: #FBF0D4; }
+.g5-lan-pick { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 10px 0; }
+.g5-lan-tile { font-size: 20px; }
+.g5-lan-tile:disabled { opacity: .45; cursor: default; }
+.g5-lan-clue { font-size: 14px; color: #5A6B8C; }

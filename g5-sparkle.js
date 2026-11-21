@@ -959,6 +959,113 @@
     else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
   }
 
+  /* ── 12e. the week's word game: Light the Lanterns (week 22) ──
+     DATA.game = {type:'lantern', title, sub, after, look, how, doneLine,
+                  words:[{w:'photocopy', parts:['photo','copy'], decoys:['graph'], means:'…', clue:'photo = light', why}]}
+     Tap the word parts in order to build the word that matches the meaning; a finished word lights
+     its lantern. A tile that does not come next shakes and says what to look for.
+     Storage oao.g5ela.lantern.wk<NN> {day:{done:[i]}}. */
+  function buildLanterns() {
+    var G = D.game; if (!G || G.type !== 'lantern' || !G.words || !G.words.length) return;
+    var wkKey = 'lantern.wk' + L.week;
+    var st = store(wkKey) || {};
+    var mine = st[L.day] || { done: [] };
+    var W = G.words, idx = 0;
+    while (idx < W.length && mine.done.indexOf(idx) >= 0) idx++;
+    var wrap = h('div', { 'class': 'activity g5-game' });
+    wrap.innerHTML =
+      '<div class="activity-head"><div class="activity-num g5-game-num" aria-hidden="true">🏮</div><div>' +
+      '<div class="activity-title">' + esc(G.title || 'Light the Lanterns') + '</div>' +
+      '<div class="activity-sub">' + esc(G.sub || 'Word game for this week') + '</div></div></div>';
+    var body = h('div', { 'class': 'activity-body' });
+    wrap.appendChild(body);
+    var look = h('details', { 'class': 'g5-look' }, [h('summary', { text: '👀 What am I looking at?' }), h('p', { text: G.look })]);
+    if (!mine.done.length) look.open = true;
+    body.appendChild(look);
+    if (G.how) body.appendChild(howLine(G.how));
+    var scene = h('div', { 'class': 'g5-river g5-lan', role: 'img', 'aria-label': 'Lanterns hang from a branch in the dark woods. Each word you build lights one.' });
+    body.appendChild(scene);
+    var stepBox = h('div', { 'class': 'g5-stone-step', 'aria-live': 'polite' });
+    var slots = h('div', { 'class': 'g5-lan-slots', 'aria-live': 'polite' });
+    var pick = h('div', { 'class': 'g5-lan-pick' });
+    var ctrl = h('div', { 'class': 'g5-stone-ctrl' });
+    var fb = h('p', { 'class': 'g5-stone-fb', 'aria-live': 'polite' });
+    var tally = h('p', { 'class': 'g5-stone-tally' });
+    [stepBox, slots, pick, ctrl, fb, tally].forEach(function (n) { body.appendChild(n); });
+
+    function draw(cur) {
+      var allDone = 0;
+      Object.keys(st).forEach(function (k) { allDone += (st[k].done || []).length; });
+      var n = mine.done.length, w = 900, hgt = 190, svg = '';
+      svg += '<svg viewBox="0 0 ' + w + ' ' + hgt + '" preserveAspectRatio="xMidYMid meet" aria-hidden="true">' +
+        '<defs><linearGradient id="g5lsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101829"/><stop offset="1" stop-color="#222C44"/></linearGradient>' +
+        '<radialGradient id="g5glow"><stop offset="0" stop-color="#FFE3A0" stop-opacity=".9"/><stop offset=".45" stop-color="#E9B44C" stop-opacity=".45"/><stop offset="1" stop-color="#E9B44C" stop-opacity="0"/></radialGradient></defs>' +
+        '<rect width="' + w + '" height="' + hgt + '" fill="url(#g5lsky)"/>';
+      for (var s = 0; s < 26; s++) svg += '<circle cx="' + ((s * 173) % w) + '" cy="' + (8 + (s * 41) % 60) + '" r="1" fill="rgba(255,255,255,.3)"/>';
+      for (var t = 0; t < 7; t++) { var tx = 30 + t * 140; svg += '<path d="M' + tx + ',190 L' + (tx + 22) + ',120 L' + (tx + 44) + ',190 Z" fill="#0B1220"/>'; }
+      svg += '<path d="M40,34 C260,60 640,60 860,30" stroke="#3A2A18" stroke-width="7" fill="none" stroke-linecap="round"/>';
+      var gap = 760 / (W.length + 1);
+      for (var i = 0; i < W.length; i++) {
+        var lx = 70 + gap * (i + 1), ly = 52 + Math.sin((i + 1) / (W.length + 1) * Math.PI) * 10, lit = mine.done.indexOf(i) >= 0, on = i === cur;
+        svg += '<line x1="' + lx + '" y1="' + (ly - 8) + '" x2="' + lx + '" y2="' + (ly + 22) + '" stroke="#6B5530" stroke-width="2"/>';
+        if (lit) svg += '<circle cx="' + lx + '" cy="' + (ly + 56) + '" r="62" fill="url(#g5glow)"/>';
+        svg += '<rect x="' + (lx - 16) + '" y="' + (ly + 22) + '" width="32" height="8" rx="2" fill="#7D5E26"/>' +
+          '<path d="M' + (lx - 20) + ',' + (ly + 30) + ' L' + (lx + 20) + ',' + (ly + 30) + ' L' + (lx + 16) + ',' + (ly + 82) + ' L' + (lx - 16) + ',' + (ly + 82) + ' Z" fill="' + (lit ? '#F4CF73' : '#2F3850') + '" stroke="' + (on ? '#E9B44C' : '#7D5E26') + '" stroke-width="' + (on ? 3 : 2) + '"/>' +
+          '<rect x="' + (lx - 18) + '" y="' + (ly + 82) + '" width="36" height="7" rx="2" fill="#7D5E26"/>';
+        if (lit) svg += '<ellipse cx="' + lx + '" cy="' + (ly + 62) + '" rx="5" ry="9" fill="#FFF4D2"/>';
+      }
+      svg += '</svg>';
+      scene.innerHTML = svg;
+      tally.textContent = 'Today: ' + n + ' of ' + W.length + (W.length === 1 ? ' lantern' : ' lanterns') + ' lit. This week: ' + allDone + '.';
+    }
+    function save() { st[L.day] = mine; store(wkKey, st); }
+    function shake(b) { b.classList.add('g5-shake'); setTimeout(function () { b.classList.remove('g5-shake'); }, 450); }
+    function shuffled(a) {   // fixed order per word so a reload looks the same
+      var out = a.slice(), seed = 7;
+      for (var i = out.length - 1; i > 0; i--) { seed = (seed * 31 + i * 17) % 101; var j = seed % (i + 1); var tmp = out[i]; out[i] = out[j]; out[j] = tmp; }
+      if (out.join('') === a.join('') && out.length > 1) out.push(out.shift());
+      return out;
+    }
+    function show() {
+      fb.textContent = ''; ctrl.innerHTML = ''; pick.innerHTML = ''; slots.innerHTML = '';
+      if (idx >= W.length) {
+        draw(-1);
+        stepBox.innerHTML = '<b>Every lantern is lit.</b> ' + esc(G.doneLine || 'Come back tomorrow for more.');
+        var again = h('button', { type: 'button', 'class': 'g5-btn g5-btn-ghost' }, ['↺ Build them again']);
+        again.addEventListener('click', function () { mine.done = []; idx = 0; save(); show(); });
+        ctrl.appendChild(again); return;
+      }
+      var S = W[idx], got = 0;
+      draw(idx);
+      stepBox.innerHTML = '<span class="g5-stepn">Lantern ' + (idx + 1) + ' of ' + W.length + '</span> Build the word that means: <b>' + esc(S.means) + '</b>' +
+        (S.clue ? '<br><span class="g5-lan-clue">Part you know: ' + esc(S.clue) + '</span>' : '');
+      var boxes = S.parts.map(function () { var b = h('span', { 'class': 'g5-lan-slot' }, ['?']); slots.appendChild(b); return b; });
+      shuffled(S.parts.concat(S.decoys || [])).forEach(function (p) {
+        var b = h('button', { type: 'button', 'class': 'g5-beat g5-lan-tile' }, [p]);
+        b.addEventListener('click', function () {
+          if (p !== S.parts[got]) {
+            fb.textContent = got === 0 ? 'Not the first part. Which part of the meaning comes first in the word?' : 'That part does not come next. Say what you have built so far, then listen for the next part.';
+            shake(b); return;
+          }
+          boxes[got].textContent = p; boxes[got].classList.add('g5-lan-full'); b.disabled = true; b.classList.add('g5-beat-on'); got++; fb.textContent = '';
+          if (got < S.parts.length) return;
+          pick.querySelectorAll('button').forEach(function (x) { x.disabled = true; });
+          if (mine.done.indexOf(idx) < 0) mine.done.push(idx);
+          save(); draw(idx);
+          fb.innerHTML = '<b>' + esc(S.w) + '</b>. ' + esc(S.why || 'The lantern is lit.');
+          var next = h('button', { type: 'button', 'class': 'g5-btn' }, [idx + 1 < W.length ? 'Next lantern →' : 'Finish →']);
+          next.addEventListener('click', function () { idx++; while (idx < W.length && mine.done.indexOf(idx) >= 0) idx++; show(); setTimeout(function () { var f = pick.querySelector('button') || ctrl.querySelector('button'); if (f) f.focus(); }, 30); });
+          ctrl.appendChild(next);
+        });
+        pick.appendChild(b);
+      });
+    }
+    show();
+    var ref = G.after ? activityByTitle(G.after, panel('words')) : null;
+    if (ref) afterNode(ref, wrap);
+    else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
+  }
+
   /* ── 13. the Commonplace Book page ─────────────────────────── */
   var NAME_BAD = /\b(ass|butt|poop|fart|stupid|dumb|idiot|hate|kill|sex|damn|hell|crap)\b/i;
   function profileName() { var p = store('profile'); return p && p.name ? p.name : ''; }
@@ -1746,6 +1853,7 @@
     guard('footprints', buildFootprints);
     guard('fire', buildFire);
     guard('spy', buildSpyglass);
+    guard('lantern', buildLanterns);
     guard('cards', buildCards);
     guard('checks', buildChecks);
     guard('virtue', buildVirtue);
