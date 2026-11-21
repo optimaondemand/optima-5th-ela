@@ -14,7 +14,8 @@ def fmt(st, v):
     if st == 'TX': v = ['TEKS ' + re.sub(r'^110\.\d+\(b\)', '', x) for x in v]
     return ', '.join(v) or None
 DECIDED = {5: [(19, 'Nov 21: EE.1.1 added to the week 19 bar (every Chapter Thinking question asks for book evidence).'),
-               (20, 'Nov 21: bar kept as is (every code on it is taught; nothing taught is off it). R.1.1 and C.1.3 added to the crosswalk.')],
+               (20, 'Nov 21: bar kept as is (every code on it is taught; nothing taught is off it). R.1.1 and C.1.3 added to the crosswalk.'),
+               (21, 'Nov 21: EE.1.1 added to the week 21 bar (same call as week 19). R.1.2 and C.1.5 added to the crosswalk.')],
            4: [(17, 'Check-in Q5 is context clues (V.1.3); left off the bar (check-in only)'),
                (27, 'Nov 20: V.1.3 and EE.4.1 added to the bar (EE.4.1 only in week 27: the Discussion Prompts block is the only place it is taught)'),
                ('28-31', 'Nov 20: V.1.3 added to the bar'),

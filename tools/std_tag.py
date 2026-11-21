@@ -23,8 +23,9 @@ def F(*c): return ['ELA.K12.' + x if x.startswith('EE') else 'ELA.5.' + x for x 
 WEEKS = {
  19: dict(read=F('R.1.3'),          think=F('R.1.3', 'EE.1.1'),          write=F('C.1.2')),
  20: dict(read=F('R.1.1'),          think=F('R.1.1', 'EE.1.1'),          write=F('C.1.3')),
+ 21: dict(read=F('R.1.2'),          think=F('R.1.2', 'EE.1.1'),          write=F('C.1.2', 'C.1.5')),
 }
-CHECKIN_Q = {(19, 5): F('V.1.3'), (20, 5): F('V.1.3')}   # Q5 is a context-clue item both weeks
+CHECKIN_Q = {(19, 5): F('V.1.3'), (20, 5): F('V.1.3'), (21, 5): F('V.1.3')}   # Q5 is a context-clue item each week
 
 def rule(t, tab, W, bar):
     t = t.lower()
