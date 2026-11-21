@@ -1,0 +1,187 @@
+{
+ "id": "g5-ela-wk21-checkin",
+ "title": "Week 21 Check-In · How I Became a Ghost",
+ "description": "This week Isaac said good-bye to his family, became a ghost, and found Naomi. You practiced compound and complex sentences, the roots vis/vid and spect, and words that sound alike. Show what you know.",
+ "chapters": "Ch. 16–19",
+ "questions": [
+  {
+   "n": 1,
+   "section": "Grammar",
+   "label": "Identification",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which sentence is a complex sentence (one idea depends on the other)?",
+   "options": [
+    "Isaac was afraid, but he did not run.",
+    "When Luke returned, the bowl was empty.",
+    "Joseph hid in the woods.",
+    "Luke gave Joseph his blowgun, and Joseph made darts."
+   ],
+   "answer": 1,
+   "from": "21.1–21.2 Grammar (compound or complex); Ch. 17",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 2,
+   "section": "Grammar",
+   "label": "Compound",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Combine these into one compound sentence using a comma and a joining word (and, but, so).",
+   "excerpt": "Joseph wanted to cut Naomi’s ropes. Isaac worried she might scream.",
+   "key": "Joseph wanted to cut Naomi’s ropes, but Isaac worried she might scream. (Any correct compound sentence with a comma before and, but or so.)",
+   "from": "21.3 Grammar (join each pair); Ch. 17",
+   "status": "fixed (the old sentence said Joseph planned the rescue “that night”; in Ch. 17 he only says his stone is good for cutting ropes)"
+  },
+  {
+   "n": 3,
+   "section": "Grammar",
+   "label": "Complex",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Combine these into one complex sentence using because, when, or although.",
+   "excerpt": "Nani Humma followed Isaac to the creek. He knew Isaac had a secret.",
+   "key": "Nani Humma followed Isaac to the creek because he knew Isaac had a secret. (Any correct complex sentence.)",
+   "from": "21.3 Grammar (join each pair); Ch. 15–16",
+   "status": "kept"
+  },
+  {
+   "n": 4,
+   "section": "Morphology & Vocabulary",
+   "label": "Root Identification",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "The root vis/vid means “see.” The root spect means “look.” Which word has the root that means “look”?",
+   "options": [
+    "vision",
+    "perspective",
+    "evidence",
+    "visible"
+   ],
+   "answer": 1,
+   "from": "21.1–21.4 Morphology",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 5,
+   "section": "Morphology & Vocabulary",
+   "label": "Context Clues",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Read the sentence from Chapter 18. What does mourning mean here?",
+   "excerpt": "“My mother started crying, a soft muffled cry that turned the blue and sunny day into one of quiet mourning.”",
+   "options": [
+    "The early part of the day",
+    "Deep sadness after someone dies",
+    "Getting ready for a long walk",
+    "A loud celebration"
+   ],
+   "answer": 1,
+   "from": "21.1–21.3 Vocabulary (mourning)",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 6,
+   "section": "Morphology & Vocabulary",
+   "label": "Use It",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Use the word courage in a sentence about Isaac or Naomi in Chapters 16–19.",
+   "key": "Uses courage correctly (facing something frightening anyway), tied to the chapters. Example: Isaac walks into the soldiers’ camp with newfound courage.",
+   "from": "21.4 Vocabulary (Use the Word)",
+   "status": "kept"
+  },
+  {
+   "n": 7,
+   "section": "Spelling",
+   "label": "Choose the Word",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Write the correct word for each blank. 1. The Choctaw (council / counsel) rode in a wagon behind the lead wagons. 2. The soldiers kept Naomi in (their / there / they’re) wagon. 3. Each wagon had (its / it’s) own place in the line.",
+   "key": "council, their, its",
+   "from": "21.1–21.3 Spelling",
+   "status": "fixed (item 3 said a wagon lost its cover in a fire, which never happens in the book)"
+  },
+  {
+   "n": 8,
+   "section": "Spelling",
+   "label": "Spot It",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which sentence uses the right word?",
+   "options": [
+    "They’re wagon was close to Naomi’s.",
+    "Their wagon was close to Naomi’s.",
+    "There wagon was close to Naomi’s.",
+    "Thier wagon was close to Naomi’s."
+   ],
+   "answer": 1,
+   "from": "21.1–21.2 Spelling sorts",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 9,
+   "section": "Spelling",
+   "label": "Confusable Pair",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Write one sentence using council and one using counsel. Show that you know the difference.",
+   "key": "council = a group that makes decisions; counsel = advice, or to give advice.",
+   "from": "21.1 Spelling (council and counsel); 21.3",
+   "status": "kept"
+  },
+  {
+   "n": 10,
+   "section": "Reading",
+   "label": "Detail",
+   "type": "essay_question",
+   "points": 1,
+   "text": "What does chi pisa lachike mean? Why does it matter that Isaac and his family say it in Chapters 17 and 18?",
+   "key": "“I will see you again, in the future.” It is the last time Isaac sees his family while he is alive, but he will never leave them: “Choctaws never go away.” His mother whispers it in Ch. 18 just before he dies.",
+   "from": "21.2 Reading (Ch. 17); 21.3 (Ch. 18)",
+   "status": "kept (key checked against the book)"
+  },
+  {
+   "n": 11,
+   "section": "Reading",
+   "label": "Inference",
+   "type": "essay_question",
+   "points": 2,
+   "text": "Isaac becomes a ghost in Chapter 18. How does Isaac change once he is a ghost? Think about what he almost does when he sees his family with his body, and what he realizes in the soldiers’ camp. Use at least two specific details from two different chapters.",
+   "key": "2 pts: Ch. 18 he wants to float back into his body to end his family’s grief, but remembers his father’s words about the bloody footprints and lets go; Ch. 19 he realizes the soldiers cannot hurt him and walks to their campfire “with my newfound courage.” 1 pt: one detail or one chapter.",
+   "from": "21.3–21.4 Reading (Ch. 18, 19)",
+   "status": "kept"
+  },
+  {
+   "n": 12,
+   "section": "Writing",
+   "label": "Read Like a Writer",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Notice the pattern: two describing words, then but and a surprising quality. Write your own sentence about someone you know. Pattern: ___ was ___ and ___, but ___ still ___.",
+   "excerpt": "“He was a powerful and important Choctaw, but he still had a sense of humor.”",
+   "key": "Follows the pattern with a comma before but, and the second half surprises.",
+   "from": "21.2 Read Like a Writer (Ch. 17)",
+   "status": "fixed (the section name showed as “{19: , 20: }”)"
+  },
+  {
+   "n": 13,
+   "section": "Writing",
+   "label": "Short Response",
+   "type": "essay_question",
+   "points": 1,
+   "text": "In Chapter 16, Mister Tibbi says Naomi’s “best chance lies with these young men, our new helper, Isaac, and his friend Joseph.” In 2–3 sentences, explain why the council does not simply go to the soldiers and demand Naomi back.",
+   "key": "The soldiers would lie, Naomi would be afraid to tell the truth, and she might disappear. The council must work in secret so they do not endanger their people.",
+   "from": "21.1 Reading (Ch. 16)",
+   "status": "fixed (the section name showed as “{19: , 20: }”)"
+  }
+ ],
+ "passage": {
+  "before": 10,
+  "title": "Reading passage (Chapter 17)",
+  "ch": 17,
+  "text": "Chi pisa lachike. Choctaws never say “good-bye.” There is no word for it. We say “chi pisa lachike,” which means, “I will see you again, in the future.”",
+  "cite": "Tim Tingle, How I Became a Ghost, Chapter 17"
+ },
+ "rwm_ch": 17
+}
