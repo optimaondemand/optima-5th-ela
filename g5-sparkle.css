@@ -571,3 +571,4 @@ html.g5-top:not([data-g5-tab="warmup"]) .quote-strip { display: none !important;
 .g5-lan-tile { font-size: 20px; }
 .g5-lan-tile:disabled { opacity: .45; cursor: default; }
 .g5-lan-clue { font-size: 14px; color: #5A6B8C; }
+.g5-game .g5-stone-step { color: #1E2A44; }

@@ -1023,7 +1023,7 @@
     function shuffled(a) {   // fixed order per word so a reload looks the same
       var out = a.slice(), seed = 7;
       for (var i = out.length - 1; i > 0; i--) { seed = (seed * 31 + i * 17) % 101; var j = seed % (i + 1); var tmp = out[i]; out[i] = out[j]; out[j] = tmp; }
-      if (out.join('') === a.join('') && out.length > 1) out.push(out.shift());
+      if (out.length > 1 && out[0] === a[0]) out.push(out.shift());   // never start with the right first part
       return out;
     }
     function show() {
