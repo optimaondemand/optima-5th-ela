@@ -96,6 +96,10 @@ html.g5-on .g5-pg-h { font-family: 'Libre Baskerville', Georgia, serif; }
 }
 .g5-listen-play.g5-playing { background: var(--g5-ox); }
 .g5-listen-words p { margin: 6px 0 0; }
+.g5-listen-main { flex: 1; min-width: 0; }
+.g5-film { margin: 8px 0 6px; max-width: 640px; }
+.g5-film video { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 10px; background: #1F2A44; box-shadow: 0 2px 8px rgba(0,0,0,.18); }
+.g5-has-film .g5-listen-av { display: none; }
 
 /* ── What to do ────────────────────────────────────────────── */
 .g5-do {

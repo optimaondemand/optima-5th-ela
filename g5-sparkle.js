@@ -86,6 +86,7 @@
   var nowPlaying = null;
   function play(url, btn) {
     try { if (window.speechSynthesis) window.speechSynthesis.cancel(); } catch (e) {}
+    document.querySelectorAll('.g5-film video').forEach(function (o) { try { o.pause(); } catch (e) {} });
     if (nowPlaying) { nowPlaying.pause(); if (nowPlaying._btn) nowPlaying._btn.classList.remove('g5-playing'); if (nowPlaying._btn === btn) { nowPlaying = null; return; } }
     var a = new Audio(url); a._btn = btn; nowPlaying = a;
     btn && btn.classList.add('g5-playing');
@@ -94,6 +95,38 @@
   }
   function clip(path) { return (window.__G5_CLIPS && window.__G5_CLIPS[path]) || path; }  // preview builds inline clips
   function audioUrl(slot) { return clip('assets/audio/guide/g5ela-' + L.week + '-' + L.day + '-' + slot + '.mp3'); }
+  function videoUrl(slot) { return clip('assets/video/guide/g5ela-' + L.week + '-' + L.day + '-' + slot + '.mp4'); }
+  /* a film beside a Listen clip: H.264 High, yuv420p, AAC, +faststart (see tools/g5video). Poster = same name .jpg,
+     captions = same name .vtt (off until CC is pressed). */
+  function filmControl(src, label) {
+    if (!src || /^data:audio/.test(src)) return null;
+    var fig = document.createElement('figure'); fig.className = 'g5-film'; fig.hidden = true;
+    var v = document.createElement('video');
+    v.controls = true; v.playsInline = true; v.setAttribute('playsinline', ''); v.preload = 'metadata';
+    v.setAttribute('aria-label', label);
+    var se = document.createElement('source'); se.src = src; se.type = 'video/mp4'; v.appendChild(se);
+    fig.appendChild(v);
+    var okFns = [], badFns = [], settled = false;
+    function bad() { if (settled) return; settled = true; fig.remove(); badFns.forEach(function (f) { f(); }); }
+    v.addEventListener('loadedmetadata', function () {
+      if (settled) return; settled = true; fig.hidden = false;
+      if (/\.mp4(\?|$)/.test(src)) v.poster = src.replace(/\.mp4(\?|$)/, '.jpg$1');
+      okFns.forEach(function (f) { f(); });
+      var vtt = src.replace(/\.mp4(\?|$)/, '.vtt$1');
+      if (vtt !== src && window.fetch) fetch(vtt, { method: 'HEAD', cache: 'no-cache' }).then(function (r) {
+        if (!r.ok) return;
+        var t = document.createElement('track'); t.kind = 'captions'; t.srclang = 'en'; t.label = 'English'; t.src = vtt;
+        v.appendChild(t); if (t.track) t.track.mode = 'disabled';
+      }).catch(function () {});
+    });
+    v.addEventListener('error', bad); se.addEventListener('error', bad);
+    v.addEventListener('play', function () {
+      try { if (window.speechSynthesis) window.speechSynthesis.cancel(); } catch (e) {}
+      if (nowPlaying) { try { nowPlaying.pause(); if (nowPlaying._btn) nowPlaying._btn.classList.remove('g5-playing'); } catch (e) {} nowPlaying = null; }
+      document.querySelectorAll('.g5-film video').forEach(function (o) { if (o !== v) o.pause(); });
+    });
+    return { fig: fig, ready: function (f) { okFns.push(f); }, fail: function (f) { badFns.push(f); } };
+  }
   function howUrl(slug) { return clip('assets/audio/guide/how/g5ela-how-' + slug + '.mp3'); }
 
   /* ── 1. the paper: header strip, fonts, ribbon ────────────── */
@@ -134,12 +167,21 @@
       var slot = c.clip || ('listen-' + tab);
       var play_ = h('button', { 'class': 'g5-listen-play', type: 'button', hidden: 'hidden', 'aria-label': 'Play' }, ['▶ Listen']);
       var words_ = h('details', { 'class': 'g5-listen-words' }, [h('summary', { text: 'Read the words instead' }), h('p', { text: c.text })]);
+      var main_ = h('div', { 'class': 'g5-listen-main' }, [h('div', { 'class': 'g5-listen-t', text: 'Mason' }), play_, words_]);
       var card = h('div', { 'class': 'g5-listen', 'data-tab': tab }, [
-        h('img', { 'class': 'g5-listen-av', src: 'assets/companions/mason-v2.jpg', alt: '' }),
-        h('div', { 'class': 'g5-listen-main' }, [h('div', { 'class': 'g5-listen-t', text: 'Mason' }), play_, words_])
+        h('img', { 'class': 'g5-listen-av', src: 'assets/companions/mason-v2.jpg', alt: '' }), main_
       ]);
       play_.addEventListener('click', function () { play(audioUrl(slot), play_); });
-      fileExists(audioUrl(slot), function (ok) { if (ok) { play_.hidden = false; words_.querySelector('summary').textContent = 'Read the words'; } else { words_.open = true; } });
+      var filmOn = false, audioOk = false;
+      fileExists(audioUrl(slot), function (ok) { audioOk = ok; if (ok) { if (!filmOn) play_.hidden = false; words_.querySelector('summary').textContent = 'Read the words'; } else if (!filmOn) { words_.open = true; } });
+      /* Mason's film: the same name under assets/video/ (…/g5ela-21-1-listen-words.mp4 beside the .mp3).
+         It carries the voice, so it replaces the Listen button. Hidden until it loads; if it fails, the audio stays. */
+      var film = filmControl(videoUrl(slot), 'Mason: ' + tab);
+      if (film) {
+        main_.insertBefore(film.fig, words_);
+        film.ready(function () { filmOn = true; play_.hidden = true; words_.open = false; words_.querySelector('summary').textContent = 'Read the words'; card.classList.add('g5-has-film'); });
+        film.fail(function () { filmOn = false; card.classList.remove('g5-has-film'); if (audioOk) play_.hidden = false; });
+      }
       if (tab === 'page') {   // one-page lessons (fluency): above the passage
         var fp = document.querySelector('.fluency-passage') || document.querySelector('.steps');
         if (fp) fp.parentNode.insertBefore(card, fp);
