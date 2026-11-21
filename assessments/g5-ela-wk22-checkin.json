@@ -1,0 +1,186 @@
+{
+ "id": "g5-ela-wk22-checkin",
+ "title": "Week 22 Check-In · How I Became a Ghost",
+ "description": "This week Naomi was rescued from the soldiers and hidden by the bonepickers. You practiced clear pronouns, the light roots luc/lum and photo, and Greek and Latin parts in book words. Show what you know.",
+ "chapters": "Ch. 20–23",
+ "questions": [
+  {
+   "n": 1,
+   "section": "Grammar",
+   "label": "Identification",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which sentence has a clear pronoun?",
+   "options": [
+    "Joseph told Luke that he should hide.",
+    "When Isaac met Joseph, he was scared.",
+    "Naomi slipped off her boots before she climbed into the wagon.",
+    "Leader told Roundman that he was in charge."
+   ],
+   "answer": 2,
+   "from": "22.1–22.3 Grammar (pronoun clarity); Ch. 22",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 2,
+   "section": "Grammar",
+   "label": "Fix It",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Rewrite this sentence so the reader knows exactly who looked angry.",
+   "excerpt": "Leader shouted at Pointy Nose, and he looked angry.",
+   "key": "Leader shouted at Pointy Nose, and Leader looked angry. (Or any version that names the person.)",
+   "from": "22.2–22.3 Grammar; Ch. 20",
+   "status": "kept"
+  },
+  {
+   "n": 3,
+   "section": "Grammar",
+   "label": "Explain",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Isaac, Joseph, Luke, and Leader can all be called “he.” Explain why that makes pronouns tricky in this novel, and tell one way a writer can fix it.",
+   "key": "With several male characters, he could point to more than one person; repeat the name or rewrite the sentence.",
+   "from": "22.1 Grammar (Notice); 22.4",
+   "status": "kept"
+  },
+  {
+   "n": 4,
+   "section": "Morphology & Vocabulary",
+   "label": "Root Identification",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "In Chapter 20, “Nita shone like a pale moon. I could see through her.” The root luc means “light” and trans- means “through.” Which word fits Nita?",
+   "options": [
+    "photograph",
+    "translucent",
+    "illuminate",
+    "lucid"
+   ],
+   "answer": 1,
+   "from": "22.1, 22.3, 22.4 Morphology (translucent)",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 5,
+   "section": "Morphology & Vocabulary",
+   "label": "Context Clues",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Read the sentence from Chapter 21. What does distract most likely mean?",
+   "excerpt": "“We need some way to distract the soldiers,” Joseph said, “some way to slow them down.”",
+   "options": [
+    "To pull someone’s attention away",
+    "To fight someone",
+    "To hide from someone",
+    "To follow someone"
+   ],
+   "answer": 0,
+   "from": "22.1–22.3 Vocabulary (distraction)",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 6,
+   "section": "Morphology & Vocabulary",
+   "label": "Use It",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Use the word ancestors in a sentence that shows you know what it means. Connect it to what the Choctaw ghosts tell the boys in Chapter 23.",
+   "key": "Uses ancestors correctly (family members who lived long before you). The ghosts say the boys made the ancestors proud, the highest honor.",
+   "from": "22.4 Vocabulary (Use the Word)",
+   "status": "kept"
+  },
+  {
+   "n": 7,
+   "section": "Spelling",
+   "label": "Find the Root",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Name the Greek root in each word and what it means: chronology, dialogue, paragraph.",
+   "key": "chron = time; log(ue) = word or speech; graph = write",
+   "from": "22.1–22.4 Spelling sorts",
+   "status": "kept"
+  },
+  {
+   "n": 8,
+   "section": "Spelling",
+   "label": "Word Families",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which word shares a root with photograph and paragraph?",
+   "options": [
+    "chronicle",
+    "autograph",
+    "dialogue",
+    "prologue"
+   ],
+   "answer": 1,
+   "from": "22.1, 22.3 Spelling sorts",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 9,
+   "section": "Spelling",
+   "label": "Build It",
+   "type": "essay_question",
+   "points": 1,
+   "text": "A story told in the order events happened is told in ___ order. Spell the word, built from chron (time).",
+   "key": "chronological",
+   "from": "22.3 Spelling sort",
+   "status": "kept"
+  },
+  {
+   "n": 10,
+   "section": "Reading",
+   "label": "Detail",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Why does Naomi first say she cannot escape? What does she learn from Isaac and Nita that changes things?",
+   "key": "She thinks the soldiers will take her little sister, Nita. She learns Nita has died (the soldiers can’t hurt her anymore), and Nita’s ghost appears and hugs her.",
+   "from": "22.1 Reading (Ch. 20)",
+   "status": "kept (key checked against the book)"
+  },
+  {
+   "n": 11,
+   "section": "Reading",
+   "label": "Inference",
+   "type": "essay_question",
+   "points": 2,
+   "text": "Naomi’s escape takes many helpers: living people, ghosts, and an animal. Choose two helpers from two different chapters (20–23). Explain what each one does and why it mattered.",
+   "key": "2 pts: two helpers, two chapters. Ex.: Jumper splashes into the river to draw the guards away; panther Joseph gnaws the rope and sets a wagon on fire; Nita wakes the council; a councilwoman cuts the rope from Naomi’s wrists; Luke leads her to the bonepickers; the bonepickers hide her in the trunk and use the raccoon’s blood on the bones. 1 pt: one helper or one chapter.",
+   "from": "22.1–22.4 Reading (Ch. 20–23)",
+   "status": "kept"
+  },
+  {
+   "n": 12,
+   "section": "Writing",
+   "label": "Read Like a Writer",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Notice the pattern: two quick actions, then a comma and an -ing phrase that shows what happened next. Write your own sentence with the same shape.",
+   "excerpt": "“The panther ran to the fire and slapped the burning logs, sending fiery embers all about the camp.”",
+   "key": "Two actions + comma + -ing result phrase.",
+   "from": "22.2 Read Like a Writer (Ch. 21)",
+   "status": "fixed (the section name showed as “{19: , 20: , 21: }”)"
+  },
+  {
+   "n": 13,
+   "section": "Writing",
+   "label": "Short Response",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Chapter 22 says the bonepickers’ “job was the hardest and most sacred in all of Choctaw country.” In 2–3 sentences, explain why their wagon is the safest place to hide Naomi.",
+   "key": "Most people stay away from the bonepickers (“Most people don’t like to be around us”); the trunk of bones has a secret bottom where Naomi can lie hidden, and soldiers will not want to dig through bones.",
+   "from": "22.3 Reading (Ch. 22)",
+   "status": "fixed (the section name showed as “{19: , 20: , 21: }”)"
+  }
+ ],
+ "passage": {
+  "before": 10,
+  "title": "Reading passage (Chapter 20)",
+  "ch": 20,
+  "text": "“I have to be watchful to stay alive,” Naomi said. “But you must understand. I can’t leave or the soldiers will take my little sister.”",
+  "cite": "Tim Tingle, How I Became a Ghost, Chapter 20"
+ },
+ "rwm_ch": 21
+}
