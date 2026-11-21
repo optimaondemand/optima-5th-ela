@@ -109,7 +109,7 @@ a = s.index('  <!-- GRAMMAR: Appositives -->'); b = s.index('</div>\n\n<div clas
 s = s[:a] + ''.join(out) + s[b:]
 reps = [
  ('You&rsquo;ll answer questions about grammar, morphology, spelling, reading, and writing &mdash; all connected to <em>How I Became a Ghost</em>.',
-  'This week two big secrets came out. You&rsquo;ll answer questions about grammar, morphology, spelling, reading, and writing from Chapters 12 to 15 of <em>How I Became a Ghost</em>.'),
+  'Two big secrets come out in these chapters. You&rsquo;ll answer questions about grammar, morphology, spelling, reading, and writing from Chapters 12 to 15 of <em>How I Became a Ghost</em>.'),
  ('var ids = ["resp1","resp2","resp3","resp4","resp5","resp6","resp7","resp8","resp9","resp10"];', 'var ids = [%s];' % ','.join('"%s"' % i for i in ids)),
  ('  {id:"mcq1",label:"Q1: Grammar — Appositive identification"},\n  {id:"mcq2",label:"Q4: Morphology — Root identification"},\n  {id:"mcq3",label:"Q5: Vocabulary — Context clue"}\n', ',\n'.join(mcs) + '\n'),
  ("'Week 20 Check-In — How I Became a Ghost (Ch. 1–3)'", "'Week 20 Check-In — How I Became a Ghost (Ch. 12–15)'"),
