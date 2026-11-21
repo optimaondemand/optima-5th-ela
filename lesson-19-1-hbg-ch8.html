@@ -2861,6 +2861,20 @@ body {
     </div>
   </div>
 
+  <!-- RWM -->
+  <div class="rwm-box">
+    <div class="rwm-header">&#128214; Read Like a Writer &mdash; Read &bull; Notice &bull; Try</div>
+    <div class="rwm-sentence">&ldquo;I was so hungry that I would have eaten the corn uncooked. But with wild onions, roasted over a log fire, it was delicious!&rdquo; <span style="font-size:13px;color:#5A6B8C;">(Chapter 8)</span></div>
+    <div class="rwm-step"><div class="rwm-step-label">&#128214; As a Reader</div>
+      <div class="rwm-step-text">What does this sentence make you see or feel?</div>
+      <textarea class="journal-box" id="journal-rwm-reader" placeholder="This sentence makes me..." oninput="autoSave(this,'dot-rwm-reader');gatherAnswers();"></textarea></div>
+    <div class="rwm-step"><div class="rwm-step-label">&#9999;&#65039; As a Writer</div>
+      <div class="rwm-step-text">A first-person narrator lets you inside his head. Isaac gives a <strong>thought</strong> (he would have eaten the corn raw), a <strong>detail</strong> (wild onions, a log fire) and a <strong>reaction</strong> (delicious!). That mix makes his voice sound like a real boy talking. Name the thought, the detail and the reaction.</div>
+      <textarea class="journal-box" id="journal-rwm-writer" placeholder="Isaac's voice shows..." oninput="autoSave(this,'dot-rwm-writer');gatherAnswers();"></textarea></div>
+    <div class="rwm-step"><div class="rwm-step-label">&#128394;&#65039; Try It</div>
+      <div class="rwm-step-text">Write two sentences with <strong>I</strong> about a meal or a moment you remember. Put in one thought, one detail and one reaction.</div>
+      <textarea class="journal-box" id="journal-rwm-mimic" placeholder="My sentence..." oninput="autoSave(this,'dot-rwm-mimic');gatherAnswers();"></textarea></div>
+  </div>
   <div class="tab-next-wrap">
     <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to &#128236; Assignment &rarr;</button>
   </div>
@@ -2929,7 +2943,8 @@ body {
       <div class="turn-in-checklist">
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered all 3 chapter questions with evidence from the book.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed my Word Study Grammar response.</div></div>
-        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my Writer&rsquo;s Workshop piece.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my three Read Like a Writer answers on the Reading tab.</div></div>
+        <div class="turn-in-item-text">I wrote my Writer&rsquo;s Workshop piece.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I copied or downloaded my work and submitted it to Canvas.</div></div>
       </div>
     </div>
