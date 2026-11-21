@@ -92,3 +92,8 @@ with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
     z.writestr("%s/%s.xml" % (gid, gid), qti)
     z.writestr("%s/assessment_meta.xml" % gid, ameta)
 print("wrote %s: %s, %d questions, %s points" % (out, title, len(qs), num(total)))
+
+# standards in the question names + metadata (tools/tag_qti.py reads the tags on lesson-W-checkin.html), Nov 21 2026
+import os, subprocess
+if os.path.exists('lesson-%d-checkin.html' % week) and 'id="oao-standards"' in io.open('lesson-%d-checkin.html' % week, encoding='utf-8').read():
+    subprocess.run([sys.executable, 'tools/tag_qti.py', out], check=True)
