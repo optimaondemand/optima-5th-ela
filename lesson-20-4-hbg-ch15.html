@@ -2781,6 +2781,20 @@ body {
     </div>
   </div>
 
+  <!-- RWM -->
+  <div class="rwm-box">
+    <div class="rwm-header">&#128214; Read Like a Writer &mdash; Read &bull; Notice &bull; Try</div>
+    <div class="rwm-sentence">&ldquo;I gripped the limb and was about to climb, when the warm shiver came.&rdquo; <span style="font-size:13px;color:#5A6B8C;">(Chapter 15)</span></div>
+    <div class="rwm-step"><div class="rwm-step-label">&#128214; As a Reader</div>
+      <div class="rwm-step-text">What does this sentence make you see or feel?</div>
+      <textarea class="journal-box" id="journal-rwm-reader" placeholder="This sentence makes me..." oninput="autoSave(this,'dot-rwm-reader');gatherAnswers();"></textarea></div>
+    <div class="rwm-step"><div class="rwm-step-label">&#9999;&#65039; As a Writer</div>
+      <div class="rwm-step-text">Isaac starts an action (<strong>about to climb</strong>), and then <strong>when</strong> something interrupts it. The interruption comes last, so it lands hard. The order of the events is doing the work.</div>
+      <textarea class="journal-box" id="journal-rwm-writer" placeholder="The order of events..." oninput="autoSave(this,'dot-rwm-writer');gatherAnswers();"></textarea></div>
+    <div class="rwm-step"><div class="rwm-step-label">&#128394;&#65039; Try It</div>
+      <div class="rwm-step-text">On your own: write one sentence where someone starts to do something and is interrupted. Use <strong>when</strong> to bring in the interruption.</div>
+      <textarea class="journal-box" id="journal-rwm-mimic" placeholder="My sentence..." oninput="autoSave(this,'dot-rwm-mimic');gatherAnswers();"></textarea></div>
+  </div>
   <div class="tab-next-wrap">
     <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to &#128236; Assignment &rarr;</button>
   </div>
@@ -2849,7 +2863,8 @@ body {
       <div class="turn-in-checklist">
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered all 3 chapter questions with evidence from the book.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed my Word Study Grammar response.</div></div>
-        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my Writer&rsquo;s Workshop piece.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my three Read Like a Writer answers on the Reading tab.</div></div>
+        <div class="turn-in-item-text">I wrote my Writer&rsquo;s Workshop piece.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I copied or downloaded my work and submitted it to Canvas.</div></div>
       </div>
     </div>
