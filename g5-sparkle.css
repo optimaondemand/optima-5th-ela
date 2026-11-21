@@ -533,3 +533,7 @@ html.g5-top:not([data-g5-tab="warmup"]) .quote-strip { display: none !important;
   .g5-hd-panel dl { grid-template-columns: 1fr; gap: 0; }
   .g5-hd-panel dt { padding-top: 8px; }
 }
+/* Footprints Forward (week 19) */
+.g5-snow { border-color: #A9B4BE; }
+.g5-snow .g5-fp.cur { filter: drop-shadow(0 0 4px rgba(26,45,90,.45)); }
+.g5-fp-word::before { content: none !important; animation: none !important; }   /* the word is not tappable */

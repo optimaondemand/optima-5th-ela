@@ -561,6 +561,122 @@
     else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
   }
 
+  /* ── 12b. the week's word game: Footprints Forward (week 19) ──
+     DATA.game = {type:'footprints', title, sub, after, look, how, doneLine,
+                  steps:[{base, end:'ive'|'al'|'ic', word, why}]}.
+     Each footprint holds a base word; pick the ending that builds the describing word.
+     Storage oao.g5ela.steps.wk<NN> {day:{done:[i]}}. */
+  function buildFootprints() {
+    var G = D.game; if (!G || G.type !== 'footprints' || !G.steps || !G.steps.length) return;
+    var wkKey = 'steps.wk' + L.week;
+    var st = store(wkKey) || {};
+    var mine = st[L.day] || { done: [] };
+    var steps = G.steps, idx = 0;
+    while (idx < steps.length && mine.done.indexOf(idx) >= 0) idx++;
+
+    var wrap = h('div', { 'class': 'activity g5-game' });
+    wrap.innerHTML =
+      '<div class="activity-head"><div class="activity-num g5-game-num" aria-hidden="true">👣</div><div>' +
+      '<div class="activity-title">' + esc(G.title || 'Footprints Forward') + '</div>' +
+      '<div class="activity-sub">' + esc(G.sub || 'Word game for this week') + '</div></div></div>';
+    var body = h('div', { 'class': 'activity-body' });
+    wrap.appendChild(body);
+    var look = h('details', { 'class': 'g5-look' }, [h('summary', { text: '👀 What am I looking at?' }), h('p', { text: G.look })]);
+    if (!mine.done.length) look.open = true;
+    body.appendChild(look);
+    if (G.how) body.appendChild(howLine(G.how));
+    var scene = h('div', { 'class': 'g5-river g5-snow', role: 'img', 'aria-label': 'A snowy road. Each word you build lights a footprint.' });
+    body.appendChild(scene);
+    var stepBox = h('div', { 'class': 'g5-stone-step', 'aria-live': 'polite' });
+    var wordBox = h('div', { 'class': 'g5-stone-word g5-fp-word' });
+    var ctrl = h('div', { 'class': 'g5-stone-ctrl' });
+    var fb = h('p', { 'class': 'g5-stone-fb', 'aria-live': 'polite' });
+    var tally = h('p', { 'class': 'g5-stone-tally' });
+    [stepBox, wordBox, ctrl, fb, tally].forEach(function (n) { body.appendChild(n); });
+
+    function foot(x, y, left, cls, fill, stroke) {   // a bare footprint: sole, then four toes
+      var s = left ? -1 : 1, toes = '';
+      [[-7, -27, 4.2], [0, -30, 4.6], [6, -28, 4], [10, -23, 3.3]].forEach(function (t) {
+        toes += '<circle cx="' + (t[0] * s) + '" cy="' + t[1] + '" r="' + t[2] + '" fill="' + fill + '" stroke="' + stroke + '" stroke-width="1.5"/>';
+      });
+      return '<g class="' + cls + '" transform="translate(' + x + ',' + y + ') rotate(' + (s * 10) + ')">' +
+        '<path d="M' + (-2 * s) + ',-22 C' + (10 * s) + ',-22 ' + (13 * s) + ',-8 ' + (10 * s) + ',4 C' + (8 * s) + ',14 ' + (8 * s) + ',22 ' + (1 * s) + ',24 C' + (-7 * s) + ',25 ' + (-9 * s) + ',16 ' + (-8 * s) + ',6 C' + (-7 * s) + ',-4 ' + (-12 * s) + ',-20 ' + (-2 * s) + ',-22Z" fill="' + fill + '" stroke="' + stroke + '" stroke-width="2"/>' + toes + '</g>';
+    }
+    function draw() {
+      var n = steps.length, w = 900, hgt = 170, svg = '';
+      svg += '<svg viewBox="0 0 ' + w + ' ' + hgt + '" preserveAspectRatio="xMidYMid meet" aria-hidden="true">' +
+        '<defs><linearGradient id="g5sn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9D3DC"/><stop offset="1" stop-color="#EEF2F5"/></linearGradient></defs>' +
+        '<rect x="0" y="0" width="' + w + '" height="' + hgt + '" fill="url(#g5sn)"/>';
+      for (var t = 0; t < 9; t++) {   // bare winter trees along the far edge
+        var tx = 40 + t * 105, th = 46 + (t % 3) * 10;
+        svg += '<path d="M' + tx + ',' + (th + 8) + ' L' + tx + ',8 M' + tx + ',24 L' + (tx - 14) + ',12 M' + tx + ',30 L' + (tx + 13) + ',16 M' + tx + ',40 L' + (tx - 10) + ',30" stroke="#6B6A62" stroke-width="3" fill="none" stroke-linecap="round"/>';
+      }
+      svg += '<path d="M0,128 C220,104 420,140 640,116 S860,112 900,120" stroke="rgba(120,135,150,.35)" stroke-width="34" fill="none"/>';
+      for (var i = 0; i < n; i++) {
+        var x = 90 + i * ((w - 180) / Math.max(1, n - 1)), y = 122 + (i % 2 ? -10 : 8);
+        var lit = mine.done.indexOf(i) >= 0, cur = i === idx;
+        svg += foot(x, y, i % 2 === 0, 'g5-fp' + (lit ? ' lit' : '') + (cur ? ' cur' : ''),
+                    lit ? '#C8A850' : 'rgba(255,255,255,.65)', cur ? '#1A2D5A' : 'rgba(80,95,110,.55)');
+      }
+      svg += '</svg>';
+      scene.innerHTML = svg;
+      var allDone = 0;
+      Object.keys(st).forEach(function (k) { allDone += (st[k].done || []).length; });
+      tally.textContent = 'Today: ' + mine.done.length + ' of ' + n + ' footprints. This week: ' + allDone + (allDone === 1 ? ' step' : ' steps') + ' forward.';
+    }
+    function save() { st[L.day] = mine; store(wkKey, st); }
+    function show() {
+      draw(); fb.textContent = ''; ctrl.innerHTML = ''; wordBox.innerHTML = '';
+      if (idx >= steps.length) {
+        stepBox.innerHTML = '<b>Every footprint is lit.</b> ' + esc(G.doneLine || 'Come back tomorrow for more.');
+        var again = h('button', { type: 'button', 'class': 'g5-btn g5-btn-ghost' }, ['↺ Walk it again']);
+        again.addEventListener('click', function () { mine.done = []; idx = 0; save(); show(); });
+        ctrl.appendChild(again); return;
+      }
+      var S = steps[idx], tries = 0;
+      stepBox.innerHTML = '<span class="g5-stepn">Footprint ' + (idx + 1) + ' of ' + steps.length + '</span> Which ending turns <b>' + esc(S.base) + '</b> into a describing word?';
+      wordBox.textContent = S.base + ' + ?';
+      ['ive', 'al', 'ic'].forEach(function (e) {
+        var b = h('button', { type: 'button', 'class': 'g5-btn g5-btn-choice' }, ['-' + e]);
+        b.addEventListener('click', function () {
+          if (e === S.end) {
+            wordBox.textContent = S.word;
+            fb.textContent = S.why || ('Yes: ' + S.base + ' + -' + e + ' = ' + S.word + '.');
+            ctrl.querySelectorAll('button').forEach(function (x) { x.disabled = true; });
+            if (mine.done.indexOf(idx) < 0) mine.done.push(idx);
+            save(); if (!REDUCED) chime(); draw();
+            var next = h('button', { type: 'button', 'class': 'g5-btn' }, [idx + 1 < steps.length ? 'Next footprint →' : 'Finish →']);
+            next.addEventListener('click', function () { idx++; while (idx < steps.length && mine.done.indexOf(idx) >= 0) idx++; show(); setTimeout(function () { var f = ctrl.querySelector('button'); if (f) f.focus(); }, 30); });
+            ctrl.appendChild(next);
+          } else {
+            tries++;
+            b.disabled = true;
+            fb.textContent = tries > 1 && S.miss ? S.miss : 'Say it: ' + S.base + e + '. Does that sound like a real word? Try another ending.';
+          }
+        });
+        ctrl.appendChild(b);
+      });
+    }
+    var ctx;
+    function chime() {
+      try {
+        ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
+        [392.0, 523.25].forEach(function (f, i) {
+          var o = ctx.createOscillator(), g = ctx.createGain();
+          o.type = 'sine'; o.frequency.value = f;
+          g.gain.setValueAtTime(0.0001, ctx.currentTime + i * 0.09);
+          g.gain.exponentialRampToValueAtTime(0.1, ctx.currentTime + i * 0.09 + 0.02);
+          g.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + i * 0.09 + 0.45);
+          o.connect(g); g.connect(ctx.destination); o.start(ctx.currentTime + i * 0.09); o.stop(ctx.currentTime + i * 0.09 + 0.5);
+        });
+      } catch (e) {}
+    }
+    show();
+    var ref = G.after ? activityByTitle(G.after, panel('words')) : null;
+    if (ref) afterNode(ref, wrap);
+    else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
+  }
+
   /* ── 13. the Commonplace Book page ─────────────────────────── */
   var NAME_BAD = /\b(ass|butt|poop|fart|stupid|dumb|idiot|hate|kill|sex|damn|hell|crap)\b/i;
   function profileName() { var p = store('profile'); return p && p.name ? p.name : ''; }
@@ -1345,6 +1461,7 @@
     guard('hints', buildHints);
     guard('miss', buildMiss);
     guard('stones', buildStones);
+    guard('footprints', buildFootprints);
     guard('cards', buildCards);
     guard('checks', buildChecks);
     guard('virtue', buildVirtue);
