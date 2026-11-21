@@ -1,0 +1,270 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "Chapter 22 takes Naomi somewhere nobody would think to look. Part of it explains how some Choctaw women cared for people who had died. Read it calmly. Today you will reread one sentence and notice how it is built."
+  },
+  "words": {
+   "text": "Put the light words to work today. Then try book words you have never studied. Break each one into its parts, and work out the meaning before anyone tells you. Then four new lanterns."
+  },
+  "reading": {
+   "text": "Read Chapter 22 in your book. Watch who welcomes Naomi, and why their wagon is the safest place for her. Then reread the thunderbolt sentence in the Read Like a Writer box, and finish with the Virtue Watch."
+  },
+  "assignment": {
+   "text": "Three questions about Chapter 22. Then revise your paragraph with the checklist. Check every he, she and they. Improve one transition. Cut words you do not need. Show one sentence before and after."
+  }
+ },
+ "hook": {
+  "q": "Soldiers are hunting for a girl. Where would you hide her?",
+  "options": [
+   {
+    "t": "Deep in the woods",
+    "reply": "The woods are a good guess, but soldiers search there first. The women in Chapter 22 have a stranger idea:"
+   },
+   {
+    "t": "In a crowd of people",
+    "reply": "Hiding in plain sight is clever. The women in Chapter 22 go even further:"
+   },
+   {
+    "t": "Inside a hollow tree",
+    "reply": "A good hiding place, if nobody looks. The women in Chapter 22 pick a place soldiers will not want to look:"
+   }
+  ],
+  "reveal": {
+   "line": "This is the safest place for you now.",
+   "cite": "a woman in the wagon, Chapter 22",
+   "then": "As you read Chapter 22, find out where Naomi hides, and why the soldiers will not want to look there."
+  }
+ },
+ "how": [
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted words in the first sentence.",
+    "Find the pronoun that could mean two people in the second.",
+    "Fix it out loud, then tap Check My Work."
+   ],
+   "why": "A pronoun like he, she or they should point to only one person."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Read each meaning.",
+    "Tap a word, then tap its meaning.",
+    "Match all four words."
+   ],
+   "why": "If you know the root, you can work out a word you have never seen."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Type the word that fits each sentence.",
+    "Open the Word Bank if you need it.",
+    "Tap Check My Words."
+   ],
+   "why": "Putting a word back in its sentence shows you really know it."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Tap the version a reader can follow in each pair.",
+    "Write three sentences about Chapter 22.",
+    "Underline the noun each pronoun points to."
+   ],
+   "why": "When several people act in one scene, names keep the reader on track."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Break each word at its parts.",
+    "Find the root, even in words you have not studied.",
+    "Tap a word, then tap its column."
+   ],
+   "why": "The parts let you read and spell a word you have never met."
+  },
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Tap your lens for today.",
+    "Reread the thunderbolt sentence in Chapter 22.",
+    "Notice what comes first: the picture or the fact."
+   ],
+   "why": "Where a writer puts a comparison changes how you feel the moment.",
+   "use": "You will use this in the Read Like a Writer box."
+  },
+  {
+   "match": "Chapter Thinking",
+   "do": [
+    "Read Chapter 22 first.",
+    "Answer each question in 2 or more sentences.",
+    "For question 3, use one detail from each chapter."
+   ],
+   "why": "These questions check what happened and what the author shows you."
+  },
+  {
+   "match": "Workshop",
+   "do": [
+    "Read your draft from Day 2.",
+    "Check every he, she and they.",
+    "Improve one transition and cut extra words.",
+    "Show one sentence before and after."
+   ],
+   "why": "Revising means making the paragraph clearer, not starting over.",
+   "use": "Next lesson you will write the final version."
+  },
+  {
+   "match": "Virtue Watch",
+   "do": [
+    "Read what perseverance means.",
+    "Read the example from this week.",
+    "After you read, use the perseverance meter at the end of this tab."
+   ]
+  },
+  {
+   "match": "Chapter Introduction",
+   "do": [
+    "Read the chapter introduction below.",
+    "Open your book and read Chapter 22.",
+    "Then do the Read Like a Writer box and the Virtue Watch below."
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "word": "comparison",
+   "in": "What Good Readers Do",
+   "meaning": "showing how two different things are alike"
+  }
+ ],
+ "hints": {
+  "distraction": [
+   "Something that pulls attention away.",
+   "Jumper is ready to be one.",
+   "It starts with dis."
+  ],
+  "bonepickers": [
+   "The women in the wagon.",
+   "Their job was to care for the dead.",
+   "bone + pickers"
+  ],
+  "speechless": [
+   "Too surprised to talk.",
+   "Luke stands this way when the ghosts appear.",
+   "speech + less"
+  ],
+  "ancestors": [
+   "Family who lived long ago.",
+   "Making them proud is the highest honor.",
+   "It starts with an."
+  ],
+  "honored": [
+   "Treated with great respect.",
+   "The ghosts do this to the boys.",
+   "It ends with -ed."
+  ]
+ },
+ "miss": {
+  "autograph": "Find g-r-a-p-h at the end: auto + graph. Graph means write.",
+  "biography": "Find g-r-a-p-h inside: bio + graph + y. Graph means write.",
+  "chronological": "Find c-h-r-o-n at the start. Chron means time.",
+  "chronology": "Find c-h-r-o-n at the start. Chron means time.",
+  "metaphor": "Find p-h-o-r at the end. Phor means carry: a metaphor carries meaning from one thing to another.",
+  "reference": "Find f-e-r in the middle: re + fer + ence. Fer means carry.",
+  "transfer": "Find f-e-r at the end: trans + fer. Fer means carry."
+ },
+ "game": {
+  "type": "lantern",
+  "title": "Light the Lanterns",
+  "sub": "This week's word game · 4 words today",
+  "after": "Spelling",
+  "look": "Each lantern on the branch waits for one word. Read the meaning, then tap the word parts in order to build the word. When the word is whole, its lantern lights up.",
+  "how": {
+   "do": [
+    "Read the meaning under the lantern.",
+    "Tap the first part of the word.",
+    "Tap the next parts in order.",
+    "Tap Next lantern."
+   ],
+   "why": "Long words are built from parts. If you know the parts, you can build a word and spell it."
+  },
+  "doneLine": "Come back tomorrow to light more.",
+  "words": [
+   {
+    "w": "synchronize",
+    "parts": [
+     "syn",
+     "chron",
+     "ize"
+    ],
+    "decoys": [
+     "log"
+    ],
+    "means": "to make things happen at the same time",
+    "clue": "syn = together; chron = time",
+    "why": "syn (together) + chron (time) + ize (to make)."
+   },
+   {
+    "w": "catalog",
+    "parts": [
+     "cata",
+     "log"
+    ],
+    "decoys": [
+     "graph"
+    ],
+    "means": "a list of things, like the books in a library",
+    "clue": "log = word",
+    "why": "cata (down) + log (word): words written down in a list."
+   },
+   {
+    "w": "photogenic",
+    "parts": [
+     "photo",
+     "gen",
+     "ic"
+    ],
+    "decoys": [
+     "lumin"
+    ],
+    "means": "looking good in pictures",
+    "clue": "photo = light",
+    "why": "photo (light) + gen (made) + ic."
+   },
+   {
+    "w": "luminosity",
+    "parts": [
+     "lumin",
+     "osity"
+    ],
+    "decoys": [
+     "luc"
+    ],
+    "means": "how much light something gives off",
+    "clue": "lumin = light",
+    "why": "lumin (light) + osity. Some stars have more luminosity than others."
+   }
+  ]
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/hbg/fantin-roses-bowl.jpg",
+  "title": "Roses in a Bowl",
+  "alt": "A painting of pink, white, red and yellow roses in a dark bowl on a brown table.",
+  "look": "Henri Fantin-Latour painted these roses in France in 1883. The book does not show the wagon, but it tells you how it smells: Naomi climbs into a wagon sweetened by the smell of dried roses.",
+  "lookBtn": "Tap to learn about this painting",
+  "creator": "Henri Fantin-Latour",
+  "date": "1883",
+  "license": "CC0 (The Metropolitan Museum of Art, via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Henri_Fantin-Latour_-_Roses_in_a_Bowl_MET_DT10260.jpg"
+ },
+ "virtue": {
+  "name": "perseverance",
+  "kind": "meter",
+  "title": "The perseverance meter",
+  "intro": "Think about one moment from Chapter 22.",
+  "moment": "Naomi lies in a secret space at the bottom of a trunk, under a blanket in the dark. The air is stuffy, and she can hear the wagon rattle, but she stays still and waits.",
+  "ask": "How much perseverance did Naomi show? Slide to show.",
+  "line": "Tell why in one sentence.",
+  "placeholder": "She showed this much because…",
+  "take": "Mason's take: a lot. She was scared, and she stayed. Sometimes perseverance means holding still and waiting."
+ }
+}

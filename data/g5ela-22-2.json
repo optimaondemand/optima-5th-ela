@@ -1,0 +1,237 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "In Chapter 21, Joseph becomes the panther again, and a dog surprises everyone. The poem today is about a tiger burning bright. Watch which pictures Blake gives you, and listen for fire in the chapter too."
+  },
+  "words": {
+   "text": "Today, decide whether each light word came from Latin or from Greek. Then sort long book words by the root at their center. Then four new lanterns to light."
+  },
+  "reading": {
+   "text": "Read Chapter 21 in your book. Track what the panther does, one action at a time, and how each one helps Naomi get away. Then try the Read Like a Writer sentence about the fire, and finish with the Virtue Watch."
+  },
+  "assignment": {
+   "text": "Three questions about Chapter 21. Then write the full draft of your paragraph: a claim, two pieces of evidence with your explanation, and a closing sentence. Use at least one transition word."
+  }
+ },
+ "how": [
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read today's skill.",
+    "Tap the lens you will use today.",
+    "Collect the pictures in Chapter 21 as you read."
+   ],
+   "why": "An image can mean more than what it shows.",
+   "use": "You will use this for question 2."
+  },
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted words in the first sentence.",
+    "Find the pronoun that could mean two people in the second.",
+    "Fix it out loud, then tap Check My Work."
+   ],
+   "why": "A pronoun like he, she or they should point to only one person."
+  },
+  {
+   "match": "Poetry Corner",
+   "do": [
+    "Read the poem out loud once.",
+    "Find the picture you see most clearly.",
+    "Read Think About It and keep your answer in mind."
+   ],
+   "why": "Poets use pictures instead of telling you what to feel. That is imagery."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Ask: Latin light or Greek light?",
+    "Tap a word, then tap its root and meaning.",
+    "Match all four."
+   ],
+   "why": "luc and lum lean toward brightness. photo leans toward light you can capture."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Read each sentence from the book.",
+    "Look for clues around the word.",
+    "Tap a word, then tap its meaning."
+   ],
+   "why": "Clues in a sentence can tell you what a word means."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Read both versions in each pair.",
+    "Tap the one that leaves the reader guessing.",
+    "Name the pronoun with no noun, then rewrite it in the box."
+   ],
+   "why": "A reader should never have to guess who he or they means."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Find the root in each word.",
+    "Ask: light, light, or look and see?",
+    "Tap a word, then tap its column."
+   ],
+   "why": "The root in the middle tells you the word's family."
+  },
+  {
+   "match": "Chapter Thinking",
+   "do": [
+    "Read Chapter 21 first.",
+    "Answer each question in 2 or more sentences.",
+    "Use details from the chapter as evidence."
+   ],
+   "why": "These questions check what happened and what the author shows you."
+  },
+  {
+   "match": "Workshop",
+   "do": [
+    "Start with your claim sentence.",
+    "Add two pieces of evidence, each with your explanation.",
+    "End with a closing sentence. Use one transition word."
+   ],
+   "why": "Evidence only proves a claim when you explain how.",
+   "use": "Next lesson you will revise it."
+  },
+  {
+   "match": "Virtue Watch",
+   "do": [
+    "Read what perseverance means.",
+    "Read the example from this week.",
+    "After you read, fill in your perseverance log at the end of this tab."
+   ]
+  },
+  {
+   "match": "Chapter Introduction",
+   "do": [
+    "Read the chapter introduction below.",
+    "Open your book and read Chapter 21.",
+    "Then do the Read Like a Writer box and the Virtue Watch below."
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "word": "images",
+   "in": "What Good Readers Do",
+   "meaning": "pictures a writer puts in your mind with words"
+  }
+ ],
+ "miss": {
+  "illuminate": "Find l-u-m-i-n inside: il + lumin + ate. Lum means light, and it is Latin.",
+  "lucid": "Find l-u-c at the start. Luc means light, and it is Latin.",
+  "luminous": "Find l-u-m-i-n at the start. Lum means light, and it is Latin.",
+  "perspective": "Find s-p-e-c-t in the middle. Spect means look.",
+  "photograph": "Look at the end, not the start: photo + graph. Graph means write.",
+  "photosynthesis": "Find p-h-o-t-o at the start. Photo means light, and it is Greek.",
+  "spectacle": "Find s-p-e-c-t at the start. Spect means look.",
+  "vision": "Find v-i-s at the start. Vis means see."
+ },
+ "game": {
+  "type": "lantern",
+  "title": "Light the Lanterns",
+  "sub": "This week's word game · 4 words today",
+  "after": "Spelling",
+  "look": "Each lantern on the branch waits for one word. Read the meaning, then tap the word parts in order to build the word. When the word is whole, its lantern lights up.",
+  "how": {
+   "do": [
+    "Read the meaning under the lantern.",
+    "Tap the first part of the word.",
+    "Tap the next parts in order.",
+    "Tap Next lantern."
+   ],
+   "why": "Long words are built from parts. If you know the parts, you can build a word and spell it."
+  },
+  "doneLine": "Come back tomorrow to light more.",
+  "words": [
+   {
+    "w": "telegraph",
+    "parts": [
+     "tele",
+     "graph"
+    ],
+    "decoys": [
+     "photo"
+    ],
+    "means": "a machine that sent messages far away over wires",
+    "clue": "tele = far",
+    "why": "tele (far) + graph (write): writing sent far away."
+   },
+   {
+    "w": "autobiography",
+    "parts": [
+     "auto",
+     "bio",
+     "graphy"
+    ],
+    "decoys": [
+     "log"
+    ],
+    "means": "the story of a person's life, written by that person",
+    "clue": "auto = self; bio = life",
+    "why": "auto (self) + bio (life) + graphy (writing)."
+   },
+   {
+    "w": "chronic",
+    "parts": [
+     "chron",
+     "ic"
+    ],
+    "decoys": [
+     "graph"
+    ],
+    "means": "lasting a long time, or coming back again and again",
+    "clue": "chron = time",
+    "why": "chron (time) + ic. A chronic cough lasts a long time."
+   },
+   {
+    "w": "luminary",
+    "parts": [
+     "lumin",
+     "ary"
+    ],
+    "decoys": [
+     "photo"
+    ],
+    "means": "a person who lights the way for others",
+    "clue": "lumin = light",
+    "why": "lumin (light) + ary. Others look to a luminary like a light."
+   }
+  ]
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/hbg/barye-walking-panther.jpg",
+  "title": "Walking Panther",
+  "alt": "A dark bronze plaque with a big cat walking to the right, its long tail curled behind it.",
+  "look": "Antoine-Louis Barye made this small bronze plaque in Paris in 1831. His panther is the big cat of Africa and Asia. Joseph becomes an American panther, but you can see the same long, quiet steps, the way he creeps up on the soldiers' camp in Chapter 21.",
+  "lookBtn": "Tap to learn about this bronze",
+  "creator": "Antoine-Louis Barye",
+  "date": "1831",
+  "license": "CC0 (Cleveland Museum of Art, via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Antoine-Louis_Barye_-_Walking_Panther_-_1981.224_-_Cleveland_Museum_of_Art.tif"
+ },
+ "virtue": {
+  "name": "perseverance",
+  "kind": "log",
+  "title": "My perseverance log",
+  "intro": "In Chapter 21, tap the moment you think shows the most perseverance.",
+  "options": [
+   {
+    "t": "Naomi, her wrists still tied to the rope, says “Lead the way” and runs."
+   },
+   {
+    "t": "Panther Joseph keeps fighting after the soldiers fire at the tree."
+   },
+   {
+    "t": "Nita goes alone in the night to wake the whole Choctaw Council."
+   }
+  ],
+  "line": "Finish the sentence: This shows the most perseverance because…",
+  "placeholder": "This shows the most perseverance because…"
+ }
+}
