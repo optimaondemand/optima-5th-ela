@@ -802,6 +802,121 @@
     else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
   }
 
+  /* ── 12d. the week's word game: The Spyglass (week 21) ──────
+     DATA.game = {type:'spy', title, sub, after, look, how, doneLine,
+                  words:[{w:'visitor', root:'vis', part:'vis', opts:['…','…','…'], ok:1, why}]}
+     root is 'vis' (vis/vid = see) or 'spect' (look); part = the letters to light up in the word.
+     Step 1: tap the root the word carries. Step 2: tap its meaning. Each word found adds a star.
+     Storage oao.g5ela.spy.wk<NN> {day:{done:[i]}}. */
+  function buildSpyglass() {
+    var G = D.game; if (!G || G.type !== 'spy' || !G.words || !G.words.length) return;
+    var wkKey = 'spy.wk' + L.week;
+    var st = store(wkKey) || {};
+    var mine = st[L.day] || { done: [] };
+    var W = G.words, idx = 0;
+    while (idx < W.length && mine.done.indexOf(idx) >= 0) idx++;
+    var wrap = h('div', { 'class': 'activity g5-game' });
+    wrap.innerHTML =
+      '<div class="activity-head"><div class="activity-num g5-game-num" aria-hidden="true">🔭</div><div>' +
+      '<div class="activity-title">' + esc(G.title || 'The Spyglass') + '</div>' +
+      '<div class="activity-sub">' + esc(G.sub || 'Word game for this week') + '</div></div></div>';
+    var body = h('div', { 'class': 'activity-body' });
+    wrap.appendChild(body);
+    var look = h('details', { 'class': 'g5-look' }, [h('summary', { text: '👀 What am I looking at?' }), h('p', { text: G.look })]);
+    if (!mine.done.length) look.open = true;
+    body.appendChild(look);
+    if (G.how) body.appendChild(howLine(G.how));
+    var scene = h('div', { 'class': 'g5-river g5-spy', role: 'img', 'aria-label': 'A brass spyglass pointed at the night sky. Each word you find adds a star.' });
+    body.appendChild(scene);
+    var stepBox = h('div', { 'class': 'g5-stone-step', 'aria-live': 'polite' });
+    var pick = h('div', { 'class': 'g5-spy-pick' });
+    var ctrl = h('div', { 'class': 'g5-stone-ctrl' });
+    var fb = h('p', { 'class': 'g5-stone-fb', 'aria-live': 'polite' });
+    var tally = h('p', { 'class': 'g5-stone-tally' });
+    [stepBox, pick, ctrl, fb, tally].forEach(function (n) { body.appendChild(n); });
+
+    function lensWord(S, lit) {
+      var w = S.w, at = lit ? w.indexOf(S.part) : -1;
+      if (at < 0) return esc(w);
+      return esc(w.slice(0, at)) + '<tspan class="g5-spy-lit">' + esc(S.part) + '</tspan>' + esc(w.slice(at + S.part.length));
+    }
+    function draw(S, lit) {
+      var allDone = 0;
+      Object.keys(st).forEach(function (k) { allDone += (st[k].done || []).length; });
+      var n = mine.done.length, w = 900, hgt = 190, cx = 560, cy = 95, r = 78, svg = '';
+      svg += '<svg viewBox="0 0 ' + w + ' ' + hgt + '" preserveAspectRatio="xMidYMid meet" aria-hidden="true">' +
+        '<defs><linearGradient id="g5sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#121B33"/><stop offset="1" stop-color="#28324F"/></linearGradient>' +
+        '<linearGradient id="g5brass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E2C27A"/><stop offset=".5" stop-color="#B38A3E"/><stop offset="1" stop-color="#7D5E26"/></linearGradient>' +
+        '<clipPath id="g5lens"><circle cx="' + cx + '" cy="' + cy + '" r="' + (r - 8) + '"/></clipPath></defs>' +
+        '<rect width="' + w + '" height="' + hgt + '" fill="url(#g5sky)"/>';
+      for (var s = 0; s < 22; s++) svg += '<circle cx="' + ((s * 151) % w) + '" cy="' + (10 + (s * 47) % 120) + '" r="1" fill="rgba(255,255,255,.35)"/>';
+      svg += '<path d="M0,170 C140,150 260,160 380,168 L380,190 L0,190 Z" fill="#0D1426"/>';
+      // the spyglass: three brass tubes from the lower left up to the lens
+      svg += '<g transform="rotate(-12 ' + cx + ' ' + cy + ')">' +
+        '<rect x="' + (cx - r - 300) + '" y="' + (cy - 16) + '" width="120" height="32" rx="5" fill="url(#g5brass)" stroke="#5C4419"/>' +
+        '<rect x="' + (cx - r - 185) + '" y="' + (cy - 24) + '" width="110" height="48" rx="5" fill="url(#g5brass)" stroke="#5C4419"/>' +
+        '<rect x="' + (cx - r - 80) + '" y="' + (cy - 34) + '" width="90" height="68" rx="6" fill="url(#g5brass)" stroke="#5C4419"/></g>';
+      svg += '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="url(#g5brass)" stroke="#5C4419" stroke-width="2"/>' +
+        '<circle cx="' + cx + '" cy="' + cy + '" r="' + (r - 8) + '" fill="#F6F1E3"/>';
+      svg += '<g clip-path="url(#g5lens)">';
+      for (var i = 0; i < W.length; i++) {   // a star in the lens for each word found today
+        if (mine.done.indexOf(i) < 0) continue;
+        var sx = cx - 50 + (i * 37) % 100, sy = cy - 50 + (i * 23) % 26;
+        svg += '<path d="M' + sx + ',' + (sy - 6) + ' L' + (sx + 2) + ',' + (sy - 2) + ' L' + (sx + 6) + ',' + sy + ' L' + (sx + 2) + ',' + (sy + 2) + ' L' + sx + ',' + (sy + 6) + ' L' + (sx - 2) + ',' + (sy + 2) + ' L' + (sx - 6) + ',' + sy + ' L' + (sx - 2) + ',' + (sy - 2) + ' Z" fill="#D9A93E"/>';
+      }
+      if (S) svg += '<text x="' + cx + '" y="' + (cy + 12) + '" text-anchor="middle" class="g5-spy-word">' + lensWord(S, lit) + '</text>';
+      else svg += '<text x="' + cx + '" y="' + (cy + 8) + '" text-anchor="middle" class="g5-spy-done">' + n + ' ★</text>';
+      svg += '</g></svg>';
+      scene.innerHTML = svg;
+      tally.textContent = 'Today: ' + n + ' of ' + W.length + (W.length === 1 ? ' word' : ' words') + '. This week: ' + allDone + (allDone === 1 ? ' star' : ' stars') + ' in the spyglass.';
+    }
+    function save() { st[L.day] = mine; store(wkKey, st); }
+    function shake(b) { b.classList.add('g5-shake'); setTimeout(function () { b.classList.remove('g5-shake'); }, 450); }
+    function show() {
+      fb.textContent = ''; ctrl.innerHTML = ''; pick.innerHTML = '';
+      if (idx >= W.length) {
+        draw(null);
+        stepBox.innerHTML = '<b>Every word is in focus.</b> ' + esc(G.doneLine || 'Come back tomorrow for more.');
+        var again = h('button', { type: 'button', 'class': 'g5-btn g5-btn-ghost' }, ['↺ Look again']);
+        again.addEventListener('click', function () { mine.done = []; idx = 0; save(); show(); });
+        ctrl.appendChild(again); return;
+      }
+      var S = W[idx];
+      draw(S, false);
+      stepBox.innerHTML = '<span class="g5-stepn">Word ' + (idx + 1) + ' of ' + W.length + '</span> Which root is inside this word?';
+      [['vis', 'vis / vid · see'], ['spect', 'spect · look']].forEach(function (R) {
+        var b = h('button', { type: 'button', 'class': 'g5-beat g5-spy-root' }, [R[1]]);
+        b.addEventListener('click', function () {
+          if (R[0] !== S.root) { fb.textContent = 'Look closely at the letters. Find ' + (S.root === 'vis' ? 'v-i-s or v-i-d' : 's-p-e-c-t') + ' hiding in the word.'; shake(b); return; }
+          b.classList.add('g5-beat-on'); draw(S, true); meanings(S);
+        });
+        pick.appendChild(b);
+      });
+    }
+    function meanings(S) {
+      pick.innerHTML = ''; fb.textContent = '';
+      stepBox.innerHTML = '<span class="g5-stepn">Word ' + (idx + 1) + ' of ' + W.length + '</span> The root is lit. Now tap what <b>' + esc(S.w) + '</b> means.';
+      S.opts.forEach(function (o, k) {
+        var b = h('button', { type: 'button', 'class': 'g5-spy-opt' }, [o]);
+        b.addEventListener('click', function () {
+          if (k !== S.ok) { fb.textContent = 'Not quite. The root means ' + (S.root === 'vis' ? 'see' : 'look') + '. Which meaning has seeing or looking in it?'; shake(b); return; }
+          b.classList.add('g5-spy-on'); pick.querySelectorAll('button').forEach(function (x) { x.disabled = true; });
+          fb.textContent = S.why || 'Yes.';
+          if (mine.done.indexOf(idx) < 0) mine.done.push(idx);
+          save(); draw(S, true);
+          var next = h('button', { type: 'button', 'class': 'g5-btn' }, [idx + 1 < W.length ? 'Next word →' : 'Finish →']);
+          next.addEventListener('click', function () { idx++; while (idx < W.length && mine.done.indexOf(idx) >= 0) idx++; show(); setTimeout(function () { var f = pick.querySelector('button') || ctrl.querySelector('button'); if (f) f.focus(); }, 30); });
+          ctrl.appendChild(next);
+        });
+        pick.appendChild(b);
+      });
+    }
+    show();
+    var ref = G.after ? activityByTitle(G.after, panel('words')) : null;
+    if (ref) afterNode(ref, wrap);
+    else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
+  }
+
   /* ── 13. the Commonplace Book page ─────────────────────────── */
   var NAME_BAD = /\b(ass|butt|poop|fart|stupid|dumb|idiot|hate|kill|sex|damn|hell|crap)\b/i;
   function profileName() { var p = store('profile'); return p && p.name ? p.name : ''; }
@@ -1588,6 +1703,7 @@
     guard('stones', buildStones);
     guard('footprints', buildFootprints);
     guard('fire', buildFire);
+    guard('spy', buildSpyglass);
     guard('cards', buildCards);
     guard('checks', buildChecks);
     guard('virtue', buildVirtue);
