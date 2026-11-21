@@ -2552,7 +2552,7 @@ body {
         <div class="dol-hint">Tap the highlighted words to see what&rsquo;s correct.</div>
         <div class="dol-fix-label">&#128295; Now fix this one</div>
         <div class="dol-sentence-wrap" style="border-left:4px solid #8B3A20;">after sundown gabe and my father built a campfire close to the road</div>
-        <div class="dol-hint">Rewrite in active voice with strong verbs. Fix capitalization and punctuation.</div>
+        <div class="dol-hint">Fix the capital letters and add the missing comma.</div>
         <button class="dol-check-btn" style="margin-top:12px;" onclick="document.getElementById('dolAns').classList.toggle('show')">&#128269; Check My Work</button>
         <div class="dol-answer" id="dolAns">
           <p style="margin-bottom:6px;"><strong>Corrected:</strong> After sundown, Gabe and my father built a campfire close to the road.</p>
@@ -2611,7 +2611,7 @@ body {
 
   <!-- VOCABULARY -->
   <div class="activity bl-cyan">
-    <div class="activity-head"><div class="activity-num" style="background:#C8A850;">2</div><div style="flex:1;"><div class="activity-title">&#x1F524; Vocabulary</div><div class="activity-sub">Decode &amp; Discover &mdash; words from Chapters 8–11</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#C8A850;">2</div><div style="flex:1;"><div class="activity-title">&#x1F524; Vocabulary</div><div class="activity-sub">Decode &amp; Discover &mdash; words from this week&rsquo;s chapters</div></div></div>
     <div class="activity-body">
       <p>Five words from Chapters 8, 9 and 10. Read the sentence from the book first and make your best guess at the word, then tap the card to check.</p>
       <div class="vocab-grid">
@@ -2626,7 +2626,7 @@ body {
               </div>
               <div class="flip-card-back">
                 <div class="fc-word-back">smallpox</div>
-                <div class="fc-def">A deadly disease that spreads from person to person. The soldiers' blankets carried it.</div>
+                <div class="fc-def">A deadly disease that spreads from person to person. In the story, blankets carried it.</div>
               </div>
             </div>
           </div>
@@ -2658,7 +2658,7 @@ body {
               </div>
               <div class="flip-card-back">
                 <div class="fc-word-back">sickness</div>
-                <div class="fc-def">Illness. On the road, Choctaws died from sickness and from hunger.</div>
+                <div class="fc-def">Being ill; disease.</div>
               </div>
             </div>
           </div>
@@ -2700,11 +2700,11 @@ body {
       <div class="match-game" id="vocabMatch">
         <div class="match-grid" id="matchGrid">
           <div class="match-item is-word" data-match="A" onclick="matchClick(this)">smallpox</div>
-          <div class="match-item" data-match="C" onclick="matchClick(this)">Illness. On the road, Choctaws died from sickness and from hunger.</div>
+          <div class="match-item" data-match="C" onclick="matchClick(this)">Being ill; disease.</div>
           <div class="match-item is-word" data-match="B" onclick="matchClick(this)">belongings</div>
           <div class="match-item" data-match="E" onclick="matchClick(this)">Disappeared suddenly and completely.</div>
           <div class="match-item is-word" data-match="C" onclick="matchClick(this)">sickness</div>
-          <div class="match-item" data-match="A" onclick="matchClick(this)">A deadly disease that spreads from person to person. The soldiers' blankets carried it.</div>
+          <div class="match-item" data-match="A" onclick="matchClick(this)">A deadly disease that spreads from person to person. In the story, blankets carried it.</div>
           <div class="match-item is-word" data-match="D" onclick="matchClick(this)">refused</div>
           <div class="match-item" data-match="B" onclick="matchClick(this)">The things a person owns and carries with them.</div>
           <div class="match-item is-word" data-match="E" onclick="matchClick(this)">vanished</div>
@@ -2917,7 +2917,7 @@ body {
         <span style="background:#FAFBFF;color:#7A88A8;padding:4px 8px;border-radius:6px;font-size:11px;">&#9675; Revise</span>
         <span style="background:#FAFBFF;color:#7A88A8;padding:4px 8px;border-radius:6px;font-size:11px;">&#9675; Submit</span>
       </div>
-      <div class="textbox-prompt">Today is the <strong>Plan</strong> stage. This week you will draft a scene about conflict and rising tension. Think about a moment from the novel &mdash; or from your own life &mdash; where danger and hope existed at the same time. In your reading journal: jot down what the conflict is, what makes it tense, and what small hope breaks through.</div>
+      <div class="textbox-prompt">Today is the <strong>Plan</strong> stage. This week you will draft a scene about conflict and rising tension. Think about a moment from the novel &mdash; or from your own life &mdash; where danger and hope existed at the same time. In the box below, jot down what the conflict is, what makes it tense, and what small hope breaks through.</div>
       <textarea class="journal-box" id="journal-writing" data-label="Writer's Workshop: Conflict and Rising Action — Plan" placeholder="Conflict: ... Tension: ... Small hope: ..." oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
     </div>
   </div>
@@ -2992,9 +2992,9 @@ function gatherAnswers() {
   var output = '';
   var sections = [
     { title: '📖 CH. 8 — CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
-    { title: 'MORPHOLOGY SWYK', ids: ['journal-grammar'] },
+    { title: 'GRAMMAR SWYK', ids: ['journal-grammar'] },
     { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
-    { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
+    { title: '✍️ WRITER\'S WORKSHOP', ids: ['journal-writing'] }
   ];
 
   output += 'LESSON 19.1 — How I Became a Ghost, Ch. 8 (Walking People)\n';
@@ -3475,7 +3475,7 @@ function downloadJournal() {
     { title: '📖 CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: '🔤 WORD STUDY CONNECTION (GRAMMAR)', ids: ['journal-grammar'] },
     { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
-    { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
+    { title: '✍️ WRITER\'S WORKSHOP', ids: ['journal-writing'] }
   ];
 
   var html = '<!DOCTYPE html><html><head><meta charset="UTF-8">';

@@ -2514,7 +2514,7 @@ body {
         <div class="dol-hint">Tap the highlighted words to see what&rsquo;s correct.</div>
         <div class="dol-fix-label">&#128295; Now fix this one</div>
         <div class="dol-sentence-wrap" style="border-left:4px solid #8B3A20;">although the pain wouldn't go away isaac kept walking and did not stop</div>
-        <div class="dol-hint">Rewrite in active voice with strong verbs. Fix capitalization and punctuation.</div>
+        <div class="dol-hint">Fix the capitals and the comma, and cut the words that repeat.</div>
         <button class="dol-check-btn" style="margin-top:12px;" onclick="document.getElementById('dolAns').classList.toggle('show')">&#128269; Check My Work</button>
         <div class="dol-answer" id="dolAns">
           <p style="margin-bottom:6px;"><strong>Corrected:</strong> Although the pain wouldn&rsquo;t go away, Isaac kept walking.</p>
@@ -2595,9 +2595,9 @@ body {
 <span style="transition:transform .2s;">&#x25B6;</span> &#x1F4D6; Word Bank &mdash; tap to see this week&rsquo;s definitions
 </summary>
 <div style="padding:4px 16px 14px;font-size:14px;color:#3A4A6B;line-height:1.7;">
-<p style="margin:4px 0;"><strong>smallpox</strong> &mdash; A deadly disease that spreads from person to person. The soldiers' blankets carried it.</p>
+<p style="margin:4px 0;"><strong>smallpox</strong> &mdash; A deadly disease that spreads from person to person. In the story, blankets carried it.</p>
 <p style="margin:4px 0;"><strong>belongings</strong> &mdash; The things a person owns and carries with them.</p>
-<p style="margin:4px 0;"><strong>sickness</strong> &mdash; Illness. On the road, Choctaws died from sickness and from hunger.</p>
+<p style="margin:4px 0;"><strong>sickness</strong> &mdash; Being ill; disease.</p>
 <p style="margin:4px 0;"><strong>refused</strong> &mdash; Said no firmly, even when told to do something.</p>
 <p style="margin:4px 0;"><strong>vanished</strong> &mdash; Disappeared suddenly and completely.</p>
 </div>
@@ -2605,7 +2605,7 @@ body {
 
       <p>You have worked with these words all week. Show what you know: write your own sentence for each one. Make the sentence prove you understand the word &mdash; not just that you can spell it.</p>
       <div class="vocab-use-item" style="margin-bottom:14px;">
-        <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">smallpox <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; A deadly disease that spreads from person to person. The soldiers' blankets carried it.</span></div>
+        <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">smallpox <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; A deadly disease that spreads from person to person. In the story, blankets carried it.</span></div>
         <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-smallpox"></span></div>
         <textarea class="journal-box" id="journal-vocab-smallpox" data-label="Vocabulary: smallpox" placeholder="Write a sentence using smallpox..." oninput="autoSave(this,'dot-vocab-smallpox');gatherAnswers();" style="min-height:50px;"></textarea>
       </div>
@@ -2615,7 +2615,7 @@ body {
         <textarea class="journal-box" id="journal-vocab-belongings" data-label="Vocabulary: belongings" placeholder="Write a sentence using belongings..." oninput="autoSave(this,'dot-vocab-belongings');gatherAnswers();" style="min-height:50px;"></textarea>
       </div>
       <div class="vocab-use-item" style="margin-bottom:14px;">
-        <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">sickness <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; Illness. On the road, Choctaws died from sickness and from hunger.</span></div>
+        <div style="font-size:18px;font-weight:700;color:#8B3A20;margin-bottom:4px;">sickness <span style="font-size:13px;font-weight:400;color:#7A88A8;">&mdash; Being ill; disease.</span></div>
         <div class="journal-label">&#x1F4D3; Your sentence <span class="saved-dot" id="dot-vocab-sickness"></span></div>
         <textarea class="journal-box" id="journal-vocab-sickness" data-label="Vocabulary: sickness" placeholder="Write a sentence using sickness..." oninput="autoSave(this,'dot-vocab-sickness');gatherAnswers();" style="min-height:50px;"></textarea>
       </div>
@@ -2761,6 +2761,7 @@ body {
   <div class="activity bl-navy">
     <div class="activity-head"><div class="activity-num" style="background:#2C5F2E;">&#127280;</div><div><div class="activity-title">&#128212; Reading &middot; Chapter Introduction</div><div class="activity-sub">Watch, then read.</div></div></div>
     <div class="activity-body">
+    <p>In Chapter 11, Nita gives Isaac a gift, and Isaac sees something about her that he does not want to see. This chapter holds a hard loss. Read it slowly, and notice how Isaac&rsquo;s family and friends care for each other.</p>
         <div class="activity bl-purple" style="margin-bottom:18px;">
     <div class="activity-head">
       <div class="activity-num" style="background:#8B6FC0;">&#128218;</div>
@@ -2918,7 +2919,7 @@ function gatherAnswers() {
     { title: '📖 CH. 11 — CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: 'GRAMMAR SWYK', ids: ['journal-grammar'] },
     { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
-    { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
+    { title: '✍️ WRITER\'S WORKSHOP', ids: ['journal-writing'] }
   ];
 
   output += 'LESSON 19.4 — How I Became a Ghost, Ch. 11 (Nita’s Walk)\n';
@@ -3399,7 +3400,7 @@ function downloadJournal() {
     { title: '📖 CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: '🔤 WORD STUDY CONNECTION (GRAMMAR)', ids: ['journal-grammar'] },
     { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
-    { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
+    { title: '✍️ WRITER\'S WORKSHOP', ids: ['journal-writing'] }
   ];
 
   var html = '<!DOCTYPE html><html><head><meta charset="UTF-8">';
