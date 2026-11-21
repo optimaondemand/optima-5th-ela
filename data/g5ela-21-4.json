@@ -1,0 +1,245 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "This is the last day of the week. In Chapter 19, Isaac learns what he can and cannot do as a ghost, and he goes looking for Naomi. The poem today asks the same question twice. Notice how you can know something is there, even when you cannot see it."
+  },
+  "words": {
+   "text": "Last day with the sight roots. Explain the difference between looking and seeing. Then the academic pairs that trip up even grown writers: affect and effect, principal and principle. Then the last five words in the spyglass."
+  },
+  "reading": {
+   "text": "Read Chapter 19 in your book. Watch what Isaac discovers in the soldiers' camp, and listen to what Naomi says when he whispers her name. Then put the week together with your lens: name the theme. Finish with the Virtue Watch at the end of this tab."
+  },
+  "assignment": {
+   "text": "Three questions about Chapter 19, then your final revised story: five to seven sentences with at least one detail you can sense and one comparison. Then one sentence about what imagery adds. Copy your work and paste it into Canvas."
+  }
+ },
+ "how": [
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted words in the first sentence.",
+    "Find the pronoun that could mean two people in the second.",
+    "Fix it out loud, then tap Check My Work."
+   ],
+   "why": "A pronoun like he or they should point to only one person or group."
+  },
+  {
+   "match": "Poetry Corner",
+   "do": [
+    "Read the poem out loud once.",
+    "Find the line or picture that comes back.",
+    "Read Think About It and keep your answer in mind."
+   ],
+   "why": "When a poet repeats something, each new picture adds to the idea. That is how a theme grows."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Tap a word.",
+    "Then tap its meaning.",
+    "Say out loud how a spectator and a visionary are different."
+   ],
+   "why": "Explaining two close words out loud shows you know them."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Read each word and its meaning.",
+    "Write one sentence for each word.",
+    "Make each sentence show the meaning."
+   ],
+   "why": "Using a word in your own sentence is the best proof you know it."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Tap the passage with better variety in each pair.",
+    "Find a place in this week's chapters with short and long sentences.",
+    "Copy two sentences and explain in the box."
+   ],
+   "why": "Mixing short and long sentences controls where a reader slows down."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Read each word.",
+    "Match it to its meaning.",
+    "Tap a word, then tap its column."
+   ],
+   "why": "These pairs sound alike but mean different things in an essay."
+  },
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read today's skill.",
+    "Tap your lens for today.",
+    "Pick one picture that came back this week and say what it shows about people."
+   ],
+   "why": "Naming a theme means saying what the book shows, in a full sentence.",
+   "use": "You will use this for question 3."
+  },
+  {
+   "match": "Chapter Thinking",
+   "do": [
+    "Read Chapter 19 first.",
+    "Answer each question in 2 or more sentences.",
+    "Use details from the chapter as evidence."
+   ],
+   "why": "These questions check what happened and what it shows about the people in the story."
+  },
+  {
+   "match": "Workshop",
+   "do": [
+    "Write the full revised story, 5 to 7 sentences.",
+    "Include one detail you can sense and one comparison.",
+    "Add one sentence about what imagery adds."
+   ],
+   "why": "Today you finish your revision and turn it in."
+  },
+  {
+   "match": "Virtue Watch",
+   "do": [
+    "Read what courage means.",
+    "Read the example from this week.",
+    "After you read, pick the strongest moment of the week at the end of this tab."
+   ]
+  },
+  {
+   "match": "Chapter Introduction",
+   "do": [
+    "Read the chapter introduction below.",
+    "Open your book and read Chapter 19.",
+    "Then do the Virtue Watch and the Read Like a Writer box below."
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "word": "synthesize",
+   "in": "What Good Readers Do",
+   "meaning": "to put ideas from different parts together into one bigger idea"
+  }
+ ],
+ "miss": {
+  "affect": "To affect is to change or influence. It is an action (a verb).",
+  "effect": "An effect is a result. It names a thing (a noun).",
+  "principal": "A principal is the chief or head of something.",
+  "principle": "A principle is a rule or belief. It names a thing."
+ },
+ "game": {
+  "type": "spy",
+  "title": "The Spyglass",
+  "sub": "This week's word game · 5 words today",
+  "after": "Spelling",
+  "look": "Isaac sees what other people cannot see. In this game, a brass spyglass looks at one word at a time. First tap the root hiding inside it: vis or vid means see, and spect means look. The root lights up. Then tap what the word means. Every word you get adds a star to the spyglass.",
+  "how": {
+   "do": [
+    "Look at the word in the spyglass.",
+    "Tap the root you find inside it.",
+    "Tap what the word means.",
+    "Tap Next word."
+   ],
+   "why": "If you can spot a root, you can work out a long word you have never seen."
+  },
+  "doneLine": "That is the whole week's sky. Well done.",
+  "words": [
+   {
+    "w": "retrospect",
+    "root": "spect",
+    "part": "spect",
+    "opts": [
+     "looking back at the past",
+     "a kind of map",
+     "a loud cheer"
+    ],
+    "ok": 0,
+    "why": "Yes. Retro means back. In retrospect means looking back."
+   },
+   {
+    "w": "spectrum",
+    "root": "spect",
+    "part": "spect",
+    "opts": [
+     "the range of colors you can look at in a rainbow",
+     "a heavy box",
+     "a quiet song"
+    ],
+    "ok": 0,
+    "why": "Yes. A spectrum is the band of colors you see in a rainbow."
+   },
+   {
+    "w": "envision",
+    "root": "vis",
+    "part": "vis",
+    "opts": [
+     "to picture something in your mind",
+     "to close a door",
+     "to count money"
+    ],
+    "ok": 0,
+    "why": "Yes. To envision is to see a future picture in your mind."
+   },
+   {
+    "w": "advise",
+    "root": "vis",
+    "part": "vis",
+    "opts": [
+     "to tell someone what you think they should do",
+     "to hide something away",
+     "to build a fence"
+    ],
+    "ok": 0,
+    "why": "Yes. To advise is to share how you see a problem."
+   },
+   {
+    "w": "spectacular",
+    "root": "spect",
+    "part": "spect",
+    "opts": [
+     "boring and plain",
+     "amazing to look at",
+     "small and hidden"
+    ],
+    "ok": 1,
+    "why": "Yes. Something spectacular is amazing to look at."
+   }
+  ]
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/hbg/blakelock-moonlight.jpg",
+  "title": "Moonlight",
+  "alt": "A dark painting of trees against a glowing moonlit sky, with moonlight on still water.",
+  "look": "Ralph Albert Blakelock painted this moonlit night around 1885 to 1890. It is not Isaac's road, but it feels like Chapter 19: night by the river, the soldiers' fire burning low, and frogs calling from the water.",
+  "lookBtn": "Tap to learn about this painting",
+  "creator": "Ralph Albert Blakelock",
+  "date": "around 1885 to 1890",
+  "license": "Public domain (Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Ralph_Albert_Blakelock_-_Moonlight_-_54.48_-_Indianapolis_Museum_of_Art.jpg"
+ },
+ "virtue": {
+  "name": "courage",
+  "kind": "best",
+  "title": "The strongest moment of courage this week",
+  "intro": "Look back at Chapters 16 to 19. Tap the moment you think shows courage the most.",
+  "options": [
+   {
+    "t": "Isaac tells Nani Humma his biggest secret."
+   },
+   {
+    "t": "Isaac says Naomi might not want to go, even though Joseph disagrees."
+   },
+   {
+    "t": "Joseph fights the wolf to save Isaac."
+   },
+   {
+    "t": "Isaac does not go back into his body, and lets his family carry him."
+   },
+   {
+    "t": "Isaac walks into the soldiers' camp to find Naomi."
+   }
+  ],
+  "line": "Finish the sentence: This shows courage the most because…",
+  "placeholder": "This shows courage the most because…"
+ }
+}

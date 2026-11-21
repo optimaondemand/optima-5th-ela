@@ -1,0 +1,252 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "In Chapter 16, Nani Humma catches Isaac and Joseph talking by the creek at night, and the Choctaw Council learns about Naomi. Your reading lens this week is theme. Watch for things that come back in the story, like blankets and footprints. Each time, ask what they mean now."
+  },
+  "words": {
+   "text": "Two roots this week, and both are about sight. One means see. One means look. Then words that sound the same but are spelled differently. A spell checker will not catch them. In the spyglass game, find the root first, then the meaning."
+  },
+  "reading": {
+   "text": "Read Chapter 16 of How I Became a Ghost in your book. Watch what the boys tell Nani Humma, and what the council decides to do about Naomi. Then do the Read Like a Writer box and the Virtue Watch at the end of this tab."
+  },
+  "assignment": {
+   "text": "Three questions about Chapter 16. Then a new piece of writing begins. This week you will go back to a story you wrote and make the pictures in it stronger. Today you only choose three moments to work on."
+  }
+ },
+ "how": [
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read the three lenses.",
+    "Tap the one you will use today.",
+    "Keep it in mind as you read. You will use it at the end."
+   ],
+   "why": "A theme grows when the same picture comes back and means a little more each time.",
+   "use": "You will use this when you answer the chapter questions."
+  },
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted words in the first sentence.",
+    "Find the pronoun that could mean two people in the second.",
+    "Fix it out loud, then tap Check My Work."
+   ],
+   "why": "A pronoun like he or they should point to only one person or group."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Read the two roots and what they mean.",
+    "Tap a word, then tap its meaning.",
+    "Match all four."
+   ],
+   "why": "This book is about seeing what others cannot. These roots name seeing and looking."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Read the book sentence on each card.",
+    "Guess what the word means.",
+    "Tap the card to check.",
+    "Match each word to its meaning."
+   ],
+   "why": "These words show up in this week's chapters. Knowing them first keeps the reading smooth."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Find where the two halves meet.",
+    "Think through the questions.",
+    "Tap Now check your thinking.",
+    "Tap the compound sentence in each pair, then write in the box."
+   ],
+   "why": "Joining ideas in different ways changes how a sentence sounds and what it says."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Read each word and think of its meaning.",
+    "Ask what job it does in a sentence.",
+    "Tap a word, then tap its column."
+   ],
+   "why": "Words that sound the same are spelled by meaning, not by sound."
+  },
+  {
+   "match": "Chapter Thinking",
+   "do": [
+    "Read Chapter 16 first.",
+    "Answer each question in 2 or more sentences.",
+    "Use details from the chapter as evidence."
+   ],
+   "why": "These questions check what happened and what it shows about the people in the story."
+  },
+  {
+   "match": "Workshop",
+   "do": [
+    "Open a story you wrote in week 18 or 19.",
+    "Pick three moments that need stronger pictures.",
+    "In the box, copy each one and note what you want to add."
+   ],
+   "why": "Imagery helps a reader see, hear and feel a moment. Today you only choose.",
+   "use": "Tomorrow you will revise the first moment."
+  },
+  {
+   "match": "Virtue Watch",
+   "do": [
+    "Read what courage means.",
+    "Read the example from this week.",
+    "After you read, sort the moments at the end of this tab."
+   ]
+  },
+  {
+   "match": "Chapter Introduction",
+   "do": [
+    "Read the chapter introduction below.",
+    "Open your book and read Chapter 16.",
+    "Then do the Virtue Watch and the Read Like a Writer box below."
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "word": "repetition",
+   "in": "What Good Readers Do",
+   "meaning": "saying or showing the same thing more than once"
+  },
+  {
+   "word": "theme",
+   "in": "What Good Readers Do",
+   "meaning": "a big idea a book shows about people, said as a full sentence"
+  }
+ ],
+ "miss": {
+  "capital": "A capital is a city where a government meets. It names a place.",
+  "council": "A council is a group of leaders. It names a thing.",
+  "it's": "It's is two words squeezed: it is. Try saying it is in the sentence.",
+  "its": "Its shows ownership, with no apostrophe: the wagon and its wheels.",
+  "their": "Their shows ownership: their wagon.",
+  "there": "There points to a place: over there.",
+  "they're": "They're is two words squeezed: they are.",
+  "who's": "Who's is two words squeezed: who is.",
+  "whose": "Whose asks who owns something: whose blanket?"
+ },
+ "game": {
+  "type": "spy",
+  "title": "The Spyglass",
+  "sub": "This week's word game · 5 words today",
+  "after": "Spelling",
+  "look": "Isaac sees what other people cannot see. In this game, a brass spyglass looks at one word at a time. First tap the root hiding inside it: vis or vid means see, and spect means look. The root lights up. Then tap what the word means. Every word you get adds a star to the spyglass.",
+  "how": {
+   "do": [
+    "Look at the word in the spyglass.",
+    "Tap the root you find inside it.",
+    "Tap what the word means.",
+    "Tap Next word."
+   ],
+   "why": "If you can spot a root, you can work out a long word you have never seen."
+  },
+  "doneLine": "Come back tomorrow for more.",
+  "words": [
+   {
+    "w": "visitor",
+    "root": "vis",
+    "part": "vis",
+    "opts": [
+     "someone who comes to see you",
+     "someone who writes you a letter",
+     "someone who leads a group"
+    ],
+    "ok": 0,
+    "why": "Yes. A visitor comes to see you. vis = see."
+   },
+   {
+    "w": "respect",
+    "root": "spect",
+    "part": "spect",
+    "opts": [
+     "to forget about someone",
+     "to look up to someone",
+     "to run away from someone"
+    ],
+    "ok": 1,
+    "why": "Yes. To respect someone is to look up to them. spect = look."
+   },
+   {
+    "w": "visual",
+    "root": "vis",
+    "part": "vis",
+    "opts": [
+     "about sounds",
+     "about seeing",
+     "about smells"
+    ],
+    "ok": 1,
+    "why": "Yes. A visual is something you see, like a picture or a map."
+   },
+   {
+    "w": "inspector",
+    "root": "spect",
+    "part": "spect",
+    "opts": [
+     "a person who looks closely to check things",
+     "a person who sings in a choir",
+     "a person who drives a wagon"
+    ],
+    "ok": 0,
+    "why": "Yes. An inspector looks closely at things to check them."
+   },
+   {
+    "w": "vista",
+    "root": "vis",
+    "part": "vis",
+    "opts": [
+     "a loud noise",
+     "a wide view you can see",
+     "a kind of soup"
+    ],
+    "ok": 1,
+    "why": "Yes. A vista is a wide view, like a valley seen from a hill."
+   }
+  ]
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/hbg/durand-in-the-woods.jpg",
+  "title": "In the Woods",
+  "alt": "A painting of a deep forest with tall trees, a thin path and light coming through the leaves.",
+  "look": "Asher Durand painted this forest in New York in 1855. It is far from Isaac's road, but it fits Chapter 16: the boys meet behind a big tree by the creek, and the councilwomen head into the woods to look for berries.",
+  "lookBtn": "Tap to learn about this painting",
+  "creator": "Asher Brown Durand",
+  "date": "1855",
+  "license": "CC0 (The Metropolitan Museum of Art, via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:In_the_Woods_MET_co.ap.95.13.1_1.jpg"
+ },
+ "virtue": {
+  "name": "courage",
+  "kind": "sort",
+  "title": "Courage or not?",
+  "intro": "You just read Chapter 16. Read each moment. Tap Courage or Not courage.",
+  "items": [
+   {
+    "t": "Isaac tells Nani Humma his biggest secret: “I will soon be a ghost.”",
+    "ok": true,
+    "why": "He tells the truth to someone who could send him away. That takes courage."
+   },
+   {
+    "t": "Caught in the woods, Isaac hangs his head and says nothing.",
+    "ok": false,
+    "why": "Being caught is not a choice. What he does next, telling the whole story, is the brave part."
+   },
+   {
+    "t": "The councilwomen walk close to the soldiers and wave, so they can look for Naomi.",
+    "ok": true,
+    "why": "They get close to dangerous men on purpose to help a girl. That is courage."
+   },
+   {
+    "t": "The councilmen are angry when they hear Naomi was taken.",
+    "ok": false,
+    "why": "Feeling angry is not courage yet. Courage is what a person does about it."
+   }
+  ]
+ }
+}
