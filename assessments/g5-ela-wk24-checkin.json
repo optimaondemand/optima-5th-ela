@@ -1,0 +1,188 @@
+{
+ "id": "g5-ela-wk24-checkin",
+ "title": "Week 24 Check-In · How I Became a Ghost",
+ "description": "This week you finished the novel and set it beside two real sources: a treaty from 1830 and a letter by a Choctaw chief from 1831. You practiced formal style and source transitions, the vocabulary of history, and taking long words apart. Show what you know.",
+ "chapters": "Ch. 28–29 and the source study",
+ "questions": [
+  {
+   "n": 1,
+   "section": "Grammar",
+   "label": "Identification",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which sentence is written in formal style for an essay?",
+   "options": [
+    "Leader was super mean to Naomi.",
+    "In Chapter 28, Naomi chooses to save Leader’s life.",
+    "You’d be so scared if a wolf came at you.",
+    "Naomi’s pretty much the bravest kid ever."
+   ],
+   "answer": 1,
+   "from": "24.1–24.2 Grammar (formal style); Ch. 28",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 2,
+   "section": "Grammar",
+   "label": "Rewrite",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Rewrite this sentence in formal style.",
+   "excerpt": "Pushmataha’s a really big deal in Choctaw history and he totally shows up at the end.",
+   "key": "Ex.: Pushmataha, an important figure in Choctaw history, appears at the end of the novel. (No contractions, no slang.)",
+   "from": "24.1–24.2 Grammar (formal style)",
+   "status": "kept"
+  },
+  {
+   "n": 3,
+   "section": "Grammar",
+   "label": "Source Transition",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Write one sentence about the novel that begins with a source transition, such as According to, Tingle suggests, or In the novel.",
+   "key": "Begins with a source transition and says something accurate about the novel.",
+   "from": "24.1–24.3 Grammar (source transitions)",
+   "status": "kept"
+  },
+  {
+   "n": 4,
+   "section": "Morphology & Vocabulary",
+   "label": "History Words",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "A formal agreement between nations is called a ___.",
+   "options": [
+    "claim",
+    "treaty",
+    "evidence",
+    "removal"
+   ],
+   "answer": 1,
+   "from": "24.1–24.4 Morphology (the vocabulary of history)",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 5,
+   "section": "Morphology & Vocabulary",
+   "label": "Context Clues",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Read the sentence from Chapter 28. What does lifeless mean?",
+   "excerpt": "“He locked his jaws around the wolf’s head and lifted him off the ground, swinging him back and forth till the wolf was limp and lifeless.”",
+   "options": [
+    "Without life; not moving or breathing",
+    "Tired but still fighting",
+    "Hiding in fear",
+    "Very strong and fierce"
+   ],
+   "answer": 0,
+   "from": "24.1–24.3 Vocabulary",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 6,
+   "section": "Morphology & Vocabulary",
+   "label": "Use It",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Use the word reunited in a sentence that shows you know what it means. Connect it to Chapter 29.",
+   "key": "Uses reunited correctly (brought back together). Ex.: Naomi is reunited with her mother and father.",
+   "from": "24.4 Vocabulary (Use the Word)",
+   "status": "kept"
+  },
+  {
+   "n": 7,
+   "section": "Spelling",
+   "label": "Break It Down",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Break each word into its parts with slashes.",
+   "excerpt": "relocation     displacement",
+   "key": "re / locat(e) / ion; dis / place / ment",
+   "from": "24.1–24.3 Spelling (long-word decoding)",
+   "status": "kept"
+  },
+  {
+   "n": 8,
+   "section": "Spelling",
+   "label": "Endings",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which ending turns govern into a noun?",
+   "options": [
+    "-ly",
+    "-ful",
+    "-ment",
+    "-ed"
+   ],
+   "answer": 2,
+   "from": "24.1 Spelling sort (-ment)",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 9,
+   "section": "Spelling",
+   "label": "Noun Forms",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Write the noun form of each word.",
+   "excerpt": "settle → ___   declare → ___   relocate → ___",
+   "key": "settlement, declaration, relocation",
+   "from": "24.1 and 24.3 Spelling sorts",
+   "status": "kept"
+  },
+  {
+   "n": 10,
+   "section": "Reading",
+   "label": "Detail",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Why does Naomi save Leader from the wolf? What does Leader decide to do afterward?",
+   "key": "It was the right thing to do; it is the Choctaw way. Leader orders the soldiers to put down their weapons and lets Naomi return to her parents (“You have earned your life today”).",
+   "from": "24.1 Reading (Ch. 28)",
+   "status": "kept (key checked against the book)"
+  },
+  {
+   "n": 11,
+   "section": "Reading",
+   "label": "Novel and Sources",
+   "type": "essay_question",
+   "points": 2,
+   "text": "How I Became a Ghost is fiction, but the Choctaw removal really happened. Name one thing the novel helps you understand that the two real sources cannot. Then name one thing a real source (the treaty or Harkins’s letter) tells you that the novel cannot. Use a specific detail from each.",
+   "key": "2 pts: novel = feelings, family, Choctaw beliefs and a child’s voice (e.g., “It is the Choctaw way,” the reunion in Ch. 29); source = real dates and terms (the falls of 1831, 1832 and 1833; land east of the Mississippi given up) or a real chief’s own words (the removal was not by choice; “with them I must go”). 1 pt: only one side, or no specific detail.",
+   "from": "24.3 Reading (the two sources); 24.3–24.4 What Good Readers Do",
+   "status": "fixed (now names the two sources that are on the pages)"
+  },
+  {
+   "n": 12,
+   "section": "Writing",
+   "label": "Read Like a Writer",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Notice the pattern: two hard things joined by and, then but and one good thing, with a name set off by commas in the middle. Write your own sentence with the same shape.",
+   "excerpt": "“The winter was fierce and food was scarce, but our most feared enemy, Leader, left us alone to be with our families.” (Chapter 29)",
+   "key": "Two hardships + but + one good thing; bonus if it sets a name off with commas.",
+   "from": "24.2 Read Like a Writer (Ch. 29)",
+   "status": "fixed (the section name showed as “{19: , 20: , …}”)"
+  },
+  {
+   "n": 13,
+   "section": "Writing",
+   "label": "Short Response",
+   "type": "essay_question",
+   "points": 1,
+   "text": "The novel begins, “Maybe you have never read a book written by a ghost before. I am a ghost.” It ends with Pushmataha saying, “Chi pisa lachike. I will see you again.” In 2–3 sentences, explain why this is a fitting ending for a story told by a ghost.",
+   "key": "Choctaws never say good-bye; the dead stay with the living. Isaac, a ghost, has stayed with his family the whole book, and the ending promises that the people and the story go on.",
+   "from": "24.2 Reading (Ch. 29); 21.2 (chi pisa lachike)",
+   "status": "fixed (the section name showed as “{19: , 20: , …}”)"
+  }
+ ],
+ "passage": {
+  "before": 10,
+  "title": "Reading passage (Chapter 28)",
+  "ch": 28,
+  "text": "“And you,” he whispered, looking at Naomi. “I vowed that you would die today. Why did you save me?”\n“It was the right thing to do,” said Naomi. “It is the Choctaw way.”",
+  "cite": "Tim Tingle, How I Became a Ghost, Chapter 28"
+ },
+ "rwm_ch": 29
+}
