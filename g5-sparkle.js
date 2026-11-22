@@ -1066,6 +1066,103 @@
     else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
   }
 
+  /* ── 12f. the week's word game: Raise Your Voice (week 23) ──
+     DATA.game = {type:'voice', title, sub, after, look, how, doneLine,
+                  lines:[{who:'A council member', before:'…', after:'…', opts:['advocate','predict','revoke'], ok:0, hint:'…', why:'…'}]}
+     A cloze: read a line someone in the book's world could say, tap the voc/voke or dict word that fits
+     the blank; the line rings out and a gold voice ring rises over the camp. A wrong word shakes and says
+     what to look for. Storage oao.g5ela.voice.wk<NN> {day:{done:[i]}}. */
+  function buildVoice() {
+    var G = D.game; if (!G || G.type !== 'voice' || !G.lines || !G.lines.length) return;
+    var wkKey = 'voice.wk' + L.week;
+    var st = store(wkKey) || {};
+    var mine = st[L.day] || { done: [] };
+    var W = G.lines, idx = 0;
+    while (idx < W.length && mine.done.indexOf(idx) >= 0) idx++;
+    var wrap = h('div', { 'class': 'activity g5-game' });
+    wrap.innerHTML =
+      '<div class="activity-head"><div class="activity-num g5-game-num" aria-hidden="true">📣</div><div>' +
+      '<div class="activity-title">' + esc(G.title || 'Raise Your Voice') + '</div>' +
+      '<div class="activity-sub">' + esc(G.sub || 'Word game for this week') + '</div></div></div>';
+    var body = h('div', { 'class': 'activity-body' });
+    wrap.appendChild(body);
+    var look = h('details', { 'class': 'g5-look' }, [h('summary', { text: '👀 What am I looking at?' }), h('p', { text: G.look })]);
+    if (!mine.done.length) look.open = true;
+    body.appendChild(look);
+    if (G.how) body.appendChild(howLine(G.how));
+    var scene = h('div', { 'class': 'g5-river g5-voice', role: 'img', 'aria-label': 'A camp in the snowy woods at dusk. Each line you finish sends a gold voice ring into the sky.' });
+    body.appendChild(scene);
+    var stepBox = h('div', { 'class': 'g5-stone-step', 'aria-live': 'polite' });
+    var card = h('p', { 'class': 'g5-voice-line', 'aria-live': 'polite' });
+    var pick = h('div', { 'class': 'g5-voice-pick' });
+    var ctrl = h('div', { 'class': 'g5-stone-ctrl' });
+    var fb = h('p', { 'class': 'g5-stone-fb', 'aria-live': 'polite' });
+    var tally = h('p', { 'class': 'g5-stone-tally' });
+    [stepBox, card, pick, ctrl, fb, tally].forEach(function (n) { body.appendChild(n); });
+
+    function draw() {
+      var allDone = 0;
+      Object.keys(st).forEach(function (k) { allDone += (st[k].done || []).length; });
+      var n = mine.done.length, w = 900, hgt = 190, cx = 450, svg = '';
+      svg += '<svg viewBox="0 0 ' + w + ' ' + hgt + '" preserveAspectRatio="xMidYMid meet" aria-hidden="true">' +
+        '<defs><linearGradient id="g5vsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A2340"/><stop offset="1" stop-color="#4A4560"/></linearGradient></defs>' +
+        '<rect width="' + w + '" height="' + hgt + '" fill="url(#g5vsky)"/>';
+      for (var s = 0; s < 24; s++) svg += '<circle cx="' + ((s * 167) % w) + '" cy="' + (8 + (s * 37) % 70) + '" r="1" fill="rgba(255,255,255,.3)"/>';
+      for (var r = 0; r < W.length; r++) {   // one ring per line, lit when that line is done today
+        var on = mine.done.indexOf(r) >= 0, rr = 26 + r * 22;
+        svg += '<path d="M' + (cx - rr) + ',150 A' + rr + ',' + (rr * 0.9) + ' 0 0 1 ' + (cx + rr) + ',150" fill="none" stroke="' + (on ? '#E9B44C' : 'rgba(255,255,255,.12)') + '" stroke-width="' + (on ? 4 : 2) + '" stroke-linecap="round"/>';
+      }
+      for (var t = 0; t < 9; t++) { var tx = t * 110 - 20; if (tx > cx - 160 && tx < cx + 120) continue; svg += '<path d="M' + tx + ',165 L' + (tx + 24) + ',92 L' + (tx + 48) + ',165 Z" fill="#141B2E"/>'; }
+      svg += '<path d="M0,160 C200,148 700,148 900,160 L900,190 L0,190 Z" fill="#E8ECF2"/>';
+      for (var p = -2; p <= 2; p++) {   // people sitting together around the circle
+        var px = cx + p * 34, py = 158 - Math.abs(p) * 2;
+        svg += '<circle cx="' + px + '" cy="' + (py - 20) + '" r="7" fill="#222A3D"/><path d="M' + (px - 11) + ',' + py + ' Q' + px + ',' + (py - 22) + ' ' + (px + 11) + ',' + py + ' Z" fill="#222A3D"/>';
+      }
+      svg += '</svg>';
+      scene.innerHTML = svg;
+      tally.textContent = 'Today: ' + n + ' of ' + W.length + (W.length === 1 ? ' voice' : ' voices') + ' raised. This week: ' + allDone + '.';
+    }
+    function save() { st[L.day] = mine; store(wkKey, st); }
+    function shake(b) { b.classList.add('g5-shake'); setTimeout(function () { b.classList.remove('g5-shake'); }, 450); }
+    function line(S, word) {
+      return (S.who ? '<span class="g5-voice-who">' + esc(S.who) + ':</span> ' : '') + '&ldquo;' + esc(S.before) +
+        (word ? '<b class="g5-voice-fill">' + esc(word) + '</b>' : '<span class="g5-voice-blank">______</span>') + esc(S.after) + '&rdquo;';
+    }
+    function show() {
+      fb.textContent = ''; ctrl.innerHTML = ''; pick.innerHTML = ''; card.innerHTML = '';
+      if (idx >= W.length) {
+        draw();
+        stepBox.innerHTML = '<b>Every voice is raised.</b> ' + esc(G.doneLine || 'Come back tomorrow for more.');
+        var again = h('button', { type: 'button', 'class': 'g5-btn g5-btn-ghost' }, ['↺ Say them again']);
+        again.addEventListener('click', function () { mine.done = []; idx = 0; save(); show(); });
+        ctrl.appendChild(again); return;
+      }
+      var S = W[idx];
+      draw();
+      stepBox.innerHTML = '<span class="g5-stepn">Line ' + (idx + 1) + ' of ' + W.length + '</span> Read the whole line. Tap the word that fits the blank.';
+      card.innerHTML = line(S, null);
+      S.opts.forEach(function (o, k) {
+        var b = h('button', { type: 'button', 'class': 'g5-beat g5-voice-opt' }, [o]);
+        b.addEventListener('click', function () {
+          if (k !== S.ok) { fb.textContent = S.hint || 'Read the line again. Does it need a word about voice and calling (voc, voke) or about saying (dict)?'; shake(b); return; }
+          b.classList.add('g5-beat-on'); pick.querySelectorAll('button').forEach(function (x) { x.disabled = true; });
+          card.innerHTML = line(S, o);
+          if (mine.done.indexOf(idx) < 0) mine.done.push(idx);
+          save(); draw();
+          fb.innerHTML = '<b>' + esc(o) + '</b>. ' + esc(S.why || 'That word fits.');
+          var next = h('button', { type: 'button', 'class': 'g5-btn' }, [idx + 1 < W.length ? 'Next line →' : 'Finish →']);
+          next.addEventListener('click', function () { idx++; while (idx < W.length && mine.done.indexOf(idx) >= 0) idx++; show(); setTimeout(function () { var f = pick.querySelector('button') || ctrl.querySelector('button'); if (f) f.focus(); }, 30); });
+          ctrl.appendChild(next);
+        });
+        pick.appendChild(b);
+      });
+    }
+    show();
+    var ref = G.after ? activityByTitle(G.after, panel('words')) : null;
+    if (ref) afterNode(ref, wrap);
+    else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
+  }
+
   /* ── 13. the Commonplace Book page ─────────────────────────── */
   var NAME_BAD = /\b(ass|butt|poop|fart|stupid|dumb|idiot|hate|kill|sex|damn|hell|crap)\b/i;
   function profileName() { var p = store('profile'); return p && p.name ? p.name : ''; }
@@ -1854,6 +1951,7 @@
     guard('fire', buildFire);
     guard('spy', buildSpyglass);
     guard('lantern', buildLanterns);
+    guard('voice', buildVoice);
     guard('cards', buildCards);
     guard('checks', buildChecks);
     guard('virtue', buildVirtue);

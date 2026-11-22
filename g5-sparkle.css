@@ -572,3 +572,10 @@ html.g5-top:not([data-g5-tab="warmup"]) .quote-strip { display: none !important;
 .g5-lan-tile:disabled { opacity: .45; cursor: default; }
 .g5-lan-clue { font-size: 14px; color: #5A6B8C; }
 .g5-game .g5-stone-step { color: #1E2A44; }
+
+/* Raise Your Voice (week 23) */
+.g5-voice-line{font-family:Georgia,serif;font-size:19px;line-height:1.7;color:#1A2340;background:#FFFCF0;border:1px solid #E9D9A8;border-left:4px solid #C8A850;border-radius:10px;padding:12px 16px;margin:10px 0;}
+.g5-voice-who{font-family:inherit;font-size:14px;font-weight:700;color:#5A6B8C;}
+.g5-voice-blank{display:inline-block;min-width:90px;border-bottom:2px dashed #8B3A20;color:transparent;}
+.g5-voice-fill{color:#8B3A20;}
+.g5-voice-pick{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
