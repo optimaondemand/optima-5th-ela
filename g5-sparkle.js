@@ -1109,7 +1109,7 @@
         '<rect width="' + w + '" height="' + hgt + '" fill="url(#g5vsky)"/>';
       for (var s = 0; s < 24; s++) svg += '<circle cx="' + ((s * 167) % w) + '" cy="' + (8 + (s * 37) % 70) + '" r="1" fill="rgba(255,255,255,.3)"/>';
       for (var r = 0; r < W.length; r++) {   // one ring per line, lit when that line is done today
-        var on = mine.done.indexOf(r) >= 0, rr = 26 + r * 22;
+        var on = mine.done.indexOf(r) >= 0, rr = 46 + r * 26;
         svg += '<path d="M' + (cx - rr) + ',150 A' + rr + ',' + (rr * 0.9) + ' 0 0 1 ' + (cx + rr) + ',150" fill="none" stroke="' + (on ? '#E9B44C' : 'rgba(255,255,255,.12)') + '" stroke-width="' + (on ? 4 : 2) + '" stroke-linecap="round"/>';
       }
       for (var t = 0; t < 9; t++) { var tx = t * 110 - 20; if (tx > cx - 160 && tx < cx + 120) continue; svg += '<path d="M' + tx + ',165 L' + (tx + 24) + ',92 L' + (tx + 48) + ',165 Z" fill="#141B2E"/>'; }
