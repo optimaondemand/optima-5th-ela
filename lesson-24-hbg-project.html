@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Optima Academy Online &mdash; How I Became a Ghost: A Ghost&rsquo;s-Eye View (End-of-Novel Project)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#F0F2F8;color:#24324F;font:17px/1.6 'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif}
+.wrap{max-width:920px;margin:0 auto;background:#fff;min-height:100vh}
+.oao-header{background:#0E1C42;color:#fff;padding:18px 22px;display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.oao-logo img{width:46px;height:46px;border-radius:50%;background:#fff;display:block}
+.oao-org{font-weight:800;font-size:15px}.oao-sub{font-size:11px;opacity:.75}
+.oao-title{font:700 24px/1.25 'Lora',Georgia,serif;margin:0;flex:1 1 320px}
+.oao-title em{color:#FFE9A8}
+.oao-badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:700}
+.bar{background:#5BC8E8;height:5px}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;padding:16px 22px;background:#F4F7FD;border-bottom:1px solid #E2E8F4}
+.info div{background:#fff;border:1px solid #E2E8F4;border-radius:10px;padding:10px 12px;font-size:14px}
+.info b{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#7A88A8}
+main{padding:22px}
+h2{font:700 22px/1.3 'Lora',Georgia,serif;color:#0E1C42;margin:0 0 8px}
+.card{background:#FFFDF6;border:1px solid #E9DFC4;border-top:3px solid #C8A850;border-radius:12px;padding:18px 20px;margin:0 0 18px}
+.todo{background:#fff;border:1px solid #E9DFC4;border-radius:10px;padding:10px 14px 10px 18px;margin:10px 0;color:#111}
+.todo b{display:block;margin-bottom:2px}.todo ol{margin:4px 0 4px 20px;padding:0}
+label{display:block;font-weight:700;margin:14px 0 4px;color:#0E1C42}
+.help{font-size:14px;color:#5A6B8C;margin:0 0 6px}
+input[type=text],select,textarea{width:100%;font:inherit;padding:10px 12px;border:2px solid #D9E0F0;border-radius:10px;background:#fff;color:#24324F}
+textarea{min-height:92px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:#C8A850}
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.moment{background:#fff;border:1px solid #E2E8F4;border-radius:10px;padding:12px}
+.moment h3{margin:0;font-size:15px;color:#8B3A20}
+.count{font-size:13px;color:#7A88A8;text-align:right;margin-top:2px}
+.count.ok{color:#24502A;font-weight:700}
+.btn{font:800 17px/1 inherit;background:#8B6FC0;color:#fff;border:0;border-radius:999px;padding:14px 26px;cursor:pointer;box-shadow:0 3px 0 #6B52A0}
+.btn:hover{background:#7C60B4}.btn.ghost{background:#fff;color:#0E1C42;border:2px solid #D9E0F0;box-shadow:none}
+.status{font-size:14px;color:#5A6B8C;margin-top:8px}
+.check{list-style:none;padding:0;margin:8px 0}.check li{margin:4px 0}.check .done{color:#24502A;font-weight:700}
+table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid #E2E8F4;padding:7px 9px;text-align:left;vertical-align:top}th{background:#F4F7FD;color:#0E1C42}
+details summary{cursor:pointer;font-weight:800;color:#0E1C42}
+.foot{padding:18px 22px;font-size:12px;color:#7A88A8;border-top:1px solid #E2E8F4;text-align:center}
+#booklet{display:none}
+@media print{
+  body{background:#fff}.wrap{max-width:none}
+  .screen{display:none!important}
+  #booklet{display:block;font:15px/1.55 Georgia,serif;color:#000}
+  .pg{page-break-after:always;padding:8mm 4mm}
+  .pg:last-child{page-break-after:auto}
+  .pg h1{font-size:26px;margin:0 0 4px}.pg h2{font-size:19px;border-bottom:2px solid #0E1C42;padding-bottom:4px;margin:0 0 12px;color:#0E1C42}
+  .pg .k{font:700 12px/1.3 Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:#555;margin:14px 0 2px}
+  .pg .v{white-space:pre-wrap;border-left:3px solid #C8A850;padding-left:10px;min-height:20px}
+  .pg .by{font-size:15px;color:#333}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="screen">
+  <header class="oao-header">
+    <div class="oao-logo"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy"></div>
+    <div><div class="oao-org">Optima Academy Online</div><div class="oao-sub">An Education Experience Company</div></div>
+    <h1 class="oao-title"><em>How I Became a Ghost</em> &mdash; End-of-Novel Project</h1>
+    <div class="oao-badge">Unit Project</div>
+  </header>
+  <div class="bar"></div>
+  <div class="info">
+    <div><b>Project</b>A Ghost&rsquo;s-Eye View</div>
+    <div><b>When</b>After Lesson 24.4</div>
+    <div><b>Reading</b>The whole novel, Ch. 1&ndash;29</div>
+    <div><b>Turn in</b>One PDF, in Canvas</div>
+  </div>
+  <main>
+    <section class="card activity" id="about">
+      <h2>A Ghost&rsquo;s-Eye View</h2>
+      <p>You finished <em>How I Became a Ghost</em>. Isaac told you the whole story, and from Chapter 18 on he told it as a ghost. Now make a four-page booklet that shows how the book works: who tells it, what it is about, who is in it, and how its words make pictures.</p>
+      <div class="todo"><b>What to do</b><ol><li>Fill in the four pages, one at a time. Keep your book open.</li><li>Use at least 3 details or quotes from the book, each with its chapter number.</li><li>Tap <strong>Make my booklet</strong>, save it as a PDF, and upload the PDF in Canvas.</li></ol></div>
+      <p class="help">Your work saves on this computer as you type. This project is about the novel. Keep real history out of it unless you say where the fact comes from.</p>
+      <label for="f-name">Your name</label>
+      <input type="text" id="f-name" autocomplete="name" placeholder="First and last name">
+    </section>
+
+    <section class="card activity" id="p1">
+      <h2>Page 1 &middot; Who tells the story?</h2>
+      <p>Isaac tells this story himself, and he tells you on the first page that he becomes a ghost. That choice changes what you, the reader, get to see and know.</p>
+      <label for="f-pov-see">What can Isaac show you because he is a ghost? Give one moment, with its chapter.</label>
+      <p class="help">Think about where he can go and what he can see after Chapter 18.</p>
+      <textarea id="f-pov-see" placeholder="In Chapter ___, because Isaac is a ghost, he can..."></textarea>
+      <label for="f-pov-know">How did knowing from page one that Isaac becomes a ghost change the way you read?</label>
+      <textarea id="f-pov-know" placeholder="Knowing this from the start made me..."></textarea>
+      <label for="f-pov-other">Pick one moment. How would it be different if a soldier told it instead?</label>
+      <textarea id="f-pov-other" placeholder="If a soldier told the moment when..., the reader would..."></textarea>
+    </section>
+
+    <section class="card activity" id="p2">
+      <h2>Page 2 &middot; Theme tracker</h2>
+      <p>A theme is a big idea the whole book keeps coming back to. Choose one, then track it through three moments: one from the beginning, one from the middle, and one from the end.</p>
+      <label for="f-theme">The theme I am tracking</label>
+      <select id="f-theme">
+        <option value="">Choose one&hellip;</option>
+        <option>Family stays together, even after death.</option>
+        <option>Courage means doing what is right when it is hard.</option>
+        <option>Remembering honors the people who are gone.</option>
+        <option>A people can lose their home and still stay strong.</option>
+        <option value="own">My own theme (write it in the box)</option>
+      </select>
+      <input type="text" id="f-theme-own" placeholder="My own theme, in one sentence" style="margin-top:8px">
+      <div class="three" style="margin-top:14px">
+        <div class="moment"><h3>Beginning &middot; Chapters 1&ndash;10</h3><label for="f-t1-ch">Chapter</label><input type="text" id="f-t1-ch" placeholder="Ch. __"><label for="f-t1-ev">A detail or quote</label><textarea id="f-t1-ev" placeholder="What happens, or the exact words"></textarea><label for="f-t1-why">How it shows the theme</label><textarea id="f-t1-why" placeholder="This shows the theme because..."></textarea></div>
+        <div class="moment"><h3>Middle &middot; Chapters 11&ndash;20</h3><label for="f-t2-ch">Chapter</label><input type="text" id="f-t2-ch" placeholder="Ch. __"><label for="f-t2-ev">A detail or quote</label><textarea id="f-t2-ev" placeholder="What happens, or the exact words"></textarea><label for="f-t2-why">How it shows the theme</label><textarea id="f-t2-why" placeholder="This shows the theme because..."></textarea></div>
+        <div class="moment"><h3>End &middot; Chapters 21&ndash;29</h3><label for="f-t3-ch">Chapter</label><input type="text" id="f-t3-ch" placeholder="Ch. __"><label for="f-t3-ev">A detail or quote</label><textarea id="f-t3-ev" placeholder="What happens, or the exact words"></textarea><label for="f-t3-why">How it shows the theme</label><textarea id="f-t3-why" placeholder="This shows the theme because..."></textarea></div>
+      </div>
+    </section>
+
+    <section class="card activity" id="p3">
+      <h2>Page 3 &middot; A character and a picture in words</h2>
+      <p>First, show what one character is like. Then find one place where Tim Tingle uses a figure of speech.</p>
+      <label for="f-char">My character</label>
+      <select id="f-char"><option value="">Choose one&hellip;</option><option>Isaac</option><option>Joseph</option><option>Naomi</option><option>Nita</option><option>Leader</option><option>Jumper</option><option>Isaac&rsquo;s mother</option><option value="own">Someone else (write the name in the box)</option></select>
+      <input type="text" id="f-char-own" placeholder="Another character" style="margin-top:8px">
+      <label for="f-char-trait">One word that describes this character, and why you chose it</label>
+      <textarea id="f-char-trait" placeholder="___ is ___ because..."></textarea>
+      <label for="f-char-ev">Evidence: something the character says or does, with its chapter</label>
+      <textarea id="f-char-ev" placeholder="In Chapter ___, ..."></textarea>
+      <label for="f-char-change">Does this character change from the start of the book to the end? How do you know?</label>
+      <textarea id="f-char-change" placeholder="At first... By the end..."></textarea>
+      <label for="f-fig">A figure of speech from the book, copied exactly, with its chapter</label>
+      <p class="help">Look for a simile (it uses <em>like</em> or <em>as</em>), a metaphor, or a thing that acts like a person.</p>
+      <textarea id="f-fig" placeholder="&ldquo;...&rdquo; (Chapter ___)"></textarea>
+      <label for="f-fig-means">What two things are being compared, and what does it help you see or feel?</label>
+      <textarea id="f-fig-means" placeholder="It compares ___ to ___. It helps me see..."></textarea>
+    </section>
+
+    <section class="card activity" id="p4">
+      <h2>Page 4 &middot; Reflection</h2>
+      <label for="f-reflect">Write one paragraph of 5 or more sentences. What does <em>How I Became a Ghost</em> say about your theme, and what will you remember from this book?</label>
+      <p class="help">Use formal style: no slang and no contractions. Name the book and the author.</p>
+      <textarea id="f-reflect" style="min-height:170px" placeholder="In How I Became a Ghost, Tim Tingle shows that..."></textarea>
+      <div class="count" id="c-reflect">0 sentences</div>
+    </section>
+
+    <section class="card activity" id="finish">
+      <h2>Finish: make your booklet</h2>
+      <ul class="check" id="checklist"></ul>
+      <div class="todo"><b>What to do</b><ol><li>Tap <strong>Make my booklet</strong>.</li><li>In the box that opens, choose <strong>Save as PDF</strong>, then Save.</li><li>Go to this project in Canvas and upload the PDF.</li></ol></div>
+      <button class="btn" type="button" id="make">Make my booklet</button>
+      <button class="btn ghost" type="button" id="clear">Start over</button>
+      <p class="status" id="status" aria-live="polite"></p>
+    </section>
+
+    <section class="card">
+      <details><summary>How your project is graded (20 points)</summary>
+      <table style="margin-top:10px">
+        <thead><tr><th>What</th><th>4 &middot; Strong</th><th>3 &middot; Secure</th><th>2 &middot; Developing</th><th>1 &middot; Beginning</th></tr></thead>
+        <tbody>
+          <tr><td>Point of view</td><td>Explains clearly how a ghost narrator changes what the reader sees and feels, with an exact moment</td><td>Explains how the narrator shapes the story, with a moment from the book</td><td>Says who tells the story but not how it matters</td><td>Missing, or retells the plot</td></tr>
+          <tr><td>Theme</td><td>One theme tracked through three accurate moments, each explained</td><td>One theme with three moments; most are explained</td><td>Fewer than three moments, or they do not fit the theme</td><td>No clear theme</td></tr>
+          <tr><td>Character and evidence</td><td>A fitting trait, exact evidence with its chapter, and a clear account of change</td><td>A fitting trait with evidence from the book</td><td>A trait with weak or missing evidence</td><td>Only names the character</td></tr>
+          <tr><td>Figurative language</td><td>An exact quote with its chapter; says what is compared and what it adds</td><td>A real figure of speech from the book, explained</td><td>A quote that is not a figure of speech, or no explanation</td><td>Missing</td></tr>
+          <tr><td>Writing</td><td>The reflection is formal, complete and clear, with few or no mistakes</td><td>The reflection is clear; mistakes do not get in the way</td><td>Short, casual, or hard to follow in places</td><td>Missing, or one or two sentences</td></tr>
+        </tbody>
+      </table></details>
+    </section>
+  </main>
+  <div class="foot">Optima Academy Online &middot; 5th Grade ELA &middot; <em>How I Became a Ghost</em> &middot; End-of-Novel Project</div>
+ </div>
+ <div id="booklet" aria-hidden="true"></div>
+</div>
+<script>
+(function () {
+  var KEY = 'oao.g5ela.hbg.project';
+  var IDS = ['name','pov-see','pov-know','pov-other','theme','theme-own','t1-ch','t1-ev','t1-why','t2-ch','t2-ev','t2-why','t3-ch','t3-ev','t3-why','char','char-own','char-trait','char-ev','char-change','fig','fig-means','reflect'];
+  function el(id) { return document.getElementById('f-' + id); }
+  function load() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
+  function save() { var d = {}; IDS.forEach(function (i) { d[i] = el(i).value; }); try { localStorage.setItem(KEY, JSON.stringify(d)); document.getElementById('status').textContent = 'Saved on this computer.'; } catch (e) { document.getElementById('status').textContent = 'Could not save on this computer. Make your booklet before you leave.'; } paint(); }
+  function v(i) { return el(i).value.trim(); }
+  function theme() { return v('theme') === 'own' || !v('theme') ? v('theme-own') : v('theme'); }
+  function who() { return v('char') === 'own' || !v('char') ? v('char-own') : v('char'); }
+  function sentences(t) { return (t.match(/[^.!?]+[.!?]+/g) || []).length; }
+  function esc(t) { return String(t).replace(/[&<>]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]; }); }
+  function paint() {
+    var n = sentences(v('reflect')), c = document.getElementById('c-reflect');
+    c.textContent = n + (n === 1 ? ' sentence' : ' sentences'); c.className = 'count' + (n >= 5 ? ' ok' : '');
+    el('theme-own').style.display = v('theme') === 'own' ? '' : 'none';
+    el('char-own').style.display = v('char') === 'own' ? '' : 'none';
+    var ev = ['t1-ev','t2-ev','t3-ev'].filter(function (i) { return v(i); }).length;
+    var items = [[!!v('name'), 'My name is on it.'], [v('pov-see') && v('pov-know') && v('pov-other'), 'Page 1: all three boxes are filled in.'], [theme() && ev === 3, 'Page 2: one theme and three moments (' + ev + ' of 3).'],
+      [who() && v('char-trait') && v('char-ev') && v('fig') && v('fig-means'), 'Page 3: a character with evidence, and a figure of speech.'], [n >= 5, 'Page 4: a reflection of 5 or more sentences (' + n + ').']];
+    document.getElementById('checklist').innerHTML = items.map(function (x) { return '<li class="' + (x[0] ? 'done' : '') + '">' + (x[0] ? '✅ ' : '⬜ ') + x[1] + '</li>'; }).join('');
+  }
+  function row(k, val) { return '<div class="k">' + k + '</div><div class="v">' + esc(val || '') + '</div>'; }
+  function build() {
+    var h = '<div class="pg"><h1>A Ghost’s-Eye View</h1><div class="by"><i>How I Became a Ghost</i> by Tim Tingle · End-of-novel project · ' + esc(v('name') || 'Name: ________') + '</div><h2 style="margin-top:16px">Page 1 · Who tells the story?</h2>' +
+      row('What Isaac can show because he is a ghost', v('pov-see')) + row('How knowing the ending changed my reading', v('pov-know')) + row('If a soldier told it instead', v('pov-other')) + '</div>';
+    h += '<div class="pg"><h2>Page 2 · Theme tracker</h2>' + row('My theme', theme());
+    [['Beginning (Ch. 1–10)', 't1'], ['Middle (Ch. 11–20)', 't2'], ['End (Ch. 21–29)', 't3']].forEach(function (m) { h += row(m[0] + ' · ' + (v(m[1] + '-ch') || 'Ch. __'), v(m[1] + '-ev')) + row('How it shows the theme', v(m[1] + '-why')); });
+    h += '</div><div class="pg"><h2>Page 3 · A character and a picture in words</h2>' + row('My character', who()) + row('A word that describes this character, and why', v('char-trait')) + row('Evidence', v('char-ev')) + row('How the character changes', v('char-change')) +
+      row('A figure of speech from the book', v('fig')) + row('What it compares, and what it adds', v('fig-means')) + '</div>';
+    h += '<div class="pg"><h2>Page 4 · Reflection</h2>' + row('What the book says about my theme, and what I will remember', v('reflect')) + '</div>';
+    document.getElementById('booklet').innerHTML = h;
+  }
+  var d = load(); IDS.forEach(function (i) { if (d[i] != null) el(i).value = d[i]; el(i).addEventListener('input', save); el(i).addEventListener('change', save); });
+  document.getElementById('make').addEventListener('click', function () { build(); window.print(); });
+  document.getElementById('clear').addEventListener('click', function () { if (!document.getElementById('clear').dataset.sure) { document.getElementById('clear').dataset.sure = 1; document.getElementById('clear').textContent = 'Tap again to erase everything'; return; } IDS.forEach(function (i) { el(i).value = ''; }); try { localStorage.removeItem(KEY); } catch (e) {} delete document.getElementById('clear').dataset.sure; document.getElementById('clear').textContent = 'Start over'; paint(); document.getElementById('status').textContent = 'Cleared.'; });
+  window.addEventListener('beforeprint', build);
+  paint();
+})();
+</script>
+</body>
+</html>
