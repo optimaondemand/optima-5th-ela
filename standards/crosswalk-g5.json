@@ -18,12 +18,13 @@
   }
  },
  "notes": {
-  "method": "Each FL benchmark is matched to the closest standard(s) in each state by reading both texts. Empty list = no close match in that state. Built week by week as G5 weeks are sparkled; week 19 codes first; week 20 added R.1.1 and C.1.3; week 21 added R.1.2 and C.1.5.",
+  "method": "Each FL benchmark is matched to the closest standard(s) in each state by reading both texts. Empty list = no close match in that state. Built week by week as G5 weeks are sparkled; week 19 codes first; week 20 added R.1.1 and C.1.3; week 21 added R.1.2 and C.1.5; week 22 added R.3.1.",
   "PR": "Pending. PR's English Program is a second-language framework and the database carries codes only (PRDE text withheld for rights).",
   "TX": "Codes are TAC citations; short form 110.7(b)(8)(A) = TEKS 5.8.A.",
   "AR R.1.4 / TN R.1.4": "No grade 5 AR or TN standard names figurative language in poems; the stanza/structure standard is the closest (same choice as grade 4).",
   "MO": "Grade 5 MO sub-letters differ from grade 4 (point of view is 5.R.2.A.c), so each code was matched on its own text.",
-  "TN R.1.1": "No grade 5 TN standard names conflict and plot together; 5.RL.CS.5 (how chapters fit together into a structure) is the closest to how the conflict builds across chapters."
+  "TN R.1.1": "No grade 5 TN standard names conflict and plot together; 5.RL.CS.5 (how chapters fit together into a structure) is the closest to how the conflict builds across chapters.",
+  "R.3.1": "Figurative language contributing to meaning: TX 10(D) imagery and figurative language for a purpose; AR 5.V.6 and AL 12a interpret figurative language in context; MO 5.R.2.C.c impact of imagery and figurative language; TN 5.RL.CS.4 figurative language in literary text."
  },
  "map": {
   "ELA.5.R.1.3": {
@@ -60,6 +61,24 @@
    ],
    "TN": [
     "5.RL.CS.5"
+   ],
+   "PR": "pending"
+  },
+  "ELA.5.R.3.1": {
+   "TX": [
+    "110.7(b)(10)(D)"
+   ],
+   "AR": [
+    "5.V.6"
+   ],
+   "MO": [
+    "5.R.2.C.c"
+   ],
+   "AL": [
+    "12a"
+   ],
+   "TN": [
+    "5.RL.CS.4"
    ],
    "PR": "pending"
   },
