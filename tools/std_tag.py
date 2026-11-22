@@ -26,8 +26,9 @@ WEEKS = {
  21: dict(read=F('R.1.2'),          think=F('R.1.2', 'EE.1.1'),          write=F('C.1.2', 'C.1.5')),
  22: dict(read=F('R.3.1'),          think=F('R.3.1', 'EE.1.1'),          write=F('C.1.3')),
  23: dict(read=F('R.3.2'),          think=F('R.3.2', 'R.1.2', 'EE.3.1'), write=F('C.1.5')),
+ 24: dict(read=F('R.3.3'),          think=F('R.3.3', 'R.2.4', 'EE.1.1'), write=F('C.1.3')),
 }
-CHECKIN_Q = {(19, 5): F('V.1.3'), (20, 5): F('V.1.3'), (21, 5): F('V.1.3'), (22, 5): F('V.1.3'), (23, 5): F('V.1.3')}   # Q5 is a context-clue item each week
+CHECKIN_Q = {(19, 5): F('V.1.3'), (20, 5): F('V.1.3'), (21, 5): F('V.1.3'), (22, 5): F('V.1.3'), (23, 5): F('V.1.3'), (24, 5): F('V.1.3')}   # Q5 is a context-clue item each week
 
 def rule(t, tab, W, bar):
     t = t.lower()
