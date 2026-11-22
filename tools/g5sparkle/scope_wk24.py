@@ -20,7 +20,7 @@ QB = ('Yet it is said that our present movements are our own voluntary acts &mda
 QS = 'style="background:#FFFCF0;border-left:4px solid #8B3A20;border-radius:8px;padding:12px 16px;margin:10px 0;font-family:\'Lora\',Georgia,serif;font-size:15px;line-height:1.75;color:#3A2A1A;"'
 CS = 'style="font-size:12px;color:#7A88A8;margin-top:6px;"'
 def src_box(label, who, quote, plain, cite):
-    return ('      <div class="task-box" style="margin-top:14px;">\n'
+    return ('      <div class="source-box" style="margin-top:14px;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:14px 16px;">\n'
             '        <div class="dol-model-label">%s</div>\n'
             '%s'
             '        <div class="source-quote" %s>&ldquo;%s&rdquo;</div>\n'

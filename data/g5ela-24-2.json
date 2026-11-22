@@ -1,0 +1,220 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "Chapter 29 is the last chapter. Read it closely and mark the moments you would want to check against a real record. Today's poem was written in eighteen thirty-four. That makes the poem itself a piece of history."
+  },
+  "words": {
+   "text": "Today, decide what each history word really claims. Then tell formal writing from casual talk, and sort long words by the part at their center. Three new ears of corn are waiting in the game."
+  },
+  "reading": {
+   "text": "Read Chapter 29 in your book. It is short. Notice how the families end the day, and who promises to return. Then write a sentence shaped like the one in the Read Like a Writer box, and finish with the Virtue Watch."
+  },
+  "assignment": {
+   "text": "Three questions about Chapter 29. Then draft your source comparison paragraph. Use formal style, and begin each piece of evidence with a source transition, so your reader knows where it came from."
+  }
+ },
+ "how": [
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read the three lenses.",
+    "Tap the one you will use today.",
+    "Keep it in mind as you read. You will use it at the end."
+   ],
+   "why": "Some things in a novel can be checked against a record, and some cannot. Good readers notice which.",
+   "use": "You will use this in your draft today."
+  },
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted words in the first sentence.",
+    "Say the second one in formal style, out loud.",
+    "Tap Check My Work."
+   ],
+   "why": "An essay about history uses exact words and names its sources."
+  },
+  {
+   "match": "Poetry Corner",
+   "do": [
+    "Read the poem out loud once.",
+    "Read who wrote it, and when.",
+    "Read Think About It and keep your answer in mind."
+   ],
+   "why": "A poem written at the time is a primary source. It shows what someone thought back then."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Read the six words in the box.",
+    "Ask what each word claims.",
+    "Tap a word, then tap its meaning."
+   ],
+   "why": "A word like treaty or removal carries a point of view inside it."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Read each sentence from the book.",
+    "Look for clues around the word.",
+    "Tap a word, then tap its meaning."
+   ],
+   "why": "Clues in a sentence can tell you what a word means."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Read the casual and formal pair.",
+    "Tap the formal version in each pair.",
+    "Add a source transition to each claim in the box."
+   ],
+   "why": "A source transition tells your reader whether a fact comes from the novel or from the record."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Find the root inside each long word.",
+    "Tap a word.",
+    "Then tap the column for its root."
+   ],
+   "why": "You already know these roots. They hold the long word together."
+  },
+  {
+   "match": "Chapter Thinking",
+   "do": [
+    "Read Chapter 29 first.",
+    "Answer each question in 2 or more sentences.",
+    "Use details from the chapter as evidence."
+   ],
+   "why": "These questions check what happened and what the author shows you."
+  },
+  {
+   "match": "Workshop",
+   "do": [
+    "Use your plan from Day 1 and the two sources in the blue box.",
+    "Write the whole paragraph in the box.",
+    "Start each piece of evidence with a source transition."
+   ],
+   "why": "A first draft gets every idea down. You will revise it tomorrow.",
+   "use": "Next lesson you will revise it."
+  },
+  {
+   "match": "Virtue Watch",
+   "do": [
+    "Read what courage means.",
+    "Read the example from this week.",
+    "After you read, fill in your courage log at the end of this tab."
+   ]
+  },
+  {
+   "match": "Chapter Introduction",
+   "do": [
+    "Read the introduction below.",
+    "Open your book and read Chapter 29.",
+    "Then do the Read Like a Writer box and the Virtue Watch below."
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "word": "register",
+   "in": "Grammar",
+   "meaning": "how formal or casual your words are"
+  },
+  {
+   "word": "primary source",
+   "in": "Poetry Corner",
+   "meaning": "something written or made at the time, by someone who was there"
+  }
+ ],
+ "miss": {
+  "advocate": "ad + voc + ate. voc means voice or call.",
+  "contradict": "contra + dict. dict means say.",
+  "displacement": "dis + place + ment. The base is place.",
+  "evidence": "e + vid + ence. vid means see, like vis.",
+  "perspective": "per + spect + ive. spect means look.",
+  "replacement": "re + place + ment. The base is place.",
+  "verdict": "ver + dict. dict means say."
+ },
+ "game": {
+  "type": "corn",
+  "title": "Ears of Corn",
+  "sub": "This week's word game · 3 words today",
+  "after": "Spelling",
+  "look": "Each long word is an ear of corn, like the corn the families cook in Chapter 29. The parts added to the front or the end are the husks. Tap each husk to peel it away. The base word is the ear inside.",
+  "how": {
+   "do": [
+    "Read the long word.",
+    "Find the part that can stand alone as a word. Leave it.",
+    "Tap each part added to the front or the end.",
+    "Tap Next word."
+   ],
+   "why": "Long words in history writing are short words with parts added. Find the base and you can read and spell the rest."
+  },
+  "doneLine": "Come back tomorrow for three more words.",
+  "ears": [
+   {
+    "w": "friendship",
+    "parts": [
+     "friend",
+     "ship"
+    ],
+    "base": 0,
+    "why": "-ship makes a noun about a bond between people.",
+    "means": "the bond between friends."
+   },
+   {
+    "w": "peacefully",
+    "parts": [
+     "peace",
+     "ful",
+     "ly"
+    ],
+    "base": 0,
+    "why": "-ful means full of, and -ly tells how. This word has two husks at the end.",
+    "means": "in a way that is full of peace."
+   },
+   {
+    "w": "retelling",
+    "parts": [
+     "re",
+     "tell",
+     "ing"
+    ],
+    "base": 1,
+    "why": "re- means again.",
+    "means": "telling a story again."
+   }
+  ]
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/hbg/king-pushmataha.jpg",
+  "title": "Pushmataha, a Choctaw chief",
+  "alt": "A printed portrait of a man with dark hair, wearing a blue army coat with gold shoulder pieces and a white ruffled shirt.",
+  "look": "This is the real Pushmataha. Charles Bird King painted him in Washington, D.C., in 1824, the year the chief died there. This print was made from that painting between 1837 and 1844. Look at the army coat: he held the rank of brigadier general. He died six years before the novel begins, so in the story he comes as a ghost.",
+  "lookBtn": "Tap to learn about this portrait",
+  "creator": "Print after a painting by Charles Bird King; published by McKenney and Hall",
+  "date": "painted 1824; printed 1837–1844",
+  "license": "Public domain (Smithsonian American Art Museum, via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Pushmataha_high_resolution.jpg"
+ },
+ "virtue": {
+  "name": "courage",
+  "kind": "log",
+  "title": "My courage log",
+  "intro": "In Chapter 29, tap the moment you think shows the most courage.",
+  "options": [
+   {
+    "t": "Naomi, home for one day, insists on cooking for both families."
+   },
+   {
+    "t": "Isaac and Nita join the gathering in full view of everyone."
+   },
+   {
+    "t": "The winter is fierce and food is scarce, and the families keep going together."
+   }
+  ],
+  "line": "Finish the sentence: This shows the most courage because…",
+  "placeholder": "This shows the most courage because…"
+ }
+}

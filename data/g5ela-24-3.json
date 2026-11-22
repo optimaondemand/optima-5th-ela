@@ -1,0 +1,246 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "The novel is finished. Today you read two real sources from the years of the Choctaw removal: part of a treaty, and part of a letter by a Choctaw chief. Ask of each one: who wrote this, when, and why?"
+  },
+  "words": {
+   "text": "Put the history words to work: primary source, secondary source, perspective, bias. Then practice naming your source before every claim. In the game, look for the part that can stand alone as a word."
+  },
+  "reading": {
+   "text": "Read the two sources slowly. They are short, and the plain words under each one will help. Keep the story and the record apart: the novel says eighteen thirty, and the treaty sets the removal for eighteen thirty-one to eighteen thirty-three."
+  },
+  "assignment": {
+   "text": "Three questions about the novel and the sources. Then revise your draft with the checklist: formal style, two source transitions, a claim with evidence and reasoning, and every fact tied to its source."
+  }
+ },
+ "readnow": {
+  "text": "Today you read two real sources on this page. Keep your book open to Chapters 28 and 29.",
+  "step": "Read the introduction"
+ },
+ "how": [
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted words in the first sentence.",
+    "Say the second one in formal style, out loud.",
+    "Tap Check My Work."
+   ],
+   "why": "An essay about history uses exact words and names its sources."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Read each meaning.",
+    "Tap a word, then tap its meaning.",
+    "Match all four."
+   ],
+   "why": "You need these four words to talk about where information comes from."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Type the word that fits each sentence.",
+    "Open the Word Bank if you need it.",
+    "Tap Check My Words."
+   ],
+   "why": "Putting a word back in its sentence shows you really know it."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Read the example with two sources.",
+    "Tap the version that names its source in each pair.",
+    "Write your paragraph in the box, with two source transitions."
+   ],
+   "why": "When every claim names its source, the reader can tell the story from the record."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Look at each word's ending.",
+    "Tap a word.",
+    "Then tap the column for its ending."
+   ],
+   "why": "You will need these words in your own paragraph."
+  },
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Tap your lens for today.",
+    "Read the two sources on the Reading tab.",
+    "Ask what each one can tell you, and what it leaves out."
+   ],
+   "why": "No single source tells the whole story.",
+   "use": "You will use this for questions 1 and 2."
+  },
+  {
+   "match": "Two Real Sources",
+   "do": [
+    "Read Source A, then its plain words.",
+    "Read Source B, then its plain words.",
+    "Read the note about the story and the record."
+   ],
+   "why": "These are real words from 1830 and 1831. They are the record you will set beside the novel."
+  },
+  {
+   "match": "Chapter Thinking",
+   "do": [
+    "Read the two sources first.",
+    "Answer each question in 2 or more sentences.",
+    "Name the source each fact comes from."
+   ],
+   "why": "These questions check what happened and what the author shows you."
+  },
+  {
+   "match": "Workshop",
+   "do": [
+    "Read your draft from Day 2.",
+    "Check it against the list, one pass at a time.",
+    "Show your strongest sentence and one you rewrote."
+   ],
+   "why": "Revising means making the piece clearer, not starting over.",
+   "use": "Next lesson you will write the final version."
+  },
+  {
+   "match": "Virtue Watch",
+   "do": [
+    "Read what courage means.",
+    "Read the example from this week.",
+    "After you read, use the courage meter at the end of this tab."
+   ]
+  },
+  {
+   "match": "Chapter Introduction",
+   "do": [
+    "Read the introduction below.",
+    "Read the two real sources.",
+    "Then do the Read Like a Writer box and the Virtue Watch below."
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "word": "bias",
+   "in": "Morphology",
+   "meaning": "a leaning toward one side that shapes what someone writes down"
+  },
+  {
+   "word": "attribute",
+   "in": "Grammar",
+   "meaning": "say where a fact or idea came from"
+  }
+ ],
+ "hints": {
+  "lifeless": [
+   "Without life.",
+   "The wolf, after the fight.",
+   "life + less"
+  ],
+  "survived": [
+   "Stayed alive.",
+   "Leader says it about Joseph and the cave.",
+   "It starts with sur."
+  ],
+  "honor": [
+   "To show great respect.",
+   "Why the old chief comes that day.",
+   "It starts with a silent h."
+  ],
+  "reunited": [
+   "Back together.",
+   "Naomi and her parents.",
+   "re + united"
+  ],
+  "protector": [
+   "Someone who keeps you safe.",
+   "The families meet one in the last chapter.",
+   "protect + or"
+  ]
+ },
+ "miss": {
+  "agreement": "The ending is -ment, added to a whole word.",
+  "declaration": "The ending is -ation. Say the last part: it sounds like ay-shun.",
+  "displacement": "The ending is -ment, added to a whole word.",
+  "documentation": "The ending is -ation. Say the last part: it sounds like ay-shun.",
+  "federal": "It ends in -al and describes a noun, as in federal law.",
+  "historical": "It ends in -al and describes a noun, as in historical record.",
+  "negotiation": "The ending is -ation. Say the last part: it sounds like ay-shun.",
+  "settlement": "The ending is -ment, added to a whole word.",
+  "national": "nation + al. It describes a noun, as in national law."
+ },
+ "game": {
+  "type": "corn",
+  "title": "Ears of Corn",
+  "sub": "This week's word game · 3 words today",
+  "after": "Spelling",
+  "look": "Each long word is an ear of corn, like the corn the families cook in Chapter 29. The parts added to the front or the end are the husks. Tap each husk to peel it away. The base word is the ear inside.",
+  "how": {
+   "do": [
+    "Read the long word.",
+    "Find the part that can stand alone as a word. Leave it.",
+    "Tap each part added to the front or the end.",
+    "Tap Next word."
+   ],
+   "why": "Long words in history writing are short words with parts added. Find the base and you can read and spell the rest."
+  },
+  "doneLine": "Come back tomorrow for three more words.",
+  "ears": [
+   {
+    "w": "unjustly",
+    "parts": [
+     "un",
+     "just",
+     "ly"
+    ],
+    "base": 1,
+    "why": "un- means not, and -ly tells how.",
+    "means": "in a way that is not fair or right."
+   },
+   {
+    "w": "encampment",
+    "parts": [
+     "en",
+     "camp",
+     "ment"
+    ],
+    "base": 1,
+    "why": "en- means in, and -ment makes a noun.",
+    "means": "a place where people have set up camp."
+   },
+   {
+    "w": "leadership",
+    "parts": [
+     "lead",
+     "er",
+     "ship"
+    ],
+    "base": 0,
+    "why": "-er makes a person who leads, and -ship makes a noun. Two husks at the end.",
+    "means": "the work of leading people."
+   }
+  ]
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/hbg/boisseau-louisiana-indians-bayou.jpg",
+  "title": "Louisiana Indians Walking Along a Bayou",
+  "alt": "A painting of a family walking in a line beside a bayou under tall trees: a man with a long gun, a child, and two women carrying loads on their backs.",
+  "look": "Alfred Boisseau painted this family in Louisiana in 1847. They are believed to be Choctaw. This is not the Trail of Tears: it was painted about fifteen years later, and some Choctaw families stayed in Mississippi and Louisiana. It is one of very few paintings of Choctaw people made in those years by someone who saw them.",
+  "lookBtn": "Tap to learn about this painting",
+  "creator": "Alfred Boisseau",
+  "date": "1847",
+  "license": "Public domain (New Orleans Museum of Art, via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Louisiana_Indians_Walking_Along_a_Bayou_-_Alfred_Boisseau_(New_Orleans_Mus_of_Art_56.34).jpg"
+ },
+ "virtue": {
+  "name": "courage",
+  "kind": "meter",
+  "title": "The courage meter",
+  "intro": "Think about one moment from real history, in Source B.",
+  "moment": "George W. Harkins, a real Choctaw chief, wrote in 1831: “my people are dear to me, with them I must go.” He wrote that he could not stay behind and leave them to struggle alone.",
+  "ask": "How much courage did Harkins show? Slide to show.",
+  "line": "Tell why in one sentence.",
+  "placeholder": "He showed this much because…",
+  "take": "Mason's take: a great deal. He chose a hard road so his people would not walk it without him."
+ }
+}
