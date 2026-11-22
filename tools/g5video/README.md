@@ -15,4 +15,4 @@ Run (cloud, Playwright + ffmpeg + `pip install pocketsphinx`):
     python3 encode.py <clip> ...                          # mp4 + jpg + vtt + /tmp/vid/sheet.png
 
 Scripts JSON = the DATA `listen.words.text` exactly as recorded. Read the contact sheet before shipping.
-Weeks 18-21: specs_g5wk18_21.py.
+Weeks 18-21: specs_g5wk18_21.py. Week 22: specs_g5wk22.py.
