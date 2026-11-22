@@ -579,3 +579,8 @@ html.g5-top:not([data-g5-tab="warmup"]) .quote-strip { display: none !important;
 .g5-voice-blank{display:inline-block;min-width:90px;border-bottom:2px dashed #8B3A20;color:transparent;}
 .g5-voice-fill{color:#8B3A20;}
 .g5-voice-pick{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+/* Ears of Corn (week 24) */
+.g5-corn-word{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:12px 0;}
+.g5-corn-part{font-family:Georgia,serif;font-size:22px;padding:10px 16px;min-width:56px;}
+.g5-corn-part.g5-corn-husk{background:#E4EFD8;border-color:#7FA05A;color:#587A3C;transform:translateY(10px) rotate(-3deg);opacity:.75;}
+.g5-corn-part.g5-corn-base{background:#FBF0C8;border-color:#C8922A;color:#5A3A0A;font-weight:700;opacity:1;}

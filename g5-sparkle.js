@@ -1163,6 +1163,104 @@
     else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
   }
 
+  /* ── 12g. the week's word game: Ears of Corn (week 24) ──
+     DATA.game = {type:'corn', title, sub, after, look, how, doneLine,
+                  ears:[{w:'mistreatment', parts:['mis','treat','ment'], base:1, means:'…', why:'…', hint:'…'}]}
+     A take-apart: a long word is an ear of corn. Tap each husk (a part added to the front or the end) to peel
+     it away; the base word is the ear inside. Tapping the base shakes and says what a husk is.
+     Storage oao.g5ela.corn.wk<NN> {day:{done:[i]}}. */
+  function buildCorn() {
+    var G = D.game; if (!G || G.type !== 'corn' || !G.ears || !G.ears.length) return;
+    var wkKey = 'corn.wk' + L.week;
+    var st = store(wkKey) || {};
+    var mine = st[L.day] || { done: [] };
+    var W = G.ears, idx = 0, peeled = [];
+    while (idx < W.length && mine.done.indexOf(idx) >= 0) idx++;
+    var wrap = h('div', { 'class': 'activity g5-game' });
+    wrap.innerHTML =
+      '<div class="activity-head"><div class="activity-num g5-game-num" aria-hidden="true">🌽</div><div>' +
+      '<div class="activity-title">' + esc(G.title || 'Ears of Corn') + '</div>' +
+      '<div class="activity-sub">' + esc(G.sub || 'Word game for this week') + '</div></div></div>';
+    var body = h('div', { 'class': 'activity-body' });
+    wrap.appendChild(body);
+    var look = h('details', { 'class': 'g5-look' }, [h('summary', { text: '👀 What am I looking at?' }), h('p', { text: G.look })]);
+    if (!mine.done.length) look.open = true;
+    body.appendChild(look);
+    if (G.how) body.appendChild(howLine(G.how));
+    var scene = h('div', { 'class': 'g5-river g5-corn', role: 'img', 'aria-label': 'A row of ears of corn on a blanket by a cooking fire. Each word you take apart opens one ear.' });
+    body.appendChild(scene);
+    var stepBox = h('div', { 'class': 'g5-stone-step', 'aria-live': 'polite' });
+    var row = h('div', { 'class': 'g5-corn-word' });
+    var ctrl = h('div', { 'class': 'g5-stone-ctrl' });
+    var fb = h('p', { 'class': 'g5-stone-fb', 'aria-live': 'polite' });
+    var tally = h('p', { 'class': 'g5-stone-tally' });
+    [stepBox, row, ctrl, fb, tally].forEach(function (n) { body.appendChild(n); });
+
+    function draw() {
+      var allDone = 0;
+      Object.keys(st).forEach(function (k) { allDone += (st[k].done || []).length; });
+      var n = mine.done.length, w = 900, hgt = 170, svg = '';
+      svg += '<svg viewBox="0 0 ' + w + ' ' + hgt + '" preserveAspectRatio="xMidYMid meet" aria-hidden="true">' +
+        '<rect width="' + w + '" height="' + hgt + '" fill="#2B2A3A"/>' +
+        '<path d="M0,120 C220,104 680,104 900,120 L900,170 L0,170 Z" fill="#E8ECF2"/>' +
+        '<path d="M150,128 L750,128 L790,160 L110,160 Z" fill="#8B3A20"/><path d="M150,128 L750,128 L756,134 L144,134 Z" fill="#C8A850"/>';
+      svg += '<circle cx="70" cy="118" r="26" fill="rgba(233,180,76,.25)"/><path d="M58,128 Q70,84 82,128 Z" fill="#E9B44C"/><path d="M64,128 Q70,104 76,128 Z" fill="#F6E27A"/><path d="M48,130 L92,130" stroke="#3A2A1A" stroke-width="6" stroke-linecap="round"/>';
+      var gap = 600 / (W.length + 1);
+      for (var r = 0; r < W.length; r++) {
+        var on = mine.done.indexOf(r) >= 0, x = 150 + gap * (r + 1), y = 132;
+        if (on) {
+          svg += '<ellipse cx="' + x + '" cy="' + (y - 34) + '" rx="13" ry="38" fill="#E9B44C"/>';
+          for (var k = 0; k < 6; k++) svg += '<path d="M' + (x - 11) + ',' + (y - 62 + k * 10) + ' L' + (x + 11) + ',' + (y - 62 + k * 10) + '" stroke="#C8922A" stroke-width="1.5"/>';
+          svg += '<path d="M' + x + ',' + (y - 72) + ' L' + x + ',' + y + '" stroke="#C8922A" stroke-width="1.5"/>' +
+            '<path d="M' + (x - 13) + ',' + (y - 20) + ' Q' + (x - 34) + ',' + (y - 4) + ' ' + (x - 30) + ',' + (y + 6) + ' Q' + (x - 12) + ',' + (y + 4) + ' ' + x + ',' + (y + 2) + ' Z" fill="#7FA05A"/>' +
+            '<path d="M' + (x + 13) + ',' + (y - 20) + ' Q' + (x + 34) + ',' + (y - 4) + ' ' + (x + 30) + ',' + (y + 6) + ' Q' + (x + 12) + ',' + (y + 4) + ' ' + x + ',' + (y + 2) + ' Z" fill="#7FA05A"/>';
+        } else {
+          svg += '<path d="M' + x + ',' + (y - 76) + ' Q' + (x + 20) + ',' + (y - 36) + ' ' + x + ',' + (y + 4) + ' Q' + (x - 20) + ',' + (y - 36) + ' ' + x + ',' + (y - 76) + ' Z" fill="#6F8F4E"/>' +
+            '<path d="M' + x + ',' + (y - 76) + ' L' + x + ',' + (y + 2) + '" stroke="#587A3C" stroke-width="2"/>';
+        }
+      }
+      svg += '</svg>';
+      scene.innerHTML = svg;
+      tally.textContent = 'Today: ' + n + ' of ' + W.length + (W.length === 1 ? ' ear' : ' ears') + ' opened. This week: ' + allDone + '.';
+    }
+    function save() { st[L.day] = mine; store(wkKey, st); }
+    function shake(b) { b.classList.add('g5-shake'); setTimeout(function () { b.classList.remove('g5-shake'); }, 450); }
+    function show() {
+      fb.textContent = ''; ctrl.innerHTML = ''; row.innerHTML = ''; peeled = [];
+      if (idx >= W.length) {
+        draw();
+        stepBox.innerHTML = '<b>Every ear is open.</b> ' + esc(G.doneLine || 'Come back tomorrow for more.');
+        var again = h('button', { type: 'button', 'class': 'g5-btn g5-btn-ghost' }, ['↺ Take them apart again']);
+        again.addEventListener('click', function () { mine.done = []; idx = 0; save(); show(); });
+        ctrl.appendChild(again); return;
+      }
+      var S = W[idx], husks = S.parts.length - 1;
+      draw();
+      stepBox.innerHTML = '<span class="g5-stepn">Word ' + (idx + 1) + ' of ' + W.length + '</span> <b>' + esc(S.w) + '</b>. Tap each husk: a part added to the front or the end. Leave the base word.';
+      S.parts.forEach(function (p, k) {
+        var b = h('button', { type: 'button', 'class': 'g5-beat g5-corn-part', 'aria-label': 'word part ' + p }, [p]);
+        b.addEventListener('click', function () {
+          if (k === S.base) { fb.textContent = S.hint || 'That part can stand alone as a word, so it is the base. Tap a part that was added to the front or the end.'; shake(b); return; }
+          if (peeled.indexOf(k) >= 0) return;
+          peeled.push(k); b.classList.add('g5-corn-husk'); b.disabled = true;
+          if (peeled.length < husks) { fb.textContent = 'One husk off. Is there another?'; return; }
+          row.querySelectorAll('button').forEach(function (x, j) { x.disabled = true; if (j === S.base) x.classList.add('g5-corn-base'); });
+          if (mine.done.indexOf(idx) < 0) mine.done.push(idx);
+          save(); draw();
+          fb.innerHTML = 'The base word is <b>' + esc(S.parts[S.base]) + '</b>. ' + esc(S.why || '') + (S.means ? ' <b>' + esc(S.w) + '</b>: ' + esc(S.means) : '');
+          var next = h('button', { type: 'button', 'class': 'g5-btn' }, [idx + 1 < W.length ? 'Next word →' : 'Finish →']);
+          next.addEventListener('click', function () { idx++; while (idx < W.length && mine.done.indexOf(idx) >= 0) idx++; show(); setTimeout(function () { var f = row.querySelector('button') || ctrl.querySelector('button'); if (f) f.focus(); }, 30); });
+          ctrl.appendChild(next);
+        });
+        row.appendChild(b);
+      });
+    }
+    show();
+    var ref = G.after ? activityByTitle(G.after, panel('words')) : null;
+    if (ref) afterNode(ref, wrap);
+    else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
+  }
+
   /* ── 13. the Commonplace Book page ─────────────────────────── */
   var NAME_BAD = /\b(ass|butt|poop|fart|stupid|dumb|idiot|hate|kill|sex|damn|hell|crap)\b/i;
   function profileName() { var p = store('profile'); return p && p.name ? p.name : ''; }
@@ -1705,7 +1803,7 @@
     var rp = panel('reading'); if (!rp || !L.chapters || rp.querySelector('.g5-readnow')) return;
     var card = h('div', { 'class': 'g5-readnow' });
     card.innerHTML = '<div class="g5-readnow-ico" aria-hidden="true"></div><div class="g5-readnow-main"><div class="g5-readnow-k">Today’s reading</div>' +
-      '<div class="g5-readnow-t">Read <b>' + esc(L.chapters) + '</b> of <em>' + esc(L.bookTitle) + '</em> in your book.</div>' +
+      '<div class="g5-readnow-t">' + (D.readnow && D.readnow.text ? esc(D.readnow.text) : 'Read <b>' + esc(L.chapters) + '</b> of <em>' + esc(L.bookTitle) + '</em> in your book.') + '</div>' +
       '<div class="g5-readnow-s">On this tab, in order:</div><ol class="g5-readnow-steps"></ol></div>';
     var li = rp.querySelector(':scope > .g5-listen');
     if (li) afterNode(li, card); else rp.insertBefore(card, rp.firstChild);
@@ -1719,7 +1817,7 @@
         if (el.classList.contains('activity')) {
           t = (el.querySelector('.activity-title') || el).textContent;
           host = el.querySelector('.activity-title');
-          if (/Chapter Introduction/i.test(t)) label = '<b>Read ' + esc(L.chapters) + '</b> in your book';
+          if (/Chapter Introduction/i.test(t)) label = D.readnow && D.readnow.step ? esc(D.readnow.step) : '<b>Read ' + esc(L.chapters) + '</b> in your book';
           else if (/Virtue/i.test(t)) label = 'Learn the virtue: <b>' + esc(t.replace(/^\W*Virtue Watch:?\s*/i, '').trim().toLowerCase()) + '</b> (before you read)';
           else label = esc(t.replace(/^[^A-Za-z]+/, '').trim());
         } else if (el.classList.contains('g5-virtue')) {
@@ -1952,6 +2050,7 @@
     guard('spy', buildSpyglass);
     guard('lantern', buildLanterns);
     guard('voice', buildVoice);
+    guard('corn', buildCorn);
     guard('cards', buildCards);
     guard('checks', buildChecks);
     guard('virtue', buildVirtue);
