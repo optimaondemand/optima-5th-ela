@@ -2934,7 +2934,7 @@ body {
         <span style="background:#FAFBFF;color:#7A88A8;padding:4px 8px;border-radius:6px;font-size:11px;">&#9675; Revise</span>
         <span style="background:#FAFBFF;color:#7A88A8;padding:4px 8px;border-radius:6px;font-size:11px;">&#9675; Submit</span>
       </div>
-      <div class="textbox-prompt">Today is the <strong>Plan</strong> stage of your final publish piece. Review all your writing from Weeks 18&ndash;22. Choose the strongest piece or combine the best parts. In your reading journal: write a plan &mdash; what you will include, what you will cut, and how you will open and close.</div>
+      <div class="textbox-prompt">Today is the <strong>Plan</strong> stage of your final publish piece. Review all your writing from Weeks 18&ndash;22. Choose the strongest piece or combine the best parts. In the box below, write a plan &mdash; what you will include, what you will cut, and how you will open and close.</div>
       <textarea class="journal-box" id="journal-writing" data-label="Writer's Workshop: Publish Piece — Plan" placeholder="I will publish: ... I will include: ... I will cut: ... My opening: ... My closing: ..." oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
     </div>
   </div>
@@ -3009,9 +3009,9 @@ function gatherAnswers() {
   var output = '';
   var sections = [
     { title: '📖 CH. 24 — CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
-    { title: 'MORPHOLOGY SWYK', ids: ['journal-grammar'] },
+    { title: 'GRAMMAR SWYK', ids: ['journal-grammar'] },
     { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
-    { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
+    { title: '✍️ WRITER\'S WORKSHOP', ids: ['journal-writing'] }
   ];
 
   output += 'LESSON 23.1 — How I Became a Ghost, Ch. 24 (A Soldier’s Vow)\n';
@@ -3492,7 +3492,7 @@ function downloadJournal() {
     { title: '📖 CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: '🔤 WORD STUDY CONNECTION (GRAMMAR)', ids: ['journal-grammar'] },
     { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
-    { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
+    { title: '✍️ WRITER\'S WORKSHOP', ids: ['journal-writing'] }
   ];
 
   var html = '<!DOCTYPE html><html><head><meta charset="UTF-8">';
