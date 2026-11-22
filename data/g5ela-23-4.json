@@ -1,0 +1,225 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "This is the last day of the week. In Chapter 27, the soldiers reach the bonepickers' wagon, where Naomi is still hiding. Today's poem was written in the shape of a gravestone. Listen for how calm it is."
+  },
+  "words": {
+   "text": "Last day with the speaking roots. Match words to the roots you have collected all year. Then explain a spelling pattern the way you would teach it to a friend, and finish the last lines of the game."
+  },
+  "reading": {
+   "text": "Read Chapter 27 in your book. It ends in a frightening moment, so take it slowly. Then put the book together so far: who Isaac has become, what he faces, and what being a ghost lets him see."
+  },
+  "assignment": {
+   "text": "Three questions about Chapter 27. Then write the final version of your piece, clean and complete. Add one sentence about what it shows about you as a writer. Copy your work and paste it into Canvas."
+  }
+ },
+ "how": [
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted words in the first sentence.",
+    "Join the second one into one clear sentence, out loud.",
+    "Tap Check My Work."
+   ],
+   "why": "Joining short sentences shows the reader how the ideas connect."
+  },
+  {
+   "match": "Poetry Corner",
+   "do": [
+    "Read the poem out loud once.",
+    "Look at its shape: how many lines, how it rhymes.",
+    "Read Think About It and keep your answer in mind."
+   ],
+   "why": "A poet chooses a poem's shape to fit what it says."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Tap a word.",
+    "Then tap the root that unlocks it.",
+    "Match all four."
+   ],
+   "why": "Roots you learned months ago still unlock new words."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Read each word and its meaning.",
+    "Write one sentence for each word.",
+    "Make each sentence show the meaning."
+   ],
+   "why": "Using a word in your own sentence is the best proof you know it."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Tap the approach that catches more errors in each pair.",
+    "Write your own three editing passes in the box.",
+    "Say why that order works."
+   ],
+   "why": "Editing one thing at a time catches more mistakes."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Name the pattern before you place each word.",
+    "Tap a word, then tap its column.",
+    "Explain three words from your draft in the box."
+   ],
+   "why": "If you can teach a pattern, you own it."
+  },
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read the four lenses.",
+    "Tap the one you will use today.",
+    "Put the book together so far: character, conflict, point of view and theme."
+   ],
+   "why": "Synthesizing means putting the pieces together into one big idea.",
+   "use": "You will use this for question 3."
+  },
+  {
+   "match": "Chapter Thinking",
+   "do": [
+    "Read Chapter 27 first.",
+    "Answer each question in 2 or more sentences.",
+    "Use details from the chapter as evidence."
+   ],
+   "why": "These questions check what happened and what the author shows you."
+  },
+  {
+   "match": "Workshop",
+   "do": [
+    "Write the final version in the box.",
+    "Check every pronoun and comma.",
+    "Add one sentence: what does this piece show about you as a writer?"
+   ],
+   "why": "Today you finish your piece and turn it in."
+  },
+  {
+   "match": "Virtue Watch",
+   "do": [
+    "Read what justice means.",
+    "Read the example from this week.",
+    "After you read, pick the strongest moment of the week at the end of this tab."
+   ]
+  },
+  {
+   "match": "Chapter Introduction",
+   "do": [
+    "Read the chapter introduction below.",
+    "Open your book and read Chapter 27.",
+    "Then do the Read Like a Writer box and the Virtue Watch below."
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "word": "synthesize",
+   "in": "What Good Readers Do",
+   "meaning": "put ideas together to make one bigger idea"
+  }
+ ],
+ "miss": {
+  "affect": "affect (to change) sounds like effect (a result). Check the meaning.",
+  "chronology": "chron (time) + logy (study): Greek parts.",
+  "competition": "Say com-pe-ti-tion. The quiet e: think of compete.",
+  "definition": "Say def-i-ni-tion. The quiet i: think of define.",
+  "manuscript": "manu (hand) + script (write): Latin parts.",
+  "photograph": "photo (light) + graph (write): Greek parts.",
+  "principle": "principle (a rule) sounds like principal (the head of a school).",
+  "whose": "whose (belonging to who) sounds like who's (who is)."
+ },
+ "game": {
+  "type": "voice",
+  "title": "Raise Your Voice",
+  "sub": "This week's word game · 3 lines today",
+  "after": "Spelling",
+  "look": "Each line is something a person in Isaac's time could say. These lines are made up; they are not from the book. Read the whole line, then tap the word that fits the blank. Each line you finish sends a gold voice ring into the sky.",
+  "how": {
+   "do": [
+    "Read the whole line, blank and all.",
+    "Ask: voice and calling, or saying?",
+    "Tap the word that fits.",
+    "Tap Next line."
+   ],
+   "why": "If you know voc, voke and dict, you can work out words you have never studied."
+  },
+  "doneLine": "Every voice this week is raised. Well done.",
+  "lines": [
+   {
+    "who": "A grandfather",
+    "before": "You say you are cold, but you will not wear your coat. That is a ",
+    "after": ".",
+    "opts": [
+     "contradiction",
+     "vocalist",
+     "invocation"
+    ],
+    "ok": 0,
+    "why": "contra (against) + dict (say) + ion: two things that say opposite things."
+   },
+   {
+    "who": "A school principal",
+    "before": "The student with the best grades gives the farewell speech. She is the ",
+    "after": ".",
+    "opts": [
+     "advocate",
+     "valedictorian",
+     "dictator"
+    ],
+    "ok": 1,
+    "why": "vale (farewell) + dict (say): the student who says farewell for the class."
+   },
+   {
+    "who": "A council member",
+    "before": "The meeting began with an ",
+    "after": ", words that called everyone to listen.",
+    "opts": [
+     "edict",
+     "prediction",
+     "invocation"
+    ],
+    "ok": 2,
+    "why": "in (on) + voc (call) + ation: words that call on everyone at the start."
+   }
+  ]
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/hbg/friedrich-dolmen-in-snow.jpg",
+  "title": "Dolmen in the Snow",
+  "alt": "A painting of three old oak trees on a snowy hill around a low pile of large stones, under a pale winter sky.",
+  "look": "Caspar David Friedrich painted this ancient grave under old oaks in the snow in Germany in 1807. People built it thousands of years earlier to honor their dead. It is far from Isaac's road, but it fits Chapter 27, where the bonepickers search the ashes for every last bone to honor.",
+  "lookBtn": "Tap to learn about this painting",
+  "creator": "Caspar David Friedrich",
+  "date": "1807",
+  "license": "Public domain (Galerie Neue Meister, Dresden, via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Cairn_in_Snow_-_Google_Art_Project.jpg"
+ },
+ "virtue": {
+  "name": "justice",
+  "kind": "best",
+  "title": "The strongest moment of justice this week",
+  "intro": "Look back at Chapters 24 to 27. Tap the moment you think shows justice the most.",
+  "options": [
+   {
+    "t": "Roundman helps Pointy Nose after Leader hurts him."
+   },
+   {
+    "t": "Mister Tibbi says, “We did nothing to deserve this.”"
+   },
+   {
+    "t": "Ruth shows the soldiers her daughter's body."
+   },
+   {
+    "t": "The bonepickers help their fallen friend while Leader shouts at them."
+   },
+   {
+    "t": "Joseph leaps through the burning curtain to pull Naomi out."
+   }
+  ],
+  "line": "Finish the sentence: This shows justice the most because…",
+  "placeholder": "This shows justice the most because…"
+ }
+}

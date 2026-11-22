@@ -1,0 +1,248 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "Chapter 25 is called A Day of Death, but read closely: by the end of the chapter, who has actually died? Today's poem is a sonnet about a statue that speaks. Notice how its shape fits its voice."
+  },
+  "words": {
+   "text": "Today, decide whether each word carries voc and voke, calling out, or dict, saying and declaring. Then sort words by the rule that explains their spelling. Then three new lines to finish in the game."
+  },
+  "reading": {
+   "text": "Read Chapter 25 in your book. After each big moment, say in one sentence what changed. Then write your own summary sentence in the Read Like a Writer box, and finish with the Virtue Watch."
+  },
+  "assignment": {
+   "text": "Three questions about Chapter 25. Then write the first full draft of your final piece. Use what you have learned this year: strong verbs, clear pronouns, and sentences that show how ideas connect."
+  }
+ },
+ "hook": {
+  "q": "Your leader just hurt one of your own. Do you keep following him?",
+  "options": [
+   {
+    "t": "Yes. He is the leader.",
+    "reply": "Many people feel that way, especially when they are afraid. Watch what the soldiers in Chapter 25 start to wonder:"
+   },
+   {
+    "t": "No. I would walk away.",
+    "reply": "That takes courage. The soldiers in Chapter 25 do not walk away, but something changes inside them:"
+   },
+   {
+    "t": "I would stay, but I would be scared.",
+    "reply": "That is just what Tingle shows in Chapter 25:"
+   }
+  ],
+  "reveal": {
+   "line": "Privately they wondered, What might he do to me?",
+   "cite": "Chapter 25",
+   "then": "As you read Chapter 25, watch how the soldiers' fear changes into something else."
+  }
+ },
+ "how": [
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read the three lenses.",
+    "Tap the one you will use today.",
+    "Keep it in mind as you read. You will use it at the end."
+   ],
+   "why": "Summing up as you read keeps a busy chapter clear.",
+   "use": "You will use this for question 1."
+  },
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted words in the first sentence.",
+    "Join the second one into one clear sentence, out loud.",
+    "Tap Check My Work."
+   ],
+   "why": "Joining short sentences shows the reader how the ideas connect."
+  },
+  {
+   "match": "Poetry Corner",
+   "do": [
+    "Read the poem out loud once.",
+    "Look at its shape: how many lines, how it rhymes.",
+    "Read Think About It and keep your answer in mind."
+   ],
+   "why": "A poet chooses a poem's shape to fit what it says."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Ask: is this word about calling out or about saying?",
+    "Tap a word, then tap its meaning.",
+    "Match all four."
+   ],
+   "why": "voc and voke lean toward calling out. dict leans toward saying and declaring."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Read each sentence from the book.",
+    "Look for clues around the word.",
+    "Tap a word, then tap its meaning."
+   ],
+   "why": "Clues in a sentence can tell you what a word means."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Read both versions in each pair.",
+    "Tap the one that slows the reader down.",
+    "Fix the passage in the box and name the three problems."
+   ],
+   "why": "A reader should never have to stop and work out what the writer meant."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Compare each base word with its longer form.",
+    "Ask: did the base change, did a prefix stay whole, or is it a sound-alike?",
+    "Tap a word, then tap its column."
+   ],
+   "why": "Naming the rule tells you how to spell the word next time."
+  },
+  {
+   "match": "Chapter Thinking",
+   "do": [
+    "Read Chapter 25 first.",
+    "Answer each question in 2 or more sentences.",
+    "Use details from the chapter as evidence."
+   ],
+   "why": "These questions check what happened and what the author shows you."
+  },
+  {
+   "match": "Workshop",
+   "do": [
+    "Use your plan from Day 1.",
+    "Write the whole piece in the box.",
+    "Use strong verbs, clear pronouns and one combined sentence."
+   ],
+   "why": "A first draft gets every idea down. You will polish it tomorrow.",
+   "use": "Next lesson you will revise it."
+  },
+  {
+   "match": "Virtue Watch",
+   "do": [
+    "Read what justice means.",
+    "Read the example from this week.",
+    "After you read, fill in your justice log at the end of this tab."
+   ]
+  },
+  {
+   "match": "Chapter Introduction",
+   "do": [
+    "Read the chapter introduction below.",
+    "Open your book and read Chapter 25.",
+    "Then do the Read Like a Writer box and the Virtue Watch below."
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "word": "antecedent",
+   "in": "Grammar",
+   "meaning": "the noun a pronoun points back to"
+  },
+  {
+   "word": "sonnet",
+   "in": "Poetry Corner",
+   "meaning": "a poem of fourteen lines with a set rhyme pattern"
+  }
+ ],
+ "miss": {
+  "ability": "able changes to abil before -ity.",
+  "council": "council (a group that meets) sounds like counsel (advice). Check the meaning.",
+  "interrupt": "inter + rupt. The prefix stays whole, so there are two r's.",
+  "it's": "it's means it is. its means belonging to it.",
+  "perceptive": "perceive changes to percept before -ive.",
+  "permission": "permit changes to permiss before -ion.",
+  "submerge": "sub + merge. The prefix stays whole.",
+  "their": "their means belonging to them. there and they're sound the same.",
+  "transport": "trans + port. The prefix stays whole."
+ },
+ "game": {
+  "type": "voice",
+  "title": "Raise Your Voice",
+  "sub": "This week's word game · 3 lines today",
+  "after": "Spelling",
+  "look": "Each line is something a person in Isaac's time could say. These lines are made up; they are not from the book. Read the whole line, then tap the word that fits the blank. Each line you finish sends a gold voice ring into the sky.",
+  "how": {
+   "do": [
+    "Read the whole line, blank and all.",
+    "Ask: voice and calling, or saying?",
+    "Tap the word that fits.",
+    "Tap Next line."
+   ],
+   "why": "If you know voc, voke and dict, you can work out words you have never studied."
+  },
+  "doneLine": "Come back tomorrow for three more lines.",
+  "lines": [
+   {
+    "who": "A teacher",
+    "before": "Speak slowly and clearly. Good ",
+    "after": " helps listeners understand every word.",
+    "opts": [
+     "vocation",
+     "diction",
+     "provoke"
+    ],
+    "ok": 1,
+    "why": "dict (say) + ion: the way you say your words."
+   },
+   {
+    "who": "A wagon maker",
+    "before": "Building wagons is not just a job to me. It is my ",
+    "after": ".",
+    "opts": [
+     "vocation",
+     "diction",
+     "verdict"
+    ],
+    "ok": 0,
+    "why": "voc (call) + ation: work you feel called to do."
+   },
+   {
+    "who": "An elder",
+    "before": "Before the long walk, we ",
+    "after": " the memory of those who came before us.",
+    "opts": [
+     "dictate",
+     "predict",
+     "invoke"
+    ],
+    "ok": 2,
+    "why": "in (on) + voke (call): to call on someone or something for help."
+   }
+  ]
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/hbg/friedrich-oak-in-snow.jpg",
+  "title": "Oak Tree in the Snow",
+  "alt": "A painting of a huge old oak tree in a snowy field under a gray sky, with a broken branch lying on the ground.",
+  "look": "Caspar David Friedrich painted this old oak in the snow in Germany in 1827. Look at the broken branch on the ground. In Chapter 25, the soldiers fire into the treetops, and ice-covered branches crash down on the Choctaw Council's camp.",
+  "lookBtn": "Tap to learn about this painting",
+  "creator": "Caspar David Friedrich",
+  "date": "1827",
+  "license": "Public domain (Wallraf-Richartz-Museum, via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Eiche_im_Schnee_-_Caspar_David_Friedrich.jpg"
+ },
+ "virtue": {
+  "name": "justice",
+  "kind": "log",
+  "title": "My justice log",
+  "intro": "In Chapter 25, tap the moment you think shows the most justice.",
+  "options": [
+   {
+    "t": "Mister Tibbi stands his ground: “We did nothing to deserve this.”"
+   },
+   {
+    "t": "Isaac stops Joseph from fighting twenty soldiers, so Naomi will not lose him."
+   },
+   {
+    "t": "Isaac tells both families, “We are stronger than the soldiers.”"
+   }
+  ],
+  "line": "Finish the sentence: This shows the most justice because…",
+  "placeholder": "This shows the most justice because…"
+ }
+}
