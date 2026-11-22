@@ -1,0 +1,189 @@
+{
+ "id": "g5-ela-wk23-checkin",
+ "title": "Week 23 Check-In · How I Became a Ghost",
+ "description": "This week Leader vowed that someone would die, a rattlesnake guarded Nita, and Joseph pulled Naomi from a burning wagon. You practiced editing for clarity and sentence combining, the roots voc/voke and dict, and a year of spelling patterns. Show what you know.",
+ "chapters": "Ch. 24–27",
+ "questions": [
+  {
+   "n": 1,
+   "section": "Grammar",
+   "label": "Identification",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which version is the clearest, best-combined sentence?",
+   "options": [
+    "Leader grabbed his shotgun. Leader walked to Pointy Nose. Leader swung it hard.",
+    "Leader grabbed his shotgun, walked slowly to Pointy Nose, and swung it hard.",
+    "Leader grabbed his shotgun, he walked to Pointy Nose, he swung it hard.",
+    "Leader grabbed his shotgun and he walked to Pointy Nose and he swung it hard."
+   ],
+   "answer": 1,
+   "from": "23.1–23.3 Grammar (combining); Ch. 24",
+   "status": "fixed (the Oct 11 item had Leader “tired,” which the book never says; book-true actions; a fourth option)"
+  },
+  {
+   "n": 2,
+   "section": "Grammar",
+   "label": "Combine",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Combine these three sentences into one clear sentence.",
+   "excerpt": "The soldiers fired their shotguns. Branches fell on the camp. Stella was hurt.",
+   "key": "Ex.: When the soldiers fired their shotguns, branches fell on the camp, and Stella was hurt. (Any one clear sentence that shows how the ideas connect.)",
+   "from": "23.1–23.3 Grammar; Ch. 25",
+   "status": "kept"
+  },
+  {
+   "n": 3,
+   "section": "Grammar",
+   "label": "Edit",
+   "type": "essay_question",
+   "points": 1,
+   "text": "This sentence has two mistakes. Rewrite it correctly.",
+   "excerpt": "The bonepickers hid Naomi in there trunk, the soldiers did not look under the bones.",
+   "key": "The bonepickers hid Naomi in their trunk, and the soldiers did not look under the bones. (there → their; fix the comma splice with “, and” or a period.)",
+   "from": "23.2 Grammar (comma splice); 23.2/23.4 Spelling (homophones); Ch. 27",
+   "status": "fixed (“never found her” was not true by Ch. 27; now matches the book)"
+  },
+  {
+   "n": 4,
+   "section": "Morphology & Vocabulary",
+   "label": "Root Identification",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "The root voc/voke means “voice, call.” The root dict means “say.” Which word has the root that means “say”?",
+   "options": [
+    "vocal",
+    "predict",
+    "provoke",
+    "evoke"
+   ],
+   "answer": 1,
+   "from": "23.1–23.4 Morphology",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 5,
+   "section": "Morphology & Vocabulary",
+   "label": "Context Clues",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Read the sentence from Chapter 25. What does unconscious most likely mean?",
+   "excerpt": "“Two councilmen rolled the limb away, and elderly Stella lay unconscious.”",
+   "options": [
+    "Not awake and not able to feel anything",
+    "Angry and shouting",
+    "Hiding on purpose",
+    "Cold and shivering"
+   ],
+   "answer": 0,
+   "from": "23.1–23.3 Vocabulary",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 6,
+   "section": "Morphology & Vocabulary",
+   "label": "Use It",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Use the word revenge in a sentence about Leader in Chapter 24.",
+   "key": "Uses revenge correctly (hurting someone back). Ex.: Leader wanted revenge on Naomi for escaping and burning the wagon.",
+   "from": "23.4 Vocabulary (Use the Word)",
+   "status": "kept"
+  },
+  {
+   "n": 7,
+   "section": "Spelling",
+   "label": "Add the Part",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Add the part and spell the new word.",
+   "excerpt": "decide + -sion → ___   curious + -ity → ___   il- + legal → ___",
+   "key": "decision, curiosity, illegal",
+   "from": "23.1 Spelling sort",
+   "status": "kept"
+  },
+  {
+   "n": 8,
+   "section": "Spelling",
+   "label": "Spot It",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which word is spelled correctly?",
+   "options": [
+    "impossable",
+    "imposible",
+    "impossible",
+    "impposible"
+   ],
+   "answer": 2,
+   "from": "23.1 Spelling sort; 23.3 -able/-ible",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 9,
+   "section": "Spelling",
+   "label": "Proofread",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Find and fix the two misspelled words.",
+   "excerpt": "Leader made a desision to serch every wagon.",
+   "key": "decision, search",
+   "from": "23.1–23.3 Spelling (editing your draft)",
+   "status": "kept"
+  },
+  {
+   "n": 10,
+   "section": "Reading",
+   "label": "Detail",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Who says these words? What does he tell the family to do when the soldiers come, and why?",
+   "key": "Isaac. Let the soldiers take the blankets and say nothing, and show them Nita’s body; whatever the soldiers do, keep everyone safe.",
+   "from": "23.2 Reading (Ch. 25)",
+   "status": "kept (key checked against the book)"
+  },
+  {
+   "n": 11,
+   "section": "Reading",
+   "label": "Inference",
+   "type": "essay_question",
+   "points": 2,
+   "text": "Leader vows, “Someone will die today.” How does Leader’s cruelty in Chapters 24–27 change the way his own soldiers feel about him? Use at least two details from two different chapters.",
+   "key": "2 pts: Ch. 24 he strikes Pointy Nose with his shotgun; Ch. 25 the soldiers grow afraid of him (“What might he do to me?”); Ch. 26 they think of their own children and hang their heads; Ch. 27 they wince at the fallen bonepicker and see “the cruel man they were bound by law to follow.” 1 pt: one detail or one chapter.",
+   "from": "23.1–23.4 Reading (Ch. 24–27)",
+   "status": "kept"
+  },
+  {
+   "n": 12,
+   "section": "Writing",
+   "label": "Read Like a Writer",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Notice the pattern: a transition word, an action, a detail set off by commas, and a second action. Write your own sentence with the same shape.",
+   "excerpt": "“Instead, she carried Nita’s body, wrapped in the blanket, and laid it by the fire.” (Chapter 26)",
+   "key": "Transition + action + comma-set detail + and + second action.",
+   "from": "23.3 Read Like a Writer (Ch. 26)",
+   "status": "fixed (the section name showed as “{19: , 20: , 21: , 22: }”)"
+  },
+  {
+   "n": 13,
+   "section": "Writing",
+   "label": "Short Response",
+   "type": "essay_question",
+   "points": 1,
+   "text": "At the end of Chapter 26, Isaac says, “Only later would I learn who cast the spell and brought the snake.” In 2–3 sentences, explain what the rattlesnake does for Nita’s family and why Tingle might keep its source a mystery.",
+   "key": "It stops Pointy Nose from taking Nita’s body. Keeping the source secret builds suspense and shows the power of Choctaw knowledge.",
+   "from": "23.3 Reading (Ch. 26)",
+   "status": "fixed (the section name showed as “{19: , 20: , 21: , 22: }”)"
+  }
+ ],
+ "passage": {
+  "before": 10,
+  "title": "Reading passage (Chapter 25)",
+  "ch": 25,
+  "text": "“When the sun sets on this day, we want everyone to be safe. If they scatter Nita’s bones, we will gather them. If they burn her bones, we will gather the ashes. We are Choctaws. We are stronger than the soldiers.”",
+  "cite": "Tim Tingle, How I Became a Ghost, Chapter 25"
+ },
+ "rwm_ch": 26
+}
