@@ -1362,6 +1362,111 @@
     else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
   }
 
+  /* ── 12i. Through the Strait (week 26): a route game ─────────
+     The ship works west through the narrows of the Strait of Magellan. At each
+     narrows a clue and two channels; the right word is the safe channel. A wrong
+     channel bumps the rocks (try again). Each narrows passed lights a fire on the
+     south shore; the last one opens the Pacific. DATA: game {type:'strait',
+     narrows:[{clue, a, b, ok:'a'|'b', why, miss}]}. */
+  function buildStrait() {
+    var G = D.game; if (!G || G.type !== 'strait' || !G.narrows || !G.narrows.length) return;
+    var wkKey = 'strait.wk' + L.week;
+    var st = store(wkKey) || {};
+    var mine = st[L.day] || { done: [] };
+    var N = G.narrows, idx = 0;
+    while (idx < N.length && mine.done.indexOf(idx) >= 0) idx++;
+    var wrap = h('div', { 'class': 'activity g5-game' });
+    wrap.innerHTML =
+      '<div class="activity-head"><div class="activity-num g5-game-num" aria-hidden="true">🧭</div><div>' +
+      '<div class="activity-title">' + esc(G.title || 'Through the Strait') + '</div>' +
+      '<div class="activity-sub">' + esc(G.sub || 'Word game for this week') + '</div></div></div>';
+    var body = h('div', { 'class': 'activity-body' });
+    wrap.appendChild(body);
+    var look = h('details', { 'class': 'g5-look' }, [h('summary', { text: '👀 What am I looking at?' }), h('p', { text: G.look })]);
+    if (!mine.done.length) look.open = true;
+    body.appendChild(look);
+    if (G.how) body.appendChild(howLine(G.how));
+    var scene = h('div', { 'class': 'g5-river g5-strait', role: 'img', 'aria-label': 'A map of a narrow, winding strait between Patagonia to the north and Tierra del Fuego to the south. The ship moves west from the Atlantic toward the Pacific as you pass each narrows.' });
+    body.appendChild(scene);
+    var stepBox = h('div', { 'class': 'g5-stone-step', 'aria-live': 'polite' });
+    var row = h('div', { 'class': 'g5-strait-chan' });
+    var ctrl = h('div', { 'class': 'g5-stone-ctrl' });
+    var fb = h('p', { 'class': 'g5-stone-fb', 'aria-live': 'polite' });
+    var tally = h('p', { 'class': 'g5-stone-tally' });
+    [stepBox, row, ctrl, fb, tally].forEach(function (n) { body.appendChild(n); });
+
+    function pt(i) { // points along the channel, east (right) to west (left)
+      var n = N.length, t = n > 1 ? i / (n - 1) : 0;
+      var x = 790 - t * 680, y = 100 + Math.sin(t * Math.PI * 2.2) * 26;
+      return [x, y];
+    }
+    function draw() {
+      var allDone = 0;
+      Object.keys(st).forEach(function (k) { allDone += (st[k].done || []).length; });
+      var passed = mine.done.length, finished = passed >= N.length;
+      var path = 'M880,96';
+      for (var i = 0; i < N.length; i++) { var p = pt(i); path += ' L' + p[0] + ',' + p[1]; }
+      path += ' L20,98';
+      var svg = '<svg viewBox="0 0 900 200" preserveAspectRatio="xMidYMid meet" aria-hidden="true">' +
+        '<rect width="900" height="200" fill="#9CC3D5"/>' +
+        '<rect x="0" y="0" width="120" height="200" fill="' + (finished ? '#6FB0D8' : '#7FA9BE') + '"/>' +
+        '<path d="M120,0 L900,0 L900,70 Q780,58 700,80 Q600,104 500,72 Q400,40 300,78 Q220,108 120,74 Z" fill="#C9B98A" stroke="#8C7A4A"/>' +
+        '<path d="M120,200 L900,200 L900,124 Q780,140 700,122 Q600,146 500,120 Q400,96 300,128 Q220,150 120,126 Z" fill="#B7A777" stroke="#8C7A4A"/>' +
+        '<path d="' + path + '" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="6 6" opacity=".8"/>' +
+        '<text x="500" y="26" fill="#5A4A22" font-family="Georgia,serif" font-size="16" text-anchor="middle">Patagonia</text>' +
+        '<text x="500" y="186" fill="#4A3A18" font-family="Georgia,serif" font-size="16" text-anchor="middle">Tierra del Fuego</text>' +
+        '<text x="60" y="104" fill="' + (finished ? '#0E3A5C' : '#3A5A6C') + '" font-family="Georgia,serif" font-size="' + (finished ? 17 : 14) + '" text-anchor="middle" font-weight="' + (finished ? 700 : 400) + '">PACIFIC</text>' +
+        '<text x="860" y="44" fill="#2A4A5C" font-family="Georgia,serif" font-size="13" text-anchor="middle">ATLANTIC</text>';
+      for (var j = 0; j < N.length; j++) {
+        var q = pt(j), on = mine.done.indexOf(j) >= 0;
+        svg += '<circle cx="' + q[0] + '" cy="' + q[1] + '" r="7" fill="' + (on ? '#F5D77A' : '#FFFFFF') + '" stroke="#2A4A5C" stroke-width="1.5"/>';
+        var fx = q[0], fy = 158 + (j % 2) * 10;
+        svg += on ? '<path d="M' + fx + ',' + (fy - 16) + ' Q' + (fx + 8) + ',' + (fy - 6) + ' ' + fx + ',' + fy + ' Q' + (fx - 8) + ',' + (fy - 6) + ' ' + fx + ',' + (fy - 16) + ' Z" fill="#F08A24" stroke="#B5501A"/><circle cx="' + fx + '" cy="' + (fy - 5) + '" r="2.5" fill="#FFE07A"/>'
+                  : '<circle cx="' + fx + '" cy="' + (fy - 4) + '" r="3" fill="#7A6A4A"/>';
+      }
+      var sp = finished ? [60, 130] : (idx < N.length ? pt(idx) : pt(N.length - 1));
+      var sx = finished ? 70 : sp[0] + 22, sy = finished ? 140 : sp[1];
+      svg += '<g transform="translate(' + sx + ',' + (sy - 4) + ')"><path d="M-18,0 L18,0 L12,9 L-12,9 Z" fill="#3A2A1A"/><rect x="-2" y="-22" width="3" height="22" fill="#3A2A1A"/><path d="M1,-21 L14,-6 L1,-6 Z" fill="#FFFFFF" stroke="#8C7A4A" stroke-width=".8"/><circle cx="-8" cy="4" r="5" fill="#8B3A20"/></g>';
+      svg += '</svg>';
+      scene.innerHTML = svg;
+      tally.textContent = 'Today: ' + passed + ' of ' + N.length + ' narrows passed. This week: ' + allDone + '.';
+    }
+    function save() { st[L.day] = mine; store(wkKey, st); }
+    function shake(b) { b.classList.add('g5-shake'); setTimeout(function () { b.classList.remove('g5-shake'); }, 450); }
+    function show() {
+      fb.textContent = ''; ctrl.innerHTML = ''; row.innerHTML = '';
+      if (idx >= N.length) {
+        draw();
+        stepBox.innerHTML = '<b>Through the Strait!</b> ' + esc(G.doneLine || 'The Pacific is open.');
+        var again = h('button', { type: 'button', 'class': 'g5-btn g5-btn-ghost' }, ['↺ Sail it again']);
+        again.addEventListener('click', function () { mine = { done: [] }; idx = 0; save(); show(); });
+        ctrl.appendChild(again); return;
+      }
+      var S = N[idx];
+      draw();
+      stepBox.innerHTML = '<span class="g5-stepn">Narrows ' + (idx + 1) + ' of ' + N.length + '</span> ' + esc(S.clue);
+      [['a', '⬆ North channel'], ['b', '⬇ South channel']].forEach(function (C) {
+        var b = h('button', { type: 'button', 'class': 'g5-beat g5-strait-btn', 'aria-label': C[1] + ': ' + S[C[0]] }, [h('small', { text: C[1] }), h('span', { text: S[C[0]] })]);
+        b.addEventListener('click', function () {
+          if (C[0] !== S.ok) { fb.textContent = '🪨 Rocks! ' + (S.miss || 'Look again at what the word means, not just how it looks.'); shake(b); return; }
+          row.querySelectorAll('button').forEach(function (x) { x.disabled = true; });
+          b.classList.add('g5-strait-right');
+          if (mine.done.indexOf(idx) < 0) mine.done.push(idx);
+          save(); draw();
+          fb.innerHTML = '<b>' + esc(S[S.ok]) + '</b>: ' + esc(S.why || '');
+          var next = h('button', { type: 'button', 'class': 'g5-btn' }, [idx + 1 < N.length ? 'Sail on →' : 'Into the Pacific →']);
+          next.addEventListener('click', function () { idx++; while (idx < N.length && mine.done.indexOf(idx) >= 0) idx++; show(); setTimeout(function () { var f = row.querySelector('button') || ctrl.querySelector('button'); if (f) f.focus(); }, 30); });
+          ctrl.appendChild(next);
+        });
+        row.appendChild(b);
+      });
+    }
+    show();
+    var ref = G.after ? activityByTitle(G.after, panel('words')) : null;
+    if (ref) afterNode(ref, wrap);
+    else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
+  }
+
   /* ── 13. the Commonplace Book page ─────────────────────────── */
   var NAME_BAD = /\b(ass|butt|poop|fart|stupid|dumb|idiot|hate|kill|sex|damn|hell|crap)\b/i;
   function profileName() { var p = store('profile'); return p && p.name ? p.name : ''; }
@@ -2153,6 +2258,7 @@
     guard('voice', buildVoice);
     guard('corn', buildCorn);
     guard('scale', buildScale);
+    guard('strait', buildStrait);
     guard('cards', buildCards);
     guard('checks', buildChecks);
     guard('virtue', buildVirtue);

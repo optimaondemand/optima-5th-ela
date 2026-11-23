@@ -591,3 +591,8 @@ html.g5-top:not([data-g5-tab="warmup"]) .quote-strip { display: none !important;
 .g5-scale-pan{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:17px;padding:10px 16px;min-width:150px;}
 .g5-scale-pan small{font-size:12px;font-weight:400;opacity:.85;}
 .g5-scale-pan.g5-scale-right{background:#FBF0C8;border-color:#C8922A;color:#5A3A0A;}
+/* Through the Strait (week 26) */
+.g5-strait-chan{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:10px 0;}
+.g5-strait-btn{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:180px;padding:10px 16px;font-family:Georgia,serif;font-size:21px;}
+.g5-strait-btn small{font:600 12px/1.2 system-ui,sans-serif;opacity:.8;letter-spacing:.03em;}
+.g5-strait-btn.g5-strait-right{background:#E4F1F8;border-color:#2A6A8C;color:#0E3A5C;}
