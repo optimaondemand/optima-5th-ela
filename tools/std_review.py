@@ -20,7 +20,7 @@ DECIDED = {5: [(19, 'Nov 21: EE.1.1 added to the week 19 bar (every Chapter Thin
                (23, 'Nov 21: bar kept as is (v4 set); coverage clean. R.3.2 and EE.3.1 added to the crosswalk (PR pending).'),
                (24, 'Nov 22: bar kept as is (v4 set). R.2.4 and R.3.3 added to the crosswalk (PR pending; AL has no multiple-accounts standard, 26c is the closest).'),
                (25, 'Nov 22: V.1.1 (all six pages) and R.3.1 (25.2, 25.4 poetry) added to the bar from v2. V.1.1 added to the crosswalk. Nov 23: EE.1.1 added to the week 25 bar on all six pages (same call as weeks 19-24; every reading question asks for book evidence).'),
-               (26, 'Nov 23: R.3.1 (26.2, 26.4 poetry) and EE.1.1 (all six pages) added to the bar from v2 / weeks 19-25. Open for Bethany: EE.6.1 is on the week 26 bar but no block is tagged with it.')],
+               (26, 'Nov 23: R.3.1 (26.2, 26.4 poetry) and EE.1.1 (all six pages) added to the bar from v2 / weeks 19-25. EE.6.1 (voice and tone) kept on the bar and now tagged on the Writer\'s Workshop blocks and the check-in writing items (the week drafts a scene with voice); EE.6.1 added to the crosswalk (codes checked in optima-standards).')],
            4: [(17, 'Check-in Q5 is context clues (V.1.3); left off the bar (check-in only)'),
                (27, 'Nov 20: V.1.3 and EE.4.1 added to the bar (EE.4.1 only in week 27: the Discussion Prompts block is the only place it is taught)'),
                ('28-31', 'Nov 20: V.1.3 added to the bar'),

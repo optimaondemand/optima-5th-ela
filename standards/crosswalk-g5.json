@@ -25,7 +25,8 @@
   "MO": "Grade 5 MO sub-letters differ from grade 4 (point of view is 5.R.2.A.c), so each code was matched on its own text.",
   "TN R.1.1": "No grade 5 TN standard names conflict and plot together; 5.RL.CS.5 (how chapters fit together into a structure) is the closest to how the conflict builds across chapters.",
   "R.3.1": "Figurative language contributing to meaning: TX 10(D) imagery and figurative language for a purpose; AR 5.V.6 and AL 12a interpret figurative language in context; MO 5.R.2.C.c impact of imagery and figurative language; TN 5.RL.CS.4 figurative language in literary text.",
-  "R.2.4 / R.3.3": "R.2.4 (track an argument: claim, evidence, reasoning): TX 9(E) argumentative text, AR 5.RC.14.RI, AL 26d and TN 5.RI.IKI.8 reasons and evidence supporting points, MO 5.R.3.B.d and .f. R.3.3 (compare primary and secondary sources): TX 13(D) names primary and secondary sources; AR 5.RC.18.RI, MO 5.R.3.B.b and TN 5.RI.CS.6 compare multiple accounts of the same event; AL has no multiple-accounts standard, so 26c (apply information from multiple sources) is the closest."
+  "R.2.4 / R.3.3": "R.2.4 (track an argument: claim, evidence, reasoning): TX 9(E) argumentative text, AR 5.RC.14.RI, AL 26d and TN 5.RI.IKI.8 reasons and evidence supporting points, MO 5.R.3.B.d and .f. R.3.3 (compare primary and secondary sources): TX 13(D) names primary and secondary sources; AR 5.RC.18.RI, MO 5.R.3.B.b and TN 5.RI.CS.6 compare multiple accounts of the same event; AL has no multiple-accounts standard, so 26c (apply information from multiple sources) is the closest.",
+  "EE.6.1": "Use appropriate voice and tone when writing (week 26 adventure scene with voice): AR 5.W.3.S narrative with strong voice; AL R6 language and tone fit the occasion + 34 narrative with dialogue and strong voice; TN 5.W.PDW.4 style appropriate to task, purpose and audience; MO 5.W.1.B.e writing for an appropriate audience and purpose; TX has no grade 5 writing-voice standard, so 11(A) (plan a draft for purpose and audience) is the closest. Codes checked in optima-standards Nov 23 2026."
  },
  "map": {
   "ELA.5.R.1.3": {
@@ -380,6 +381,25 @@
    ],
    "TN": [
     "5.FL.VA.7c"
+   ],
+   "PR": "pending"
+  },
+  "ELA.K12.EE.6.1": {
+   "TX": [
+    "110.7(b)(11)(A)"
+   ],
+   "AR": [
+    "5.W.3.S"
+   ],
+   "MO": [
+    "5.W.1.B.e"
+   ],
+   "AL": [
+    "R6",
+    "34"
+   ],
+   "TN": [
+    "5.W.PDW.4"
    ],
    "PR": "pending"
   }
