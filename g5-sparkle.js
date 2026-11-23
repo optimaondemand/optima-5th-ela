@@ -1467,6 +1467,107 @@
     else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
   }
 
+  function buildRace() {
+    var G = D.game; if (!G || G.type !== 'race' || !G.rounds || !G.rounds.length) return;
+    var wkKey = 'race.wk' + L.week;
+    var st = store(wkKey) || {};
+    var mine = st[L.day] || { done: [], miss: 0 };
+    if (typeof mine.miss !== 'number') mine.miss = 0;
+    var N = G.rounds, idx = 0;
+    while (idx < N.length && mine.done.indexOf(idx) >= 0) idx++;
+    var wrap = h('div', { 'class': 'activity g5-game' });
+    wrap.innerHTML =
+      '<div class="activity-head"><div class="activity-num g5-game-num" aria-hidden="true">🚢</div><div>' +
+      '<div class="activity-title">' + esc(G.title || 'Race to the Golden Gate') + '</div>' +
+      '<div class="activity-sub">' + esc(G.sub || 'Word game for this week') + '</div></div></div>';
+    var body = h('div', { 'class': 'activity-body' });
+    wrap.appendChild(body);
+    var look = h('details', { 'class': 'g5-look' }, [h('summary', { text: '👀 What am I looking at?' }), h('p', { text: G.look })]);
+    if (!mine.done.length) look.open = true;
+    body.appendChild(look);
+    if (G.how) body.appendChild(howLine(G.how));
+    var scene = h('div', { 'class': 'g5-river g5-race', role: 'img', 'aria-label': 'Two sidewheel steamers race north along the coast toward the Golden Gate. The Lady Wilma moves ahead each time you answer; the Sea Raven creeps up when you miss.' });
+    body.appendChild(scene);
+    var stepBox = h('div', { 'class': 'g5-stone-step', 'aria-live': 'polite' });
+    var row = h('div', { 'class': 'g5-race-opts' });
+    var ctrl = h('div', { 'class': 'g5-stone-ctrl' });
+    var fb = h('p', { 'class': 'g5-stone-fb', 'aria-live': 'polite' });
+    var tally = h('p', { 'class': 'g5-stone-tally' });
+    [stepBox, row, ctrl, fb, tally].forEach(function (n) { body.appendChild(n); });
+
+    function ship(x, y, dark, sparks) {
+      var hull = dark ? '#2B2B33' : '#5A2E1A', sail = dark ? '#C9C2B0' : '#FFFFFF';
+      var s = '<g transform="translate(' + x + ',' + y + ')">' +
+        '<path d="M-30,0 L30,0 L22,11 L-24,11 Z" fill="' + hull + '"/>' +
+        '<rect x="-12" y="-9" width="22" height="9" fill="' + (dark ? '#4A4A55' : '#8B5A2B') + '"/>' +
+        '<circle cx="-2" cy="3" r="8" fill="none" stroke="' + (dark ? '#9A9AA5' : '#E8C46A') + '" stroke-width="2.5"/>' +
+        '<rect x="12" y="-26" width="5" height="17" fill="#222"/>' +
+        '<rect x="-20" y="-34" width="2.5" height="34" fill="#3A2A1A"/><path d="M-18,-33 L-4,-14 L-18,-14 Z" fill="' + sail + '"/>';
+      if (dark) s += '<path d="M8,-6 L28,-6 L26,-2 L10,-2 Z" fill="#111"/><path d="M6,-10 l6,-4 l6,4 l6,-4 l6,4 Z" fill="#111" opacity=".9"/>';
+      if (sparks) s += '<circle cx="15" cy="-32" r="2.2" fill="#FFB347"/><circle cx="20" cy="-38" r="1.6" fill="#FF7A1A"/><circle cx="11" cy="-40" r="1.4" fill="#FFD27A"/><circle cx="18" cy="-46" r="1.2" fill="#FF9A3A"/>';
+      else s += '<circle cx="15" cy="-32" r="4" fill="#666" opacity=".5"/><circle cx="19" cy="-39" r="5" fill="#777" opacity=".35"/>';
+      return s + '</g>';
+    }
+    function draw(stoke) {
+      var allDone = 0;
+      Object.keys(st).forEach(function (k) { allDone += (st[k].done || []).length; });
+      var passed = mine.done.length, finished = passed >= N.length;
+      var lw = finished ? 820 : 70 + passed * (720 / N.length);
+      var sr = Math.min(finished ? 690 : 770, 150 + passed * 60 + mine.miss * 28);
+      var svg = '<svg viewBox="0 0 900 200" preserveAspectRatio="xMidYMid meet" aria-hidden="true">' +
+        '<defs><linearGradient id="g5rsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6E7C8"/><stop offset="1" stop-color="#E9D3A6"/></linearGradient></defs>' +
+        '<rect width="900" height="200" fill="#6E9FB8"/>' +
+        '<rect width="900" height="58" fill="url(#g5rsky)"/>' +
+        '<path d="M0,58 Q90,40 180,56 Q280,72 380,50 Q480,30 600,54 Q700,70 790,52 L790,86 L812,58 L840,58 L862,86 L862,50 Q880,46 900,52 L900,0 L0,0 Z" fill="#B59A64" opacity=".85"/>' +
+        '<path d="M0,58 Q90,40 180,56 Q280,72 380,50 Q480,30 600,54 Q700,70 790,52" fill="none" stroke="#7E6A3E" stroke-width="1.5"/>' +
+        '<text x="826" y="22" fill="#5A4220" font-family="Georgia,serif" font-size="13" text-anchor="middle" font-weight="700">GOLDEN GATE</text>' +
+        '<text x="40" y="34" fill="#5A4220" font-family="Georgia,serif" font-size="12" text-anchor="middle">Mexico</text>' +
+        '<line x1="826" y1="62" x2="826" y2="196" stroke="#F5D77A" stroke-width="2" stroke-dasharray="5 5"/>' +
+        '<path d="M0,170 Q60,164 120,170 T240,170 T360,170 T480,170 T600,170 T720,170 T840,170 T960,170" fill="none" stroke="#9CC3D5" stroke-width="2" opacity=".7"/>';
+      svg += ship(sr, 150, true, false);
+      svg += ship(lw, 112, false, !!stoke || finished);
+      svg += '<text x="' + lw + '" y="138" fill="#FFFFFF" font-family="system-ui,sans-serif" font-size="11" text-anchor="middle" font-weight="700">Lady Wilma</text>';
+      svg += '<text x="' + sr + '" y="176" fill="#E6E6EE" font-family="system-ui,sans-serif" font-size="11" text-anchor="middle">Sea Raven</text>';
+      svg += '</svg>';
+      scene.innerHTML = svg;
+      tally.textContent = 'Today: ' + passed + ' of ' + N.length + ' planks in the furnace. This week: ' + allDone + '.';
+    }
+    function save() { st[L.day] = mine; store(wkKey, st); }
+    function shake(b) { b.classList.add('g5-shake'); setTimeout(function () { b.classList.remove('g5-shake'); }, 450); }
+    function show() {
+      fb.textContent = ''; ctrl.innerHTML = ''; row.innerHTML = '';
+      if (idx >= N.length) {
+        draw();
+        stepBox.innerHTML = '<b>Through the Golden Gate!</b> ' + esc(G.doneLine || 'The Lady Wilma wins.');
+        var again = h('button', { type: 'button', 'class': 'g5-btn g5-btn-ghost' }, ['↺ Race again']);
+        again.addEventListener('click', function () { mine = { done: [], miss: 0 }; idx = 0; save(); show(); });
+        ctrl.appendChild(again); return;
+      }
+      var S = N[idx];
+      draw();
+      stepBox.innerHTML = '<span class="g5-stepn">Plank ' + (idx + 1) + ' of ' + N.length + '</span> ' + esc(S.clue);
+      S.opts.forEach(function (w, k) {
+        var b = h('button', { type: 'button', 'class': 'g5-beat g5-race-btn' }, [w]);
+        b.addEventListener('click', function () {
+          if (k !== S.ok) { mine.miss++; save(); draw(); fb.textContent = '💨 The Sea Raven gains! ' + (S.miss || 'Look again at the base word and the root.'); shake(b); return; }
+          row.querySelectorAll('button').forEach(function (x) { x.disabled = true; });
+          b.classList.add('g5-race-right');
+          if (mine.done.indexOf(idx) < 0) mine.done.push(idx);
+          save(); draw(true);
+          fb.innerHTML = '🔥 <b>' + esc(w) + '</b>: ' + esc(S.why || '');
+          var next = h('button', { type: 'button', 'class': 'g5-btn' }, [idx + 1 < N.length ? 'Full steam →' : 'Into the Golden Gate →']);
+          next.addEventListener('click', function () { idx++; while (idx < N.length && mine.done.indexOf(idx) >= 0) idx++; show(); setTimeout(function () { var f = row.querySelector('button') || ctrl.querySelector('button'); if (f) f.focus(); }, 30); });
+          ctrl.appendChild(next);
+        });
+        row.appendChild(b);
+      });
+    }
+    show();
+    var ref = G.after ? activityByTitle(G.after, panel('words')) : null;
+    if (ref) afterNode(ref, wrap);
+    else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
+  }
+
   /* ── 13. the Commonplace Book page ─────────────────────────── */
   var NAME_BAD = /\b(ass|butt|poop|fart|stupid|dumb|idiot|hate|kill|sex|damn|hell|crap)\b/i;
   function profileName() { var p = store('profile'); return p && p.name ? p.name : ''; }
@@ -2259,6 +2360,7 @@
     guard('corn', buildCorn);
     guard('scale', buildScale);
     guard('strait', buildStrait);
+    guard('race', buildRace);
     guard('cards', buildCards);
     guard('checks', buildChecks);
     guard('virtue', buildVirtue);
