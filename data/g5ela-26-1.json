@@ -1,0 +1,260 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "The Lady Wilma is heading south toward the bottom of South America. Today there is a pig, a cook with a cleaver, and a hard question for Jack. Before you read, think about what you would do if someone offered you a ticket home."
+  },
+  "words": {
+   "text": "This week's roots are rid and ris, which mean laugh, and lud and lus, which mean play. In the game, sail through the narrows. Pick the channel with the word that really carries the root."
+  },
+  "reading": {
+   "text": "Read Chapter 4. Notice who the joke is on as the pig hunt grows. Then watch the chapter turn serious in the harbor at Rio. Listen to how Jack sounds when the jokes stop."
+  },
+  "assignment": {
+   "text": "Three questions about Chapter 4. Then plan your adventure scene: who is there, where it happens, what goes wrong, and one line your hero says. Start in the middle of the action."
+  }
+ },
+ "hook": {
+  "q": "You are halfway through a long, hard voyage. The most dangerous waters are just ahead. Someone you trust offers you a free ticket home. Do you take it?",
+  "options": [
+   {
+    "t": "Yes. Home is safe.",
+    "reply": "Nobody would blame you. Jack hears this offer in Chapter 4:"
+   },
+   {
+    "t": "No. I came this far.",
+    "reply": "Brave, but the danger is real. Jack hears this warning in Chapter 4:"
+   },
+   {
+    "t": "It depends who I'm traveling with.",
+    "reply": "That may matter most of all. Jack hears this from his partner in Chapter 4:"
+   }
+  ],
+  "reveal": {
+   "line": "Cape Horn lies ahead of us. It's a bad stretch of water.",
+   "cite": "Chapter 4",
+   "then": "Read Chapter 4 to find out what Jack decides, and why Praiseworthy asked."
+  }
+ },
+ "how": [
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted parts of the first sentence.",
+    "Write the second sentence correctly in your reading journal.",
+    "Tap See the Answer to check."
+   ],
+   "why": "The marks around a speech tell the reader who is talking and when they stop."
+  },
+  {
+   "match": "Read & Write",
+   "do": [
+    "Read the question.",
+    "Write 2 or 3 sentences in your reading journal.",
+    "Then go on to Word Study."
+   ],
+   "why": "Thinking before you read gives you something to watch for."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Read what rid/ris and lud/lus mean.",
+    "Read the example words.",
+    "Type the missing root in each word, then tap Check Roots."
+   ],
+   "why": "Two pairs of roots unlock many words about laughing and playing."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Say each word out loud.",
+    "Tap each card to read its meaning.",
+    "Notice which chapter each word comes from."
+   ],
+   "why": "Knowing the words first keeps the reading smooth."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Look at where the marks sit in the two sentences.",
+    "Think through the questions, then tap Now check your thinking.",
+    "Tap a line, then tap the column that fits it."
+   ],
+   "why": "Dialogue marks tell the reader who is speaking and when."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Read the eight dialogue tags.",
+    "Read how speech spellings use an apostrophe.",
+    "Tap a tag, then tap the column that fits it."
+   ],
+   "why": "A strong tag tells the reader how a line was spoken."
+  },
+  {
+   "match": "Read: Chapter 4",
+   "do": [
+    "Read the reading focus below.",
+    "Open your book and read Chapter 4.",
+    "Then do the Read Like a Writer box and the Virtue Watch at the end of this tab."
+   ],
+   "why": "The pause boxes are places to stop and think while you read."
+  },
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read the three lenses.",
+    "Tap the one you will use today.",
+    "Keep it in mind as you read. You will use it at the end."
+   ],
+   "why": "Humor tells you how the author sees a character.",
+   "use": "You will use it in reading question 2."
+  },
+  {
+   "match": "Writer",
+   "do": [
+    "Read today's step and jot your four planning notes.",
+    "Read Alex's draft and what makes it work.",
+    "Start your scene in the middle of the action."
+   ],
+   "why": "Voice, dialogue and reaction make a reader feel they are inside the scene."
+  }
+ ],
+ "glossary": [
+  {
+   "word": "stateroom",
+   "in": "Read: Chapter 4",
+   "meaning": "a private bedroom on a ship"
+  },
+  {
+   "word": "tone",
+   "in": "What Good Readers Do",
+   "meaning": "the attitude a writer takes toward what is happening"
+  }
+ ],
+ "hints": {
+  "rid": [
+   "This word is about laughing at someone.",
+   "It is the laugh root that ends in d.",
+   "r, i, d"
+  ],
+  "lud": [
+   "This word is about a game or a joke.",
+   "It is the play root that ends in d.",
+   "l, u, d"
+  ],
+  "ris": [
+   "This word is about mocking laughter.",
+   "It is the laugh root that ends in s.",
+   "r, i, s"
+  ],
+  "lus": [
+   "This word is about a trick on your eyes.",
+   "It is the play root that ends in s.",
+   "l, u, s"
+  ],
+  "lude": [
+   "A playful pause between two acts.",
+   "The play root, plus a silent e.",
+   "l, u, d, e"
+  ]
+ },
+ "miss": {
+  "whispered": "Whispered tells how loud: very quietly.",
+  "bellowed": "Bellowed tells how loud: a huge, deep shout.",
+  "pleaded": "Pleaded tells a feeling: someone begging.",
+  "grumbled": "Grumbled tells a feeling: someone cross and complaining.",
+  "said": "Said only tells who spoke.",
+  "replied": "Replied only tells that someone answered."
+ },
+ "game": {
+  "type": "strait",
+  "title": "Through the Strait",
+  "sub": "This week's word game · 6 narrows today",
+  "after": "Morphology",
+  "look": "The Strait of Magellan is a narrow, twisting passage of water at the bottom of South America. Here your ship works west through it, from the Atlantic to the Pacific. At each narrows, read the clue and pick the safe channel: the word that really fits. Every narrows you pass lights a fire on the shore of Tierra del Fuego, the Land of Fire.",
+  "how": {
+   "do": [
+    "Read the clue at the narrows.",
+    "Look at the word in each channel.",
+    "Tap the channel with the word that really fits.",
+    "Tap Sail on."
+   ],
+   "why": "A root only helps if it is really there, and a speech spelling only works if the apostrophe is in the right place."
+  },
+  "doneLine": "The Pacific is open. Come back tomorrow for six more narrows.",
+  "narrows": [
+   {
+    "clue": "Find the word with lud (play): to slip away from someone, as if in a game of tag.",
+    "a": "elude",
+    "b": "include",
+    "ok": "a",
+    "why": "e (out) + lud (play): to play your way out. Include comes from clud, which means close."
+   },
+   {
+    "clue": "Which word really carries rid (laugh)?",
+    "a": "riddle",
+    "b": "deride",
+    "ok": "b",
+    "why": "de (down) + rid (laugh): to laugh down at someone. A riddle is a puzzle; it only looks like it has the root.",
+    "miss": "Is a riddle about laughing at someone? Look at the other channel."
+   },
+   {
+    "clue": "Find the word with lus (play): a secret trick that two people play together.",
+    "a": "collusion",
+    "b": "conclusion",
+    "ok": "a",
+    "why": "col (together) + lus (play). Conclusion comes from clud, which means close."
+   },
+   {
+    "clue": "Find the word with ris (laugh): laughter that mocks someone.",
+    "a": "decision",
+    "b": "derision",
+    "ok": "b",
+    "why": "de + ris + ion: mocking laughter. Decision comes from cis, which means cut."
+   },
+   {
+    "clue": "Chapter 1: a cold passenger shouts that someone has been hogging the stove. Which spelling shows how he says it?",
+    "a": "You been hoggin' that stove",
+    "b": "You been hog'gin that stove",
+    "ok": "a",
+    "why": "hoggin' = hogging. The apostrophe sits where the g is missing, at the end."
+   },
+   {
+    "clue": "Chapter 1: Captain Swain roars at the stowaways for inviting in the weather. Which spelling is his?",
+    "a": "invitin",
+    "b": "invitin'",
+    "ok": "b",
+    "why": "invitin' = inviting. A missing letter needs an apostrophe in its place.",
+    "miss": "A letter is missing. What marks the spot?"
+   }
+  ]
+ },
+ "virtue": {
+  "name": "self-control",
+  "kind": "sort",
+  "title": "Self-control or not?",
+  "intro": "This week's virtue is self-control: staying calm and choosing what you do, even when you feel scared, angry or excited. Sort these everyday examples.",
+  "items": [
+   {
+    "t": "You feel nervous before a test, so you take a slow breath and start with the first question.",
+    "ok": true,
+    "why": "You notice the feeling and choose a calm next step."
+   },
+   {
+    "t": "Your little brother knocks over your tower, and you yell and knock over his.",
+    "ok": false,
+    "why": "The anger is choosing for you. Self-control means you choose."
+   },
+   {
+    "t": "You want to blurt out the answer, but you wait for your turn.",
+    "ok": true,
+    "why": "You hold back what you feel like doing because waiting is right."
+   },
+   {
+    "t": "A friend wins the game, and you say good game even though you feel let down.",
+    "ok": true,
+    "why": "You keep your disappointment from hurting someone else."
+   }
+  ]
+ }
+}

@@ -1,0 +1,247 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "Before you read, a famous poem full of words that don't exist, and yet you can almost understand them. Listen to the sounds. Then think: why is nonsense funny?"
+  },
+  "words": {
+   "text": "Find rid, ris, lud and lus in new words. Then look at speech spellings, where an apostrophe takes the place of a missing letter. In the game, six more narrows. One channel is a speech spelling."
+  },
+  "reading": {
+   "text": "Read Chapter 5, Land of Fire. The storms are fierce. Watch what Praiseworthy says out loud, and what the narrator tells you he really believes. Then watch for the surprise at the end of the chapter."
+  },
+  "assignment": {
+   "text": "Three questions about Chapter 5. Then keep drafting your scene. Give one character a line of dialogue and a reaction that shows how they feel. Use the frames if you get stuck."
+  }
+ },
+ "how": [
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted parts of the first sentence.",
+    "Write the second sentence correctly in your reading journal.",
+    "Tap See the Answer to check."
+   ],
+   "why": "The marks around a speech tell the reader who is talking and when they stop."
+  },
+  {
+   "match": "Poetry Corner",
+   "do": [
+    "Read the poem out loud once.",
+    "Read the tip.",
+    "Answer the question in your reading journal."
+   ],
+   "why": "Funny poems show voice and word choice very clearly."
+  },
+  {
+   "match": "Read & Write",
+   "do": [
+    "Read the question.",
+    "Write 2 or 3 sentences in your reading journal.",
+    "Then go on to Word Study."
+   ],
+   "why": "Thinking before you read gives you something to watch for."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Read the four rules.",
+    "Write your dialogue in the box.",
+    "Give each speaker a new paragraph."
+   ],
+   "why": "This is your Show What You Know for grammar this week."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Read each clue.",
+    "Type the missing root.",
+    "Tap Check."
+   ],
+   "why": "Spotting a root in a new word gives you a head start on its meaning."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Say each word out loud.",
+    "Tap each card to read its meaning.",
+    "Answer the question in your reading journal."
+   ],
+   "why": "Saying and using a word helps you keep it."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Say each tag and find the loud beat.",
+    "Read the speech spelling note.",
+    "Tap every tag, then tap the right speech spelling."
+   ],
+   "why": "Knowing the loud beat helps you spell the quiet ones."
+  },
+  {
+   "match": "Read: Chapter 5",
+   "do": [
+    "Read the reading focus below.",
+    "Open your book and read Chapter 5.",
+    "Then do the Read Like a Writer box and the Virtue Watch at the end of this tab."
+   ],
+   "why": "The pause boxes are places to stop and think while you read."
+  },
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read the three lenses.",
+    "Tap the one you will use today.",
+    "Keep it in mind as you read. You will use it at the end."
+   ],
+   "why": "Tone is how the telling feels. A calm voice in a storm is a choice.",
+   "use": "You will use it in reading question 2."
+  },
+  {
+   "match": "Writer",
+   "do": [
+    "Read today's step.",
+    "Keep writing your scene.",
+    "Use the frames if you get stuck."
+   ],
+   "why": "Voice, dialogue and reaction make a reader feel they are inside the scene."
+  }
+ ],
+ "glossary": [
+  {
+   "word": "inclement",
+   "in": "Daily Oral Language",
+   "meaning": "stormy and unpleasant (weather)"
+  },
+  {
+   "word": "diction",
+   "in": "Poetry Corner",
+   "meaning": "a writer's choice of words"
+  }
+ ],
+ "hints": {
+  "ris": [
+   "This word means laughable.",
+   "It is the laugh root that ends in s.",
+   "r, i, s"
+  ],
+  "lu": [
+   "A secret game between people.",
+   "Two letters of the play root.",
+   "l, u"
+  ],
+  "lude": [
+   "To slip away, as in a game.",
+   "The play root, plus a silent e.",
+   "l, u, d, e"
+  ],
+  "rid": [
+   "To laugh down at someone.",
+   "The laugh root that ends in d.",
+   "r, i, d"
+  ]
+ },
+ "game": {
+  "type": "strait",
+  "title": "Through the Strait",
+  "sub": "This week's word game · 6 narrows today",
+  "after": "Morphology",
+  "look": "The Strait of Magellan is a narrow, twisting passage of water at the bottom of South America. Here your ship works west through it, from the Atlantic to the Pacific. At each narrows, read the clue and pick the safe channel: the word that really fits. Every narrows you pass lights a fire on the shore of Tierra del Fuego, the Land of Fire.",
+  "how": {
+   "do": [
+    "Read the clue at the narrows.",
+    "Look at the word in each channel.",
+    "Tap the channel with the word that really fits.",
+    "Tap Sail on."
+   ],
+   "why": "A root only helps if it is really there, and a speech spelling only works if the apostrophe is in the right place."
+  },
+  "doneLine": "The Pacific is open. Come back tomorrow for six more narrows.",
+  "narrows": [
+   {
+    "clue": "Find the word with lud (play): to trick someone into believing something false.",
+    "a": "deliver",
+    "b": "delude",
+    "ok": "b",
+    "why": "de + lud: to play someone false. Deliver comes from liber, which means free."
+   },
+   {
+    "clue": "Find the word with lud (play): to hint at something without saying it straight out.",
+    "a": "allude",
+    "b": "allow",
+    "ok": "a",
+    "why": "al (toward) + lud (play): to play toward an idea. Allow has no play root."
+   },
+   {
+    "clue": "Which word carries rid (laugh) and means so silly it deserves a laugh?",
+    "a": "rigorous",
+    "b": "ridiculous",
+    "ok": "b",
+    "why": "rid + iculous: worth laughing at. Rigorous means strict and careful; it has no laugh root."
+   },
+   {
+    "clue": "Which word really carries ris (laugh)?",
+    "a": "derisive",
+    "b": "rider",
+    "ok": "a",
+    "why": "de + ris + ive: full of mocking laughter. A rider rides; the r-i-d is just letters.",
+    "miss": "Does rider have anything to do with laughing?"
+   },
+   {
+    "clue": "Chapter 4: Mountain Jim says a boy needs all the schooling he can get. Which spelling is his?",
+    "a": "educatin'",
+    "b": "educat'in",
+    "ok": "a",
+    "why": "educatin' = educating. The apostrophe goes where the g was, at the end."
+   },
+   {
+    "clue": "Chapter 1: a gold-seeker pushing toward the stove calls someone partner. Which spelling shows how he says it?",
+    "a": "pard'ner",
+    "b": "pardner",
+    "ok": "b",
+    "why": "pardner is how he says partner. No letter is missing, just a sound changed, so there is no apostrophe.",
+    "miss": "Is a letter really left out here, or just changed?"
+   }
+  ]
+ },
+ "cards": [
+  {
+   "tab": "reading",
+   "after": "Read: Chapter 5",
+   "title": "Real history: the Strait of Magellan",
+   "min": 2,
+   "intro": "The Lady Wilma and the Sea Raven are made up. The places in Chapter 5 are real.",
+   "items": [
+    {
+     "term": "The Strait of Magellan",
+     "meaning": "A narrow, twisting passage of water between the tip of South America and the islands south of it. It is about 350 miles long and from 2 to 20 miles wide. In 1520 Ferdinand Magellan's ships became the first European ships to sail through it."
+    },
+    {
+     "term": "Tierra del Fuego",
+     "meaning": "Spanish for Land of Fire. Magellan's crew saw the fires of the people who lived there and named the land for them. The Selk'nam, Yaghan, Kaweskar and Haush peoples had lived there for thousands of years."
+    },
+    {
+     "term": "A real steamship took this route",
+     "meaning": "The paddle steamer SS California left New York in October 1848. She stopped at Rio de Janeiro, steamed through the Strait of Magellan, stopped at Callao in Peru, and reached San Francisco on February 28, 1849, the first steamship to arrive there in the Gold Rush."
+    }
+   ],
+   "note": "Sources: Encyclopaedia Britannica; the Maritime Heritage Project (San Francisco ship arrivals, 1849)."
+  }
+ ],
+ "virtue": {
+  "name": "self-control",
+  "kind": "log",
+  "options": [
+   {
+    "t": "Praiseworthy calls the scary sea stories “Stuff and nonsense,” even though he believes every word of them."
+   },
+   {
+    "t": "Holding onto a post with the hook of his umbrella, Praiseworthy calls the storm “A mere squall.”"
+   },
+   {
+    "t": "In the boiler room, the butler seems unafraid, and Jack finds comfort in being at his side."
+   }
+  ],
+  "line": "Tap the moment that shows the most self-control. Then tell why in one sentence.",
+  "placeholder": "This shows the most self-control because…"
+ }
+}
