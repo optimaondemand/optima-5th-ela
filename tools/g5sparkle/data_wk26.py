@@ -9,9 +9,8 @@ Bethany's choices: hook "A free ticket home?" (26.1), Through the Strait game (n
 page), wow = the real Strait route (kept apart from the novel), virtue self-control.
 Q4 audio is paused: the Listen texts are Mason scripts, written to stay at or under 1,000 characters a lesson."""
 import json, sys
-LOOK = ("The Strait of Magellan is a narrow, twisting passage of water at the bottom of South America. Here your ship works west through it, "
-        "from the Atlantic to the Pacific. At each narrows, read the clue and pick the safe channel: the word that really fits. "
-        "Every narrows you pass lights a fire on the shore of Tierra del Fuego, the Land of Fire.")
+LOOK = ("Your ship sails west through the Strait of Magellan, a narrow passage at the bottom of South America. "
+        "At each narrows, tap the channel with the word that really fits. Each narrows you pass lights a fire on Tierra del Fuego, the Land of Fire.")
 HOW = {"do": ["Read the clue at the narrows.", "Look at the word in each channel.", "Tap the channel with the word that really fits.", "Tap Sail on."],
        "why": "A root only helps if it is really there, and a speech spelling only works if the apostrophe is in the right place."}
 def nw(clue, a, b, ok, why, miss=None):
