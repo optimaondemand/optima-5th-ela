@@ -1261,6 +1261,107 @@
     else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
   }
 
+  /* ── 12h. The Assayer's Scale (week 25): weigh each word on the HEAR pan (aud), the SPEAK pan (or),
+     or the FOOL'S GOLD tray when it only looks like one. DATA game.type 'scale', game.nuggets[{w, pan, why, miss}] */
+  function buildScale() {
+    var G = D.game; if (!G || G.type !== 'scale' || !G.nuggets || !G.nuggets.length) return;
+    var wkKey = 'scale.wk' + L.week;
+    var st = store(wkKey) || {};
+    var mine = st[L.day] || { done: [], hear: 0, speak: 0, fool: 0 };
+    var W = G.nuggets, idx = 0;
+    while (idx < W.length && mine.done.indexOf(idx) >= 0) idx++;
+    var PANS = [['hear', '👂 HEAR pan', 'aud'], ['speak', '🗣️ SPEAK pan', 'or'], ['fool', '🪨 Fool’s gold', 'looks like it, but no']];
+    var wrap = h('div', { 'class': 'activity g5-game' });
+    wrap.innerHTML =
+      '<div class="activity-head"><div class="activity-num g5-game-num" aria-hidden="true">⚖️</div><div>' +
+      '<div class="activity-title">' + esc(G.title || 'The Assayer’s Scale') + '</div>' +
+      '<div class="activity-sub">' + esc(G.sub || 'Word game for this week') + '</div></div></div>';
+    var body = h('div', { 'class': 'activity-body' });
+    wrap.appendChild(body);
+    var look = h('details', { 'class': 'g5-look' }, [h('summary', { text: '👀 What am I looking at?' }), h('p', { text: G.look })]);
+    if (!mine.done.length) look.open = true;
+    body.appendChild(look);
+    if (G.how) body.appendChild(howLine(G.how));
+    var scene = h('div', { 'class': 'g5-river g5-scale', role: 'img', 'aria-label': 'An assayer’s brass scale with a HEAR pan and a SPEAK pan, and a tray for fool’s gold below. Each word you weigh adds gold.' });
+    body.appendChild(scene);
+    var stepBox = h('div', { 'class': 'g5-stone-step', 'aria-live': 'polite' });
+    var nug = h('div', { 'class': 'g5-scale-word' });
+    var row = h('div', { 'class': 'g5-scale-pans' });
+    var ctrl = h('div', { 'class': 'g5-stone-ctrl' });
+    var fb = h('p', { 'class': 'g5-stone-fb', 'aria-live': 'polite' });
+    var tally = h('p', { 'class': 'g5-stone-tally' });
+    [stepBox, nug, row, ctrl, fb, tally].forEach(function (n) { body.appendChild(n); });
+
+    function flakes(cx, cy, n, col) {
+      var s = '';
+      for (var i = 0; i < n; i++) { var x = cx - 22 + (i % 5) * 11, y = cy - 4 - Math.floor(i / 5) * 7; s += '<ellipse cx="' + x + '" cy="' + y + '" rx="6" ry="3.6" fill="' + col + '" stroke="#8A6514" stroke-width=".8"/>'; }
+      return s;
+    }
+    function draw() {
+      var allDone = 0;
+      Object.keys(st).forEach(function (k) { allDone += (st[k].done || []).length; });
+      var tilt = Math.max(-10, Math.min(10, (mine.speak - mine.hear) * 4));
+      var w = 900, hgt = 190, cx = 450, py = 46, arm = 190;
+      var rad = tilt * Math.PI / 180, dx = Math.cos(rad) * arm, dy = Math.sin(rad) * arm;
+      var lx = cx - dx, ly = py - dy, rx = cx + dx, ry = py + dy;
+      var svg = '<svg viewBox="0 0 ' + w + ' ' + hgt + '" preserveAspectRatio="xMidYMid meet" aria-hidden="true">' +
+        '<rect width="' + w + '" height="' + hgt + '" fill="#2B2A3A"/>' +
+        '<rect x="0" y="160" width="' + w + '" height="30" fill="#5A3A1E"/><rect x="0" y="158" width="' + w + '" height="4" fill="#8B5E34"/>' +
+        '<rect x="' + (cx - 6) + '" y="' + py + '" width="12" height="104" fill="#C8A850"/><path d="M' + (cx - 40) + ',160 L' + (cx + 40) + ',160 L' + (cx + 26) + ',146 L' + (cx - 26) + ',146 Z" fill="#B08A3A"/>' +
+        '<line x1="' + lx + '" y1="' + ly + '" x2="' + rx + '" y2="' + ry + '" stroke="#E2C46A" stroke-width="6" stroke-linecap="round"/><circle cx="' + cx + '" cy="' + py + '" r="8" fill="#F5D77A"/>';
+      [[lx, ly, mine.hear, 'aud · hear'], [rx, ry, mine.speak, 'or · speak']].forEach(function (p) {
+        var x = p[0], y = p[1], bot = y + 62;
+        svg += '<line x1="' + x + '" y1="' + y + '" x2="' + (x - 44) + '" y2="' + bot + '" stroke="#C8A850" stroke-width="1.5"/><line x1="' + x + '" y1="' + y + '" x2="' + (x + 44) + '" y2="' + bot + '" stroke="#C8A850" stroke-width="1.5"/>' +
+          '<path d="M' + (x - 52) + ',' + bot + ' Q' + x + ',' + (bot + 22) + ' ' + (x + 52) + ',' + bot + ' Z" fill="#B08A3A" stroke="#E2C46A" stroke-width="1.5"/>' +
+          flakes(x, bot, Math.min(p[2], 15), '#F5C842') +
+          '<text x="' + x + '" y="' + (bot + 34) + '" fill="#F5E6C8" font-family="Georgia,serif" font-size="14" text-anchor="middle">' + p[3] + '</text>';
+      });
+      svg += '<rect x="700" y="132" width="150" height="24" rx="5" fill="#4A3A2A" stroke="#8B5E34"/>' + flakes(775, 140, Math.min(mine.fool, 10), '#9A9A8A') +
+        '<text x="775" y="126" fill="#D8D0C0" font-family="Georgia,serif" font-size="13" text-anchor="middle">fool’s gold</text>';
+      svg += '<path d="M90,150 Q70,120 96,104 L124,104 Q150,120 130,150 Z" fill="#8B5E34" stroke="#C8A850"/><path d="M98,104 L122,104" stroke="#3A2A1A" stroke-width="3"/>' +
+        '<text x="110" y="134" fill="#F5E6C8" font-family="Georgia,serif" font-size="16" text-anchor="middle">' + (mine.hear + mine.speak) + '</text>' +
+        '<text x="110" y="176" fill="#F5E6C8" font-family="Georgia,serif" font-size="13" text-anchor="middle">pouch</text></svg>';
+      scene.innerHTML = svg;
+      tally.textContent = 'Today: ' + mine.done.length + ' of ' + W.length + ' words weighed. This week: ' + allDone + '.';
+    }
+    function save() { st[L.day] = mine; store(wkKey, st); }
+    function shake(b) { b.classList.add('g5-shake'); setTimeout(function () { b.classList.remove('g5-shake'); }, 450); }
+    function show() {
+      fb.textContent = ''; ctrl.innerHTML = ''; row.innerHTML = ''; nug.innerHTML = '';
+      if (idx >= W.length) {
+        draw();
+        stepBox.innerHTML = '<b>Every word is weighed.</b> ' + esc(G.doneLine || 'Come back tomorrow for more.');
+        var again = h('button', { type: 'button', 'class': 'g5-btn g5-btn-ghost' }, ['↺ Weigh them again']);
+        again.addEventListener('click', function () { mine = { done: [], hear: 0, speak: 0, fool: 0 }; idx = 0; save(); show(); });
+        ctrl.appendChild(again); return;
+      }
+      var S = W[idx];
+      draw();
+      stepBox.innerHTML = '<span class="g5-stepn">Word ' + (idx + 1) + ' of ' + W.length + '</span> Does this word really carry <b>aud</b> (hear) or <b>or</b> (speak)? Or is it fool’s gold?';
+      nug.appendChild(h('span', { 'class': 'g5-scale-nugget' }, [S.w]));
+      PANS.forEach(function (P) {
+        var b = h('button', { type: 'button', 'class': 'g5-beat g5-scale-pan', 'aria-label': P[1] + ', ' + P[2] }, [P[1]]);
+        b.appendChild(h('small', { text: P[2] }));
+        b.addEventListener('click', function () {
+          if (P[0] !== S.pan) { fb.textContent = S.miss || (P[0] === 'fool' ? 'Look again. This one really does carry a hear or speak root.' : 'Look again. Think about what the word means, not just how it looks.'); shake(b); return; }
+          row.querySelectorAll('button').forEach(function (x) { x.disabled = true; });
+          b.classList.add('g5-scale-right');
+          if (mine.done.indexOf(idx) < 0) { mine.done.push(idx); mine[S.pan]++; }
+          save(); draw();
+          fb.innerHTML = '<b>' + esc(S.w) + '</b>: ' + esc(S.why || '');
+          var next = h('button', { type: 'button', 'class': 'g5-btn' }, [idx + 1 < W.length ? 'Next word →' : 'Finish →']);
+          next.addEventListener('click', function () { idx++; while (idx < W.length && mine.done.indexOf(idx) >= 0) idx++; show(); setTimeout(function () { var f = row.querySelector('button') || ctrl.querySelector('button'); if (f) f.focus(); }, 30); });
+          ctrl.appendChild(next);
+        });
+        row.appendChild(b);
+      });
+    }
+    show();
+    var ref = G.after ? activityByTitle(G.after, panel('words')) : null;
+    if (ref) afterNode(ref, wrap);
+    else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
+  }
+
   /* ── 13. the Commonplace Book page ─────────────────────────── */
   var NAME_BAD = /\b(ass|butt|poop|fart|stupid|dumb|idiot|hate|kill|sex|damn|hell|crap)\b/i;
   function profileName() { var p = store('profile'); return p && p.name ? p.name : ''; }
@@ -2051,6 +2152,7 @@
     guard('lantern', buildLanterns);
     guard('voice', buildVoice);
     guard('corn', buildCorn);
+    guard('scale', buildScale);
     guard('cards', buildCards);
     guard('checks', buildChecks);
     guard('virtue', buildVirtue);

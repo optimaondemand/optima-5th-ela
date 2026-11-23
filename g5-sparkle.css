@@ -584,3 +584,10 @@ html.g5-top:not([data-g5-tab="warmup"]) .quote-strip { display: none !important;
 .g5-corn-part{font-family:Georgia,serif;font-size:22px;padding:10px 16px;min-width:56px;}
 .g5-corn-part.g5-corn-husk{background:#E4EFD8;border-color:#7FA05A;color:#587A3C;transform:translateY(10px) rotate(-3deg);opacity:.75;}
 .g5-corn-part.g5-corn-base{background:#FBF0C8;border-color:#C8922A;color:#5A3A0A;font-weight:700;opacity:1;}
+/* The Assayer's Scale (week 25) */
+.g5-scale-word{display:flex;justify-content:center;margin:12px 0 6px;}
+.g5-scale-nugget{display:inline-block;font-family:Georgia,serif;font-size:26px;font-weight:700;color:#5A3A0A;background:radial-gradient(circle at 35% 30%,#FFF0B0,#E9B44C 70%,#B8862A);border:2px solid #8A6514;border-radius:22px 30px 24px 28px;padding:10px 22px;box-shadow:0 3px 0 #8A6514;}
+.g5-scale-pans{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0;}
+.g5-scale-pan{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:17px;padding:10px 16px;min-width:150px;}
+.g5-scale-pan small{font-size:12px;font-weight:400;opacity:.85;}
+.g5-scale-pan.g5-scale-right{background:#FBF0C8;border-color:#C8922A;color:#5A3A0A;}
