@@ -1568,6 +1568,86 @@
     else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
   }
 
+  /* Pan for Color (week 28): each pan holds word chips. Tap the slickens (a misspelled ending, a word with no real root)
+     to wash them over the side; the gold stays. When only gold is left, its spangles slide into Jack's pouch.
+     DATA game.type 'pan', game.pans[{clue, chips[{w, gold, why}]}] */
+  function buildPan() {
+    var G = D.game; if (!G || G.type !== 'pan' || !G.pans || !G.pans.length) return;
+    var wkKey = 'pan.wk' + L.week;
+    var st = store(wkKey) || {};
+    var mine = st[L.day] || { done: [], miss: 0 };
+    if (typeof mine.miss !== 'number') mine.miss = 0;
+    var N = G.pans, idx = 0;
+    while (idx < N.length && mine.done.indexOf(idx) >= 0) idx++;
+    var wrap = h('div', { 'class': 'activity g5-game' });
+    wrap.innerHTML =
+      '<div class="activity-head"><div class="activity-num g5-game-num" aria-hidden="true">🪙</div><div>' +
+      '<div class="activity-title">' + esc(G.title || 'Pan for Color') + '</div>' +
+      '<div class="activity-sub">' + esc(G.sub || 'Word game for this week') + '</div></div></div>';
+    var body = h('div', { 'class': 'activity-body' });
+    wrap.appendChild(body);
+    var look = h('details', { 'class': 'g5-look' }, [h('summary', { text: '👀 What am I looking at?' }), h('p', { text: G.look })]);
+    if (!mine.done.length) look.open = true;
+    body.appendChild(look);
+    if (G.how) body.appendChild(howLine(G.how));
+    var stepBox = h('div', { 'class': 'g5-stone-step', 'aria-live': 'polite' });
+    var pan = h('div', { 'class': 'g5-pan', role: 'group', 'aria-label': 'A gold pan full of words' });
+    var ctrl = h('div', { 'class': 'g5-stone-ctrl' });
+    var fb = h('p', { 'class': 'g5-stone-fb', 'aria-live': 'polite' });
+    var pouch = h('p', { 'class': 'g5-stone-tally g5-pouch' });
+    [stepBox, pan, ctrl, fb, pouch].forEach(function (n) { body.appendChild(n); });
+    function spangles() {
+      var n = 0;
+      Object.keys(st).forEach(function (k) {
+        (st[k].done || []).forEach(function (i) { var P = N[i]; n += P ? P.chips.filter(function (c) { return c.gold; }).length : 2; });
+      });
+      return n;
+    }
+    function tally() { pouch.textContent = '👝 Today: ' + mine.done.length + ' of ' + N.length + ' pans washed. Spangles in the pouch this week: ' + spangles() + '.'; }
+    function save() { st[L.day] = mine; store(wkKey, st); }
+    function shake(b) { b.classList.add('g5-shake'); setTimeout(function () { b.classList.remove('g5-shake'); }, 450); }
+    function show() {
+      fb.textContent = ''; ctrl.innerHTML = ''; pan.innerHTML = ''; pan.classList.remove('g5-pan-done');
+      tally();
+      if (idx >= N.length) {
+        stepBox.innerHTML = '<b>Every pan washed!</b> ' + esc(G.doneLine || 'The pouch is full.');
+        pan.classList.add('g5-pan-done');
+        var again = h('button', { type: 'button', 'class': 'g5-btn g5-btn-ghost' }, ['↺ Pan again']);
+        again.addEventListener('click', function () { mine = { done: [], miss: 0 }; idx = 0; save(); show(); });
+        ctrl.appendChild(again); return;
+      }
+      var P = N[idx];
+      stepBox.innerHTML = '<span class="g5-stepn">Pan ' + (idx + 1) + ' of ' + N.length + '</span> ' + esc(P.clue);
+      var left = P.chips.filter(function (c) { return !c.gold; }).length;
+      P.chips.forEach(function (c) {
+        var b = h('button', { type: 'button', 'class': 'g5-pan-chip' }, [c.w]);
+        b.addEventListener('click', function () {
+          if (b.disabled) return;
+          if (c.gold) { mine.miss++; save(); fb.innerHTML = '✨ <b>' + esc(c.w) + '</b> is color. Keep it! ' + esc(c.why || ''); shake(b); return; }
+          b.disabled = true; b.classList.add('g5-pan-washed'); b.setAttribute('aria-label', c.w + ', washed out');
+          fb.innerHTML = '💧 Washed out <b>' + esc(c.w) + '</b>. ' + esc(c.why || '');
+          left--;
+          if (left <= 0) {
+            pan.classList.add('g5-pan-done');
+            pan.querySelectorAll('.g5-pan-chip').forEach(function (x) { if (!x.disabled) { x.classList.add('g5-pan-gold'); x.disabled = true; } });
+            if (mine.done.indexOf(idx) < 0) mine.done.push(idx);
+            save(); tally();
+            var golds = P.chips.filter(function (x) { return x.gold; });
+            fb.innerHTML = '🪙 Only color left: ' + golds.map(function (x) { return '<b>' + esc(x.w) + '</b>'; }).join(' and ') + '. ' + esc(golds.map(function (x) { return x.why || ''; }).join(' '));
+            var next = h('button', { type: 'button', 'class': 'g5-btn' }, [idx + 1 < N.length ? 'Next pan →' : 'Fill the pouch →']);
+            next.addEventListener('click', function () { idx++; while (idx < N.length && mine.done.indexOf(idx) >= 0) idx++; show(); setTimeout(function () { var f = pan.querySelector('button:not([disabled])') || ctrl.querySelector('button'); if (f) f.focus(); }, 30); });
+            ctrl.appendChild(next);
+          }
+        });
+        pan.appendChild(b);
+      });
+    }
+    show();
+    var ref = G.after ? activityByTitle(G.after, panel('words')) : null;
+    if (ref) afterNode(ref, wrap);
+    else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
+  }
+
   /* ── 13. the Commonplace Book page ─────────────────────────── */
   var NAME_BAD = /\b(ass|butt|poop|fart|stupid|dumb|idiot|hate|kill|sex|damn|hell|crap)\b/i;
   function profileName() { var p = store('profile'); return p && p.name ? p.name : ''; }
@@ -2361,6 +2441,7 @@
     guard('scale', buildScale);
     guard('strait', buildStrait);
     guard('race', buildRace);
+    guard('pan', buildPan);
     guard('cards', buildCards);
     guard('checks', buildChecks);
     guard('virtue', buildVirtue);

@@ -600,3 +600,13 @@ html.g5-top:not([data-g5-tab="warmup"]) .quote-strip { display: none !important;
 .g5-race-opts{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:10px 0;}
 .g5-race-btn{min-width:150px;padding:10px 16px;font-family:Georgia,serif;font-size:21px;}
 .g5-race-btn.g5-race-right{background:#FFF1D6;border-color:#C8862A;color:#5A2E1A;}
+/* Pan for Color (week 28) */
+.g5-pan{position:relative;width:min(420px,94%);aspect-ratio:1/1;margin:12px auto;border-radius:50%;box-sizing:border-box;padding:15%;display:flex;flex-wrap:wrap;align-content:center;justify-content:center;gap:10px;background:radial-gradient(circle at 50% 46%,#7C8189 0 50%,#636870 51% 60%,#4A4E55 61% 66%,#2F3237 67%);box-shadow:inset 0 6px 18px rgba(0,0,0,.35),0 4px 10px rgba(14,28,66,.18);}
+.g5-pan-chip{font-family:Georgia,serif;font-size:18px;padding:7px 13px;border-radius:999px;background:#B99A6B;color:#2E2416;border:2px solid #7A6240;cursor:pointer;transition:transform .2s,opacity .45s;}
+.g5-pan-chip:hover:not([disabled]){transform:translateY(-2px);}
+.g5-pan-chip:focus-visible{outline:3px solid #F5D77A;outline-offset:2px;}
+.g5-pan-washed{opacity:0;transform:translate(70px,30px) rotate(12deg);pointer-events:none;}
+.g5-pan-gold{background:#F5D77A;border-color:#C8862A;color:#5A2E1A;box-shadow:0 0 12px #FFD34D;cursor:default;}
+.g5-pan-done{background:radial-gradient(circle at 50% 46%,#8E8A78 0 50%,#6E6A5A 51% 60%,#4A4E55 61% 66%,#2F3237 67%);}
+.g5-pouch{font-weight:700;}
+@media (max-width:480px){.g5-pan{padding:13%;gap:7px;}.g5-pan-chip{font-size:16px;padding:6px 10px;}}
