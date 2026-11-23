@@ -1,0 +1,245 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "A new book starts this week, By the Great Horn Spoon! It begins in eighteen forty-nine, and the Gold Rush was real. Today you learn the real history first: who went to California, how they got there, and who was already living there."
+  },
+  "words": {
+   "text": "This week's roots are aud, which means hear, and or, which means speak. Some words only look like they have them. In the game, test each word like an assayer tests gold: hear, speak, or fool's gold."
+  },
+  "reading": {
+   "text": "Read about the California Gold Rush and study the map of the three routes. Keep the real history and the novel apart. The passage gives real numbers. The novel is a made-up adventure inside that history."
+  },
+  "assignment": {
+   "text": "Your adventure story starts today. Plan four things: a hero, a problem, a setting, and what is at stake. Notes are fine. You will build on this plan all week."
+  }
+ },
+ "hook": {
+  "q": "It is 1849. You live in Boston, and you want to reach the gold fields in California. Which way do you go?",
+  "options": [
+   {
+    "t": "Sail all the way around Cape Horn.",
+    "reply": "More than 13,000 miles by ship, often five to eight months, with storms at the bottom of the world. Many New Englanders went this way. So does the novel:"
+   },
+   {
+    "t": "Sail to Panama and cross the jungle.",
+    "reply": "It was shorter, but yellow fever and malaria waited in the jungle, and the ships on the Pacific side were overbooked. The novel's heroes take the long way:"
+   },
+   {
+    "t": "Walk the California Trail with a wagon.",
+    "reply": "About 2,000 miles from Missouri, and cholera along the way. But you live by the sea. The novel's heroes go by ship:"
+   }
+  ],
+  "reveal": {
+   "line": "A sailing ship with two great sidewheels went splashing out of Boston harbor on a voyage around the Horn to San Francisco.",
+   "cite": "Chapter 1",
+   "then": "Read today's passage to find out what that voyage was really like."
+  }
+ },
+ "how": [
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted words in the first sentence.",
+    "Fix the second sentence in the box.",
+    "Tap See the Answer to check."
+   ],
+   "why": "A phrase that tells where or when puts the reader in the scene."
+  },
+  {
+   "match": "Read & Write",
+   "do": [
+    "Read the question.",
+    "Write 2 or 3 sentences in your reading journal.",
+    "Then go on to Word Study."
+   ],
+   "why": "Thinking before you read gives you something to watch for."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Read what aud and or mean.",
+    "Read the example words.",
+    "Type the missing root in each word, then tap Check My Roots."
+   ],
+   "why": "Two small roots unlock dozens of words about hearing and speaking."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Read the sentence for each of the two words.",
+    "Look at the word parts.",
+    "Tap each card to check the other three words."
+   ],
+   "why": "These words are in this week's chapters. Knowing them first keeps the reading smooth."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Read the two sentences from the novel.",
+    "Think through the questions, then tap Now check your thinking.",
+    "Tap the sentence that puts you in a place."
+   ],
+   "why": "Phrases like these build the setting of an adventure."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Read each long word in syllables.",
+    "Think through the questions.",
+    "Tap a word, then tap the column that fits it."
+   ],
+   "why": "Long words are easier to spell one syllable at a time."
+  },
+  {
+   "match": "Read: The California Gold Rush",
+   "do": [
+    "Read the passage. It is real history.",
+    "Study the map of the three routes.",
+    "Then do the Read Like a Writer box and the Virtue Watch at the end of this tab."
+   ],
+   "why": "The novel is set inside this history. Knowing it makes the story make sense."
+  },
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read the three lenses.",
+    "Tap the one you will use today.",
+    "Keep it in mind as you read. You will use it at the end."
+   ],
+   "why": "Good readers bring what they know into a new book.",
+   "use": "You will use it in reading question 3."
+  },
+  {
+   "match": "Writer",
+   "do": [
+    "Read Alex's plan.",
+    "Answer the four questions in the box: hero, problem, setting, stakes.",
+    "Bullet points are fine."
+   ],
+   "why": "Every adventure starts with someone who wants something and a world that makes it hard."
+  }
+ ],
+ "glossary": [
+  {
+   "word": "overbooked",
+   "in": "Read: The California Gold Rush",
+   "meaning": "sold more tickets than there were places"
+  },
+  {
+   "word": "malaria",
+   "in": "Read: The California Gold Rush",
+   "meaning": "a sickness spread by mosquito bites"
+  }
+ ],
+ "hints": {
+  "aud": [
+   "This word is about hearing.",
+   "The hearing root has three letters.",
+   "a, u, d"
+  ],
+  "or": [
+   "This word is about speaking.",
+   "The speaking root has two letters.",
+   "o, r"
+  ]
+ },
+ "miss": {
+  "Massachusetts": "Look for the doubled letters: ss, then ss again, then tt.",
+  "Mississippi": "Look for the doubled letters: ss, ss and pp.",
+  "passengers": "pas-sen-gers. The ss in the middle is doubled.",
+  "California": "No doubled letters. Say it: Cal-i-FOR-ni-a. The i in Cal-i is quiet.",
+  "Sacramento": "No doubled letters. Say it: Sac-ra-MEN-to. The a in -ra- is quiet.",
+  "Argonaut": "No doubled letters. Say it: AR-go-naut. The o is quiet."
+ },
+ "game": {
+  "type": "scale",
+  "title": "The Assayer's Scale",
+  "sub": "This week's word game · 6 words today",
+  "after": "Morphology",
+  "look": "An assayer tested gold in the Gold Rush, to tell real gold from fool's gold. Here you test words. A word with aud (hear) goes on the HEAR pan. A word with or (speak) goes on the SPEAK pan. A word that only looks like one is fool's gold.",
+  "how": {
+   "do": [
+    "Read the word on the nugget.",
+    "Think about what it means.",
+    "Tap HEAR, SPEAK, or Fool's gold.",
+    "Tap Next word."
+   ],
+   "why": "A root only helps if it is really there. Testing the meaning keeps you from being fooled."
+  },
+  "doneLine": "Come back tomorrow for six more words.",
+  "nuggets": [
+   {
+    "w": "audiobook",
+    "pan": "hear",
+    "why": "aud + io + book: a book you listen to."
+   },
+   {
+    "w": "orally",
+    "pan": "speak",
+    "why": "or + al + ly: by speaking, not in writing."
+   },
+   {
+    "w": "horn",
+    "pan": "fool",
+    "why": "No root here. A horn spoon is made of an ox's horn. The or is just part of the word.",
+    "miss": "Look closely. Is horn about speaking?"
+   },
+   {
+    "w": "audit",
+    "pan": "hear",
+    "why": "Long ago, money records were read out loud and heard by a checker. Now an audit is a careful check."
+   },
+   {
+    "w": "forest",
+    "pan": "fool",
+    "why": "No root here. Forest comes from an old word for outside. The or is just letters.",
+    "miss": "Does a forest have anything to do with speaking?"
+   },
+   {
+    "w": "oratory",
+    "pan": "speak",
+    "why": "or + atory: the skill of giving speeches."
+   }
+  ]
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/btghs/ensign-thayer-map.jpg",
+  "title": "Map of the Gold Regions of California",
+  "alt": "An old printed map with a decorated border. It shows California, North America and South America, and long columns of small print at the bottom.",
+  "look": "This is a real map sold in New York in 1849 to people heading for the gold fields. It shows the routes by Panama and around Cape Horn, and the small print gives travel tips. Its own text says the Cape Horn voyage was about 18,000 miles and took nearly five months. Other sources from the time give different numbers.",
+  "lookBtn": "Tap to learn about this map",
+  "creator": "Ensigns & Thayer",
+  "date": "1849",
+  "license": "Public domain (David Rumsey Map Collection, via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Map_Of_The_Gold_Regions_Of_California,_Showing_the_Routes_via_Chagres_and_Panama,_Cape_Horn,_etc._..._Published_by_Ensigns_%26_(IA_dr_map-of-the-gold-regions-of-california-showing-the-routes-via-chagres-and-p-3442000).jpg"
+ },
+ "virtue": {
+  "name": "loyalty",
+  "kind": "sort",
+  "title": "Loyalty or not?",
+  "intro": "This week's virtue is loyalty: sticking with a person or a promise, even when it costs you something. Sort these everyday examples.",
+  "items": [
+   {
+    "t": "You keep a friend's secret, even when others tease you to tell.",
+    "ok": true,
+    "why": "You stay true to your friend when it would be easier not to."
+   },
+   {
+    "t": "You go along with friends who are being unkind to someone.",
+    "ok": false,
+    "why": "Going along is not loyalty. A loyal friend helps friends do the right thing."
+   },
+   {
+    "t": "You keep a promise to help, even after a better plan comes up.",
+    "ok": true,
+    "why": "You stick with your word when it costs you."
+   },
+   {
+    "t": "You stay with your team after a hard loss.",
+    "ok": true,
+    "why": "Loyalty shows most when things go badly."
+   }
+  ]
+ }
+}
