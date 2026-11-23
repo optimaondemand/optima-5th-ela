@@ -139,7 +139,7 @@
   "title": "Race to the Golden Gate",
   "sub": "This week's word game · 8 planks today",
   "after": "Spelling",
-  "look": "It is the last night of the race. The Lady Wilma has no coal, so every right answer throws a plank of lumber into her furnace and she surges toward the Golden Gate. A wrong answer lets the Sea Raven creep up.",
+  "look": "The Lady Wilma has no coal. Each right answer throws a plank of lumber in her furnace, and she surges toward the Golden Gate. A miss lets the Sea Raven creep up.",
   "how": {
    "do": [
     "Read the clue.",

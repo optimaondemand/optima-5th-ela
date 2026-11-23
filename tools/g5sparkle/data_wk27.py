@@ -11,8 +11,8 @@ Bethany's choices: hook "$38 in a dollar-a-bucket city" (27.2), Race to the Gold
 wow = the ships left in the harbor + the real Niantic (27.2), virtue generosity, brisk and light, Arrival plates, hard-history notes.
 Q4 audio is paused: the Listen texts are Mason scripts, written to stay at or under 1,000 characters a lesson."""
 import json, sys
-LOOK = ("It is the last night of the race. The Lady Wilma has no coal, so every right answer throws a plank of lumber into her furnace "
-        "and she surges toward the Golden Gate. A wrong answer lets the Sea Raven creep up.")
+LOOK = ("The Lady Wilma has no coal. Each right answer throws a plank of lumber in her furnace, and she surges toward the Golden Gate. "
+        "A miss lets the Sea Raven creep up.")
 HOW = {"do": ["Read the clue.", "Tap the word that really fits.", "Watch the Lady Wilma surge ahead.", "Tap Full steam."],
        "why": "The base word tells you -tion or -sion, and a real root tells you the meaning."}
 def r(clue, opts, ok, why, miss=None):
