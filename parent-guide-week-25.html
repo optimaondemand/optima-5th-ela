@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 25 Parent Guide · 5th Grade ELA · Optima Academy Online</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+:root{
+  --navy:#0E1C42; --ink:#3A4A6B; --muted:#5E6C8C; --line:#E2E8F4;
+  --sky:#55C8E8; --sky-bg:#EAF8FD; --gold:#C7922C; --gold-bg:#FFF3DC;
+  --green:#34B76F; --green-bg:#E3F8ED; --plum:#8B6FC0; --plum-bg:#F1ECFA;
+  --paper:#FAFBFF; --cream:#FFF8F0;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:"Nunito",sans-serif;font-size:18px;line-height:1.6;}
+.wrap{max-width:880px;margin:0 auto;padding:24px 16px 48px;}
+h1,h2,h3{font-family:"Lora",Georgia,serif;color:var(--navy);margin:0;}
+p{margin:0 0 10px;}
+strong{color:var(--navy);}
+
+/* header */
+.hero{background:var(--navy);color:#fff;border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1.25fr 1fr;}
+.hero-text{padding:28px 28px 26px;}
+.brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#BFD0EE;margin-bottom:14px;}
+.brand img{width:38px;height:38px;border-radius:50%;background:#fff;}
+.hero h1{color:#fff;font-size:34px;line-height:1.2;margin-bottom:6px;}
+.hero .sub{font-size:19px;color:#DCE6F7;margin-bottom:16px;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 13px;font-size:16px;font-weight:700;color:#fff;}
+.hero-art{background:#F5E6C8 center/cover no-repeat;min-height:240px;}
+
+/* cards */
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-top:18px;}
+.card-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.card-head .ico{font-size:26px;line-height:1;}
+.card-head h2{font-size:24px;}
+.card-head .tag{margin-left:auto;font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+
+.glance{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.glance .box{border-radius:12px;padding:14px 16px;}
+.box-label{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.b-sky{background:var(--sky-bg);} .b-sky .box-label{color:#1F8CB0;}
+.b-gold{background:var(--gold-bg);} .b-gold .box-label{color:#9A6C14;}
+.b-green{background:var(--green-bg);} .b-green .box-label{color:#1F8452;}
+.b-plum{background:var(--plum-bg);} .b-plum .box-label{color:#6A4FA3;}
+.quote{font-family:"Lora",Georgia,serif;font-style:italic;font-size:20px;color:var(--navy);border-left:4px solid var(--gold);padding:4px 0 4px 16px;margin:16px 0 0;}
+.quote small{display:block;font-family:"Nunito",sans-serif;font-style:normal;font-size:15px;color:var(--muted);margin-top:4px;}
+
+/* day table */
+.days{width:100%;border-collapse:collapse;}
+.days th{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:2px solid var(--line);}
+.days td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+.days tr:last-child td{border-bottom:none;}
+.day-n{font-family:"Lora",Georgia,serif;font-weight:700;font-size:20px;color:var(--navy);white-space:nowrap;}
+.day-n span{display:block;font-family:"Nunito",sans-serif;font-size:15px;font-weight:700;color:var(--muted);}
+.ch{font-weight:800;color:var(--navy);}
+.small{font-size:16px;color:var(--muted);}
+.pill{display:inline-block;font-size:14px;font-weight:800;border-radius:999px;padding:2px 10px;margin:4px 4px 0 0;}
+.p-poem{background:var(--plum-bg);color:#6A4FA3;}
+.p-guide{background:var(--cream);color:#9A6C14;border:1px solid #F5E6C8;}
+.extra-row td{background:var(--paper);}
+
+/* words */
+.words{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.word{border:1px solid var(--line);border-radius:12px;padding:12px 16px;}
+.word b{font-family:"Lora",Georgia,serif;font-size:21px;color:var(--navy);display:block;}
+.word span{font-size:17px;}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;}
+.skills .box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.eg{display:block;margin-top:6px;font-weight:700;color:var(--navy);}
+
+/* poem */
+.poem-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;}
+.poem{font-family:"Lora",Georgia,serif;font-size:22px;line-height:1.9;color:var(--navy);background:var(--plum-bg);border-radius:12px;padding:16px 22px;}
+.poem small{display:block;font-family:"Nunito",sans-serif;font-size:15px;color:var(--muted);line-height:1.4;margin-top:6px;}
+
+/* ask */
+.ask{list-style:none;margin:0;padding:0;counter-reset:q;}
+.ask li{counter-increment:q;position:relative;padding:12px 0 12px 50px;border-bottom:1px dashed var(--line);}
+.ask li:last-child{border-bottom:none;}
+.ask li::before{content:counter(q);position:absolute;left:0;top:11px;width:34px;height:34px;border-radius:50%;background:var(--gold-bg);color:#9A6C14;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:17px;}
+.ask .q{font-weight:800;color:var(--navy);display:block;}
+.ask .listen{font-size:16px;color:var(--muted);}
+
+/* checklist */
+.check{list-style:none;margin:0;padding:0;}
+.check li{padding:7px 0 7px 34px;position:relative;}
+.check li::before{content:"✓";position:absolute;left:4px;top:6px;color:var(--green);font-weight:900;font-size:19px;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+
+.next{background:var(--navy);color:#DCE6F7;border:none;}
+.next h2{color:#fff;}
+.next strong{color:#fff;}
+.foot{text-align:center;font-size:15px;color:var(--muted);margin-top:26px;}
+
+.print-btn{display:inline-block;margin-top:16px;background:var(--gold);color:#fff;border:none;border-radius:999px;padding:9px 18px;font-family:"Nunito",sans-serif;font-weight:800;font-size:16px;cursor:pointer;}
+
+@media (max-width:720px){
+  .hero{grid-template-columns:1fr;}
+  .hero-art{min-height:180px;order:-1;}
+  .glance,.words,.skills,.poem-wrap,.two{grid-template-columns:1fr;}
+  .days thead{display:none;}
+  .days tr{display:block;border-bottom:1px solid var(--line);padding:8px 0;}
+  .days td{display:block;border:none;padding:4px 0;}
+}
+@media print{
+  body{background:#fff;font-size:15px;}
+  .wrap{padding:0;}
+  .print-btn{display:none;}
+  .card{break-inside:avoid;margin-top:12px;padding:14px 16px;}
+  .hero,.next{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+
+/* lesson mechanics */
+.howto{background:var(--cream);border:1px solid #F5E6C8;border-radius:16px;padding:18px 22px;margin-top:18px;}
+.howto h2{font-size:21px;margin-bottom:10px;}
+.howto ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 22px;}
+.howto li{position:relative;padding-left:32px;font-size:17px;line-height:1.5;}
+.howto li span{position:absolute;left:0;top:0;font-size:20px;}
+@media (max-width:760px){.howto ul{grid-template-columns:1fr;}}
+@media print{.howto{break-inside:avoid;}}
+.b-rose{background:#FDEEEE;border-radius:12px;padding:14px 16px;} .b-rose .box-label{color:#A8434A;}
+
+.p-museum{background:var(--sky-bg);color:#1F6F8C;}
+.p-extra{background:var(--green-bg);color:#1F8452;}
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.extras .box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.essay{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.essay span{font-size:15px;font-weight:800;border-radius:999px;padding:4px 12px;background:var(--paper);border:1px solid var(--line);color:var(--muted);}
+.essay span.now{background:var(--gold-bg);border-color:#F5E6C8;color:#9A6C14;}
+.essay span.done{background:var(--green-bg);border-color:#CDEFDB;color:#1F8452;}
+@media (max-width:720px){.extras{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-text">
+      <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy Online">Family Guide · 5th Grade ELA</div>
+      <h1>Week 25: The Rush Is On</h1>
+      <div class="sub"><em>By the Great Horn Spoon!</em> by Sid Fleischman, the Gold Rush background and Chapters 1–3</div>
+      <div class="chips">
+        <span class="chip">4 lessons</span>
+        <span class="chip">1 fluency recording</span>
+        <span class="chip">New book · first week of Quarter 4</span>
+        <span class="chip">Check-In at week’s end</span>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨️ Print this guide</button>
+    </div>
+    <div class="hero-art" style="background-image:url('assets/art/btghs/lane-boston-harbor.jpg');background-position:center 60%;" role="img" aria-label="An 1854 painting of Boston Harbor at sunset, with a steamboat and tall sailing ships"></div>
+  </header>
+
+  <section class="howto">
+    <h2>🧭 How the Lesson Pages Work</h2>
+    <ul>
+      <li><span>🗂️</span><strong>Four tabs, in order:</strong> Warm-Up → Word Study → Reading → Assignment. A button at the bottom of each tab moves to the next.</li>
+      <li><span>👣</span><strong>One step at a time.</strong> Each tab shows one activity at a time, and a Next button moves through its steps.</li>
+      <li><span>📝</span><strong>Every answer goes on the page.</strong> There’s a box for each one, including the Daily Oral Language sentence.</li>
+      <li><span>💾</span><strong>Answers save as you type</strong>, but only in that browser on that computer. Switching computers or clearing the browser loses them.</li>
+      <li><span>📓</span><strong>Copy your work</strong> at the bottom of the Assignment tab, then <strong>paste it into the assignment in Canvas and submit</strong>. A lesson isn’t turned in until it’s submitted there.</li>
+      <li><span>🎙️</span><strong>Fluency is a separate page</strong> in the Canvas module, because recording doesn’t work inside a lesson. Keep the book nearby.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">🧭</span><h2>This Week at a Glance</h2></div>
+    <p>A new book starts this week. Day 1 is real history: the California Gold Rush, the three routes west, and the people who already lived in California. Then the novel begins. It is January 1849. Twelve-year-old Jack Flagg and Praiseworthy, his family&rsquo;s butler, stow away in potato barrels on a ship sailing from Boston around Cape Horn. They hope to strike gold and save Jack&rsquo;s Aunt Arabella from losing the family home. A thief steals their money, so they shovel coal to pay their way, and Praiseworthy catches the thief with a pig and some coal dust.</p>
+    <div class="box b-rose" style="margin-bottom:12px;"><div class="box-label">💛 A heads-up for families</div>The book is a comedy, and these chapters are gentle. Day 1 also tells a harder part of the real history plainly: about 150,000 Native Californians lived there in 1848, and twelve years later only about 30,000 were left. The novel was written in 1963. In Chapter 1, Jack imagines &ldquo;wild Indians&rdquo; to fight off, a phrase common then and hurtful now. The unit guide says more.</div>
+    <div class="glance">
+      <div class="box b-sky"><div class="box-label">Reading skill</div><strong>Building background and reading an adventure&rsquo;s shape.</strong> Your student learns the real history first, then tracks the story&rsquo;s problem, its obstacles, and what is at stake.</div>
+      <div class="box b-green"><div class="box-label">Big idea</div><strong>Loyalty.</strong> Jack refuses an easy job so he can stay with his partner: &ldquo;We&rsquo;re partners, sir.&rdquo;</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">📅</span><h2>Day by Day</h2></div>
+    <table class="days">
+      <thead><tr><th>Lesson</th><th>Reading</th><th>Big question</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="day-n">25.1<span>Day 1</span></td>
+          <td><span class="ch">The California Gold Rush · real history</span><br>Gold found at Sutter&rsquo;s Mill in January 1848; the three routes west (around Cape Horn, across Panama, or the California Trail); life in the gold fields; and the Native Californians whose land it was.<br><span class="pill p-museum">A real 1849 gold-seekers&rsquo; map</span><span class="pill p-extra">Which way would you go?</span></td>
+          <td>What made ordinary people risk everything for gold?</td>
+        </tr>
+        <tr>
+          <td class="day-n">25.2<span>Day 2</span></td>
+          <td><span class="ch">Chapter 1 · The Stowaways</span><br>Jack and Praiseworthy climb out of the potato barrels and report themselves to Captain Swain. Jack learns why they came: Aunt Arabella&rsquo;s money is almost gone. Jack chooses the coal bunkers with his partner.<br><span class="pill p-poem">Poetry Corner</span><span class="pill p-museum">Boston Harbor, 1854</span></td>
+          <td>What makes someone a true partner?</td>
+        </tr>
+        <tr>
+          <td class="day-n">25.3<span>Day 3</span></td>
+          <td><span class="ch">Chapter 2 · How to Catch a Thief</span><br>Praiseworthy says a pig will squeal if a dishonest man touches it. The real trick is coal dust: the thief is the only man with a clean finger. He is Cut-Eye Higgins.<br><span class="pill p-museum">An 1849 comic print</span></td>
+          <td>What is cleverness, exactly?</td>
+        </tr>
+        <tr>
+          <td class="day-n">25.4<span>Day 4</span></td>
+          <td><span class="ch">Chapter 3 · News of the Sea Raven</span><br>Jack writes home, and a becalmed ship with fever on board begs for a tow. Captain Swain helps, even though it may cost him the race.<br><span class="pill p-poem">Poetry Corner</span><span class="pill p-museum">A becalmed sea, 1860</span></td>
+          <td>What is a person really born to do?</td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">🎙️<span>Fluency</span></td>
+          <td colspan="2">The barrel scene from Chapter 1, ending with &ldquo;All clear, Master Jack.&rdquo; Your student reads it once to themselves, again for smoothness, and once more with expression, then <strong>records and submits it in Canvas.</strong></td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">📋<span>Check-In</span></td>
+          <td colspan="2">A 14-point wrap-up on the week: prepositional phrases, the roots aud and or, long place names and Gold Rush words, three reading questions, and two short writing questions.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">🔤</span><h2>Words to Know</h2><span class="tag">Use them at home!</span></div>
+    <div class="words">
+      <div class="word"><b>stowaway</b><span>someone who hides on a ship to travel without paying</span></div>
+      <div class="word"><b>paddlewheel</b><span>a big wheel with paddles that pushes a steamship through the water</span></div>
+      <div class="word"><b>argonaut</b><span>a Gold Rush seeker; first, a sailor in a Greek myth who sailed after the Golden Fleece</span></div>
+      <div class="word"><b>porthole</b><span>a small round window in the side of a ship</span></div>
+      <div class="word"><b>undaunted</b><span>not scared off or discouraged, even when something is hard</span></div>
+    </div>
+    <div class="glance" style="margin-top:12px;">
+      <div class="box b-sky"><div class="box-label">Roots</div><strong>aud</strong> means hear and <strong>or</strong> means speak.<span class="eg">audience · inaudible · orator · oral</span></div>
+      <div class="box b-gold"><div class="box-label">Spelling</div><strong>Long place names and Gold Rush words, one syllable at a time.</strong><span class="eg">Cal·i·for·ni·a · Sac·ra·men·to · Ar·go·naut · pas·sen·ger</span></div>
+      <div class="box b-green"><div class="box-label">Grammar</div><strong>Prepositional phrases for setting</strong> tell where and when.<span class="eg">Below decks, in the creaking darkness of her cargo hold, …</span></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">✨</span><h2>New This Week</h2></div>
+    <div class="glance">
+      <div class="box b-plum"><div class="box-label">⚖️ The Assayer&rsquo;s Scale</div>The week&rsquo;s word game. Each word is a gold nugget. Your student puts it on the HEAR pan (aud), the SPEAK pan (or), or the fool&rsquo;s gold tray if it only looks like one. <em>Audacious</em> starts with aud but means bold, so it is fool&rsquo;s gold. Six words a day.</div>
+      <div class="box b-gold"><div class="box-label">🌿 Virtue Watch: loyalty</div>After reading, your student sorts examples, picks the most loyal moment in Chapter 1, rates Praiseworthy&rsquo;s loyalty on a meter, and on Day 4 picks the most loyal moment of the week.</div>
+      <div class="box b-sky"><div class="box-label">🖼️ Art from the time</div>Each lesson opens with a map, print or painting from 1849 to 1860. Day 1&rsquo;s is a real map sold in New York in 1849 to people heading for the gold fields, with the routes by Panama and Cape Horn.</div>
+      <div class="box b-green"><div class="box-label">📖 Read Like a Writer, every day</div>One sentence from the book a day, chosen to show how an adventure sets up its problem and setting, like &ldquo;And then Jack had overheard Banker Stites tell Aunt Arabella that her inheritance was almost gone.&rdquo;</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">✍️</span><h2>Your Student&rsquo;s Writing: An Adventure Story Plan</h2><span class="tag">Writer&rsquo;s Workshop</span></div>
+    <div class="essay"><span class="now">Day 1 · Plan</span><span class="now">Day 2 · Draft</span><span class="now">Day 3 · Revise</span><span class="now">Day 4 · Submit</span></div>
+    <p>Over six weeks your student writes an adventure story of their own. This week is the plan. <strong>Day 1:</strong> a hero, a problem, a setting, and what is at stake. <strong>Day 2:</strong> the plan in full sentences, with frames for help, plus one hard choice for the hero. <strong>Day 3:</strong> revise the plan with a checklist and add one thing that isn&rsquo;t what it seems. <strong>Day 4:</strong> submit the whole plan. The draft starts next week.</p>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">🪶</span><h2>Poetry Corner: Humor and Tone</h2></div>
+    <div class="poem-wrap">
+      <div class="poem">They went to sea in a Sieve, they did,<br>In a Sieve they went to sea:<br>In spite of all their friends could say,<br>On a winter&rsquo;s morn, on a stormy day,<br>In a Sieve they went to sea!<small>Edward Lear, &ldquo;The Jumblies&rdquo; (1871), Day 2. On Day 4: Lewis Carroll, &ldquo;The Walrus and the Carpenter&rdquo; (1871).</small></div>
+      <div><p><strong>Tone</strong> is how a writer feels about the subject. Lear&rsquo;s travelers sound completely sure of a silly, dangerous plan, and the gap between how they sound and what the reader sees is the joke. Carroll&rsquo;s Walrus sounds very friendly to the Oysters, but the eldest Oyster only winks and stays put.</p><p><strong>How to help:</strong> Read the Lear lines aloud in a cheerful voice, then in a worried voice. Ask which one fits the poem.</p></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">💬</span><h2>Ask at Home</h2><span class="tag">Better than &ldquo;How was school?&rdquo;</span></div>
+    <ol class="ask">
+      <li><span class="q">Which way would you have gone to California in 1849, and why?</span><span class="listen">Listen for: around Cape Horn (more than 13,000 miles, often five to eight months), across Panama (shorter, but fever in the jungle), or the 2,000-mile California Trail.</span></li>
+      <li><span class="q">Who was already living in California?</span><span class="listen">Listen for: about 150,000 Native Californians in many nations; the Gold Rush took their land and many lives, and their nations are still there today.</span></li>
+      <li><span class="q">Why did Jack and Praiseworthy run away to sea?</span><span class="listen">Listen for: Aunt Arabella&rsquo;s money is almost gone and she may lose the house; they hope to strike gold.</span></li>
+      <li><span class="q">How did Praiseworthy catch the thief?</span><span class="listen">Listen for: coal dust on the pig; every man touched it in the dark except the thief, whose finger stayed clean.</span></li>
+      <li><span class="q">What does aud mean? What does or mean? Name a word for each.</span><span class="listen">Listen for: hear (audience, audio); speak (oral, orator).</span></li>
+      <li><span class="q">Tell me your adventure plan. What is at stake?</span><span class="listen">Listen for: a hero, a clear problem, a setting that makes it harder, and what happens if the hero fails.</span></li>
+    </ol>
+  </section>
+
+  <div class="two">
+    <section class="card">
+      <div class="card-head"><span class="ico">📬</span><h2>What Gets Turned In</h2></div>
+      <ul class="check">
+        <li><strong>Each lesson:</strong> 3 reading questions, that day&rsquo;s Word Study response, the Read Like a Writer box and the Writer&rsquo;s Workshop step, copied and pasted into Canvas</li>
+        <li><strong>Fluency:</strong> a recording of the Chapter 1 barrel scene</li>
+        <li><strong>Check-In:</strong> at the end of the week</li>
+      </ul>
+      <p class="small" style="margin-top:10px;"><strong>Done well looks like:</strong> answers with a detail from the chapter, phrases that tell where and when, and a plan with all four parts.</p>
+    </section>
+    <section class="card">
+      <div class="card-head"><span class="ico">🏡</span><h2>Try at Home</h2><span class="tag">5 minutes</span></div>
+      <ul class="check">
+        <li><strong>Where and when:</strong> take turns adding a phrase to &ldquo;The dog barked.&rdquo; (Under the table, at midnight, …)</li>
+        <li><strong>Hear or speak?</strong> Name a word, and let your student say if it has aud, or, or neither.</li>
+        <li><strong>Find the route:</strong> trace Boston to San Francisco around Cape Horn on a map or globe.</li>
+      </ul>
+    </section>
+  </div>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">🎒</span><h2>Have on Hand</h2></div>
+    <p><strong><em>By the Great Horn Spoon!</em></strong> by Sid Fleischman · <strong>A device that records audio</strong> for the fluency reading</p>
+  </section>
+
+  <section class="card next">
+    <div class="card-head"><span class="ico">🔭</span><h2>Coming Up in Week 26</h2></div>
+    <p><strong>Chapters 4–6.</strong> The voyage goes on, toward Rio de Janeiro and the stormy tip of South America. Your student begins drafting the adventure story.</p>
+  </section>
+
+  <p class="foot"><a href="parent-guide-btghs-unit.html" style="color:#1F6FA8;font-weight:700;">See the whole By the Great Horn Spoon! unit →</a><br><br>Optima Academy Online · 5th Grade ELA · Week 25 Family Guide<br>Questions? Reach out to your student&rsquo;s teacher anytime.</p>
+</div>
+</body>
+</html>
