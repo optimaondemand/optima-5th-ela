@@ -1,0 +1,214 @@
+{
+ "id": "g5-ela-wk26-checkin",
+ "title": "Week 26 Check-In · By the Great Horn Spoon!",
+ "description": "This week you read Chapters 4 to 6 and studied how Fleischman makes you laugh. You practiced dialogue punctuation and paragraphing, the roots rid/ris and lud/lus, dialogue tags and spelling in quoted speech, and drafting a scene with voice. Show what you know.",
+ "chapters": "Ch. 4–6 and the humor day",
+ "questions": [
+  {
+   "n": 1,
+   "section": "Grammar",
+   "label": "Identification",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which sentence is punctuated correctly?",
+   "options": [
+    "“It’s that boy”, he shouted, waving the meat cleaver.",
+    "“It’s that boy,” he shouted, waving the meat cleaver.",
+    "“It’s that boy,” He shouted, waving the meat cleaver.",
+    "“It’s that boy” he shouted waving the meat cleaver."
+   ],
+   "answer": 1,
+   "from": "26.1 DOL model (Ch. 4); 26.1–26.4 Grammar",
+   "status": "fixed (four options; the book's exact line)"
+  },
+  {
+   "n": 2,
+   "section": "Grammar",
+   "label": "Correction",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Fix the punctuation and paragraphing. Each speaker needs a new paragraph.",
+   "excerpt": "Stuff and nonsense Praiseworthy would say even though he believed every word of it. Well said Mr. Azariah Jones I hope he doesn't try that.",
+   "key": "“Stuff and nonsense,” Praiseworthy would say, even though he believed every word of it. / (new paragraph) “Well,” said Mr. Azariah Jones, “I hope he doesn’t try that.”",
+   "from": "26.2 DOL (Ch. 5)",
+   "status": "fixed (the old lines were invented)"
+  },
+  {
+   "n": 3,
+   "section": "Grammar",
+   "label": "Application",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Write a 3-line dialogue set aboard the Lady Wilma. Use quotation marks, commas inside the closing marks, and a new paragraph for each new speaker.",
+   "key": "Three lines, correct marks, new paragraph per speaker.",
+   "from": "26.2 Grammar Show What You Know; 26.3 Grammar",
+   "status": "kept"
+  },
+  {
+   "n": 4,
+   "section": "Morphology & Vocabulary",
+   "label": "Root",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which word contains a root meaning play or jest?",
+   "options": [
+    "derisive",
+    "ludicrous",
+    "risible",
+    "ridicule"
+   ],
+   "answer": 1,
+   "from": "26.1–26.4 Morphology",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 5,
+   "section": "Morphology & Vocabulary",
+   "label": "Context Clues",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Read the sentence from Chapter 6. What does monotony mean?",
+   "excerpt": "“Even a haircut broke the monotony of these endless days at sea.”",
+   "options": [
+    "Boring sameness, with nothing new happening",
+    "Great danger",
+    "A loud argument",
+    "Stormy weather"
+   ],
+   "answer": 0,
+   "from": "26.1–26.4 Vocabulary (monotony, Ch. 6)",
+   "status": "new (vocabulary in context; replaces a second root-meaning item)"
+  },
+  {
+   "n": 6,
+   "section": "Morphology & Vocabulary",
+   "label": "Use the Word",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Use the word ludicrous in a sentence about this week's chapters. Then tell how its root lud (play) helps explain its meaning.",
+   "key": "A sentence using ludicrous correctly + lud = play/jest, so something laughable like a joke.",
+   "from": "26.1 Morphology; 26.3 Morphology journal",
+   "status": "kept"
+  },
+  {
+   "n": 7,
+   "section": "Spelling",
+   "label": "Identification",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which dialogue tag is spelled correctly?",
+   "options": [
+    "exclaimed",
+    "interupted",
+    "stamered",
+    "comanded"
+   ],
+   "answer": 0,
+   "from": "26.1–26.4 Spelling",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 8,
+   "section": "Spelling",
+   "label": "Spelling in Quoted Speech",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "In Chapter 4, Mountain Jim says a bit of singing will pass the time. Which spelling shows how he says it?",
+   "options": [
+    "singin’",
+    "sing’in",
+    "singin",
+    "’singing"
+   ],
+   "answer": 0,
+   "from": "26.1–26.4 Spelling (spelling in quoted speech)",
+   "status": "new (the scope's quoted-speech half; replaces bellowed in syllables)"
+  },
+  {
+   "n": 9,
+   "section": "Spelling",
+   "label": "Tag Choice",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "A character speaks quietly and grumpily, under their breath. Which dialogue tag fits best?",
+   "options": [
+    "bellowed",
+    "commanded",
+    "muttered",
+    "exclaimed"
+   ],
+   "answer": 2,
+   "from": "26.1 Spelling sort; 26.4 Spelling",
+   "status": "kept (a fourth option added; the written explanation dropped)"
+  },
+  {
+   "n": 10,
+   "section": "Reading",
+   "label": "Comprehension",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "How does Jack's time as a stowaway lead to the solution in Chapter 6?",
+   "options": [
+    "He hid in the potato barrels and sucked the potatoes, so he knew they were juicy enough to keep grape cuttings alive.",
+    "He ran away from home, so he understood how Monsieur Gaunt felt.",
+    "He was small, so he could reach the potatoes deep in the hold.",
+    "He was ship's boy, so he knew where the fresh water was kept."
+   ],
+   "answer": 0,
+   "from": "26.3 Reading (Ch. 6)",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 11,
+   "section": "Reading",
+   "label": "Inference",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Read the line from Chapter 5. Why does Praiseworthy say “Stuff and nonsense” if he believes the stories? What does this show about his role among the passengers?",
+   "key": "He keeps calm on the outside to steady the frightened passengers; he is a calm leader (self-control).",
+   "from": "26.2 Reading Q2; Virtue Watch",
+   "status": "kept"
+  },
+  {
+   "n": 12,
+   "section": "Reading",
+   "label": "Humor Analysis",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Choose one comic moment from Chapters 4–6. Name the technique that makes it funny (comic contrast, the straight face, or the ticking clock) and explain in 2–3 sentences.",
+   "key": "A real moment + a named technique + how it works.",
+   "from": "26.4 How Fleischman Makes You Laugh",
+   "status": "kept"
+  },
+  {
+   "n": 13,
+   "section": "Writing",
+   "label": "Read Like a Writer",
+   "type": "essay_question",
+   "points": 1,
+   "text": "In this line, a reaction sits in the middle of the speech, set off by commas. Write one line for your own scene the same way: dialogue, a reaction, then more dialogue.",
+   "excerpt": "“You mean to say, sir,” said Mr. Azariah Jones, turning white, “that we’ve been bouncing around in that awful place?” (Chapter 5)",
+   "key": "Speech + tag with a reaction set off by commas + more speech, punctuated correctly.",
+   "from": "26.2 Read Like a Writer (Ch. 5)",
+   "status": "new (the scope's Read Like a Writer focus)"
+  },
+  {
+   "n": 14,
+   "section": "Writing",
+   "label": "Your Scene",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Copy 4–6 sentences from your adventure scene. Include correctly punctuated dialogue, one of this week's dialogue tags, and a moment that shows your hero's voice.",
+   "key": "Dialogue punctuated correctly + a tag from the list + a voice moment.",
+   "from": "26.1–26.4 Writer's Workshop",
+   "status": "kept (now 1 point)"
+  }
+ ],
+ "passage": {
+  "before": 11,
+  "title": "Reading passage (Chapter 5)",
+  "ch": 5,
+  "text": "“Stuff and nonsense,” Praiseworthy would say, even though he believed every word of it.",
+  "cite": "Sid Fleischman, By the Great Horn Spoon!, Chapter 5"
+ }
+}
