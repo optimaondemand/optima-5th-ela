@@ -29,8 +29,9 @@ WEEKS = {
  24: dict(read=F('R.3.3'),          think=F('R.3.3', 'R.2.4', 'EE.1.1'), write=F('C.1.3')),
  25: dict(read=F('R.1.1'),          think=F('R.1.1', 'EE.1.1'),          write=F('C.1.2')),
  26: dict(read=F('R.1.3'),          think=F('R.1.3', 'EE.1.1'),          write=F('C.1.2', 'EE.6.1')),
+ 27: dict(read=F('R.1.1'),          think=F('R.1.1', 'R.3.2', 'EE.1.1'), write=F('C.1.2')),
 }
-CHECKIN_Q = {(19, 5): F('V.1.3'), (20, 5): F('V.1.3'), (21, 5): F('V.1.3'), (22, 5): F('V.1.3'), (23, 5): F('V.1.3'), (24, 5): F('V.1.3'), (25, 5): F('V.1.3'), (26, 5): F('V.1.3')}   # Q5 is a context-clue item each week
+CHECKIN_Q = {(19, 5): F('V.1.3'), (20, 5): F('V.1.3'), (21, 5): F('V.1.3'), (22, 5): F('V.1.3'), (23, 5): F('V.1.3'), (24, 5): F('V.1.3'), (25, 5): F('V.1.3'), (26, 5): F('V.1.3'), (27, 5): F('V.1.3'), (27, 13): F('R.1.4')}   # Q5 is a context-clue item each week
 
 def rule(t, tab, W, bar):
     t = t.lower()
@@ -117,7 +118,7 @@ def tag_page(path, lid, week, W):
         blocks.append(dict(id=bid, title=title, **expand(fl)))
     out.append(s[pos:]); s = ''.join(out)
     if not blocks and bar and not is_checkin:   # the fluency page has no activity blocks: tag its passage
-        m = re.search(r'<div class="fluency-passage"', s)
+        m = re.search(r'<div class="fluency-passage"', s) or re.search(r'<div class="passage"', s)   # week 27 fluency uses class="passage"
         if m:
             fl = F('F.1.4'); bid = f'{lid}-01'
             s = s[:m.end()] + f' data-std="{" ".join(fl)}" data-std-id="{bid}"' + s[m.end():]
