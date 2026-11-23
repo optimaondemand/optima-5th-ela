@@ -1,0 +1,277 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "Today a real person tells you about San Francisco in 1849. First, a poem that moves like a train. Read it fast, and notice the short lines."
+  },
+  "words": {
+   "text": "Explain the roots and the shun rule in your own words. Pick an option on the choice board for your five words. The last eight planks take the Lady Wilma through the Golden Gate."
+  },
+  "reading": {
+   "text": "Read the words of Bayard Taylor, a real reporter who landed in San Francisco in August 1849. Find what surprised him. Then compare his first day to Jack's."
+  },
+  "assignment": {
+   "text": "Three questions about Taylor and the novel. Then read your middle once more and submit it. Copy your work and paste it into Canvas."
+  }
+ },
+ "how": [
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted parts of the first sentence.",
+    "Write the second sentence correctly in your reading journal.",
+    "Tap See the Answer to check."
+   ],
+   "why": "Joining ideas the right way keeps action moving and shows cause and effect."
+  },
+  {
+   "match": "Poetry Corner",
+   "do": [
+    "Read the poem out loud once.",
+    "Read the tip.",
+    "Answer the question in your reading journal."
+   ],
+   "why": "A poem's beat and line length control how fast you read, just like a writer's sentences."
+  },
+  {
+   "match": "Read & Write",
+   "do": [
+    "Read the question.",
+    "Write 2 or 3 sentences in your reading journal.",
+    "Then go on to Word Study."
+   ],
+   "why": "Thinking before you read gives you something to watch for."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Explain the two roots in your reading journal.",
+    "Type the word that fits each sentence.",
+    "Tap Check My Work."
+   ],
+   "why": "Explaining a root shows you really know it."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Read the four options.",
+    "Pick one and say which at the top of the box.",
+    "Use all five words."
+   ],
+   "why": "This is your Show What You Know for vocabulary this week."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Read the before and after.",
+    "Tap the right explanation in each question.",
+    "Answer the question in your reading journal."
+   ],
+   "why": "Explaining a choice shows you can make it on purpose."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Answer the question in your reading journal.",
+    "Tap the right spelling in each pair."
+   ],
+   "why": "The base word decides the ending."
+  },
+  {
+   "match": "Read: A Reporter Lands",
+   "do": [
+    "Read who Bayard Taylor was.",
+    "Read his words slowly. Tap any dotted word.",
+    "Answer the three questions, then do the Read Like a Writer box and the Virtue Watch."
+   ],
+   "why": "A real eyewitness shows what the novel's San Francisco was based on."
+  },
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read the three lenses.",
+    "Tap the one you will use today.",
+    "Keep it in mind as you read. You will use it at the end."
+   ],
+   "why": "Putting a real account beside a novel shows what each one does best.",
+   "use": "You will use it in question 3."
+  },
+  {
+   "match": "Writer",
+   "do": [
+    "Read your middle once more.",
+    "Put the whole middle section in the box.",
+    "Copy your work and paste it into Canvas."
+   ],
+   "why": "The middle is where the stakes rise. Each fix should lead to a new problem."
+  }
+ ],
+ "glossary": [
+  {
+   "word": "bewilderment",
+   "in": "Read: A Reporter Lands",
+   "meaning": "the feeling of being completely confused"
+  },
+  {
+   "word": "porters",
+   "in": "Read: A Reporter Lands",
+   "meaning": "people paid to carry bags and trunks"
+  },
+  {
+   "word": "speculation",
+   "in": "Read: A Reporter Lands",
+   "meaning": "buying something in hope of selling it later for more"
+  }
+ ],
+ "hints": {
+  "excursion": [
+   "A short trip out.",
+   "ex + the run root + ion.",
+   "ex + curs + ion"
+  ],
+  "extract": [
+   "To pull something out.",
+   "ex + the pull root.",
+   "ex + tract"
+  ],
+  "current": [
+   "Water that keeps running.",
+   "The run root + ent.",
+   "curr + ent"
+  ],
+  "traction": [
+   "The grip that keeps a wheel pulling.",
+   "The pull root + ion.",
+   "tract + ion"
+  ]
+ },
+ "game": {
+  "type": "race",
+  "title": "Race to the Golden Gate",
+  "sub": "This week's word game · 8 planks today",
+  "after": "Spelling",
+  "look": "It is the last night of the race. The Lady Wilma has no coal, so every right answer throws a plank of lumber into her furnace and she surges toward the Golden Gate. A wrong answer lets the Sea Raven creep up.",
+  "how": {
+   "do": [
+    "Read the clue.",
+    "Tap the word that really fits.",
+    "Watch the Lady Wilma surge ahead.",
+    "Tap Full steam."
+   ],
+   "why": "The base word tells you -tion or -sion, and a real root tells you the meaning."
+  },
+  "doneLine": "Four days, thirty-two planks. The Lady Wilma wins the race.",
+  "rounds": [
+   {
+    "clue": "Captain Swain takes back an angry promise. Which spelling names the act of pulling back?",
+    "opts": [
+     "retraction",
+     "retracsion",
+     "retracktion"
+    ],
+    "ok": 0,
+    "why": "re (back) + tract (pull) + ion. The base ends in ct, so -tion."
+   },
+   {
+    "clue": "Which spelling names the slow wearing away of a riverbank?",
+    "opts": [
+     "erosion",
+     "erotion",
+     "erodsion"
+    ],
+    "ok": 0,
+    "why": "erode ends in de, so it takes -sion."
+   },
+   {
+    "clue": "Letters that run together.",
+    "opts": [
+     "cursive",
+     "curious",
+     "curfew"
+    ],
+    "ok": 0,
+    "why": "curs (run) + ive."
+   },
+   {
+    "clue": "Which word is in the same family as decide?",
+    "opts": [
+     "decisive",
+     "deceive",
+     "decimal"
+    ],
+    "ok": 0,
+    "why": "decide, decision and decisive share the base decide."
+   },
+   {
+    "clue": "Which spelling names the act of steering a ship?",
+    "opts": [
+     "navigation",
+     "navigasion",
+     "navigatsion"
+    ],
+    "ok": 0,
+    "why": "navigate ends in te, so it takes -tion."
+   },
+   {
+    "clue": "To take one number away from another.",
+    "opts": [
+     "subtract",
+     "subject",
+     "suburb"
+    ],
+    "ok": 0,
+    "why": "sub (away) + tract (pull)."
+   },
+   {
+    "clue": "Which spelling names the act of understanding?",
+    "opts": [
+     "comprehension",
+     "comprehention",
+     "comprehendtion"
+    ],
+    "ok": 0,
+    "why": "comprehend ends in d, so it takes -sion."
+   },
+   {
+    "clue": "Money that runs from hand to hand.",
+    "opts": [
+     "currency",
+     "curfew",
+     "courage"
+    ],
+    "ok": 0,
+    "why": "curr (run) + ency."
+   }
+  ]
+ },
+ "virtue": {
+  "name": "generosity",
+  "kind": "best",
+  "title": "The most generous moment this week",
+  "intro": "Look back at Chapters 7 to 9. Tap the moment you think shows generosity the most.",
+  "options": [
+   {
+    "t": "In Callao, Mr. Azariah Jones and Monsieur Gaunt each buy them a pick, a shovel and a washpan (Chapter 7)."
+   },
+   {
+    "t": "Praiseworthy cuts Quartz Jackson's hair as a wedding present and takes no money (Chapter 8)."
+   },
+   {
+    "t": "Quartz Jackson gives them all the gold dust from his whiskers (Chapter 8)."
+   }
+  ],
+  "line": "Finish the sentence: This shows generosity the most because…",
+  "placeholder": "This shows generosity the most because…"
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/btghs/nahl-miners-in-the-sierras.jpg",
+  "title": "Miners in the Sierras",
+  "alt": "A painting of four miners in a rocky stream bed, shoveling dirt into a long wooden trough, with steep hills, pine trees and a small cabin behind them.",
+  "look": "Charles Nahl and Frederick Wenderoth painted this in 1851 and 1852, soon after the first rush. Four miners work a long wooden trough in a rocky stream, washing dirt to catch the heavy gold. It is the kind of place Jack and Praiseworthy are heading for, and the kind of hard work Bayard Taylor saw too.",
+  "lookBtn": "Tap to learn about this painting",
+  "creator": "Charles Christian Nahl and Frederick August Wenderoth",
+  "date": "1851 to 1852",
+  "license": "Public domain (Smithsonian American Art Museum, via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Smithsonian-Nahl_and_Wenderoth-Miners_in_the_Sierras-2099_(cropped).jpg"
+ }
+}

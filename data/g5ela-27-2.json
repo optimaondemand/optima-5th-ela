@@ -1,0 +1,330 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "Jack and Praiseworthy step off the boat into San Francisco, and everything costs too much. Before you read, answer the question on the card. Then read a galloping poem out loud and listen for the hoofbeats."
+  },
+  "words": {
+   "text": "Write four sentences that join ideas with and, but, because, although or when. Find the run and pull roots hiding in new words. Then listen for the loud beat in the shun words. Eight more planks for the furnace today."
+  },
+  "reading": {
+   "text": "Read Chapter 8, Saved by a Whisker. Watch the prices. Then watch a shaggy stranger, and one small choice that changes everything for Jack and Praiseworthy."
+  },
+  "assignment": {
+   "text": "Three questions about Chapter 8. Then keep drafting your middle. If you get stuck, use the frames: first, then, finally."
+  }
+ },
+ "hook": {
+  "q": "You land in a city where one bucket of water costs a dollar. You have $38, and the riverboat to the gold fields costs $50 for two. What do you do first?",
+  "options": [
+   {
+    "t": "Find a job right away.",
+    "reply": "Smart thinking. Praiseworthy starts by counting what they have:"
+   },
+   {
+    "t": "Walk to the gold fields and save the money.",
+    "reply": "It is more than a hundred miles. Praiseworthy starts by counting what they have:"
+   },
+   {
+    "t": "Look for a chance nobody else has noticed.",
+    "reply": "That is exactly Praiseworthy's style. He starts by counting what they have:"
+   }
+  ],
+  "reveal": {
+   "line": "Let me see. We have thirty-eight dollars left. That's a start, isn't it?",
+   "cite": "Chapter 8",
+   "then": "Read Chapter 8 to find out how a strange favor turns into the start they need."
+  }
+ },
+ "how": [
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted parts of the first sentence.",
+    "Write the second sentence correctly in your reading journal.",
+    "Tap See the Answer to check."
+   ],
+   "why": "Joining ideas the right way keeps action moving and shows cause and effect."
+  },
+  {
+   "match": "Poetry Corner",
+   "do": [
+    "Read the poem out loud once.",
+    "Read the tip.",
+    "Answer the question in your reading journal."
+   ],
+   "why": "A poem's beat and line length control how fast you read, just like a writer's sentences."
+  },
+  {
+   "match": "Read & Write",
+   "do": [
+    "Read the question.",
+    "Write 2 or 3 sentences in your reading journal.",
+    "Then go on to Word Study."
+   ],
+   "why": "Thinking before you read gives you something to watch for."
+  },
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read the three lenses.",
+    "Tap the one you will use today.",
+    "Keep it in mind as you read. You will use it at the end."
+   ],
+   "why": "Cause and effect is the engine of an adventure.",
+   "use": "You will use it in reading question 3."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Read the two kinds of sentences.",
+    "Write your four sentences in the box.",
+    "Label each one."
+   ],
+   "why": "This is your Show What You Know for grammar this week."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Read each meaning.",
+    "Type the missing root.",
+    "Tap Check."
+   ],
+   "why": "Spotting a root in a new word gives you a head start on its meaning."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Say each word out loud.",
+    "Tap each card to read its meaning.",
+    "Answer the question in your reading journal."
+   ],
+   "why": "Saying and using a word helps you keep it."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Say each word and find the loud beat.",
+    "Read the word families from Chapter 8.",
+    "Tap every -tion and -sion word in the sentences."
+   ],
+   "why": "The loud beat usually comes right before the ending."
+  },
+  {
+   "match": "Read: Chapter 8",
+   "do": [
+    "Read the reading focus below.",
+    "Open your book and read Chapter 8.",
+    "Then do the Read Like a Writer box and the Virtue Watch at the end of this tab."
+   ],
+   "why": "The pause boxes are places to stop and think while you read."
+  },
+  {
+   "match": "Writer",
+   "do": [
+    "Read today's step.",
+    "Keep writing your middle.",
+    "Use the frames if you get stuck."
+   ],
+   "why": "The middle is where the stakes rise. Each fix should lead to a new problem."
+  }
+ ],
+ "glossary": [
+  {
+   "word": "meter",
+   "in": "Poetry Corner",
+   "meaning": "the regular beat under the words of a poem"
+  },
+  {
+   "word": "postern",
+   "in": "Poetry Corner",
+   "meaning": "a small back gate in a town wall"
+  }
+ ],
+ "hints": {
+  "curr": [
+   "This word is about running.",
+   "The run root with two r's.",
+   "c, u, r, r"
+  ],
+  "tract": [
+   "This word is about pulling.",
+   "The pull root.",
+   "t, r, a, c, t"
+  ]
+ },
+ "game": {
+  "type": "race",
+  "title": "Race to the Golden Gate",
+  "sub": "This week's word game · 8 planks today",
+  "after": "Spelling",
+  "look": "It is the last night of the race. The Lady Wilma has no coal, so every right answer throws a plank of lumber into her furnace and she surges toward the Golden Gate. A wrong answer lets the Sea Raven creep up.",
+  "how": {
+   "do": [
+    "Read the clue.",
+    "Tap the word that really fits.",
+    "Watch the Lady Wilma surge ahead.",
+    "Tap Full steam."
+   ],
+   "why": "The base word tells you -tion or -sion, and a real root tells you the meaning."
+  },
+  "doneLine": "Come back tomorrow for eight more planks.",
+  "rounds": [
+   {
+    "clue": "Jack wants to see everything. Which spelling names the act of exploring?",
+    "opts": [
+     "exploration",
+     "explorasion",
+     "exploretion"
+    ],
+    "ok": 0,
+    "why": "explore + ation: exploration."
+   },
+   {
+    "clue": "Something that happens. Which spelling is right?",
+    "opts": [
+     "occurrence",
+     "ocurrence",
+     "occurence"
+    ],
+    "ok": 0,
+    "why": "oc + curr (run) + ence: two c's and two r's.",
+    "miss": "Count the c's and the r's."
+   },
+   {
+    "clue": "A machine that pulls gold out of rock.",
+    "opts": [
+     "extractor",
+     "extractar",
+     "exstractor"
+    ],
+    "ok": 0,
+    "why": "ex (out) + tract (pull) + or."
+   },
+   {
+    "clue": "Which spelling names the act of persuading someone?",
+    "opts": [
+     "persuasion",
+     "persuation",
+     "persuadtion"
+    ],
+    "ok": 0,
+    "why": "persuade ends in de, so it takes -sion."
+   },
+   {
+    "clue": "Which word carries tract (pull) and means to pull praise away from something?",
+    "opts": [
+     "detract",
+     "detect",
+     "decrease"
+    ],
+    "ok": 0,
+    "why": "de (away) + tract (pull)."
+   },
+   {
+    "clue": "Which word is in the same family as collect?",
+    "opts": [
+     "collector",
+     "college",
+     "collar"
+    ],
+    "ok": 0,
+    "why": "collect, collection and collector share the base collect."
+   },
+   {
+    "clue": "Something that runs before, like the hilltop signal that tells the town a ship is coming in Chapter 8.",
+    "opts": [
+     "precursor",
+     "precaution",
+     "predictor"
+    ],
+    "ok": 0,
+    "why": "pre (before) + curs (run) + or: a forerunner."
+   },
+   {
+    "clue": "Which spelling names the act of preparing?",
+    "opts": [
+     "preparation",
+     "prepasion",
+     "preparetion"
+    ],
+    "ok": 0,
+    "why": "prepare + ation: preparation."
+   }
+  ]
+ },
+ "cards": [
+  {
+   "tab": "reading",
+   "after": "Read: Chapter 8",
+   "title": "Real history: the ships left in the harbor",
+   "min": 2,
+   "intro": "The Lady Wilma and the Sea Raven are made up. The crowded harbor in Chapter 8 was real.",
+   "items": [
+    {
+     "term": "Crews ran off to the gold fields",
+     "meaning": "In 1849 ship after ship sailed into San Francisco Bay, and many crews left for the gold fields as soon as they landed. Hundreds of empty ships sat in the cove. Some were pulled up onto the mud and used as stores, warehouses, hotels and even a jail."
+    },
+    {
+     "term": "The real Niantic",
+     "meaning": "In Chapter 8 a hotel runner shouts, Try the Niantic Hotel. The Niantic was a real ship. It sailed into the bay on July 5, 1849, and within a week its crew was gone. It was hauled ashore and used as a store and warehouse. After a fire in 1851, the Niantic Hotel was built on top of what was left of it, so Fleischman borrowed the hotel's name two years early."
+    },
+    {
+     "term": "Found under the city",
+     "meaning": "The town filled in the shallow cove with sand, and old ships ended up blocks from the water, under new streets. Workers dug up a large part of the Niantic in 1978, and a piece of its stern is in San Francisco's maritime museum today."
+    }
+   ],
+   "note": "Source: National Park Service, San Francisco Maritime National Historical Park."
+  },
+  {
+   "tab": "reading",
+   "after": "Read: Chapter 8",
+   "title": "A note before you read: words from 1963",
+   "min": 2,
+   "intro": "This book was written in 1963. A few lines in Chapter 8 describe people in ways that are unkind and untrue. Here is what to know.",
+   "items": [
+    {
+     "term": "How the book describes Chinese people",
+     "meaning": "Chapter 8 calls the Chinese people on the wharf silent and calls their braids pigtails, and it writes the laundryman's English as broken speech. Many books from that time made Chinese people into a joke this way. It is unfair to real people."
+    },
+    {
+     "term": "The true history",
+     "meaning": "Chinese immigrants began arriving in California in 1849 and soon numbered in the thousands. Many men wore a long braid called a queue, because the rulers of China required it. Chinese workers ran laundries, cooked, mined and later helped build the railroad, and they faced unfair laws, such as special taxes on foreign miners that began in 1850."
+    },
+    {
+     "term": "A phrase to notice",
+     "meaning": "Quartz Jackson thanks Praiseworthy by saying it is mighty white of him. It is an old saying that treats being white as the same as being good. It is a racist phrase, and we do not use it."
+    }
+   ],
+   "note": "When you meet these lines, notice them. The book shows what many people believed then, not what is true."
+  }
+ ],
+ "virtue": {
+  "name": "generosity",
+  "kind": "log",
+  "options": [
+   {
+    "t": "Praiseworthy will not take money for the haircut: “Consider it a modest wedding present.”"
+   },
+   {
+    "t": "Quartz Jackson gives Jack every grain of gold dust panned from his whiskers."
+   },
+   {
+    "t": "Quartz Jackson says the least he can do is teach them how to work a gold pan."
+   }
+  ],
+  "line": "Tap the moment that shows the most generosity. Then tell why in one sentence.",
+  "placeholder": "This shows the most generosity because…"
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/btghs/burgess-san-francisco-1849.jpg",
+  "title": "San Francisco in July, 1849",
+  "alt": "A painting of a small town of white houses and tents spreading down hills to a bay crowded with ships' masts, with riders and miners camping in the front.",
+  "look": "George Henry Burgess was in San Francisco during the Gold Rush. He painted this view in 1891 from his memories and sketches of July 1849, the same summer Jack and Praiseworthy land. Look at the forest of masts in the bay, the tents on the hillside, and how new and scattered the town still looks.",
+  "lookBtn": "Tap to learn about this painting",
+  "creator": "George Henry Burgess",
+  "date": "1891 (showing July 1849)",
+  "license": "Public domain (Oakland Museum of California, via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:San_Francisco_in_July_1849_Painting_by_George_Henry_Burgess.jpg"
+ }
+}

@@ -1,0 +1,281 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "On to Sacramento City, then up toward the mountains. Before you read, think of a story where a villain you thought was gone comes back. What makes that moment so scary?"
+  },
+  "words": {
+   "text": "Today you spell all eight shun words and build word families. Match each word to its parts. Then join sentence halves with but, so, because and although. Eight more planks."
+  },
+  "reading": {
+   "text": "Read Chapter 9. Reread one problem from start to finish: the moment it starts, every try, and the result. Then notice how Fleischman slows down the very last moment."
+  },
+  "assignment": {
+   "text": "Three questions, the last one about all three chapters. Then revise your middle with the checklist. End it on a question, not an answer."
+  }
+ },
+ "how": [
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted parts of the first sentence.",
+    "Write the second sentence correctly in your reading journal.",
+    "Tap See the Answer to check."
+   ],
+   "why": "Joining ideas the right way keeps action moving and shows cause and effect."
+  },
+  {
+   "match": "Read & Write",
+   "do": [
+    "Read the question.",
+    "Write 2 or 3 sentences in your reading journal.",
+    "Then go on to Word Study."
+   ],
+   "why": "Thinking before you read gives you something to watch for."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Read the eight words.",
+    "Write the words and your four sentences in the box.",
+    "Add one word family at the end."
+   ],
+   "why": "This is your Show What You Know for spelling this week."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Answer the question in your reading journal.",
+    "Tap a word, then tap its parts and meaning.",
+    "Match all four."
+   ],
+   "why": "Taking a word apart shows how the root builds its meaning."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Tap a word.",
+    "Tap its meaning.",
+    "Match all five."
+   ],
+   "why": "Matching shows you know each word on its own."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Write your four sentences in your reading journal.",
+    "Type the joining word that fits each gap.",
+    "Tap Check My Work."
+   ],
+   "why": "The joining word shows how two ideas connect."
+  },
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read the three lenses.",
+    "Tap the one you will use today.",
+    "Keep it in mind as you read. You will use it at the end."
+   ],
+   "why": "Rereading one problem shows how the author built it, step by step.",
+   "use": "You will use it in reading question 2."
+  },
+  {
+   "match": "Read: Chapter 9",
+   "do": [
+    "Read the reading focus below.",
+    "Open your book and read Chapter 9.",
+    "Then do the Read Like a Writer box and the Virtue Watch at the end of this tab."
+   ],
+   "why": "The pause boxes are places to stop and think while you read."
+  },
+  {
+   "match": "Writer",
+   "do": [
+    "Read the checklist.",
+    "Check your middle one item at a time.",
+    "Fix anything that is missing."
+   ],
+   "why": "The middle is where the stakes rise. Each fix should lead to a new problem."
+  }
+ ],
+ "glossary": [
+  {
+   "word": "cliffhanger",
+   "in": "Read: Chapter 9",
+   "meaning": "an ending that stops at an exciting moment, so you have to keep reading"
+  },
+  {
+   "word": "suspense",
+   "in": "Read: Chapter 9",
+   "meaning": "the nervous, excited feeling of waiting to find out what happens"
+  }
+ ],
+ "hints": {
+  "but": [
+   "The second half goes against the first.",
+   "A short joining word for a surprise.",
+   "b, u, t"
+  ],
+  "so": [
+   "The second half is a result.",
+   "A two-letter joining word.",
+   "s, o"
+  ],
+  "Because": [
+   "The first half gives a reason.",
+   "A joining word that starts a reason.",
+   "B, e, c, a, u, s, e"
+  ],
+  "Although": [
+   "The first half is true, but something else happens anyway.",
+   "A joining word for a contrast.",
+   "A, l, t, h, o, u, g, h"
+  ]
+ },
+ "game": {
+  "type": "race",
+  "title": "Race to the Golden Gate",
+  "sub": "This week's word game · 8 planks today",
+  "after": "Spelling",
+  "look": "It is the last night of the race. The Lady Wilma has no coal, so every right answer throws a plank of lumber into her furnace and she surges toward the Golden Gate. A wrong answer lets the Sea Raven creep up.",
+  "how": {
+   "do": [
+    "Read the clue.",
+    "Tap the word that really fits.",
+    "Watch the Lady Wilma surge ahead.",
+    "Tap Full steam."
+   ],
+   "why": "The base word tells you -tion or -sion, and a real root tells you the meaning."
+  },
+  "doneLine": "Come back tomorrow for eight more planks.",
+  "rounds": [
+   {
+    "clue": "Which spelling names the act of inventing?",
+    "opts": [
+     "invension",
+     "invention",
+     "inventsion"
+    ],
+    "ok": 1,
+    "why": "invent ends in t, so it takes -tion.",
+    "miss": "Look at the last letter of invent."
+   },
+   {
+    "clue": "Money that runs from hand to hand. Which spelling is right?",
+    "opts": [
+     "currency",
+     "curency",
+     "currancy"
+    ],
+    "ok": 0,
+    "why": "curr (run) + ency: two r's."
+   },
+   {
+    "clue": "Pleasing to look at, as if it pulls your eyes toward it.",
+    "opts": [
+     "attractive",
+     "attentive",
+     "active"
+    ],
+    "ok": 0,
+    "why": "at (toward) + tract (pull) + ive."
+   },
+   {
+    "clue": "Which spelling names the act of growing larger?",
+    "opts": [
+     "expansion",
+     "expantion",
+     "expandsion"
+    ],
+    "ok": 0,
+    "why": "expand ends in d, so it takes -sion."
+   },
+   {
+    "clue": "Which word is in the same family as explode?",
+    "opts": [
+     "explosive",
+     "explore",
+     "exploit"
+    ],
+    "ok": 0,
+    "why": "explode, explosion and explosive share the base explode."
+   },
+   {
+    "clue": "To run into a cost or a problem. Here the root is spelled with one r.",
+    "opts": [
+     "incur",
+     "incurr",
+     "encur"
+    ],
+    "ok": 0,
+    "why": "in (into) + cur (run): one r at the end."
+   },
+   {
+    "clue": "To pull something out longer than it should last, like a long wait at the dock.",
+    "opts": [
+     "protract",
+     "protect",
+     "protest"
+    ],
+    "ok": 0,
+    "why": "pro (forward) + tract (pull)."
+   },
+   {
+    "clue": "Chapter 9 is full of suspense. Which spelling names the act of hanging something up?",
+    "opts": [
+     "suspension",
+     "suspention",
+     "suspendsion"
+    ],
+    "ok": 0,
+    "why": "suspend ends in d, so it takes -sion."
+   }
+  ]
+ },
+ "cards": [
+  {
+   "tab": "reading",
+   "after": "Read: Chapter 9",
+   "title": "A note before you read: words from 1963",
+   "min": 2,
+   "intro": "On the riverboat in Chapter 9, Jack sees Native Californians for the first time. The book's words about them are unkind and untrue. Here is what to know.",
+   "items": [
+    {
+     "term": "What the book says",
+     "meaning": "Jack worries the people on the riverbank are savages who might take scalps. The steward calls them Digger Indians and says they are quite tame. These words were insults. Digger mocked people for gathering roots and acorns, and tame talks about people as if they were animals."
+    },
+    {
+     "term": "The true history",
+     "meaning": "The Sacramento Valley and the foothills were the homelands of Native peoples such as the Nisenan, Miwok and Maidu. Gathering and preparing acorns was a skilled tradition that fed families for generations. The Gold Rush brought terrible harm: miners took their land and ruined their rivers, and many people were killed or forced to work. Historians estimate that California's Native population fell from about 150,000 in 1848 to about 30,000 by 1870."
+    },
+    {
+     "term": "Still here",
+     "meaning": "California's Native nations are still here today, and many keep their languages and traditions alive."
+    }
+   ],
+   "note": "Sources: Oakland Museum of California; population estimate from A. L. Kroeber (1925) and historian Benjamin Madley (2016)."
+  }
+ ],
+ "virtue": {
+  "name": "generosity",
+  "kind": "meter",
+  "title": "The generosity meter",
+  "intro": "Think about one moment from Chapter 9.",
+  "moment": "On the riverboat, Jack polishes his new horn spoon. Praiseworthy had let him buy it on the wharf with a pinch of gold dust, even though money is tight.",
+  "ask": "How generous is Praiseworthy here? Slide to show.",
+  "line": "Tell why in one sentence.",
+  "placeholder": "He is this generous because…",
+  "take": "Mason's take: quite generous. It is a small gift, but Praiseworthy is careful with every grain. Spending a pinch on Jack's horn spoon shows he cares how Jack feels, not just about the money."
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/btghs/sacramento-city-1849.jpg",
+  "title": "Sacramento City, from the foot of J Street",
+  "alt": "A tinted print of a river landing crowded with sailing ships and a paddle steamer, a wide street running back through tall trees, and mountains far in the distance.",
+  "look": "A lithograph made from a drawing of 1849. This is the river landing at Sacramento City, with ships and a paddle steamer tied up along the bank and J Street running back through the trees. Far behind, the Sierra Nevada shows on the skyline, the mountains Jack keeps gazing at in Chapter 9.",
+  "lookBtn": "Tap to learn about this print",
+  "creator": "Charles Parsons, after George V. Cooper",
+  "date": "1849 to 1850",
+  "license": "Public domain (Library of Congress, via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Sacramento_City_from_the_foot_of_J_Street_(LOC_pga.04015,_cropped).jpg"
+ }
+}
