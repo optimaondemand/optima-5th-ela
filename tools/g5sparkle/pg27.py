@@ -1,0 +1,176 @@
+#!/usr/bin/env python3
+"""Week 27 family guide (parent-guide-week-27.html) in the week 18 guide's look. Every line from the finished
+week 27 lessons, Ch. 7-9 of By the Great Horn Spoon! (project doc text) and Taylor's Eldorado (1850). History as on the 27.2 cards (NPS) and notes.
+Nov 23 2026."""
+import io, re
+s = io.open('parent-guide-week-18.html', encoding='utf-8').read()
+head = s[:s.index('<body>')]
+head = re.sub(r'<title>[^<]*</title>', '<title>Week 27 Parent Guide · 5th Grade ELA · Optima Academy Online</title>', head)
+assert '<title>Week 27' in head
+B = """<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-text">
+      <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy Online">Family Guide · 5th Grade ELA</div>
+      <h1>Week 27: Race to the Golden Gate</h1>
+      <div class="sub"><em>By the Great Horn Spoon!</em> by Sid Fleischman, Chapters 7–9 and a real 1849 account</div>
+      <div class="chips">
+        <span class="chip">4 lessons</span>
+        <span class="chip">1 fluency recording</span>
+        <span class="chip">Third week of the book</span>
+        <span class="chip">Check-In at week&rsquo;s end</span>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨️ Print this guide</button>
+    </div>
+    <div class="hero-art" style="background-image:url('assets/art/btghs/burgess-san-francisco-1849.jpg');background-position:center 55%;" role="img" aria-label="A painting of San Francisco in July 1849: a small town of houses and tents on the hills above a bay full of ships"></div>
+  </header>
+
+  <section class="howto">
+    <h2>🧭 How the Lesson Pages Work</h2>
+    <ul>
+      <li><span>🗂️</span><strong>Four tabs, in order:</strong> Warm-Up → Word Study → Reading → Assignment. A button at the bottom of each tab moves to the next.</li>
+      <li><span>👣</span><strong>One step at a time.</strong> Each tab shows one activity at a time, and a Next button moves through its steps.</li>
+      <li><span>📝</span><strong>Every answer goes on the page.</strong> There&rsquo;s a box for each one.</li>
+      <li><span>💾</span><strong>Answers save as you type</strong>, but only in that browser on that computer. Switching computers or clearing the browser loses them.</li>
+      <li><span>📓</span><strong>Copy your work</strong> at the bottom of the Assignment tab, then <strong>paste it into the assignment in Canvas and submit</strong>. A lesson isn&rsquo;t turned in until it&rsquo;s submitted there.</li>
+      <li><span>🎙️</span><strong>Fluency is a separate page</strong> in the Canvas module, because recording doesn&rsquo;t work inside a lesson. Keep the book nearby.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">🧭</span><h2>This Week at a Glance</h2></div>
+    <p>The race ends. At Callao, in Peru, the <em>Sea Raven</em> buys up every lump of coal in town. Out of fuel a day from San Francisco, the <em>Lady Wilma</em> burns the lumber in her hold and pulls ahead to win at the Golden Gate. In San Francisco everything costs a fortune, and Jack and Praiseworthy have thirty-eight dollars. A shaggy miner named Quartz Jackson asks Praiseworthy for a haircut, and the gold dust in his whiskers gives them their start. Then it is up the river to Sacramento City and onto a stagecoach for the mines, where the chapter ends on a cliffhanger. On Day 4 your student reads the real words of Bayard Taylor, a reporter who landed in San Francisco in August 1849.</p>
+    <div class="box b-rose" style="margin-bottom:12px;"><div class="box-label">💛 A note for families: words from 1963</div>This book was written in 1963, and two chapters this week use that time&rsquo;s unkind language. Chapter 8 calls Chinese people &ldquo;silent&rdquo; and their braids &ldquo;pigtails,&rdquo; writes a laundryman&rsquo;s English as broken speech, and has a miner say &ldquo;mighty white of you,&rdquo; a racist expression. In Chapter 9 Jack fears &ldquo;savages,&rdquo; and a steward calls Native Californians &ldquo;Digger Indians&rdquo; who are &ldquo;quite tame.&rdquo; The lessons name this calmly in a short folded note before each chapter: the words were insults, and here is the true history. Chinese immigrants began arriving in 1849, ran laundries, mined and cooked, and faced unfair laws such as special taxes on foreign miners. The Sacramento Valley and foothills were the homelands of the Nisenan, Miwok and Maidu peoples, and the Gold Rush brought them terrible harm; historians estimate California&rsquo;s Native population fell from about 150,000 in 1848 to about 30,000 by 1870. California&rsquo;s Native nations are still here today. The lessons do not invent any voices for these communities.</div>
+    <div class="glance">
+      <div class="box b-sky"><div class="box-label">Reading skill</div><strong>Problem-solving and cause and effect.</strong> Your student tracks a chain: a problem, the fix a character chooses, and the new problem that fix causes.</div>
+      <div class="box b-green"><div class="box-label">Big idea</div><strong>Generosity.</strong> Praiseworthy will not take money for the haircut: &ldquo;Consider it a modest wedding present.&rdquo;</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">📅</span><h2>Day by Day</h2></div>
+    <table class="days">
+      <thead><tr><th>Lesson</th><th>Reading</th><th>Big question</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="day-n">27.1<span>Day 1</span></td>
+          <td><span class="ch">Chapter 7 · End of the Race</span><br>Callao, a stop in the Galapagos, and the coast of Mexico. The <em>Sea Raven</em>&rsquo;s piles of coal weigh her down, and a hold full of lumber saves the <em>Lady Wilma</em>. &ldquo;Gentlemen, I believe we&rsquo;ve won the race.&rdquo;<br><span class="pill p-museum">A sidewheel steamship, 1849</span></td>
+          <td>What does it mean to find the solution no one else thought of?</td>
+        </tr>
+        <tr>
+          <td class="day-n">27.2<span>Day 2</span></td>
+          <td><span class="ch">Chapter 8 · Saved by a Whisker</span><br>The Long Wharf, water at a dollar a bucket, a three-month laundry, and Quartz Jackson, who needs a haircut before his bride arrives. Jack pans gold dust out of the whiskers.<br><span class="pill p-extra">$38 in a dollar-a-bucket city</span><span class="pill p-poem">Poetry Corner</span><span class="pill p-museum">San Francisco in July, 1849</span></td>
+          <td>What does it mean to see opportunity where everyone else sees a problem?</td>
+        </tr>
+        <tr>
+          <td class="day-n">27.3<span>Day 3</span></td>
+          <td><span class="ch">Chapter 9 · The Man in the Jipijapa Hat</span><br>A riverboat to Sacramento City, the Sierra Nevada on the horizon, a grubstake hidden in the fingers of a white glove, and a stagecoach with a sleeping stranger.<br><span class="pill p-museum">Sacramento City, 1849</span></td>
+          <td>What happens when a problem you thought was over comes back?</td>
+        </tr>
+        <tr>
+          <td class="day-n">27.4<span>Day 4</span></td>
+          <td><span class="ch">A real account: Bayard Taylor, <em>Eldorado</em> (1850)</span><br>A New York reporter&rsquo;s first day in San Francisco on August 18, 1849: a town of tents and canvas, two dollars to carry a trunk, &ldquo;every man is his own porter here,&rdquo; and &ldquo;complete bewilderment.&rdquo; Your student compares his day with Jack&rsquo;s.<br><span class="pill p-poem">Poetry Corner</span><span class="pill p-museum">Miners in the Sierras, 1851&ndash;52</span></td>
+          <td>What was San Francisco really like in 1849?</td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">🎙️<span>Fluency</span></td>
+          <td colspan="2">The end of the haircut in Chapter 8, from &ldquo;Yes, sir,&rdquo; said Jack to &ldquo;Stuff a mattress?&rdquo; Your student reads it once to themselves, again for smoothness, and once more with expression, then <strong>records and submits it in Canvas.</strong></td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">📋<span>Check-In</span></td>
+          <td colspan="2">A 14-point wrap-up: compound and complex sentences, the roots curr/curs and tract, -tion/-sion words and word families, four reading questions (one on Taylor, one on the poem), and a short piece of the adventure&rsquo;s middle.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">🔤</span><h2>Words to Know</h2><span class="tag">Use them at home!</span></div>
+    <div class="words">
+      <div class="word"><b>skedaddled</b><span>left in a hurry</span></div>
+      <div class="word"><b>diggings</b><span>the place where miners dig and pan for gold</span></div>
+      <div class="word"><b>assay</b><span>to test how pure and valuable gold is</span></div>
+      <div class="word"><b>grubstake</b><span>money or supplies to live on while mining</span></div>
+      <div class="word"><b>jipijapa</b><span>a fine woven straw hat, also called a Panama hat</span></div>
+    </div>
+    <div class="glance" style="margin-top:12px;">
+      <div class="box b-sky"><div class="box-label">Roots</div><strong>curr / curs</strong> mean run and <strong>tract</strong> means pull.<span class="eg">current · excursion · extract · traction</span></div>
+      <div class="box b-gold"><div class="box-label">Spelling</div><strong>-tion and -sion, and word families.</strong> The base word decides: attract → attraction, decide → decision.<span class="eg">invade · invasion · invader</span></div>
+      <div class="box b-green"><div class="box-label">Grammar</div><strong>Compound and complex sentences for action:</strong> two things at once, or a cause and its effect.<span class="eg">When the Lady Wilma entered the blue Bay of Callao, Jack counted thirty-one sailing ships at anchor.</span></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">✨</span><h2>New This Week</h2></div>
+    <div class="glance">
+      <div class="box b-plum"><div class="box-label">🚢 Race to the Golden Gate</div>The week&rsquo;s word game. It is the last night of the race and the <em>Lady Wilma</em> has no coal. Each right answer (a -tion or -sion spelling, a run or pull root, a word family) throws a plank of lumber into her furnace and she surges ahead; a miss lets the <em>Sea Raven</em> creep up.</div>
+      <div class="box b-gold"><div class="box-label">🌿 Virtue Watch: generosity</div>After reading, your student sorts everyday examples, picks the most generous moment in San Francisco, rates Praiseworthy&rsquo;s gift of a horn spoon, and on Day 4 picks the most generous moment of the week.</div>
+      <div class="box b-sky"><div class="box-label">🗺️ Real history, kept apart</div>A short card on Day 2: in 1849 crews left their ships for the gold fields, and hundreds of empty ships filled the cove. One of them, the <em>Niantic</em>, was hauled ashore, used as a store, and later had a hotel built on top of it. A piece of it was dug up in 1978 (National Park Service).</div>
+      <div class="box b-green"><div class="box-label">📖 Read Like a Writer, every day</div>One line from the book a day, chosen to show sequence and pacing, like &ldquo;A deep throb ran through the ship &mdash; and then another. Then a splash of the sidewheels could be heard. Then another. And another.&rdquo;</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">✍️</span><h2>Your Student&rsquo;s Writing: Building the Middle</h2><span class="tag">Writer&rsquo;s Workshop</span></div>
+    <div class="essay"><span class="now">Day 1 · Plan</span><span class="now">Day 2 · Draft</span><span class="now">Day 3 · Revise</span><span class="now">Day 4 · Submit</span></div>
+    <p>The adventure gets harder in the middle. <strong>Day 1:</strong> plan with three questions (what goes wrong, what the hero tries and how it makes things worse, and the moment of greatest pressure). <strong>Day 2:</strong> draft, with sentence frames for help. <strong>Day 3:</strong> revise with a checklist: steps in a clear order, one tense moment slowed down and ended with a short sentence, and an ending on a question, not an answer. <strong>Day 4:</strong> submit.</p>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">🪶</span><h2>Poetry Corner: Pacing, Meter and Line Length</h2></div>
+    <div class="poem-wrap">
+      <div class="poem">I sprang to the stirrup, and Joris, and he;<br>I galloped, Dirck galloped, we galloped all three;<small>Robert Browning, &ldquo;How They Brought the Good News from Ghent to Aix&rdquo; (1845)</small></div>
+      <div><p><strong>Meter</strong> is the beat under the words, and Browning&rsquo;s beat sounds like hooves: da-da-DUM, da-da-DUM. On Day 4, Robert Louis Stevenson&rsquo;s &ldquo;From a Railway Carriage&rdquo; (1885) shows how <strong>line length</strong> sets the speed: long, packed lines, then short ones that flash past like a station seen from a train window.</p></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">💬</span><h2>Ask at Home</h2><span class="tag">Better than &ldquo;How was school?&rdquo;</span></div>
+    <ol class="ask">
+      <li><span class="q">How did the Sea Raven&rsquo;s coal end up helping the Lady Wilma win?</span><span class="listen">Listen for: she piled so much coal on deck that she sat low and slow; the Lady Wilma burned her lumber and pulled ahead.</span></li>
+      <li><span class="q">Why did Quartz Jackson want every lock of hair saved?</span><span class="listen">Listen for: his beard was full of gold dust from the diggings; Jack panned it out, and the gold was theirs.</span></li>
+      <li><span class="q">What did Bayard Taylor notice on his first day in San Francisco?</span><span class="listen">Listen for: tents and canvas houses, goods piled outside, porters paid two dollars, newspapers sold at a dollar apiece, &ldquo;complete bewilderment.&rdquo;</span></li>
+      <li><span class="q">What happened to the ships whose crews ran off to the gold fields?</span><span class="listen">Listen for: they sat empty in the cove; some became stores, hotels or a jail; some ended up buried under the city.</span></li>
+      <li><span class="q">What do curr/curs and tract mean? Name a word for each.</span><span class="listen">Listen for: run (current, excursion); pull (extract, traction).</span></li>
+      <li><span class="q">Read me the most tense moment in your adventure. How did you slow it down?</span><span class="listen">Listen for: small steps in order, then one short sentence.</span></li>
+    </ol>
+  </section>
+
+  <div class="two">
+    <section class="card">
+      <div class="card-head"><span class="ico">📬</span><h2>What Gets Turned In</h2></div>
+      <ul class="check">
+        <li><strong>Each lesson:</strong> 3 reading questions, that day&rsquo;s Word Study response, the Read Like a Writer box and the Writer&rsquo;s Workshop step, copied and pasted into Canvas</li>
+        <li><strong>Fluency:</strong> a recording of the end of the haircut in Chapter 8</li>
+        <li><strong>Check-In:</strong> at the end of the week</li>
+      </ul>
+      <p class="small" style="margin-top:10px;"><strong>Done well looks like:</strong> answers with a detail from the chapter, a clear cause-and-effect chain, and a middle where each fix leads to a new problem.</p>
+    </section>
+    <section class="card">
+      <div class="card-head"><span class="ico">🏡</span><h2>Try at Home</h2><span class="tag">5 minutes</span></div>
+      <ul class="check">
+        <li><strong>Run or pull?</strong> Name a word, and let your student say if it has curr/curs, tract, or neither.</li>
+        <li><strong>Gallop it:</strong> read Browning&rsquo;s two lines together and tap the beat on the table.</li>
+        <li><strong>Find the route:</strong> on a map, trace Callao in Peru, the Galapagos, the Golden Gate, and up the river to Sacramento.</li>
+      </ul>
+    </section>
+  </div>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">🎒</span><h2>Have on Hand</h2></div>
+    <p><strong><em>By the Great Horn Spoon!</em></strong> by Sid Fleischman · <strong>A device that records audio</strong> for the fluency reading</p>
+  </section>
+
+  <section class="card next">
+    <div class="card-head"><span class="ico">🔭</span><h2>Coming Up in Week 28</h2></div>
+    <p><strong>Chapters 10&ndash;12.</strong> The stagecoach climbs into the gold country, and Jack and Praiseworthy reach the diggings at last.</p>
+  </section>
+
+  <p class="foot"><a href="parent-guide-btghs-unit.html" style="color:#1F6FA8;font-weight:700;">See the whole By the Great Horn Spoon! unit →</a><br><br>Optima Academy Online · 5th Grade ELA · Week 27 Family Guide<br>Questions? Reach out to your student&rsquo;s teacher anytime.</p>
+</div>
+</body>
+</html>
+"""
+io.open('parent-guide-week-27.html', 'w', encoding='utf-8').write(head + B)
+print('wrote parent-guide-week-27.html')
