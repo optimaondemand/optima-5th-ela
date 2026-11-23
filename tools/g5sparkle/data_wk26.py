@@ -78,7 +78,7 @@ D[1] = {
 D[2] = {
  "listen": {
   "warmup": {"text": "Before you read, a famous poem full of words that don't exist, and yet you can almost understand them. Listen to the sounds. Then think: why is nonsense funny?"},
-  "words": {"text": "Find rid, ris, lud and lus in new words. Then look at speech spellings, where an apostrophe takes the place of a missing letter. In the game, six more narrows. One channel is a speech spelling."},
+  "words": {"text": "Find rid, ris, lud and lus in new words. Then look at speech spellings, where an apostrophe takes the place of a missing letter. In the game, six more narrows. Two of them test speech spellings."},
   "reading": {"text": "Read Chapter 5, Land of Fire. The storms are fierce. Watch what Praiseworthy says out loud, and what the narrator tells you he really believes. Then watch for the surprise at the end of the chapter."},
   "assignment": {"text": "Three questions about Chapter 5. Then keep drafting your scene. Give one character a line of dialogue and a reaction that shows how they feel. Use the frames if you get stuck."}},
  "how": [DOL, POEM, RW,
