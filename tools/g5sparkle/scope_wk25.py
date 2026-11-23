@@ -93,7 +93,7 @@ POEM = {
       'Edward Lear published this nonsense poem in 1871. The Jumblies go to sea in a <em>sieve</em>, a kitchen strainer full of holes. Read it aloud and listen to how the Jumblies sound about their own plan.',
       'Week 25 Poem', '&ldquo;The Jumblies&rdquo; (stanzas 1 and 3)', 'Edward Lear, 1871 &mdash; public domain', JUMB,
       '<strong>Tone</strong> is the attitude a writer takes toward the subject. Lear&rsquo;s tone is cheerful and bouncy: quick rhymes, a jolly chorus, &ldquo;we don&rsquo;t care a button!&rdquo; But the plan is silly and dangerous. The humor comes from the gap between how sure the Jumblies sound and what the reader can plainly see.',
-      'Copy one line where the Jumblies sound sure of themselves, and tell what makes it funny. In Chapter 1, Jack and Praiseworthy also set out on a risky voyage. Is Fleischman&rsquo;s tone more like Lear&rsquo;s, or more serious? Write 2&ndash;3 sentences.'),
+      'Copy one line where the Jumblies sound sure of themselves, and tell what makes it funny in 1 or 2 sentences. Then, as you read Chapter 1 today, notice whether Fleischman&rsquo;s tone is more like Lear&rsquo;s or more serious.'),
  4: poem_block('The Walrus and the Carpenter', 'Humor and tone in verse',
       'Lewis Carroll wrote this poem for <em>Through the Looking-Glass</em> (1871), where Tweedledee recites it to Alice. Here are four of its stanzas. Read them aloud and listen for the tone.',
       'Week 25 Poem', '&ldquo;The Walrus and the Carpenter&rdquo; (stanzas 1, 2, 7 and 8)', 'Lewis Carroll, 1871 &mdash; public domain', WALR,
