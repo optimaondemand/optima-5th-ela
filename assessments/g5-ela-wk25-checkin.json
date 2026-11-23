@@ -1,0 +1,208 @@
+{
+ "id": "g5-ela-wk25-checkin",
+ "title": "Week 25 Check-In · By the Great Horn Spoon!",
+ "description": "This week you learned the real history of the Gold Rush and read Chapters 1 to 3. You practiced prepositional phrases for setting, the roots aud and or, long place names and Gold Rush words, and planning an adventure. Show what you know.",
+ "chapters": "Gold Rush background and Ch. 1–3",
+ "questions": [
+  {
+   "n": 1,
+   "section": "Grammar",
+   "label": "Identification",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which sentence uses prepositional phrases to tell where something happens?",
+   "options": [
+    "Jack was cold and hungry.",
+    "Below decks, in the creaking darkness, two stowaways waited.",
+    "Praiseworthy was calm and polite.",
+    "The captain shouted loudly."
+   ],
+   "answer": 1,
+   "from": "25.1–25.4 Grammar (prepositional phrases for setting)",
+   "status": "fixed (four options; the old A and C were not sentences)"
+  },
+  {
+   "n": 2,
+   "section": "Grammar",
+   "label": "Add a Phrase",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Rewrite this sentence. Add a prepositional phrase that tells where or when the action happens.",
+   "excerpt": "The captain paced and growled to himself.",
+   "key": "Any prepositional phrase of place or time, e.g. In his cabin, the captain paced and growled to himself.",
+   "from": "25.1 DOL; 25.2–25.3 Grammar",
+   "status": "kept"
+  },
+  {
+   "n": 3,
+   "section": "Grammar",
+   "label": "Application",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Write one sentence about the Lady Wilma's voyage with at least two prepositional phrases. Underline each one.",
+   "key": "Two or more prepositional phrases, e.g. At dawn, the ship sailed out of Boston harbor.",
+   "from": "25.2–25.3 Grammar (Show What You Know, stacking)",
+   "status": "kept"
+  },
+  {
+   "n": 4,
+   "section": "Morphology & Vocabulary",
+   "label": "Root",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which pair of words both carry the root or, meaning speak?",
+   "options": [
+    "audible, audience",
+    "oration, oracle",
+    "auditorium, audition",
+    "audio, auditory"
+   ],
+   "answer": 1,
+   "from": "25.1–25.4 Morphology",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 5,
+   "section": "Morphology & Vocabulary",
+   "label": "Context Clues",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Read the sentence from Chapter 2. What does undaunted mean?",
+   "excerpt": "“The truth of the matter was that neither Jack nor the butler had the slightest idea how to go about catching a thief. But Praiseworthy was undaunted.”",
+   "options": [
+    "Not scared off or discouraged",
+    "Very tired",
+    "Angry and loud",
+    "Lost and confused"
+   ],
+   "answer": 0,
+   "from": "25.1–25.4 Vocabulary (undaunted)",
+   "status": "replaced (audacious only looks like an aud word; it comes from a Latin word for bold)"
+  },
+  {
+   "n": 6,
+   "section": "Morphology & Vocabulary",
+   "label": "Use the Word",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Use the word argonaut in a sentence that shows its link to the Greek myth and to the Gold Rush.",
+   "key": "A Gold Rush seeker named after Jason's sailors who sailed for the Golden Fleece, e.g. Like the Argonauts of the old myth, the gold-seekers sailed off to find gold.",
+   "from": "25.1 Vocabulary (argonaut); Ch. 1",
+   "status": "kept"
+  },
+  {
+   "n": 7,
+   "section": "Spelling",
+   "label": "Syllables",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which word has five syllables?",
+   "options": [
+    "Sacramento",
+    "equator",
+    "California",
+    "Argonaut"
+   ],
+   "answer": 2,
+   "from": "25.1–25.3 Spelling",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 8,
+   "section": "Spelling",
+   "label": "Break It Down",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Write Patagonia in syllables with dots between them. Then write the loudest syllable in capital letters.",
+   "key": "Pat•a•go•ni•a; stressed syllable GO.",
+   "from": "25.1–25.3 Spelling",
+   "status": "kept"
+  },
+  {
+   "n": 9,
+   "section": "Spelling",
+   "label": "Spell It in Context",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Write one sentence about the Gold Rush that uses one of this week's place names and one Gold Rush word (Argonaut or passenger). Spell both correctly.",
+   "key": "California, Sacramento, Patagonia or equator + Argonaut or passenger, both spelled correctly.",
+   "from": "25.3 Spelling Show What You Know",
+   "status": "changed (the scope adds Gold Rush words)"
+  },
+  {
+   "n": 10,
+   "section": "Reading",
+   "label": "Comprehension",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Why do Jack and Praiseworthy end up shoveling coal at the end of Chapter 1?",
+   "options": [
+    "Jack refused to be ship's boy and chose to stay with Praiseworthy.",
+    "Captain Swain put them in chains.",
+    "They volunteered to fix the boiler.",
+    "The cook needed help in the galley."
+   ],
+   "answer": 0,
+   "from": "25.2 Reading (Ch. 1)",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 11,
+   "section": "Reading",
+   "label": "Inference",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Read the passage from Chapter 2. What does it show about Praiseworthy's plan?",
+   "options": [
+    "The sow could really tell who was dishonest.",
+    "The thief was afraid to touch the sow, so his finger stayed clean.",
+    "Praiseworthy saw the thief in the dark.",
+    "The captain found the money in the thief's cabin."
+   ],
+   "answer": 1,
+   "from": "25.3 Reading (Ch. 2)",
+   "status": "fixed (it had no answer choices)"
+  },
+  {
+   "n": 12,
+   "section": "Reading",
+   "label": "Theme",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Praiseworthy says, “I was born to my calling” (he means a butler). Yet in Chapters 1–3 he hides in a barrel, shovels coal, and catches a thief. What is one idea the author is showing about who a person really is? Use one detail.",
+   "key": "A person is more than a job title; character shows in what you do (e.g. he outwits the thief with the coal-dust sow).",
+   "from": "25.4 Reading Q3; What Good Readers Do",
+   "status": "fixed (the quote was invented: “born to be a butler”)"
+  },
+  {
+   "n": 13,
+   "section": "Writing",
+   "label": "Read Like a Writer",
+   "type": "essay_question",
+   "points": 1,
+   "text": "This sentence states Jack's problem plainly. Write one sentence that states your own hero's problem just as plainly.",
+   "excerpt": "“And then Jack had overheard Banker Stites tell Aunt Arabella that her inheritance was almost gone.” (Chapter 1)",
+   "key": "One clear sentence that names the hero and the problem.",
+   "from": "25.2 Read Like a Writer (Ch. 1)",
+   "status": "new (the scope's Read Like a Writer focus)"
+  },
+  {
+   "n": 14,
+   "section": "Writing",
+   "label": "Your Plan",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Sum up your adventure story plan in 3–5 sentences: your hero, the problem, the setting, and what is at stake.",
+   "key": "All four parts present.",
+   "from": "25.1–25.4 Writer's Workshop",
+   "status": "kept (now 1 point)"
+  }
+ ],
+ "passage": {
+  "before": 11,
+  "title": "Reading passage (Chapter 2)",
+  "ch": 2,
+  "text": "“But one of you, fearing that the sow's squeal would give you away — one of you approached but didn't touch a finger to her back. Look around you, gentlemen. If there is a man among you without coal dust on his finger — he has exposed himself as the thief!”",
+  "cite": "Sid Fleischman, By the Great Horn Spoon!, Chapter 2"
+ }
+}
