@@ -27,14 +27,16 @@ WEEKS = {
  22: dict(read=F('R.3.1'),          think=F('R.3.1', 'EE.1.1'),          write=F('C.1.3')),
  23: dict(read=F('R.3.2'),          think=F('R.3.2', 'R.1.2', 'EE.3.1'), write=F('C.1.5')),
  24: dict(read=F('R.3.3'),          think=F('R.3.3', 'R.2.4', 'EE.1.1'), write=F('C.1.3')),
+ 25: dict(read=F('R.1.1'),          think=F('R.1.1', 'EE.1.1'),          write=F('C.1.2')),
 }
-CHECKIN_Q = {(19, 5): F('V.1.3'), (20, 5): F('V.1.3'), (21, 5): F('V.1.3'), (22, 5): F('V.1.3'), (23, 5): F('V.1.3'), (24, 5): F('V.1.3')}   # Q5 is a context-clue item each week
+CHECKIN_Q = {(19, 5): F('V.1.3'), (20, 5): F('V.1.3'), (21, 5): F('V.1.3'), (22, 5): F('V.1.3'), (23, 5): F('V.1.3'), (24, 5): F('V.1.3'), (25, 5): F('V.1.3')}   # Q5 is a context-clue item each week
 
 def rule(t, tab, W, bar):
     t = t.lower()
     on = lambda c: c in bar
     if re.search(r'\bvirtue watch\b', t): return W['read']   # G5 keeps it on the page
     if 'what good readers do' in t: return W.get('wgrd', W['read'])
+    if 'read & write' in t: return W['think']   # BTGHS before-reading journal box (week 25 on)
     if 'daily oral language' in t: return F('C.3.1')
     if 'copywork' in t: return F('C.1.1')
     if 'poetry corner' in t or 'by heart' in t: return F('R.1.4', 'R.3.1') if on('ELA.5.R.3.1') else F('R.1.4')
