@@ -1,0 +1,346 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "Jack and Praiseworthy are on the stagecoach to the diggings, and Cut-Eye Higgins is sitting right across from them. Before you read, write what you think Praiseworthy will do. Then set your lens: watch what each event costs a character."
+  },
+  "words": {
+   "text": "This week's roots are fort, which means strong, and val, which means strong or worth. The spelling pattern is the endings i t y, m e n t, and n e s s, which turn words into names for ideas. In the game, wash the mud out of each pan and keep the gold."
+  },
+  "reading": {
+   "text": "Read Chapter 10, The Rogue Out-Rogued. Watch Praiseworthy closely. He stays calm through almost everything. Notice the one thing that makes him stop being calm, and ask what that shows he cares about."
+  },
+  "assignment": {
+   "text": "Three questions about Chapter 10. Then plan your literary response: one sentence for your theme claim, and two character choices that could prove it. A few words each is enough today."
+  }
+ },
+ "how": [
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted word in the first sentence.",
+    "Write the second sentence correctly in your reading journal.",
+    "Tap See the Answer to check."
+   ],
+   "why": "Transitions and openers tell a reader how one idea connects to the next."
+  },
+  {
+   "match": "Read & Write",
+   "do": [
+    "Read the question.",
+    "Write 2 or 3 sentences in your reading journal.",
+    "Then go on to Word Study."
+   ],
+   "why": "Thinking before you read gives you something to watch for."
+  },
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read the three lenses.",
+    "Tap the one you will use today.",
+    "Keep it in mind as you read. You will use it at the end."
+   ],
+   "why": "A theme is built from events. Collect them before you name it.",
+   "use": "You will use it in reading question 3."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Read what fort and val mean.",
+    "Read the example words.",
+    "Type the missing root in each word, then tap Check Roots."
+   ],
+   "why": "Two roots unlock many words about strength and worth."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Say each word out loud.",
+    "Tap each card to read its meaning.",
+    "Watch for the words as you read."
+   ],
+   "why": "Knowing the words first keeps the reading smooth."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Look at what sits in front of each comma.",
+    "Think through the questions, then tap Now check your thinking.",
+    "Tap an opener, then tap the column that fits it."
+   ],
+   "why": "Openers and transitions tell when, where, and how ideas link."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Look at each base word and the longer word.",
+    "Think through the questions, then tap Now name the pattern.",
+    "Tap a word, then tap the column for its ending."
+   ],
+   "why": "These endings turn a word into the name of an idea."
+  },
+  {
+   "match": "Read: Chapter 10",
+   "do": [
+    "Read the reading focus below.",
+    "Open your book and read Chapter 10.",
+    "Then do the Read Like a Writer box and the Virtue Watch at the end of this tab."
+   ],
+   "why": "The pause boxes are places to stop and think while you read."
+  },
+  {
+   "match": "Writer",
+   "do": [
+    "Read today's step.",
+    "Write your theme claim in one sentence.",
+    "List two character choices that could prove it."
+   ],
+   "why": "A literary response proves a theme with what characters choose to do."
+  }
+ ],
+ "glossary": [
+  {
+   "word": "theme",
+   "in": "What Good Readers Do",
+   "meaning": "a big idea about life that a story shows through what happens"
+  },
+  {
+   "word": "abstract",
+   "in": "Spelling",
+   "meaning": "naming an idea or feeling you cannot see or touch"
+  }
+ ],
+ "hints": {
+  "fort": [
+   "This root means strong.",
+   "It is the strong root.",
+   "f, o, r, t"
+  ],
+  "val": [
+   "This root means strong or worth.",
+   "It is the worth root, three letters.",
+   "v, a, l"
+  ],
+  "vail": [
+   "This root means to be stronger than. It is the worth root with one extra letter.",
+   "Four letters: the worth root with an i before the l.",
+   "v, a, i, l"
+  ]
+ },
+ "miss": {
+  "kindness": "kind + ness: kindness keeps the whole base word.",
+  "loneliness": "lonely + ness: the y changes to i, but the ending is still -ness.",
+  "judgment": "judge + ment: judgment ends in -ment.",
+  "argument": "argue + ment: the e drops, and the ending is -ment.",
+  "scarcity": "scarce + ity: the e drops before -ity.",
+  "curiosity": "curious + ity: curiosity ends in -ity."
+ },
+ "game": {
+  "type": "pan",
+  "title": "Pan for Color",
+  "sub": "This week's word game · 6 pans today",
+  "after": "Spelling",
+  "look": "Each pan holds four words from the diggings. Two are color, the real gold. Two are slickens, the mud. Tap the slickens to wash them over the side. When only gold is left, the spangles slide into Jack's pouch.",
+  "how": {
+   "do": [
+    "Read the clue on the pan.",
+    "Tap a word that does not belong to wash it out.",
+    "Keep going until only gold is left.",
+    "Tap Next pan."
+   ],
+   "why": "A real ending is spelled the same way every time, and a real root carries its meaning into every word it builds."
+  },
+  "doneLine": "Come back tomorrow for six more pans.",
+  "pans": [
+   {
+    "clue": "Wash out the misspelled words. Keep the gold.",
+    "chips": [
+     {
+      "w": "lazyness",
+      "gold": false,
+      "why": "lazy changes y to i: laziness."
+     },
+     {
+      "w": "happiness",
+      "gold": true,
+      "why": "happy changes y to i before -ness."
+     },
+     {
+      "w": "readyness",
+      "gold": false,
+      "why": "ready changes y to i: readiness."
+     },
+     {
+      "w": "emptiness",
+      "gold": true,
+      "why": "empty changes y to i before -ness."
+     }
+    ]
+   },
+   {
+    "clue": "Wash out the misspelled words. Keep the gold.",
+    "chips": [
+     {
+      "w": "amusement",
+      "gold": true,
+      "why": "amuse keeps its e before -ment."
+     },
+     {
+      "w": "statment",
+      "gold": false,
+      "why": "state keeps its e before -ment: statement."
+     },
+     {
+      "w": "measurement",
+      "gold": true,
+      "why": "measure keeps its e before -ment."
+     },
+     {
+      "w": "encouragment",
+      "gold": false,
+      "why": "encourage keeps its e: encouragement."
+     }
+    ]
+   },
+   {
+    "clue": "Wash out the misspelled words. Keep the gold.",
+    "chips": [
+     {
+      "w": "majorety",
+      "gold": false,
+      "why": "The ending is -ity: majority."
+     },
+     {
+      "w": "generosity",
+      "gold": true,
+      "why": "generous drops the u before -ity, like curious and curiosity."
+     },
+     {
+      "w": "possibilty",
+      "gold": false,
+      "why": "Do not drop the i before -ty: possibility."
+     },
+     {
+      "w": "ability",
+      "gold": true,
+      "why": "able becomes abil before -ity."
+     }
+    ]
+   },
+   {
+    "clue": "Wash out the words with no real fort or val root. Keep the gold.",
+    "chips": [
+     {
+      "w": "fortune",
+      "gold": false,
+      "why": "fortune comes from a Latin word for luck, not fort (strong)."
+     },
+     {
+      "w": "fortification",
+      "gold": true,
+      "why": "fort (strong) + ify + cation: a wall built to make a place strong."
+     },
+     {
+      "w": "valley",
+      "gold": false,
+      "why": "valley comes from a Latin word for a valley, not val (worth)."
+     },
+     {
+      "w": "valuable",
+      "gold": true,
+      "why": "val (worth) + uable: worth a lot."
+     }
+    ]
+   },
+   {
+    "clue": "Wash out the words with no real fort or val root. Keep the gold.",
+    "chips": [
+     {
+      "w": "effortless",
+      "gold": true,
+      "why": "ef + fort (strong) + less: needing no strength."
+     },
+     {
+      "w": "forty",
+      "gold": false,
+      "why": "forty is a number word. No fort root inside."
+     },
+     {
+      "w": "invalid",
+      "gold": true,
+      "why": "in (not) + valid (strong): not strong enough to count."
+     },
+     {
+      "w": "oval",
+      "gold": false,
+      "why": "oval comes from the Latin word for egg."
+     }
+    ]
+   },
+   {
+    "clue": "Wash out the words with no real fort or val root. Keep the gold.",
+    "chips": [
+     {
+      "w": "arrival",
+      "gold": false,
+      "why": "arrival comes from a word for reaching the shore. No val root."
+     },
+     {
+      "w": "comforting",
+      "gold": true,
+      "why": "com + fort (strong): making someone feel strong again."
+     },
+     {
+      "w": "fortnight",
+      "gold": false,
+      "why": "a fortnight is fourteen nights. No fort root."
+     },
+     {
+      "w": "devalue",
+      "gold": true,
+      "why": "de (down) + val (worth): to lower something's worth."
+     }
+    ]
+   }
+  ]
+ },
+ "virtue": {
+  "name": "honesty",
+  "kind": "sort",
+  "title": "Honest or not?",
+  "intro": "This week's virtue is honesty: telling the truth and not trying to trick people, even when the truth costs you something. Sort these everyday examples.",
+  "items": [
+   {
+    "t": "You find a wallet and turn it in with all the money still inside.",
+    "ok": true,
+    "why": "You give back what is not yours, even though no one would know."
+   },
+   {
+    "t": "You tell a friend you loved their drawing, but you never looked at it.",
+    "ok": false,
+    "why": "It sounds kind, but it is not true."
+   },
+   {
+    "t": "You tell your teacher you forgot your homework instead of making up a story.",
+    "ok": true,
+    "why": "The truth costs you something, and you tell it anyway."
+   },
+   {
+    "t": "You let your brother take the blame for a plate you broke.",
+    "ok": false,
+    "why": "Staying quiet so someone else gets in trouble is a way of lying."
+   }
+  ]
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/btghs/remington-old-stagecoach.jpg",
+  "title": "The Old Stage-Coach of the Plains",
+  "alt": "A dark painting of a stagecoach pulled by a team of horses up a rocky rise at night, its lamps glowing, with a driver and riders on top against a moonlit sky.",
+  "look": "Frederic Remington painted this in 1901, long after the Gold Rush, to show the old stagecoach days. It is set on the Plains, not in the Sierra, but look how small the coach seems on the dark hill, how hard the horses pull, and how the lamps glow. Jack's stage climbs the same way at twilight in Chapter 10.",
+  "lookBtn": "Tap to learn about this painting",
+  "creator": "Frederic Remington",
+  "date": "1901",
+  "license": "Public domain (Amon Carter Museum of American Art, via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Remington_The_Old_Stage-Coach_of_the_Plains_1901.jpg"
+ }
+}
