@@ -256,5 +256,17 @@
     "why": "You keep your disappointment from hurting someone else."
    }
   ]
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/btghs/sinety-rio-bay.jpg",
+  "title": "Bay of Rio de Janeiro",
+  "alt": "A watercolor of a wide harbor: a sailing ship under full sail with cannon smoke beside it, another ship at anchor, small boats, and a tall rounded mountain on the right.",
+  "look": "A French artist painted the bay of Rio de Janeiro in 1837, twelve years before the novel. Cannon smoke drifts across the water as a ship sails in, and Sugarloaf Mountain rises on the right. In Chapter 4 the Lady Wilma also passes under the fortress guns of Rio de Janeiro.",
+  "lookBtn": "Tap to learn about this painting",
+  "creator": "Jules Marie Vincent de Sinety",
+  "date": "1837",
+  "license": "Public domain (via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Jules_Marie_Vincent_de_Sinety_-_Ba%C3%ADa_do_Rio_de_Janeiro.JPG"
  }
 }

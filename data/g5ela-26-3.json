@@ -204,5 +204,17 @@
   "line": "Tell why in one sentence.",
   "placeholder": "He shows this much because…",
   "take": "Mason's take: a lot. Jack could have shouted that it was his idea. He kept quiet and let the good news belong to the two men."
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/btghs/aivazovsky-calm-evening.jpg",
+  "title": "Calm Early Evening Sea",
+  "alt": "A painting of a two-masted sailing ship sitting still on a glassy sea under big white clouds, with a few people and a boat on the shore.",
+  "look": "Ivan Aivazovsky painted this calm in 1884, far from South America. Not a breath of wind moves the sails, and the sea is as flat as glass. In Chapter 6 the Lady Wilma sits like this for weeks off the coast of Chile, with no coal left to turn her paddlewheels.",
+  "lookBtn": "Tap to learn about this painting",
+  "creator": "Ivan Aivazovsky",
+  "date": "1884",
+  "license": "Public domain (via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Ivan_Konstantinovich_Aivazovsky,_Calm_early_evening_sea.jpg"
  }
 }

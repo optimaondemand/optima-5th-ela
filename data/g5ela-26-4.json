@@ -220,5 +220,17 @@
   ],
   "line": "Finish the sentence: This shows self-control the most because…",
   "placeholder": "This shows self-control the most because…"
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/btghs/kellogg-gold-hunter.jpg",
+  "title": "The Independent Gold Hunter on His Way to California",
+  "alt": "A hand-colored comic print of a man in tall boots walking along, loaded with a frying pan, kettle, shovel, sausages and a suitcase, with a pot on his head and a signpost behind him.",
+  "look": "A comic print sold around 1850. The gold-seeker carries everything he owns, with a pot for a hat. The signpost says California is still 1,700 miles away, and the words under him say he will neither borrow nor lend. The artist is laughing at how sure of himself he is, the same kind of joke Fleischman makes about the gold-seekers on the Lady Wilma.",
+  "lookBtn": "Tap to learn about this print",
+  "creator": "Kellogg & Comstock",
+  "date": "about 1850",
+  "license": "Public domain (Beinecke Rare Book & Manuscript Library, Yale University, via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:The_independent_gold_hunter_on_his_way_to_California.jpg"
  }
 }

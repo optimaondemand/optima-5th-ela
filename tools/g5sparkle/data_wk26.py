@@ -173,6 +173,58 @@ D[4] = {
 }
 D['fluency'] = {"listen": {"page": {"text": "Read the pig hunt from Chapter 4 out loud. Pick up speed through the list of places they search, then slow down for the talking. Make the cook sound cross and Monsieur Gaunt sound polite. Let the last word land. When it sounds smooth, record yourself."}},
                 "glossary": [{"word": "expression", "meaning": "reading with feeling, so your voice shows what the words mean"}]}
+# Plates found by Claude on Wikimedia Commons (Nov 23 2026), looked at and cropped (Beagle caption line, print edges).
+ART = {
+ 1: {
+  "tab": "top",
+  "file": "assets/art/btghs/sinety-rio-bay.jpg",
+  "title": "Bay of Rio de Janeiro",
+  "alt": "A watercolor of a wide harbor: a sailing ship under full sail with cannon smoke beside it, another ship at anchor, small boats, and a tall rounded mountain on the right.",
+  "look": "A French artist painted the bay of Rio de Janeiro in 1837, twelve years before the novel. Cannon smoke drifts across the water as a ship sails in, and Sugarloaf Mountain rises on the right. In Chapter 4 the Lady Wilma also passes under the fortress guns of Rio de Janeiro.",
+  "lookBtn": "Tap to learn about this painting",
+  "creator": "Jules Marie Vincent de Sinety",
+  "date": "1837",
+  "license": "Public domain (via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Jules_Marie_Vincent_de_Sinety_-_Ba%C3%ADa_do_Rio_de_Janeiro.JPG"
+ },
+ 2: {
+  "tab": "top",
+  "file": "assets/art/btghs/pritchett-beagle-magellan.jpg",
+  "title": "H.M.S. Beagle in the Straits of Magellan",
+  "alt": "A black-and-white engraving of a three-masted sailing ship in a narrow channel between steep dark hills, a snowy peak behind, and people paddling small canoes nearby.",
+  "look": "The Beagle was a real British survey ship that mapped the Strait of Magellan in the 1820s and 1830s, with a young Charles Darwin aboard on its second voyage. This engraving was made in 1890. Mount Sarmiento stands in the distance, and Native people paddle canoes near the ship. The Lady Wilma is made up; the strait is real.",
+  "lookBtn": "Tap to learn about this engraving",
+  "creator": "Robert Taylor Pritchett",
+  "date": "1890",
+  "license": "Public domain (via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:FMIB_47233_HMS_Beagle_in_Straits_of_Magellan_Mt_Sarmiento_in_the_Distance.jpeg"
+ },
+ 3: {
+  "tab": "top",
+  "file": "assets/art/btghs/aivazovsky-calm-evening.jpg",
+  "title": "Calm Early Evening Sea",
+  "alt": "A painting of a two-masted sailing ship sitting still on a glassy sea under big white clouds, with a few people and a boat on the shore.",
+  "look": "Ivan Aivazovsky painted this calm in 1884, far from South America. Not a breath of wind moves the sails, and the sea is as flat as glass. In Chapter 6 the Lady Wilma sits like this for weeks off the coast of Chile, with no coal left to turn her paddlewheels.",
+  "lookBtn": "Tap to learn about this painting",
+  "creator": "Ivan Aivazovsky",
+  "date": "1884",
+  "license": "Public domain (via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Ivan_Konstantinovich_Aivazovsky,_Calm_early_evening_sea.jpg"
+ },
+ 4: {
+  "tab": "top",
+  "file": "assets/art/btghs/kellogg-gold-hunter.jpg",
+  "title": "The Independent Gold Hunter on His Way to California",
+  "alt": "A hand-colored comic print of a man in tall boots walking along, loaded with a frying pan, kettle, shovel, sausages and a suitcase, with a pot on his head and a signpost behind him.",
+  "look": "A comic print sold around 1850. The gold-seeker carries everything he owns, with a pot for a hat. The signpost says California is still 1,700 miles away, and the words under him say he will neither borrow nor lend. The artist is laughing at how sure of himself he is, the same kind of joke Fleischman makes about the gold-seekers on the Lady Wilma.",
+  "lookBtn": "Tap to learn about this print",
+  "creator": "Kellogg & Comstock",
+  "date": "about 1850",
+  "license": "Public domain (Beinecke Rare Book & Manuscript Library, Yale University, via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:The_independent_gold_hunter_on_his_way_to_California.jpg"
+ }
+}
+for _k, _a in ART.items(): D[_k]["art"] = _a
 PAGE = {1: {'ridicule', 'ridiculous', 'derisive', 'risible', 'ludicrous', 'prelude', 'interlude', 'illusion'},
         2: {'risible', 'collusion', 'elude', 'deride'}, 3: {'ridicule', 'derision', 'ludicrous', 'illusion', 'ridiculous'},
         4: {'ludicrous', 'ridicule', 'illusion', 'derision', 'ridiculous', 'deride'}}

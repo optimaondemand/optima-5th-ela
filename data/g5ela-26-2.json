@@ -243,5 +243,17 @@
   ],
   "line": "Tap the moment that shows the most self-control. Then tell why in one sentence.",
   "placeholder": "This shows the most self-control because…"
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/btghs/pritchett-beagle-magellan.jpg",
+  "title": "H.M.S. Beagle in the Straits of Magellan",
+  "alt": "A black-and-white engraving of a three-masted sailing ship in a narrow channel between steep dark hills, a snowy peak behind, and people paddling small canoes nearby.",
+  "look": "The Beagle was a real British survey ship that mapped the Strait of Magellan in the 1820s and 1830s, with a young Charles Darwin aboard on its second voyage. This engraving was made in 1890. Mount Sarmiento stands in the distance, and Native people paddle canoes near the ship. The Lady Wilma is made up; the strait is real.",
+  "lookBtn": "Tap to learn about this engraving",
+  "creator": "Robert Taylor Pritchett",
+  "date": "1890",
+  "license": "Public domain (via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:FMIB_47233_HMS_Beagle_in_Straits_of_Magellan_Mt_Sarmiento_in_the_Distance.jpeg"
  }
 }
