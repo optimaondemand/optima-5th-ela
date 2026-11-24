@@ -170,7 +170,7 @@ D[4] = {
  "listen": {
   "warmup": {"text": "Today a very different poem: Carl Sandburg's Fog, only six lines long. Read it slowly. Then compare it with Windy Nights. Same five parts, used to do the opposite thing."},
   "words": {"text": "Explain the three endings in your own words, and add each ending to a base. Pick an option on the vocabulary choice board. The last eight notches bring the bucket out of the hole."},
-  "reading": {"text": "Read the five voice techniques. Find one example of each kind in Chapters 13 to 15. Then answer the voice questions, and pick the technique your own adventure needs most."},
+  "reading": {"text": "Read the five voice techniques. Find examples of them in Chapters 13 to 15. Then answer the voice questions, and pick the technique your own adventure needs most."},
   "assignment": {"text": "Read your paragraph out loud one last time. Put the final version in the box, with one sentence about your biggest change. Then copy your work into Canvas."}},
  "how": [DOL, RW, POEM,
   {"match": "Morphology", "do": ["Explain the three endings in your reading journal.", "Add the ending to each base word.", "Tap Check My Work."], "why": "Explaining an ending shows you really know it."},
