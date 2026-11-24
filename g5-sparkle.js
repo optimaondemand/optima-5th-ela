@@ -1648,6 +1648,113 @@
     else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
   }
 
+  /* Climb Out of the Coyote Hole (week 29): a coyote hole is a deep shaft dug down to bedrock. Each clue has three
+     word choices; a right answer hauls the bucket of pay dirt up one notch of the rope, a miss lets loose dirt slide
+     it back down one notch. A climbing mechanic with setbacks. DATA game.type 'climb', game.rounds[{clue, opts[3], ok, why, miss}] */
+  function buildClimb() {
+    var G = D.game; if (!G || G.type !== 'climb' || !G.rounds || !G.rounds.length) return;
+    var wkKey = 'climb.wk' + L.week;
+    var st = store(wkKey) || {};
+    var mine = st[L.day] || { done: [], miss: 0, pos: 0 };
+    if (typeof mine.miss !== 'number') mine.miss = 0;
+    if (typeof mine.pos !== 'number') mine.pos = mine.done.length;
+    var N = G.rounds, idx = 0;
+    while (idx < N.length && mine.done.indexOf(idx) >= 0) idx++;
+    var wrap = h('div', { 'class': 'activity g5-game' });
+    wrap.innerHTML =
+      '<div class="activity-head"><div class="activity-num g5-game-num" aria-hidden="true">⛏️</div><div>' +
+      '<div class="activity-title">' + esc(G.title || 'Climb Out of the Coyote Hole') + '</div>' +
+      '<div class="activity-sub">' + esc(G.sub || 'Word game for this week') + '</div></div></div>';
+    var body = h('div', { 'class': 'activity-body' });
+    wrap.appendChild(body);
+    var look = h('details', { 'class': 'g5-look' }, [h('summary', { text: '👀 What am I looking at?' }), h('p', { text: G.look })]);
+    if (!mine.done.length) look.open = true;
+    body.appendChild(look);
+    if (G.how) body.appendChild(howLine(G.how));
+    var scene = h('div', { 'class': 'g5-climb', role: 'img', 'aria-label': 'A deep coyote hole seen from the side, with a rope and a bucket of pay dirt. The bucket rises one notch for each right answer and slides down one for a miss.' });
+    body.appendChild(scene);
+    var stepBox = h('div', { 'class': 'g5-stone-step', 'aria-live': 'polite' });
+    var row = h('div', { 'class': 'g5-race-opts' });
+    var ctrl = h('div', { 'class': 'g5-stone-ctrl' });
+    var fb = h('p', { 'class': 'g5-stone-fb', 'aria-live': 'polite' });
+    var tally = h('p', { 'class': 'g5-stone-tally' });
+    [stepBox, row, ctrl, fb, tally].forEach(function (n) { body.appendChild(n); });
+    function draw(flash) {
+      var allDone = 0;
+      Object.keys(st).forEach(function (k) { allDone += (st[k].done || []).length; });
+      var top = 70, bot = 318, finished = mine.done.length >= N.length;
+      var pos = finished ? N.length : Math.min(mine.pos, N.length);
+      var by = bot - pos * ((bot - top - 10) / N.length);
+      var svg = '<svg viewBox="0 0 600 340" preserveAspectRatio="xMidYMid meet" aria-hidden="true">' +
+        '<rect width="600" height="60" fill="#F3E4C2"/>' +
+        '<path d="M0,44 Q80,28 160,40 Q240,52 330,34 Q420,18 520,36 Q570,44 600,38 L600,60 L0,60 Z" fill="#B9A06A" opacity=".7"/>' +
+        '<rect y="58" width="600" height="282" fill="#9A7448"/>' +
+        '<rect y="58" width="600" height="8" fill="#6F8A3E"/>' +
+        '<path d="M0,120 Q150,112 300,122 T600,118 L600,128 Q450,134 300,130 T0,128 Z" fill="#87633B"/>' +
+        '<path d="M0,200 Q150,192 300,204 T600,198 L600,210 Q450,214 300,212 T0,208 Z" fill="#7A5733"/>' +
+        '<path d="M0,280 Q150,272 300,284 T600,278 L600,292 Q450,296 300,294 T0,290 Z" fill="#6B4A2A"/>' +
+        '<rect y="326" width="600" height="14" fill="#5A5A5E"/>' +
+        '<text x="470" y="337" fill="#E8E8EC" font-family="Georgia,serif" font-size="11">bedrock</text>' +
+        '<rect x="250" y="58" width="100" height="270" fill="#3A2818"/>' +
+        '<rect x="250" y="58" width="6" height="270" fill="#2A1C10"/><rect x="344" y="58" width="6" height="270" fill="#4A3420"/>';
+      for (var i = 0; i <= N.length; i++) {
+        var ny = bot - i * ((bot - top - 10) / N.length);
+        svg += '<line x1="256" y1="' + ny.toFixed(1) + '" x2="266" y2="' + ny.toFixed(1) + '" stroke="#C8A26A" stroke-width="2"/>';
+      }
+      svg += '<rect x="226" y="20" width="8" height="42" fill="#5A3A1A"/><rect x="366" y="20" width="8" height="42" fill="#5A3A1A"/>' +
+        '<rect x="226" y="18" width="148" height="10" rx="5" fill="#7A5230"/><circle cx="300" cy="23" r="9" fill="#5A3A1A"/>' +
+        '<line x1="300" y1="28" x2="300" y2="' + (by - 16).toFixed(1) + '" stroke="#D9C08A" stroke-width="3"/>' +
+        '<g transform="translate(300,' + by.toFixed(1) + ')">' +
+        '<path d="M-18,-14 L18,-14 L14,12 L-14,12 Z" fill="#8B5A2B" stroke="#4A2E14" stroke-width="2"/>' +
+        '<path d="M-18,-14 Q0,-30 18,-14" fill="none" stroke="#4A2E14" stroke-width="2"/>' +
+        '<ellipse cx="0" cy="-14" rx="17" ry="4" fill="' + (finished || flash === 'up' ? '#F5D77A' : '#B99A6B') + '"/>' +
+        (finished || flash === 'up' ? '<circle cx="-6" cy="-16" r="1.8" fill="#FFF3C0"/><circle cx="5" cy="-15" r="1.6" fill="#FFF3C0"/>' : '') +
+        '</g>';
+      if (flash === 'down') svg += '<path d="M268,' + (by - 40).toFixed(1) + ' l8,10 l-14,4 Z M322,' + (by - 34).toFixed(1) + ' l9,9 l-13,5 Z" fill="#B48A5A"/>';
+      svg += '</svg>';
+      scene.innerHTML = svg;
+      tally.textContent = 'Today: ' + mine.done.length + ' of ' + N.length + ' notches. This week: ' + allDone + '.';
+    }
+    function save() { st[L.day] = mine; store(wkKey, st); }
+    function shake(b) { b.classList.add('g5-shake'); setTimeout(function () { b.classList.remove('g5-shake'); }, 450); }
+    function show() {
+      fb.textContent = ''; ctrl.innerHTML = ''; row.innerHTML = '';
+      if (idx >= N.length) {
+        draw();
+        stepBox.innerHTML = '<b>Out of the hole!</b> ' + esc(G.doneLine || 'The bucket is at the top.');
+        var again = h('button', { type: 'button', 'class': 'g5-btn g5-btn-ghost' }, ['↺ Dig again']);
+        again.addEventListener('click', function () { mine = { done: [], miss: 0, pos: 0 }; idx = 0; save(); show(); });
+        ctrl.appendChild(again); return;
+      }
+      var S = N[idx];
+      draw();
+      stepBox.innerHTML = '<span class="g5-stepn">Notch ' + (idx + 1) + ' of ' + N.length + '</span> ' + esc(S.clue);
+      S.opts.forEach(function (w, k) {
+        var b = h('button', { type: 'button', 'class': 'g5-beat g5-race-btn' }, [w]);
+        b.addEventListener('click', function () {
+          if (k !== S.ok) {
+            mine.miss++; mine.pos = Math.max(0, mine.pos - 1); save(); draw('down');
+            fb.textContent = '🪨 Loose dirt! The bucket slides down a notch. ' + (S.miss || 'Look again at the base word and the ending.'); shake(b); return;
+          }
+          row.querySelectorAll('button').forEach(function (x) { x.disabled = true; });
+          b.classList.add('g5-race-right');
+          if (mine.done.indexOf(idx) < 0) mine.done.push(idx);
+          mine.pos = Math.min(N.length, mine.pos + 1);
+          save(); draw('up');
+          fb.innerHTML = '⬆️ <b>' + esc(w) + '</b>: ' + esc(S.why || '');
+          var next = h('button', { type: 'button', 'class': 'g5-btn' }, [idx + 1 < N.length ? 'Haul it up →' : 'Out of the hole →']);
+          next.addEventListener('click', function () { idx++; while (idx < N.length && mine.done.indexOf(idx) >= 0) idx++; show(); setTimeout(function () { var f = row.querySelector('button') || ctrl.querySelector('button'); if (f) f.focus(); }, 30); });
+          ctrl.appendChild(next);
+        });
+        row.appendChild(b);
+      });
+    }
+    show();
+    var ref = G.after ? activityByTitle(G.after, panel('words')) : null;
+    if (ref) afterNode(ref, wrap);
+    else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
+  }
+
   /* ── 13. the Commonplace Book page ─────────────────────────── */
   var NAME_BAD = /\b(ass|butt|poop|fart|stupid|dumb|idiot|hate|kill|sex|damn|hell|crap)\b/i;
   function profileName() { var p = store('profile'); return p && p.name ? p.name : ''; }
@@ -2442,6 +2549,7 @@
     guard('strait', buildStrait);
     guard('race', buildRace);
     guard('pan', buildPan);
+    guard('climb', buildClimb);
     guard('cards', buildCards);
     guard('checks', buildChecks);
     guard('virtue', buildVirtue);
