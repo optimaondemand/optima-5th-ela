@@ -482,6 +482,16 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .poetry-title{font-family:Georgia,serif;font-size:14px;font-weight:700;color:#0E1C42;margin-bottom:2px;}
 .poetry-author{font-size:12px;color:#7A88A8;margin-bottom:14px;}
 .poetry-lines{font-family:Georgia,serif;font-size:16px;color:#1A3A5C;line-height:2.1;}
+
+/* Read Like a Writer box (same as weeks 19-28) */
+.rwm-box{background:#FFFFFF;border:2px solid #E2E8F4;border-radius:14px;overflow:hidden;margin:18px 0 14px;}
+.rwm-header{background:linear-gradient(135deg,#2C5F2E,#1A2D5A);color:#fff;padding:12px 18px;font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;}
+.rwm-sentence{background:linear-gradient(135deg,#FFFCF0 0%,#FBF5E6 100%);border-bottom:2px solid #F5E6C8;padding:16px 20px;font-family:'Lora',Georgia,serif;font-size:17px;color:#2C5F2E;line-height:1.7;font-style:italic;}
+.rwm-step{padding:14px 20px;border-bottom:1.5px solid #E2E8F4;}
+.rwm-step:last-child{border-bottom:none;}
+.rwm-step-label{display:flex;align-items:center;gap:8px;font-size:14px;color:#C8A850;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
+.rwm-step-text{font-size:15px;color:#3A4A6B;line-height:1.6;}
+.rwm-frame{background:#FAFBFF;border:1.5px dashed #8B3A20;border-radius:8px;padding:10px 14px;margin-top:8px;font-family:'Lora',Georgia,serif;font-size:15px;color:#8B3A20;font-style:italic;}
 </style>
 </head>
 <body>
@@ -1024,7 +1034,28 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
       </div>
     </div>
   </div>
-  <div class="tab-next-wrap"><p class="tab-transition-voice">Week 29 complete. Final revision awaits.</p>
+    <!-- RWM -->
+  <div class="rwm-box">
+    <div class="rwm-header">&#128214; Read Like a Writer &mdash; Read &bull; Notice &bull; Try</div>
+    <div class="rwm-sentence">Pay dirt eluded them &mdash; but the next bend in the river might make their fortune. <span style="font-size:13px;color:#5A6B8C;">(Chapter 15)</span></div>
+    <div class="rwm-step"><div class="rwm-step-label">&#128214; As a Reader</div>
+      <div class="rwm-step-text">How does this sentence make you feel about the partners&rsquo; luck?</div>
+      <textarea class="journal-box" id="journal-rwm-reader" data-label="Read Like a Writer: As a Reader" placeholder="I notice..." oninput="autoSave(this,'dot-journal-rwm-reader');"></textarea>
+      <div class="journal-label">&#128211; <span class="saved-dot" id="dot-journal-rwm-reader"></span></div>
+    </div>
+    <div class="rwm-step"><div class="rwm-step-label">&#9999;&#65039; As a Writer</div>
+      <div class="rwm-step-text">On your own this time. What makes this sentence sound like Fleischman? Think about the word <em>eluded</em>, the dash, and how the sentence ends.</div>
+      <textarea class="journal-box" id="journal-rwm-writer" data-label="Read Like a Writer: As a Writer" placeholder="The writer..." oninput="autoSave(this,'dot-journal-rwm-writer');"></textarea>
+      <div class="journal-label">&#128211; <span class="saved-dot" id="dot-journal-rwm-writer"></span></div>
+    </div>
+    <div class="rwm-step"><div class="rwm-step-label">&#128394;&#65039; Try It</div>
+      <div class="rwm-step-text">Write 2&ndash;3 sentences: name one thing that makes this sentence sound like Fleischman, then write one sentence for your adventure that uses the same move.</div>
+      <textarea class="journal-box" id="journal-rwm-mimic" data-label="Read Like a Writer: Try It" placeholder="My sentences..." oninput="autoSave(this,'dot-journal-rwm-mimic');"></textarea>
+      <div class="journal-label">&#128211; <span class="saved-dot" id="dot-journal-rwm-mimic"></span></div>
+    </div>
+  </div>
+
+<div class="tab-next-wrap"><p class="tab-transition-voice">Week 29 complete. Final revision awaits.</p>
   <button class="tab-next-btn" onclick="markDone('reading');switchTab('assignment')">Continue to 📬 Assignment →</button></div>
 </div><div class="tab-panel" id="tab-assignment"><div class="activity bl-gold" style="margin-bottom:20px;">
   <div class="activity-head" style="background:#FFF8E8;border-bottom:1.5px solid #E2E8F4;">
@@ -1051,7 +1082,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     <textarea class="journal-box" id="journal-writing" data-label="Writer&#x27;s Workshop: Week 29 REVISE — one paragraph revised for voice/dialogue/description (original + revised)" placeholder="ORIGINAL:&#10;[paste your original paragraph here]&#10;&#10;REVISED:&#10;[write your improved version here]" oninput="autoSave(this,&#x27;dot-writing&#x27;);"></textarea>
     <div class="journal-label">📓 <span class="saved-dot" id="dot-writing"></span></div>
   </div>
-</div><div class="turn-in-card"><div class="turn-in-header"><div class="turn-in-header-icon">✅</div><div><div class="turn-in-header-label">Before You Finish</div><div class="turn-in-header-title">Check Your Work</div></div></div><div class="turn-in-body"><div class="turn-in-checklist"><div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered all three Voice &amp; Tone questions including the week synthesis.</div></div><div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed my Vocabulary Choice Board Show What You Know (Option ___).</div></div><div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I made my final revision pass — adding one specific Fleischman technique to my writing.</div></div></div></div></div><div class="gathered-card">
+</div><div class="turn-in-card"><div class="turn-in-header"><div class="turn-in-header-icon">✅</div><div><div class="turn-in-header-label">Before You Finish</div><div class="turn-in-header-title">Check Your Work</div></div></div><div class="turn-in-body"><div class="turn-in-checklist"><div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered the Read Like a Writer box on the Reading tab.</div></div><div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered all three Voice &amp; Tone questions including the week synthesis.</div></div><div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed my Vocabulary Choice Board Show What You Know (Option ___).</div></div><div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I made my final revision pass — adding one specific Fleischman technique to my writing.</div></div></div></div></div><div class="gathered-card">
   <div class="gathered-header"><div class="gathered-header-icon">📋</div><div><div class="gathered-header-label">All Your Work</div><div class="gathered-header-title">Review, Copy, or Download</div></div></div>
   <div class="gathered-body">
     <p class="gathered-intro">Everything you typed is collected here.</p>
