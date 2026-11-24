@@ -1,0 +1,274 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "This week you look back across all five novels. Answer the question on the card first: two heroes from two different books, stuck on the same ship. Then set your lens for the week."
+  },
+  "words": {
+   "text": "This week is a year-long review. You look back at the roots you learned in every unit and at the words that trip writers up. In the game, find two words that share a root, and tie two books together."
+  },
+  "reading": {
+   "text": "No new chapter today. Choose a theme, courage, independence or survival, and two novels that treat it differently. Then try the Read Like a Writer box. It shows you how to sort a comparison into categories."
+  },
+  "assignment": {
+   "text": "Write your comparison claim: what both novels say about your theme, and how they say it differently. Then name two categories and one piece of evidence from each novel for each one."
+  }
+ },
+ "hook": {
+  "q": "Kit Tyler and Jack Flagg are stuck on the same ship in a storm. Who handles it better?",
+  "options": [
+   {
+    "t": "Kit. She grew up sailing and loves the sea.",
+    "reply": "Kit does love the sea. Listen to her in Chapter 14:"
+   },
+   {
+    "t": "Jack. He'd grab a shovel and work.",
+    "reply": "Jack would work, and he would not leave his partner. Listen to Kit first:"
+   },
+   {
+    "t": "Both, in different ways.",
+    "reply": "That is exactly the kind of answer a comparison essay is built on. Listen to Kit first:"
+   }
+  ],
+  "reveal": {
+   "line": "How she would love to sail on the Dolphin again!",
+   "cite": "The Witch of Blackbird Pond, Chapter 14",
+   "then": "And Jack, in Chapter 1 of By the Great Horn Spoon!: “We’re partners, sir.” Same sea, two kinds of courage. That difference is what you write about this week."
+  }
+ },
+ "readnow": {
+  "text": "No new chapter today. Choose your theme and your two novels, then plan by category.",
+  "step": "Today: plan your comparison"
+ },
+ "how": [
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read the three lenses.",
+    "Tap the one you will use today.",
+    "Keep it in mind as you work. You will use it at the end."
+   ],
+   "why": "Comparing two books starts with knowing what you are looking for in both.",
+   "use": "You will use it in planning question 1."
+  },
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted words in the first sentence.",
+    "Write the second sentence correctly in your reading journal.",
+    "Tap See the Answer to check."
+   ],
+   "why": "Fixing one kind of mistake at a time catches more of them."
+  },
+  {
+   "match": "Read & Write",
+   "do": [
+    "Read the question.",
+    "Write 2 or 3 sentences in your reading journal.",
+    "Then go on."
+   ],
+   "why": "Thinking first gives you something to watch for."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Read the root families.",
+    "Think through the questions, then tap See if you were right.",
+    "Write about three words from three novels in the box."
+   ],
+   "why": "A root you know in one book unlocks words in every book."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Read the four comparison tools.",
+    "Write one contrast and one similarity sentence in your reading journal.",
+    "Sort the six sentences."
+   ],
+   "why": "A comparison essay is built from sentences that hold two books at once."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Read the list.",
+    "Do the task in your reading journal.",
+    "Tap a word, then tap the rule it depends on."
+   ],
+   "why": "A few rules explain most of the words writers misspell."
+  },
+  {
+   "match": "Cross-Text Comparison",
+   "do": [
+    "Read the three theme options.",
+    "Pick one theme and two novels.",
+    "Answer the three planning questions."
+   ],
+   "why": "A good comparison starts with two books that disagree about something."
+  },
+  {
+   "match": "Comparison Project",
+   "do": [
+    "Read the claim formula.",
+    "Write your claim and your two categories in the box.",
+    "Add one piece of evidence from each novel for each category."
+   ],
+   "why": "Categories keep both books side by side, so your reader never has to remember one book for a whole page."
+  }
+ ],
+ "glossary": [
+  {
+   "word": "theme",
+   "in": "Cross-Text Comparison",
+   "meaning": "the big idea a story is about, like courage or survival"
+  },
+  {
+   "word": "categories",
+   "in": "Cross-Text Comparison",
+   "meaning": "groups you sort ideas into, like how they arrive or what it costs"
+  }
+ ],
+ "miss": {
+  "separate": "There's a rat in separate: sep-a-rate. The a is the schwa you cannot hear.",
+  "definitely": "definite + ly. The i in fin is the vowel you cannot hear clearly.",
+  "loneliness": "lonely + ness: the y changes to i. A suffix changed the base.",
+  "curiosity": "curious + ity: the u drops out. A suffix changed the base.",
+  "occurred": "occur + ed: the r doubles because you say oc-CUR.",
+  "embarrass": "Two r's and two s's: em-bar-rass."
+ },
+ "game": {
+  "type": "pairs",
+  "title": "Two Books, One Root",
+  "sub": "This week's word game · 4 pairs today",
+  "after": "Spelling",
+  "look": "A bookshelf with this year's five novels, and one more book: You. Each card holds a word that belongs to one of those worlds. Two words with the same root are a pair. Find a pair and a gold thread ties their two worlds together.",
+  "how": {
+   "do": [
+    "Tap a card to turn it over.",
+    "Tap a second card.",
+    "Same root? The pair stays up. Different roots? They turn back over."
+   ],
+   "why": "A root is the same in every book. Spotting it lets you read a word you have never seen."
+  },
+  "shelf": [
+   {
+    "id": "witch",
+    "name": "Witch"
+   },
+   {
+    "id": "jt",
+    "name": "Johnny Tremain"
+   },
+   {
+    "id": "bow",
+    "name": "Bowditch"
+   },
+   {
+    "id": "ghost",
+    "name": "Ghost"
+   },
+   {
+    "id": "hs",
+    "name": "Horn Spoon"
+   },
+   {
+    "id": "you",
+    "name": "You"
+   }
+  ],
+  "miss": "Look for the same few letters inside both words.",
+  "doneLine": "Come back next lesson for four new pairs.",
+  "pairs": [
+   {
+    "root": "dict",
+    "means": "say",
+    "a": {
+     "w": "verdict",
+     "at": "hs"
+    },
+    "b": {
+     "w": "dictionary",
+     "at": "you"
+    },
+    "why": "A verdict is what a jury says; a dictionary tells what words say."
+   },
+   {
+    "root": "nav",
+    "means": "ship",
+    "a": {
+     "w": "navigator",
+     "at": "bow"
+    },
+    "b": {
+     "w": "navy",
+     "at": "hs"
+    },
+    "why": "A navigator steers a ship; a navy is a country's fleet of ships, like the Navy frigates in San Francisco Bay."
+   },
+   {
+    "root": "fort",
+    "means": "strong",
+    "a": {
+     "w": "fortress",
+     "at": "hs"
+    },
+    "b": {
+     "w": "comfort",
+     "at": "witch"
+    },
+    "why": "A fortress is a strong place, like the one guarding Rio; comfort makes someone strong again, as Rachel tries to do for Mercy."
+   },
+   {
+    "root": "vis/vid",
+    "means": "see",
+    "a": {
+     "w": "vision",
+     "at": "ghost"
+    },
+    "b": {
+     "w": "provisions",
+     "at": "hs"
+    },
+    "why": "A vision is something seen, like the things Isaac sees before they happen; provisions are supplies you see to ahead of time."
+   }
+  ]
+ },
+ "virtue": {
+  "name": "wisdom",
+  "kind": "sort",
+  "title": "Wise, or not?",
+  "intro": "This week's virtue is wisdom: knowing what matters and making good choices with what you know. Sort these everyday examples.",
+  "items": [
+   {
+    "t": "Before you argue, you check the facts.",
+    "ok": true,
+    "why": "Wisdom looks at what is true before it decides."
+   },
+   {
+    "t": "You copy a friend's answer because it sounds right.",
+    "ok": false,
+    "why": "Sounding right is not the same as being right."
+   },
+   {
+    "t": "You ask someone who has done it before how they did it.",
+    "ok": true,
+    "why": "Wise people learn from others' experience."
+   },
+   {
+    "t": "You make a big choice in a hurry so you don't have to think about it.",
+    "ok": false,
+    "why": "Wisdom takes time to think."
+   }
+  ]
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/year/connecticut-1766-map.jpg",
+  "title": "Plan of the Colony of Connecticut",
+  "alt": "An old hand-colored map of the Connecticut colony, with its towns and counties in soft colors and the Connecticut River running down the middle to Long Island Sound.",
+  "look": "Moses Park made this map of the Connecticut colony in 1766, about eighty years after Kit Tyler's story. Find the Connecticut River running down the middle of the map. Wethersfield, where Kit lands, sits on its banks just south of Hartford.",
+  "lookBtn": "Tap to learn about this map",
+  "creator": "Moses Park",
+  "date": "1766",
+  "license": "Public domain (Library of Congress, via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Plan_of_the_Colony_of_Connecticut,_Moses_Park,_1766.jpg"
+ }
+}

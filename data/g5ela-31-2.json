@@ -1,0 +1,278 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "Read Carl Sandburg's poem Buffalo Dusk three times before you write anything. Notice which lines are short and which one is very long. This is a benchmark check: name every element you can find."
+  },
+  "words": {
+   "text": "Write four comparison sentences today, then match words to their roots and hunt for misspellings. In the game, four new pairs of root words are waiting on the shelf."
+  },
+  "reading": {
+   "text": "Today you read three real primary sources from this year: a worker's diary from Sutter's Mill, a reporter's San Francisco, and a Choctaw leader's letter. Choose the one that fits your essay. Then try the Read Like a Writer box."
+  },
+  "assignment": {
+   "text": "Your essay has five paragraphs, organized by category. Today write paragraph one, your opening, and paragraph two, your first category, with both novels side by side."
+  }
+ },
+ "readnow": {
+  "text": "No new chapter today. Read three real primary sources and choose one for your essay.",
+  "step": "Today: real sources"
+ },
+ "how": [
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read the three lenses.",
+    "Tap the one you will use today.",
+    "Keep it in mind as you work. You will use it at the end."
+   ],
+   "why": "Knowing who made a source, and when, tells you what it can prove.",
+   "use": "You will use it in source question 2."
+  },
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted words in the first sentence.",
+    "Write the second sentence correctly in your reading journal.",
+    "Tap See the Answer to check."
+   ],
+   "why": "Fixing one kind of mistake at a time catches more of them."
+  },
+  {
+   "match": "Read & Write",
+   "do": [
+    "Read the question.",
+    "Write 2 or 3 sentences in your reading journal.",
+    "Then go on."
+   ],
+   "why": "Thinking first gives you something to watch for."
+  },
+  {
+   "match": "Poetry Corner",
+   "do": [
+    "Read the poem out loud three times.",
+    "Read the tip.",
+    "Answer the question in your reading journal."
+   ],
+   "why": "Naming every element at work shows you how a poem is built."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Read the grammar tools.",
+    "Write the four sentences in the box.",
+    "Label each one with the tool you used."
+   ],
+   "why": "This is your Show What You Know for grammar this week."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Find one root word in a source and write about it in your reading journal.",
+    "Tap a word, then tap its root.",
+    "Match all four."
+   ],
+   "why": "Roots work the same way in a novel and in a real diary."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Fix the eight words in your reading journal.",
+    "Tap every misspelled word in the line."
+   ],
+   "why": "Finding mistakes in someone else's writing trains your eye for your own."
+  },
+  {
+   "match": "Read: Three Real Primary Sources",
+   "do": [
+    "Read the background card.",
+    "Read sources A, B and C.",
+    "Answer the three source questions."
+   ],
+   "why": "A real voice from the time shows what one real person saw, which a novel cannot."
+  },
+  {
+   "match": "Comparison Project",
+   "do": [
+    "Read the five-paragraph plan.",
+    "Write paragraph 1 and paragraph 2 in the box.",
+    "Use your claim and categories from Day 1."
+   ],
+   "why": "Starting with the opening and one category gets the hardest part done."
+  }
+ ],
+ "glossary": [
+  {
+   "word": "primary source",
+   "in": "Read: Three Real Primary Sources",
+   "meaning": "something made at the time by someone who was there, like a diary or a letter"
+  },
+  {
+   "word": "benchmark",
+   "in": "Poetry Corner",
+   "meaning": "a check that shows how far you have come"
+  }
+ ],
+ "cards": [
+  {
+   "tab": "reading",
+   "after": "Read: Three Real Primary Sources",
+   "title": "Real history: who was real?",
+   "min": 2,
+   "intro": "Every novel this year mixes made-up people with real ones. Here is who really lived.",
+   "items": [
+    {
+     "term": "Made up",
+     "meaning": "Kit Tyler, Johnny Tremain, Isaac, Jack Flagg and Praiseworthy are characters the authors invented."
+    },
+    {
+     "term": "Nathaniel Bowditch (1773 to 1838)",
+     "meaning": "Real. He grew up in Salem, taught himself mathematics and navigation, and in 1802 published The New American Practical Navigator, a book sailors used for more than a hundred years."
+    },
+    {
+     "term": "Paul Revere, Samuel Adams, James Otis, Joseph Warren",
+     "meaning": "Real. They were Boston patriots in the 1770s, and all of them appear in Johnny Tremain."
+    },
+    {
+     "term": "Pushmataha (about 1764 to 1824)",
+     "meaning": "Real. He was a Choctaw leader. In How I Became a Ghost he appears as a ghost who helps the children."
+    },
+    {
+     "term": "James Marshall and John Sutter",
+     "meaning": "Real. Marshall found gold at Sutter's sawmill on January 24, 1848, the find the miners tell about in Chapter 16 of By the Great Horn Spoon!"
+    }
+   ],
+   "note": "Sources: the novels themselves; National Park Service and California State Parks; you met Bowditch, Pushmataha and Sutter's Mill on earlier cards."
+  }
+ ],
+ "game": {
+  "type": "pairs",
+  "title": "Two Books, One Root",
+  "sub": "This week's word game · 4 pairs today",
+  "after": "Spelling",
+  "look": "A bookshelf with this year's five novels, and one more book: You. Each card holds a word that belongs to one of those worlds. Two words with the same root are a pair. Find a pair and a gold thread ties their two worlds together.",
+  "how": {
+   "do": [
+    "Tap a card to turn it over.",
+    "Tap a second card.",
+    "Same root? The pair stays up. Different roots? They turn back over."
+   ],
+   "why": "A root is the same in every book. Spotting it lets you read a word you have never seen."
+  },
+  "shelf": [
+   {
+    "id": "witch",
+    "name": "Witch"
+   },
+   {
+    "id": "jt",
+    "name": "Johnny Tremain"
+   },
+   {
+    "id": "bow",
+    "name": "Bowditch"
+   },
+   {
+    "id": "ghost",
+    "name": "Ghost"
+   },
+   {
+    "id": "hs",
+    "name": "Horn Spoon"
+   },
+   {
+    "id": "you",
+    "name": "You"
+   }
+  ],
+  "miss": "Look for the same few letters inside both words.",
+  "doneLine": "Come back next lesson for four new pairs.",
+  "pairs": [
+   {
+    "root": "spect",
+    "means": "look",
+    "a": {
+     "w": "spectral",
+     "at": "ghost"
+    },
+    "b": {
+     "w": "spectators",
+     "at": "hs"
+    },
+    "why": "Spectral means ghostly, a shape you seem to see; spectators look on, like the crowd at the big fight."
+   },
+   {
+    "root": "port",
+    "means": "carry",
+    "a": {
+     "w": "transport",
+     "at": "hs"
+    },
+    "b": {
+     "w": "import",
+     "at": "bow"
+    },
+    "why": "Ships transport gold-seekers; Salem ships carried goods home to import them."
+   },
+   {
+    "root": "curr/cour",
+    "means": "run",
+    "a": {
+     "w": "current",
+     "at": "bow"
+    },
+    "b": {
+     "w": "courier",
+     "at": "jt"
+    },
+    "why": "A current is water that runs; a courier runs with messages, as Johnny rides for the patriots. The French spelling of the root is cour."
+   },
+   {
+    "root": "tract",
+    "means": "pull",
+    "a": {
+     "w": "extractor",
+     "at": "hs"
+    },
+    "b": {
+     "w": "distraction",
+     "at": "ghost"
+    },
+    "why": "A tooth extractor pulls teeth; a distraction pulls attention away, like Jumper in the river."
+   }
+  ]
+ },
+ "virtue": {
+  "name": "wisdom",
+  "kind": "log",
+  "title": "Wisdom in the year's books",
+  "intro": "Tap the moment from this year's novels that you think shows the most wisdom.",
+  "options": [
+   {
+    "t": "Praiseworthy talks a crowd out of a hanging with no trial (By the Great Horn Spoon!, Chapter 16)."
+   },
+   {
+    "t": "Nat: “when you depend on a book and it has a mistake, you’d have been safer not depending on it” (Carry On, Mr. Bowditch, Chapter 22)."
+   },
+   {
+    "t": "James Otis: “we fight, we die, for a simple thing. Only that a man can stand up” (Johnny Tremain, Chapter 8)."
+   },
+   {
+    "t": "Isaac, on the very first page: “Be careful what you wish for” (How I Became a Ghost, Chapter 1)."
+   }
+  ],
+  "line": "In one sentence: why is this wise?",
+  "placeholder": "This is wise because..."
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/year/revere-boston-1768.jpg",
+  "title": "A View of Part of the Town of Boston",
+  "alt": "A hand-colored print of Boston seen from the harbor: church steeples and rooftops along the shore, a long wharf, and British warships with small boats carrying soldiers to land.",
+  "look": "Paul Revere engraved this view of British warships landing soldiers at Boston in 1768. This copy was colored and printed again in 1898. Revere is a real person in Johnny Tremain, and this is the harbor and the Long Wharf Johnny knows.",
+  "lookBtn": "Tap to learn about this print",
+  "creator": "Paul Revere (color reproduction, 1898)",
+  "date": "engraved 1770 (the landing of 1768)",
+  "license": "Public domain (Boston Public Library via DPLA and Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:A_view_of_the_Town_of_Boston_in_New_England_and_British_ships_of_war_landing_their_troops,_1768_-_DPLA_-_4ed4e8f50042094f750ac013412bb26d.jpg"
+ }
+}
