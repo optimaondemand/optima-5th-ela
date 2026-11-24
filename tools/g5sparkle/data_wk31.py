@@ -10,8 +10,7 @@ a thread between two worlds on a shelf); 'Who was real?' card on 31.2. Q4 audio 
 import json, re, sys, html, io
 SHELF = [{"id": "witch", "name": "Witch"}, {"id": "jt", "name": "Johnny Tremain"}, {"id": "bow", "name": "Bowditch"},
          {"id": "ghost", "name": "Ghost"}, {"id": "hs", "name": "Horn Spoon"}, {"id": "you", "name": "You"}]
-LOOK = ("A bookshelf with this year's five novels, and one more book: You. Each card holds a word that belongs to one of those worlds. "
-        "Two words with the same root are a pair. Find a pair and a gold thread ties their two worlds together.")
+LOOK = 'Five novels and one more book on the shelf: You. Two words with the same root are a pair. Each pair you find ties two worlds together with a gold thread.'
 HOW = {"do": ["Tap a card to turn it over.", "Tap a second card.", "Same root? The pair stays up. Different roots? They turn back over."],
        "why": "A root is the same in every book. Spotting it lets you read a word you have never seen."}
 def pr(root, means, a, at, b, bt, why): return {"root": root, "means": means, "a": {"w": a, "at": at}, "b": {"w": b, "at": bt}, "why": why}
