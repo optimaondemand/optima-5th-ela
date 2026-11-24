@@ -33,8 +33,9 @@ WEEKS = {
  28: dict(read=F('R.1.2'),          think=F('R.1.2', 'EE.1.1', 'EE.3.1'), write=F('C.1.3')),
  29: dict(read=F('R.1.3'),          think=F('R.1.3', 'R.3.1'),           write=F('C.1.2', 'C.1.5', 'EE.6.1')),
  30: dict(read=F('R.1.2'),          think=F('R.1.2', 'R.3.2'),           write=F('C.1.2', 'C.1.5')),
+ 31: dict(read=F('R.3.3', 'R.2.4'), think=F('R.3.3', 'R.2.4', 'EE.1.1'), write=F('C.1.3', 'C.1.5')),
 }
-CHECKIN_Q = {(19, 5): F('V.1.3'), (20, 5): F('V.1.3'), (21, 5): F('V.1.3'), (22, 5): F('V.1.3'), (23, 5): F('V.1.3'), (24, 5): F('V.1.3'), (25, 5): F('V.1.3'), (26, 5): F('V.1.3'), (27, 5): F('V.1.3'), (27, 13): F('R.1.4'), (28, 6): F('V.1.3'), (28, 13): F('R.1.4'), (29, 6): F('V.1.3'), (29, 13): F('R.1.4'), (30, 6): F('V.1.3'), (30, 13): F('R.1.4')}   # Q5 is a context-clue item each week
+CHECKIN_Q = {(19, 5): F('V.1.3'), (20, 5): F('V.1.3'), (21, 5): F('V.1.3'), (22, 5): F('V.1.3'), (23, 5): F('V.1.3'), (24, 5): F('V.1.3'), (25, 5): F('V.1.3'), (26, 5): F('V.1.3'), (27, 5): F('V.1.3'), (27, 13): F('R.1.4'), (28, 6): F('V.1.3'), (28, 13): F('R.1.4'), (29, 6): F('V.1.3'), (29, 13): F('R.1.4'), (30, 6): F('V.1.3'), (30, 13): F('R.1.4'), (31, 12): F('R.1.4')}   # Q5 is a context-clue item each week
 
 def rule(t, tab, W, bar):
     t = t.lower()
@@ -66,7 +67,7 @@ def rule(t, tab, W, bar):
     if 'portfolio' in t or 'getting ready to celebrate' in t: return F('C.2.1', 'EE.6.1')
     if 'back to your own writing' in t: return F('C.3.1')
     if re.search(r'chapters? [\d\s\u2013-]+:? ?review|week at a glance', t): return W.get('review', W['read'])
-    if re.search(r'writer.s workshop|writing con|part b|part c|final literary|final sentence|build your comparison', t):
+    if re.search(r'writer.s workshop|writing con|part b|part c|final literary|final sentence|build your comparison|writing workshop|comparison project', t):
         return W['write']
     if re.search(r'chapter thinking|whole-book|source thinking|cross-novel|theme comparison|part a', t): return W['think']
     if tab == 'fluency': return F('F.1.4')
