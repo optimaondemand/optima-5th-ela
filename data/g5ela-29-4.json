@@ -1,0 +1,271 @@
+{
+ "readnow": {
+  "text": "No new chapter today. Keep Chapters 13 to 15 open in your book as you study Fleischman's voice.",
+  "step": "Study the voice"
+ },
+ "listen": {
+  "warmup": {
+   "text": "Today a very different poem: Carl Sandburg's Fog, only six lines long. Read it slowly. Then compare it with Windy Nights. Same five parts, used to do the opposite thing."
+  },
+  "words": {
+   "text": "Explain the three endings in your own words, and add each ending to a base. Pick an option on the vocabulary choice board. The last eight notches bring the bucket out of the hole."
+  },
+  "reading": {
+   "text": "Read the five voice techniques. Find one example of each kind in Chapters 13 to 15. Then answer the voice questions, and pick the technique your own adventure needs most."
+  },
+  "assignment": {
+   "text": "Read your paragraph out loud one last time. Put the final version in the box, with one sentence about your biggest change. Then copy your work into Canvas."
+  }
+ },
+ "how": [
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted words in the first sentence.",
+    "Write the second sentence correctly in your reading journal.",
+    "Tap See the Answer to check."
+   ],
+   "why": "Starting sentences in different ways is one of the easiest ways to make writing lively."
+  },
+  {
+   "match": "Read & Write",
+   "do": [
+    "Read the question.",
+    "Write 2 or 3 sentences in your reading journal.",
+    "Then go on to Word Study."
+   ],
+   "why": "Thinking before you read gives you something to watch for."
+  },
+  {
+   "match": "Poetry Corner",
+   "do": [
+    "Read the poem out loud twice.",
+    "Read the tip.",
+    "Answer the question in your reading journal."
+   ],
+   "why": "Naming each part of a poem shows how they work together, the same way voice works in a novel."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Explain the three endings in your reading journal.",
+    "Add the ending to each base word.",
+    "Tap Check My Work."
+   ],
+   "why": "Explaining an ending shows you really know it."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Read the four options.",
+    "Pick one and say which at the top of the box.",
+    "Use all five words."
+   ],
+   "why": "This is your Show What You Know for vocabulary this week."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Read the before and after.",
+    "Tap the right answer in each question.",
+    "Answer the question in your reading journal."
+   ],
+   "why": "Explaining a choice shows you can make it on purpose."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Answer the question in your reading journal.",
+    "Tap the right spelling in each pair."
+   ],
+   "why": "Knowing the family keeps every spelling right."
+  },
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read the three lenses.",
+    "Tap the one you will use today.",
+    "Keep it in mind as you read. You will use it at the end."
+   ],
+   "why": "Naming the voice pulls the whole week together.",
+   "use": "You will use it in voice question 1."
+  },
+  {
+   "match": "Analyzing Fleischman",
+   "do": [
+    "Read the five voice techniques.",
+    "Answer the two pause questions.",
+    "Answer the three voice questions."
+   ],
+   "why": "Naming a writer's moves lets you borrow them."
+  },
+  {
+   "match": "Writer",
+   "do": [
+    "Read your paragraph out loud once more.",
+    "Put the final version in the box.",
+    "Copy your work and paste it into Canvas."
+   ],
+   "why": "Voice, dialogue and description are what make an adventure sound like nobody else's."
+  }
+ ],
+ "glossary": [
+  {
+   "word": "synthesize",
+   "in": "What Good Readers Do",
+   "meaning": "put ideas together into one big idea"
+  },
+  {
+   "word": "technique",
+   "in": "Analyzing Fleischman",
+   "meaning": "a way of doing something, a move a writer uses on purpose"
+  }
+ ],
+ "hints": {
+  "dangerous": [
+   "danger + the ending that means full of.",
+   "Keep danger whole.",
+   "d, a, n, g, e, r, o, u, s"
+  ],
+  "creative": [
+   "create + the ending that means tending to.",
+   "The e of create drops.",
+   "c, r, e, a, t, i, v, e"
+  ],
+  "curiosity": [
+   "curious + the ending for a quality.",
+   "The u in curious drops.",
+   "c, u, r, i, o, s, i, t, y"
+  ],
+  "poisonous": [
+   "poison + the ending that means full of.",
+   "Keep poison whole.",
+   "p, o, i, s, o, n, o, u, s"
+  ]
+ },
+ "game": {
+  "type": "climb",
+  "title": "Climb Out of the Coyote Hole",
+  "sub": "This week's word game · 8 notches today",
+  "after": "Spelling",
+  "look": "A coyote hole is a deep shaft miners dug straight down to bedrock, where heavy gold settles. Each right answer hauls the bucket of pay dirt up one notch of the rope. A wrong answer lets loose dirt slide it back down one notch.",
+  "how": {
+   "do": [
+    "Read the clue.",
+    "Tap the word that fits.",
+    "Tap Haul it up for the next clue."
+   ],
+   "why": "A suffix is spelled the same way every time, and a word family keeps its base. Knowing both keeps your spelling right."
+  },
+  "doneLine": "Four days, thirty-two notches. The pay dirt is out of the hole.",
+  "rounds": [
+   {
+    "clue": "Full of joy",
+    "opts": [
+     "joyus",
+     "joyous",
+     "joyeous"
+    ],
+    "ok": 1,
+    "why": "joy + ous: the y stays, because a vowel comes before it.",
+    "miss": "Keep joy whole, then add -ous."
+   },
+   {
+    "clue": "Tending to imagine",
+    "opts": [
+     "imaginative",
+     "imaginitive",
+     "imagintive"
+    ],
+    "ok": 0,
+    "why": "imagine drops its e, then + ative.",
+    "miss": "Drop the e, then add -ative with an a."
+   },
+   {
+    "clue": "The state of being similar",
+    "opts": [
+     "similarety",
+     "simularity",
+     "similarity"
+    ],
+    "ok": 2,
+    "why": "similar + ity.",
+    "miss": "Spell similar first: s, i, m, i, l, a, r."
+   },
+   {
+    "clue": "Full of adventure",
+    "opts": [
+     "adventureous",
+     "adventurous",
+     "adventerous"
+    ],
+    "ok": 1,
+    "why": "adventure drops its e before -ous.",
+    "miss": "One letter of adventure drops before the ending."
+   },
+   {
+    "clue": "Which word is in the prospect family?",
+    "opts": [
+     "prosperity",
+     "prospectus",
+     "propeller"
+    ],
+    "ok": 1,
+    "why": "prospect + us: a paper that describes a plan.",
+    "miss": "prosperity looks close, but it comes from prosper."
+   },
+   {
+    "clue": "Which word is in the same family as luck?",
+    "opts": [
+     "lucky",
+     "lick",
+     "lock"
+    ],
+    "ok": 0,
+    "why": "luck + y.",
+    "miss": "Look for the whole word luck inside."
+   },
+   {
+    "clue": "Tending to persuade",
+    "opts": [
+     "persuadive",
+     "persuasiv",
+     "persuasive"
+    ],
+    "ok": 2,
+    "why": "persuade: the d becomes s before -ive.",
+    "miss": "The d in persuade changes before the ending."
+   },
+   {
+    "clue": "The state of being humid (damp air)",
+    "opts": [
+     "humidity",
+     "humidaty",
+     "humiddity"
+    ],
+    "ok": 0,
+    "why": "humid + ity.",
+    "miss": "Add -ity straight onto humid."
+   }
+  ]
+ },
+ "virtue": {
+  "name": "integrity",
+  "kind": "best",
+  "title": "The moment of most integrity this week",
+  "intro": "Look back at Chapters 13 to 15. Tap the moment you think shows integrity the most.",
+  "options": [
+   {
+    "t": "Jack pays for the neckties with half his nugget rather than go back on his word (Chapter 13)."
+   },
+   {
+    "t": "Praiseworthy promises he will be back to fight the Mountain Ox: “I gave my word, didn't I?” (Chapter 14)."
+   },
+   {
+    "t": "The road agent gives back the coat he stole (Chapter 15)."
+   }
+  ],
+  "line": "Finish the sentence: This shows integrity the most because…",
+  "placeholder": "This shows integrity the most because…"
+ }
+}

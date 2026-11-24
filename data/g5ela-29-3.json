@@ -1,0 +1,275 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "Answer the question on the card first. Then think about the voice of this book. In Chapter 15 something scary happens. As you read, notice whether the narrator ever sounds scared."
+  },
+  "words": {
+   "text": "Today you use the word families yourself: spell each member and mark where it changes. Match each word to its meaning, then rewrite sentence openings. Eight more notches up the coyote hole."
+  },
+  "reading": {
+   "text": "Read Chapter 15, The Man Who Couldn't Sit Down. Day after day, the partners hunt for gold. Then Jack goes hunting alone. Reread the most dangerous moment, and listen to how calm the telling stays."
+  },
+  "assignment": {
+   "text": "Three questions, the last one about all three chapters. Then check your paragraph against the five checklist points, and fix anything that is missing."
+  }
+ },
+ "how": [
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted words in the first sentence.",
+    "Write the second sentence correctly in your reading journal.",
+    "Tap See the Answer to check."
+   ],
+   "why": "Starting sentences in different ways is one of the easiest ways to make writing lively."
+  },
+  {
+   "match": "Read & Write",
+   "do": [
+    "Read the question.",
+    "Write 2 or 3 sentences in your reading journal.",
+    "Then go on to Word Study."
+   ],
+   "why": "Thinking before you read gives you something to watch for."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Read the four families.",
+    "Choose three families and write every member.",
+    "Underline the spelling changes and write two sentences per family."
+   ],
+   "why": "This is your Show What You Know for spelling this week."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Answer the question in your reading journal.",
+    "Tap a word, then tap its meaning.",
+    "Match all four."
+   ],
+   "why": "Each meaning carries its ending's job."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Tap a word.",
+    "Tap its meaning.",
+    "Match all five."
+   ],
+   "why": "Matching shows you know each word on its own."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Answer the question in your reading journal.",
+    "Type the word that starts each sentence a new way.",
+    "Tap Check My Work."
+   ],
+   "why": "Changing how a sentence starts changes how it sounds."
+  },
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read the three lenses.",
+    "Tap the one you will use today.",
+    "Keep it in mind as you read. You will use it at the end."
+   ],
+   "why": "A calm voice in a scary moment is a choice. Rereading shows you how it works.",
+   "use": "You will use it in reading question 1."
+  },
+  {
+   "match": "Read: Chapter 15",
+   "do": [
+    "Read the reading focus below.",
+    "Open your book and read Chapter 15.",
+    "Then do the Read Like a Writer box and the Virtue Watch at the end of this tab."
+   ],
+   "why": "The pause boxes are places to stop and think while you read."
+  },
+  {
+   "match": "Writer",
+   "do": [
+    "Read the five checklist points.",
+    "Check your paragraph one point at a time.",
+    "Write the revised paragraph."
+   ],
+   "why": "Voice, dialogue and description are what make an adventure sound like nobody else's."
+  }
+ ],
+ "glossary": [
+  {
+   "word": "word family",
+   "in": "Spelling",
+   "meaning": "a group of words that grow from the same base"
+  },
+  {
+   "word": "narrator",
+   "in": "What Good Readers Do",
+   "meaning": "the voice that tells the story"
+  }
+ ],
+ "hints": {
+  "Because": [
+   "This opener gives a reason.",
+   "It starts with B.",
+   "B, e, c, a, u, s, e"
+  ],
+  "After": [
+   "This opener tells when.",
+   "It starts with A.",
+   "A, f, t, e, r"
+  ],
+  "When": [
+   "This opener tells when something happened.",
+   "It starts with W.",
+   "W, h, e, n"
+  ],
+  "In": [
+   "This opener tells where.",
+   "Two letters.",
+   "I, n"
+  ]
+ },
+ "game": {
+  "type": "climb",
+  "title": "Climb Out of the Coyote Hole",
+  "sub": "This week's word game · 8 notches today",
+  "after": "Spelling",
+  "look": "A coyote hole is a deep shaft miners dug straight down to bedrock, where heavy gold settles. Each right answer hauls the bucket of pay dirt up one notch of the rope. A wrong answer lets loose dirt slide it back down one notch.",
+  "how": {
+   "do": [
+    "Read the clue.",
+    "Tap the word that fits.",
+    "Tap Haul it up for the next clue."
+   ],
+   "why": "A suffix is spelled the same way every time, and a word family keeps its base. Knowing both keeps your spelling right."
+  },
+  "doneLine": "Come back tomorrow for eight more notches.",
+  "rounds": [
+   {
+    "clue": "Full of glory",
+    "opts": [
+     "gloryous",
+     "glorious",
+     "glorous"
+    ],
+    "ok": 1,
+    "why": "glory changes y to i before -ous.",
+    "miss": "The y in glory changes before the ending."
+   },
+   {
+    "clue": "Tending to explode (a gunshot)",
+    "opts": [
+     "explosive",
+     "explodive",
+     "explosiv"
+    ],
+    "ok": 0,
+    "why": "explode: the d becomes s before -ive, like decide and decisive.",
+    "miss": "The d in explode changes before the ending."
+   },
+   {
+    "clue": "The state of being real",
+    "opts": [
+     "realety",
+     "realitty",
+     "reality"
+    ],
+    "ok": 2,
+    "why": "real + ity.",
+    "miss": "Add -ity straight onto real."
+   },
+   {
+    "clue": "Full of humor",
+    "opts": [
+     "humorus",
+     "humorous",
+     "humerous"
+    ],
+    "ok": 1,
+    "why": "humor + ous.",
+    "miss": "Spell humor first, then add all of -ous."
+   },
+   {
+    "clue": "Which word is in the same family as courage?",
+    "opts": [
+     "encourage",
+     "cottage",
+     "carriage"
+    ],
+    "ok": 0,
+    "why": "en + courage: to give someone courage.",
+    "miss": "Look for the whole word courage inside."
+   },
+   {
+    "clue": "Which word is in the same family as hunt?",
+    "opts": [
+     "hundred",
+     "hurt",
+     "hunter"
+    ],
+    "ok": 2,
+    "why": "hunt + er: someone who hunts.",
+    "miss": "Look for the whole word hunt inside."
+   },
+   {
+    "clue": "The state of being rapid (very fast)",
+    "opts": [
+     "rapidity",
+     "rapiddity",
+     "rapidety"
+    ],
+    "ok": 0,
+    "why": "rapid + ity.",
+    "miss": "Add -ity straight onto rapid."
+   },
+   {
+    "clue": "Tending to inform (full of facts)",
+    "opts": [
+     "informitive",
+     "informative",
+     "informive"
+    ],
+    "ok": 1,
+    "why": "inform + ative.",
+    "miss": "The ending here is -ative, with an a."
+   }
+  ]
+ },
+ "cards": [
+  {
+   "tab": "reading",
+   "after": "Read: Chapter 15",
+   "title": "A note before you read: words from 1963",
+   "min": 2,
+   "intro": "Chapter 15 has a few lines about Native Californians and Chinese miners. Here is what to know.",
+   "items": [
+    {
+     "term": "What the book says",
+     "meaning": "The partners see Native women panning for gold, and a prospector calls them Digger Indians. He says they trade their gold for cloth and calls them poor devils, like a bunch of young'uns. Digger was an insult, and calling grown people children is unkind and untrue."
+    },
+    {
+     "term": "The true history",
+     "meaning": "Many Native Californians mined gold in 1848 and 1849. Miwok and Nisenan women washed gold in tightly woven baskets, just as the chapter shows. Then miners took their land and rivers, and disease and violence followed. California's Native population fell from about 150,000 in 1848 to about 30,000 by 1870."
+    },
+    {
+     "term": "Chinese miners",
+     "meaning": "The chapter says Chinese miners moved into camps others had left. That was common. Chinese miners often worked old claims with great care and found gold others had missed. In 1852 California passed a tax of $3 a month on foreign miners that was aimed at them."
+    }
+   ],
+   "note": "Sources: Oakland Museum of California; PBS American Experience; Calisphere, University of California."
+  }
+ ],
+ "virtue": {
+  "name": "integrity",
+  "kind": "meter",
+  "title": "The integrity meter",
+  "intro": "Think about one moment from Chapter 15.",
+  "moment": "The road agent stole Cut-Eye Higgins's linen coat in the holdup. When Jack says it belongs to someone he knows, the man says it gives him a bad conscience to wear it, and he gives it back.",
+  "ask": "How much integrity does the road agent show here? Slide to show.",
+  "line": "Tell why in one sentence.",
+  "placeholder": "He shows this much integrity because…",
+  "take": "Mason's take: more than you might expect from a robber. He doesn't have to give the coat back, and Jack's gun isn't even loaded. But he stole it in the first place. Fleischman lets a bad man do one right thing, and leaves you to weigh it."
+ }
+}
