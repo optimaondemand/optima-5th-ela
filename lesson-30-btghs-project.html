@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Optima Academy Online &mdash; By the Great Horn Spoon!: From Boston to the Long Wharf (End-of-Novel Project)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#F0F2F8;color:#24324F;font:17px/1.6 'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif}
+.wrap{max-width:920px;margin:0 auto;background:#fff;min-height:100vh}
+.oao-header{background:#0E1C42;color:#fff;padding:18px 22px;display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.oao-logo img{width:46px;height:46px;border-radius:50%;background:#fff;display:block}
+.oao-org{font-weight:800;font-size:15px}.oao-sub{font-size:11px;opacity:.75}
+.oao-title{font:700 24px/1.25 'Lora',Georgia,serif;margin:0;flex:1 1 320px}
+.oao-title em{color:#FFE9A8}
+.oao-badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:700}
+.bar{background:#5BC8E8;height:5px}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;padding:16px 22px;background:#F4F7FD;border-bottom:1px solid #E2E8F4}
+.info div{background:#fff;border:1px solid #E2E8F4;border-radius:10px;padding:10px 12px;font-size:14px}
+.info b{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#7A88A8}
+main{padding:22px}
+h2{font:700 22px/1.3 'Lora',Georgia,serif;color:#0E1C42;margin:0 0 8px}
+.card{background:#FFFDF6;border:1px solid #E9DFC4;border-top:3px solid #C8A850;border-radius:12px;padding:18px 20px;margin:0 0 18px}
+.todo{background:#fff;border:1px solid #E9DFC4;border-radius:10px;padding:10px 14px 10px 18px;margin:10px 0;color:#111}
+.todo b{display:block;margin-bottom:2px}.todo ol{margin:4px 0 4px 20px;padding:0}
+label{display:block;font-weight:700;margin:14px 0 4px;color:#0E1C42}
+.help{font-size:14px;color:#5A6B8C;margin:0 0 6px}
+input[type=text],select,textarea{width:100%;font:inherit;padding:10px 12px;border:2px solid #D9E0F0;border-radius:10px;background:#fff;color:#24324F}
+textarea{min-height:92px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:#C8A850}
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.moment{background:#fff;border:1px solid #E2E8F4;border-radius:10px;padding:12px}
+.moment h3{margin:0;font-size:15px;color:#8B3A20}
+.count{font-size:13px;color:#7A88A8;text-align:right;margin-top:2px}
+.count.ok{color:#24502A;font-weight:700}
+.btn{font:800 17px/1 inherit;background:#8B6FC0;color:#fff;border:0;border-radius:999px;padding:14px 26px;cursor:pointer;box-shadow:0 3px 0 #6B52A0}
+.btn:hover{background:#7C60B4}.btn.ghost{background:#fff;color:#0E1C42;border:2px solid #D9E0F0;box-shadow:none}
+.status{font-size:14px;color:#5A6B8C;margin-top:8px}
+.check{list-style:none;padding:0;margin:8px 0}.check li{margin:4px 0}.check .done{color:#24502A;font-weight:700}
+table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid #E2E8F4;padding:7px 9px;text-align:left;vertical-align:top}th{background:#F4F7FD;color:#0E1C42}
+details summary{cursor:pointer;font-weight:800;color:#0E1C42}
+.foot{padding:18px 22px;font-size:12px;color:#7A88A8;border-top:1px solid #E2E8F4;text-align:center}
+#booklet{display:none}
+.panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.panel-n{display:inline-block;background:#0E1C42;color:#fff;border-radius:50%;width:26px;height:26px;text-align:center;line-height:26px;font-size:14px;margin-right:6px}
+.eg{font-size:14px;color:#5A6B8C;background:#F4F7FD;border-radius:8px;padding:8px 10px;margin:6px 0}
+@media print{
+  body{background:#fff}.wrap{max-width:none}
+  .screen{display:none!important}
+  #booklet{display:block;font:15px/1.55 Georgia,serif;color:#000}
+  .pg{page-break-after:always;padding:8mm 4mm}
+  .pg:last-child{page-break-after:auto}
+  .pg h1{font-size:26px;margin:0 0 4px}.pg h2{font-size:19px;border-bottom:2px solid #0E1C42;padding-bottom:4px;margin:0 0 12px;color:#0E1C42}
+  .pg .k{font:700 12px/1.3 Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:#555;margin:14px 0 2px}
+  .pg .v{white-space:pre-wrap;border-left:3px solid #C8A850;padding-left:10px;min-height:20px}
+  .pg .by{font-size:15px;color:#333}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="screen">
+  <header class="oao-header">
+    <div class="oao-logo"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy"></div>
+    <div><div class="oao-org">Optima Academy Online</div><div class="oao-sub">An Education Experience Company</div></div>
+    <h1 class="oao-title"><em>By the Great Horn Spoon!</em> &mdash; End-of-Novel Project</h1>
+    <div class="oao-badge">Unit Project</div>
+  </header>
+  <div class="bar"></div>
+  <div class="info">
+    <div><b>Project</b>From Boston to the Long Wharf</div>
+    <div><b>When</b>After Lesson 30.4</div>
+    <div><b>Reading</b>The whole novel, Ch. 1&ndash;18</div>
+    <div><b>Turn in</b>One PDF, in Canvas</div>
+  </div>
+  <main>
+    <section class="card activity" id="about">
+      <h2>From Boston to the Long Wharf</h2>
+      <p>You finished <em>By the Great Horn Spoon!</em> Jack and Praiseworthy sailed 15,000 miles, dug for gold, and ended up somewhere they never planned. Now make a four-page booklet that shows how Sid Fleischman built this adventure: its shape, its speed, its jokes, and its big idea. The last page holds a piece of your own adventure.</p>
+      <div class="todo"><b>What to do</b><ol><li>Fill in the four pages, one at a time. Keep your book open.</li><li>Give a chapter number for every moment you name.</li><li>Tap <strong>Make my booklet</strong>, save it as a PDF, and upload the PDF in Canvas.</li></ol></div>
+      <p class="help">Your work saves on this computer as you type. This project is about the novel. Keep real history out of it unless you say where the fact comes from.</p>
+      <label for="f-name">Your name</label>
+      <input type="text" id="f-name" autocomplete="name" placeholder="First and last name">
+    </section>
+
+    <section class="card activity" id="p1">
+      <h2>Page 1 &middot; The adventure arc</h2>
+      <p>Every adventure has a shape: a problem that starts it, dangers that build, a high point, and an ending that settles things. Map this one.</p>
+      <label for="f-arc-start">The problem that starts it: why do Jack and Praiseworthy leave Boston?</label>
+      <textarea id="f-arc-start" placeholder="They leave because..."></textarea>
+      <div class="three" style="margin-top:6px">
+        <div class="moment"><h3>Rising action 1</h3><label for="f-arc-r1-ch">Chapter</label><input type="text" id="f-arc-r1-ch" placeholder="Ch. __"><label for="f-arc-r1">A danger or problem that raises the stakes</label><textarea id="f-arc-r1" placeholder="In this chapter..."></textarea></div>
+        <div class="moment"><h3>Rising action 2</h3><label for="f-arc-r2-ch">Chapter</label><input type="text" id="f-arc-r2-ch" placeholder="Ch. __"><label for="f-arc-r2">Another one, later in the book</label><textarea id="f-arc-r2" placeholder="Later..."></textarea></div>
+        <div class="moment"><h3>Climax</h3><label for="f-arc-cl-ch">Chapter</label><input type="text" id="f-arc-cl-ch" placeholder="Ch. __"><label for="f-arc-cl">The high point, and why you picked it</label><textarea id="f-arc-cl" placeholder="The high point is... because..."></textarea></div>
+      </div>
+      <label for="f-arc-end">The ending: what is settled, and what has changed?</label>
+      <textarea id="f-arc-end" placeholder="At the end... What changed is..."></textarea>
+    </section>
+
+    <section class="card activity" id="p2">
+      <h2>Page 2 &middot; Storyboard and pacing</h2>
+      <p>Pick six turning points, in order, from the start of the book to the end. For each one, say whether Fleischman tells it fast or slow, and how you can tell.</p>
+      <p class="eg">Clues to pacing: short sentences and quick action feel fast; long sentences, lots of detail and characters thinking feel slow. A jump like &ldquo;It was about a week before&hellip;&rdquo; skips time fast.</p>
+      <div class="panels"><div class="moment"><h3><span class="panel-n">1</span>The adventure begins</h3><label for="f-s1-ch">Chapter</label><input type="text" id="f-s1-ch" placeholder="Ch. __"><label for="f-s1-what">What happens (one sentence)</label><textarea id="f-s1-what" placeholder="..."></textarea><label for="f-s1-pace">Fast or slow?</label><select id="f-s1-pace"><option value="">Choose&hellip;</option><option>Fast: it rushes by</option><option>Slow: it takes its time</option></select><label for="f-s1-how">How does Fleischman make it fast or slow?</label><textarea id="f-s1-how" placeholder="Short sentences... / lots of detail... / a quick jump in time..."></textarea></div><div class="moment"><h3><span class="panel-n">2</span>A danger at sea</h3><label for="f-s2-ch">Chapter</label><input type="text" id="f-s2-ch" placeholder="Ch. __"><label for="f-s2-what">What happens (one sentence)</label><textarea id="f-s2-what" placeholder="..."></textarea><label for="f-s2-pace">Fast or slow?</label><select id="f-s2-pace"><option value="">Choose&hellip;</option><option>Fast: it rushes by</option><option>Slow: it takes its time</option></select><label for="f-s2-how">How does Fleischman make it fast or slow?</label><textarea id="f-s2-how" placeholder="Short sentences... / lots of detail... / a quick jump in time..."></textarea></div><div class="moment"><h3><span class="panel-n">3</span>A clever trick</h3><label for="f-s3-ch">Chapter</label><input type="text" id="f-s3-ch" placeholder="Ch. __"><label for="f-s3-what">What happens (one sentence)</label><textarea id="f-s3-what" placeholder="..."></textarea><label for="f-s3-pace">Fast or slow?</label><select id="f-s3-pace"><option value="">Choose&hellip;</option><option>Fast: it rushes by</option><option>Slow: it takes its time</option></select><label for="f-s3-how">How does Fleischman make it fast or slow?</label><textarea id="f-s3-how" placeholder="Short sentences... / lots of detail... / a quick jump in time..."></textarea></div><div class="moment"><h3><span class="panel-n">4</span>Arriving in the gold fields</h3><label for="f-s4-ch">Chapter</label><input type="text" id="f-s4-ch" placeholder="Ch. __"><label for="f-s4-what">What happens (one sentence)</label><textarea id="f-s4-what" placeholder="..."></textarea><label for="f-s4-pace">Fast or slow?</label><select id="f-s4-pace"><option value="">Choose&hellip;</option><option>Fast: it rushes by</option><option>Slow: it takes its time</option></select><label for="f-s4-how">How does Fleischman make it fast or slow?</label><textarea id="f-s4-how" placeholder="Short sentences... / lots of detail... / a quick jump in time..."></textarea></div><div class="moment"><h3><span class="panel-n">5</span>A turning point in the diggings</h3><label for="f-s5-ch">Chapter</label><input type="text" id="f-s5-ch" placeholder="Ch. __"><label for="f-s5-what">What happens (one sentence)</label><textarea id="f-s5-what" placeholder="..."></textarea><label for="f-s5-pace">Fast or slow?</label><select id="f-s5-pace"><option value="">Choose&hellip;</option><option>Fast: it rushes by</option><option>Slow: it takes its time</option></select><label for="f-s5-how">How does Fleischman make it fast or slow?</label><textarea id="f-s5-how" placeholder="Short sentences... / lots of detail... / a quick jump in time..."></textarea></div><div class="moment"><h3><span class="panel-n">6</span>The ending</h3><label for="f-s6-ch">Chapter</label><input type="text" id="f-s6-ch" placeholder="Ch. __"><label for="f-s6-what">What happens (one sentence)</label><textarea id="f-s6-what" placeholder="..."></textarea><label for="f-s6-pace">Fast or slow?</label><select id="f-s6-pace"><option value="">Choose&hellip;</option><option>Fast: it rushes by</option><option>Slow: it takes its time</option></select><label for="f-s6-how">How does Fleischman make it fast or slow?</label><textarea id="f-s6-how" placeholder="Short sentences... / lots of detail... / a quick jump in time..."></textarea></div></div>
+    </section>
+
+    <section class="card activity" id="p3">
+      <h2>Page 3 &middot; Humor and pictures in words</h2>
+      <p>This book makes you laugh, even in danger. Show one funny moment, then one place where Fleischman paints a picture with words.</p>
+      <label for="f-funny">The funniest moment, in a few words or an exact quote, with its chapter</label>
+      <textarea id="f-funny" placeholder="In Chapter ___, ..."></textarea>
+      <label for="f-funny-how">What makes it funny?</label>
+      <p class="help">Is it a misunderstanding, an exaggeration (like a tall tale that grows), a surprise, or the gap between how proper Praiseworthy is and how wild the gold fields are?</p>
+      <textarea id="f-funny-how" placeholder="It is funny because..."></textarea>
+      <label for="f-fig">A figure of speech from the book, copied exactly, with its chapter</label>
+      <p class="help">Look for a simile (it uses <em>like</em> or <em>as</em>), a metaphor, or a thing that acts like a person.</p>
+      <textarea id="f-fig" placeholder="&ldquo;...&rdquo; (Chapter ___)"></textarea>
+      <label for="f-fig-means">What two things are being compared, and what does it help you see?</label>
+      <textarea id="f-fig-means" placeholder="It compares ___ to ___. It helps me see..."></textarea>
+    </section>
+
+    <section class="card activity" id="p4">
+      <h2>Page 4 &middot; The big idea and my adventure</h2>
+      <label for="f-theme">The big idea (theme) I think the book is about</label>
+      <select id="f-theme">
+        <option value="">Choose one&hellip;</option>
+        <option>Partners stick together through thick and thin.</option>
+        <option>Clever thinking can beat size and strength.</option>
+        <option>Keeping your word matters, even when it costs you.</option>
+        <option>The real treasure is the people you love.</option>
+        <option value="own">My own theme (write it in the box)</option>
+      </select>
+      <input type="text" id="f-theme-own" placeholder="My own theme, in one sentence" style="margin-top:8px">
+      <label for="f-theme-why">Write 3 or more sentences. Show the theme with one moment from the beginning and one from the end, and say how the humor helps you see it.</label>
+      <textarea id="f-theme-why" style="min-height:140px" placeholder="In By the Great Horn Spoon!, Sid Fleischman shows that..."></textarea>
+      <div class="count" id="c-theme">0 sentences</div>
+      <label for="f-mine">My adventure: paste 5 to 10 sentences from the adventure story you published this unit</label>
+      <p class="help">The ending you wrote in week 30 works well here.</p>
+      <textarea id="f-mine" style="min-height:150px" placeholder="Paste your sentences here."></textarea>
+      <label for="f-mine-how">How does your excerpt use one thing you learned from Fleischman: a shape, a pace, a joke, or a big idea?</label>
+      <textarea id="f-mine-how" placeholder="Like Fleischman, I..."></textarea>
+    </section>
+
+    <section class="card activity" id="finish">
+      <h2>Finish: make your booklet</h2>
+      <ul class="check" id="checklist"></ul>
+      <div class="todo"><b>What to do</b><ol><li>Tap <strong>Make my booklet</strong>.</li><li>In the box that opens, choose <strong>Save as PDF</strong>, then Save.</li><li>Go to this project in Canvas and upload the PDF.</li></ol></div>
+      <button class="btn" type="button" id="make">Make my booklet</button>
+      <button class="btn ghost" type="button" id="clear">Start over</button>
+      <p class="status" id="status" aria-live="polite"></p>
+    </section>
+
+    <section class="card">
+      <details><summary>How your project is graded (20 points)</summary>
+      <table style="margin-top:10px">
+        <thead><tr><th>What</th><th>4 &middot; Strong</th><th>3 &middot; Secure</th><th>2 &middot; Developing</th><th>1 &middot; Beginning</th></tr></thead>
+        <tbody>
+          <tr><td>Adventure arc</td><td>Problem, two rising actions, climax and ending are accurate, with chapters, and the ending says what changed</td><td>All five parts are there and mostly accurate</td><td>Some parts are missing or out of order</td><td>Retells a few events with no shape</td></tr>
+          <tr><td>Storyboard and pacing</td><td>Six turning points in order, each with a clear fast-or-slow reason from the writing</td><td>Six turning points; most pacing reasons fit</td><td>Fewer than six, or pacing is named with no reason</td><td>A list of events only</td></tr>
+          <tr><td>Humor and figurative language</td><td>A funny moment with a clear reason, and an exact figure of speech with its chapter, explained</td><td>Both are there and explained</td><td>One is missing or not explained</td><td>Missing</td></tr>
+          <tr><td>Theme</td><td>A clear theme shown with a beginning and an ending moment, and how the humor helps</td><td>A theme with two moments</td><td>A theme with one weak moment</td><td>No clear theme</td></tr>
+          <tr><td>My adventure</td><td>A polished excerpt of 5 to 10 sentences and a clear link to something learned from Fleischman</td><td>An excerpt and a link</td><td>A short excerpt, or no link</td><td>Missing</td></tr>
+        </tbody>
+      </table></details>
+    </section>
+  </main>
+  <div class="foot">Optima Academy Online &middot; 5th Grade ELA &middot; <em>By the Great Horn Spoon!</em> &middot; End-of-Novel Project</div>
+ </div>
+ <div id="booklet" aria-hidden="true"></div>
+</div>
+<script>
+(function () {
+  var KEY = 'oao.g5ela.btghs.project';
+  var IDS = ['name','arc-start','arc-r1-ch','arc-r1','arc-r2-ch','arc-r2','arc-cl-ch','arc-cl','arc-end','funny','funny-how','fig','fig-means','theme','theme-own','theme-why','mine','mine-how'];
+  for (var p = 1; p <= 6; p++) ['ch','what','pace','how'].forEach(function (k) { IDS.push('s' + p + '-' + k); });
+  function el(id) { return document.getElementById('f-' + id); }
+  function load() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
+  function save() { var d = {}; IDS.forEach(function (i) { d[i] = el(i).value; }); try { localStorage.setItem(KEY, JSON.stringify(d)); document.getElementById('status').textContent = 'Saved on this computer.'; } catch (e) { document.getElementById('status').textContent = 'Could not save on this computer. Make your booklet before you leave.'; } paint(); }
+  function v(i) { return el(i).value.trim(); }
+  function theme() { return v('theme') === 'own' || !v('theme') ? v('theme-own') : v('theme'); }
+  function sentences(t) { return (t.match(/[^.!?]+[.!?]+/g) || []).length; }
+  function esc(t) { return String(t).replace(/[&<>]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]; }); }
+  function panelsDone() { var n = 0; for (var p = 1; p <= 6; p++) if (v('s' + p + '-what') && v('s' + p + '-pace') && v('s' + p + '-how')) n++; return n; }
+  function paint() {
+    var n = sentences(v('theme-why')), c = document.getElementById('c-theme');
+    c.textContent = n + (n === 1 ? ' sentence' : ' sentences'); c.className = 'count' + (n >= 3 ? ' ok' : '');
+    el('theme-own').style.display = v('theme') === 'own' ? '' : 'none';
+    var pd = panelsDone(), m = sentences(v('mine'));
+    var items = [[!!v('name'), 'My name is on it.'], [v('arc-start') && v('arc-r1') && v('arc-r2') && v('arc-cl') && v('arc-end'), 'Page 1: all five parts of the arc.'],
+      [pd === 6, 'Page 2: six storyboard panels with pacing (' + pd + ' of 6).'], [v('funny') && v('funny-how') && v('fig') && v('fig-means'), 'Page 3: a funny moment and a figure of speech, explained.'],
+      [theme() && n >= 3, 'Page 4: a theme with 3 or more sentences (' + n + ').'], [m >= 5 && v('mine-how'), 'Page 4: 5 or more sentences from my adventure (' + m + '), and the link.']];
+    document.getElementById('checklist').innerHTML = items.map(function (x) { return '<li class="' + (x[0] ? 'done' : '') + '">' + (x[0] ? '✅ ' : '⬜ ') + x[1] + '</li>'; }).join('');
+  }
+  function row(k, val) { return '<div class="k">' + k + '</div><div class="v">' + esc(val || '') + '</div>'; }
+  function build() {
+    var h = '<div class="pg"><h1>From Boston to the Long Wharf</h1><div class="by"><i>By the Great Horn Spoon!</i> by Sid Fleischman · End-of-novel project · ' + esc(v('name') || 'Name: ________') + '</div><h2 style="margin-top:16px">Page 1 · The adventure arc</h2>' +
+      row('The problem that starts it', v('arc-start')) + row('Rising action 1 · ' + (v('arc-r1-ch') || 'Ch. __'), v('arc-r1')) + row('Rising action 2 · ' + (v('arc-r2-ch') || 'Ch. __'), v('arc-r2')) +
+      row('Climax · ' + (v('arc-cl-ch') || 'Ch. __'), v('arc-cl')) + row('The ending, and what changed', v('arc-end')) + '</div>';
+    h += '<div class="pg"><h2>Page 2 · Storyboard and pacing</h2>';
+    for (var p = 1; p <= 6; p++) h += row('Panel ' + p + ' · ' + (v('s' + p + '-ch') || 'Ch. __') + (v('s' + p + '-pace') ? ' · ' + v('s' + p + '-pace') : ''), v('s' + p + '-what') + (v('s' + p + '-how') ? '\nHow: ' + v('s' + p + '-how') : ''));
+    h += '</div><div class="pg"><h2>Page 3 · Humor and pictures in words</h2>' + row('The funniest moment', v('funny')) + row('What makes it funny', v('funny-how')) + row('A figure of speech from the book', v('fig')) + row('What it compares, and what it helps me see', v('fig-means')) + '</div>';
+    h += '<div class="pg"><h2>Page 4 · The big idea and my adventure</h2>' + row('The theme', theme()) + row('How the book shows it', v('theme-why')) + row('From my adventure', v('mine')) + row('What I learned from Fleischman', v('mine-how')) + '</div>';
+    document.getElementById('booklet').innerHTML = h;
+  }
+  var d = load(); IDS.forEach(function (i) { if (d[i] != null) el(i).value = d[i]; el(i).addEventListener('input', save); el(i).addEventListener('change', save); });
+  document.getElementById('make').addEventListener('click', function () { build(); window.print(); });
+  document.getElementById('clear').addEventListener('click', function () { if (!document.getElementById('clear').dataset.sure) { document.getElementById('clear').dataset.sure = 1; document.getElementById('clear').textContent = 'Tap again to erase everything'; return; } IDS.forEach(function (i) { el(i).value = ''; }); try { localStorage.removeItem(KEY); } catch (e) {} delete document.getElementById('clear').dataset.sure; document.getElementById('clear').textContent = 'Start over'; paint(); document.getElementById('status').textContent = 'Cleared.'; });
+  window.addEventListener('beforeprint', build);
+  paint();
+})();
+</script>
+</body>
+</html>
