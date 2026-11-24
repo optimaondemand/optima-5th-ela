@@ -1755,6 +1755,114 @@
     else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
   }
 
+  /* Jack's Letter Home (week 30): a proofreading mechanic. Each day a short made-up letter from Jack, one line at a
+     time; every line has one misspelled word. Tap the word that is wrong (a right word says so and counts a miss),
+     then tap the right spelling of three to ink it clean. A clean letter gets a wax seal.
+     DATA game.type 'letter', game.greet, game.sign, game.lines[{text (slip in [brackets]), opts[3], ok, why, miss}] */
+  function buildLetter() {
+    var G = D.game; if (!G || G.type !== 'letter' || !G.lines || !G.lines.length) return;
+    var wkKey = 'letter.wk' + L.week;
+    var st = store(wkKey) || {};
+    var mine = st[L.day] || { done: [], miss: 0 };
+    if (typeof mine.miss !== 'number') mine.miss = 0;
+    var N = G.lines, idx = 0;
+    while (idx < N.length && mine.done.indexOf(idx) >= 0) idx++;
+    var wrap = h('div', { 'class': 'activity g5-game' });
+    wrap.innerHTML =
+      '<div class="activity-head"><div class="activity-num g5-game-num" aria-hidden="true">✉️</div><div>' +
+      '<div class="activity-title">' + esc(G.title || "Jack's Letter Home") + '</div>' +
+      '<div class="activity-sub">' + esc(G.sub || 'Word game for this week') + '</div></div></div>';
+    var body = h('div', { 'class': 'activity-body' });
+    wrap.appendChild(body);
+    var look = h('details', { 'class': 'g5-look' }, [h('summary', { text: '👀 What am I looking at?' }), h('p', { text: G.look })]);
+    if (!mine.done.length) look.open = true;
+    body.appendChild(look);
+    if (G.how) body.appendChild(howLine(G.how));
+    var paper = h('div', { 'class': 'g5-letter', 'aria-live': 'polite' });
+    var stepBox = h('div', { 'class': 'g5-stone-step' });
+    var row = h('div', { 'class': 'g5-race-opts' });
+    var ctrl = h('div', { 'class': 'g5-stone-ctrl' });
+    var fb = h('p', { 'class': 'g5-stone-fb', 'aria-live': 'polite' });
+    var tally = h('p', { 'class': 'g5-stone-tally' });
+    [stepBox, paper, row, ctrl, fb, tally].forEach(function (n) { body.appendChild(n); });
+    function parts(t) { var m = /^(.*)\[([^\]]+)\](.*)$/.exec(t); return m ? { a: m[1], slip: m[2], b: m[3] } : { a: t, slip: '', b: '' }; }
+    function fixed(i) { var p = parts(N[i].text); return esc(p.a) + '<span class="g5-letter-ink">' + esc(N[i].opts[N[i].ok]) + '</span>' + esc(p.b); }
+    function save() { st[L.day] = mine; store(wkKey, st); }
+    function shake(b) { b.classList.add('g5-shake'); setTimeout(function () { b.classList.remove('g5-shake'); }, 450); }
+    function tally_() {
+      var allDone = 0; Object.keys(st).forEach(function (k) { allDone += (st[k].done || []).length; });
+      tally.textContent = 'Today: ' + mine.done.length + ' of ' + N.length + ' lines clean. This week: ' + allDone + '.';
+    }
+    function drawPaper(cur) {
+      var html = '<p class="g5-letter-greet">' + esc(G.greet || 'Dear Aunt Arabella,') + '</p>';
+      N.forEach(function (S, i) {
+        if (mine.done.indexOf(i) >= 0) html += '<p class="g5-letter-line g5-letter-clean">' + fixed(i) + '</p>';
+        else if (i === cur) html += '<p class="g5-letter-line g5-letter-cur" data-cur="1"></p>';
+        else html += '<p class="g5-letter-line g5-letter-blot">' + esc(parts(S.text).a + parts(S.text).slip + parts(S.text).b) + '</p>';
+      });
+      var sealed = mine.done.length >= N.length;
+      html += '<p class="g5-letter-sign">' + esc(G.sign || 'Jack') + '</p>';
+      if (sealed) html += '<div class="g5-letter-seal" aria-label="wax seal">J</div>';
+      paper.innerHTML = html;
+      paper.classList.toggle('g5-letter-sealed', sealed);
+      return paper.querySelector('[data-cur]');
+    }
+    function show() {
+      fb.textContent = ''; ctrl.innerHTML = ''; row.innerHTML = '';
+      tally_();
+      if (idx >= N.length) {
+        drawPaper(-1);
+        stepBox.innerHTML = '<b>Sealed!</b> ' + esc(G.doneLine || 'Every line is clean.');
+        var again = h('button', { type: 'button', 'class': 'g5-btn g5-btn-ghost' }, ['↺ Proofread again']);
+        again.addEventListener('click', function () { mine = { done: [], miss: 0 }; idx = 0; save(); show(); });
+        ctrl.appendChild(again); return;
+      }
+      var S = N[idx], p = parts(S.text);
+      var line = drawPaper(idx);
+      stepBox.innerHTML = '<span class="g5-stepn">Line ' + (idx + 1) + ' of ' + N.length + '</span> One word is spelled wrong. Tap it.';
+      function addWords(txt, isSlip) {
+        txt.split(/(\s+)/).forEach(function (tok) {
+          if (!tok) return;
+          if (/^\s+$/.test(tok)) { line.appendChild(document.createTextNode(tok)); return; }
+          var m = /^([^A-Za-z']*)([A-Za-z'’-]+)([^A-Za-z']*)$/.exec(tok);
+          if (!m) { line.appendChild(document.createTextNode(tok)); return; }
+          if (m[1]) line.appendChild(document.createTextNode(m[1]));
+          var b = h('button', { type: 'button', 'class': 'g5-letter-word' }, [m[2]]);
+          b.addEventListener('click', function () { pick(b, isSlip); });
+          line.appendChild(b);
+          if (m[3]) line.appendChild(document.createTextNode(m[3]));
+        });
+      }
+      addWords(p.a, false); addWords(p.slip, true); addWords(p.b, false);
+      function pick(b, isSlip) {
+        if (row.childNodes.length) return;
+        if (!isSlip) { mine.miss++; save(); fb.textContent = '✔️ ' + b.textContent + ' is spelled right. ' + (S.miss || 'Look for a word that does not look quite right.'); shake(b); return; }
+        b.classList.add('g5-letter-found');
+        fb.textContent = 'Found it. Now tap the right spelling.';
+        S.opts.forEach(function (w, k) {
+          var o = h('button', { type: 'button', 'class': 'g5-beat g5-race-btn' }, [w]);
+          o.addEventListener('click', function () {
+            if (k !== S.ok) { mine.miss++; save(); fb.textContent = '🖋️ Not that one. ' + (S.miss || 'Look again at the base word.'); shake(o); return; }
+            row.querySelectorAll('button').forEach(function (x) { x.disabled = true; });
+            o.classList.add('g5-race-right');
+            if (mine.done.indexOf(idx) < 0) mine.done.push(idx);
+            save(); tally_();
+            fb.innerHTML = '🖋️ <b>' + esc(w) + '</b>: ' + esc(S.why || '');
+            var next = h('button', { type: 'button', 'class': 'g5-btn' }, [idx + 1 < N.length ? 'Next line →' : 'Seal the letter →']);
+            next.addEventListener('click', function () { idx++; while (idx < N.length && mine.done.indexOf(idx) >= 0) idx++; show(); setTimeout(function () { var f = paper.querySelector('.g5-letter-word') || ctrl.querySelector('button'); if (f) f.focus(); }, 30); });
+            ctrl.appendChild(next);
+          });
+          row.appendChild(o);
+        });
+        setTimeout(function () { var f = row.querySelector('button'); if (f) f.focus(); }, 30);
+      }
+    }
+    show();
+    var ref = G.after ? activityByTitle(G.after, panel('words')) : null;
+    if (ref) afterNode(ref, wrap);
+    else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
+  }
+
   /* ── 13. the Commonplace Book page ─────────────────────────── */
   var NAME_BAD = /\b(ass|butt|poop|fart|stupid|dumb|idiot|hate|kill|sex|damn|hell|crap)\b/i;
   function profileName() { var p = store('profile'); return p && p.name ? p.name : ''; }
@@ -2550,6 +2658,7 @@
     guard('race', buildRace);
     guard('pan', buildPan);
     guard('climb', buildClimb);
+    guard('letter', buildLetter);
     guard('cards', buildCards);
     guard('checks', buildChecks);
     guard('virtue', buildVirtue);
