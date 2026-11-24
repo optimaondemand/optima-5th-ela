@@ -200,6 +200,57 @@ D[4] = {
 }
 D['fluency'] = {"listen": {"page": {"text": "Read the scene from Chapter 15 where Jack meets the stranger who pulled him out of the hole. Make Jack sound suspicious and the stranger easygoing. Save a pause for the very last line. When it sounds right, record yourself."}},
                 "glossary": [{"word": "expression", "meaning": "reading with feeling, so your voice shows what the words mean"}]}
+ART = {
+ 1: {
+  "tab": "top",
+  "file": "assets/art/btghs/nahl-long-tom.jpg",
+  "title": "Mining with the Long Tom",
+  "alt": "A black-and-white engraving of three miners at a long wooden trough set in a stream: one shovels rocks and dirt, one stands beside the trough, and one works at the low end, with cabins and pine trees on the hill behind.",
+  "look": "Charles Nahl drew this in the 1850s, when he lived in the gold country, and it was printed as an engraving. It shows a long tom: dirt goes in at the top, running water washes it down the trough, and the gold catches at the bottom. In Chapter 13 the partners help Pitch-pine Billy fill buckets for a long tom.",
+  "lookBtn": "Tap to learn about this print",
+  "creator": "Charles Christian Nahl",
+  "date": "1850s",
+  "license": "Public domain (via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Charles_Christian_Nahl,_Bergbau_mit_dem_Langen_Tom.jpg"
+ },
+ 2: {
+  "tab": "top",
+  "file": "assets/art/btghs/nahl-way-to-the-mines.jpg",
+  "title": "On the Way to the Mines (detail)",
+  "alt": "An engraving of miners on a steep mountain trail with pack mules loaded with bundles, a rider raising a whip, and pine trees and rocks above.",
+  "look": "Charles Nahl drew this in the 1850s. This is one part of a larger print: miners lead pack animals loaded with supplies up a rough mountain trail. In Chapter 14 the partners load their burro and head into the mountains the same way.",
+  "lookBtn": "Tap to learn about this print",
+  "creator": "Charles Christian Nahl",
+  "date": "1850s",
+  "license": "Public domain (Huntington Library, via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Charles_Christian_Nahl,_Auf_dem_Weg_zu_den_Minen.jpg"
+ },
+ 3: {
+  "tab": "top",
+  "file": "assets/art/btghs/audubon-grizzly.jpg",
+  "title": "Grizzly Bear",
+  "alt": "A colored print of two large brown grizzly bears in a grassy valley with mountains behind; one stands and one crouches low.",
+  "look": "This hand-colored print was made in 1848 from a painting by John Woodhouse Audubon, for a book about the animals of North America. In the Gold Rush, grizzlies lived all over California. Today the grizzly is on California's state flag, but no wild grizzlies are left in the state.",
+  "lookBtn": "Tap to learn about this print",
+  "creator": "J. T. Bowen, after John Woodhouse Audubon",
+  "date": "1848",
+  "license": "Public domain (Missouri Historical Society, via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Grizzly_Bear_(Ursus_Ferox,_Lewis_and_Clark),_Males_-_DPLA_-_edb0e3872e4a559d97d65bfa2b718d46.jpg"
+ },
+ 4: {
+  "tab": "top",
+  "file": "assets/art/btghs/wenderoth-miners-cabin.jpg",
+  "title": "Miner's Cabin, Result of the Day",
+  "alt": "A colored print inside a log cabin at night: one miner cooks at the fireplace, two stand laughing, one holds out a little gold in his hand, and another sleeps in a bunk.",
+  "look": "Frederick Wenderoth and Charles Nahl made this print in 1852. At the end of the day, the miners look at what they found: one man holds a little gold in his hand. Look at the details the artists chose: the bunk, the fire, the boots, the tools by the door. Specific details like these are what make Fleischman's voice come alive too.",
+  "lookBtn": "Tap to learn about this print",
+  "creator": "Frederick August Wenderoth and Charles Nahl",
+  "date": "1852",
+  "license": "Public domain (Bancroft Library, University of California, via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Wenderoth_Miners_cabin.jpg"
+ }
+}
+for _k, _a in ART.items(): D[_k]["art"] = _a
 FILES = {1: 'lesson-29-1-btghs-ch13.html', 2: 'lesson-29-2-btghs-ch14.html', 3: 'lesson-29-3-btghs-ch15.html', 4: 'lesson-29-4-btghs-voice.html'}
 def page_words(f):
     s = io.open(f, encoding='utf-8').read()

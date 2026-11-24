@@ -271,5 +271,17 @@
   "line": "Tell why in one sentence.",
   "placeholder": "He shows this much integrity because…",
   "take": "Mason's take: more than you might expect from a robber. He doesn't have to give the coat back, and Jack's gun isn't even loaded. But he stole it in the first place. Fleischman lets a bad man do one right thing, and leaves you to weigh it."
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/btghs/audubon-grizzly.jpg",
+  "title": "Grizzly Bear",
+  "alt": "A colored print of two large brown grizzly bears in a grassy valley with mountains behind; one stands and one crouches low.",
+  "look": "This hand-colored print was made in 1848 from a painting by John Woodhouse Audubon, for a book about the animals of North America. In the Gold Rush, grizzlies lived all over California. Today the grizzly is on California's state flag, but no wild grizzlies are left in the state.",
+  "lookBtn": "Tap to learn about this print",
+  "creator": "J. T. Bowen, after John Woodhouse Audubon",
+  "date": "1848",
+  "license": "Public domain (Missouri Historical Society, via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Grizzly_Bear_(Ursus_Ferox,_Lewis_and_Clark),_Males_-_DPLA_-_edb0e3872e4a559d97d65bfa2b718d46.jpg"
  }
 }
