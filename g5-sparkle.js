@@ -1863,6 +1863,107 @@
     else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
   }
 
+  /* ── 12h. Two Books, One Root (week 31): a memory game. Flip two cards; a matching root pair stays up and
+        draws a gold thread between the two worlds on the shelf. DATA game {type:'pairs', title, sub, after, look, how, doneLine,
+        shelf:[{id, name}], pairs:[{root, means, a:{w, at}, b:{w, at}, why}]}. Storage pairs.wk<N> {done:[i], miss}. */
+  function buildPairs() {
+    var G = D.game; if (!G || G.type !== 'pairs' || !G.pairs || !G.pairs.length) return;
+    var wkKey = 'pairs.wk' + L.week;
+    var st = store(wkKey) || {};
+    var mine = st[L.day] || { done: [], miss: 0 };
+    if (typeof mine.miss !== 'number') mine.miss = 0;
+    var P = G.pairs, shelf = G.shelf || [];
+    var cards = [];
+    P.forEach(function (p, i) { cards.push({ p: i, side: 'a' }); cards.push({ p: i, side: 'b' }); });
+    // fixed shuffle (same order every visit): a simple seeded sort
+    var seed = (L.week * 31 + L.day * 7) % 97 + 3;
+    cards.forEach(function (c, i) { c.k = (i * seed * 13 + 7) % 101; });
+    cards.sort(function (x, y) { return x.k - y.k; });
+    var wrap = h('div', { 'class': 'activity g5-game' });
+    wrap.innerHTML =
+      '<div class="activity-head"><div class="activity-num g5-game-num" aria-hidden="true">📚</div><div>' +
+      '<div class="activity-title">' + esc(G.title || 'Two Books, One Root') + '</div>' +
+      '<div class="activity-sub">' + esc(G.sub || 'Word game for this week') + '</div></div></div>';
+    var body = h('div', { 'class': 'activity-body' });
+    wrap.appendChild(body);
+    var look = h('details', { 'class': 'g5-look' }, [h('summary', { text: '👀 What am I looking at?' }), h('p', { text: G.look })]);
+    if (!mine.done.length) look.open = true;
+    body.appendChild(look);
+    if (G.how) body.appendChild(howLine(G.how));
+    var shelfBox = h('div', { 'class': 'g5-shelf', 'aria-label': 'bookshelf' });
+    var threads = h('ul', { 'class': 'g5-threads' });
+    var stepBox = h('div', { 'class': 'g5-stone-step' });
+    var grid = h('div', { 'class': 'g5-pairs', role: 'group', 'aria-label': 'cards' });
+    var ctrl = h('div', { 'class': 'g5-stone-ctrl' });
+    var fb = h('p', { 'class': 'g5-stone-fb', 'aria-live': 'polite' });
+    var tally = h('p', { 'class': 'g5-stone-tally' });
+    [stepBox, shelfBox, grid, fb, threads, ctrl, tally].forEach(function (n) { body.appendChild(n); });
+    function nameOf(id) { for (var i = 0; i < shelf.length; i++) if (shelf[i].id === id) return shelf[i].name; return id; }
+    function save() { st[L.day] = mine; store(wkKey, st); }
+    function drawShelf() {
+      var lit = {};
+      mine.done.forEach(function (i) { lit[P[i].a.at] = 1; lit[P[i].b.at] = 1; });
+      shelfBox.innerHTML = '';
+      shelf.forEach(function (s) {
+        shelfBox.appendChild(h('span', { 'class': 'g5-spine' + (lit[s.id] ? ' g5-spine-lit' : '') + (s.id === 'you' ? ' g5-spine-you' : '') }, [s.name]));
+      });
+      threads.innerHTML = '';
+      mine.done.forEach(function (i) {
+        var p = P[i];
+        var li = h('li', {});
+        li.innerHTML = '<b>' + esc(p.root) + '</b> (' + esc(p.means) + '): ' + esc(p.a.w) + ' <span class="g5-thread-at">' + esc(nameOf(p.a.at)) + '</span> 🧵 ' + esc(p.b.w) + ' <span class="g5-thread-at">' + esc(nameOf(p.b.at)) + '</span>';
+        threads.appendChild(li);
+      });
+      var allDone = 0; Object.keys(st).forEach(function (k) { allDone += (st[k].done || []).length; });
+      tally.textContent = 'Today: ' + mine.done.length + ' of ' + P.length + ' threads. This week: ' + allDone + '.';
+    }
+    var open = [], lock = false, btns = [];
+    function render() {
+      grid.innerHTML = ''; btns = []; ctrl.innerHTML = ''; open = []; lock = false;
+      cards.forEach(function (c, ci) {
+        var p = P[c.p], card = p[c.side], done = mine.done.indexOf(c.p) >= 0;
+        var b = h('button', { type: 'button', 'class': 'g5-card' + (done ? ' g5-card-done' : ''), 'aria-label': done ? card.w : 'card ' + (ci + 1) + ', face down' });
+        b.innerHTML = done ? '<span class="g5-card-w">' + esc(card.w) + '</span><span class="g5-card-at">' + esc(nameOf(card.at)) + '</span>' : '<span class="g5-card-back">?</span>';
+        if (done) b.disabled = true;
+        b.addEventListener('click', function () { flip(ci, b); });
+        grid.appendChild(b); btns.push(b);
+      });
+      drawShelf();
+      if (mine.done.length >= P.length) {
+        stepBox.innerHTML = '<b>Shelf tied!</b> ' + esc(G.doneLine || 'Every pair is matched.');
+        var again = h('button', { type: 'button', 'class': 'g5-btn g5-btn-ghost' }, ['↺ Play again']);
+        again.addEventListener('click', function () { mine = { done: [], miss: 0 }; save(); fb.textContent = ''; render(); });
+        ctrl.appendChild(again);
+      } else stepBox.innerHTML = '<span class="g5-stepn">' + (P.length - mine.done.length) + ' pairs left</span> Tap two cards. Find two words with the same root.';
+    }
+    function face(ci, b) { var c = cards[ci], card = P[c.p][c.side]; b.classList.add('g5-card-up'); b.innerHTML = '<span class="g5-card-w">' + esc(card.w) + '</span><span class="g5-card-at">' + esc(nameOf(card.at)) + '</span>'; b.setAttribute('aria-label', card.w); }
+    function down(ci, b) { b.classList.remove('g5-card-up'); b.innerHTML = '<span class="g5-card-back">?</span>'; b.setAttribute('aria-label', 'card ' + (ci + 1) + ', face down'); }
+    function flip(ci, b) {
+      if (lock || b.disabled || open.indexOf(ci) >= 0) return;
+      face(ci, b); open.push(ci);
+      if (open.length < 2) { fb.textContent = 'Now find a word with the same root.'; return; }
+      var x = cards[open[0]], y = cards[open[1]];
+      if (x.p === y.p) {
+        var p = P[x.p];
+        if (mine.done.indexOf(x.p) < 0) mine.done.push(x.p);
+        save();
+        fb.innerHTML = '🧵 <b>' + esc(p.root) + '</b> means ' + esc(p.means) + '. ' + esc(p.why || '');
+        open = [];
+        setTimeout(function () { var keep = fb.innerHTML; render(); fb.innerHTML = keep; var f = grid.querySelector('button:not([disabled])') || ctrl.querySelector('button'); if (f) f.focus(); }, 650);
+      } else {
+        mine.miss++; save(); lock = true;
+        var px = P[x.p][x.side].w, py = P[y.p][y.side].w;
+        fb.textContent = 'Not a pair: ' + px + ' and ' + py + ' have different roots. ' + (G.miss || 'Look for the same few letters inside both words.');
+        var a = btns[open[0]], c2 = btns[open[1]], o0 = open[0], o1 = open[1];
+        setTimeout(function () { down(o0, a); down(o1, c2); open = []; lock = false; }, 1400);
+      }
+    }
+    render();
+    var ref = G.after ? activityByTitle(G.after, panel('words')) : null;
+    if (ref) afterNode(ref, wrap);
+    else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
+  }
+
   /* ── 13. the Commonplace Book page ─────────────────────────── */
   var NAME_BAD = /\b(ass|butt|poop|fart|stupid|dumb|idiot|hate|kill|sex|damn|hell|crap)\b/i;
   function profileName() { var p = store('profile'); return p && p.name ? p.name : ''; }
@@ -2659,6 +2760,7 @@
     guard('pan', buildPan);
     guard('climb', buildClimb);
     guard('letter', buildLetter);
+    guard('pairs', buildPairs);
     guard('cards', buildCards);
     guard('checks', buildChecks);
     guard('virtue', buildVirtue);
