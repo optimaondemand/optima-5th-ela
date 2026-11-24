@@ -353,37 +353,152 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <div class="intro"><p>Show what you learned in Week 29 — chapters 13–15, morphology, grammar, spelling, and voice analysis. Take your time!</p></div>
   <div class="total-bar"><div class="total-label">Total Points</div><div class="total-value">14 points</div></div>
 
+  <!-- GRAMMAR -->
   <div class="section">
     <div class="section-head"><div class="section-icon grammar">✏️</div><div><div class="section-title">Grammar: Sentence Variety for Style</div><div class="section-pts">3 points</div></div></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">1</span>Which sentence demonstrates a strong participial phrase opener?</div><ul class="options" data-qid="mcq1"><li onclick="sel(this,'mcq1')"><span class="opt-letter">A</span>He fired the gun. He was scared.</li><li onclick="sel(this,'mcq1')"><span class="opt-letter">B</span>Gripping the rope with both hands, Jack pulled himself out of the coyote hole.</li><li onclick="sel(this,'mcq1')"><span class="opt-letter">C</span>Jack and Praiseworthy were tenacious workers who never gave up.</li></ul></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">2</span>Rewrite this as TWO sentences that show Fleischman-style variety — one short, one longer: <em>Jack tried to climb out of the coyote hole and he couldn&rsquo;t because the walls kept crumbling away.</em></div><textarea oninput="ga()" data-label="Q2" id="r1" class="response-box" placeholder="Short sentence: ...&#10;Longer sentence: ..."></textarea></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">3</span>Write one sentence about any event from Chapters 13–15 that begins with a subordinating conjunction (because, when, although, while, since, or unless).</div><textarea oninput="ga()" data-label="Q3" id="r2" class="response-box short" placeholder="Because/When/Although ... ..."></textarea></div>
+    <div class="question">
+      <div class="q-label">Identification <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">1</span>Which sentence begins with a participial phrase?</div>
+      <ul class="options" data-qid="mcq1">
+        <li onclick="sel(this,'mcq1')"><span class="opt-letter">A</span>Jack held on to Stubb.</li>
+        <li onclick="sel(this,'mcq1')"><span class="opt-letter">B</span>Holding the rope tight, Jack waited.</li>
+        <li onclick="sel(this,'mcq1')"><span class="opt-letter">C</span>When the dust cleared, a face appeared.</li>
+        <li onclick="sel(this,'mcq1')"><span class="opt-letter">D</span>In the morning, they struck the tent.</li>
+      </ul>
+    </div>
+    <div class="question">
+      <div class="q-label">Vary the Length <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">2</span>Rewrite this as two sentences, one short and one longer.</div>
+      <div class="excerpt">Jack walked around the burro and sized him up and then he spit in his hands and climbed on.</div>
+      <textarea oninput="ga()" data-label="Q2: Grammar — Vary the Length" id="resp1" class="response-box short" placeholder="Write your answer here..."></textarea>
+    </div>
+    <div class="question">
+      <div class="q-label">Sentence Openers <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">3</span>Which group of sentences starts its sentences in the most different ways?</div>
+      <ul class="options" data-qid="mcq2">
+        <li onclick="sel(this,'mcq2')"><span class="opt-letter">A</span>Jack panned. Jack dug. Jack rested.</li>
+        <li onclick="sel(this,'mcq2')"><span class="opt-letter">B</span>Jack panned all morning. After lunch, he dug. Tired at last, he rested.</li>
+        <li onclick="sel(this,'mcq2')"><span class="opt-letter">C</span>Jack panned and dug and rested.</li>
+        <li onclick="sel(this,'mcq2')"><span class="opt-letter">D</span>Jack panned, and Jack dug, and Jack rested.</li>
+      </ul>
+    </div>
   </div>
 
+  <!-- MORPHOLOGY & VOCABULARY -->
   <div class="section">
-    <div class="section-head"><div class="section-icon morph">🔬</div><div><div class="section-title">Morphology: Suffixes –ous, –ive, –ity</div><div class="section-pts">3 points</div></div></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">4</span>Which suffix creates an adjective meaning <em>full of</em> or <em>having the quality of</em>?</div><ul class="options" data-qid="mcq2"><li onclick="sel(this,'mcq2')"><span class="opt-letter">A</span>–ity</li><li onclick="sel(this,'mcq2')"><span class="opt-letter">B</span>–ous</li><li onclick="sel(this,'mcq2')"><span class="opt-letter">C</span>–ment</li></ul></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">5</span>What does <strong>tenacious</strong> mean based on its root and suffix?</div><ul class="options" data-qid="mcq3"><li onclick="sel(this,'mcq3')"><span class="opt-letter">A</span>Full of holding firmly; refusing to give up</li><li onclick="sel(this,'mcq3')"><span class="opt-letter">B</span>Having the tendency to run away</li><li onclick="sel(this,'mcq3')"><span class="opt-letter">C</span>The state of being strong</li></ul></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">6</span>Use the word <strong>evasive</strong> in a sentence about Cut-Eye Higgins. Underline the root and suffix.</div><textarea oninput="ga()" data-label="Q6" id="r3" class="response-box short" placeholder="Write your sentence here..."></textarea></div>
+    <div class="section-head"><div class="section-icon morph">🔬</div><div><div class="section-title">Morphology &amp; Vocabulary: <em>&ndash;ous</em>, <em>&ndash;ive</em>, <em>&ndash;ity</em></div><div class="section-pts">3 points</div></div></div>
+    <div class="question">
+      <div class="q-label">Suffix <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">4</span>Which ending turns a word into a describing word that means full of?</div>
+      <ul class="options" data-qid="mcq3">
+        <li onclick="sel(this,'mcq3')"><span class="opt-letter">A</span>-ity</li>
+        <li onclick="sel(this,'mcq3')"><span class="opt-letter">B</span>-ous</li>
+        <li onclick="sel(this,'mcq3')"><span class="opt-letter">C</span>-ive</li>
+        <li onclick="sel(this,'mcq3')"><span class="opt-letter">D</span>-ment</li>
+      </ul>
+    </div>
+    <div class="question">
+      <div class="q-label">Word Meaning <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">5</span>What does evasive mean?</div>
+      <ul class="options" data-qid="mcq4">
+        <li onclick="sel(this,'mcq4')"><span class="opt-letter">A</span>Tending to avoid or escape</li>
+        <li onclick="sel(this,'mcq4')"><span class="opt-letter">B</span>Full of courage</li>
+        <li onclick="sel(this,'mcq4')"><span class="opt-letter">C</span>The state of being well known</li>
+        <li onclick="sel(this,'mcq4')"><span class="opt-letter">D</span>A person who gives help</li>
+      </ul>
+    </div>
+    <div class="question">
+      <div class="q-label">Context Clues <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">6</span>Read the line from Chapter 13. What does notoriety mean here?</div>
+      <div class="excerpt">The truth of the matter was that Praiseworthy himself began to enjoy his notoriety.</div>
+      <ul class="options" data-qid="mcq5">
+        <li onclick="sel(this,'mcq5')"><span class="opt-letter">A</span>Being well known for something bold</li>
+        <li onclick="sel(this,'mcq5')"><span class="opt-letter">B</span>Being very tired</li>
+        <li onclick="sel(this,'mcq5')"><span class="opt-letter">C</span>Being afraid of crowds</li>
+        <li onclick="sel(this,'mcq5')"><span class="opt-letter">D</span>Being good with money</li>
+      </ul>
+    </div>
   </div>
 
+  <!-- SPELLING -->
   <div class="section">
     <div class="section-head"><div class="section-icon spelling">🔠</div><div><div class="section-title">Spelling: Word Families</div><div class="section-pts">3 points</div></div></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">7</span>Which is the correct spelling of the adjective form of <em>describe</em>?</div><ul class="options" data-qid="mcq4"><li onclick="sel(this,'mcq4')"><span class="opt-letter">A</span>describive</li><li onclick="sel(this,'mcq4')"><span class="opt-letter">B</span>descriptive</li><li onclick="sel(this,'mcq4')"><span class="opt-letter">C</span>describtive</li></ul></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">8</span>Write the <em>prospect</em> word family: write <em>prospect, prospector, prospective, prosperous, prosperity</em>. Circle any word where the spelling changes from the base.</div><textarea oninput="ga()" data-label="Q8" id="r4" class="response-box" placeholder="prospect, prospector, ..."></textarea></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">9</span>Which pair of words belongs to the same word family?</div><ul class="options" data-qid="mcq5"><li onclick="sel(this,'mcq5')"><span class="opt-letter">A</span>persist / persistent</li><li onclick="sel(this,'mcq5')"><span class="opt-letter">B</span>prospector / evasive</li><li onclick="sel(this,'mcq5')"><span class="opt-letter">C</span>tenacious / validity</li></ul></div>
+    <div class="question">
+      <div class="q-label">Word Families <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">7</span>Which word is NOT in the prospect family?</div>
+      <ul class="options" data-qid="mcq6">
+        <li onclick="sel(this,'mcq6')"><span class="opt-letter">A</span>prospector</li>
+        <li onclick="sel(this,'mcq6')"><span class="opt-letter">B</span>prospecting</li>
+        <li onclick="sel(this,'mcq6')"><span class="opt-letter">C</span>prosperous</li>
+        <li onclick="sel(this,'mcq6')"><span class="opt-letter">D</span>prospective</li>
+      </ul>
+    </div>
+    <div class="question">
+      <div class="q-label">Build a Family <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">8</span>Write three words in the create family. Underline the part that stays the same in all three.</div>
+      <textarea oninput="ga()" data-label="Q8: Spelling — Build a Family" id="resp2" class="response-box short" placeholder="Write your answer here..."></textarea>
+    </div>
+    <div class="question">
+      <div class="q-label">Spelling Shift <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">9</span>Which word is spelled correctly?</div>
+      <ul class="options" data-qid="mcq7">
+        <li onclick="sel(this,'mcq7')"><span class="opt-letter">A</span>decidive</li>
+        <li onclick="sel(this,'mcq7')"><span class="opt-letter">B</span>decisive</li>
+        <li onclick="sel(this,'mcq7')"><span class="opt-letter">C</span>desicive</li>
+        <li onclick="sel(this,'mcq7')"><span class="opt-letter">D</span>decisiv</li>
+      </ul>
+    </div>
   </div>
 
+  <!-- READING -->
   <div class="section">
-    <div class="section-head"><div class="section-icon reading">📖</div><div><div class="section-title">Reading: Chapters 13–15 &amp; Voice Analysis</div><div class="section-pts">3 points</div></div></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">10</span>Why does Praiseworthy call Jack&rsquo;s purchase of a bushel of neckties &ldquo;a brilliant purchase&rdquo;?</div><ul class="options" data-qid="mcq6"><li onclick="sel(this,'mcq6')"><span class="opt-letter">A</span>He thinks neckties look good in the mining camps.</li><li onclick="sel(this,'mcq6')"><span class="opt-letter">B</span>He has a plan to use them to trade for something they need.</li><li onclick="sel(this,'mcq6')"><span class="opt-letter">C</span>He wants to make Jack feel better about the mistake.</li></ul></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">11</span>The coat ripped open in Chapter 15 has no map. Praiseworthy says &ldquo;Put some beans on to fry. First thing in the morning we&rsquo;ll start for Shirt-tail Camp.&rdquo; What does this response tell us about Praiseworthy&rsquo;s character?</div><textarea oninput="ga()" data-label="Q11" id="r5" class="response-box" placeholder="Praiseworthy's response tells us..."></textarea></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">12</span>Choose one of Fleischman&rsquo;s five voice techniques (unexpected specific detail, short punchy sentence, character who notices without saying, humor from the gap, pivot to forward motion). Name the technique and give one example from Chapters 13–15.</div><textarea oninput="ga()" data-label="Q12" id="r6" class="response-box" placeholder="Technique: ...&#10;Example: ..."></textarea></div>
+    <div class="section-head"><div class="section-icon reading">📖</div><div><div class="section-title">Reading: Chapters 13&ndash;15, Voice and the Poems</div><div class="section-pts">4 points</div></div></div>
+    <div class="question">
+      <div class="q-label">Key Detail <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">10</span>Why does Praiseworthy call the bushel of neckties “a brilliant purchase”?</div>
+      <ul class="options" data-qid="mcq8">
+        <li onclick="sel(this,'mcq8')"><span class="opt-letter">A</span>He plans to sell them when the miners want them, and buy a burro.</li>
+        <li onclick="sel(this,'mcq8')"><span class="opt-letter">B</span>He wants to wear a different tie every day.</li>
+        <li onclick="sel(this,'mcq8')"><span class="opt-letter">C</span>He thinks the auctioneer will give the money back.</li>
+        <li onclick="sel(this,'mcq8')"><span class="opt-letter">D</span>He wants Jack to feel better, though he has no plan.</li>
+      </ul>
+    </div>
+    <div class="excerpt">Just as quickly Praiseworthy unclasped his knife and ripped open the lining. They laid open every inch of the coat. They examined and re-examined it, and Jack’s excitement died away. There was no map. There had never been a map sewn in the lining of the coat.<br><span style="font-size:13px;">&mdash; Sid Fleischman, <em>By the Great Horn Spoon!</em>, Chapter 15</span></div>
+    <div class="question">
+      <div class="q-label">Character and Tone <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">11</span>Right after this, Praiseworthy says, “Put some beans on to fry, partner Jack. First thing in the morning we’ll start for Shirt-tail Camp.” What does this show about him? Answer in 2–3 sentences.</div>
+      <textarea oninput="ga()" data-label="Q11: Reading — Character and Tone" id="resp3" class="response-box" placeholder="Write your answer here..."></textarea>
+    </div>
+    <div class="question">
+      <div class="q-label">Read Like a Writer <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">12</span>In Chapter 15, Fleischman writes: “Yellow poppies had burst open on the hillsides like scatterings of fools’ gold.” What makes this strong description?</div>
+      <ul class="options" data-qid="mcq9">
+        <li onclick="sel(this,'mcq9')"><span class="opt-letter">A</span>It names specific things and compares them to something from the gold fields.</li>
+        <li onclick="sel(this,'mcq9')"><span class="opt-letter">B</span>It uses only very short sentences.</li>
+        <li onclick="sel(this,'mcq9')"><span class="opt-letter">C</span>It tells exactly how many poppies there were.</li>
+        <li onclick="sel(this,'mcq9')"><span class="opt-letter">D</span>It is a line of dialogue.</li>
+      </ul>
+    </div>
+    <div class="question">
+      <div class="q-label">Poetry <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">13</span>“Windy Nights” and “Fog” use the same five parts of a poem. How are they different?</div>
+      <ul class="options" data-qid="mcq10">
+        <li onclick="sel(this,'mcq10')"><span class="opt-letter">A</span>Windy Nights gallops with rhyme and a strong beat; Fog is quiet, with short lines that do not rhyme.</li>
+        <li onclick="sel(this,'mcq10')"><span class="opt-letter">B</span>Both poems rhyme in pairs.</li>
+        <li onclick="sel(this,'mcq10')"><span class="opt-letter">C</span>Fog has a stronger beat than Windy Nights.</li>
+        <li onclick="sel(this,'mcq10')"><span class="opt-letter">D</span>Windy Nights has no figurative language.</li>
+      </ul>
+    </div>
   </div>
 
+  <!-- WRITING -->
   <div class="section">
-    <div class="section-head"><div class="section-icon writing">✍️</div><div><div class="section-title">Writing: Revision</div><div class="section-pts">2 points</div></div></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">2 pt</span></div><div class="q-text"><span class="q-number">13</span>Write the original version of one sentence from your adventure draft, then write a revised version that adds a Fleischman technique (unexpected detail, varied sentence length, or vivid dialogue). Label which technique you used.</div><textarea oninput="ga()" data-label="Q13" id="r7" class="response-box" placeholder="ORIGINAL: ...&#10;&#10;REVISED: ...&#10;&#10;Technique I used: ..."></textarea></div>
+    <div class="section-head"><div class="section-icon writing">✍️</div><div><div class="section-title">Writing: Revise Your Adventure</div><div class="section-pts">1 points</div></div></div>
+    <div class="question">
+      <div class="q-label">Revise for Voice <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">14</span>Copy one sentence from your adventure draft. Then rewrite it to improve its voice, its dialogue or its description, and name which one you improved.</div>
+      <textarea oninput="ga()" data-label="Q14: Writing — Revise for Voice" id="resp4" class="response-box" placeholder="Write your answer here..."></textarea>
+    </div>
   </div>
 
   <div class="gathered-card">
@@ -406,10 +521,10 @@ var mc={};
 function sel(li,q){document.querySelectorAll('[data-qid="'+q+'"]').forEach(e=>e.classList.remove('selected'));li.classList.add('selected');mc[q]=li.querySelector('.opt-letter').textContent;ga();}
 function ga(){
   var out='WEEK 29 CHECK-IN\n'+'='.repeat(48)+'\n\n';
-  var mcm={mcq1:'Grammar Q1',mcq2:'Morph Q4',mcq3:'Morph Q5',mcq4:'Spelling Q7',mcq5:'Spelling Q9',mcq6:'Reading Q10'};
+  var mcm={mcq1:'Grammar Q1',mcq2:'Grammar Q3',mcq3:'Morphology Q4',mcq4:'Morphology Q5',mcq5:'Morphology Q6',mcq6:'Spelling Q7',mcq7:'Spelling Q9',mcq8:'Reading Q10',mcq9:'Reading Q12',mcq10:'Reading Q13'};
   Object.keys(mcm).forEach(k=>{out+=mcm[k]+': '+(mc[k]||'—')+'\n';});
-  ['r1','r2','r3','r4','r5','r6','r7'].forEach(function(id,i){
-    var e=document.getElementById(id);if(e)out+='\nQ'+(i===0?2:i===1?3:i===2?6:i===3?8:i===4?11:i===5?12:13)+':\n'+(e.value.trim()||'(no answer)')+'\n';
+  [['resp1','Q2: Grammar — Vary the Length'],['resp2','Q8: Spelling — Build a Family'],['resp3','Q11: Reading — Character and Tone'],['resp4','Q14: Writing — Revise for Voice']].forEach(function(r){
+    var e=document.getElementById(r[0]);if(e)out+='\n'+r[1]+':\n'+(e.value.trim()||'(no answer)')+'\n';
   });
   document.getElementById('gatheredOutput').value=out;
 }

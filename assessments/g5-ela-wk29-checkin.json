@@ -1,0 +1,231 @@
+{
+ "id": "g5-ela-wk29-checkin",
+ "title": "Week 29 Check-In · By the Great Horn Spoon!",
+ "description": "This week you read Chapters 13 to 15. You practiced sentence variety, the endings -ous, -ive and -ity, word families, how a writer builds voice and tone, every part of a poem at once, and revising your adventure for voice, dialogue and description. Show what you know.",
+ "chapters": "Ch. 13–15",
+ "questions": [
+  {
+   "n": 1,
+   "section": "Grammar",
+   "label": "Identification",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which sentence begins with a participial phrase?",
+   "options": [
+    "Jack held on to Stubb.",
+    "Holding the rope tight, Jack waited.",
+    "When the dust cleared, a face appeared.",
+    "In the morning, they struck the tent."
+   ],
+   "answer": 1,
+   "from": "29.1–29.4 Grammar",
+   "status": "fixed (the old answer was an invented Ch. 15 sentence; a fourth option added)"
+  },
+  {
+   "n": 2,
+   "section": "Grammar",
+   "label": "Vary the Length",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Rewrite this as two sentences, one short and one longer.",
+   "excerpt": "Jack walked around the burro and sized him up and then he spit in his hands and climbed on.",
+   "key": "Any two sentences, one short and one longer, e.g. Jack sized up the burro. Then he spit in his hands and climbed onto Stubb’s back.",
+   "from": "29.1 Grammar (vary length); 29.2 Show What You Know",
+   "status": "changed (Ch. 14 events instead of the Ch. 15 coyote hole)"
+  },
+  {
+   "n": 3,
+   "section": "Grammar",
+   "label": "Sentence Openers",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which group of sentences starts its sentences in the most different ways?",
+   "options": [
+    "Jack panned. Jack dug. Jack rested.",
+    "Jack panned all morning. After lunch, he dug. Tired at last, he rested.",
+    "Jack panned and dug and rested.",
+    "Jack panned, and Jack dug, and Jack rested."
+   ],
+   "answer": 1,
+   "from": "29.1 sort; 29.3 openers; 29.4 before and after",
+   "status": "new (replaces a sentence-writing item; the scope's sentence variety)"
+  },
+  {
+   "n": 4,
+   "section": "Morphology & Vocabulary",
+   "label": "Suffix",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which ending turns a word into a describing word that means full of?",
+   "options": [
+    "-ity",
+    "-ous",
+    "-ive",
+    "-ment"
+   ],
+   "answer": 1,
+   "from": "29.1–29.4 Morphology",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 5,
+   "section": "Morphology & Vocabulary",
+   "label": "Word Meaning",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "What does evasive mean?",
+   "options": [
+    "Tending to avoid or escape",
+    "Full of courage",
+    "The state of being well known",
+    "A person who gives help"
+   ],
+   "answer": 0,
+   "from": "29.1–29.4 Vocabulary",
+   "status": "changed (was 'use evasive in a sentence'; now multiple choice)"
+  },
+  {
+   "n": 6,
+   "section": "Morphology & Vocabulary",
+   "label": "Context Clues",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Read the line from Chapter 13. What does notoriety mean here?",
+   "excerpt": "The truth of the matter was that Praiseworthy himself began to enjoy his notoriety.",
+   "options": [
+    "Being well known for something bold",
+    "Being very tired",
+    "Being afraid of crowds",
+    "Being good with money"
+   ],
+   "answer": 0,
+   "from": "29.1 Read Like a Writer; Vocabulary (notoriety, Ch. 13)",
+   "status": "new (vocabulary in context)"
+  },
+  {
+   "n": 7,
+   "section": "Spelling",
+   "label": "Word Families",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which word is NOT in the prospect family?",
+   "options": [
+    "prospector",
+    "prospecting",
+    "prosperous",
+    "prospective"
+   ],
+   "answer": 2,
+   "from": "29.1–29.4 Spelling (prospect family)",
+   "status": "fixed (the old item put prosperous in the prospect family)"
+  },
+  {
+   "n": 8,
+   "section": "Spelling",
+   "label": "Build a Family",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Write three words in the create family. Underline the part that stays the same in all three.",
+   "key": "Any three of create, creation, creative, creator, creativity; the base creat stays the same.",
+   "from": "29.1–29.3 Spelling families",
+   "status": "changed (the old item used the prospect family with prosperous)"
+  },
+  {
+   "n": 9,
+   "section": "Spelling",
+   "label": "Spelling Shift",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which word is spelled correctly?",
+   "options": [
+    "decidive",
+    "decisive",
+    "desicive",
+    "decisiv"
+   ],
+   "answer": 1,
+   "from": "29.1 sort; 29.4 Spelling",
+   "status": "new (the d to s shift in a family)"
+  },
+  {
+   "n": 10,
+   "section": "Reading",
+   "label": "Key Detail",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Why does Praiseworthy call the bushel of neckties “a brilliant purchase”?",
+   "options": [
+    "He plans to sell them when the miners want them, and buy a burro.",
+    "He wants to wear a different tie every day.",
+    "He thinks the auctioneer will give the money back.",
+    "He wants Jack to feel better, though he has no plan."
+   ],
+   "answer": 0,
+   "from": "29.1 Reading Q2 (Ch. 13)",
+   "status": "kept (a fourth option added)"
+  },
+  {
+   "n": 11,
+   "section": "Reading",
+   "label": "Character and Tone",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Right after this, Praiseworthy says, “Put some beans on to fry, partner Jack. First thing in the morning we’ll start for Shirt-tail Camp.” What does this show about him? Answer in 2–3 sentences.",
+   "key": "He does not give up or dwell on the disappointment; he moves straight to the next plan, steady and hopeful, which keeps the book's tone light.",
+   "from": "29.3 Reading Q2 (Ch. 15); 29.4 technique 5",
+   "status": "fixed (the line is now quoted exactly; the passage is printed above it)"
+  },
+  {
+   "n": 12,
+   "section": "Reading",
+   "label": "Read Like a Writer",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "In Chapter 15, Fleischman writes: “Yellow poppies had burst open on the hillsides like scatterings of fools’ gold.” What makes this strong description?",
+   "options": [
+    "It names specific things and compares them to something from the gold fields.",
+    "It uses only very short sentences.",
+    "It tells exactly how many poppies there were.",
+    "It is a line of dialogue."
+   ],
+   "answer": 0,
+   "from": "29.3 Read Like a Writer (Ch. 15)",
+   "status": "new (the scope's Read Like a Writer focus: description)"
+  },
+  {
+   "n": 13,
+   "section": "Reading",
+   "label": "Poetry",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "“Windy Nights” and “Fog” use the same five parts of a poem. How are they different?",
+   "options": [
+    "Windy Nights gallops with rhyme and a strong beat; Fog is quiet, with short lines that do not rhyme.",
+    "Both poems rhyme in pairs.",
+    "Fog has a stronger beat than Windy Nights.",
+    "Windy Nights has no figurative language."
+   ],
+   "answer": 0,
+   "from": "29.2 and 29.4 Poetry Corner",
+   "status": "new (the scope's poetry idea)"
+  },
+  {
+   "n": 14,
+   "section": "Writing",
+   "label": "Revise for Voice",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Copy one sentence from your adventure draft. Then rewrite it to improve its voice, its dialogue or its description, and name which one you improved.",
+   "key": "Original + a revised sentence that is clearly better in the named way (a storyteller's voice, dialogue that sounds like the character, or a specific detail).",
+   "from": "29.1–29.4 Writer's Workshop",
+   "status": "kept (now 1 point)"
+  }
+ ],
+ "passage": {
+  "before": 11,
+  "title": "Reading passage (Chapter 15)",
+  "ch": 15,
+  "text": "Just as quickly Praiseworthy unclasped his knife and ripped open the lining. They laid open every inch of the coat. They examined and re-examined it, and Jack’s excitement died away. There was no map. There had never been a map sewn in the lining of the coat.",
+  "cite": "Sid Fleischman, By the Great Horn Spoon!, Chapter 15"
+ }
+}
