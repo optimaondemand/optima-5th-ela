@@ -1,0 +1,273 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "Answer the question on the card first. This is the last chapter of the book. As you read, watch for each surprise, and think about what it does to the story."
+  },
+  "words": {
+   "text": "Today you fix the misspellings in two passages, build words from their roots, and match the last five vocabulary words. Then choose was or were. One more letter from Jack to proofread."
+  },
+  "reading": {
+   "text": "Read Chapter 18, Arrival at the Long Wharf, the last chapter. Then reread the passage that surprised you most, and ask which part of the story it carries: plot, character, humor, or theme."
+  },
+  "assignment": {
+   "text": "Three questions, the last one about the whole novel. Then put your new conclusion at the end of your story, and check it against the checklist."
+  }
+ },
+ "how": [
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Tap the highlighted words in the first sentence.",
+    "Write the second sentence correctly in your reading journal.",
+    "Tap See the Answer to check."
+   ],
+   "why": "Fixing one kind of mistake at a time catches more of them."
+  },
+  {
+   "match": "Read & Write",
+   "do": [
+    "Read the question.",
+    "Write 2 or 3 sentences in your reading journal.",
+    "Then go on to Word Study."
+   ],
+   "why": "Thinking before you read gives you something to watch for."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Read both passages.",
+    "Fix every misspelled word and write both passages in the box.",
+    "Put the right spelling in brackets after each fix."
+   ],
+   "why": "This is your Show What You Know for spelling this week."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Write your summary in your reading journal.",
+    "Type the word that fits each sentence.",
+    "Tap Check My Work."
+   ],
+   "why": "Building a word from its root shows you really know the root."
+  },
+  {
+   "match": "Vocabulary",
+   "do": [
+    "Tap a word.",
+    "Tap its meaning.",
+    "Match all five."
+   ],
+   "why": "Matching shows you know each word on its own."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Edit one paragraph of your story in your reading journal.",
+    "Type was or were in each sentence.",
+    "Tap Check My Work."
+   ],
+   "why": "Using the checklist on your own writing is the whole point of learning it."
+  },
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read the four lenses.",
+    "Tap the one you will use today.",
+    "Keep it in mind as you read. You will use it at the end."
+   ],
+   "why": "Rereading shows you the choices the author made.",
+   "use": "You will use it in reading question 2."
+  },
+  {
+   "match": "Read: Chapter 18",
+   "do": [
+    "Read the reading focus below.",
+    "Open your book and read Chapter 18.",
+    "Then do the Read Like a Writer box and the Virtue Watch at the end of this tab."
+   ],
+   "why": "The pause boxes are places to stop and think while you read."
+  },
+  {
+   "match": "Writer",
+   "do": [
+    "Read the four checks for your conclusion.",
+    "Check your whole story with the Final Publishing Checklist.",
+    "Write the revised story, with its title, in the box."
+   ],
+   "why": "A strong ending ties together what happened, who your hero became and what the story means."
+  }
+ ],
+ "glossary": [
+  {
+   "word": "brackets",
+   "in": "Spelling",
+   "meaning": "the marks [ and ] that set off a few words"
+  },
+  {
+   "word": "agreement",
+   "in": "Grammar",
+   "meaning": "when a verb matches its subject, like one miner was and two miners were"
+  }
+ ],
+ "hints": {
+  "fortitude": [
+   "fort means strong. This word names a kind of strength.",
+   "It ends in -itude.",
+   "f, o, r, t, i, t, u, d, e"
+  ],
+  "audible": [
+   "aud means hear.",
+   "It ends in -ible.",
+   "a, u, d, i, b, l, e"
+  ],
+  "extract": [
+   "tract means pull. Add a prefix meaning out.",
+   "It starts with ex.",
+   "e, x, t, r, a, c, t"
+  ],
+  "ridicule": [
+   "rid means laugh.",
+   "It ends in -icule.",
+   "r, i, d, i, c, u, l, e"
+  ],
+  "were": [
+   "More than one, or one?",
+   "This one is for more than one.",
+   "w, e, r, e"
+  ],
+  "was": [
+   "More than one, or one?",
+   "This one is for one.",
+   "w, a, s"
+  ]
+ },
+ "game": {
+  "type": "letter",
+  "title": "Jack's Letter Home",
+  "sub": "This week's word game · 6 lines today",
+  "after": "Spelling",
+  "look": "This letter is made up for the game, the way Jack writes letters home in Chapters 2 and 3. Every line has one misspelled word. Tap it, then tap the right spelling to ink the line clean. A clean letter gets a wax seal.",
+  "how": {
+   "do": [
+    "Read the line of the letter.",
+    "Tap the word that is spelled wrong.",
+    "Tap the right spelling to ink it clean."
+   ],
+   "why": "Proofreading means checking every word on purpose, the way an editor does before a piece is published."
+  },
+  "greet": "Dear Aunt Arabella, Constance and Sarah,",
+  "sign": "Your devoted partner, Jack",
+  "doneLine": "Come back tomorrow for the next letter.",
+  "lines": [
+   {
+    "text": "Gold dust is the only [currancy] anyone wants out here.",
+    "opts": [
+     "currency",
+     "currancy",
+     "curency"
+    ],
+    "ok": 0,
+    "why": "curr means run: money that runs from hand to hand. Two r's, then -ency.",
+    "miss": "Find the root curr, with two r's."
+   },
+   {
+    "text": "Praiseworthy called me Jack, just plain Jack, and I could hardly [breath].",
+    "opts": [
+     "breeth",
+     "breath",
+     "breathe"
+    ],
+    "ok": 2,
+    "why": "breathe (with an e) is the verb, what you do. breath is the noun.",
+    "miss": "This word is something you do."
+   },
+   {
+    "text": "On the fifteenth of [Augest] the whole town came to watch the fight.",
+    "opts": [
+     "August",
+     "Augest",
+     "Agust"
+    ],
+    "ok": 0,
+    "why": "August: A-u-g-u-s-t, with a capital A.",
+    "miss": "Say each part: Au-gust."
+   },
+   {
+    "text": "Praiseworthy stayed calm and [couragous] the whole time.",
+    "opts": [
+     "couragous",
+     "courageous",
+     "curageous"
+    ],
+    "ok": 1,
+    "why": "courage keeps its e before -ous, so the g stays soft.",
+    "miss": "Keep the whole word courage, then add -ous."
+   },
+   {
+    "text": "The Mountain Ox was [massiv], but Praiseworthy was quicker.",
+    "opts": [
+     "masive",
+     "massiv",
+     "massive"
+    ],
+    "ok": 2,
+    "why": "mass + ive. -ive always ends in e.",
+    "miss": "Keep both s's of mass."
+   },
+   {
+    "text": "Now we have [enuf] gold to go home to Boston.",
+    "opts": [
+     "enough",
+     "enuf",
+     "enouf"
+    ],
+    "ok": 0,
+    "why": "enough is spelled with ough, even though it sounds like uff.",
+    "miss": "This word uses o, u, g, h."
+   }
+  ]
+ },
+ "cards": [
+  {
+   "tab": "reading",
+   "after": "Read: Chapter 18",
+   "title": "A note before you read: words from 1963",
+   "min": 1,
+   "intro": "One line early in Chapter 18 needs a note.",
+   "items": [
+    {
+     "term": "What the book says",
+     "meaning": "On the riverboat, “Kanaka sailors” keep throwing wood into the furnace. Outsiders used Kanaka as a label for Native Hawaiians and other Pacific Islanders, often in an unkind way."
+    },
+    {
+     "term": "The true history",
+     "meaning": "Kānaka is the Hawaiian word for people. Hawaiian sailors worked on many ships in the Pacific long before the Gold Rush, and many Hawaiians came to California to sail, work and mine."
+    }
+   ],
+   "note": "Source: historian Benjamin Madley, Journal of American History (2024)."
+  }
+ ],
+ "virtue": {
+  "name": "hope",
+  "kind": "meter",
+  "title": "The hope meter",
+  "intro": "Think about one moment from Chapter 18.",
+  "moment": "The partners have just lost every bit of their gold in the bay. Jack says it is gone forever. Praiseworthy grins and says, “Mere bits of colored metal. We have our good health, damp as it may be at the moment.”",
+  "ask": "How much hope does Praiseworthy show here? Slide to show.",
+  "line": "Tell why in one sentence.",
+  "placeholder": "He shows this much hope because…",
+  "take": "Mason's take: a great deal. He has just lost a fortune, and he looks at what he still has instead. A few minutes later Jack is the one with a plan: maybe they can work their passage home. Hope is catching."
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/btghs/marryat-high-and-dry.jpg",
+  "title": "High and Dry",
+  "alt": "A colored print of a busy San Francisco street with people, horses and wagons, and buildings with ships' masts rising behind them.",
+  "look": "This print appeared in 1855 in Frank Marryat's book about his years in California. So many crews ran off to the diggings that old ships were left in the bay. Some were pulled up on the mud and made into stores and offices; you can see their masts behind the buildings. In Chapter 18 the partners come back to San Francisco Bay.",
+  "lookBtn": "Tap to learn about this print",
+  "creator": "Frank Marryat",
+  "date": "1855",
+  "license": "Public domain (British Library, via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:MARYATT(1855)_p060_HIGH_AND_DRY_(-_FORMER_SHIPS_IN_SAN_FRANCISCO).jpg"
+ }
+}
