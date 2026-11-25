@@ -1996,7 +1996,7 @@
     var fb = h('p', { 'class': 'g5-stone-fb', 'aria-live': 'polite' });
     var tally = h('p', { 'class': 'g5-stone-tally' });
     [stepBox, row, ctrl, fb, tally].forEach(function (n) { body.appendChild(n); });
-    var P = [[70, 200], [190, 120], [310, 190], [430, 110], [540, 170]];
+    var P = [[85, 195], [200, 115], [310, 190], [420, 110], [525, 170]];
     function lit(si) { for (var i = 0; i < N.length; i++) if (N[i].stop === si && mine.done.indexOf(i) >= 0) return true; return false; }
     function draw(flash) {
       var allDone = 0;
@@ -2007,7 +2007,7 @@
         '<rect x="8" y="8" width="594" height="264" fill="none" stroke="#B89A62" stroke-width="2" stroke-dasharray="2 4"/>' +
         '<path d="M20,250 Q60,236 110,246 T220,240" fill="none" stroke="#8FB3C9" stroke-width="3" opacity=".5"/>' +
         '<path d="M380,40 Q420,52 470,40 T590,46" fill="none" stroke="#8FB3C9" stroke-width="3" opacity=".5"/>' +
-        '<g transform="translate(565,240)" opacity=".7"><circle r="16" fill="none" stroke="#8B6B3A" stroke-width="1.5"/>' +
+        '<g transform="translate(40,48)" opacity=".7"><circle r="16" fill="none" stroke="#8B6B3A" stroke-width="1.5"/>' +
         '<path d="M0,-14 L4,0 L0,14 L-4,0 Z" fill="#8B6B3A"/><text y="-18" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#8B6B3A">N</text></g>';
       for (var s = 1; s < P.length; s++) {
         var a = P[s - 1], b = P[s], on = lit(s) && lit(s - 1);
