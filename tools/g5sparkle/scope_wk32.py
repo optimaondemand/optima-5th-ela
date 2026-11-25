@@ -278,7 +278,7 @@ RW = {d: [('</style>\n</head>', RWM_CSS + '</style>\n</head>', 1), (READ_NEXT, _
 # ---------------- poetry
 PO = {
  2: [('For your portfolio you will read a poem aloud.', 'On Day 4 you will record one poem from this year.', 1)],
- 4: [('Pick any poem from this year — Stevenson&rsquo;s train, Sandburg&rsquo;s fog or buffaloes, Hopkins, Hughes, Frost, Tennyson, Pound, Lowell.',
+ 4: [('Pick any poem from this year &mdash; Stevenson&rsquo;s train, Sandburg&rsquo;s fog or buffaloes, Hopkins, Hughes, Frost, Tennyson, Pound, Lowell.',
       'Pick any poem from this year: Stevenson&rsquo;s train, Sandburg&rsquo;s fog or buffaloes, Carroll&rsquo;s &ldquo;Jabberwocky&rdquo;, Tennyson&rsquo;s eagle, Frost&rsquo;s snowy woods, Poe&rsquo;s &ldquo;Eldorado&rdquo;, or Lowell&rsquo;s moon.', 1),
      ('then write your portfolio note:', 'then write a note:', 1)],
 }
