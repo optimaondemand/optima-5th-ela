@@ -2435,7 +2435,7 @@
     var box = h('div', { 'class': 'g5-lens' });
     box.innerHTML = '<div class="g5-lens-hero" aria-hidden="true"></div>' +
       '<div class="g5-lens-h">Choose your reading lens</div>' +
-      '<p class="g5-lens-sub">Tap one. You will read today’s chapters through it.</p>';
+      '<p class="g5-lens-sub">' + (D.readnow ? 'Tap one. Keep it in mind as you work today.' : 'Tap one. You will read today’s chapters through it.') + '</p>';   // no-chapter days (readnow) don't mention chapters
     var hero = new Image(); hero.alt = '';
     hero.onload = function () { box.querySelector('.g5-lens-hero').appendChild(hero); box.classList.add('has-hero'); };
     hero.src = 'assets/icons/lens-hero.jpg';
