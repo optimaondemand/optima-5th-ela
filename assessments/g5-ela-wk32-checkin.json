@@ -1,0 +1,239 @@
+{
+ "id": "g5-ela-wk32-checkin",
+ "title": "Week 32 Check-In · Letter to a Future 5th Grader",
+ "description": "This week you wrote a letter to a future 5th grader about two of the year's novels, studied voice, tone and pacing, read a poem aloud, and did a final review of the year's grammar, roots and spelling.",
+ "chapters": "The five novels + one real Gold Rush letter",
+ "questions": [
+  {
+   "n": 1,
+   "section": "Grammar",
+   "label": "Agreement",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which sentence is ready to publish?",
+   "options": [
+    "Each of the boys were changed by the journey.",
+    "Each of the boys was changed by the journey.",
+    "each of the boys was changed by the journey.",
+    "Each of the boys was changed by the journey"
+   ],
+   "answer": 1,
+   "from": "32.4 Grammar (One Last Check); 32.3 Grammar (was / were); 32.1 Grammar sort",
+   "status": "replaced (was a 'which sentence has the best voice' item with three options and no grammar rule)"
+  },
+  {
+   "n": 2,
+   "section": "Grammar",
+   "label": "Titles",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which sentence capitalizes the book title correctly?",
+   "options": [
+    "I read carry on, mr. bowditch in the fall.",
+    "I read Carry On, Mr. Bowditch in the fall.",
+    "I read Carry on, mr. Bowditch in the fall.",
+    "I read Carry On Mr Bowditch in the fall."
+   ],
+   "answer": 1,
+   "from": "32.2 and 32.4 final grammar checklist (titles); 32.3 Daily Oral Language",
+   "status": "replaced (was 'write a sentence that begins with a participial phrase', not taught this week)"
+  },
+  {
+   "n": 3,
+   "section": "Grammar",
+   "label": "Fix a Run-On",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Fix the capitals and the run-on. Write the sentences correctly.",
+   "excerpt": "i chose this book because it made me laugh it also made me think about keeping promises",
+   "key": "I chose this book because it made me laugh. It also made me think about keeping promises. (Or: ...laugh, and it also made me think... Capital I twice; the run-on split or joined correctly; end mark.)",
+   "from": "32.1-32.4 Daily Oral Language; 32.4 Grammar (before and after)",
+   "status": "fixed (same skill; a shorter sentence with no book claims)"
+  },
+  {
+   "n": 4,
+   "section": "Morphology & Vocabulary",
+   "label": "Prefix",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "In the word inaudible, what does in- mean?",
+   "options": [
+    "not",
+    "into",
+    "again",
+    "before"
+   ],
+   "answer": 0,
+   "from": "32.4 Morphology (Which word part is doing the work?); 32.3 build the word",
+   "status": "replaced (was 'impersistence', which is not an English word)"
+  },
+  {
+   "n": 5,
+   "section": "Morphology & Vocabulary",
+   "label": "Root",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "The root port means carry. Which word is built from it?",
+   "options": [
+    "portable",
+    "potable",
+    "possible",
+    "popular"
+   ],
+   "answer": 0,
+   "from": "32.3 word game; year-long root review (port, Bowditch unit)",
+   "status": "kept (a root item; four options, a root from the year)"
+  },
+  {
+   "n": 6,
+   "section": "Morphology & Vocabulary",
+   "label": "Context Clues",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Read the sentence. What does fortitude mean?",
+   "excerpt": "Even after months of storms and hard work, Jack kept going. He showed great fortitude.",
+   "options": [
+    "strength to keep going through hard times",
+    "a large fort",
+    "good luck",
+    "a loud voice"
+   ],
+   "answer": 0,
+   "from": "32.4 Morphology (-itude, fort); 32.4 Vocabulary list",
+   "status": "replaced (was 'name any root and write a sentence')"
+  },
+  {
+   "n": 7,
+   "section": "Spelling",
+   "label": "Tricky Words",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which word is spelled correctly?",
+   "options": [
+    "definately",
+    "separate",
+    "embarass",
+    "diffrent"
+   ],
+   "answer": 1,
+   "from": "32.1 tap the correct spellings; 32.4 Spelling (type the right spelling)",
+   "status": "changed (the week's tricky words; four options)"
+  },
+  {
+   "n": 8,
+   "section": "Spelling",
+   "label": "Edit for Spelling",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Find and correct every misspelling. Write the sentence correctly.",
+   "excerpt": "I recieve a new book every week, and I seperate the ones I love from the ones that embarass me.",
+   "key": "I receive a new book every week, and I separate the ones I love from the ones that embarrass me. (receive, separate, embarrass)",
+   "from": "32.2 Spelling (find the misspellings in a draft); 32.3 Spelling Show What You Know",
+   "status": "fixed (no longer a claim about Praiseworthy)"
+  },
+  {
+   "n": 9,
+   "section": "Spelling",
+   "label": "Word Families",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Which word belongs to the same word family as persist?",
+   "options": [
+    "persistence",
+    "perspective",
+    "personal",
+    "pursuit"
+   ],
+   "answer": 0,
+   "from": "32.1-32.3 spelling list (persistence); week 29 word families",
+   "status": "changed (four options)"
+  },
+  {
+   "n": 10,
+   "section": "Reading",
+   "label": "Pacing",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Read the lines from By the Great Horn Spoon!, Chapter 18. Why does Sid Fleischman use three short sentences?",
+   "excerpt": "They looked very much like a family. They felt like a family. They were a family.",
+   "options": [
+    "Each sentence goes one step further, and the short last one lands hardest.",
+    "He forgot to join them with commas.",
+    "They describe three different families.",
+    "Short sentences always mean a chapter is ending."
+   ],
+   "answer": 0,
+   "from": "32.1 Read Like a Writer (pacing)",
+   "status": "replaced (tested the invented week 31 'secondary source')"
+  },
+  {
+   "n": 11,
+   "section": "Reading",
+   "label": "Tone",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Captain Prince doubted Nat's figures, and Nat turned out to be right. What is Nat's tone in these lines from Carry On, Mr. Bowditch, Chapter 12?",
+   "excerpt": "“Of course,” Nat said. “It’s a simple matter of mathematics, sir.”",
+   "options": [
+    "calm and sure",
+    "angry",
+    "scared",
+    "silly"
+   ],
+   "answer": 0,
+   "from": "32.3 Read Like a Writer (tone); 32.3 Virtue Watch",
+   "status": "new"
+  },
+  {
+   "n": 12,
+   "section": "Reading",
+   "label": "Primary Source",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "Louise Clappe wrote letters from a California mining camp in 1851 and 1852. Why is her letter a primary source?",
+   "options": [
+    "She wrote it at the time, about a place she was living in.",
+    "It is a novel about the Gold Rush.",
+    "Optima wrote it for this lesson.",
+    "It was written in 2026."
+   ],
+   "answer": 0,
+   "from": "32.2 card 'Real history: letters that crossed time'; week 31 sources",
+   "status": "new"
+  },
+  {
+   "n": 13,
+   "section": "Reading",
+   "label": "Poetry",
+   "type": "multiple_choice_question",
+   "points": 1,
+   "text": "In Amy Lowell’s “Wind and Silver,” the third line is much longer than the others. How should a reader read it aloud?",
+   "options": [
+    "Let it run a little faster, like the flashing fish-ponds, then land softly on the last line.",
+    "Skip it, because it is too long.",
+    "Stop after every word.",
+    "Read it the same way as every other line."
+   ],
+   "answer": 0,
+   "from": "32.2 Poetry Corner (read it three ways; the tip); 32.4 Poetry Corner",
+   "status": "new (nothing on the poem before)"
+  },
+  {
+   "n": 14,
+   "section": "Writing",
+   "label": "Your Letter",
+   "type": "essay_question",
+   "points": 1,
+   "text": "Write the claim sentence of your letter (Read ___ before ___). Then write one reason, with a moment from each of the two books.",
+   "key": "A claim that names two of the five novels; one reason; a real moment (or exact words) from each book that supports it.",
+   "from": "32.1 letter plan; 32.2 letter draft; 32.2 Read Like a Writer (the claim in your own voice)",
+   "status": "replaced (was 'write your final closing sentence')"
+  }
+ ],
+ "passage": {
+  "before": 0,
+  "title": "",
+  "text": "",
+  "cite": ""
+ }
+}

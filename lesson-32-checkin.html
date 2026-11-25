@@ -353,37 +353,159 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
   <div class="intro"><p>This is the final check-in of 5th Grade ELA. It covers skills and synthesis from the entire year. Show everything you know.</p></div>
   <div class="total-bar"><div class="total-label">Total Points</div><div class="total-value">14 points</div></div>
 
+  <!-- GRAMMAR -->
   <div class="section">
-    <div class="section-head"><div class="section-icon grammar">✏️</div><div><div class="section-title">Grammar: Voice, Tone, and Sentence Variety</div><div class="section-pts">3 points</div></div></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">1</span>Which sentence best demonstrates the grammar of a year-end portfolio — specific, honest, individual voice?</div><ul class="options" data-qid="mcq1"><li onclick="sel(this,'mcq1')"><span class="opt-letter">A</span>I grew a lot as a reader this year and learned many things.</li><li onclick="sel(this,'mcq1')"><span class="opt-letter">B</span>By November, I had learned to slow down before Fleischman&rsquo;s chapter endings — because that is where he hides the thing that will follow you for days.</li><li onclick="sel(this,'mcq1')"><span class="opt-letter">C</span>Reading is very important and I did a lot of it this year.</li></ul></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">2</span>Write one sentence about your year of reading that begins with a participial phrase. It should say something specific — not generic.</div><textarea oninput="ga()" data-label="Q2" id="r1" class="response-box short" placeholder="[Participial phrase opener], ..."></textarea></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">3</span>Edit this sentence for all errors: <em>looking back i realize that the reader i was in september couldn't have understood what kit tyler's choice meant — i didn't know yet what it cost to stay somewhere that didn't want you</em></div><textarea oninput="ga()" data-label="Q3" id="r2" class="response-box" placeholder="Corrected: ..."></textarea></div>
+    <div class="section-head"><div class="section-icon grammar">✏️</div><div><div class="section-title">Grammar: Final Editing</div><div class="section-pts">3 points</div></div></div>
+    <div class="question">
+      <div class="q-label">Agreement <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">1</span>Which sentence is ready to publish?</div>
+      <ul class="options" data-qid="mcq1">
+        <li onclick="sel(this,'mcq1')"><span class="opt-letter">A</span>Each of the boys were changed by the journey.</li>
+        <li onclick="sel(this,'mcq1')"><span class="opt-letter">B</span>Each of the boys was changed by the journey.</li>
+        <li onclick="sel(this,'mcq1')"><span class="opt-letter">C</span>each of the boys was changed by the journey.</li>
+        <li onclick="sel(this,'mcq1')"><span class="opt-letter">D</span>Each of the boys was changed by the journey</li>
+      </ul>
+    </div>
+    <div class="question">
+      <div class="q-label">Titles <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">2</span>Which sentence capitalizes the book title correctly?</div>
+      <ul class="options" data-qid="mcq2">
+        <li onclick="sel(this,'mcq2')"><span class="opt-letter">A</span>I read carry on, mr. bowditch in the fall.</li>
+        <li onclick="sel(this,'mcq2')"><span class="opt-letter">B</span>I read Carry On, Mr. Bowditch in the fall.</li>
+        <li onclick="sel(this,'mcq2')"><span class="opt-letter">C</span>I read Carry on, mr. Bowditch in the fall.</li>
+        <li onclick="sel(this,'mcq2')"><span class="opt-letter">D</span>I read Carry On Mr Bowditch in the fall.</li>
+      </ul>
+    </div>
+    <div class="question">
+      <div class="q-label">Fix a Run-On <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">3</span>Fix the capitals and the run-on. Write the sentences correctly.</div>
+      <div class="excerpt">i chose this book because it made me laugh it also made me think about keeping promises</div>
+      <textarea oninput="ga()" data-label="Q3: Grammar — Fix a Run-On" id="resp1" class="response-box short" placeholder="Write your answer here..."></textarea>
+    </div>
   </div>
 
+  <!-- MORPHOLOGY & VOCABULARY -->
   <div class="section">
-    <div class="section-head"><div class="section-icon morph">🔬</div><div><div class="section-title">Morphology: Year-Long Root Reflection</div><div class="section-pts">3 points</div></div></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">4</span>A student reads the word <em>impersistence</em> for the first time. Which roots and affixes help them decode it?</div><ul class="options" data-qid="mcq2"><li onclick="sel(this,'mcq2')"><span class="opt-letter">A</span>im– (not) + persist (root: stand firm) + –ence (state of) → the state of not standing firm</li><li onclick="sel(this,'mcq2')"><span class="opt-letter">B</span>im– (into) + per– (through) + sist (root) + ence (sound)</li><li onclick="sel(this,'mcq2')"><span class="opt-letter">C</span>The prefix im– changes the meaning, but the rest cannot be decoded without a dictionary.</li></ul></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">5</span>Which word contains a root meaning <em>play or jest</em> — studied in Week 26?</div><ul class="options" data-qid="mcq3"><li onclick="sel(this,'mcq3')"><span class="opt-letter">A</span>ludicrous</li><li onclick="sel(this,'mcq3')"><span class="opt-letter">B</span>fortitude</li><li onclick="sel(this,'mcq3')"><span class="opt-letter">C</span>exuberance</li></ul></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">6</span>Name any root from this year. Write its meaning, two words built from it, and one sentence explaining how knowing this root helps you as a reader outside ELA class.</div><textarea oninput="ga()" data-label="Q6" id="r3" class="response-box" placeholder="Root: ___  Meaning: ___  Words: ___&#10;How it helps: ..."></textarea></div>
+    <div class="section-head"><div class="section-icon morph">🔬</div><div><div class="section-title">Morphology &amp; Vocabulary: The Year&rsquo;s Roots</div><div class="section-pts">3 points</div></div></div>
+    <div class="question">
+      <div class="q-label">Prefix <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">4</span>In the word inaudible, what does in- mean?</div>
+      <ul class="options" data-qid="mcq3">
+        <li onclick="sel(this,'mcq3')"><span class="opt-letter">A</span>not</li>
+        <li onclick="sel(this,'mcq3')"><span class="opt-letter">B</span>into</li>
+        <li onclick="sel(this,'mcq3')"><span class="opt-letter">C</span>again</li>
+        <li onclick="sel(this,'mcq3')"><span class="opt-letter">D</span>before</li>
+      </ul>
+    </div>
+    <div class="question">
+      <div class="q-label">Root <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">5</span>The root port means carry. Which word is built from it?</div>
+      <ul class="options" data-qid="mcq4">
+        <li onclick="sel(this,'mcq4')"><span class="opt-letter">A</span>portable</li>
+        <li onclick="sel(this,'mcq4')"><span class="opt-letter">B</span>potable</li>
+        <li onclick="sel(this,'mcq4')"><span class="opt-letter">C</span>possible</li>
+        <li onclick="sel(this,'mcq4')"><span class="opt-letter">D</span>popular</li>
+      </ul>
+    </div>
+    <div class="question">
+      <div class="q-label">Context Clues <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">6</span>Read the sentence. What does fortitude mean?</div>
+      <div class="excerpt">Even after months of storms and hard work, Jack kept going. He showed great fortitude.</div>
+      <ul class="options" data-qid="mcq5">
+        <li onclick="sel(this,'mcq5')"><span class="opt-letter">A</span>strength to keep going through hard times</li>
+        <li onclick="sel(this,'mcq5')"><span class="opt-letter">B</span>a large fort</li>
+        <li onclick="sel(this,'mcq5')"><span class="opt-letter">C</span>good luck</li>
+        <li onclick="sel(this,'mcq5')"><span class="opt-letter">D</span>a loud voice</li>
+      </ul>
+    </div>
   </div>
 
+  <!-- SPELLING -->
   <div class="section">
-    <div class="section-head"><div class="section-icon spelling">🔠</div><div><div class="section-title">Spelling: Final Conventions</div><div class="section-pts">3 points</div></div></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">7</span>Which word is spelled correctly?</div><ul class="options" data-qid="mcq4"><li onclick="sel(this,'mcq4')"><span class="opt-letter">A</span>exuberence</li><li onclick="sel(this,'mcq4')"><span class="opt-letter">B</span>nevertheless</li><li onclick="sel(this,'mcq4')"><span class="opt-letter">C</span>consequentley</li></ul></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">8</span>Correct all misspellings: <em>Praiseworthy demonstrated remarkable fortitued and tenasity. Nevertheles, his notoreity as Bullwhip had a certain valideity that even he couldn't deny.</em></div><textarea oninput="ga()" data-label="Q8" id="r4" class="response-box" placeholder="Corrected: ..."></textarea></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">9</span>Which word belongs to the <em>describe</em> word family?</div><ul class="options" data-qid="mcq5"><li onclick="sel(this,'mcq5')"><span class="opt-letter">A</span>descriptive</li><li onclick="sel(this,'mcq5')"><span class="opt-letter">B</span>persistence</li><li onclick="sel(this,'mcq5')"><span class="opt-letter">C</span>fortitude</li></ul></div>
+    <div class="section-head"><div class="section-icon spelling">🔠</div><div><div class="section-title">Spelling: Final Review</div><div class="section-pts">3 points</div></div></div>
+    <div class="question">
+      <div class="q-label">Tricky Words <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">7</span>Which word is spelled correctly?</div>
+      <ul class="options" data-qid="mcq6">
+        <li onclick="sel(this,'mcq6')"><span class="opt-letter">A</span>definately</li>
+        <li onclick="sel(this,'mcq6')"><span class="opt-letter">B</span>separate</li>
+        <li onclick="sel(this,'mcq6')"><span class="opt-letter">C</span>embarass</li>
+        <li onclick="sel(this,'mcq6')"><span class="opt-letter">D</span>diffrent</li>
+      </ul>
+    </div>
+    <div class="question">
+      <div class="q-label">Edit for Spelling <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">8</span>Find and correct every misspelling. Write the sentence correctly.</div>
+      <div class="excerpt">I recieve a new book every week, and I seperate the ones I love from the ones that embarass me.</div>
+      <textarea oninput="ga()" data-label="Q8: Spelling — Edit for Spelling" id="resp2" class="response-box short" placeholder="Write your answer here..."></textarea>
+    </div>
+    <div class="question">
+      <div class="q-label">Word Families <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">9</span>Which word belongs to the same word family as persist?</div>
+      <ul class="options" data-qid="mcq7">
+        <li onclick="sel(this,'mcq7')"><span class="opt-letter">A</span>persistence</li>
+        <li onclick="sel(this,'mcq7')"><span class="opt-letter">B</span>perspective</li>
+        <li onclick="sel(this,'mcq7')"><span class="opt-letter">C</span>personal</li>
+        <li onclick="sel(this,'mcq7')"><span class="opt-letter">D</span>pursuit</li>
+      </ul>
+    </div>
   </div>
 
+  <!-- READING -->
   <div class="section">
-    <div class="section-head"><div class="section-icon reading">📖</div><div><div class="section-title">Reading: Year-End Synthesis</div><div class="section-pts">3 points</div></div></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">10</span>The secondary source from Week 31 identified three types of courage: endurance, resistance, and persistence. Which pairing is correct?</div><ul class="options" data-qid="mcq6"><li onclick="sel(this,'mcq6')"><span class="opt-letter">A</span>Kit Tyler → persistence; Nat Bowditch → resistance; Johnny Tremain → endurance</li><li onclick="sel(this,'mcq6')"><span class="opt-letter">B</span>Kit Tyler → endurance; Johnny Tremain → resistance; Nat Bowditch / Jack & Praiseworthy → persistence</li><li onclick="sel(this,'mcq6')"><span class="opt-letter">C</span>All four novels demonstrate resistance because all characters are fighting against something.</li></ul></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">11</span>Choose any two novels from this year. Write one sentence that states what BOTH agree about a theme (courage, independence, or survival), and one sentence that names the KEY DIFFERENCE in how each explores it.</div><textarea oninput="ga()" data-label="Q11" id="r5" class="response-box" placeholder="Both ___ and ___ agree that...&#10;However, while ___ shows this through..., ___ reveals it through..."></textarea></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">1 pt</span></div><div class="q-text"><span class="q-number">12</span>In 2–3 sentences: What is the one reading skill you developed this year that you think will matter most in 6th grade and beyond? Be specific — name the skill, name when you practiced it, and explain why it will carry forward.</div><textarea oninput="ga()" data-label="Q12" id="r6" class="response-box" placeholder="The skill: ...&#10;When I practiced it: ...&#10;Why it will carry: ..."></textarea></div>
+    <div class="section-head"><div class="section-icon reading">📖</div><div><div class="section-title">Reading: Voice, Tone, Pacing and a Real Letter</div><div class="section-pts">4 points</div></div></div>
+    <div class="question">
+      <div class="q-label">Pacing <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">10</span>Read the lines from By the Great Horn Spoon!, Chapter 18. Why does Sid Fleischman use three short sentences?</div>
+      <div class="excerpt">They looked very much like a family. They felt like a family. They were a family.</div>
+      <ul class="options" data-qid="mcq8">
+        <li onclick="sel(this,'mcq8')"><span class="opt-letter">A</span>Each sentence goes one step further, and the short last one lands hardest.</li>
+        <li onclick="sel(this,'mcq8')"><span class="opt-letter">B</span>He forgot to join them with commas.</li>
+        <li onclick="sel(this,'mcq8')"><span class="opt-letter">C</span>They describe three different families.</li>
+        <li onclick="sel(this,'mcq8')"><span class="opt-letter">D</span>Short sentences always mean a chapter is ending.</li>
+      </ul>
+    </div>
+    <div class="question">
+      <div class="q-label">Tone <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">11</span>Captain Prince doubted Nat's figures, and Nat turned out to be right. What is Nat's tone in these lines from Carry On, Mr. Bowditch, Chapter 12?</div>
+      <div class="excerpt">“Of course,” Nat said. “It’s a simple matter of mathematics, sir.”</div>
+      <ul class="options" data-qid="mcq9">
+        <li onclick="sel(this,'mcq9')"><span class="opt-letter">A</span>calm and sure</li>
+        <li onclick="sel(this,'mcq9')"><span class="opt-letter">B</span>angry</li>
+        <li onclick="sel(this,'mcq9')"><span class="opt-letter">C</span>scared</li>
+        <li onclick="sel(this,'mcq9')"><span class="opt-letter">D</span>silly</li>
+      </ul>
+    </div>
+    <div class="question">
+      <div class="q-label">Primary Source <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">12</span>Louise Clappe wrote letters from a California mining camp in 1851 and 1852. Why is her letter a primary source?</div>
+      <ul class="options" data-qid="mcq10">
+        <li onclick="sel(this,'mcq10')"><span class="opt-letter">A</span>She wrote it at the time, about a place she was living in.</li>
+        <li onclick="sel(this,'mcq10')"><span class="opt-letter">B</span>It is a novel about the Gold Rush.</li>
+        <li onclick="sel(this,'mcq10')"><span class="opt-letter">C</span>Optima wrote it for this lesson.</li>
+        <li onclick="sel(this,'mcq10')"><span class="opt-letter">D</span>It was written in 2026.</li>
+      </ul>
+    </div>
+    <div class="question">
+      <div class="q-label">Poetry <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">13</span>In Amy Lowell’s “Wind and Silver,” the third line is much longer than the others. How should a reader read it aloud?</div>
+      <ul class="options" data-qid="mcq11">
+        <li onclick="sel(this,'mcq11')"><span class="opt-letter">A</span>Let it run a little faster, like the flashing fish-ponds, then land softly on the last line.</li>
+        <li onclick="sel(this,'mcq11')"><span class="opt-letter">B</span>Skip it, because it is too long.</li>
+        <li onclick="sel(this,'mcq11')"><span class="opt-letter">C</span>Stop after every word.</li>
+        <li onclick="sel(this,'mcq11')"><span class="opt-letter">D</span>Read it the same way as every other line.</li>
+      </ul>
+    </div>
   </div>
 
+  <!-- WRITING -->
   <div class="section">
-    <div class="section-head"><div class="section-icon writing">✍️</div><div><div class="section-title">Writing: Portfolio Reflection</div><div class="section-pts">2 points</div></div></div>
-    <div class="question"><div class="q-label">&nbsp;<span class="pts">2 pt</span></div><div class="q-text"><span class="q-number">13</span>Write your final closing sentence — the one that ends your year-end portfolio. It should be specific to your experience, honest, and something only you could have written about this year of reading.</div><textarea oninput="ga()" data-label="Q13" id="r7" class="response-box" placeholder="My final portfolio sentence: ..."></textarea></div>
+    <div class="section-head"><div class="section-icon writing">✍️</div><div><div class="section-title">Writing: Your Letter</div><div class="section-pts">1 points</div></div></div>
+    <div class="question">
+      <div class="q-label">Your Letter <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">14</span>Write the claim sentence of your letter (Read ___ before ___). Then write one reason, with a moment from each of the two books.</div>
+      <textarea oninput="ga()" data-label="Q14: Writing — Your Letter" id="resp3" class="response-box" placeholder="Write your answer here..."></textarea>
+    </div>
   </div>
 
   <div class="gathered-card" style="border:2px solid #F9A825;">
@@ -409,11 +531,11 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 var mc={};
 function sel(li,q){document.querySelectorAll('[data-qid="'+q+'"]').forEach(e=>e.classList.remove('selected'));li.classList.add('selected');mc[q]=li.querySelector('.opt-letter').textContent;ga();}
 function ga(){
-  var out='WEEK 32 FINAL YEAR-END CHECK-IN\n'+'='.repeat(48)+'\n\n';
-  var mcm={mcq1:'Grammar Q1',mcq2:'Morph Q4',mcq3:'Morph Q5',mcq4:'Spelling Q7',mcq5:'Spelling Q9',mcq6:'Reading Q10'};
+  var out='WEEK 32 CHECK-IN\n'+'='.repeat(48)+'\n\n';
+  var mcm={mcq1:'Grammar Q1',mcq2:'Grammar Q2',mcq3:'Morphology Q4',mcq4:'Morphology Q5',mcq5:'Morphology Q6',mcq6:'Spelling Q7',mcq7:'Spelling Q9',mcq8:'Reading Q10',mcq9:'Reading Q11',mcq10:'Reading Q12',mcq11:'Reading Q13'};
   Object.keys(mcm).forEach(k=>{out+=mcm[k]+': '+(mc[k]||'—')+'\n';});
-  ['r1','r2','r3','r4','r5','r6','r7'].forEach(function(id,i){
-    var e=document.getElementById(id);if(e)out+='\nQ'+(i===0?2:i===1?3:i===2?6:i===3?8:i===4?11:i===5?12:13)+':\n'+(e.value.trim()||'(no answer)')+'\n';
+  [['resp1','Q3: Grammar — Fix a Run-On'],['resp2','Q8: Spelling — Edit for Spelling'],['resp3','Q14: Writing — Your Letter']].forEach(function(r){
+    var e=document.getElementById(r[0]);if(e)out+='\n'+r[1]+':\n'+(e.value.trim()||'(no answer)')+'\n';
   });
   document.getElementById('gatheredOutput').value=out;
 }
