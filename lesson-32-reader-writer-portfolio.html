@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Optima Academy Online — The Reader-Writer Portfolio (Year-End Project)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#F0F2F8;color:#24324F;font:17px/1.6 'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif}
+.wrap{max-width:920px;margin:0 auto;background:#fff;min-height:100vh}
+.oao-header{background:#0E1C42;color:#fff;padding:18px 22px;display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.oao-logo img{width:46px;height:46px;border-radius:50%;background:#fff;display:block}
+.oao-org{font-weight:800;font-size:15px}.oao-sub{font-size:11px;opacity:.75}
+.oao-title{font:700 24px/1.25 'Lora',Georgia,serif;margin:0;flex:1 1 320px}
+.oao-title em{color:#FFE9A8}
+.oao-badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:700}
+.bar{background:#5BC8E8;height:5px}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;padding:16px 22px;background:#F4F7FD;border-bottom:1px solid #E2E8F4}
+.info div{background:#fff;border:1px solid #E2E8F4;border-radius:10px;padding:10px 12px;font-size:14px}
+.info b{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#7A88A8}
+main{padding:22px}
+h2{font:700 22px/1.3 'Lora',Georgia,serif;color:#0E1C42;margin:0 0 8px}
+.card{background:#FFFDF6;border:1px solid #E9DFC4;border-top:3px solid #C8A850;border-radius:12px;padding:18px 20px;margin:0 0 18px}
+.todo{background:#fff;border:1px solid #E9DFC4;border-radius:10px;padding:10px 14px 10px 18px;margin:10px 0;color:#111}
+.todo b{display:block;margin-bottom:2px}.todo ol{margin:4px 0 4px 20px;padding:0}
+label{display:block;font-weight:700;margin:14px 0 4px;color:#0E1C42}
+.help{font-size:14px;color:#5A6B8C;margin:0 0 6px}
+input[type=text],select,textarea{width:100%;font:inherit;padding:10px 12px;border:2px solid #D9E0F0;border-radius:10px;background:#fff;color:#24324F}
+textarea{min-height:92px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:#C8A850}
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.moment{background:#fff;border:1px solid #E2E8F4;border-radius:10px;padding:12px}
+.moment h3{margin:0;font-size:15px;color:#8B3A20}
+.count{font-size:13px;color:#7A88A8;text-align:right;margin-top:2px}
+.count.ok{color:#24502A;font-weight:700}
+.btn{font:800 17px/1 inherit;background:#8B6FC0;color:#fff;border:0;border-radius:999px;padding:14px 26px;cursor:pointer;box-shadow:0 3px 0 #6B52A0}
+.btn:hover{background:#7C60B4}.btn.ghost{background:#fff;color:#0E1C42;border:2px solid #D9E0F0;box-shadow:none}
+.status{font-size:14px;color:#5A6B8C;margin-top:8px}
+.check{list-style:none;padding:0;margin:8px 0}.check li{margin:4px 0}.check .done{color:#24502A;font-weight:700}
+table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid #E2E8F4;padding:7px 9px;text-align:left;vertical-align:top}th{background:#F4F7FD;color:#0E1C42}
+details summary{cursor:pointer;font-weight:800;color:#0E1C42}
+.foot{padding:18px 22px;font-size:12px;color:#7A88A8;border-top:1px solid #E2E8F4;text-align:center}
+#booklet{display:none}
+.panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.panel-n{display:inline-block;background:#0E1C42;color:#fff;border-radius:50%;width:26px;height:26px;text-align:center;line-height:26px;font-size:14px;margin-right:6px}
+.eg{font-size:14px;color:#5A6B8C;background:#F4F7FD;border-radius:8px;padding:8px 10px;margin:6px 0}
+@media print{
+  body{background:#fff}.wrap{max-width:none}
+  .screen{display:none!important}
+  #booklet{display:block;font:15px/1.55 Georgia,serif;color:#000}
+  .pg{page-break-after:always;padding:8mm 4mm}
+  .pg:last-child{page-break-after:auto}
+  .pg h1{font-size:26px;margin:0 0 4px}.pg h2{font-size:19px;border-bottom:2px solid #0E1C42;padding-bottom:4px;margin:0 0 12px;color:#0E1C42}
+  .pg .k{font:700 12px/1.3 Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:#555;margin:14px 0 2px}
+  .pg .v{white-space:pre-wrap;border-left:3px solid #C8A850;padding-left:10px;min-height:20px}
+  .pg .by{font-size:15px;color:#333}
+}
+</style>
+</head>
+<body>
+<style>
+.env{position:relative;max-width:460px;margin:14px auto 6px;aspect-ratio:1.75;background:linear-gradient(180deg,#FBF4E2,#F1E2BF);border:1px solid #D9C69A;border-radius:6px;box-shadow:0 2px 10px rgba(14,28,66,.15);font-family:Georgia,serif;color:#3A2A18;}
+.env:before{content:"";position:absolute;left:0;right:0;top:0;height:46%;background:linear-gradient(160deg,transparent 49.5%,#E3CFA0 50%,transparent 50.5%),linear-gradient(200deg,transparent 49.5%,#E3CFA0 50%,transparent 50.5%);}
+.env .to{position:absolute;left:30%;top:56%;font-size:15px;line-height:1.5;max-width:62%;}
+.env .stamp{position:absolute;right:16px;top:14px;width:64px;height:76px;border:3px dotted #B5651D;background:#FFFDF7;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:26px;text-align:center;}
+.env .stamp small{font-size:9px;line-height:1.1;margin-top:2px;}
+.env .seal{position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#C8463A,#8E1F18);color:#F7D9C8;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;box-shadow:0 2px 4px rgba(0,0,0,.3);}
+.pcs{display:grid;grid-template-columns:1fr;gap:10px;}
+.env,.env *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+@media print{.pcg{display:grid;grid-template-columns:1fr 1fr;gap:8px}.pcg .pc{border:1px solid #B89A62;border-radius:6px;padding:6px 8px;font-size:11pt;white-space:pre-wrap}}
+</style>
+<div class="wrap">
+ <div class="screen">
+  <header class="oao-header">
+    <div class="oao-logo"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy"></div>
+    <div><div class="oao-org">Optima Academy Online</div><div class="oao-sub">An Education Experience Company</div></div>
+    <h1 class="oao-title">The Reader-Writer Portfolio &mdash; Year-End Project</h1>
+    <div class="oao-badge">Year Project</div>
+  </header>
+  <div class="bar"></div>
+  <div class="info">
+    <div><b>Project</b>The Reader-Writer Portfolio</div>
+    <div><b>When</b>After Lesson 32.4</div>
+    <div><b>Reading</b>Any two of the year&rsquo;s five novels</div>
+    <div><b>Turn in</b>One PDF and one recording, in Canvas</div>
+  </div>
+  <main>
+    <section class="card activity" id="about">
+      <h2>The Reader-Writer Portfolio</h2>
+      <p>This is the last project of 5th grade. It has two parts. <strong>Part 1</strong> is the comparison essay you finished in Week 31. <strong>Part 2</strong> is your letter to a future 5th grader, with everything that goes with it: your Reader&rsquo;s Portrait, five Book Postcards, the letter, a Word Gift, a P.S. and an envelope. It all goes into one booklet.</p>
+      <div class="todo"><b>What to do</b><ol><li>Paste in each part from your lessons, one section at a time.</li><li>Check that every quote is copied exactly from your book, with its chapter.</li><li>Tap <strong>Make my booklet</strong>, save it as a PDF, and upload the PDF in Canvas.</li></ol></div>
+      <p class="help">Your work saves on this computer as you type. Your copied work from Lessons 31.4 and 32.1&ndash;32.4 has every part you need.</p>
+      <label for="f-name">Your name</label>
+      <input type="text" id="f-name" autocomplete="name" placeholder="First and last name">
+    </section>
+
+    <section class="card activity" id="p1">
+      <h2>Part 1 &middot; My comparison essay</h2>
+      <p>Paste the final version of your Week 31 comparison essay (from Lesson 31.4).</p>
+      <label for="f-books">The two novels I compared</label>
+      <input type="text" id="f-books" placeholder="___ and ___">
+      <label for="f-essay">My comparison essay</label>
+      <textarea id="f-essay" style="min-height:220px" placeholder="Paste your essay here."></textarea>
+      <div class="count" id="c-essay">0 paragraphs</div>
+    </section>
+
+    <section class="card activity" id="p2">
+      <h2>Part 2 &middot; My Reader&rsquo;s Portrait</h2>
+      <p>Paste your Reader&rsquo;s Portrait from Lesson 32.1: who you were as a reader in September, who you are now, and one moment from each of two novels.</p>
+      <label for="f-portrait">My Reader&rsquo;s Portrait</label>
+      <textarea id="f-portrait" style="min-height:130px" placeholder="When I started 5th grade, I thought reading was..."></textarea>
+    </section>
+
+    <section class="card activity" id="p3">
+      <h2>Part 2 &middot; Five Book Postcards</h2>
+      <p>One postcard for each novel: a pitch, a short quote copied exactly with its chapter, and &ldquo;Read this if you&hellip;&rdquo;</p>
+      <div class="pcs">
+        <label for="f-pc1">📜 <em>The Witch of Blackbird Pond</em></label><textarea id="f-pc1" placeholder="Pitch: ...&#10;Quote: &quot;...&quot; (Chapter __)&#10;Read this if you..."></textarea>
+        <label for="f-pc2">⚒️ <em>Johnny Tremain</em></label><textarea id="f-pc2" placeholder="Pitch: ...&#10;Quote: &quot;...&quot; (Chapter __)&#10;Read this if you..."></textarea>
+        <label for="f-pc3">🧭 <em>Carry On, Mr. Bowditch</em></label><textarea id="f-pc3" placeholder="Pitch: ...&#10;Quote: &quot;...&quot; (Chapter __)&#10;Read this if you..."></textarea>
+        <label for="f-pc4">🐕 <em>How I Became a Ghost</em></label><textarea id="f-pc4" placeholder="Pitch: ...&#10;Quote: &quot;...&quot; (Chapter __)&#10;Read this if you..."></textarea>
+        <label for="f-pc5">⛏️ <em>By the Great Horn Spoon!</em></label><textarea id="f-pc5" placeholder="Pitch: ...&#10;Quote: &quot;...&quot; (Chapter __)&#10;Read this if you..."></textarea>
+      </div>
+    </section>
+
+    <section class="card activity" id="p4">
+      <h2>Part 2 &middot; My letter</h2>
+      <p>Paste your final letter from Lesson 32.4: greeting, opening, claim, two reasons with a moment from each book, a fair point, and your closing. Then add your P.S.</p>
+      <label for="f-letter">My letter</label>
+      <textarea id="f-letter" style="min-height:260px" placeholder="Dear future 5th grader,&#10;..."></textarea>
+      <div class="count" id="c-letter">0 words</div>
+      <label for="f-ps">My P.S.</label>
+      <textarea id="f-ps" placeholder="P.S. ..."></textarea>
+    </section>
+
+    <section class="card activity" id="p5">
+      <h2>Part 2 &middot; My Word Gift</h2>
+      <p>Three roots from this year. For each: the root and its meaning, one word built from it, and a tip for using it on a new word.</p>
+      <label for="f-gift">My Word Gift</label>
+      <textarea id="f-gift" style="min-height:130px" placeholder="Root 1: ___ means ___. A word: ___. Tip: ...&#10;Root 2: ...&#10;Root 3: ..."></textarea>
+    </section>
+
+    <section class="card activity" id="p6">
+      <h2>Part 2 &middot; Seal and send</h2>
+      <p>Design your envelope. It shows up below as you type.</p>
+      <label for="f-to">The address line</label>
+      <input type="text" id="f-to" placeholder="To: a future 5th grader at Optima Academy Online">
+      <label for="f-seal">One letter for your wax seal (your first initial)</label>
+      <input type="text" id="f-seal" maxlength="1" style="max-width:90px" placeholder="A">
+      <label for="f-stamp">The setting on your stamp</label>
+      <select id="f-stamp">
+        <option value="">Choose a setting…</option>
+        <option value="📜|Wethersfield, Connecticut">Wethersfield, Connecticut (The Witch of Blackbird Pond)</option>
+        <option value="⚒️|Boston, 1775">Boston (Johnny Tremain)</option>
+        <option value="🧭|Salem and the sea">Salem and the sea (Carry On, Mr. Bowditch)</option>
+        <option value="🐕|Mississippi woods">The Mississippi woods (How I Became a Ghost)</option>
+        <option value="⛏️|The Long Wharf">The Long Wharf, San Francisco (By the Great Horn Spoon!)</option>
+      </select>
+      <label for="f-stamp-why">Why this setting? (one sentence)</label>
+      <input type="text" id="f-stamp-why" placeholder="I chose it because...">
+      <div class="env" id="env" aria-label="Your envelope"><div class="stamp" id="env-stamp">✉️<small>stamp</small></div><div class="seal" id="env-seal">?</div><div class="to" id="env-to">To: ...</div></div>
+      <label style="margin-top:14px"><input type="checkbox" id="f-recorded" style="width:auto;margin-right:8px">I recorded my letter and one poem from this year in the Canvas fluency assignment.</label>
+    </section>
+
+    <section class="card activity" id="finish">
+      <h2>Finish: make your booklet</h2>
+      <ul class="check" id="checklist"></ul>
+      <div class="todo"><b>What to do</b><ol><li>Tap <strong>Make my booklet</strong>.</li><li>In the box that opens, choose <strong>Save as PDF</strong>, then Save.</li><li>Go to this project in Canvas and upload the PDF.</li></ol></div>
+      <button class="btn" type="button" id="make">Make my booklet</button>
+      <button class="btn ghost" type="button" id="clear">Start over</button>
+      <p class="status" id="status" aria-live="polite"></p>
+    </section>
+
+    <section class="card">
+      <details><summary>How your project is graded (20 points)</summary>
+      <table style="margin-top:10px">
+        <thead><tr><th>What</th><th>4 &middot; Strong</th><th>3 &middot; Secure</th><th>2 &middot; Developing</th><th>1 &middot; Beginning</th></tr></thead>
+        <tbody>
+          <tr><td>Understanding</td><td>The essay and the letter show a clear, accurate understanding of both novels and what they say</td><td>Mostly accurate, with one small mix-up</td><td>Some events or ideas are wrong or missing</td><td>Retells without understanding</td></tr>
+          <tr><td>Evidence</td><td>Every reason has a real moment or exact words from both books, with chapters; postcard quotes are exact</td><td>Most reasons have evidence from both books</td><td>Evidence from one book only, or quotes not exact</td><td>Little or no evidence</td></tr>
+          <tr><td>Language and word study</td><td>Clean spelling and grammar; the Word Gift names three real roots with correct meanings and useful tips</td><td>A few small errors; the Word Gift is mostly right</td><td>Errors get in the way; the Word Gift is thin</td><td>Hard to read; no Word Gift</td></tr>
+          <tr><td>Writing process</td><td>Every part is there, revised for a 10-year-old reader, in your own voice</td><td>Every part is there and mostly revised</td><td>Parts are missing or unrevised</td><td>Mostly missing</td></tr>
+          <tr><td>Presentation</td><td>The recording is smooth and expressive, with pauses where they help, then a whole poem; the envelope is complete</td><td>Clear recording and a poem; envelope mostly done</td><td>Recording rushed or missing the poem</td><td>No recording</td></tr>
+        </tbody>
+      </table></details>
+    </section>
+  </main>
+  <div class="foot">Optima Academy Online &middot; 5th Grade ELA &middot; The Reader-Writer Portfolio &middot; Year-End Project</div>
+ </div>
+ <div id="booklet" aria-hidden="true"></div>
+</div>
+<script>
+(function () {
+  var KEY = 'oao.g5ela.year.portfolio';
+  var IDS = ['name','books','essay','portrait','pc1','pc2','pc3','pc4','pc5','letter','ps','gift','to','seal','stamp','stamp-why','recorded'];
+  var BOOKS = ['The Witch of Blackbird Pond','Johnny Tremain','Carry On, Mr. Bowditch','How I Became a Ghost','By the Great Horn Spoon!'];
+  function el(id) { return document.getElementById('f-' + id); }
+  function get(i) { var e = el(i); return e.type === 'checkbox' ? (e.checked ? 'yes' : '') : e.value; }
+  function set(i, x) { var e = el(i); if (e.type === 'checkbox') e.checked = x === 'yes'; else e.value = x; }
+  function load() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
+  function save() { var d = {}; IDS.forEach(function (i) { d[i] = get(i); }); try { localStorage.setItem(KEY, JSON.stringify(d)); document.getElementById('status').textContent = 'Saved on this computer.'; } catch (e) { document.getElementById('status').textContent = 'Could not save on this computer. Make your booklet before you leave.'; } paint(); }
+  function v(i) { return String(get(i)).trim(); }
+  function esc(t) { return String(t).replace(/[&<>]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]; }); }
+  function words(t) { return (t.match(/[A-Za-z’']+/g) || []).length; }
+  function paras(t) { return t.split(/\n\s*\n/).filter(function (p) { return p.trim(); }).length; }
+  function stamp() { var s = v('stamp').split('|'); return s.length === 2 ? s : ['✉️', 'stamp']; }
+  function paint() {
+    var pe = paras(v('essay')), wl = words(v('letter'));
+    document.getElementById('c-essay').textContent = pe + (pe === 1 ? ' paragraph' : ' paragraphs'); document.getElementById('c-essay').className = 'count' + (pe >= 5 ? ' ok' : '');
+    document.getElementById('c-letter').textContent = wl + ' words'; document.getElementById('c-letter').className = 'count' + (wl >= 150 ? ' ok' : '');
+    var st = stamp();
+    document.getElementById('env-stamp').innerHTML = esc(st[0]) + '<small>' + esc(st[1]) + '</small>';
+    document.getElementById('env-seal').textContent = (v('seal') || '?').toUpperCase();
+    document.getElementById('env-to').textContent = v('to') || 'To: ...';
+    var pc = 0; for (var i = 1; i <= 5; i++) if (v('pc' + i)) pc++;
+    var items = [[!!v('name'), 'My name is on it.'], [v('books') && pe >= 5, 'Part 1: my comparison essay, five paragraphs (' + pe + ').'],
+      [!!v('portrait'), 'Part 2: my Reader’s Portrait.'], [pc === 5, 'Part 2: five Book Postcards (' + pc + ' of 5).'],
+      [wl >= 150 && v('ps'), 'Part 2: my letter (' + wl + ' words) and my P.S.'], [!!v('gift'), 'Part 2: my Word Gift.'],
+      [v('to') && v('seal') && v('stamp') && v('stamp-why'), 'Part 2: my envelope.'], [v('recorded') === 'yes', 'I recorded my letter and a poem in Canvas.']];
+    document.getElementById('checklist').innerHTML = items.map(function (x) { return '<li class="' + (x[0] ? 'done' : '') + '">' + (x[0] ? '✅ ' : '⬜ ') + x[1] + '</li>'; }).join('');
+  }
+  function row(k, val) { return '<div class="k">' + k + '</div><div class="v">' + esc(val || '') + '</div>'; }
+  function build() {
+    var st = stamp();
+    var h = '<div class="pg"><h1>The Reader-Writer Portfolio</h1><div class="by">5th Grade ELA · Year-end project · ' + esc(v('name') || 'Name: ________') + '</div><h2 style="margin-top:16px">Part 1 · My comparison essay</h2>' +
+      row('The two novels', v('books')) + row('My essay', v('essay')) + '</div>';
+    h += '<div class="pg"><h2>Part 2 · Letter to a Future 5th Grader</h2>' + row('My Reader’s Portrait', v('portrait')) + '<div class="k">Five Book Postcards</div><div class="pcg">';
+    for (var i = 1; i <= 5; i++) h += '<div class="pc"><b>' + esc(BOOKS[i - 1]) + '</b>\n' + esc(v('pc' + i)) + '</div>';
+    h += '</div></div><div class="pg"><h2>My letter</h2>' + row('', v('letter')) + row('P.S.', v('ps')) + '</div>';
+    h += '<div class="pg"><h2>My Word Gift</h2>' + row('', v('gift')) + '<h2 style="margin-top:16px">Sealed and sent</h2>' +
+      '<div class="env" style="margin:10px 0"><div class="stamp">' + esc(st[0]) + '<small>' + esc(st[1]) + '</small></div><div class="seal">' + esc((v('seal') || '?').toUpperCase()) + '</div><div class="to">' + esc(v('to')) + '</div></div>' +
+      row('Why this stamp', v('stamp-why')) + row('Recording', v('recorded') === 'yes' ? 'My letter and one poem are recorded in Canvas.' : 'Not recorded yet.') + '</div>';
+    document.getElementById('booklet').innerHTML = h;
+  }
+  var d = load(); IDS.forEach(function (i) { if (d[i] != null) set(i, d[i]); el(i).addEventListener('input', save); el(i).addEventListener('change', save); });
+  document.getElementById('make').addEventListener('click', function () { build(); window.print(); });
+  document.getElementById('clear').addEventListener('click', function () { var c = document.getElementById('clear'); if (!c.dataset.sure) { c.dataset.sure = 1; c.textContent = 'Tap again to erase everything'; return; } IDS.forEach(function (i) { set(i, ''); }); try { localStorage.removeItem(KEY); } catch (e) {} delete c.dataset.sure; c.textContent = 'Start over'; paint(); document.getElementById('status').textContent = 'Cleared.'; });
+  window.addEventListener('beforeprint', build);
+  paint();
+})();
+</script>
+</body>
+</html>
