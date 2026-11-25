@@ -475,6 +475,16 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#F0F2F8;color:#0E
 .umap-connector{flex:1;height:3px;min-width:14px;margin-bottom:20px;background:linear-gradient(90deg,#E2E8F4,#C8862A,#E2E8F4);}
 .tracker-chapter-label{text-align:center;padding:10px 16px;font-size:13px;color:#7A88A8;font-weight:600;background:#FAFBFF;border-top:1px solid #E2E8F4;}
 .tracker-chapter-label strong{color:#C8862A;}
+
+/* Read Like a Writer box (same as weeks 19-31) */
+.rwm-box{background:#FFFFFF;border:2px solid #E2E8F4;border-radius:14px;overflow:hidden;margin:18px 0 14px;}
+.rwm-header{background:linear-gradient(135deg,#2C5F2E,#1A2D5A);color:#fff;padding:12px 18px;font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;}
+.rwm-sentence{background:linear-gradient(135deg,#FFFCF0 0%,#FBF5E6 100%);border-bottom:2px solid #F5E6C8;padding:16px 20px;font-family:'Lora',Georgia,serif;font-size:17px;color:#2C5F2E;line-height:1.7;font-style:italic;}
+.rwm-step{padding:14px 20px;border-bottom:1.5px solid #E2E8F4;}
+.rwm-step:last-child{border-bottom:none;}
+.rwm-step-label{display:flex;align-items:center;gap:8px;font-size:14px;color:#C8A850;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
+.rwm-step-text{font-size:15px;color:#3A4A6B;line-height:1.6;}
+.rwm-frame{background:#FAFBFF;border:1.5px dashed #8B3A20;border-radius:8px;padding:10px 14px;margin-top:8px;font-family:'Lora',Georgia,serif;font-size:15px;color:#8B3A20;font-style:italic;}
 </style>
 </head>
 <body>
@@ -993,7 +1003,28 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
       </div>
     </div>
   </div>
-  <div class="tab-next-wrap"><p class="tab-transition-voice">Revised. Tomorrow you seal and send it.</p>
+    <!-- RWM -->
+  <div class="rwm-box">
+    <div class="rwm-header">&#128214; Read Like a Writer &mdash; Read &bull; Notice &bull; Try</div>
+    <div class="rwm-sentence">&ldquo;Of course,&rdquo; Nat said. &ldquo;It&rsquo;s a simple matter of mathematics, sir.&rdquo; <span style="font-size:13px;color:#5A6B8C;font-style:normal;">(<em>Carry On, Mr. Bowditch</em>, Chapter 12)</span></div>
+    <div class="rwm-step"><div class="rwm-step-label">&#128214; As a Reader</div>
+      <div class="rwm-step-text">The captain doubted Nat&rsquo;s figures, and Nat turned out to be right. What is Nat&rsquo;s tone here: angry, proud, or calm?</div>
+      <textarea class="journal-box" id="journal-rwm-reader" data-label="Read Like a Writer: As a Reader" placeholder="I notice..." oninput="autoSave(this,'dot-journal-rwm-reader');"></textarea>
+      <div class="journal-label">&#128211; <span class="saved-dot" id="dot-journal-rwm-reader"></span></div>
+    </div>
+    <div class="rwm-step"><div class="rwm-step-label">&#9999;&#65039; As a Writer</div>
+      <div class="rwm-step-text">Nat could have bragged. His <strong>tone</strong> stays calm and sure instead, and that makes him sound more confident, not less. Tone is the feeling in the words. A letter to a younger reader works best with a warm, sure tone: not bossy, not stiff.</div>
+      <textarea class="journal-box" id="journal-rwm-writer" data-label="Read Like a Writer: As a Writer" placeholder="The writer..." oninput="autoSave(this,'dot-journal-rwm-writer');"></textarea>
+      <div class="journal-label">&#128211; <span class="saved-dot" id="dot-journal-rwm-writer"></span></div>
+    </div>
+    <div class="rwm-step"><div class="rwm-step-label">&#128394;&#65039; Try It</div>
+      <div class="rwm-step-text">Find one sentence in your letter that sounds bossy or stiff. Write it, then rewrite it so it sounds warm and sure.</div>
+      <textarea class="journal-box" id="journal-rwm-mimic" data-label="Read Like a Writer: Try It" placeholder="My sentences..." oninput="autoSave(this,'dot-journal-rwm-mimic');"></textarea>
+      <div class="journal-label">&#128211; <span class="saved-dot" id="dot-journal-rwm-mimic"></span></div>
+    </div>
+  </div>
+
+<div class="tab-next-wrap"><p class="tab-transition-voice">Revised. Tomorrow you seal and send it.</p>
   <button class="tab-next-btn" onclick="markDone('reading');switchTab('assignment')">Continue to 📬 Assignment →</button></div>
 </div><div class="tab-panel" id="tab-assignment"><div class="activity bl-gold" style="margin-bottom:20px;">
     <div class="activity-head"><div class="activity-num" style="background:#F9A825;color:#0E1C42;">✉️</div><div style="flex:1;"><div class="activity-title">Letter Packet &middot; Week 32 &middot; REVISE</div><div class="activity-sub">Your revised letter, with the Word Gift and the P.S.</div></div></div>
@@ -1009,7 +1040,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
       <textarea class="journal-box" id="journal-writing" data-label="Letter REVISED: the letter with three revisions, the Word Gift and the P.S." placeholder="Dear future 5th grader,&#10;...&#10;&#10;Your friend,&#10;___&#10;&#10;Word Gift: ...&#10;&#10;P.S. ..." oninput="autoSave(this,'dot-journal-writing');"></textarea>
       <div class="journal-label">&#128211; <span class="saved-dot" id="dot-journal-writing"></span></div>
     </div>
-  </div><div class="turn-in-card"><div class="turn-in-header"><div class="turn-in-header-icon">✅</div><div><div class="turn-in-header-label">Before You Finish</div><div class="turn-in-header-title">Check Your Work</div></div></div><div class="turn-in-body"><div class="turn-in-checklist"><div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I made three revisions: vague to specific, the honest sentence, and the last sentence.</div></div><div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I finished the Spelling Show What You Know.</div></div><div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my Word Gift and my P.S.</div></div><div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I read my whole letter aloud twice and timed it (2 to 3 minutes).</div></div></div></div></div><div class="gathered-card">
+  </div><div class="turn-in-card"><div class="turn-in-header"><div class="turn-in-header-icon">✅</div><div><div class="turn-in-header-label">Before You Finish</div><div class="turn-in-header-title">Check Your Work</div></div></div><div class="turn-in-body"><div class="turn-in-checklist"><div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered the Read Like a Writer box.</div></div><div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I made three revisions: vague to specific, the honest sentence, and the last sentence.</div></div><div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I finished the Spelling Show What You Know.</div></div><div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my Word Gift and my P.S.</div></div><div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I read my whole letter aloud twice and timed it (2 to 3 minutes).</div></div></div></div></div><div class="gathered-card">
   <div class="gathered-header"><div class="gathered-header-icon">📋</div>
   <div><div class="gathered-header-label">All Your Work</div>
   <div class="gathered-header-title">Review, Copy, or Download</div></div></div>
