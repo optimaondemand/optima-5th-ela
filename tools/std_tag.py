@@ -34,8 +34,9 @@ WEEKS = {
  29: dict(read=F('R.1.3'),          think=F('R.1.3', 'R.3.1'),           write=F('C.1.2', 'C.1.5', 'EE.6.1')),
  30: dict(read=F('R.1.2'),          think=F('R.1.2', 'R.3.2'),           write=F('C.1.2', 'C.1.5')),
  31: dict(read=F('R.3.3', 'R.2.4'), think=F('R.3.3', 'R.2.4', 'EE.1.1'), write=F('C.1.3', 'C.1.5')),
+ 32: dict(read=F('EE.1.1'),         think=F('EE.1.1', 'C.1.5'),          write=F('C.1.5')),   # bar has no R code; synthesis = cite evidence across texts
 }
-CHECKIN_Q = {(19, 5): F('V.1.3'), (20, 5): F('V.1.3'), (21, 5): F('V.1.3'), (22, 5): F('V.1.3'), (23, 5): F('V.1.3'), (24, 5): F('V.1.3'), (25, 5): F('V.1.3'), (26, 5): F('V.1.3'), (27, 5): F('V.1.3'), (27, 13): F('R.1.4'), (28, 6): F('V.1.3'), (28, 13): F('R.1.4'), (29, 6): F('V.1.3'), (29, 13): F('R.1.4'), (30, 6): F('V.1.3'), (30, 13): F('R.1.4'), (31, 12): F('R.1.4')}   # Q5 is a context-clue item each week
+CHECKIN_Q = {(19, 5): F('V.1.3'), (20, 5): F('V.1.3'), (21, 5): F('V.1.3'), (22, 5): F('V.1.3'), (23, 5): F('V.1.3'), (24, 5): F('V.1.3'), (25, 5): F('V.1.3'), (26, 5): F('V.1.3'), (27, 5): F('V.1.3'), (27, 13): F('R.1.4'), (28, 6): F('V.1.3'), (28, 13): F('R.1.4'), (29, 6): F('V.1.3'), (29, 13): F('R.1.4'), (30, 6): F('V.1.3'), (30, 13): F('R.1.4'), (31, 12): F('R.1.4'), (32, 10): F('EE.1.1'), (32, 11): F('EE.1.1'), (32, 12): F('EE.1.1'), (32, 13): F('R.1.4')}   # Q5 is a context-clue item each week
 
 def rule(t, tab, W, bar):
     t = t.lower()
@@ -64,10 +65,13 @@ def rule(t, tab, W, bar):
     if 'read the table' in t: return F('R.2.1')
     if 'talk it over' in t or 'discussion prompts' in t: return F('EE.4.1')
     if 'present your essay' in t: return F('C.2.1', 'C.5.1')
+    if 'seal &amp; send' in t or 'seal & send' in t: return F('C.1.5', 'C.2.1', 'C.5.1')   # week 32: envelope, recording, booklet
+    if 'read it aloud' in t: return F('F.1.4', 'C.2.1')
+    if re.sub(r'^\W+', '', t).startswith('speaking'): return F('C.2.1')
     if 'portfolio' in t or 'getting ready to celebrate' in t: return F('C.2.1', 'EE.6.1')
     if 'back to your own writing' in t: return F('C.3.1')
     if re.search(r'chapters? [\d\s\u2013-]+:? ?review|week at a glance', t): return W.get('review', W['read'])
-    if re.search(r'writer.s workshop|writing con|part b|part c|final literary|final sentence|build your comparison|writing workshop|comparison project', t):
+    if re.search(r'writer.s workshop|writing con|part b|part c|final literary|final sentence|build your comparison|writing workshop|comparison project|letter packet|word gift|revision: three', t):
         return W['write']
     if re.search(r'chapter thinking|whole-book|source thinking|cross-novel|theme comparison|part a', t): return W['think']
     if tab == 'fluency': return F('F.1.4')
@@ -94,7 +98,7 @@ def tag_page(path, lid, week, W):
     bm = re.search(r'class="standards-codes">(.*?)</div>', s, re.S)
     bar = set(re.findall(r'ELA\.[\w]+\.[A-Z]+\.\d\.\d', bm.group(1))) if bm else set()
     tabs = [(m.start(), m.group(1)) for m in re.finditer(r'<div class="tab-panel[^"]*" id="tab-(\w+)"', s)]
-    is_checkin, is_fluency = 'checkin' in path, 'fluency' in path
+    is_checkin, is_fluency = 'checkin' in path, bool(re.search(r'lesson-\d+-fluency\.html$', path))   # 32.2 is lesson-32-2-fluency-draft
     pat = (re.compile(r'<div class="section-icon (\w+)">|<div class="question"') if is_checkin else
            re.compile(r'<div class="activity(?: bl-[\w-]+)?"|<div class="(intro-card) theme-question"'))
     blocks, out, pos, n, section, qn, untagged = [], [], 0, 0, None, 0, []
