@@ -21,6 +21,8 @@ def F(*c): return ['ELA.K12.' + x if x.startswith('EE') else 'ELA.5.' + x for x 
 
 #            WGRD + reading blocks        thinking / response blocks         writing blocks
 WEEKS = {
+ 17: dict(read=F('C.1.2'),          think=F('C.1.2'),                    write=F('C.1.2', 'C.1.5')),   # Writer's Bridge: mentor-text story week, no novel
+ 18: dict(read=F('R.1.3'),          think=F('R.1.3'),                    write=F('C.1.2')),
  19: dict(read=F('R.1.3'),          think=F('R.1.3', 'EE.1.1'),          write=F('C.1.2')),
  20: dict(read=F('R.1.1'),          think=F('R.1.1', 'EE.1.1'),          write=F('C.1.3')),
  21: dict(read=F('R.1.2'),          think=F('R.1.2', 'EE.1.1'),          write=F('C.1.2', 'C.1.5')),
@@ -60,7 +62,7 @@ def rule(t, tab, W, bar):
         if on('ELA.5.V.1.1') and re.search(r'use it|choice|week|words|put th', t): c += F('V.1.1')
         if on('ELA.5.V.1.3') or re.search(r'context|cloze', t): c += F('V.1.3')
         return c
-    if 'rwm' in t: return F('C.3.1')
+    if 'rwm' in t or 'read like a writer' in t: return F('C.3.1')
     if 'digital t' in t: return F('C.5.2')
     if 'read the table' in t: return F('R.2.1')
     if 'talk it over' in t or 'discussion prompts' in t: return F('EE.4.1')
@@ -125,6 +127,16 @@ def tag_page(path, lid, week, W):
         out.append(s[pos:m.end()]); out.append(f' data-std="{" ".join(fl)}" data-std-id="{bid}"'); pos = m.end()
         blocks.append(dict(id=bid, title=title, **expand(fl)))
     out.append(s[pos:]); s = ''.join(out)
+    if not blocks and bar and not is_checkin and '<div class="section-card' in s:   # 17.4 story-publish page: one card per story section
+        out, pos = [], 0
+        for m in re.finditer(r'<div class="section-card[^"]*" id="card-(\w+)"', s):
+            tm = re.search(r'section-head-title">(.*?)</div>', s[m.end():m.end() + 1500], re.S)
+            title = html.unescape(tm.group(1)).strip() if tm else m.group(1)
+            fl = F('C.1.5') if m.group(1) == 'reflect' else W['write']
+            n += 1; bid = f'{lid}-{n:02d}'
+            out.append(s[pos:m.end()]); out.append(f' data-std="{" ".join(fl)}" data-std-id="{bid}"'); pos = m.end()
+            blocks.append(dict(id=bid, title=title, **expand(fl)))
+        out.append(s[pos:]); s = ''.join(out)
     if not blocks and bar and not is_checkin:   # the fluency page has no activity blocks: tag its passage
         m = re.search(r'<div class="fluency-passage"', s) or re.search(r'<div class="passage"', s)   # week 27 fluency uses class="passage"
         if m:

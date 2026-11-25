@@ -13,7 +13,9 @@ def fmt(st, v):
     if v == 'pending' or v is None: return 'pending'
     if st == 'TX': v = ['TEKS ' + re.sub(r'^110\.\d+\(b\)', '', x) for x in v]
     return ', '.join(v) or None
-DECIDED = {5: [(19, 'Nov 21: EE.1.1 added to the week 19 bar (every Chapter Thinking question asks for book evidence).'),
+DECIDED = {5: [(17, 'Nov 25 (Q3-Q4 audit): Writer\'s Bridge week tagged. No novel, so reading and thinking blocks are C.1.2 (narrative writing from mentor text), writing C.1.2 + C.1.5; the 17.4 story-publish page (no activities) is tagged per story section. Bar unchanged; coverage clean.'),
+               (18, 'Nov 25 (Q3-Q4 audit): week 18 tagged with the scope bar (R.1.3 reading, R.1.4 poetry, C.1.2 writing, V.1.3 context clues). Bar unchanged; coverage clean.'),
+               (19, 'Nov 21: EE.1.1 added to the week 19 bar (every Chapter Thinking question asks for book evidence).'),
                (20, 'Nov 21: bar kept as is (every code on it is taught; nothing taught is off it). R.1.1 and C.1.3 added to the crosswalk.'),
                (21, 'Nov 21: EE.1.1 added to the week 21 bar (same call as week 19). R.1.2 and C.1.5 added to the crosswalk.'),
                (22, 'Nov 21: bar kept as is (v4 set, EE.1.1 already on it); coverage clean. R.3.1 added to the crosswalk.'),
