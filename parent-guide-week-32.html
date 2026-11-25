@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 32 Parent Guide · 5th Grade ELA · Optima Academy Online</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+:root{
+  --navy:#0E1C42; --ink:#3A4A6B; --muted:#5E6C8C; --line:#E2E8F4;
+  --sky:#55C8E8; --sky-bg:#EAF8FD; --gold:#C7922C; --gold-bg:#FFF3DC;
+  --green:#34B76F; --green-bg:#E3F8ED; --plum:#8B6FC0; --plum-bg:#F1ECFA;
+  --paper:#FAFBFF; --cream:#FFF8F0;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:"Nunito",sans-serif;font-size:18px;line-height:1.6;}
+.wrap{max-width:880px;margin:0 auto;padding:24px 16px 48px;}
+h1,h2,h3{font-family:"Lora",Georgia,serif;color:var(--navy);margin:0;}
+p{margin:0 0 10px;}
+strong{color:var(--navy);}
+
+/* header */
+.hero{background:var(--navy);color:#fff;border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1.25fr 1fr;}
+.hero-text{padding:28px 28px 26px;}
+.brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#BFD0EE;margin-bottom:14px;}
+.brand img{width:38px;height:38px;border-radius:50%;background:#fff;}
+.hero h1{color:#fff;font-size:34px;line-height:1.2;margin-bottom:6px;}
+.hero .sub{font-size:19px;color:#DCE6F7;margin-bottom:16px;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 13px;font-size:16px;font-weight:700;color:#fff;}
+.hero-art{background:#F5E6C8 center/cover no-repeat;min-height:240px;}
+
+/* cards */
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-top:18px;}
+.card-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.card-head .ico{font-size:26px;line-height:1;}
+.card-head h2{font-size:24px;}
+.card-head .tag{margin-left:auto;font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+
+.glance{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.glance .box{border-radius:12px;padding:14px 16px;}
+.box-label{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.b-sky{background:var(--sky-bg);} .b-sky .box-label{color:#1F8CB0;}
+.b-gold{background:var(--gold-bg);} .b-gold .box-label{color:#9A6C14;}
+.b-green{background:var(--green-bg);} .b-green .box-label{color:#1F8452;}
+.b-plum{background:var(--plum-bg);} .b-plum .box-label{color:#6A4FA3;}
+.quote{font-family:"Lora",Georgia,serif;font-style:italic;font-size:20px;color:var(--navy);border-left:4px solid var(--gold);padding:4px 0 4px 16px;margin:16px 0 0;}
+.quote small{display:block;font-family:"Nunito",sans-serif;font-style:normal;font-size:15px;color:var(--muted);margin-top:4px;}
+
+/* day table */
+.days{width:100%;border-collapse:collapse;}
+.days th{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:2px solid var(--line);}
+.days td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+.days tr:last-child td{border-bottom:none;}
+.day-n{font-family:"Lora",Georgia,serif;font-weight:700;font-size:20px;color:var(--navy);white-space:nowrap;}
+.day-n span{display:block;font-family:"Nunito",sans-serif;font-size:15px;font-weight:700;color:var(--muted);}
+.ch{font-weight:800;color:var(--navy);}
+.small{font-size:16px;color:var(--muted);}
+.pill{display:inline-block;font-size:14px;font-weight:800;border-radius:999px;padding:2px 10px;margin:4px 4px 0 0;}
+.p-poem{background:var(--plum-bg);color:#6A4FA3;}
+.p-guide{background:var(--cream);color:#9A6C14;border:1px solid #F5E6C8;}
+.extra-row td{background:var(--paper);}
+
+/* words */
+.words{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.word{border:1px solid var(--line);border-radius:12px;padding:12px 16px;}
+.word b{font-family:"Lora",Georgia,serif;font-size:21px;color:var(--navy);display:block;}
+.word span{font-size:17px;}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;}
+.skills .box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.eg{display:block;margin-top:6px;font-weight:700;color:var(--navy);}
+
+/* poem */
+.poem-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;}
+.poem{font-family:"Lora",Georgia,serif;font-size:22px;line-height:1.9;color:var(--navy);background:var(--plum-bg);border-radius:12px;padding:16px 22px;}
+.poem small{display:block;font-family:"Nunito",sans-serif;font-size:15px;color:var(--muted);line-height:1.4;margin-top:6px;}
+
+/* ask */
+.ask{list-style:none;margin:0;padding:0;counter-reset:q;}
+.ask li{counter-increment:q;position:relative;padding:12px 0 12px 50px;border-bottom:1px dashed var(--line);}
+.ask li:last-child{border-bottom:none;}
+.ask li::before{content:counter(q);position:absolute;left:0;top:11px;width:34px;height:34px;border-radius:50%;background:var(--gold-bg);color:#9A6C14;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:17px;}
+.ask .q{font-weight:800;color:var(--navy);display:block;}
+.ask .listen{font-size:16px;color:var(--muted);}
+
+/* checklist */
+.check{list-style:none;margin:0;padding:0;}
+.check li{padding:7px 0 7px 34px;position:relative;}
+.check li::before{content:"✓";position:absolute;left:4px;top:6px;color:var(--green);font-weight:900;font-size:19px;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+
+.next{background:var(--navy);color:#DCE6F7;border:none;}
+.next h2{color:#fff;}
+.next strong{color:#fff;}
+.foot{text-align:center;font-size:15px;color:var(--muted);margin-top:26px;}
+
+.print-btn{display:inline-block;margin-top:16px;background:var(--gold);color:#fff;border:none;border-radius:999px;padding:9px 18px;font-family:"Nunito",sans-serif;font-weight:800;font-size:16px;cursor:pointer;}
+
+@media (max-width:720px){
+  .hero{grid-template-columns:1fr;}
+  .hero-art{min-height:180px;order:-1;}
+  .glance,.words,.skills,.poem-wrap,.two{grid-template-columns:1fr;}
+  .days thead{display:none;}
+  .days tr{display:block;border-bottom:1px solid var(--line);padding:8px 0;}
+  .days td{display:block;border:none;padding:4px 0;}
+}
+@media print{
+  body{background:#fff;font-size:15px;}
+  .wrap{padding:0;}
+  .print-btn{display:none;}
+  .card{break-inside:avoid;margin-top:12px;padding:14px 16px;}
+  .hero,.next{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+
+/* lesson mechanics */
+.howto{background:var(--cream);border:1px solid #F5E6C8;border-radius:16px;padding:18px 22px;margin-top:18px;}
+.howto h2{font-size:21px;margin-bottom:10px;}
+.howto ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 22px;}
+.howto li{position:relative;padding-left:32px;font-size:17px;line-height:1.5;}
+.howto li span{position:absolute;left:0;top:0;font-size:20px;}
+@media (max-width:760px){.howto ul{grid-template-columns:1fr;}}
+@media print{.howto{break-inside:avoid;}}
+.b-rose{background:#FDEEEE;border-radius:12px;padding:14px 16px;} .b-rose .box-label{color:#A8434A;}
+
+.p-museum{background:var(--sky-bg);color:#1F6F8C;}
+.p-extra{background:var(--green-bg);color:#1F8452;}
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.extras .box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.essay{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.essay span{font-size:15px;font-weight:800;border-radius:999px;padding:4px 12px;background:var(--paper);border:1px solid var(--line);color:var(--muted);}
+.essay span.now{background:var(--gold-bg);border-color:#F5E6C8;color:#9A6C14;}
+.essay span.done{background:var(--green-bg);border-color:#CDEFDB;color:#1F8452;}
+@media (max-width:720px){.extras{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-text">
+      <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy Online"> Family Guide · 5th Grade ELA</div>
+      <h1>Week 32: Letter to a Future 5th Grader</h1>
+      <div class="sub">The last week of the year: a real letter to next year&rsquo;s fifth graders</div>
+      <div class="chips">
+        <span class="chip">4 lessons</span>
+        <span class="chip">1 recording</span>
+        <span class="chip">Year-end project</span>
+        <span class="chip">Check-In at week&rsquo;s end</span>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨️ Print this guide</button>
+    </div>
+    <div class="hero-art" style="background-image:url('assets/art/year/vermeer-woman-reading-letter.jpg');background-position:center 30%;" role="img" aria-label="A painting of a woman in a blue jacket reading a letter in window light"></div>
+  </header>
+
+  <section class="howto">
+    <h2>🧭 How the Lesson Pages Work</h2>
+    <ul>
+      <li><span>🗂️</span><strong>Four tabs, in order:</strong> Warm-Up → Word Study → the day&rsquo;s main work (Reflect, Fluency, Revise or Synthesize) → Assignment. A button at the bottom of each tab moves to the next.</li>
+      <li><span>👣</span><strong>One step at a time.</strong> Each tab shows one activity at a time, and a Next button moves through its steps.</li>
+      <li><span>📝</span><strong>Every answer goes on the page.</strong> There&rsquo;s a box for each one.</li>
+      <li><span>💾</span><strong>Answers save as you type</strong>, but only in that browser on that computer. Switching computers or clearing the browser loses them.</li>
+      <li><span>📓</span><strong>Copy your work</strong> at the bottom of the Assignment tab, then <strong>paste it into the assignment in Canvas and submit</strong>. A lesson isn&rsquo;t turned in until it&rsquo;s submitted there.</li>
+      <li><span>🎙️</span><strong>Fluency is a separate page</strong> in the Canvas module, because recording doesn&rsquo;t work inside a lesson.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">🧭</span><h2>This Week at a Glance</h2></div>
+    <p>There is no new chapter this week. Your student finishes the year&rsquo;s <strong>Reader-Writer Portfolio</strong> by writing a real letter to next year&rsquo;s fifth graders: which of this year&rsquo;s five novels should they read first, and why? The letter comes with a Reader&rsquo;s Portrait (who your student was as a reader in September, and who they are now), five Book Postcards, a Word Gift of three roots, a P.S., and an envelope your student designs. On Day 4 they record the letter and one poem from the year.</p>
+    <div class="box b-rose" style="margin-bottom:12px;"><div class="box-label">💛 A note for families: real letters and real books</div>Every book quote on the pages this week was checked against the novels. On Day 2 a short card shows a real letter from the Gold Rush: <strong>Louise Clappe</strong>, who signed her letters &ldquo;Dame Shirley,&rdquo; wrote 23 letters to her sister from California mining camps in 1851 and 1852. The card quotes only her goodbye to the camp. The year in review on Day 4 names <em>How I Became a Ghost</em> plainly: the story of a Choctaw boy on his people&rsquo;s forced journey west. Your student&rsquo;s letter is real too; teachers can pass it on to next year&rsquo;s class.</div>
+    <div class="glance">
+      <div class="box b-sky"><div class="box-label">Reading skill</div><strong>Pulling the year together.</strong> Your student sets a purpose across five books, gathers evidence from two of them, rereads one passage for the author&rsquo;s choices, and names an idea that runs through the whole year.</div>
+      <div class="box b-green"><div class="box-label">Big idea</div><strong>Wisdom.</strong> Knowing what matters and making good choices with what you know, like Nat Bowditch, who checks his figures and lets the land prove him right.</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">📅</span><h2>Day by Day</h2></div>
+    <table class="days">
+      <thead><tr><th>Lesson</th><th>The work</th><th>Big question</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="day-n">32.1<span>Day 1</span></td>
+          <td><span class="ch">Look back</span><br>Write the Reader&rsquo;s Portrait and five Book Postcards (a pitch, an exact quote and &ldquo;Read this if you&hellip;&rdquo;), then plan the letter: a claim, two reasons and a fair point.<br><span class="pill p-museum">Winslow Homer, The New Novel, 1877</span></td>
+          <td>Which book would you hand a new reader first?</td>
+        </tr>
+        <tr>
+          <td class="day-n">32.2<span>Day 2</span></td>
+          <td><span class="ch">Read aloud and draft</span><br>Pick a short passage to quote, mark the pauses, practice it three times, then draft the whole letter.<br><span class="pill p-extra">Letters that crossed time</span><span class="pill p-poem">Poetry Corner</span><span class="pill p-museum">Gabri&euml;l Metsu, Man Writing a Letter</span></td>
+          <td>What proof from both books makes the advice believable?</td>
+        </tr>
+        <tr>
+          <td class="day-n">32.3<span>Day 3</span></td>
+          <td><span class="ch">Revise</span><br>Three revisions (vague to specific, the honest sentence, the best last line), then a Word Gift of three roots and a P.S.<br><span class="pill p-museum">Gerard ter Borch, Woman Writing a Letter</span></td>
+          <td>Would a ten-year-old understand every sentence?</td>
+        </tr>
+        <tr>
+          <td class="day-n">32.4<span>Day 4</span></td>
+          <td><span class="ch">Seal and send</span><br>The year in review, the envelope, and the final letter, then the recording and the portfolio booklet.<br><span class="pill p-poem">Poetry Corner</span><span class="pill p-museum">Johannes Vermeer, Woman Reading a Letter</span></td>
+          <td>What one idea from this year would you pass on?</td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">🎙️<span>Recording</span></td>
+          <td colspan="2">The last fluency recording of the year: your student <strong>reads the letter aloud (2 to 3 minutes), then one poem from the year,</strong> and submits it in Canvas.</td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">📘<span>Project</span></td>
+          <td colspan="2"><strong>The Reader-Writer Portfolio</strong> (one PDF): the Week 31 comparison essay, then the whole letter packet with the envelope, made into a booklet on the project page and uploaded in Canvas.</td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">📋<span>Check-In</span></td>
+          <td colspan="2">A 14-point check: final editing (agreement, titles, run-ons), the year&rsquo;s roots and tricky spellings, pacing and tone in two real lines from the novels, a primary source, the poem, and the claim of your student&rsquo;s letter.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">🔤</span><h2>Words to Know</h2><span class="tag">Use them at home!</span></div>
+    <div class="words">
+      <div class="word"><b>voice</b><span>how a writer sounds on the page</span></div>
+      <div class="word"><b>tone</b><span>the feeling in the words</span></div>
+      <div class="word"><b>pacing</b><span>where a reader speeds up, slows down and pauses</span></div>
+      <div class="word"><b>claim</b><span>the main point you are trying to prove</span></div>
+      <div class="word"><b>pitch</b><span>a short line that makes someone want to try something</span></div>
+    </div>
+    <div class="glance" style="margin-top:12px;">
+      <div class="box b-sky"><div class="box-label">Roots, one last time</div>A root from every book&rsquo;s unit: <strong>struct, spect, script</strong> (build, look, write), <strong>rupt, dict</strong> (break, say), <strong>nav, port, graph</strong> (ship, carry, write), <strong>spir, vis, lum</strong> (breathe, see, light), <strong>aud, curr, tract, val</strong> (hear, run, pull, worth).<span class="eg">eruption · portable · illuminate · audition</span></div>
+      <div class="box b-gold"><div class="box-label">Spelling</div><strong>The year&rsquo;s tricky words,</strong> checked in your student&rsquo;s own letter.<span class="eg">separate · definitely · occurred · receive</span></div>
+      <div class="box b-green"><div class="box-label">Grammar</div><strong>A final editing pass:</strong> capitals, agreement and end marks first.<span class="eg">Each of the boys was changed by the journey.</span></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">✨</span><h2>New This Week</h2></div>
+    <div class="glance">
+      <div class="box b-plum"><div class="box-label">🗺️ The Year&rsquo;s Map</div>The last word game of the year. A map shows five stops, one for each novel&rsquo;s world, from Wethersfield to San Francisco. Each clue asks for a word built from a root your student learned while reading that book, and a right answer lights the stop.</div>
+      <div class="box b-gold"><div class="box-label">🌿 Virtue Watch: wisdom</div>Your student sorts a letter writer&rsquo;s choices, picks the wisest moment from the year&rsquo;s books, rates Nat Bowditch&rsquo;s quiet confidence, and chooses the piece of wisdom they would pass on.</div>
+      <div class="box b-sky"><div class="box-label">✉️ Letters that crossed time</div>A Day 2 card shows how one real letter, written for one reader in 1852, has been read for more than 170 years.</div>
+      <div class="box b-green"><div class="box-label">📖 Read Like a Writer: voice, tone and pacing</div>Four real lines from the year&rsquo;s novels: three short sentences that slow down (<em>By the Great Horn Spoon!</em>), a voice in three words (&ldquo;We&rsquo;re partners, sir&rdquo;), a calm tone (<em>Carry On, Mr. Bowditch</em>), and a long list with a short ending (<em>Johnny Tremain</em>).</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">✍️</span><h2>Your Student&rsquo;s Writing: The Letter</h2><span class="tag">Part 2 of the year-end portfolio</span></div>
+    <div class="essay"><span class="now">Day 1 · Plan</span><span class="now">Day 2 · Draft</span><span class="now">Day 3 · Revise</span><span class="now">Day 4 · Seal &amp; Send</span></div>
+    <p>The letter goes: <strong>Dear future 5th grader,</strong> then the Reader&rsquo;s Portrait, a claim (&ldquo;Read ___ before ___&rdquo;), two reasons with a moment from <em>both</em> books, one fair point for the other book, a closing and a signature. The Word Gift and the P.S. come after. Students write to a ten-year-old who hasn&rsquo;t read either book, so the letter never tells how a book ends.</p>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">🪶</span><h2>Poetry Corner: A Poem Read Aloud</h2></div>
+    <div class="poem-wrap">
+      <div class="poem">Greatly shining,<br>The Autumn moon floats in the thin sky;<small>Amy Lowell, &ldquo;Wind and Silver&rdquo; (1925), first two lines</small></div>
+      <div><p>On Day 2 your student reads Lowell&rsquo;s short poem three ways (flat, too fast, and the way it asks to be read) and explains what changed. On Day 4 they choose any poem from the year and read it the way it asks to be read, and that poem goes into the final recording.</p></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">💬</span><h2>Ask at Home</h2><span class="tag">Better than &ldquo;How was school?&rdquo;</span></div>
+    <ol class="ask">
+      <li><span class="q">Which book would you hand a new fifth grader first? Why?</span><span class="listen">Listen for: two novels, and a reason with a moment from each.</span></li>
+      <li><span class="q">What kind of reader were you in September? What changed?</span><span class="listen">Listen for: something specific, tied to a book.</span></li>
+      <li><span class="q">Read me your favorite line from your letter.</span><span class="listen">Listen for: pauses in the right places and a warm, sure tone.</span></li>
+      <li><span class="q">What&rsquo;s one root you would teach a younger kid?</span><span class="listen">Listen for: the root, its meaning and a word built from it.</span></li>
+      <li><span class="q">Which poem did you choose to record, and why?</span><span class="listen">Listen for: a poem from the year and one thing about how it sounds.</span></li>
+    </ol>
+  </section>
+
+  <div class="two">
+    <section class="card">
+      <div class="card-head"><span class="ico">📬</span><h2>What Gets Turned In</h2></div>
+      <ul class="check">
+        <li><strong>Each lesson:</strong> the day&rsquo;s work and that day&rsquo;s part of the letter, copied and pasted into Canvas</li>
+        <li><strong>Day 4:</strong> the envelope and the final letter</li>
+        <li><strong>Recording:</strong> the letter and one poem, in the Canvas fluency assignment</li>
+        <li><strong>Project:</strong> the Reader-Writer Portfolio booklet, one PDF</li>
+        <li><strong>Check-In:</strong> at the end of the week</li>
+      </ul>
+      <p class="small" style="margin-top:10px;"><strong>Done well looks like:</strong> a clear claim, two reasons with evidence from both books, exact quotes with chapters, a voice that sounds like your student, and a recording with pauses where they help.</p>
+    </section>
+    <section class="card">
+      <div class="card-head"><span class="ico">🏡</span><h2>Try at Home</h2><span class="tag">5 minutes</span></div>
+      <ul class="check">
+        <li><strong>Be the audience</strong> for the letter before it is recorded.</li>
+        <li><strong>Write a letter back:</strong> one book you loved at their age, and why.</li>
+        <li><strong>Make a summer stack:</strong> three books your student wants to read next.</li>
+      </ul>
+    </section>
+  </div>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">🎒</span><h2>Have on Hand</h2></div>
+    <p><strong>The two novels in the letter</strong> (and the year&rsquo;s notes) · <strong>A device that records audio or video</strong> for the final recording</p>
+  </section>
+
+  <section class="card next">
+    <div class="card-head"><span class="ico">🎓</span><h2>The Whole Year</h2></div>
+    <p>This is the last week of 5th Grade ELA. The <a href="parent-guide-year-end.html" style="color:#1F6FA8;font-weight:700;">year-end family guide</a> looks back at all five novels, the writing, and what comes next.</p>
+  </section>
+
+  <p class="foot">Optima Academy Online · 5th Grade ELA · Week 32 Family Guide<br>Questions? Reach out to your student&rsquo;s teacher anytime.</p>
+</div>
+</body>
+</html>

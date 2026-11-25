@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Year in Reading · 5th Grade ELA Family Guide · Optima Academy Online</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+:root{
+  --navy:#0E1C42; --ink:#3A4A6B; --muted:#5E6C8C; --line:#E2E8F4;
+  --sky:#55C8E8; --sky-bg:#EAF8FD; --gold:#C7922C; --gold-bg:#FFF3DC;
+  --green:#34B76F; --green-bg:#E3F8ED; --plum:#8B6FC0; --plum-bg:#F1ECFA;
+  --paper:#FAFBFF; --cream:#FFF8F0;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:"Nunito",sans-serif;font-size:18px;line-height:1.6;}
+.wrap{max-width:880px;margin:0 auto;padding:24px 16px 48px;}
+h1,h2,h3{font-family:"Lora",Georgia,serif;color:var(--navy);margin:0;}
+p{margin:0 0 10px;}
+strong{color:var(--navy);}
+
+/* header */
+.hero{background:var(--navy);color:#fff;border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1.25fr 1fr;}
+.hero-text{padding:28px 28px 26px;}
+.brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#BFD0EE;margin-bottom:14px;}
+.brand img{width:38px;height:38px;border-radius:50%;background:#fff;}
+.hero h1{color:#fff;font-size:34px;line-height:1.2;margin-bottom:6px;}
+.hero .sub{font-size:19px;color:#DCE6F7;margin-bottom:16px;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 13px;font-size:16px;font-weight:700;color:#fff;}
+.hero-art{background:#F5E6C8 center/cover no-repeat;min-height:240px;}
+
+/* cards */
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-top:18px;}
+.card-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.card-head .ico{font-size:26px;line-height:1;}
+.card-head h2{font-size:24px;}
+.card-head .tag{margin-left:auto;font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+
+.glance{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.glance .box{border-radius:12px;padding:14px 16px;}
+.box-label{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.b-sky{background:var(--sky-bg);} .b-sky .box-label{color:#1F8CB0;}
+.b-gold{background:var(--gold-bg);} .b-gold .box-label{color:#9A6C14;}
+.b-green{background:var(--green-bg);} .b-green .box-label{color:#1F8452;}
+.b-plum{background:var(--plum-bg);} .b-plum .box-label{color:#6A4FA3;}
+.quote{font-family:"Lora",Georgia,serif;font-style:italic;font-size:20px;color:var(--navy);border-left:4px solid var(--gold);padding:4px 0 4px 16px;margin:16px 0 0;}
+.quote small{display:block;font-family:"Nunito",sans-serif;font-style:normal;font-size:15px;color:var(--muted);margin-top:4px;}
+
+/* day table */
+.days{width:100%;border-collapse:collapse;}
+.days th{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:2px solid var(--line);}
+.days td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+.days tr:last-child td{border-bottom:none;}
+.day-n{font-family:"Lora",Georgia,serif;font-weight:700;font-size:20px;color:var(--navy);white-space:nowrap;}
+.day-n span{display:block;font-family:"Nunito",sans-serif;font-size:15px;font-weight:700;color:var(--muted);}
+.ch{font-weight:800;color:var(--navy);}
+.small{font-size:16px;color:var(--muted);}
+.pill{display:inline-block;font-size:14px;font-weight:800;border-radius:999px;padding:2px 10px;margin:4px 4px 0 0;}
+.p-poem{background:var(--plum-bg);color:#6A4FA3;}
+.p-guide{background:var(--cream);color:#9A6C14;border:1px solid #F5E6C8;}
+.extra-row td{background:var(--paper);}
+
+/* words */
+.words{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.word{border:1px solid var(--line);border-radius:12px;padding:12px 16px;}
+.word b{font-family:"Lora",Georgia,serif;font-size:21px;color:var(--navy);display:block;}
+.word span{font-size:17px;}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;}
+.skills .box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.eg{display:block;margin-top:6px;font-weight:700;color:var(--navy);}
+
+/* poem */
+.poem-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;}
+.poem{font-family:"Lora",Georgia,serif;font-size:22px;line-height:1.9;color:var(--navy);background:var(--plum-bg);border-radius:12px;padding:16px 22px;}
+.poem small{display:block;font-family:"Nunito",sans-serif;font-size:15px;color:var(--muted);line-height:1.4;margin-top:6px;}
+
+/* ask */
+.ask{list-style:none;margin:0;padding:0;counter-reset:q;}
+.ask li{counter-increment:q;position:relative;padding:12px 0 12px 50px;border-bottom:1px dashed var(--line);}
+.ask li:last-child{border-bottom:none;}
+.ask li::before{content:counter(q);position:absolute;left:0;top:11px;width:34px;height:34px;border-radius:50%;background:var(--gold-bg);color:#9A6C14;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:17px;}
+.ask .q{font-weight:800;color:var(--navy);display:block;}
+.ask .listen{font-size:16px;color:var(--muted);}
+
+/* checklist */
+.check{list-style:none;margin:0;padding:0;}
+.check li{padding:7px 0 7px 34px;position:relative;}
+.check li::before{content:"✓";position:absolute;left:4px;top:6px;color:var(--green);font-weight:900;font-size:19px;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+
+.next{background:var(--navy);color:#DCE6F7;border:none;}
+.next h2{color:#fff;}
+.next strong{color:#fff;}
+.foot{text-align:center;font-size:15px;color:var(--muted);margin-top:26px;}
+
+.print-btn{display:inline-block;margin-top:16px;background:var(--gold);color:#fff;border:none;border-radius:999px;padding:9px 18px;font-family:"Nunito",sans-serif;font-weight:800;font-size:16px;cursor:pointer;}
+
+@media (max-width:720px){
+  .hero{grid-template-columns:1fr;}
+  .hero-art{min-height:180px;order:-1;}
+  .glance,.words,.skills,.poem-wrap,.two{grid-template-columns:1fr;}
+  .days thead{display:none;}
+  .days tr{display:block;border-bottom:1px solid var(--line);padding:8px 0;}
+  .days td{display:block;border:none;padding:4px 0;}
+}
+@media print{
+  body{background:#fff;font-size:15px;}
+  .wrap{padding:0;}
+  .print-btn{display:none;}
+  .card{break-inside:avoid;margin-top:12px;padding:14px 16px;}
+  .hero,.next{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+
+/* lesson mechanics */
+.howto{background:var(--cream);border:1px solid #F5E6C8;border-radius:16px;padding:18px 22px;margin-top:18px;}
+.howto h2{font-size:21px;margin-bottom:10px;}
+.howto ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 22px;}
+.howto li{position:relative;padding-left:32px;font-size:17px;line-height:1.5;}
+.howto li span{position:absolute;left:0;top:0;font-size:20px;}
+@media (max-width:760px){.howto ul{grid-template-columns:1fr;}}
+@media print{.howto{break-inside:avoid;}}
+.b-rose{background:#FDEEEE;border-radius:12px;padding:14px 16px;} .b-rose .box-label{color:#A8434A;}
+
+.p-museum{background:var(--sky-bg);color:#1F6F8C;}
+.p-extra{background:var(--green-bg);color:#1F8452;}
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.extras .box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.essay{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.essay span{font-size:15px;font-weight:800;border-radius:999px;padding:4px 12px;background:var(--paper);border:1px solid var(--line);color:var(--muted);}
+.essay span.now{background:var(--gold-bg);border-color:#F5E6C8;color:#9A6C14;}
+.essay span.done{background:var(--green-bg);border-color:#CDEFDB;color:#1F8452;}
+@media (max-width:720px){.extras{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-text">
+      <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy Online"> Family Guide · 5th Grade ELA</div>
+      <h1>The Year in Reading</h1>
+      <div class="sub">32 weeks, five novels, and a reader who grew</div>
+      <div class="chips">
+        <span class="chip">5 novels</span>
+        <span class="chip">32 weeks</span>
+        <span class="chip">Year-end portfolio</span>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨️ Print this guide</button>
+    </div>
+    <div class="hero-art" style="background-image:url('assets/art/year/homer-new-novel.jpg');background-position:center 40%;" role="img" aria-label="A watercolor of a young woman lying in the grass, reading a book"></div>
+  </header>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">📚</span><h2>The Five Novels</h2></div>
+    <table class="days">
+      <thead><tr><th>Weeks</th><th>The book</th><th>What your student worked on</th></tr></thead>
+      <tbody>
+        <tr><td class="day-n">1&ndash;5</td><td><span class="ch"><em>The Witch of Blackbird Pond</em></span><br>Elizabeth George Speare. Kit Tyler leaves Barbados for a strict Puritan town in Connecticut and finds out what it costs to stand by a friend everyone else fears.</td><td>Setting, character, conflict and theme; the roots <em>spect</em>, <em>script</em> and <em>struct</em>.</td></tr>
+        <tr><td class="day-n">6&ndash;8</td><td><span class="ch"><em>Johnny Tremain</em></span><br>Esther Forbes. An apprentice silversmith with a burned hand finds a new purpose in Boston as the Revolution begins.</td><td>Historical setting, perspective and argument writing; the roots <em>rupt</em>, <em>cess</em> and <em>dict</em>.</td></tr>
+        <tr><td class="day-n">9&ndash;14</td><td><span class="ch"><em>Carry On, Mr. Bowditch</em></span><br>Jean Lee Latham. A boy who has to leave school teaches himself navigation at sea and finds the mistakes in the sailors&rsquo; own books.</td><td>Biography as literary nonfiction and perseverance; the roots <em>nav</em>, <em>port</em> and <em>graph</em>.</td></tr>
+        <tr class="extra-row"><td class="day-n">15&ndash;17</td><td colspan="2"><span class="ch">Writer&rsquo;s Workshop</span><br>Three weeks of writing: historical detail, real sources, and a historical fiction story.</td></tr>
+        <tr><td class="day-n">18&ndash;24</td><td><span class="ch"><em>How I Became a Ghost</em></span><br>Tim Tingle. Isaac, a Choctaw boy, tells the story of his people&rsquo;s forced journey west from Mississippi, and he tells it as a ghost.</td><td>First-person narrative voice, theme, and comparing a novel with real sources; the roots <em>vis</em>, <em>spect</em> and <em>voc</em>.</td></tr>
+        <tr><td class="day-n">25&ndash;30</td><td><span class="ch"><em>By the Great Horn Spoon!</em></span><br>Sid Fleischman. Jack and the butler Praiseworthy sail around Cape Horn to the gold fields to save the family home, and find out what a fortune is really made of.</td><td>Humor, tone, voice and theme in an adventure; the roots <em>aud</em>, <em>curr</em>, <em>tract</em>, <em>fort</em> and <em>val</em>.</td></tr>
+        <tr class="extra-row"><td class="day-n">31&ndash;32</td><td colspan="2"><span class="ch">The Reader-Writer Portfolio</span><br>A comparison essay on two of the five novels, then a letter to a future fifth grader.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">✍️</span><h2>What Your Student Wrote This Year</h2></div>
+    <div class="glance">
+      <div class="box b-sky"><div class="box-label">Every week</div>A writing task built a step at a time: plan, draft, revise, submit.</div>
+      <div class="box b-gold"><div class="box-label">End-of-novel projects</div><strong>A Ghost&rsquo;s-Eye View</strong> (<em>How I Became a Ghost</em>) and <strong>From Boston to the Long Wharf</strong> (<em>By the Great Horn Spoon!</em>), each a four-page booklet.</div>
+      <div class="box b-green"><div class="box-label">Spring</div>An adventure story of their own, a literary response about a novel&rsquo;s theme, and a five-paragraph comparison of two novels.</div>
+      <div class="box b-plum"><div class="box-label">The last week</div>A real letter to next year&rsquo;s fifth graders, read aloud with one poem from the year.</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">💛</span><h2>How the Year Handled Hard History</h2></div>
+    <p>Several of this year&rsquo;s books touch real history that was cruel or unfair. The lessons kept the story and the record apart and said the true history plainly and calmly. <em>How I Became a Ghost</em> was read alongside real words from the time: part of the 1830 Treaty of Dancing Rabbit Creek and a letter by Choctaw chief George W. Harkins. <em>By the Great Horn Spoon!</em> was written in 1963, and where it uses unkind words from that time, a short note on that day&rsquo;s page named them and gave the true history. No lesson put made-up words in a real person&rsquo;s mouth.</p>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><span class="ico">🌞</span><h2>Keep Reading This Summer</h2></div>
+    <ul class="check">
+      <li><strong>Read every day,</strong> even ten minutes. Let your student choose.</li>
+      <li><strong>Ask the year&rsquo;s questions</strong> about any book: Who is telling this story? What does the main character want? What is the big idea?</li>
+      <li><strong>Hunt for roots</strong> on signs, boxes and screens: <em>port</em>, <em>spect</em>, <em>aud</em>, <em>graph</em>.</li>
+      <li><strong>Read aloud together.</strong> Take turns with the voices.</li>
+      <li><strong>Write one letter</strong> to someone far away, about a book.</li>
+    </ul>
+  </section>
+
+  <section class="card next">
+    <div class="card-head"><span class="ico">🎓</span><h2>Thank You</h2></div>
+    <p>Thank you for reading with your student this year. The last page of their portfolio is a letter to someone they will never meet, about books they loved. That is what a reader does.</p>
+    <p class="small" style="margin-top:8px;"><a href="parent-guide-week-32.html" style="color:#1F6FA8;font-weight:700;">Open the Week 32 guide →</a></p>
+  </section>
+
+  <p class="foot">Optima Academy Online · 5th Grade ELA · Year-End Family Guide<br>Questions? Reach out to your student&rsquo;s teacher anytime.</p>
+</div>
+</body>
+</html>
