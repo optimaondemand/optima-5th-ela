@@ -1,0 +1,286 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "This is the last week of fifth grade reading. Start with the question on the card: a new reader can take only one of your five books. Which one do you hand them? Then set your lens for the week."
+  },
+  "words": {
+   "text": "Word Study looks back at the whole year. You choose the root family that helped you most, sort sentences that are ready to publish, and check the spelling words that trip writers up. Then light the first stops on the year's map."
+  },
+  "reading": {
+   "text": "No new chapter today. Write the opening of your letter: who you were as a reader in September, and who you are now. Then make five postcards, one for each novel. Copy every quote exactly from your book."
+  },
+  "assignment": {
+   "text": "Plan your letter. Pick two novels and finish the claim: read this one before that one. Then give two reasons, each with a moment from both books, and one fair point for the other book."
+  }
+ },
+ "hook": {
+  "q": "A new 5th grader can read only one of your five books this summer. Which one do you hand them?",
+  "options": [
+   {
+    "t": "A funny one, like By the Great Horn Spoon!",
+    "reply": "Funny pulls a new reader in. One of your books starts with a warning instead:"
+   },
+   {
+    "t": "A brave one, like Johnny Tremain or The Witch of Blackbird Pond.",
+    "reply": "Courage is a good reason. One of your books starts with a warning:"
+   },
+   {
+    "t": "The one that changed me most.",
+    "reply": "That is the best reason of all, if you can show why. One of your books starts with a warning:"
+   }
+  ],
+  "reveal": {
+   "line": "Be careful what you wish for",
+   "cite": "How I Became a Ghost, Chapter 1",
+   "then": "Isaac gives his reader advice on the very first page. This week you do the same for a new reader: your letter tells them which book to open first, and why."
+  }
+ },
+ "readnow": {
+  "text": "No new chapter today. Look back over the year, then write your Reader’s Portrait and five Book Postcards.",
+  "step": "Today: look back"
+ },
+ "how": [
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read the three lenses.",
+    "Tap the one you will use today.",
+    "Keep it in mind as you work. You will use it at the end."
+   ],
+   "why": "A letter about books starts with remembering what stayed with you.",
+   "use": "You will use it in your Reader’s Portrait."
+  },
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Read the first sentence. It is correct.",
+    "Write the second sentence correctly in your reading journal.",
+    "Tap See the Answer to check."
+   ],
+   "why": "Fixing one sentence at a time trains your eye for your own letter."
+  },
+  {
+   "match": "Read & Write",
+   "do": [
+    "Read the question.",
+    "Write 2 or 3 sentences in your reading journal.",
+    "Then go on."
+   ],
+   "why": "Thinking first gives you something to say in your letter."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Read the root families.",
+    "Think through the questions, then tap See if you were right.",
+    "Write about one root family in the box."
+   ],
+   "why": "A root you know unlocks words you have never seen."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Read each line.",
+    "Tap it, then tap Ready or Needs an edit.",
+    "Look at what the edits have in common."
+   ],
+   "why": "Capitals, agreement and end marks are what a reader notices first."
+  },
+  {
+   "match": "Speaking",
+   "do": [
+    "Read the three tools: voice, tone and pacing.",
+    "Answer the question in your reading journal."
+   ],
+   "why": "Your letter will be read aloud. How it sounds is part of what it says."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Read the list.",
+    "Do the task in your reading journal.",
+    "Tap every word that is spelled correctly."
+   ],
+   "why": "Your letter will go to a real reader. Clean spelling shows you care."
+  },
+  {
+   "match": "Reader’s Portrait",
+   "do": [
+    "Read the plan for the week.",
+    "Write your Reader’s Portrait in the first box.",
+    "Fill in one postcard for each novel."
+   ],
+   "why": "The portrait opens your letter. The postcards give you something to choose from."
+  },
+  {
+   "match": "Letter Packet",
+   "do": [
+    "Read the three parts of the plan.",
+    "Write your claim, two reasons and a fair point in the box."
+   ],
+   "why": "A plan keeps both books in every reason."
+  }
+ ],
+ "glossary": [
+  {
+   "word": "pitch",
+   "in": "Reader’s Portrait",
+   "meaning": "a short line that makes someone want to try something"
+  },
+  {
+   "word": "claim",
+   "in": "Letter Packet",
+   "meaning": "the main point you are trying to prove"
+  }
+ ],
+ "miss": {
+  "seperate": "There's a rat in separate: sep-a-rate.",
+  "embarass": "Two r's and two s's: em-bar-rass.",
+  "diffrent": "Say all three beats: dif-fer-ent."
+ },
+ "game": {
+  "type": "yearmap",
+  "title": "The Year's Map",
+  "sub": "This week's word game · 5 stops today",
+  "after": "Spelling",
+  "look": "A map of your whole year: five stops, one for each novel's world, from Wethersfield to San Francisco. Each clue asks for a word built from a root you learned while you read that book. A right answer lights the stop.",
+  "how": {
+   "do": [
+    "Read the clue.",
+    "Tap the word that fits.",
+    "A right word lights the stop. Then tap On to the next stop."
+   ],
+   "why": "Every root you learned this year still works. Here you use one from each book."
+  },
+  "stops": [
+   {
+    "name": "The Witch of Blackbird Pond",
+    "place": "Wethersfield",
+    "icon": "📜"
+   },
+   {
+    "name": "Johnny Tremain",
+    "place": "Boston",
+    "icon": "⚒️"
+   },
+   {
+    "name": "Carry On, Mr. Bowditch",
+    "place": "Salem",
+    "icon": "🧭"
+   },
+   {
+    "name": "How I Became a Ghost",
+    "place": "Mississippi",
+    "icon": "🐕"
+   },
+   {
+    "name": "By the Great Horn Spoon!",
+    "place": "San Francisco",
+    "icon": "⛏️"
+   }
+  ],
+  "doneLine": "Come back next lesson to light the map again with new words.",
+  "rounds": [
+   {
+    "stop": 0,
+    "clue": "Which word means the act of building something, like a new house?",
+    "opts": [
+     "construction",
+     "constitution",
+     "consultation"
+    ],
+    "ok": 0,
+    "why": "struct means build, so construction is the act of building.",
+    "miss": "Look for the root in the clue's meaning."
+   },
+   {
+    "stop": 1,
+    "clue": "Which word means a sudden bursting out, like a volcano?",
+    "opts": [
+     "erosion",
+     "eruption",
+     "emotion"
+    ],
+    "ok": 1,
+    "why": "rupt means break or burst. An eruption bursts out.",
+    "miss": "Look for the root in the clue's meaning."
+   },
+   {
+    "stop": 2,
+    "clue": "Which word has the root that means ship or sailor?",
+    "opts": [
+     "natural",
+     "national",
+     "nautical"
+    ],
+    "ok": 2,
+    "why": "naut means sailor or ship. Nautical means having to do with ships and sailing.",
+    "miss": "Look for the root in the clue's meaning."
+   },
+   {
+    "stop": 3,
+    "clue": "Which word names the act of breathing?",
+    "opts": [
+     "respiration",
+     "reputation",
+     "restoration"
+    ],
+    "ok": 0,
+    "why": "spir means breathe. Respiration is breathing.",
+    "miss": "Look for the root in the clue's meaning."
+   },
+   {
+    "stop": 4,
+    "clue": "Which word names a try-out where judges listen to you?",
+    "opts": [
+     "addition",
+     "audition",
+     "edition"
+    ],
+    "ok": 1,
+    "why": "aud means hear. At an audition, someone listens to you.",
+    "miss": "Look for the root in the clue's meaning."
+   }
+  ]
+ },
+ "virtue": {
+  "name": "wisdom",
+  "kind": "sort",
+  "title": "Wise, or not?",
+  "intro": "This week's virtue is wisdom: knowing what matters and making good choices with what you know. Sort these choices a letter writer might make.",
+  "items": [
+   {
+    "t": "Before you give advice, you think about who will read it.",
+    "ok": true,
+    "why": "Wisdom starts with knowing your reader."
+   },
+   {
+    "t": "You tell a new reader how a book ends so they don't have to read it.",
+    "ok": false,
+    "why": "That takes away the best part of reading: finding out."
+   },
+   {
+    "t": "You admit a book was hard for you and say why it was worth it.",
+    "ok": true,
+    "why": "Honest advice is the most useful kind."
+   },
+   {
+    "t": "You recommend a book you never finished because the cover looked good.",
+    "ok": false,
+    "why": "Advice should come from what you know, not what you guess."
+   }
+  ]
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/year/homer-new-novel.jpg",
+  "title": "The New Novel",
+  "alt": "A watercolor of a young woman in an orange dress lying on her side in the grass, her head on a pillow, reading a book held close to her face.",
+  "look": "Winslow Homer painted this reader in 1877. She is lying in the grass so deep in her book that she has forgotten everything around her. Who were you as a reader when this year began?",
+  "lookBtn": "Tap to learn about this painting",
+  "creator": "Winslow Homer",
+  "date": "1877",
+  "license": "Public domain (via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:1877-winslow-homer-the-new-novel.jpg"
+ }
+}

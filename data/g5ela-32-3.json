@@ -1,0 +1,234 @@
+{
+ "listen": {
+  "warmup": {
+   "text": "Today is revision day. Read your letter draft aloud, slowly, as if you were hearing it for the first time. Notice which sentence sounds most like you, and which one sounds like filler."
+  },
+  "words": {
+   "text": "Today you check your letter's spelling, build four words from roots, and give your sentences the voice test. Then light five more stops on the year's map."
+  },
+  "reading": {
+   "text": "Make three revisions: a vague sentence made specific, the honest thing you almost didn't say, and your best last sentence. Then pack two gifts for your reader, a Word Gift of three roots and a P.S."
+  },
+  "assignment": {
+   "text": "Write your revised letter with your Word Gift and your P.S. at the end. Then read the whole thing aloud twice and time it. Two to three minutes is just right."
+  }
+ },
+ "readnow": {
+  "text": "No new chapter today. Reread your passage, then revise your letter.",
+  "step": "Today: revise"
+ },
+ "how": [
+  {
+   "match": "What Good Readers Do",
+   "do": [
+    "Read the three lenses.",
+    "Tap the one you will use today.",
+    "Keep it in mind as you work. You will use it at the end."
+   ],
+   "why": "Noticing how an author wrote a passage helps you explain why it matters.",
+   "use": "You will use it when you revise your letter."
+  },
+  {
+   "match": "Daily Oral Language",
+   "do": [
+    "Read the first sentence. It is correct.",
+    "Write the second sentence correctly in your reading journal.",
+    "Tap See the Answer to check."
+   ],
+   "why": "Fixing one sentence at a time trains your eye for your own letter."
+  },
+  {
+   "match": "Read & Write",
+   "do": [
+    "Read the question.",
+    "Write 2 or 3 sentences in your reading journal.",
+    "Then go on."
+   ],
+   "why": "Thinking first gives you something to say in your letter."
+  },
+  {
+   "match": "Spelling",
+   "do": [
+    "Read the list.",
+    "Check your letter draft for spelling.",
+    "Write five words from the list in the box."
+   ],
+   "why": "A clean letter shows a new reader you mean it."
+  },
+  {
+   "match": "Morphology",
+   "do": [
+    "Write the journal sentence first.",
+    "Type each word from its root.",
+    "Tap Check My Work."
+   ],
+   "why": "Building a word from its root proves you know the root."
+  },
+  {
+   "match": "Grammar",
+   "do": [
+    "Read the voice test.",
+    "Do the journal task.",
+    "Type was or were in each blank, then tap Check My Work."
+   ],
+   "why": "Was and were must match their subject, even in a long sentence."
+  },
+  {
+   "match": "Revision",
+   "do": [
+    "Read the three revision moves.",
+    "Answer the three questions, one box at a time."
+   ],
+   "why": "Specific, honest sentences are what a reader remembers."
+  },
+  {
+   "match": "Word Gift",
+   "do": [
+    "Write three roots, each with a word and a tip.",
+    "Write your P.S. in the second box."
+   ],
+   "why": "A Word Gift hands a new reader a tool they can use all year."
+  },
+  {
+   "match": "Letter Packet",
+   "do": [
+    "Read the four checks.",
+    "Write your revised letter in the box, with your Word Gift and P.S."
+   ],
+   "why": "Putting every part together shows you what the reader will get."
+  }
+ ],
+ "glossary": [
+  {
+   "word": "vague",
+   "in": "Revision",
+   "meaning": "not clear or specific"
+  }
+ ],
+ "game": {
+  "type": "yearmap",
+  "title": "The Year's Map",
+  "sub": "This week's word game · 5 stops today",
+  "after": "Spelling",
+  "look": "A map of your whole year: five stops, one for each novel's world, from Wethersfield to San Francisco. Each clue asks for a word built from a root you learned while you read that book. A right answer lights the stop.",
+  "how": {
+   "do": [
+    "Read the clue.",
+    "Tap the word that fits.",
+    "A right word lights the stop. Then tap On to the next stop."
+   ],
+   "why": "Every root you learned this year still works. Here you use one from each book."
+  },
+  "stops": [
+   {
+    "name": "The Witch of Blackbird Pond",
+    "place": "Wethersfield",
+    "icon": "📜"
+   },
+   {
+    "name": "Johnny Tremain",
+    "place": "Boston",
+    "icon": "⚒️"
+   },
+   {
+    "name": "Carry On, Mr. Bowditch",
+    "place": "Salem",
+    "icon": "🧭"
+   },
+   {
+    "name": "How I Became a Ghost",
+    "place": "Mississippi",
+    "icon": "🐕"
+   },
+   {
+    "name": "By the Great Horn Spoon!",
+    "place": "San Francisco",
+    "icon": "⛏️"
+   }
+  ],
+  "doneLine": "Come back next lesson to light the map again with new words.",
+  "rounds": [
+   {
+    "stop": 0,
+    "clue": "Which word names a doctor's written order for medicine?",
+    "opts": [
+     "protection",
+     "prescription",
+     "perception"
+    ],
+    "ok": 1,
+    "why": "script means write. A prescription is written by the doctor.",
+    "miss": "Look for the root in the clue's meaning."
+   },
+   {
+    "stop": 1,
+    "clue": "Which word names a line of people moving forward, like a parade?",
+    "opts": [
+     "profession",
+     "possession",
+     "procession"
+    ],
+    "ok": 2,
+    "why": "cess means go. A procession goes forward.",
+    "miss": "Look for the root in the clue's meaning."
+   },
+   {
+    "stop": 2,
+    "clue": "Which word means able to be carried?",
+    "opts": [
+     "portable",
+     "potable",
+     "possible"
+    ],
+    "ok": 0,
+    "why": "port means carry.",
+    "miss": "Look for the root in the clue's meaning."
+   },
+   {
+    "stop": 3,
+    "clue": "Which word means to light up?",
+    "opts": [
+     "eliminate",
+     "illuminate",
+     "imitate"
+    ],
+    "ok": 1,
+    "why": "lum means light.",
+    "miss": "Look for the root in the clue's meaning."
+   },
+   {
+    "stop": 4,
+    "clue": "Which word means happening again and again?",
+    "opts": [
+     "recovering",
+     "referring",
+     "recurring"
+    ],
+    "ok": 2,
+    "why": "curr means run. Something recurring keeps running back.",
+    "miss": "Look for the root in the clue's meaning."
+   }
+  ]
+ },
+ "virtue": {
+  "name": "wisdom",
+  "kind": "meter",
+  "moment": "Captain Prince doubts that Nat can find their longitude with a lunar. Nat works the figures anyway, says they will sight land on the eighth, and they do (Carry On, Mr. Bowditch, Chapter 12).",
+  "ask": "How wise was Nat?",
+  "line": "In one sentence: why did you put the slider there?",
+  "placeholder": "I put it there because...",
+  "take": "I'd put it near the top. Nat didn't argue or brag. He did the work, checked it, and let the land prove him right."
+ },
+ "art": {
+  "tab": "top",
+  "file": "assets/art/year/terborch-woman-writing-letter.jpg",
+  "title": "Woman Writing a Letter",
+  "alt": "A painting of a young woman in a pale yellow jacket seated at a small table, bent close over a sheet of paper, writing with a quill.",
+  "look": "Gerard ter Borch painted this young woman around 1655. She leans close to the page and takes her time. Revising is like that: slow and careful.",
+  "lookBtn": "Tap to learn about this painting",
+  "creator": "Gerard ter Borch",
+  "date": "about 1655",
+  "license": "Public domain (Mauritshuis, The Hague, via Wikimedia Commons)",
+  "url": "https://commons.wikimedia.org/wiki/File:Gerard_ter_Borch_-_Woman_Writing_a_Letter_-_797_-_Mauritshuis.jpg"
+ }
+}
