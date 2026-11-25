@@ -1964,6 +1964,109 @@
     else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
   }
 
+  /* The Year's Map (week 32): a journey/lighting mechanic. A parchment map of the year with five stops, one per
+     novel's world, joined by a dotted trail. Each round is a clue for a word built from a root taught in that book's
+     unit; three choices. A right answer lights the stop and inks the trail to it; a miss flickers the lantern (no
+     setback). DATA game.type 'yearmap', game.stops[{name, place, icon}] (5, in year order),
+     game.rounds[{stop, clue, opts[3], ok, why, miss}]; storage 'yearmap.wk<N>' {day: {done[], miss}} */
+  function buildYearMap() {
+    var G = D.game; if (!G || G.type !== 'yearmap' || !G.rounds || !G.rounds.length || !G.stops) return;
+    var wkKey = 'yearmap.wk' + L.week;
+    var st = store(wkKey) || {};
+    var mine = st[L.day] || { done: [], miss: 0 };
+    if (typeof mine.miss !== 'number') mine.miss = 0;
+    var N = G.rounds, idx = 0;
+    while (idx < N.length && mine.done.indexOf(idx) >= 0) idx++;
+    var wrap = h('div', { 'class': 'activity g5-game' });
+    wrap.innerHTML =
+      '<div class="activity-head"><div class="activity-num g5-game-num" aria-hidden="true">🗺️</div><div>' +
+      '<div class="activity-title">' + esc(G.title || "The Year's Map") + '</div>' +
+      '<div class="activity-sub">' + esc(G.sub || 'Word game for this week') + '</div></div></div>';
+    var body = h('div', { 'class': 'activity-body' });
+    wrap.appendChild(body);
+    var look = h('details', { 'class': 'g5-look' }, [h('summary', { text: '👀 What am I looking at?' }), h('p', { text: G.look })]);
+    if (!mine.done.length) look.open = true;
+    body.appendChild(look);
+    if (G.how) body.appendChild(howLine(G.how));
+    var scene = h('div', { 'class': 'g5-ymap', role: 'img', 'aria-label': 'A parchment map of the year with five stops joined by a dotted trail, one for each novel. A stop lights up for each right answer.' });
+    body.appendChild(scene);
+    var stepBox = h('div', { 'class': 'g5-stone-step', 'aria-live': 'polite' });
+    var row = h('div', { 'class': 'g5-race-opts' });
+    var ctrl = h('div', { 'class': 'g5-stone-ctrl' });
+    var fb = h('p', { 'class': 'g5-stone-fb', 'aria-live': 'polite' });
+    var tally = h('p', { 'class': 'g5-stone-tally' });
+    [stepBox, row, ctrl, fb, tally].forEach(function (n) { body.appendChild(n); });
+    var P = [[70, 200], [190, 120], [310, 190], [430, 110], [540, 170]];
+    function lit(si) { for (var i = 0; i < N.length; i++) if (N[i].stop === si && mine.done.indexOf(i) >= 0) return true; return false; }
+    function draw(flash) {
+      var allDone = 0;
+      Object.keys(st).forEach(function (k) { allDone += (st[k].done || []).length; });
+      var svg = '<svg viewBox="0 0 610 280" preserveAspectRatio="xMidYMid meet" aria-hidden="true">' +
+        '<defs><radialGradient id="g5ymGlow"><stop offset="0" stop-color="#FFE9A8"/><stop offset="1" stop-color="#FFE9A8" stop-opacity="0"/></radialGradient></defs>' +
+        '<rect width="610" height="280" fill="#F3E4C2"/>' +
+        '<rect x="8" y="8" width="594" height="264" fill="none" stroke="#B89A62" stroke-width="2" stroke-dasharray="2 4"/>' +
+        '<path d="M20,250 Q60,236 110,246 T220,240" fill="none" stroke="#8FB3C9" stroke-width="3" opacity=".5"/>' +
+        '<path d="M380,40 Q420,52 470,40 T590,46" fill="none" stroke="#8FB3C9" stroke-width="3" opacity=".5"/>' +
+        '<g transform="translate(565,240)" opacity=".7"><circle r="16" fill="none" stroke="#8B6B3A" stroke-width="1.5"/>' +
+        '<path d="M0,-14 L4,0 L0,14 L-4,0 Z" fill="#8B6B3A"/><text y="-18" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#8B6B3A">N</text></g>';
+      for (var s = 1; s < P.length; s++) {
+        var a = P[s - 1], b = P[s], on = lit(s) && lit(s - 1);
+        var mx = (a[0] + b[0]) / 2, my = Math.min(a[1], b[1]) - 30;
+        svg += '<path d="M' + a[0] + ',' + a[1] + ' Q' + mx + ',' + my + ' ' + b[0] + ',' + b[1] + '" fill="none" stroke="' + (on ? '#B5651D' : '#B8A27A') +
+          '" stroke-width="' + (on ? 4 : 2.5) + '" stroke-dasharray="' + (on ? '0' : '6 6') + '" stroke-linecap="round"/>';
+      }
+      G.stops.forEach(function (S, i) {
+        var p = P[i], on = lit(i), cur = idx < N.length && N[idx].stop === i;
+        if (on) svg += '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="34" fill="url(#g5ymGlow)"/>';
+        svg += '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="18" fill="' + (on ? '#F5C542' : '#E6D6B0') + '" stroke="' + (cur ? '#0E1C42' : '#8B6B3A') + '" stroke-width="' + (cur ? 3 : 2) + '"' +
+          (cur && flash === 'miss' ? ' opacity=".55"' : '') + '/>' +
+          '<text x="' + p[0] + '" y="' + (p[1] + 6) + '" text-anchor="middle" font-size="17">' + esc(on ? S.icon : '•') + '</text>' +
+          '<text x="' + p[0] + '" y="' + (p[1] + 36) + '" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#4A3418">' + esc(S.place) + '</text>' +
+          '<text x="' + p[0] + '" y="' + (p[1] + 50) + '" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-style="italic" fill="#6B5430">' + esc(S.name) + '</text>';
+      });
+      svg += '</svg>';
+      scene.innerHTML = svg;
+      tally.textContent = 'Today: ' + mine.done.length + ' of ' + N.length + ' stops lit. This week: ' + allDone + '.';
+    }
+    function save() { st[L.day] = mine; store(wkKey, st); }
+    function shake(b) { b.classList.add('g5-shake'); setTimeout(function () { b.classList.remove('g5-shake'); }, 450); }
+    function show() {
+      fb.textContent = ''; ctrl.innerHTML = ''; row.innerHTML = '';
+      if (idx >= N.length) {
+        draw();
+        stepBox.innerHTML = '<b>The whole map is lit!</b> ' + esc(G.doneLine || 'Five books, one year.');
+        var again = h('button', { type: 'button', 'class': 'g5-btn g5-btn-ghost' }, ['↺ Travel again']);
+        again.addEventListener('click', function () { mine = { done: [], miss: 0 }; idx = 0; save(); show(); });
+        ctrl.appendChild(again); return;
+      }
+      var S = N[idx], stp = G.stops[S.stop] || {};
+      draw();
+      stepBox.innerHTML = '<span class="g5-stepn">Stop ' + (idx + 1) + ' of ' + N.length + ': ' + esc(stp.place || '') + '</span> ' + esc(S.clue);
+      S.opts.forEach(function (w, k) {
+        var b = h('button', { type: 'button', 'class': 'g5-beat g5-race-btn' }, [w]);
+        b.addEventListener('click', function () {
+          if (k !== S.ok) {
+            mine.miss++; save(); draw('miss');
+            fb.textContent = '🕯️ The lantern flickers. ' + (S.miss || 'Look for the root in the clue.'); shake(b); return;
+          }
+          row.querySelectorAll('button').forEach(function (x) { x.disabled = true; });
+          b.classList.add('g5-race-right');
+          if (mine.done.indexOf(idx) < 0) mine.done.push(idx);
+          save(); draw('lit');
+          fb.innerHTML = '✨ <b>' + esc(w) + '</b>: ' + esc(S.why || '');
+          var next = h('button', { type: 'button', 'class': 'g5-btn' }, [idx + 1 < N.length ? 'On to the next stop →' : 'Light the last stop →']);
+          next.addEventListener('click', function () { idx++; while (idx < N.length && mine.done.indexOf(idx) >= 0) idx++; show(); setTimeout(function () { var f = row.querySelector('button') || ctrl.querySelector('button'); if (f) f.focus(); }, 30); });
+          ctrl.appendChild(next);
+        });
+        row.appendChild(b);
+      });
+    }
+    show();
+    var ref = G.after ? activityByTitle(G.after, panel('words')) : null;
+    if (ref) afterNode(ref, wrap);
+    else { var nw = nextWrap('words'); if (nw) panel('words').insertBefore(wrap, nw); }
+  }
+
   /* ── 13. the Commonplace Book page ─────────────────────────── */
   var NAME_BAD = /\b(ass|butt|poop|fart|stupid|dumb|idiot|hate|kill|sex|damn|hell|crap)\b/i;
   function profileName() { var p = store('profile'); return p && p.name ? p.name : ''; }
@@ -2761,6 +2864,7 @@
     guard('climb', buildClimb);
     guard('letter', buildLetter);
     guard('pairs', buildPairs);
+    guard('yearmap', buildYearMap);
     guard('cards', buildCards);
     guard('checks', buildChecks);
     guard('virtue', buildVirtue);
